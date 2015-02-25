@@ -1,5 +1,5 @@
 //
-//  BaseScreen.swift
+//  WorkoutDetailsScreen.swift
 //  SportTime
 //
 //  Created by Vladimir Popko on 12/28/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseScreen: UIViewController {
+class WorkoutDetailsScreen: BaseScreen {
 
     override func viewDidLoad() {
         super.viewDidLoad()

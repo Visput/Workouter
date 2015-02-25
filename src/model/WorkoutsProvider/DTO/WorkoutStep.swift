@@ -9,10 +9,10 @@
 import UIKit
 
 class WorkoutStep: NSObject {
-    private(set) var name:String = ""
-    private(set) var duration:Int = 0 // [Sec]
+    private(set) var name: String!
+    private(set) var duration: Int! // [Sec]
     
-    init(name:String, duration:Int) {
+    init(name: String, duration: Int) {
         super.init()
         self.name = name
         self.duration = duration
@@ -25,7 +25,7 @@ class WorkoutStep: NSObject {
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.name, forKey:"name")
+        aCoder.encodeObject(self.name, forKey: "name")
         aCoder.encodeInteger(self.duration, forKey: "duration")
     }
 }

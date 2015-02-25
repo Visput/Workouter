@@ -9,10 +9,10 @@
 import UIKit
 
 class Workout: NSObject, NSCoding {
-    private(set) var name:String = ""
-    private(set) var steps:Array<WorkoutStep> = []
+    private(set) var name: String!
+    private(set) var steps: [WorkoutStep]!
     
-    init(name:String, steps:Array<WorkoutStep>) {
+    init(name: String, steps: [WorkoutStep]) {
         super.init()
         self.name = name
         self.steps = steps
@@ -21,11 +21,11 @@ class Workout: NSObject, NSCoding {
     required init(coder aDecoder: NSCoder) {
         super.init()
         self.name = aDecoder.decodeObjectForKey("name") as String
-        self.steps = aDecoder.decodeObjectForKey("steps") as Array<WorkoutStep>
+        self.steps = aDecoder.decodeObjectForKey("steps") as [WorkoutStep]
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.name, forKey:"name")
-        aCoder.encodeObject(self.steps, forKey:"steps")
+        aCoder.encodeObject(self.name, forKey: "name")
+        aCoder.encodeObject(self.steps, forKey: "steps")
     }
 }

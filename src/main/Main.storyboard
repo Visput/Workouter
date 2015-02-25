@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z5E-2n-Ukt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Workouts-->
@@ -15,7 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9mt-W1-wGt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="65r-cP-KX5" customClass="WorkoutCell" customModule="SportTime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="65r-cP-KX5" id="eqF-lp-5MU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9I-bn-3tl">
+                                                    <rect key="frame" x="17" y="0.0" width="575" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="0iP-mF-Wpc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="H9I-bn-3tl" firstAttribute="top" secondItem="eqF-lp-5MU" secondAttribute="top" id="88O-4j-pGn"/>
+                                                <constraint firstItem="H9I-bn-3tl" firstAttribute="trailing" secondItem="eqF-lp-5MU" secondAttribute="trailingMargin" id="L6K-Dk-rMX"/>
+                                                <constraint firstItem="H9I-bn-3tl" firstAttribute="leading" secondItem="eqF-lp-5MU" secondAttribute="leadingMargin" constant="9" id="Plp-at-cPB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="H9I-bn-3tl" secondAttribute="bottom" id="kDE-NX-xva"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="kDE-NX-xva"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="H9I-bn-3tl" id="YIh-Ii-qev"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="d5n-bN-GNf"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="t9y-e9-iyz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="9mt-W1-wGt" secondAttribute="bottom" id="UBl-rB-PcJ"/>
+                            <constraint firstAttribute="trailing" secondItem="9mt-W1-wGt" secondAttribute="trailing" id="Vup-bb-LtM"/>
+                            <constraint firstItem="9mt-W1-wGt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vfn-pa-HKI"/>
+                            <constraint firstItem="9mt-W1-wGt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="x30-JQ-tLv"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Workouts" id="UUS-jR-n5u">
@@ -28,6 +78,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="9mt-W1-wGt" id="NR3-PK-EpY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

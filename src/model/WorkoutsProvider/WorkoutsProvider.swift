@@ -8,20 +8,16 @@
 
 import UIKit
 
-class WorkoutsService: NSObject {
-    var workouts:Array<Workout> = []
+class WorkoutsProvider: NSObject {
+    var workouts: [Workout]!
     
-    override init() {
-        super.init()
-        self.workouts = loadWorkouts()
-    }
-    
-    private func loadWorkouts() -> Array<Workout> {
+    func loadWorkouts() {
         // Hardcoded data
         var step1 = WorkoutStep(name: "Step 1", duration: 60)
         var step2 = WorkoutStep(name: "Step 2", duration: 120)
         var steps = [step1, step2];
-        var workout = Workout(name: "Workout 1", steps:steps)
-        return [workout]
+        var workout = Workout(name: "Workout 1", steps: steps)
+        
+        self.workouts = [workout, workout, workout, workout, workout, workout, workout, workout, workout, workout, workout]
     }
 }
