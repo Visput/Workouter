@@ -146,10 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				F0C342521A9E4BC800B9D480 /* ModelProvider */,
-				F0C342541A9E4BC800B9D480 /* ServicesProvider */,
 				F0C342551A9E4BC800B9D480 /* WorkoutPlayer */,
 				F0C342571A9E4BC800B9D480 /* WorkoutsProvider */,
-				F0C3425C1A9E4BC800B9D480 /* WorkoutsService */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,13 +158,6 @@
 				F0C342531A9E4BC800B9D480 /* ModelProvider.swift */,
 			);
 			path = ModelProvider;
-			sourceTree = "<group>";
-		};
-		F0C342541A9E4BC800B9D480 /* ServicesProvider */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ServicesProvider;
 			sourceTree = "<group>";
 		};
 		F0C342551A9E4BC800B9D480 /* WorkoutPlayer */ = {
@@ -193,13 +184,6 @@
 				F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */,
 			);
 			path = DTO;
-			sourceTree = "<group>";
-		};
-		F0C3425C1A9E4BC800B9D480 /* WorkoutsService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WorkoutsService;
 			sourceTree = "<group>";
 		};
 		F0C3425D1A9E4BC800B9D480 /* UI */ = {

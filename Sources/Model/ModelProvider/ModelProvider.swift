@@ -15,7 +15,5 @@ class ModelProvider: NSObject {
         return modelProvider
     }
     
-    lazy private(set) var workoutsProvider: WorkoutsProvider = {
-        return WorkoutsProvider()
-    }()
+    lazy private(set) var workoutsProvider: WorkoutsProvider = WorkoutsProvider()
 }
