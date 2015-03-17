@@ -9,6 +9,7 @@
 import UIKit
 
 class WorkoutPlayer: NSObject {
+    
     private(set) var workout: Workout?
    
     func start(#workout: Workout) {

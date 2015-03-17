@@ -9,6 +9,7 @@
 import UIKit
 
 class WorkoutsScreen: BaseScreen {
+    
     @IBOutlet private weak var tableView: UITableView!
     
     private var workoutsProvider: WorkoutsProvider {

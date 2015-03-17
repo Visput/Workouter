@@ -9,19 +9,20 @@
 import UIKit
 
 class Workout: NSObject, NSCoding {
+    
     private(set) var name: String!
     private(set) var steps: [WorkoutStep]!
     
     init(name: String, steps: [WorkoutStep]) {
-        super.init()
         self.name = name
         self.steps = steps
+        super.init()
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init()
         self.name = aDecoder.decodeObjectForKey("name") as String
         self.steps = aDecoder.decodeObjectForKey("steps") as [WorkoutStep]
+        super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {

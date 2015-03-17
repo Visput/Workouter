@@ -11,6 +11,7 @@ import UIKit
 private let modelProvider = ModelProvider()
 
 class ModelProvider: NSObject {
+    
     class var provider: ModelProvider {
         return modelProvider
     }

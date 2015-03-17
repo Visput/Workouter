@@ -9,6 +9,7 @@
 import UIKit
 
 class WorkoutsProvider: NSObject {
+    
     var workouts: [Workout]!
     
     func loadWorkouts() {
