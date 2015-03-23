@@ -7,4 +7,4 @@ More details are available at [Software Requirements Specification.pages](https:
 The application is independent and totally self-contained. This is mobile application which doesn’t require internet connection. It’s designed for iPhone 4 and later with iOS 8.0 and later.
 
 ## App Scheme
-<img src="https://github.com/Visput/SportTime/blob/master/doc/v1/ui/app_scheme.png"/>
+<img src="https://raw.githubusercontent.com/Visput/SportTime/master/Docs/v1/ui/app_scheme.png"/>
