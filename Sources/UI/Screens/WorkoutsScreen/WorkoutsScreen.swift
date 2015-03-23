@@ -8,35 +8,64 @@
 
 import UIKit
 
-class WorkoutsScreen: BaseScreen {
-    
-    @IBOutlet private weak var tableView: UITableView!
+class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
     }
+    
+    private var workoutsView: WorkoutsView {
+        return view as WorkoutsView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.workoutsProvider.loadWorkouts()
+        workoutsProvider.loadWorkouts()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-}
-
-extension TableViewDelegate: UITableViewDelegate, UITableViewDataSource  {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.workoutsProvider.workouts.count
+        return workoutsProvider.workouts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell") as WorkoutCell
-        cell.fill(workout: self.workoutsProvider.workouts[indexPath.row])
+        cell.fill(workout: workoutsProvider.workouts[indexPath.row])
         return cell
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return workoutsView.mode == .Edit
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return workoutsView.mode == .Edit
+    }
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.Delete
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            workoutsProvider.deleteWorkoutAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+        }
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        workoutsProvider.moveWorkout(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    
+    @IBAction private func onModeButtonPressed(sender: UIBarButtonItem) {
+        switch workoutsView.mode {
+        case .Standard:
+            workoutsView.applyEditMode()
+        case .Edit:
+            workoutsView.applyStandardMode()
+        }
+    }
 }
-
-private typealias TableViewDelegate = WorkoutsScreen

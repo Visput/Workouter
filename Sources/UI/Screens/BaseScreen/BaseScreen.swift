@@ -9,10 +9,6 @@
 import UIKit
 
 class BaseScreen: UIViewController {
-
-    let modelProvider = ModelProvider.provider
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    let modelProvider = ModelProvider.provider
 }

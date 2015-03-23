@@ -20,13 +20,13 @@ class WorkoutStep: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObjectForKey("name") as String
-        self.duration = aDecoder.decodeIntegerForKey("duration")
+        name = aDecoder.decodeObjectForKey("name") as String
+        duration = aDecoder.decodeIntegerForKey("duration")
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.name, forKey: "name")
-        aCoder.encodeInteger(self.duration, forKey: "duration")
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeInteger(duration, forKey: "duration")
     }
 }

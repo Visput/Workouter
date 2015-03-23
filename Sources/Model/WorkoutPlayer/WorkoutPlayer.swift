@@ -17,6 +17,6 @@ class WorkoutPlayer: NSObject {
     }
     
     func stop() {
-        self.workout = nil
+        workout = nil
     }
 }

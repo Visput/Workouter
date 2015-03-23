@@ -20,13 +20,13 @@ class Workout: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObjectForKey("name") as String
-        self.steps = aDecoder.decodeObjectForKey("steps") as [WorkoutStep]
+        name = aDecoder.decodeObjectForKey("name") as String
+        steps = aDecoder.decodeObjectForKey("steps") as [WorkoutStep]
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.name, forKey: "name")
-        aCoder.encodeObject(self.steps, forKey: "steps")
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeObject(steps, forKey: "steps")
     }
 }
