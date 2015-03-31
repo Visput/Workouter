@@ -9,6 +9,8 @@
 import Foundation
 
 class AnalyticsTracker {
-    let flurryKey = "VM4SSBGSTNJCCWQRZS5D"
-    let flurryKeyQA = "RZYXH9G79VK4J3WP8N92"
+    class func startSession() {
+        let flurryKey = NSBundle.mainBundle().objectForInfoDictionaryKey("FlurryKey") as String
+        Flurry.startSession(flurryKey)
+    }
 }

@@ -15,6 +15,31 @@
 		F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
 		F09702BB1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
 		F09702BC1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
+		F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
+		F09702C01ACA48E700498DEE /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
+		F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
+		F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342601A9E4BC800B9D480 /* BaseScreen.swift */; };
+		F09702C31ACA48E700498DEE /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */; };
+		F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
+		F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342561A9E4BC800B9D480 /* WorkoutPlayer.swift */; };
+		F09702C61ACA48E700498DEE /* NewStepScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342621A9E4BC800B9D480 /* NewStepScreen.swift */; };
+		F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342661A9E4BC800B9D480 /* StepTemplatesScreen.swift */; };
+		F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342681A9E4BC800B9D480 /* WorkoutDetailsScreen.swift */; };
+		F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
+		F09702CA1ACA48E700498DEE /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425B1A9E4BC800B9D480 /* WorkoutsProvider.swift */; };
+		F09702CB1ACA48E700498DEE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342591A9E4BC800B9D480 /* Workout.swift */; };
+		F09702CC1ACA48E700498DEE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
+		F09702CD1ACA48E700498DEE /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
+		F09702CE1ACA48E700498DEE /* NewWorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342641A9E4BC800B9D480 /* NewWorkoutScreen.swift */; };
+		F09702D11ACA48E700498DEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */; };
+		F09702D21ACA48E700498DEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
+		F09702D31ACA48E700498DEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
+		F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
+		F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
+		F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
+		F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
+		F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
+		F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
 		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
@@ -67,8 +92,14 @@
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
 		F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
+		F09702D81ACA48E700498DEE /* Workouter copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workouter copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09702DA1ACA492100498DEE /* Workouter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter-Info.plist"; sourceTree = "<group>"; };
+		F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter QA-Info.plist"; sourceTree = "<group>"; };
+		F09702E11ACA4CFD00498DEE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = "<group>"; };
+		F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_6.2.0.a; path = Flurry/libFlurry_6.2.0.a; sourceTree = "<group>"; };
+		F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Workouter-Bridging-Header.h"; sourceTree = "<group>"; };
+		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F0C3424A1A9E4BC800B9D480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F0C3424B1A9E4BC800B9D480 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F0C342501A9E4BC800B9D480 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */,
+				F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +133,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09702CF1ACA48E700498DEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */,
+				F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +152,8 @@
 		F01375A41A4CA18E00C683A8 = {
 			isa = PBXGroup;
 			children = (
+				F09706801ACA511700498DEE /* SystemConfiguration.framework */,
+				F09702DE1ACA4CFD00498DEE /* Libraries */,
 				F0C342491A9E4BC800B9D480 /* Resources */,
 				F0C3424C1A9E4BC800B9D480 /* Sources */,
 				F0C3426C1A9E4BC800B9D480 /* Tests */,
@@ -121,6 +166,7 @@
 			children = (
 				F01375AD1A4CA18E00C683A8 /* Workouter.app */,
 				F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */,
+				F09702D81ACA48E700498DEE /* Workouter copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,11 +187,29 @@
 			path = AnalyticsTracker;
 			sourceTree = "<group>";
 		};
+		F09702DE1ACA4CFD00498DEE /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				F09702E11ACA4CFD00498DEE /* Flurry.h */,
+				F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */,
+			);
+			path = "Flurry-v6.2.0";
+			sourceTree = "<group>";
+		};
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F09702DA1ACA492100498DEE /* Workouter-Info.plist */,
+				F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */,
 				F0C3424A1A9E4BC800B9D480 /* Images.xcassets */,
-				F0C3424B1A9E4BC800B9D480 /* Info.plist */,
 				F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */,
 			);
 			path = Resources;
@@ -168,6 +232,7 @@
 				F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */,
 				F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */,
 				F0C342501A9E4BC800B9D480 /* Main.storyboard */,
+				F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -335,6 +400,23 @@
 			productReference = F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F09702BD1ACA48E700498DEE /* Workouter QA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "Workouter QA" */;
+			buildPhases = (
+				F09702BE1ACA48E700498DEE /* Sources */,
+				F09702CF1ACA48E700498DEE /* Frameworks */,
+				F09702D01ACA48E700498DEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Workouter QA";
+			productName = SportTime;
+			productReference = F09702D81ACA48E700498DEE /* Workouter copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -367,6 +449,7 @@
 			projectRoot = "";
 			targets = (
 				F01375AC1A4CA18E00C683A8 /* Workouter */,
+				F09702BD1ACA48E700498DEE /* Workouter QA */,
 				F01375C11A4CA18E00C683A8 /* WorkouterTests */,
 			);
 		};
@@ -392,6 +475,17 @@
 				F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */,
 				F0C342781A9E4BC800B9D480 /* Main.storyboard in Resources */,
 				F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09702D01ACA48E700498DEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09702D11ACA48E700498DEE /* LaunchScreen.xib in Resources */,
+				F09702D21ACA48E700498DEE /* Images.xcassets in Resources */,
+				F09702D31ACA48E700498DEE /* Main.storyboard in Resources */,
+				F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +536,29 @@
 				F0C342881A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */,
 				F0C342941A9E4BC800B9D480 /* WorkouterTests.swift in Sources */,
 				F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09702BE1ACA48E700498DEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */,
+				F09702C01ACA48E700498DEE /* WorkoutStep.swift in Sources */,
+				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
+				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
+				F09702C31ACA48E700498DEE /* WorkoutCell.swift in Sources */,
+				F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */,
+				F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */,
+				F09702C61ACA48E700498DEE /* NewStepScreen.swift in Sources */,
+				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
+				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
+				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,
+				F09702CA1ACA48E700498DEE /* WorkoutsProvider.swift in Sources */,
+				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
+				F09702CC1ACA48E700498DEE /* BaseView.swift in Sources */,
+				F09702CD1ACA48E700498DEE /* WorkoutsView.swift in Sources */,
+				F09702CE1ACA48E700498DEE /* NewWorkoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,10 +655,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -550,10 +673,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -571,7 +700,13 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
 				PRODUCT_NAME = WorkouterTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
 			};
 			name = Debug;
@@ -586,8 +721,50 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
 				PRODUCT_NAME = WorkouterTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
+			};
+			name = Release;
+		};
+		F09702D61ACA48E700498DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
+				PRODUCT_NAME = "Workouter copy";
+				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		F09702D71ACA48E700498DEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
+					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+				);
+				PRODUCT_NAME = "Workouter copy";
+				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -617,6 +794,15 @@
 			buildConfigurations = (
 				F01375D01A4CA18E00C683A8 /* Debug */,
 				F01375D11A4CA18E00C683A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "Workouter QA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09702D61ACA48E700498DEE /* Debug */,
+				F09702D71ACA48E700498DEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

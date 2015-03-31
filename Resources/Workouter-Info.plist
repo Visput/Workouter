@@ -36,5 +36,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>FlurryKey</key>
+	<string>VM4SSBGSTNJCCWQRZS5D</string>
 </dict>
 </plist>
