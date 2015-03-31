@@ -55,6 +55,12 @@
 		F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
 		F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
 		F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
+		F09706AA1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
+		F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
+		F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
+		F09706AD1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
+		F09706AE1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
+		F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
@@ -119,6 +125,8 @@
 		F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F097069E1ACA687800498DEE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F09706A81ACA6FCA00498DEE /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		F0C3424A1A9E4BC800B9D480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 				F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */,
 				F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
+				F09706AA1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 				F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
 				F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 				F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
@@ -164,6 +173,7 @@
 				F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
 				F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F09706961ACA599200498DEE /* Fabric.framework in Frameworks */,
+				F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +184,7 @@
 				F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */,
 				F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
+				F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 				F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
 				F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 				F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
@@ -226,19 +237,19 @@
 			isa = PBXGroup;
 			children = (
 				F097069B1ACA687800498DEE /* Facebook */,
-				F09706861ACA592D00498DEE /* Crashlytics-v1.1.1 */,
-				F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */,
+				F09706861ACA592D00498DEE /* Fabric */,
+				F09702DF1ACA4CFD00498DEE /* Flurry */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
 		};
-		F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */ = {
+		F09702DF1ACA4CFD00498DEE /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
 				F09702E11ACA4CFD00498DEE /* Flurry.h */,
 				F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */,
 			);
-			path = "Flurry-v6.2.0";
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 		F09706831ACA543B00498DEE /* Frameworks */ = {
@@ -249,13 +260,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F09706861ACA592D00498DEE /* Crashlytics-v1.1.1 */ = {
+		F09706861ACA592D00498DEE /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
+				F09706A81ACA6FCA00498DEE /* TwitterKit.framework */,
+				F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */,
 				F09706971ACA5AF000498DEE /* Crashlytics.framework */,
 				F09706931ACA599200498DEE /* Fabric.framework */,
 			);
-			path = "Crashlytics-v1.1.1";
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		F097069B1ACA687800498DEE /* Facebook */ = {
@@ -530,6 +543,7 @@
 				F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */,
 				F0C342771A9E4BC800B9D480 /* Main.storyboard in Resources */,
 				F08ED60B1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
+				F09706AD1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +555,7 @@
 				F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */,
 				F0C342781A9E4BC800B9D480 /* Main.storyboard in Resources */,
 				F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
+				F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +567,7 @@
 				F09702D21ACA48E700498DEE /* Images.xcassets in Resources */,
 				F09702D31ACA48E700498DEE /* Main.storyboard in Resources */,
 				F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */,
+				F09706AE1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +585,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Libraries/Crashlytics-v1.1.1/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+			shellScript = "Libraries/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
 		};
 		F09706851ACA585900498DEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -582,7 +598,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Libraries/Crashlytics-v1.1.1/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+			shellScript = "Libraries/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -752,7 +768,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -760,8 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
@@ -776,7 +791,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -784,8 +799,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
@@ -800,7 +814,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -812,8 +826,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -828,7 +841,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -836,8 +849,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -852,7 +864,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -860,8 +872,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = "Workouter copy";
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
@@ -876,7 +887,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
@@ -884,8 +895,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/Flurry",
-					"$(PROJECT_DIR)/Libraries/Flurry-v6.2.0/FlurryAds",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_NAME = "Workouter copy";
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";

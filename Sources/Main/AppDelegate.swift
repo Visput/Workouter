@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initiate third-party frameworks
         AnalyticsTracker.startSession()
-        Fabric.with([Crashlytics()])
+        Fabric.with([Crashlytics(), Twitter()])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
