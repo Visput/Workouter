@@ -47,7 +47,7 @@
 		F0C3428E1A9E4BC800B9D480 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */; };
 		F0C3428F1A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
 		F0C342901A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
-		F0C342941A9E4BC800B9D480 /* SportTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426E1A9E4BC800B9D480 /* SportTimeTests.swift */; };
+		F0C342941A9E4BC800B9D480 /* WorkouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426E1A9E4BC800B9D480 /* WorkouterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F01375AD1A4CA18E00C683A8 /* SportTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F01375C21A4CA18E00C683A8 /* SportTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01375AD1A4CA18E00C683A8 /* Workouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsScreen.swift; sourceTree = "<group>"; };
 		F0C3426D1A9E4BC800B9D480 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0C3426E1A9E4BC800B9D480 /* SportTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTimeTests.swift; sourceTree = "<group>"; };
+		F0C3426E1A9E4BC800B9D480 /* WorkouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,8 @@
 		F01375AE1A4CA18E00C683A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F01375AD1A4CA18E00C683A8 /* SportTime.app */,
-				F01375C21A4CA18E00C683A8 /* SportTimeTests.xctest */,
+				F01375AD1A4CA18E00C683A8 /* Workouter.app */,
+				F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C3426D1A9E4BC800B9D480 /* Info.plist */,
-				F0C3426E1A9E4BC800B9D480 /* SportTimeTests.swift */,
+				F0C3426E1A9E4BC800B9D480 /* WorkouterTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -300,9 +300,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F01375AC1A4CA18E00C683A8 /* SportTime */ = {
+		F01375AC1A4CA18E00C683A8 /* Workouter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "SportTime" */;
+			buildConfigurationList = F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "Workouter" */;
 			buildPhases = (
 				F01375A91A4CA18E00C683A8 /* Sources */,
 				F01375AA1A4CA18E00C683A8 /* Frameworks */,
@@ -312,14 +312,14 @@
 			);
 			dependencies = (
 			);
-			name = SportTime;
+			name = Workouter;
 			productName = SportTime;
-			productReference = F01375AD1A4CA18E00C683A8 /* SportTime.app */;
+			productReference = F01375AD1A4CA18E00C683A8 /* Workouter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F01375C11A4CA18E00C683A8 /* SportTimeTests */ = {
+		F01375C11A4CA18E00C683A8 /* WorkouterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "SportTimeTests" */;
+			buildConfigurationList = F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "WorkouterTests" */;
 			buildPhases = (
 				F01375BE1A4CA18E00C683A8 /* Sources */,
 				F01375BF1A4CA18E00C683A8 /* Frameworks */,
@@ -330,9 +330,9 @@
 			dependencies = (
 				F01375C41A4CA18E00C683A8 /* PBXTargetDependency */,
 			);
-			name = SportTimeTests;
+			name = WorkouterTests;
 			productName = SportTimeTests;
-			productReference = F01375C21A4CA18E00C683A8 /* SportTimeTests.xctest */;
+			productReference = F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -353,7 +353,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F01375A81A4CA18E00C683A8 /* Build configuration list for PBXProject "SportTime" */;
+			buildConfigurationList = F01375A81A4CA18E00C683A8 /* Build configuration list for PBXProject "Workouter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -366,8 +366,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F01375AC1A4CA18E00C683A8 /* SportTime */,
-				F01375C11A4CA18E00C683A8 /* SportTimeTests */,
+				F01375AC1A4CA18E00C683A8 /* Workouter */,
+				F01375C11A4CA18E00C683A8 /* WorkouterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -440,7 +440,7 @@
 				F08ED6061ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */,
 				F0C3427E1A9E4BC800B9D480 /* Workout.swift in Sources */,
 				F0C342881A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */,
-				F0C342941A9E4BC800B9D480 /* SportTimeTests.swift in Sources */,
+				F0C342941A9E4BC800B9D480 /* WorkouterTests.swift in Sources */,
 				F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +450,7 @@
 /* Begin PBXTargetDependency section */
 		F01375C41A4CA18E00C683A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F01375AC1A4CA18E00C683A8 /* SportTime */;
+			target = F01375AC1A4CA18E00C683A8 /* Workouter */;
 			targetProxy = F01375C31A4CA18E00C683A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -540,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 			};
 			name = Debug;
@@ -552,7 +552,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 			};
 			name = Release;
@@ -571,8 +571,8 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportTime.app/SportTime";
+				PRODUCT_NAME = WorkouterTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
 			};
 			name = Debug;
 		};
@@ -586,15 +586,15 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportTime.app/SportTime";
+				PRODUCT_NAME = WorkouterTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F01375A81A4CA18E00C683A8 /* Build configuration list for PBXProject "SportTime" */ = {
+		F01375A81A4CA18E00C683A8 /* Build configuration list for PBXProject "Workouter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F01375CA1A4CA18E00C683A8 /* Debug */,
@@ -603,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "SportTime" */ = {
+		F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "Workouter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F01375CD1A4CA18E00C683A8 /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "SportTimeTests" */ = {
+		F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "WorkouterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F01375D01A4CA18E00C683A8 /* Debug */,

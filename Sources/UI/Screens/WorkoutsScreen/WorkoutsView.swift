@@ -1,6 +1,6 @@
 //
 //  WorkoutsView.swift
-//  SportTime
+//  Workouter
 //
 //  Created by Vladimir Popko on 3/21/15.
 //  Copyright (c) 2015 visput. All rights reserved.

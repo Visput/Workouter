@@ -1,6 +1,6 @@
 //
-//  SportTimeTests.swift
-//  SportTimeTests
+//  WorkouterTests.swift
+//  WorkouterTests
 //
 //  Created by Vladimir Popko on 12/25/14.
 //  Copyright (c) 2014 visput. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class SportTimeTests: XCTestCase {
+class WorkouterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
