@@ -13,6 +13,8 @@
 		F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
 		F08ED60B1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
 		F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
+		F09702BB1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
+		F09702BC1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
 		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
@@ -64,6 +66,7 @@
 		F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
+		F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
 		F0C3424A1A9E4BC800B9D480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0C3424B1A9E4BC800B9D480 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +125,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F09702B81ACA425C00498DEE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F09702B91ACA425C00498DEE /* AnalyticsTracker */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F09702B91ACA425C00498DEE /* AnalyticsTracker */ = {
+			isa = PBXGroup;
+			children = (
+				F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */,
+			);
+			path = AnalyticsTracker;
+			sourceTree = "<group>";
+		};
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,7 @@
 		F0C3424C1A9E4BC800B9D480 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F09702B81ACA425C00498DEE /* Utils */,
 				F0C3424D1A9E4BC800B9D480 /* Main */,
 				F0C342511A9E4BC800B9D480 /* Model */,
 				F0C3425D1A9E4BC800B9D480 /* UI */,
@@ -387,6 +407,7 @@
 				F0C3428F1A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */,
 				F0C342831A9E4BC800B9D480 /* BaseScreen.swift in Sources */,
 				F0C3428D1A9E4BC800B9D480 /* WorkoutCell.swift in Sources */,
+				F09702BB1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */,
 				F0C3427B1A9E4BC800B9D480 /* WorkoutPlayer.swift in Sources */,
 				F0C342851A9E4BC800B9D480 /* NewStepScreen.swift in Sources */,
 				F0C342891A9E4BC800B9D480 /* StepTemplatesScreen.swift in Sources */,
@@ -404,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09702BC1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */,
 				F0C3427A1A9E4BC800B9D480 /* ModelProvider.swift in Sources */,
 				F0C342801A9E4BC800B9D480 /* WorkoutStep.swift in Sources */,
 				F0C342901A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */,
