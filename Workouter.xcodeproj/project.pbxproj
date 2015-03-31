@@ -40,6 +40,12 @@
 		F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
 		F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
 		F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
+		F09706941ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
+		F09706951ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
+		F09706961ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
+		F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
+		F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
+		F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
 		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
@@ -99,6 +105,8 @@
 		F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_6.2.0.a; path = Flurry/libFlurry_6.2.0.a; sourceTree = "<group>"; };
 		F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Workouter-Bridging-Header.h"; sourceTree = "<group>"; };
 		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F09706931ACA599200498DEE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		F09706971ACA5AF000498DEE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F0C3424A1A9E4BC800B9D480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 			files = (
 				F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */,
 				F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
+				F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
+				F09706941ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
+				F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
+				F09706961ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +155,8 @@
 			files = (
 				F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */,
 				F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
+				F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
+				F09706951ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,11 +166,11 @@
 		F01375A41A4CA18E00C683A8 = {
 			isa = PBXGroup;
 			children = (
-				F09706801ACA511700498DEE /* SystemConfiguration.framework */,
-				F09702DE1ACA4CFD00498DEE /* Libraries */,
-				F0C342491A9E4BC800B9D480 /* Resources */,
 				F0C3424C1A9E4BC800B9D480 /* Sources */,
+				F0C342491A9E4BC800B9D480 /* Resources */,
 				F0C3426C1A9E4BC800B9D480 /* Tests */,
+				F09702DE1ACA4CFD00498DEE /* Libraries */,
+				F09706831ACA543B00498DEE /* Frameworks */,
 				F01375AE1A4CA18E00C683A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 		F09702DE1ACA4CFD00498DEE /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F09706861ACA592D00498DEE /* Crashlytics-v1.1.1 */,
 				F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */,
 			);
 			path = Libraries;
@@ -202,6 +217,23 @@
 				F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */,
 			);
 			path = "Flurry-v6.2.0";
+			sourceTree = "<group>";
+		};
+		F09706831ACA543B00498DEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F09706801ACA511700498DEE /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F09706861ACA592D00498DEE /* Crashlytics-v1.1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				F09706971ACA5AF000498DEE /* Crashlytics.framework */,
+				F09706931ACA599200498DEE /* Fabric.framework */,
+			);
+			path = "Crashlytics-v1.1.1";
 			sourceTree = "<group>";
 		};
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
@@ -218,10 +250,10 @@
 		F0C3424C1A9E4BC800B9D480 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F09702B81ACA425C00498DEE /* Utils */,
 				F0C3424D1A9E4BC800B9D480 /* Main */,
 				F0C342511A9E4BC800B9D480 /* Model */,
 				F0C3425D1A9E4BC800B9D480 /* UI */,
+				F09702B81ACA425C00498DEE /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -372,6 +404,7 @@
 				F01375A91A4CA18E00C683A8 /* Sources */,
 				F01375AA1A4CA18E00C683A8 /* Frameworks */,
 				F01375AB1A4CA18E00C683A8 /* Resources */,
+				F09706841ACA584600498DEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -407,6 +440,7 @@
 				F09702BE1ACA48E700498DEE /* Sources */,
 				F09702CF1ACA48E700498DEE /* Frameworks */,
 				F09702D01ACA48E700498DEE /* Resources */,
+				F09706851ACA585900498DEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -490,6 +524,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F09706841ACA584600498DEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Libraries/Crashlytics-v1.1.1/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+		};
+		F09706851ACA585900498DEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Libraries/Crashlytics-v1.1.1/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F01375A91A4CA18E00C683A8 /* Sources */ = {
@@ -655,6 +718,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -673,6 +741,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -693,6 +766,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -718,6 +793,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -737,6 +814,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -755,6 +837,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
