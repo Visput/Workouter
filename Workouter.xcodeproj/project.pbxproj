@@ -46,6 +46,15 @@
 		F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
 		F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
 		F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
+		F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
+		F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
+		F09706A11ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
+		F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
+		F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
+		F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
+		F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
+		F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
+		F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
 		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
@@ -107,6 +116,9 @@
 		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F09706931ACA599200498DEE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F09706971ACA5AF000498DEE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F097069E1ACA687800498DEE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F0C3424A1A9E4BC800B9D480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -132,7 +144,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */,
+				F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
+				F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
 				F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 				F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F09706941ACA599200498DEE /* Fabric.framework in Frameworks */,
@@ -144,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
+				F09706A11ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
+				F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
+				F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
 				F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F09706961ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
@@ -153,7 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */,
+				F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
+				F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
 				F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
 				F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F09706951ACA599200498DEE /* Fabric.framework in Frameworks */,
@@ -204,6 +225,7 @@
 		F09702DE1ACA4CFD00498DEE /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F097069B1ACA687800498DEE /* Facebook */,
 				F09706861ACA592D00498DEE /* Crashlytics-v1.1.1 */,
 				F09702DF1ACA4CFD00498DEE /* Flurry-v6.2.0 */,
 			);
@@ -234,6 +256,16 @@
 				F09706931ACA599200498DEE /* Fabric.framework */,
 			);
 			path = "Crashlytics-v1.1.1";
+			sourceTree = "<group>";
+		};
+		F097069B1ACA687800498DEE /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */,
+				F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */,
+				F097069E1ACA687800498DEE /* FBSDKShareKit.framework */,
+			);
+			path = Facebook;
 			sourceTree = "<group>";
 		};
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
@@ -722,6 +754,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -745,6 +778,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -768,6 +802,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -795,6 +830,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -818,6 +854,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -841,6 +878,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Crashlytics-v1.1.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

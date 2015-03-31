@@ -52,5 +52,18 @@
 			</dict>
 		</array>
 	</dict>
+	<key>FacebookAppID</key>
+	<string>749410781841253</string>
+	<key>FacebookDisplayName</key>
+	<string>Workouter</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb749410781841253</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
