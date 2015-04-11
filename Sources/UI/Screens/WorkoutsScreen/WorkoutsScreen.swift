@@ -15,7 +15,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     }
     
     private var workoutsView: WorkoutsView {
-        return view as WorkoutsView
+        return view as! WorkoutsView
     }
 
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell") as WorkoutCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell") as! WorkoutCell
         cell.fill(workout: workoutsProvider.workouts[indexPath.row])
         return cell
     }

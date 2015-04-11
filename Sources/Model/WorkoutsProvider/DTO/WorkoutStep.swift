@@ -20,7 +20,7 @@ class WorkoutStep: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObjectForKey("name") as String
+        name = aDecoder.decodeObjectForKey("name") as! String
         duration = aDecoder.decodeIntegerForKey("duration")
         super.init()
     }

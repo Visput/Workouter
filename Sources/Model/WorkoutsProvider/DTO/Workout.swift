@@ -20,8 +20,8 @@ class Workout: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObjectForKey("name") as String
-        steps = aDecoder.decodeObjectForKey("steps") as [WorkoutStep]
+        name = aDecoder.decodeObjectForKey("name") as! String
+        steps = aDecoder.decodeObjectForKey("steps") as! [WorkoutStep]
         super.init()
     }
     

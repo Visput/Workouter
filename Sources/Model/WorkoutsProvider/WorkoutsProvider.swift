@@ -15,7 +15,7 @@ class WorkoutsProvider: NSObject {
     
     private var workoutsFilePath: String = {
         let workoutsFileName = "Workouts"
-        let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         return documentsDir.stringByAppendingPathComponent(workoutsFileName)
     }()
     

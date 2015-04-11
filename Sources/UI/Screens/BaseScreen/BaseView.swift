@@ -15,7 +15,7 @@ class BaseView: UIView {
         case Standard
         case Edit
         
-        func title() -> NSString {
+        func title() -> String {
             switch self {
             case .Standard:
                 return NSLocalizedString("Edit", comment: "")
