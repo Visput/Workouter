@@ -5,6 +5,3 @@ More details are available at [Software Requirements Specification.pages](https:
 
 ## System Requirements
 The application is independent and totally self-contained. This is mobile application which doesn’t require internet connection. It’s designed for iPhone 4 and later with iOS 8.0 and later.
-
-## App Scheme
-<img src="https://raw.githubusercontent.com/Visput/Workouter/master/Docs/v1/ui/app_scheme.png?token=AG9sE31lw-kJnJA0afKt3_WhIQa0zIssks5VI0oEwA%3D%3D"/>
