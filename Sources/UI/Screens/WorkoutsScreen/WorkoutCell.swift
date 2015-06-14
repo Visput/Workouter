@@ -12,7 +12,7 @@ class WorkoutCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     
-    func fill(#workout: Workout) {
+    func fillWithWorkout(workout: Workout) {
         nameLabel.text = workout.name
     }
 }

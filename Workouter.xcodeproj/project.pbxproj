@@ -502,7 +502,8 @@
 		F01375A51A4CA18E00C683A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = visput;
 				TargetAttributes = {
 					F01375AC1A4CA18E00C683A8 = {
@@ -704,6 +705,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -778,6 +780,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -801,6 +804,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = Workouter;
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -828,6 +832,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
@@ -851,6 +856,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
@@ -874,6 +880,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = "Workouter copy";
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -897,6 +904,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = "Workouter copy";
 				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";

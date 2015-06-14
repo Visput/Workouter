@@ -33,7 +33,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell") as! WorkoutCell
-        cell.fill(workout: workoutsProvider.workouts[indexPath.row])
+        cell.fillWithWorkout(workoutsProvider.workouts[indexPath.row])
         return cell
     }
     
@@ -57,7 +57,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        workoutsProvider.moveWorkout(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     @IBAction private func onModeButtonPressed(sender: UIBarButtonItem) {

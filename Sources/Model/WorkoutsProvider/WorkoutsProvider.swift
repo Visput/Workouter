@@ -15,16 +15,16 @@ class WorkoutsProvider: NSObject {
     
     private var workoutsFilePath: String = {
         let workoutsFileName = "Workouts"
-        let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         return documentsDir.stringByAppendingPathComponent(workoutsFileName)
     }()
     
     func loadWorkouts() {
         workouts = NSKeyedUnarchiver.unarchiveObjectWithFile(workoutsFilePath) as? [Workout]
         if workouts == nil {
-            var step1 = WorkoutStep(name: "Step 1", duration: 60)
-            var step2 = WorkoutStep(name: "Step 2", duration: 120)
-            var steps = [step1, step2];
+            let step1 = WorkoutStep(name: "Step 1", duration: 60)
+            let step2 = WorkoutStep(name: "Step 2", duration: 120)
+            let steps = [step1, step2];
             workouts = []
             workouts.append(Workout(name: "Workout 1", steps: steps))
             workouts.append(Workout(name: "Workout 2", steps: steps))
@@ -36,7 +36,7 @@ class WorkoutsProvider: NSObject {
     }
     
     func deleteWorkout(workout: Workout) {
-        if let index = find(workouts, workout) {
+        if let index = workouts.indexOf(workout) {
             deleteWorkoutAtIndex(index)
         }
     }
@@ -46,7 +46,7 @@ class WorkoutsProvider: NSObject {
         commitChanges()
     }
     
-    func moveWorkout(#fromIndex: Int, toIndex: Int) {
+    func moveWorkoutFromIndex(fromIndex: Int, toIndex: Int) {
         let workoutToMove = workouts[fromIndex]
         workouts.removeAtIndex(fromIndex)
         workouts.insert(workoutToMove, atIndex: toIndex)

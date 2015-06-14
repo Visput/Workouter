@@ -12,11 +12,11 @@ class WorkoutPlayer: NSObject {
     
     private(set) var workout: Workout?
    
-    func start(#workout: Workout) {
+    func startWorkout(workout: Workout) {
         self.workout = workout
     }
     
-    func stop() {
+    func stopWorkout() {
         workout = nil
     }
 }
