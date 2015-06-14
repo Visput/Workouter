@@ -62,6 +62,10 @@
 	<string>Workouter</string>
 	<key>FlurryKey</key>
 	<string>VM4SSBGSTNJCCWQRZS5D</string>
+	<key>ParseAppID</key>
+	<string>UZ2Zky85TrQvtfEmdnmua6l56jJXqHw6IbbJ7mZY</string>
+	<key>ParseClientID</key>
+	<string>iBmIpfbTytK73vIfjVWFAwZYzNarnLA41b0lUSCV</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
