@@ -13,8 +13,6 @@
 		F02857C71B2E001D00A85C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
 		F02857CE1B2E004800A85C19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
 		F02857CF1B2E004800A85C19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
-		F02857D01B2E004800A85C19 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
-		F02857D11B2E004800A85C19 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
 		F02857D21B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
 		F02857D31B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
 		F02857D41B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
@@ -23,6 +21,8 @@
 		F02857D71B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
 		F02857D81B2E004800A85C19 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
 		F02857D91B2E004800A85C19 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
+		F02CAB4D1B4B859800F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
+		F02CAB4E1B4B85AA00F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
 		F08ED6051ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
 		F08ED6061ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
 		F08ED6081ABE88BA005BEBB3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
@@ -153,7 +153,7 @@
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
 		F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
-		F09702D81ACA48E700498DEE /* Workouter copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workouter copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09702D81ACA48E700498DEE /* Workouter QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workouter QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09702DA1ACA492100498DEE /* Workouter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter-Info.plist"; sourceTree = "<group>"; };
 		F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter QA-Info.plist"; sourceTree = "<group>"; };
 		F09702E11ACA4CFD00498DEE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 				F0A222DB1B2DFF78000A7704 /* AudioToolbox.framework in Frameworks */,
 				F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
-				F02857D01B2E004800A85C19 /* Parse.framework in Frameworks */,
 				F09706AA1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 				F02857D61B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
@@ -225,6 +224,7 @@
 				F02857D41B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */,
 				F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F02857D21B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */,
+				F02CAB4E1B4B85AA00F28D72 /* Parse.framework in Frameworks */,
 				F09706941ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +262,6 @@
 				F0A222B61B2DFDB3000A7704 /* AudioToolbox.framework in Frameworks */,
 				F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
 				F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
-				F02857D11B2E004800A85C19 /* Parse.framework in Frameworks */,
 				F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 				F02857D71B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
@@ -270,6 +269,7 @@
 				F02857D51B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */,
 				F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F02857D31B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */,
+				F02CAB4D1B4B859800F28D72 /* Parse.framework in Frameworks */,
 				F09706951ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +294,7 @@
 			children = (
 				F01375AD1A4CA18E00C683A8 /* Workouter.app */,
 				F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */,
-				F09702D81ACA48E700498DEE /* Workouter copy.app */,
+				F09702D81ACA48E700498DEE /* Workouter QA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -601,7 +601,7 @@
 			);
 			name = "Workouter QA";
 			productName = SportTime;
-			productReference = F09702D81ACA48E700498DEE /* Workouter copy.app */;
+			productReference = F09702D81ACA48E700498DEE /* Workouter QA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -875,7 +875,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Fabric",
@@ -891,7 +891,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = Workouter;
-				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Debug;
@@ -900,7 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Fabric",
@@ -916,7 +916,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = Workouter;
-				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Release;
@@ -977,7 +977,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Fabric",
@@ -992,8 +992,8 @@
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
-				PRODUCT_NAME = "Workouter copy";
-				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				PRODUCT_NAME = "Workouter QA";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Debug;
@@ -1002,7 +1002,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Popko (56SA7L89YB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/Fabric",
@@ -1017,8 +1017,8 @@
 					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
-				PRODUCT_NAME = "Workouter copy";
-				PROVISIONING_PROFILE = "c23d2a77-6602-42bd-8b45-3935b3f9dadf";
+				PRODUCT_NAME = "Workouter QA";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Release;
