@@ -7,29 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F02857C31B2E000600A85C19 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C21B2E000600A85C19 /* libz.dylib */; };
-		F02857C51B2E000C00A85C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
 		F02857C61B2E001900A85C19 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C21B2E000600A85C19 /* libz.dylib */; };
 		F02857C71B2E001D00A85C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
-		F02857CE1B2E004800A85C19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
 		F02857CF1B2E004800A85C19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
-		F02857D21B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
 		F02857D31B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
-		F02857D41B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
 		F02857D51B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
-		F02857D61B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
 		F02857D71B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
-		F02857D81B2E004800A85C19 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
 		F02857D91B2E004800A85C19 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
 		F02CAB4D1B4B859800F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
-		F02CAB4E1B4B85AA00F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
-		F08ED6051ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
+		F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
+		F02CAB521B4B871E00F28D72 /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
+		F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
+		F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342601A9E4BC800B9D480 /* BaseScreen.swift */; };
+		F02CAB551B4B871E00F28D72 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */; };
+		F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
+		F02CAB571B4B871E00F28D72 /* WorkoutPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342561A9E4BC800B9D480 /* WorkoutPlayer.swift */; };
+		F02CAB581B4B871E00F28D72 /* NewStepScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342621A9E4BC800B9D480 /* NewStepScreen.swift */; };
+		F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342661A9E4BC800B9D480 /* StepTemplatesScreen.swift */; };
+		F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342681A9E4BC800B9D480 /* WorkoutDetailsScreen.swift */; };
+		F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
+		F02CAB5C1B4B871E00F28D72 /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425B1A9E4BC800B9D480 /* WorkoutsProvider.swift */; };
+		F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342591A9E4BC800B9D480 /* Workout.swift */; };
+		F02CAB5E1B4B871E00F28D72 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
+		F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
+		F02CAB601B4B871E00F28D72 /* NewWorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342641A9E4BC800B9D480 /* NewWorkoutScreen.swift */; };
+		F02CAB621B4B871E00F28D72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
+		F02CAB631B4B871E00F28D72 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
+		F02CAB641B4B871E00F28D72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C21B2E000600A85C19 /* libz.dylib */; };
+		F02CAB651B4B871E00F28D72 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
+		F02CAB661B4B871E00F28D72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C31B2DFDF3000A7704 /* StoreKit.framework */; };
+		F02CAB671B4B871E00F28D72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C11B2DFDEF000A7704 /* Security.framework */; };
+		F02CAB681B4B871E00F28D72 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
+		F02CAB691B4B871E00F28D72 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BF1B2DFDE5000A7704 /* QuartzCore.framework */; };
+		F02CAB6A1B4B871E00F28D72 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BD1B2DFDDB000A7704 /* MobileCoreServices.framework */; };
+		F02CAB6B1B4B871E00F28D72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BB1B2DFDCF000A7704 /* CoreGraphics.framework */; };
+		F02CAB6C1B4B871E00F28D72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B91B2DFDCA000A7704 /* CoreLocation.framework */; };
+		F02CAB6D1B4B871E00F28D72 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */; };
+		F02CAB6E1B4B871E00F28D72 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */; };
+		F02CAB6F1B4B871E00F28D72 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
+		F02CAB701B4B871E00F28D72 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
+		F02CAB711B4B871E00F28D72 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
+		F02CAB721B4B871E00F28D72 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
+		F02CAB731B4B871E00F28D72 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
+		F02CAB741B4B871E00F28D72 /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
+		F02CAB751B4B871E00F28D72 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
+		F02CAB761B4B871E00F28D72 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
+		F02CAB771B4B871E00F28D72 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
+		F02CAB781B4B871E00F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
+		F02CAB791B4B871E00F28D72 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
+		F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */; };
+		F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
+		F02CAB7D1B4B871E00F28D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
+		F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
+		F02CAB7F1B4B871E00F28D72 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F08ED6061ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
-		F08ED6081ABE88BA005BEBB3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
 		F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
-		F08ED60B1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
 		F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
-		F09702BB1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
 		F09702BC1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */; };
 		F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
 		F09702C01ACA48E700498DEE /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
@@ -51,30 +84,21 @@
 		F09702D21ACA48E700498DEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F09702D31ACA48E700498DEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
 		F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
-		F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
 		F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
 		F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
-		F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
 		F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
-		F09706941ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
 		F09706951ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
 		F09706961ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
-		F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
 		F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
 		F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
-		F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
 		F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
 		F09706A11ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
-		F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
 		F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
 		F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
-		F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
 		F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
 		F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
-		F09706AA1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
 		F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
 		F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
-		F09706AD1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F09706AE1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F0A222B61B2DFDB3000A7704 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */; };
@@ -85,61 +109,26 @@
 		F0A222C01B2DFDE5000A7704 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BF1B2DFDE5000A7704 /* QuartzCore.framework */; };
 		F0A222C21B2DFDEF000A7704 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C11B2DFDEF000A7704 /* Security.framework */; };
 		F0A222C41B2DFDF3000A7704 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C31B2DFDF3000A7704 /* StoreKit.framework */; };
-		F0A222DB1B2DFF78000A7704 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */; };
-		F0A222DC1B2DFF85000A7704 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */; };
-		F0A222DD1B2DFF8F000A7704 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BB1B2DFDCF000A7704 /* CoreGraphics.framework */; };
-		F0A222DE1B2DFF94000A7704 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B91B2DFDCA000A7704 /* CoreLocation.framework */; };
-		F0A222DF1B2DFFAB000A7704 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BD1B2DFDDB000A7704 /* MobileCoreServices.framework */; };
-		F0A222E01B2DFFB5000A7704 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BF1B2DFDE5000A7704 /* QuartzCore.framework */; };
-		F0A222E11B2DFFBF000A7704 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C11B2DFDEF000A7704 /* Security.framework */; };
-		F0A222E21B2DFFC4000A7704 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C31B2DFDF3000A7704 /* StoreKit.framework */; };
-		F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
-		F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
 		F0C342741A9E4BC800B9D480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */; };
-		F0C342751A9E4BC800B9D480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */; };
 		F0C342761A9E4BC800B9D480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */; };
-		F0C342771A9E4BC800B9D480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
 		F0C342781A9E4BC800B9D480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
-		F0C342791A9E4BC800B9D480 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
 		F0C3427A1A9E4BC800B9D480 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
-		F0C3427B1A9E4BC800B9D480 /* WorkoutPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342561A9E4BC800B9D480 /* WorkoutPlayer.swift */; };
 		F0C3427C1A9E4BC800B9D480 /* WorkoutPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342561A9E4BC800B9D480 /* WorkoutPlayer.swift */; };
-		F0C3427D1A9E4BC800B9D480 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342591A9E4BC800B9D480 /* Workout.swift */; };
 		F0C3427E1A9E4BC800B9D480 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342591A9E4BC800B9D480 /* Workout.swift */; };
-		F0C3427F1A9E4BC800B9D480 /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
 		F0C342801A9E4BC800B9D480 /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
-		F0C342811A9E4BC800B9D480 /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425B1A9E4BC800B9D480 /* WorkoutsProvider.swift */; };
 		F0C342821A9E4BC800B9D480 /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425B1A9E4BC800B9D480 /* WorkoutsProvider.swift */; };
-		F0C342831A9E4BC800B9D480 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342601A9E4BC800B9D480 /* BaseScreen.swift */; };
 		F0C342841A9E4BC800B9D480 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342601A9E4BC800B9D480 /* BaseScreen.swift */; };
-		F0C342851A9E4BC800B9D480 /* NewStepScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342621A9E4BC800B9D480 /* NewStepScreen.swift */; };
 		F0C342861A9E4BC800B9D480 /* NewStepScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342621A9E4BC800B9D480 /* NewStepScreen.swift */; };
-		F0C342871A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342641A9E4BC800B9D480 /* NewWorkoutScreen.swift */; };
 		F0C342881A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342641A9E4BC800B9D480 /* NewWorkoutScreen.swift */; };
-		F0C342891A9E4BC800B9D480 /* StepTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342661A9E4BC800B9D480 /* StepTemplatesScreen.swift */; };
 		F0C3428A1A9E4BC800B9D480 /* StepTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342661A9E4BC800B9D480 /* StepTemplatesScreen.swift */; };
-		F0C3428B1A9E4BC800B9D480 /* WorkoutDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342681A9E4BC800B9D480 /* WorkoutDetailsScreen.swift */; };
 		F0C3428C1A9E4BC800B9D480 /* WorkoutDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342681A9E4BC800B9D480 /* WorkoutDetailsScreen.swift */; };
-		F0C3428D1A9E4BC800B9D480 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */; };
 		F0C3428E1A9E4BC800B9D480 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426A1A9E4BC800B9D480 /* WorkoutCell.swift */; };
-		F0C3428F1A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
 		F0C342901A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
 		F0C342941A9E4BC800B9D480 /* WorkouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426E1A9E4BC800B9D480 /* WorkouterTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F01375C31A4CA18E00C683A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F01375A51A4CA18E00C683A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F01375AC1A4CA18E00C683A8;
-			remoteInfo = SportTime;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		F01375AD1A4CA18E00C683A8 /* Workouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02857C21B2E000600A85C19 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F02857C41B2E000C00A85C19 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -149,6 +138,7 @@
 		F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		F02857CD1B2E004800A85C19 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		F02CAB841B4B871E00F28D72 /* Workouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
@@ -198,37 +188,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F01375AA1A4CA18E00C683A8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F02857C51B2E000C00A85C19 /* libsqlite3.dylib in Frameworks */,
-				F02857CE1B2E004800A85C19 /* Bolts.framework in Frameworks */,
-				F02857C31B2E000600A85C19 /* libz.dylib in Frameworks */,
-				F09706811ACA511700498DEE /* SystemConfiguration.framework in Frameworks */,
-				F0A222E21B2DFFC4000A7704 /* StoreKit.framework in Frameworks */,
-				F0A222E11B2DFFBF000A7704 /* Security.framework in Frameworks */,
-				F02857D81B2E004800A85C19 /* ParseUI.framework in Frameworks */,
-				F0A222E01B2DFFB5000A7704 /* QuartzCore.framework in Frameworks */,
-				F0A222DF1B2DFFAB000A7704 /* MobileCoreServices.framework in Frameworks */,
-				F0A222DE1B2DFF94000A7704 /* CoreLocation.framework in Frameworks */,
-				F0A222DD1B2DFF8F000A7704 /* CoreGraphics.framework in Frameworks */,
-				F0A222DC1B2DFF85000A7704 /* CFNetwork.framework in Frameworks */,
-				F0A222DB1B2DFF78000A7704 /* AudioToolbox.framework in Frameworks */,
-				F097069F1ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
-				F09706A21ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
-				F09706AA1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
-				F02857D61B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				F09706A51ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
-				F09703D91ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
-				F02857D41B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */,
-				F09706981ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
-				F02857D21B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */,
-				F02CAB4E1B4B85AA00F28D72 /* Parse.framework in Frameworks */,
-				F09706941ACA599200498DEE /* Fabric.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F01375BF1A4CA18E00C683A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +199,37 @@
 				F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
 				F09706961ACA599200498DEE /* Fabric.framework in Frameworks */,
 				F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F02CAB611B4B871E00F28D72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02CAB621B4B871E00F28D72 /* libsqlite3.dylib in Frameworks */,
+				F02CAB631B4B871E00F28D72 /* Bolts.framework in Frameworks */,
+				F02CAB641B4B871E00F28D72 /* libz.dylib in Frameworks */,
+				F02CAB651B4B871E00F28D72 /* SystemConfiguration.framework in Frameworks */,
+				F02CAB661B4B871E00F28D72 /* StoreKit.framework in Frameworks */,
+				F02CAB671B4B871E00F28D72 /* Security.framework in Frameworks */,
+				F02CAB681B4B871E00F28D72 /* ParseUI.framework in Frameworks */,
+				F02CAB691B4B871E00F28D72 /* QuartzCore.framework in Frameworks */,
+				F02CAB6A1B4B871E00F28D72 /* MobileCoreServices.framework in Frameworks */,
+				F02CAB6B1B4B871E00F28D72 /* CoreGraphics.framework in Frameworks */,
+				F02CAB6C1B4B871E00F28D72 /* CoreLocation.framework in Frameworks */,
+				F02CAB6D1B4B871E00F28D72 /* CFNetwork.framework in Frameworks */,
+				F02CAB6E1B4B871E00F28D72 /* AudioToolbox.framework in Frameworks */,
+				F02CAB6F1B4B871E00F28D72 /* FBSDKCoreKit.framework in Frameworks */,
+				F02CAB701B4B871E00F28D72 /* FBSDKLoginKit.framework in Frameworks */,
+				F02CAB711B4B871E00F28D72 /* TwitterKit.framework in Frameworks */,
+				F02CAB721B4B871E00F28D72 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				F02CAB731B4B871E00F28D72 /* FBSDKShareKit.framework in Frameworks */,
+				F02CAB741B4B871E00F28D72 /* libFlurry_6.2.0.a in Frameworks */,
+				F02CAB751B4B871E00F28D72 /* ParseFacebookUtils.framework in Frameworks */,
+				F02CAB761B4B871E00F28D72 /* Crashlytics.framework in Frameworks */,
+				F02CAB771B4B871E00F28D72 /* ParseCrashReporting.framework in Frameworks */,
+				F02CAB781B4B871E00F28D72 /* Parse.framework in Frameworks */,
+				F02CAB791B4B871E00F28D72 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,9 +282,9 @@
 		F01375AE1A4CA18E00C683A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F01375AD1A4CA18E00C683A8 /* Workouter.app */,
 				F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */,
 				F09702D81ACA48E700498DEE /* Workouter QA.app */,
+				F02CAB841B4B871E00F28D72 /* Workouter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -550,24 +540,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F01375AC1A4CA18E00C683A8 /* Workouter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "Workouter" */;
-			buildPhases = (
-				F01375A91A4CA18E00C683A8 /* Sources */,
-				F01375AA1A4CA18E00C683A8 /* Frameworks */,
-				F01375AB1A4CA18E00C683A8 /* Resources */,
-				F09706841ACA584600498DEE /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Workouter;
-			productName = SportTime;
-			productReference = F01375AD1A4CA18E00C683A8 /* Workouter.app */;
-			productType = "com.apple.product-type.application";
-		};
 		F01375C11A4CA18E00C683A8 /* WorkouterTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "WorkouterTests" */;
@@ -579,12 +551,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				F01375C41A4CA18E00C683A8 /* PBXTargetDependency */,
 			);
 			name = WorkouterTests;
 			productName = SportTimeTests;
 			productReference = F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F02CAB4F1B4B871E00F28D72 /* Workouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F02CAB811B4B871E00F28D72 /* Build configuration list for PBXNativeTarget "Workouter" */;
+			buildPhases = (
+				F02CAB501B4B871E00F28D72 /* Sources */,
+				F02CAB611B4B871E00F28D72 /* Frameworks */,
+				F02CAB7A1B4B871E00F28D72 /* Resources */,
+				F02CAB801B4B871E00F28D72 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Workouter;
+			productName = SportTime;
+			productReference = F02CAB841B4B871E00F28D72 /* Workouter.app */;
+			productType = "com.apple.product-type.application";
 		};
 		F09702BD1ACA48E700498DEE /* Workouter QA */ = {
 			isa = PBXNativeTarget;
@@ -614,9 +603,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = visput;
 				TargetAttributes = {
-					F01375AC1A4CA18E00C683A8 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
 					F01375C11A4CA18E00C683A8 = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = F01375AC1A4CA18E00C683A8;
@@ -636,7 +622,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F01375AC1A4CA18E00C683A8 /* Workouter */,
+				F02CAB4F1B4B871E00F28D72 /* Workouter */,
 				F09702BD1ACA48E700498DEE /* Workouter QA */,
 				F01375C11A4CA18E00C683A8 /* WorkouterTests */,
 			);
@@ -644,18 +630,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F01375AB1A4CA18E00C683A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0C342751A9E4BC800B9D480 /* LaunchScreen.xib in Resources */,
-				F0C3426F1A9E4BC800B9D480 /* Images.xcassets in Resources */,
-				F0C342771A9E4BC800B9D480 /* Main.storyboard in Resources */,
-				F08ED60B1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
-				F09706AD1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F01375C01A4CA18E00C683A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -665,6 +639,18 @@
 				F0C342781A9E4BC800B9D480 /* Main.storyboard in Resources */,
 				F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
 				F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F02CAB7A1B4B871E00F28D72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
+				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
+				F02CAB7D1B4B871E00F28D72 /* Main.storyboard in Resources */,
+				F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */,
+				F02CAB7F1B4B871E00F28D72 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +669,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F09706841ACA584600498DEE /* ShellScript */ = {
+		F02CAB801B4B871E00F28D72 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -712,29 +698,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F01375A91A4CA18E00C683A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0C342791A9E4BC800B9D480 /* ModelProvider.swift in Sources */,
-				F0C3427F1A9E4BC800B9D480 /* WorkoutStep.swift in Sources */,
-				F0C3428F1A9E4BC800B9D480 /* WorkoutsScreen.swift in Sources */,
-				F0C342831A9E4BC800B9D480 /* BaseScreen.swift in Sources */,
-				F0C3428D1A9E4BC800B9D480 /* WorkoutCell.swift in Sources */,
-				F09702BB1ACA42A300498DEE /* AnalyticsTracker.swift in Sources */,
-				F0C3427B1A9E4BC800B9D480 /* WorkoutPlayer.swift in Sources */,
-				F0C342851A9E4BC800B9D480 /* NewStepScreen.swift in Sources */,
-				F0C342891A9E4BC800B9D480 /* StepTemplatesScreen.swift in Sources */,
-				F0C3428B1A9E4BC800B9D480 /* WorkoutDetailsScreen.swift in Sources */,
-				F0C342731A9E4BC800B9D480 /* AppDelegate.swift in Sources */,
-				F0C342811A9E4BC800B9D480 /* WorkoutsProvider.swift in Sources */,
-				F0C3427D1A9E4BC800B9D480 /* Workout.swift in Sources */,
-				F08ED6081ABE88BA005BEBB3 /* BaseView.swift in Sources */,
-				F08ED6051ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */,
-				F0C342871A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F01375BE1A4CA18E00C683A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -756,6 +719,29 @@
 				F0C342881A9E4BC800B9D480 /* NewWorkoutScreen.swift in Sources */,
 				F0C342941A9E4BC800B9D480 /* WorkouterTests.swift in Sources */,
 				F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F02CAB501B4B871E00F28D72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */,
+				F02CAB521B4B871E00F28D72 /* WorkoutStep.swift in Sources */,
+				F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */,
+				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
+				F02CAB551B4B871E00F28D72 /* WorkoutCell.swift in Sources */,
+				F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */,
+				F02CAB571B4B871E00F28D72 /* WorkoutPlayer.swift in Sources */,
+				F02CAB581B4B871E00F28D72 /* NewStepScreen.swift in Sources */,
+				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
+				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
+				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
+				F02CAB5C1B4B871E00F28D72 /* WorkoutsProvider.swift in Sources */,
+				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
+				F02CAB5E1B4B871E00F28D72 /* BaseView.swift in Sources */,
+				F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */,
+				F02CAB601B4B871E00F28D72 /* NewWorkoutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,14 +769,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F01375C41A4CA18E00C683A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F01375AC1A4CA18E00C683A8 /* Workouter */;
-			targetProxy = F01375C31A4CA18E00C683A8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F01375CA1A4CA18E00C683A8 /* Debug */ = {
@@ -871,56 +849,6 @@
 			};
 			name = Release;
 		};
-		F01375CD1A4CA18E00C683A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
-				);
-				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
-				PRODUCT_NAME = Workouter;
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
-			};
-			name = Debug;
-		};
-		F01375CE1A4CA18E00C683A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
-				);
-				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
-				PRODUCT_NAME = Workouter;
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
-			};
-			name = Release;
-		};
 		F01375D01A4CA18E00C683A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -970,6 +898,56 @@
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
+			};
+			name = Release;
+		};
+		F02CAB821B4B871E00F28D72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Fabric",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
+					"$(PROJECT_DIR)/Libraries/Parse",
+				);
+				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		F02CAB831B4B871E00F28D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Fabric",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Facebook",
+					"$(PROJECT_DIR)/Libraries/Parse",
+				);
+				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1035,20 +1013,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F01375CC1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "Workouter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F01375CD1A4CA18E00C683A8 /* Debug */,
-				F01375CE1A4CA18E00C683A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F01375CF1A4CA18E00C683A8 /* Build configuration list for PBXNativeTarget "WorkouterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F01375D01A4CA18E00C683A8 /* Debug */,
 				F01375D11A4CA18E00C683A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F02CAB811B4B871E00F28D72 /* Build configuration list for PBXNativeTarget "Workouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F02CAB821B4B871E00F28D72 /* Debug */,
+				F02CAB831B4B871E00F28D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
