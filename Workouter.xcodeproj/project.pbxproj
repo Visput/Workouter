@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3F7084CA7E2990CC7746A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		4A88263246FC56EDE7835F17 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		B400FD0169EBB56041A81267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
@@ -100,9 +101,9 @@
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultWorkouts.json; sourceTree = "<group>"; };
 		F09702BA1ACA42A300498DEE /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
-		F09702D81ACA48E700498DEE /* Workouter QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workouter QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09702D81ACA48E700498DEE /* WorkouterQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkouterQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09702DA1ACA492100498DEE /* Workouter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter-Info.plist"; sourceTree = "<group>"; };
-		F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter QA-Info.plist"; sourceTree = "<group>"; };
+		F09702DB1ACA492100498DEE /* WorkouterQA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorkouterQA-Info.plist"; sourceTree = "<group>"; };
 		F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Workouter-Bridging-Header.h"; sourceTree = "<group>"; };
 		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -174,6 +175,7 @@
 				F0A222BA1B2DFDCA000A7704 /* CoreLocation.framework in Frameworks */,
 				F0A222B81B2DFDBE000A7704 /* CFNetwork.framework in Frameworks */,
 				F0A222B61B2DFDB3000A7704 /* AudioToolbox.framework in Frameworks */,
+				3B3F7084CA7E2990CC7746A2 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */,
-				F09702D81ACA48E700498DEE /* Workouter QA.app */,
+				F09702D81ACA48E700498DEE /* WorkouterQA.app */,
 				F02CAB841B4B871E00F28D72 /* Workouter.app */,
 			);
 			name = Products;
@@ -250,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				F09702DA1ACA492100498DEE /* Workouter-Info.plist */,
-				F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */,
+				F09702DB1ACA492100498DEE /* WorkouterQA-Info.plist */,
 				F0C3424A1A9E4BC800B9D480 /* Images.xcassets */,
 				F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */,
 			);
@@ -448,22 +450,25 @@
 			productReference = F02CAB841B4B871E00F28D72 /* Workouter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F09702BD1ACA48E700498DEE /* Workouter QA */ = {
+		F09702BD1ACA48E700498DEE /* WorkouterQA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "Workouter QA" */;
+			buildConfigurationList = F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "WorkouterQA" */;
 			buildPhases = (
+				CDBD309B54236A1178EA6FC9 /* Check Pods Manifest.lock */,
 				F09702BE1ACA48E700498DEE /* Sources */,
 				F09702CF1ACA48E700498DEE /* Frameworks */,
 				F09702D01ACA48E700498DEE /* Resources */,
 				F09706851ACA585900498DEE /* ShellScript */,
+				B5B198CBE2D7A648C5FE2EE5 /* Embed Pods Frameworks */,
+				BA7E9037CED7D607BB7393ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Workouter QA";
+			name = WorkouterQA;
 			productName = SportTime;
-			productReference = F09702D81ACA48E700498DEE /* Workouter QA.app */;
+			productReference = F09702D81ACA48E700498DEE /* WorkouterQA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -496,7 +501,7 @@
 			projectRoot = "";
 			targets = (
 				F02CAB4F1B4B871E00F28D72 /* Workouter */,
-				F09702BD1ACA48E700498DEE /* Workouter QA */,
+				F09702BD1ACA48E700498DEE /* WorkouterQA */,
 				F01375C11A4CA18E00C683A8 /* WorkouterTests */,
 			);
 		};
@@ -627,6 +632,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B198CBE2D7A648C5FE2EE5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7E9037CED7D607BB7393ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDBD309B54236A1178EA6FC9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F02CAB801B4B871E00F28D72 /* ShellScript */ = {
@@ -893,6 +943,7 @@
 		};
 		F09702D61ACA48E700498DEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -900,11 +951,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
+				INFOPLIST_FILE = "Resources/WorkouterQA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
-				PRODUCT_NAME = "Workouter QA";
+				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
@@ -912,6 +963,7 @@
 		};
 		F09702D71ACA48E700498DEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -919,11 +971,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
+				INFOPLIST_FILE = "Resources/WorkouterQA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
-				PRODUCT_NAME = "Workouter QA";
+				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
 			};
@@ -959,7 +1011,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "Workouter QA" */ = {
+		F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "WorkouterQA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F09702D61ACA48E700498DEE /* Debug */,

@@ -1,9 +1,7 @@
 platform :ios, "8.0"
 use_frameworks!
 
-link_with "Workouter"
-link_with "Workouter QA"
-link_with "WorkouterTests"
+link_with ['Workouter', 'WorkouterQA', 'WorkouterTests']
 
 pod 'Parse'
 pod 'Flurry-iOS-SDK/FlurrySDK'
