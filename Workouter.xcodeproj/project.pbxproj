@@ -104,7 +104,6 @@
 		F09702D81ACA48E700498DEE /* WorkouterQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkouterQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09702DA1ACA492100498DEE /* Workouter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter-Info.plist"; sourceTree = "<group>"; };
 		F09702DB1ACA492100498DEE /* WorkouterQA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorkouterQA-Info.plist"; sourceTree = "<group>"; };
-		F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Workouter-Bridging-Header.h"; sourceTree = "<group>"; };
 		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -276,7 +275,6 @@
 				F0C3424E1A9E4BC800B9D480 /* AppDelegate.swift */,
 				F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */,
 				F0C342501A9E4BC800B9D480 /* Main.storyboard */,
-				F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -877,7 +875,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
 			};
 			name = Debug;
@@ -896,7 +894,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workouter.app/Workouter";
 			};
 			name = Release;
@@ -917,7 +915,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -937,7 +935,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -957,7 +955,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -977,7 +975,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
