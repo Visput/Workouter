@@ -14,9 +14,9 @@ class WorkoutsProvider: NSObject {
     private(set) var workouts: [Workout]!
     
     private var workoutsFilePath: String = {
-        let workoutsFileName = "Workouts"
+        let workoutsFileName = "/Workouts"
         let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        return documentsDir.stringByAppendingPathComponent(workoutsFileName)
+        return documentsDir.stringByAppendingString(workoutsFileName)
     }()
     
     func loadWorkouts() {

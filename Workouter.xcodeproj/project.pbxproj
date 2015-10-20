@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A88263246FC56EDE7835F17 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		F02857C61B2E001900A85C19 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C21B2E000600A85C19 /* libz.dylib */; };
 		F02857C71B2E001D00A85C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
-		F02857CF1B2E004800A85C19 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
-		F02857D31B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
-		F02857D51B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
-		F02857D71B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
-		F02857D91B2E004800A85C19 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
-		F02CAB4D1B4B859800F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
 		F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
 		F02CAB521B4B871E00F28D72 /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* WorkoutStep.swift */; };
 		F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */; };
@@ -32,34 +27,20 @@
 		F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
 		F02CAB601B4B871E00F28D72 /* NewWorkoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342641A9E4BC800B9D480 /* NewWorkoutScreen.swift */; };
 		F02CAB621B4B871E00F28D72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C41B2E000C00A85C19 /* libsqlite3.dylib */; };
-		F02CAB631B4B871E00F28D72 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C81B2E004800A85C19 /* Bolts.framework */; };
 		F02CAB641B4B871E00F28D72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C21B2E000600A85C19 /* libz.dylib */; };
 		F02CAB651B4B871E00F28D72 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
 		F02CAB661B4B871E00F28D72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C31B2DFDF3000A7704 /* StoreKit.framework */; };
 		F02CAB671B4B871E00F28D72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222C11B2DFDEF000A7704 /* Security.framework */; };
-		F02CAB681B4B871E00F28D72 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CD1B2E004800A85C19 /* ParseUI.framework */; };
 		F02CAB691B4B871E00F28D72 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BF1B2DFDE5000A7704 /* QuartzCore.framework */; };
 		F02CAB6A1B4B871E00F28D72 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BD1B2DFDDB000A7704 /* MobileCoreServices.framework */; };
 		F02CAB6B1B4B871E00F28D72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222BB1B2DFDCF000A7704 /* CoreGraphics.framework */; };
 		F02CAB6C1B4B871E00F28D72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B91B2DFDCA000A7704 /* CoreLocation.framework */; };
 		F02CAB6D1B4B871E00F28D72 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */; };
 		F02CAB6E1B4B871E00F28D72 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */; };
-		F02CAB6F1B4B871E00F28D72 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
-		F02CAB701B4B871E00F28D72 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
-		F02CAB711B4B871E00F28D72 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
-		F02CAB721B4B871E00F28D72 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */; };
-		F02CAB731B4B871E00F28D72 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
-		F02CAB741B4B871E00F28D72 /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
-		F02CAB751B4B871E00F28D72 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */; };
-		F02CAB761B4B871E00F28D72 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
-		F02CAB771B4B871E00F28D72 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */; };
-		F02CAB781B4B871E00F28D72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02857C91B2E004800A85C19 /* Parse.framework */; };
-		F02CAB791B4B871E00F28D72 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
 		F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424F1A9E4BC800B9D480 /* LaunchScreen.xib */; };
 		F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F02CAB7D1B4B871E00F28D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
 		F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
-		F02CAB7F1B4B871E00F28D72 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F08ED6061ABE83B3005BEBB3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */; };
 		F08ED6091ABE88BA005BEBB3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08ED6071ABE88BA005BEBB3 /* BaseView.swift */; };
 		F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
@@ -84,23 +65,7 @@
 		F09702D21ACA48E700498DEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C3424A1A9E4BC800B9D480 /* Images.xcassets */; };
 		F09702D31ACA48E700498DEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C342501A9E4BC800B9D480 /* Main.storyboard */; };
 		F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */ = {isa = PBXBuildFile; fileRef = F08ED60A1ABEA157005BEBB3 /* DefaultWorkouts.json */; };
-		F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
-		F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */; };
 		F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706801ACA511700498DEE /* SystemConfiguration.framework */; };
-		F09706951ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
-		F09706961ACA599200498DEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706931ACA599200498DEE /* Fabric.framework */; };
-		F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
-		F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706971ACA5AF000498DEE /* Crashlytics.framework */; };
-		F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
-		F09706A11ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */; };
-		F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
-		F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */; };
-		F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
-		F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F097069E1ACA687800498DEE /* FBSDKShareKit.framework */; };
-		F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
-		F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09706A81ACA6FCA00498DEE /* TwitterKit.framework */; };
-		F09706AE1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
-		F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */; };
 		F0A222B61B2DFDB3000A7704 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */; };
 		F0A222B81B2DFDBE000A7704 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */; };
 		F0A222BA1B2DFDCA000A7704 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A222B91B2DFDCA000A7704 /* CoreLocation.framework */; };
@@ -129,15 +94,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E817D60F4699BF98BB274C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02857C21B2E000600A85C19 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F02857C41B2E000C00A85C19 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		F02857C81B2E004800A85C19 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		F02857C91B2E004800A85C19 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		F02857CD1B2E004800A85C19 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		F02CAB841B4B871E00F28D72 /* Workouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		F08ED6071ABE88BA005BEBB3 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -146,17 +108,8 @@
 		F09702D81ACA48E700498DEE /* Workouter QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workouter QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09702DA1ACA492100498DEE /* Workouter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter-Info.plist"; sourceTree = "<group>"; };
 		F09702DB1ACA492100498DEE /* Workouter QA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workouter QA-Info.plist"; sourceTree = "<group>"; };
-		F09702E11ACA4CFD00498DEE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = "<group>"; };
-		F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_6.2.0.a; path = Flurry/libFlurry_6.2.0.a; sourceTree = "<group>"; };
 		F097067F1ACA4FF600498DEE /* Workouter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Workouter-Bridging-Header.h"; sourceTree = "<group>"; };
 		F09706801ACA511700498DEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		F09706931ACA599200498DEE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		F09706971ACA5AF000498DEE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		F097069E1ACA687800498DEE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		F09706A81ACA6FCA00498DEE /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F0A222B91B2DFDCA000A7704 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -192,13 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09703DB1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
-				F09706A11ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
-				F09706A71ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
-				F09706A41ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
-				F097069A1ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
-				F09706961ACA599200498DEE /* Fabric.framework in Frameworks */,
-				F09706AC1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,29 +153,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02CAB621B4B871E00F28D72 /* libsqlite3.dylib in Frameworks */,
-				F02CAB631B4B871E00F28D72 /* Bolts.framework in Frameworks */,
 				F02CAB641B4B871E00F28D72 /* libz.dylib in Frameworks */,
 				F02CAB651B4B871E00F28D72 /* SystemConfiguration.framework in Frameworks */,
 				F02CAB661B4B871E00F28D72 /* StoreKit.framework in Frameworks */,
 				F02CAB671B4B871E00F28D72 /* Security.framework in Frameworks */,
-				F02CAB681B4B871E00F28D72 /* ParseUI.framework in Frameworks */,
 				F02CAB691B4B871E00F28D72 /* QuartzCore.framework in Frameworks */,
 				F02CAB6A1B4B871E00F28D72 /* MobileCoreServices.framework in Frameworks */,
 				F02CAB6B1B4B871E00F28D72 /* CoreGraphics.framework in Frameworks */,
 				F02CAB6C1B4B871E00F28D72 /* CoreLocation.framework in Frameworks */,
 				F02CAB6D1B4B871E00F28D72 /* CFNetwork.framework in Frameworks */,
 				F02CAB6E1B4B871E00F28D72 /* AudioToolbox.framework in Frameworks */,
-				F02CAB6F1B4B871E00F28D72 /* FBSDKCoreKit.framework in Frameworks */,
-				F02CAB701B4B871E00F28D72 /* FBSDKLoginKit.framework in Frameworks */,
-				F02CAB711B4B871E00F28D72 /* TwitterKit.framework in Frameworks */,
-				F02CAB721B4B871E00F28D72 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				F02CAB731B4B871E00F28D72 /* FBSDKShareKit.framework in Frameworks */,
-				F02CAB741B4B871E00F28D72 /* libFlurry_6.2.0.a in Frameworks */,
-				F02CAB751B4B871E00F28D72 /* ParseFacebookUtils.framework in Frameworks */,
-				F02CAB761B4B871E00F28D72 /* Crashlytics.framework in Frameworks */,
-				F02CAB771B4B871E00F28D72 /* ParseCrashReporting.framework in Frameworks */,
-				F02CAB781B4B871E00F28D72 /* Parse.framework in Frameworks */,
-				F02CAB791B4B871E00F28D72 /* Fabric.framework in Frameworks */,
+				4A88263246FC56EDE7835F17 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,44 +172,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02857C71B2E001D00A85C19 /* libsqlite3.dylib in Frameworks */,
-				F02857CF1B2E004800A85C19 /* Bolts.framework in Frameworks */,
 				F02857C61B2E001900A85C19 /* libz.dylib in Frameworks */,
 				F09706821ACA512000498DEE /* SystemConfiguration.framework in Frameworks */,
 				F0A222C41B2DFDF3000A7704 /* StoreKit.framework in Frameworks */,
 				F0A222C21B2DFDEF000A7704 /* Security.framework in Frameworks */,
-				F02857D91B2E004800A85C19 /* ParseUI.framework in Frameworks */,
 				F0A222C01B2DFDE5000A7704 /* QuartzCore.framework in Frameworks */,
 				F0A222BE1B2DFDDB000A7704 /* MobileCoreServices.framework in Frameworks */,
 				F0A222BC1B2DFDCF000A7704 /* CoreGraphics.framework in Frameworks */,
 				F0A222BA1B2DFDCA000A7704 /* CoreLocation.framework in Frameworks */,
 				F0A222B81B2DFDBE000A7704 /* CFNetwork.framework in Frameworks */,
 				F0A222B61B2DFDB3000A7704 /* AudioToolbox.framework in Frameworks */,
-				F09706A01ACA687800498DEE /* FBSDKCoreKit.framework in Frameworks */,
-				F09706A31ACA687800498DEE /* FBSDKLoginKit.framework in Frameworks */,
-				F09706AB1ACA6FCA00498DEE /* TwitterKit.framework in Frameworks */,
-				F02857D71B2E004800A85C19 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				F09706A61ACA687800498DEE /* FBSDKShareKit.framework in Frameworks */,
-				F09703DA1ACA4CFD00498DEE /* libFlurry_6.2.0.a in Frameworks */,
-				F02857D51B2E004800A85C19 /* ParseFacebookUtils.framework in Frameworks */,
-				F09706991ACA5AF000498DEE /* Crashlytics.framework in Frameworks */,
-				F02857D31B2E004800A85C19 /* ParseCrashReporting.framework in Frameworks */,
-				F02CAB4D1B4B859800F28D72 /* Parse.framework in Frameworks */,
-				F09706951ACA599200498DEE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F8017901C7E506BC33E7C6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */,
+				1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F01375A41A4CA18E00C683A8 = {
 			isa = PBXGroup;
 			children = (
 				F0C3424C1A9E4BC800B9D480 /* Sources */,
 				F0C342491A9E4BC800B9D480 /* Resources */,
 				F0C3426C1A9E4BC800B9D480 /* Tests */,
-				F09702DE1ACA4CFD00498DEE /* Libraries */,
 				F09706831ACA543B00498DEE /* Frameworks */,
 				F01375AE1A4CA18E00C683A8 /* Products */,
+				2F8017901C7E506BC33E7C6E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,26 +235,6 @@
 			path = AnalyticsTracker;
 			sourceTree = "<group>";
 		};
-		F09702DE1ACA4CFD00498DEE /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				F0A222A21B2DFCC4000A7704 /* Parse */,
-				F097069B1ACA687800498DEE /* Facebook */,
-				F09706861ACA592D00498DEE /* Fabric */,
-				F09702DF1ACA4CFD00498DEE /* Flurry */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		F09702DF1ACA4CFD00498DEE /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				F09702E11ACA4CFD00498DEE /* Flurry.h */,
-				F09702E21ACA4CFD00498DEE /* libFlurry_6.2.0.a */,
-			);
-			path = Flurry;
-			sourceTree = "<group>";
-		};
 		F09706831ACA543B00498DEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,42 +251,9 @@
 				F0A222B71B2DFDBE000A7704 /* CFNetwork.framework */,
 				F0A222B51B2DFDB3000A7704 /* AudioToolbox.framework */,
 				F09706801ACA511700498DEE /* SystemConfiguration.framework */,
+				E9E817D60F4699BF98BB274C /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F09706861ACA592D00498DEE /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				F09706A81ACA6FCA00498DEE /* TwitterKit.framework */,
-				F09706A91ACA6FCA00498DEE /* TwitterKitResources.bundle */,
-				F09706971ACA5AF000498DEE /* Crashlytics.framework */,
-				F09706931ACA599200498DEE /* Fabric.framework */,
-			);
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		F097069B1ACA687800498DEE /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				F097069C1ACA687800498DEE /* FBSDKCoreKit.framework */,
-				F097069D1ACA687800498DEE /* FBSDKLoginKit.framework */,
-				F097069E1ACA687800498DEE /* FBSDKShareKit.framework */,
-			);
-			path = Facebook;
-			sourceTree = "<group>";
-		};
-		F0A222A21B2DFCC4000A7704 /* Parse */ = {
-			isa = PBXGroup;
-			children = (
-				F02857C81B2E004800A85C19 /* Bolts.framework */,
-				F02857C91B2E004800A85C19 /* Parse.framework */,
-				F02857CA1B2E004800A85C19 /* ParseCrashReporting.framework */,
-				F02857CB1B2E004800A85C19 /* ParseFacebookUtils.framework */,
-				F02857CC1B2E004800A85C19 /* ParseFacebookUtilsV4.framework */,
-				F02857CD1B2E004800A85C19 /* ParseUI.framework */,
-			);
-			path = Parse;
 			sourceTree = "<group>";
 		};
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
@@ -561,10 +438,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F02CAB811B4B871E00F28D72 /* Build configuration list for PBXNativeTarget "Workouter" */;
 			buildPhases = (
+				677285D3AA9E6D587CDD8862 /* Check Pods Manifest.lock */,
 				F02CAB501B4B871E00F28D72 /* Sources */,
 				F02CAB611B4B871E00F28D72 /* Frameworks */,
 				F02CAB7A1B4B871E00F28D72 /* Resources */,
 				F02CAB801B4B871E00F28D72 /* ShellScript */,
+				7216F9BDD797865C30700760 /* Embed Pods Frameworks */,
+				2481CFFA37F19F1502A10E3D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -638,7 +518,6 @@
 				F0C342701A9E4BC800B9D480 /* Images.xcassets in Resources */,
 				F0C342781A9E4BC800B9D480 /* Main.storyboard in Resources */,
 				F08ED60C1ABEA157005BEBB3 /* DefaultWorkouts.json in Resources */,
-				F09706AF1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +529,6 @@
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
 				F02CAB7D1B4B871E00F28D72 /* Main.storyboard in Resources */,
 				F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */,
-				F02CAB7F1B4B871E00F28D72 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,13 +540,57 @@
 				F09702D21ACA48E700498DEE /* Images.xcassets in Resources */,
 				F09702D31ACA48E700498DEE /* Main.storyboard in Resources */,
 				F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */,
-				F09706AE1ACA6FCA00498DEE /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2481CFFA37F19F1502A10E3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		677285D3AA9E6D587CDD8862 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7216F9BDD797865C30700760 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F02CAB801B4B871E00F28D72 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -680,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Libraries/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+			shellScript = "Pods/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
 		};
 		F09706851ACA585900498DEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -693,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Libraries/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
+			shellScript = "Pods/Fabric/Fabric.framework/run 8848a7672c67cf781cf1f20388b3c330c7f0d5be 34855c0cf709ce272884a13e3b1b0fc95ccabe1bd0ed15f3328369ad3f77b1ef";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -854,11 +776,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -866,10 +785,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -882,18 +798,12 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visput.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WorkouterTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Main/Workouter-Bridging-Header.h";
@@ -903,22 +813,17 @@
 		};
 		F02CAB821B4B871E00F28D72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
 				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -928,22 +833,17 @@
 		};
 		F02CAB831B4B871E00F28D72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
 				);
 				INFOPLIST_FILE = "Resources/Workouter-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -958,17 +858,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
 				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = "Workouter QA";
 				PROVISIONING_PROFILE = "";
@@ -983,17 +877,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Libraries/Facebook",
-					"$(PROJECT_DIR)/Libraries/Parse",
 				);
 				INFOPLIST_FILE = "Resources/Workouter QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/Flurry/Flurry",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
 				PRODUCT_NAME = "Workouter QA";
 				PROVISIONING_PROFILE = "";
