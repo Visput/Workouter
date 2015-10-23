@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Workouter
 //
-//  Created by Vladimir Popko on 12/25/14.
+//  Created by Uladzimir Papko on 12/25/14.
 //  Copyright (c) 2014 visput. All rights reserved.
 //
 

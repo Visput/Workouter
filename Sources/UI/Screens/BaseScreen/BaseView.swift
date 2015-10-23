@@ -2,7 +2,7 @@
 //  BaseView.swift
 //  Workouter
 //
-//  Created by Vladimir Popko on 3/22/15.
+//  Created by Uladzimir Papko on 3/22/15.
 //  Copyright (c) 2015 visput. All rights reserved.
 //
 
