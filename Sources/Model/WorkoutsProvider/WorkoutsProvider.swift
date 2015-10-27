@@ -22,26 +22,31 @@ class WorkoutsProvider: NSObject {
     func loadWorkouts() {
         workouts = NSKeyedUnarchiver.unarchiveObjectWithFile(workoutsFilePath) as? [Workout]
         if workouts == nil {
-            let step1 = WorkoutStep(name: "Step 1", duration: 60)
-            let step2 = WorkoutStep(name: "Step 2", duration: 120)
+            let step1 = Step(name: "Step 1", description: "Step 1 description", duration: 60)
+            let step2 = Step(name: "Step 2", description: "Step 2 description",  duration: 120)
             let steps = [step1, step2];
             workouts = []
-            workouts.append(Workout(name: "Workout 1", steps: steps))
-            workouts.append(Workout(name: "Workout 2", steps: steps))
-            workouts.append(Workout(name: "Workout 3", steps: steps))
-            workouts.append(Workout(name: "Workout 4", steps: steps))
-            workouts.append(Workout(name: "Workout 5", steps: steps))
-            workouts.append(Workout(name: "Workout 6", steps: steps))
+            workouts.append(Workout(name: "Workout 1", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 2", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 3", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 4", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 5", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 6", description: "Workout 1 description", steps: steps))
         }
     }
     
-    func deleteWorkout(workout: Workout) {
+    func addWorkout(workout: Workout) {
+        workouts.append(workout)
+        commitChanges()
+    }
+    
+    func removeWorkout(workout: Workout) {
         if let index = workouts.indexOf(workout) {
-            deleteWorkoutAtIndex(index)
+            removeWorkoutAtIndex(index)
         }
     }
     
-    func deleteWorkoutAtIndex(index: Int) {
+    func removeWorkoutAtIndex(index: Int) {
         workouts.removeAtIndex(index)
         commitChanges()
     }

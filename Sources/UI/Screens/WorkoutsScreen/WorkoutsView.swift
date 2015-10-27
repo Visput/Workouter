@@ -10,18 +10,19 @@ import Foundation
 import UIKit
 
 class WorkoutsView: BaseView {
-    @IBOutlet private weak var tableView: UITableView!
+    
+    @IBOutlet private(set) weak var workoutsTableView: UITableView!
     @IBOutlet private weak var modeButtonItem: UIBarButtonItem!
     
     func applyEditMode() {
         mode = .Edit
         modeButtonItem.title = mode.title()
-        tableView.setEditing(true, animated: true)
+        workoutsTableView.setEditing(true, animated: true)
     }
     
     func applyStandardMode() {
         mode = .Standard
         modeButtonItem.title = mode.title()
-        tableView.setEditing(false, animated: true)
+        workoutsTableView.setEditing(false, animated: true)
     }
 }

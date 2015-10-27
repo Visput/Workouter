@@ -6,15 +6,11 @@
 //  Copyright (c) 2015 visput. All rights reserved.
 //
 
-import UIKit
-
-private let modelProvider = ModelProvider()
+import Foundation
 
 class ModelProvider: NSObject {
     
-    class var provider: ModelProvider {
-        return modelProvider
-    }
+    static let provider = ModelProvider()
     
     private(set) lazy var workoutsProvider: WorkoutsProvider = WorkoutsProvider()
 }

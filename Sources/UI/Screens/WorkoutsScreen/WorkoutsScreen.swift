@@ -24,7 +24,13 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier! == "CreateWorkout" {
+            let screen = segue.destinationViewController as! WorkoutEditScreen
+            screen.workoutDidEditAction = {[unowned self] workout in
+                self.workoutsProvider.addWorkout(workout)
+                self.workoutsView.workoutsTableView.reloadData()
+            }
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,7 +38,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell") as! WorkoutCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutCell.className()) as! WorkoutCell
         cell.fillWithWorkout(workoutsProvider.workouts[indexPath.row])
         return cell
     }
@@ -51,7 +57,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            workoutsProvider.deleteWorkoutAtIndex(indexPath.row)
+            workoutsProvider.removeWorkoutAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
         }
     }
@@ -60,7 +66,7 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
         workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
-    @IBAction private func onModeButtonPressed(sender: UIBarButtonItem) {
+    @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
         switch workoutsView.mode {
         case .Standard:
             workoutsView.applyEditMode()

@@ -10,6 +10,7 @@ import Foundation
 import Flurry_iOS_SDK
 
 class AnalyticsTracker {
+    
     class func startSession() {
         let flurryKey = NSBundle.mainBundle().objectForInfoDictionaryKey("FlurryKey") as! String
         Flurry.startSession(flurryKey)
