@@ -14,7 +14,7 @@ class Workout: NSObject, NSCoding {
     let workoutDescription: String
     let steps: [Step]
     
-    init(name: String, description:String, steps: [Step]) {
+    required init(name: String, description:String, steps: [Step]) {
         self.name = name
         self.workoutDescription = description
         self.steps = steps
@@ -36,66 +36,59 @@ class Workout: NSObject, NSCoding {
 }
 
 extension Workout {
-    func workoutBySettingName(name: String) -> Workout {
-        return Workout(name: name, description: workoutDescription, steps: steps)
+    func workoutBySettingName(name: String) -> Self {
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps)
     }
     
-    func workoutBySettingDescription(description: String) -> Workout {
-        return Workout(name: name, description: workoutDescription, steps: steps)
+    func workoutBySettingDescription(description: String) -> Self {
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps)
     }
     
-    func workoutByAddingStep(step: Step) -> Workout {
+    func workoutByAddingStep(step: Step) -> Self {
         var newSteps = steps
         newSteps.append(step);
         
-        return Workout(name: name, description: workoutDescription, steps: newSteps);
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
     }
     
-    func workoutByRemovingStep(step: Step) -> Workout {
-        var workout: Workout? = nil
-        
+    func workoutByRemovingStep(step: Step) -> Self {
         if let index = steps.indexOf(step) {
-            workout = workoutByRemovingStepAtIndex(index)
-        } else {
-            workout = self
+            return workoutByRemovingStepAtIndex(index)
         }
         
-        return workout!
+        return self
     }
     
-    func workoutByRemovingStepAtIndex(index: Int) -> Workout {
+    func workoutByRemovingStepAtIndex(index: Int) -> Self {
         var newSteps = steps
         newSteps.removeAtIndex(index)
         
-        return Workout(name: name, description: workoutDescription, steps: newSteps);
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
     }
     
-    func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Workout {
-        var workout: Workout? = nil
-        
-        var newSteps = steps
+    func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Self {
         if index < steps.count {
+            var newSteps = steps
             newSteps[index] = newStep
-        } else {
-            workout = self
+            return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
         }
     
-        return workout!
+        return self
     }
     
-    func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Workout {
+    func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Self {
         let stepToMove = steps[fromIndex]
         var newSteps = steps
         newSteps.removeAtIndex(fromIndex)
         newSteps.insert(stepToMove, atIndex: toIndex)
 
-        return Workout(name: name, description: workoutDescription, steps: newSteps);
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
     }
 }
 
 extension Workout {
-    class func emptyWorkout() -> Workout {
-        return Workout(name: "", description: "", steps: [])
+    class func emptyWorkout() -> Self {
+        return self.init(name: "", description: "", steps: [])
     }
     
     func isValid() -> Bool {
