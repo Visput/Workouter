@@ -12,5 +12,16 @@ class ModelProvider: NSObject {
     
     static let provider = ModelProvider()
     
-    private(set) lazy var workoutsProvider: WorkoutsProvider = WorkoutsProvider()
+    let screenManager: ScreenManager
+    let workoutsProvider: WorkoutsProvider
+    let workoutPlayer: WorkoutPlayer
+    let shortcutsManager: AppShortcutsManager
+    
+    override init() {
+        screenManager = ScreenManager()
+        workoutsProvider = WorkoutsProvider()
+        workoutPlayer = WorkoutPlayer()
+        shortcutsManager = AppShortcutsManager(screenManager: screenManager, workoutsProvider: workoutsProvider)
+        super.init()
+    }
 }

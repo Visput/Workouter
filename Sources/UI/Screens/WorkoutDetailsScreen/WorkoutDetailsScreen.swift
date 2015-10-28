@@ -10,8 +10,11 @@ import UIKit
 
 class WorkoutDetailsScreen: BaseScreen {
     
+    var workout: Workout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = workout.name
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

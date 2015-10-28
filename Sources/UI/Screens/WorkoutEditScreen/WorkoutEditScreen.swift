@@ -8,13 +8,15 @@
 
 import UIKit
 
-class WorkoutEditScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
+class WorkoutEditScreen: BaseScreen {
     
     var workoutDidEditAction: ((workout: Workout) -> ())?
     
-    var workout = Workout.emptyWorkout() {
+    var workout: Workout! {
         didSet {
-            if isViewLoaded() {
+            if workout == nil {
+                workout = Workout.emptyWorkout()
+            } else if isViewLoaded() {
                 fillViewWithWorkout(workout)
             }
         }
@@ -22,6 +24,10 @@ class WorkoutEditScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource 
     
     private var descriptionController: TextViewController!
     private var needsReloadStepsTableView = true
+    
+    private var screenManager: ScreenManager {
+        return modelProvider.screenManager
+    }
     
     private var workoutEditView: WorkoutEditView {
         return view as! WorkoutEditView
@@ -35,24 +41,11 @@ class WorkoutEditScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "WorkoutDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
-            
-        } else if segue.identifier! == "CreateStep" {
-            let screen = segue.destinationViewController as! StepEditScreen
-            
-            screen.stepDidEditAction = { [unowned self] step in
-                self.workout = self.workout.workoutByAddingStep(step)
-            }
-            
-        } else if segue.identifier! == "EditStep" {
-            let screen = segue.destinationViewController as! StepEditScreen
-            let stepIndex = workoutEditView.stepsTableView.indexPathForSelectedRow!.row
-            screen.step = workout.steps[stepIndex]
-            
-            screen.stepDidEditAction = { [unowned self] step in
-                self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
-            }
         }
     }
+}
+
+extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workout.steps.count
@@ -60,7 +53,9 @@ class WorkoutEditScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StepCell.className()) as! StepCell
-        cell.fillWithStep(workout.steps[indexPath.row])
+        let step = workout.steps[indexPath.row]
+        cell.fillWithStep(step)
+        
         return cell
     }
     
@@ -89,17 +84,34 @@ class WorkoutEditScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource 
         workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let stepIndex = indexPath.row
+        let step = workout.steps[stepIndex]
+        screenManager.pushStepEditScreenFromCurrentScreenWithStep(step) { [unowned self] step in
+            self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
+        }
+    }
+}
+
+extension WorkoutEditScreen {
+    
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         workoutDidEditAction?(workout: workout)
-
-        let screen = self.storyboard!.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className())
-        navigationController?.popViewControllerAnimated(false)
-        navigationController?.pushViewController(screen, animated: true)
+        screenManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout)
     }
+    
+    @IBAction private func addStepButtonDidPress(sender: AnyObject) {
+        screenManager.pushStepEditScreenFromCurrentScreenWithStep(nil) { [unowned self] step in
+            self.workout = self.workout.workoutByAddingStep(step)
+        }
+    }
+}
+
+extension WorkoutEditScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
         workoutEditView.nameField.text = workout.name
-        descriptionController.textView.text = workout.workoutDescription
+        descriptionController.text = workout.workoutDescription
         
         if needsReloadStepsTableView {
             workoutEditView.stepsTableView.reloadData()

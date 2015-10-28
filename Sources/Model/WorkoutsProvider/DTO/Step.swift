@@ -36,6 +36,7 @@ class Step: NSObject, NSCoding {
 }
 
 extension Step {
+    
     func stepBySettingName(name: String) -> Self {
         return self.dynamicType.init(name: name, description: stepDescription, duration: duration)
     }
@@ -50,6 +51,7 @@ extension Step {
 }
 
 extension Step {
+    
     class func emptyStep() -> Self {
         return self.init(name: "", description: "", duration: 0)
     }

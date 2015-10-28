@@ -17,15 +17,22 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var modelProvider: ModelProvider!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Initiate third-party frameworks
+        // Initiate third-party frameworks.
         AnalyticsTracker.startSession()
         Fabric.with([Crashlytics(), Twitter()])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         Parse.enableLocalDatastore()
         Parse.setApplicationId(NSBundle.mainBundle().objectForInfoDictionaryKey("ParseAppID") as! String,
                      clientKey:NSBundle.mainBundle().objectForInfoDictionaryKey("ParseClientID") as! String);
+        
+        // Initalize model.
+        modelProvider = ModelProvider.provider
+        modelProvider.screenManager.window = window!
+        modelProvider.workoutsProvider.loadWorkouts()
+        modelProvider.shortcutsManager.updateShortcuts()
         
         return true
     }
@@ -52,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
+        let handled = modelProvider.shortcutsManager.performActionForShortcutItem(shortcutItem)
+        completionHandler(handled)
     }
 }
 

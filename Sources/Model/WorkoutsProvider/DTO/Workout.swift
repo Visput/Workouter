@@ -36,6 +36,7 @@ class Workout: NSObject, NSCoding {
 }
 
 extension Workout {
+    
     func workoutBySettingName(name: String) -> Self {
         return self.dynamicType.init(name: name, description: workoutDescription, steps: steps)
     }
@@ -69,15 +70,10 @@ extension Workout {
     }
     
     func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Self {
-        var workout = self
-
-        if index < steps.count {
-            var newSteps = steps
-            newSteps[index] = newStep
-            workout = self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
-        }
+        var newSteps = steps
+        newSteps[index] = newStep
         
-        return workout
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
     }
     
     func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Self {
@@ -91,6 +87,7 @@ extension Workout {
 }
 
 extension Workout {
+    
     class func emptyWorkout() -> Self {
         return self.init(name: "", description: "", steps: [])
     }

@@ -8,10 +8,14 @@
 
 import UIKit
 
-class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
+class WorkoutsScreen: BaseScreen {
     
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
+    }
+    
+    private var screenManger: ScreenManager {
+        return modelProvider.screenManager
     }
     
     private var workoutsView: WorkoutsView {
@@ -22,16 +26,14 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier! == "CreateWorkout" {
-            let screen = segue.destinationViewController as! WorkoutEditScreen
-            screen.workoutDidEditAction = {[unowned self] workout in
-                self.workoutsProvider.addWorkout(workout)
-                self.workoutsView.workoutsTableView.reloadData()
-            }
-        }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        workoutsView.mode = .Standard
     }
+}
+
+extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workoutsProvider.workouts.count
@@ -39,7 +41,9 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutCell.className()) as! WorkoutCell
-        cell.fillWithWorkout(workoutsProvider.workouts[indexPath.row])
+        let workout = workoutsProvider.workouts[indexPath.row]
+        cell.fillWithWorkout(workout)
+        
         return cell
     }
     
@@ -66,12 +70,36 @@ class WorkoutsScreen: BaseScreen, UITableViewDelegate, UITableViewDataSource {
         workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let workout = workoutsProvider.workouts[indexPath.row]
+        
+        if workoutsView.mode == .Edit {
+            screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout) { [unowned self] workout in
+                self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
+                self.workoutsView.workoutsTableView.reloadData()
+            }
+            
+        } else {
+            screenManger.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout)
+        }
+    }
+}
+
+extension WorkoutsScreen {
+    
     @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
         switch workoutsView.mode {
         case .Standard:
             workoutsView.applyEditMode()
         case .Edit:
             workoutsView.applyStandardMode()
+        }
+    }
+    
+    @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+        screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil) { [unowned self] workout in
+            self.workoutsProvider.addWorkout(workout)
+            self.workoutsView.workoutsTableView.reloadData()
         }
     }
 }

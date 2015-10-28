@@ -27,11 +27,11 @@ class WorkoutsProvider: NSObject {
             let steps = [step1, step2];
             workouts = []
             workouts.append(Workout(name: "Workout 1", description: "Workout 1 description", steps: steps))
-            workouts.append(Workout(name: "Workout 2", description: "Workout 1 description", steps: steps))
-            workouts.append(Workout(name: "Workout 3", description: "Workout 1 description", steps: steps))
-            workouts.append(Workout(name: "Workout 4", description: "Workout 1 description", steps: steps))
-            workouts.append(Workout(name: "Workout 5", description: "Workout 1 description", steps: steps))
-            workouts.append(Workout(name: "Workout 6", description: "Workout 1 description", steps: steps))
+            workouts.append(Workout(name: "Workout 2", description: "Workout 2 description", steps: steps))
+            workouts.append(Workout(name: "Workout 3", description: "Workout 3 description", steps: steps))
+            workouts.append(Workout(name: "Workout 4", description: "Workout 4 description", steps: steps))
+            workouts.append(Workout(name: "Workout 5", description: "Workout 5 description", steps: steps))
+            workouts.append(Workout(name: "Workout 6", description: "Workout 6 description", steps: steps))
         }
     }
     
@@ -56,6 +56,10 @@ class WorkoutsProvider: NSObject {
         workouts.removeAtIndex(fromIndex)
         workouts.insert(workoutToMove, atIndex: toIndex)
         commitChanges()
+    }
+    
+    func replaceWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
+        workouts[index] = newWorkout
     }
     
     private func commitChanges() {

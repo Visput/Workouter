@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9mt-W1-wGt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9mt-W1-wGt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <prototypes>
@@ -55,7 +55,6 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="nameLabel" destination="H9I-bn-3tl" id="YIh-Ii-qev"/>
-                                            <segue destination="PdQ-wH-eFa" kind="show" identifier="ShowWorkout" id="8ff-ed-ed3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,7 +86,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xEl-tn-Trj">
                             <connections>
-                                <segue destination="5cI-Xv-1fW" kind="show" identifier="CreateWorkout" id="AFy-rb-Ccv"/>
+                                <action selector="newWorkoutButtonDidPress:" destination="vXZ-lx-hvc" id="5sm-5e-gCL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -120,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bs-hn-A1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="-219"/>
+            <point key="canvasLocation" x="-817" y="-259"/>
         </scene>
         <!--Edit Step-->
         <scene sceneID="rCW-qK-t5e">
@@ -213,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvz-3Z-EEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="-219"/>
+            <point key="canvasLocation" x="723" y="-1039"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hKI-wh-yrM">
@@ -255,9 +254,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r78-js-uPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1403" y="-219"/>
+            <point key="canvasLocation" x="1491" y="-1039"/>
         </scene>
-        <!--Edit Workout-->
+        <!--Workout-->
         <scene sceneID="XLc-jd-tcq">
             <objects>
                 <viewController storyboardIdentifier="WorkoutEditScreen" id="5cI-Xv-1fW" customClass="WorkoutEditScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,7 +304,7 @@
                                             </constraints>
                                             <state key="normal" title="Add New Step"/>
                                             <connections>
-                                                <segue destination="DeW-bz-VWC" kind="show" identifier="CreateStep" id="gwg-sS-7B4"/>
+                                                <action selector="addStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="hQc-EA-cte"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -371,7 +370,6 @@
                                             <outlet property="descriptionLabel" destination="WsT-MQ-h1v" id="pkE-NM-fe2"/>
                                             <outlet property="durationLabel" destination="WIK-49-3DY" id="uSd-04-aFJ"/>
                                             <outlet property="nameLabel" destination="JDv-u7-Mud" id="b0a-pk-Lg8"/>
-                                            <segue destination="DeW-bz-VWC" kind="show" identifier="EditStep" id="gzs-6d-6PW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -400,7 +398,7 @@
                             <outlet property="stepsTableView" destination="v9P-x6-9TF" id="pOU-m6-ORc"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Workout" id="S6U-G9-WlT">
+                    <navigationItem key="navigationItem" title="Workout" id="S6U-G9-WlT">
                         <barButtonItem key="backBarButtonItem" title="Back" id="rJB-RT-FqB"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1ZA-Xi-eV7">
                             <connections>
@@ -408,6 +406,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7k-9G-yQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -464,11 +463,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCn-Xw-yEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.5" y="317"/>
+            <point key="canvasLocation" x="373.5" y="-435"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gzs-6d-6PW"/>
         <segue reference="bNs-2E-unv"/>
     </inferredMetricsTieBreakers>
 </document>

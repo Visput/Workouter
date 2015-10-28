@@ -12,15 +12,21 @@ class StepEditScreen: BaseScreen {
     
     var stepDidEditAction: ((step: Step) -> ())?
     
-    var step = Step.emptyStep() {
+    var step: Step! {
         didSet {
-            if isViewLoaded() {
+            if step == nil {
+                step = Step.emptyStep()
+            } else if isViewLoaded() {
                 fillViewWithStep(step)
             }
         }
     }
     
     private var descriptionController: TextViewController!
+    
+    private var screenManger: ScreenManager {
+        return modelProvider.screenManager
+    }
     
     private var stepEditView: StepEditView {
         return view as! StepEditView
@@ -36,15 +42,21 @@ class StepEditScreen: BaseScreen {
             descriptionController = segue.destinationViewController as! TextViewController
         }
     }
+}
+
+extension StepEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         stepDidEditAction?(step: step)
-        navigationController?.popViewControllerAnimated(true)
+        screenManger.popScreenAnimated(true)
     }
+}
+
+extension StepEditScreen {
     
     private func fillViewWithStep(step: Step) {
         stepEditView.nameField.text = step.name
         stepEditView.durationPicker.countDownDuration = step.duration
-        descriptionController.textView.text = step.stepDescription
+        descriptionController.text = step.stepDescription
     }
 }
