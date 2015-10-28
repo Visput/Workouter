@@ -14,7 +14,7 @@ class WorkoutsScreen: BaseScreen {
         return modelProvider.workoutsProvider
     }
     
-    private var screenManger: NavigationManager {
+    private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
     
@@ -25,11 +25,15 @@ class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
+        
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: workoutsView.workoutsTableView)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        workoutsView.mode = .Standard
+        workoutsView.applyStandardMode()
     }
 }
 
@@ -74,14 +78,34 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         let workout = workoutsProvider.workouts[indexPath.row]
         
         if workoutsView.mode == .Edit {
-            screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
+            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
                 self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
                 self.workoutsView.workoutsTableView.reloadData()
             }
             
         } else {
-            screenManger.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout, animated: true)
+            navigationManager.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout, animated: true)
         }
+    }
+}
+
+extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
+
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+
+        guard workoutsView.mode == .Standard,
+            let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
+            let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
+        
+        previewingContext.sourceRect = cell.frame
+        let workout = workoutsProvider.workouts[indexPath.row]
+        let previewScreen = navigationManager.workoutDetailsScreenWithWorkout(workout)
+        
+        return previewScreen
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        navigationManager.pushScreen(viewControllerToCommit, animated: true)
     }
 }
 
@@ -97,7 +121,7 @@ extension WorkoutsScreen {
     }
     
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
+        navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
             self.workoutsProvider.addWorkout(workout)
             self.workoutsView.workoutsTableView.reloadData()
         }

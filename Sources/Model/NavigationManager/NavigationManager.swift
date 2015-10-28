@@ -23,16 +23,23 @@ class NavigationManager: NSObject {
 
 extension NavigationManager {
     
-    func popScreenAnimated(animated: Bool) {
-        navigationController.popViewControllerAnimated(animated)
+    func pushScreen(screen: UIViewController, animated: Bool) {
+        navigationController.pushViewController(screen, animated: animated)
     }
     
-    func popToWorkoutsScreenAnimated(animated: Bool) {
-        navigationController.popToRootViewControllerAnimated(animated)
+    func popScreenAnimated(animated: Bool) {
+        navigationController.popViewControllerAnimated(animated)
     }
 }
 
 extension NavigationManager {
+    
+    func workoutDetailsScreenWithWorkout(workout: Workout) -> WorkoutDetailsScreen {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        screen.workout = workout
+        
+        return screen
+    }
     
     func pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
@@ -61,6 +68,10 @@ extension NavigationManager {
 }
 
 extension NavigationManager {
+    
+    func popToWorkoutsScreenAnimated(animated: Bool) {
+        navigationController.popToRootViewControllerAnimated(animated)
+    }
     
     func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout?, animated: Bool, workoutDidEditAction: ((workout: Workout) -> ())?) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen

@@ -108,8 +108,26 @@
                     <view key="view" contentMode="scaleToFill" id="KbN-b8-1B1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfF-ps-oDP">
+                                <rect key="frame" x="211" y="233" width="177" height="135"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.66666666669999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="3Zr-p0-5vo"/>
+                                    <constraint firstAttribute="width" constant="177" id="Ugs-Xg-all"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tfF-ps-oDP" firstAttribute="centerX" secondItem="KbN-b8-1B1" secondAttribute="centerX" id="yvN-tA-k7T"/>
+                            <constraint firstItem="tfF-ps-oDP" firstAttribute="centerY" secondItem="KbN-b8-1B1" secondAttribute="centerY" id="zLu-rm-hw9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Workout Details" id="Vfg-Wf-s8Z">
                         <barButtonItem key="backBarButtonItem" title="Back" id="J4Q-ec-dHl"/>
