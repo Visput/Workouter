@@ -52,11 +52,13 @@ extension Workout {
     }
     
     func workoutByRemovingStep(step: Step) -> Self {
+        var workout = self
+        
         if let index = steps.indexOf(step) {
-            return workoutByRemovingStepAtIndex(index)
+            workout = workoutByRemovingStepAtIndex(index)
         }
         
-        return self
+        return workout
     }
     
     func workoutByRemovingStepAtIndex(index: Int) -> Self {
@@ -67,13 +69,15 @@ extension Workout {
     }
     
     func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Self {
+        var workout = self
+
         if index < steps.count {
             var newSteps = steps
             newSteps[index] = newStep
-            return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
+            workout = self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps);
         }
-    
-        return self
+        
+        return workout
     }
     
     func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Self {
