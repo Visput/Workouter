@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3B3F7084CA7E2990CC7746A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		4A88263246FC56EDE7835F17 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
-		9F341AC71BDF07A900AEDEB1 /* ClassNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AC61BDF07A900AEDEB1 /* ClassNameExtension.swift */; };
-		9F341AC81BDF07A900AEDEB1 /* ClassNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AC61BDF07A900AEDEB1 /* ClassNameExtension.swift */; };
 		9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */; };
@@ -21,6 +19,8 @@
 		9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */; };
 		9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
 		9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
+		9F37F5731BE056BB00772BB7 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */; };
+		9F37F5741BE0572400772BB7 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */; };
 		9F71076E1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
 		9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
 		B400FD0169EBB56041A81267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
@@ -88,12 +88,12 @@
 /* Begin PBXFileReference section */
 		1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9F341AC61BDF07A900AEDEB1 /* ClassNameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassNameExtension.swift; sourceTree = "<group>"; };
 		9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditScreen.swift; sourceTree = "<group>"; };
 		9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditView.swift; sourceTree = "<group>"; };
 		9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditScreen.swift; sourceTree = "<group>"; };
 		9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
+		9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		E9E817D60F4699BF98BB274C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,14 +189,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9F341AC51BDF077D00AEDEB1 /* ClassNameExtension */ = {
-			isa = PBXGroup;
-			children = (
-				9F341AC61BDF07A900AEDEB1 /* ClassNameExtension.swift */,
-			);
-			path = ClassNameExtension;
-			sourceTree = "<group>";
-		};
 		9F341AC91BDF171D00AEDEB1 /* StepEditScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +206,14 @@
 				9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */,
 			);
 			path = WorkoutEditScreen;
+			sourceTree = "<group>";
+		};
+		9F37F5711BE056BB00772BB7 /* NSObject+ClassName */ = {
+			isa = PBXGroup;
+			children = (
+				9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */,
+			);
+			path = "NSObject+ClassName";
 			sourceTree = "<group>";
 		};
 		9F71076B1BDD63A500D7B647 /* Controllers */ = {
@@ -257,7 +257,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9F341AC51BDF077D00AEDEB1 /* ClassNameExtension */,
+				9F37F5711BE056BB00772BB7 /* NSObject+ClassName */,
 				F09702B91ACA425C00498DEE /* AnalyticsTracker */,
 			);
 			path = Utils;
@@ -759,11 +759,11 @@
 				F02CAB571B4B871E00F28D72 /* WorkoutPlayer.swift in Sources */,
 				9F341AD61BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
+				9F37F5731BE056BB00772BB7 /* NSObject+ClassName.swift in Sources */,
 				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
 				9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
 				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
 				F02CAB5C1B4B871E00F28D72 /* WorkoutsProvider.swift in Sources */,
-				9F341AC71BDF07A900AEDEB1 /* ClassNameExtension.swift in Sources */,
 				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
 				F02CAB5E1B4B871E00F28D72 /* BaseView.swift in Sources */,
 				F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */,
@@ -787,11 +787,11 @@
 				F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
+				9F37F5741BE0572400772BB7 /* NSObject+ClassName.swift in Sources */,
 				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
 				9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
 				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,
 				F09702CA1ACA48E700498DEE /* WorkoutsProvider.swift in Sources */,
-				9F341AC81BDF07A900AEDEB1 /* ClassNameExtension.swift in Sources */,
 				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
 				F09702CC1ACA48E700498DEE /* BaseView.swift in Sources */,
 				F09702CD1ACA48E700498DEE /* WorkoutsView.swift in Sources */,
