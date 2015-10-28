@@ -14,7 +14,7 @@ class AppShortcutsManager: NSObject {
     let workoutsProvider: WorkoutsProvider
     
     private enum ShortcutIdentifier: String {
-        case PlayWorkout
+        case StartWorkout
         case NewWorkout
         case SearchWorkout
         
@@ -44,7 +44,7 @@ class AppShortcutsManager: NSObject {
         guard let shortcutId = ShortcutIdentifier(type: shortcutItem.type) else { return false }
         
         switch (shortcutId) {
-        case .PlayWorkout:
+        case .StartWorkout:
             if workoutsProvider.workouts.count > 0 {
                 let workout = workoutsProvider.workouts[0]
                 navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
@@ -67,11 +67,11 @@ class AppShortcutsManager: NSObject {
     func updateShortcuts() {
         var shortcuts: [UIApplicationShortcutItem] = []
         
-        // Play Workout.
+        // Start Workout.
         if workoutsProvider.workouts.count > 0 {
             let workout = workoutsProvider.workouts[0]
-            let playWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.PlayWorkout.type,
-                localizedTitle: NSLocalizedString("Play Workout", comment: ""))
+            let playWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.StartWorkout.type,
+                localizedTitle: NSLocalizedString("Start Workout", comment: ""))
             playWorkoutShortcut.localizedSubtitle = workout.name
             shortcuts.append(playWorkoutShortcut)
         }

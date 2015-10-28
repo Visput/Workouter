@@ -36,6 +36,8 @@ extension NavigationManager {
     
     func pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        screen.workout = workout
+        
         navigationController.pushViewController(screen, animated: animated)
     }
     
