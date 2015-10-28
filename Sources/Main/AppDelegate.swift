@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         modelProvider.workoutsProvider.loadWorkouts()
         modelProvider.shortcutsManager.updateShortcuts()
         
-        return true
+        return !modelProvider.shortcutsManager.performActionForShortcutInAppLaunchOptions(launchOptions)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
-        let handled = modelProvider.shortcutsManager.performActionForShortcutItem(shortcutItem)
+        let handled = modelProvider.shortcutsManager.performActionForShortcut(shortcutItem)
         completionHandler(handled)
     }
 }

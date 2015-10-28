@@ -296,7 +296,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPI-K9-tWk">
-                                            <rect key="frame" x="203" y="7" width="155" height="30"/>
+                                            <rect key="frame" x="223" y="7" width="155" height="30"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="ER2-j7-0Xf"/>
@@ -311,7 +311,7 @@
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="DPI-K9-tWk" firstAttribute="centerX" secondItem="qOL-s5-Xtd" secondAttribute="centerX" constant="-19.5" id="Bdc-lq-sBK"/>
+                                        <constraint firstItem="DPI-K9-tWk" firstAttribute="centerX" secondItem="qOL-s5-Xtd" secondAttribute="centerX" id="Bdc-lq-sBK"/>
                                         <constraint firstItem="DPI-K9-tWk" firstAttribute="centerY" secondItem="qOL-s5-Xtd" secondAttribute="centerY" id="GKg-0V-5RZ"/>
                                     </constraints>
                                 </view>

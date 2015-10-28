@@ -74,13 +74,13 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         let workout = workoutsProvider.workouts[indexPath.row]
         
         if workoutsView.mode == .Edit {
-            screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout) { [unowned self] workout in
+            screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
                 self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
                 self.workoutsView.workoutsTableView.reloadData()
             }
             
         } else {
-            screenManger.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout)
+            screenManger.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout, animated: true)
         }
     }
 }
@@ -97,7 +97,7 @@ extension WorkoutsScreen {
     }
     
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil) { [unowned self] workout in
+        screenManger.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
             self.workoutsProvider.addWorkout(workout)
             self.workoutsView.workoutsTableView.reloadData()
         }

@@ -34,20 +34,26 @@ class AppShortcutsManager: NSObject {
         super.init()
     }
     
-    func performActionForShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    func performActionForShortcutInAppLaunchOptions(launchOptions: [NSObject: AnyObject]?) -> Bool {
+        guard let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem else { return false }
+        
+        return performActionForShortcut(shortcutItem)
+    }
+    
+    func performActionForShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
         guard let shortcutId = ShortcutIdentifier(type: shortcutItem.type) else { return false }
         
         switch (shortcutId) {
         case .PlayWorkout:
             if workoutsProvider.workouts.count > 0 {
                 let workout = workoutsProvider.workouts[0]
-                screenManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout)
+                screenManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
             } else {
                 screenManager.popToWorkoutsScreenAnimated(false)
             }
             break
         case .NewWorkout:
-            screenManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil) { [unowned self] workout in
+            screenManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: false) { [unowned self] workout in
                 self.workoutsProvider.addWorkout(workout)
             }
             break
