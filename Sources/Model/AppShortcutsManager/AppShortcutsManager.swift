@@ -10,7 +10,7 @@ import UIKit
 
 class AppShortcutsManager: NSObject {
     
-    let screenManager: ScreenManager
+    let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
     
     private enum ShortcutIdentifier: String {
@@ -28,8 +28,8 @@ class AppShortcutsManager: NSObject {
         }
     }
     
-    required init(screenManager: ScreenManager, workoutsProvider: WorkoutsProvider) {
-        self.screenManager = screenManager
+    required init(navigationManager: NavigationManager, workoutsProvider: WorkoutsProvider) {
+        self.navigationManager = navigationManager
         self.workoutsProvider = workoutsProvider
         super.init()
     }
@@ -47,13 +47,13 @@ class AppShortcutsManager: NSObject {
         case .PlayWorkout:
             if workoutsProvider.workouts.count > 0 {
                 let workout = workoutsProvider.workouts[0]
-                screenManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
+                navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
             } else {
-                screenManager.popToWorkoutsScreenAnimated(false)
+                navigationManager.popToWorkoutsScreenAnimated(false)
             }
             break
         case .NewWorkout:
-            screenManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: false) { [unowned self] workout in
+            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: false) { [unowned self] workout in
                 self.workoutsProvider.addWorkout(workout)
             }
             break

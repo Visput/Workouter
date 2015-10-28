@@ -24,8 +24,8 @@ class StepEditScreen: BaseScreen {
     
     private var descriptionController: TextViewController!
     
-    private var screenManger: ScreenManager {
-        return modelProvider.screenManager
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
     }
     
     private var stepEditView: StepEditView {
@@ -48,7 +48,7 @@ extension StepEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         stepDidEditAction?(step: step)
-        screenManger.popScreenAnimated(true)
+        navigationManager.popScreenAnimated(true)
     }
 }
 

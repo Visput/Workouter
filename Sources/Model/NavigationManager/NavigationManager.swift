@@ -1,5 +1,5 @@
 //
-//  ScreenManager.swift
+//  NavigationManagerswift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 10/27/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScreenManager: NSObject {
+class NavigationManager: NSObject {
     
     var window: UIWindow!
     
@@ -21,7 +21,7 @@ class ScreenManager: NSObject {
     }
 }
 
-extension ScreenManager {
+extension NavigationManager {
     
     func popScreenAnimated(animated: Bool) {
         navigationController.popViewControllerAnimated(animated)
@@ -32,7 +32,7 @@ extension ScreenManager {
     }
 }
 
-extension ScreenManager {
+extension NavigationManager {
     
     func pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
@@ -58,7 +58,7 @@ extension ScreenManager {
     }
 }
 
-extension ScreenManager {
+extension NavigationManager {
     
     func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout?, animated: Bool, workoutDidEditAction: ((workout: Workout) -> ())?) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen

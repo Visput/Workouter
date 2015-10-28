@@ -25,8 +25,8 @@ class WorkoutEditScreen: BaseScreen {
     private var descriptionController: TextViewController!
     private var needsReloadStepsTableView = true
     
-    private var screenManager: ScreenManager {
-        return modelProvider.screenManager
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
     }
     
     private var workoutEditView: WorkoutEditView {
@@ -87,7 +87,7 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let stepIndex = indexPath.row
         let step = workout.steps[stepIndex]
-        screenManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { [unowned self] step in
+        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { [unowned self] step in
             self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
         }
     }
@@ -97,11 +97,11 @@ extension WorkoutEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         workoutDidEditAction?(workout: workout)
-        screenManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+        navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
     }
     
     @IBAction private func addStepButtonDidPress(sender: AnyObject) {
-        screenManager.pushStepEditScreenFromCurrentScreenWithStep(nil, animated: true) { [unowned self] step in
+        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(nil, animated: true) { [unowned self] step in
             self.workout = self.workout.workoutByAddingStep(step)
         }
     }

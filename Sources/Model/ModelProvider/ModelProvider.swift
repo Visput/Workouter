@@ -12,16 +12,16 @@ class ModelProvider: NSObject {
     
     static let provider = ModelProvider()
     
-    let screenManager: ScreenManager
+    let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
     let workoutPlayer: WorkoutPlayer
     let shortcutsManager: AppShortcutsManager
     
     override init() {
-        screenManager = ScreenManager()
+        navigationManager = NavigationManager()
         workoutsProvider = WorkoutsProvider()
         workoutPlayer = WorkoutPlayer()
-        shortcutsManager = AppShortcutsManager(screenManager: screenManager, workoutsProvider: workoutsProvider)
+        shortcutsManager = AppShortcutsManager(navigationManager: navigationManager, workoutsProvider: workoutsProvider)
         super.init()
     }
 }

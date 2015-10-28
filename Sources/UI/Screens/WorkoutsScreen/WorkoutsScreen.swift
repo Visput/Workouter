@@ -14,8 +14,8 @@ class WorkoutsScreen: BaseScreen {
         return modelProvider.workoutsProvider
     }
     
-    private var screenManger: ScreenManager {
-        return modelProvider.screenManager
+    private var screenManger: NavigationManager {
+        return modelProvider.navigationManager
     }
     
     private var workoutsView: WorkoutsView {

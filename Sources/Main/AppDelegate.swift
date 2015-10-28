@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initalize model.
         modelProvider = ModelProvider.provider
-        modelProvider.screenManager.window = window!
+        modelProvider.navigationManager.window = window!
         modelProvider.workoutsProvider.loadWorkouts()
         modelProvider.shortcutsManager.updateShortcuts()
         
