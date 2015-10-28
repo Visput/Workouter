@@ -44,18 +44,17 @@ extension ScreenManager {
         screen.workout = workout
         
         var screens = navigationController.viewControllers
-        navigationController.pushViewController(screen, animated: animated)
         screens.removeLast()
         screens.append(screen)
-        navigationController.viewControllers = screens
+        navigationController.setViewControllers(screens, animated: animated)
     }
     
     func pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
-        navigationController.pushViewController(screen, animated: animated)
-        navigationController.viewControllers = [navigationController.viewControllers[0], screen]
+        let screens = [navigationController.viewControllers[0], screen]
+        navigationController.setViewControllers(screens, animated: animated)
     }
 }
 
@@ -66,8 +65,8 @@ extension ScreenManager {
         screen.workout = workout
         screen.workoutDidEditAction = workoutDidEditAction
         
-        navigationController.pushViewController(screen, animated: animated)
-        navigationController.viewControllers = [navigationController.viewControllers[0], screen]
+        let screens = [navigationController.viewControllers[0], screen]
+        navigationController.setViewControllers(screens, animated: animated)
     }
     
     func pushStepEditScreenFromCurrentScreenWithStep(step: Step?, animated: Bool, stepDidEditAction: ((step: Step) -> ())?) {
