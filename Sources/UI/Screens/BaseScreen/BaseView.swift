@@ -11,19 +11,4 @@ import UIKit
 
 class BaseView: UIView {
     
-    enum ViewMode {
-        case Standard
-        case Edit
-        
-        func title() -> String {
-            switch self {
-            case .Standard:
-                return NSLocalizedString("Edit", comment: "")
-            case .Edit:
-                return NSLocalizedString("Done", comment: "")
-            }
-        }
-    }
-    
-    var mode = ViewMode.Standard
 }

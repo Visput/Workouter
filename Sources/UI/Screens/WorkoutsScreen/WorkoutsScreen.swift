@@ -33,7 +33,7 @@ class WorkoutsScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        workoutsView.applyStandardMode()
+        workoutsView.mode = .Standard
     }
 }
 
@@ -112,12 +112,7 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
 extension WorkoutsScreen {
     
     @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
-        switch workoutsView.mode {
-        case .Standard:
-            workoutsView.applyEditMode()
-        case .Edit:
-            workoutsView.applyStandardMode()
-        }
+        workoutsView.switchMode()
     }
     
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
