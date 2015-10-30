@@ -12,6 +12,5 @@ import UIKit
 class StepEditView: BaseView {
     
     @IBOutlet private(set) weak var nameField: UITextField!
-    @IBOutlet private(set) weak var durationPicker: UIDatePicker!
     
 }

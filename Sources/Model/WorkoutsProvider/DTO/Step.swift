@@ -12,9 +12,9 @@ class Step: NSObject, NSCoding {
     
     private(set) var name: String
     private(set) var stepDescription: String
-    private(set) var duration: NSTimeInterval
+    private(set) var duration: Int // Seconds.
     
-    required init(name: String, description: String, duration: NSTimeInterval) {
+    required init(name: String, description: String, duration: Int) {
         self.name = name
         self.stepDescription = description;
         self.duration = duration
@@ -24,14 +24,14 @@ class Step: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
         stepDescription = aDecoder.decodeObjectForKey("description") as! String
-        duration = aDecoder.decodeDoubleForKey("duration")
+        duration = aDecoder.decodeIntegerForKey("duration")
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(stepDescription, forKey: "description")
-        aCoder.encodeDouble(duration, forKey: "duration")
+        aCoder.encodeInteger(duration, forKey: "duration")
     }
 }
 
@@ -45,7 +45,7 @@ extension Step {
         return self.dynamicType.init(name: name, description: stepDescription, duration: duration)
     }
     
-    func stepBySettingDuration(duration: NSTimeInterval) -> Self {
+    func stepBySettingDuration(duration: Int) -> Self {
         return self.dynamicType.init(name: name, description: stepDescription, duration: duration)
     }
 }

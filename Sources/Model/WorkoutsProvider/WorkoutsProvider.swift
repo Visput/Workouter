@@ -60,6 +60,7 @@ class WorkoutsProvider: NSObject {
     
     func replaceWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
         workouts[index] = newWorkout
+        commitChanges()
     }
     
     private func commitChanges() {

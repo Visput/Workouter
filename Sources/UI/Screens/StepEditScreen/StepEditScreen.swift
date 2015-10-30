@@ -23,6 +23,7 @@ class StepEditScreen: BaseScreen {
     }
     
     private var descriptionController: TextViewController!
+    private var durationController: DurationViewController!
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -40,6 +41,8 @@ class StepEditScreen: BaseScreen {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "StepDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
+        } else if segue.identifier! == "StepDuration" {
+            durationController = segue.destinationViewController as! DurationViewController
         }
     }
 }
@@ -47,6 +50,7 @@ class StepEditScreen: BaseScreen {
 extension StepEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
+        step = step.stepBySettingDuration(durationController.duration)
         stepDidEditAction?(step: step)
         navigationManager.popScreenAnimated(true)
     }
@@ -56,7 +60,7 @@ extension StepEditScreen {
     
     private func fillViewWithStep(step: Step) {
         stepEditView.nameField.text = step.name
-        stepEditView.durationPicker.countDownDuration = step.duration
+        durationController.setDuration(step.duration, animated: false)
         descriptionController.text = step.stepDescription
     }
 }
