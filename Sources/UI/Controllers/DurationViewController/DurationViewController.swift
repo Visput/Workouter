@@ -10,12 +10,24 @@ import UIKit
 
 class DurationViewController: UIViewController {
     
-    /// Default value in seconds (2 mins).
-    private(set) var duration = 120
+    private(set) var duration: Int
+    
+    let defaultDuration = 120
+    let minDuration = 1
     
     private let durationComponents = [DurationComponent.hour(), DurationComponent.minute(), DurationComponent.second()]
     
     @IBOutlet private var pickerView: UIPickerView!
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        duration = defaultDuration
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        duration = defaultDuration
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +46,13 @@ class DurationViewController: UIViewController {
         for durationComponent in durationComponents {
             newDuration += durationComponent.valueInSeconds
         }
-        setDuration(newDuration, animated: animated)
+        duration = newDuration
+    }
+    
+    private func setComponentAtIndex(index: Int, withRow row: Int, animated: Bool) {
+        let durationComponent = durationComponents[index]
+        durationComponent.row = row
+        pickerView.selectRow(durationComponent.row, inComponent: index, animated: animated)
     }
     
     private func setComponentsWithDuration(duration: Int, animated: Bool) {
@@ -55,15 +73,11 @@ extension DurationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let item = durationComponents[component]
-        item.row = row
-    
+        setComponentAtIndex(component, withRow: row, animated: false)
         setDurationWithComponents(durationComponents, animated: false)
         
         if duration == 0 {
-            let secondsComponent = durationComponents.last!
-            secondsComponent.setValue(1)
-            setDurationWithComponents(durationComponents, animated: true)
+            setDuration(minDuration, animated: true)
         }
     }
     
