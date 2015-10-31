@@ -11,4 +11,10 @@ import UIKit
 class BaseScreen: UIViewController {
     
     let modelProvider = ModelProvider.provider
+    
+    var isViewDisplayed: Bool {
+        get {
+            return isViewLoaded() && view.window != nil
+        }
+    }
 }

@@ -49,7 +49,7 @@ class AppShortcutsManager: NSObject {
                 let workout = workoutsProvider.workouts[0]
                 navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
             } else {
-                navigationManager.popToWorkoutsScreenAnimated(false)
+                navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
             }
             break
         case .NewWorkout:
@@ -58,6 +58,7 @@ class AppShortcutsManager: NSObject {
             }
             break
         case .SearchWorkout:
+            navigationManager.popToWorkoutsScreenWithSearchActive(true, animated: false)
             break
         }
         

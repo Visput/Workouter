@@ -50,3 +50,11 @@ class WorkoutsView: BaseView {
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
     @IBOutlet private weak var modeButtonItem: UIBarButtonItem!
 }
+
+extension WorkoutsView {
+    
+    func deselectSelectedRow() {
+        guard let indexPath = workoutsTableView.indexPathForSelectedRow else { return }
+        workoutsTableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}

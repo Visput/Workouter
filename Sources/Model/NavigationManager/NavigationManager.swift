@@ -69,8 +69,10 @@ extension NavigationManager {
 
 extension NavigationManager {
     
-    func popToWorkoutsScreenAnimated(animated: Bool) {
+    func popToWorkoutsScreenWithSearchActive(searchActive: Bool, animated: Bool) {
         navigationController.popToRootViewControllerAnimated(animated)
+        let screen = navigationController.viewControllers[0] as! WorkoutsScreen
+        screen.needsActivateSearch = searchActive
     }
     
     func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout?, animated: Bool, workoutDidEditAction: ((workout: Workout) -> ())?) {

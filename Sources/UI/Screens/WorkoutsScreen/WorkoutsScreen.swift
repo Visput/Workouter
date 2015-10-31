@@ -10,6 +10,15 @@ import UIKit
 
 class WorkoutsScreen: BaseScreen {
     
+    var needsActivateSearch: Bool? {
+        didSet {
+            guard isViewDisplayed else { return }
+            activateSearchControllerIfNeeded()
+        }
+    }
+    
+    private var searchController: SearchController!
+    
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
     }
@@ -26,14 +35,19 @@ class WorkoutsScreen: BaseScreen {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
         
-        if traitCollection.forceTouchCapability == .Available {
-            registerForPreviewingWithDelegate(self, sourceView: workoutsView.workoutsTableView)
-        }
+        registerForPreviewing()
+        configureSearchController()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        workoutsView.mode = .Standard
+        workoutsView.deselectSelectedRow()
+        setStandardViewMode()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        activateSearchControllerIfNeeded()
     }
 }
 
@@ -89,6 +103,16 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+    }
+    
+    func didPresentSearchController(searchController: UISearchController) {
+        searchController.searchBar.becomeFirstResponder()
+    }
+}
+
 extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
 
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -107,18 +131,63 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
         navigationManager.pushScreen(viewControllerToCommit, animated: true)
     }
+    
+    private func registerForPreviewing() {
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: workoutsView.workoutsTableView)
+        }
+    }
 }
 
 extension WorkoutsScreen {
     
     @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
-        workoutsView.switchMode()
+        switchViewMode()
     }
-    
+
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
         navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
             self.workoutsProvider.addWorkout(workout)
             self.workoutsView.workoutsTableView.reloadData()
         }
+    }
+}
+
+extension WorkoutsScreen {
+    
+    private func setStandardViewMode() {
+        workoutsView.mode = .Standard
+        searchController.enabled = true
+    }
+    
+    private func switchViewMode() {
+        workoutsView.switchMode()
+        searchController.enabled = !searchController.enabled
+    }
+}
+
+extension WorkoutsScreen {
+    
+    private func configureSearchController() {
+        searchController = SearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        workoutsView.workoutsTableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.sizeToFit()
+        definesPresentationContext = true
+    }
+    
+    private func activateSearchControllerIfNeeded() {
+        guard let activate = needsActivateSearch else { return }
+        
+        if activate {
+            setStandardViewMode()
+            searchController.active = true
+        } else {
+            searchController.active = false
+        }
+        
+        // Request satisfied, reset the trigger.
+        needsActivateSearch = nil
     }
 }

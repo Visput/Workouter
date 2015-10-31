@@ -12,9 +12,9 @@ class WorkoutEditView: BaseView {
     
     @IBOutlet private(set) weak var nameField: UITextField!
     @IBOutlet private(set) weak var stepsTableView: UITableView!
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
         stepsTableView.setEditing(true, animated: false)
     }
 }
