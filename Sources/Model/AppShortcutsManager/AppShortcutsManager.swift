@@ -55,6 +55,7 @@ class AppShortcutsManager: NSObject {
         case .NewWorkout:
             navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: false) { [unowned self] workout in
                 self.workoutsProvider.addWorkout(workout)
+                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
             }
             break
         case .SearchWorkout:

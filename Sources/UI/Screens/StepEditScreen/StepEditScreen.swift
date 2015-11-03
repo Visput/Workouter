@@ -52,7 +52,6 @@ extension StepEditScreen {
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         step = step.stepBySettingDuration(durationController.duration)
         stepDidEditAction?(step: step)
-        navigationManager.popScreenAnimated(true)
     }
 }
 

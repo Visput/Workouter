@@ -84,6 +84,7 @@
                             </mask>
                         </variation>
                         <connections>
+                            <outlet property="bottomSpace" destination="GPs-HA-idZ" id="e4G-yu-gxe"/>
                             <outlet property="modeButtonItem" destination="sSU-yd-C0E" id="9aH-Nw-t8T"/>
                             <outlet property="workoutsTableView" destination="9mt-W1-wGt" id="m7G-xK-0pV"/>
                         </connections>
@@ -116,7 +117,7 @@
                         <viewControllerLayoutGuide type="top" id="UKh-0V-fju"/>
                         <viewControllerLayoutGuide type="bottom" id="JeJ-dL-jxV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KbN-b8-1B1">
+                    <view key="view" contentMode="scaleToFill" id="KbN-b8-1B1" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

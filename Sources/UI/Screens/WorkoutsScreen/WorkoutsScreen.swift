@@ -41,7 +41,6 @@ class WorkoutsScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        workoutsView.deselectSelectedRow()
         setStandardViewMode()
     }
     
@@ -95,6 +94,7 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
             navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
                 self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
                 self.workoutsView.workoutsTableView.reloadData()
+                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
             }
             
         } else {
@@ -149,6 +149,7 @@ extension WorkoutsScreen {
         navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
             self.workoutsProvider.addWorkout(workout)
             self.workoutsView.workoutsTableView.reloadData()
+            self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
         }
     }
 }

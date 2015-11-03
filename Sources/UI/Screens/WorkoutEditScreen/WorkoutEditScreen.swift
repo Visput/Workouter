@@ -89,6 +89,7 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
         let step = workout.steps[stepIndex]
         navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { [unowned self] step in
             self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
+            self.navigationManager.popScreenAnimated(true)
         }
     }
 }
@@ -97,12 +98,12 @@ extension WorkoutEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         workoutDidEditAction?(workout: workout)
-        navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
     }
     
     @IBAction private func addStepButtonDidPress(sender: AnyObject) {
         navigationManager.pushStepEditScreenFromCurrentScreenWithStep(nil, animated: true) { [unowned self] step in
             self.workout = self.workout.workoutByAddingStep(step)
+            self.navigationManager.popScreenAnimated(true)
         }
     }
 }

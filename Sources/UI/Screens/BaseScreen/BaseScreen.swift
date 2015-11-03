@@ -17,4 +17,28 @@ class BaseScreen: UIViewController {
             return isViewLoaded() && view.window != nil
         }
     }
+    
+    private var baseView: BaseView {
+        return view as! BaseView
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        baseView.willAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        baseView.didAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        baseView.willDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        baseView.didDisappear(animated)
+    }
 }
