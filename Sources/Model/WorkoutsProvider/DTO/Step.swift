@@ -57,7 +57,7 @@ extension Step {
     }
     
     func isEmpty() -> Bool {
-        return name = "" &&
+        return name == "" &&
             stepDescription == "" &&
             duration == 0
     }

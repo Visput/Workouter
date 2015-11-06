@@ -16,7 +16,7 @@ class StepTemplateCell: UITableViewCell {
     
     func fillWithStep(step: Step) {
         if step.isEmpty() {
-            nameLabel.text = NSLocalizedString("Empty Step", comment: nil)
+            nameLabel.text = NSLocalizedString("Empty Step", comment: "")
         } else {
             nameLabel.text = step.name
         }

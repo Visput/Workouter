@@ -13,7 +13,7 @@ class StepTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((templateStep: Step) -> ())?
     var templateDidCancelAction: (() -> ())?
     
-    private var templates = [Step]
+    private var templates = [Step]()
     
     private var searchController: SearchController!
     
@@ -34,7 +34,7 @@ class StepTemplatesScreen: BaseScreen {
 extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchController.results
+        return templates.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,7 +51,7 @@ extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
+extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         searchTemplates()
@@ -64,7 +64,7 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
 
 extension StepTemplatesScreen {
     
-    @IBAction private func cancelButtonDidPress(sender: id) {
+    @IBAction private func cancelButtonDidPress(sender: AnyObject) {
         templateDidCancelAction?()
     }
     
@@ -79,9 +79,11 @@ extension StepTemplatesScreen {
     }
     
     private func searchTemplates() {
-        templates = [Step]
+        templates = [Step]()
         templates.append(Step.emptyStep())
+        
         let searchText = searchController.searchBar.text ?? ""
-        templates.append(workoutsProvider.searchStepsWithText(searchText))
+        let searchResults = workoutsProvider.searchStepsWithText(searchText)
+        templates.appendContentsOf(searchResults)
     }
 }

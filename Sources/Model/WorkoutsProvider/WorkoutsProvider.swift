@@ -64,7 +64,7 @@ class WorkoutsProvider: NSObject {
     }
     
     func searchStepsWithText(searchText: String) -> [Step] {
-        var steps = [Step]
+        var steps = [Step]()
         for workout in workouts {
             steps.appendContentsOf(workout.steps)
         }
