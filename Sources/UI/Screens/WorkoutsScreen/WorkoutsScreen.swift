@@ -104,6 +104,7 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
+    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
     }

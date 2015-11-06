@@ -92,8 +92,9 @@ extension Workout {
         return self.init(name: "", description: "", steps: [])
     }
     
-    func isValid() -> Bool {
-        // Description is optional.
-        return name != "" && steps.count != 0
+    func isEmpty() -> Bool {
+        return name == "" &&
+            workoutDescription == "" &&
+            steps.count == 0
     }
 }

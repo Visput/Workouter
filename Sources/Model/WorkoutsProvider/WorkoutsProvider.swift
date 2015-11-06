@@ -63,6 +63,14 @@ class WorkoutsProvider: NSObject {
         commitChanges()
     }
     
+    func searchStepsWithText(searchText: String) -> [Step] {
+        var steps = [Step]
+        for workout in workouts {
+            steps.appendContentsOf(workout.steps)
+        }
+        return steps
+    }
+    
     private func commitChanges() {
         NSKeyedArchiver.archiveRootObject(workouts, toFile: workoutsFilePath)
     }

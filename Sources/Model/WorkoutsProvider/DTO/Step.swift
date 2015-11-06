@@ -56,8 +56,9 @@ extension Step {
         return self.init(name: "", description: "", duration: 0)
     }
     
-    func isValid() -> Bool {
-        // Description is optional.
-        return name != "" && duration != 0
+    func isEmpty() -> Bool {
+        return name = "" &&
+            stepDescription == "" &&
+            duration == 0
     }
 }
