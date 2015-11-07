@@ -66,7 +66,11 @@ class WorkoutsProvider: NSObject {
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
         var steps = [Step]()
         for workout in workouts {
-            steps.appendContentsOf(workout.steps)
+            for step in workout.steps {
+                guard request.searchText == "" ||
+                    step.name.containsString(request.searchText) else { continue }
+                steps.append(step)
+            }
         }
         return steps
     }

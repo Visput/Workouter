@@ -58,7 +58,7 @@ extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelega
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text
-        searchRequest = searchRequest.requestBySettingSearchText(searchText)
+        searchRequest = searchRequest.requestBySettingSearchText(searchText!)
         
         searchStepsWithRequest(searchRequest)
     }
