@@ -147,7 +147,7 @@ extension WorkoutsScreen {
     }
 
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(nil, animated: true) { [unowned self] workout in
+        navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(Workout.emptyWorkout(), animated: true) { [unowned self] workout in
             self.workoutsProvider.addWorkout(workout)
             self.workoutsView.workoutsTableView.reloadData()
             self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)

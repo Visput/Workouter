@@ -10,7 +10,13 @@ import UIKit
 
 class DurationViewController: UIViewController {
     
-    private(set) var duration: Int
+    var didSelectDurationAction: ((duration: Int) -> ())?
+    
+    private(set) var duration: Int {
+        didSet {
+            didSelectDurationAction?(duration: duration)
+        }
+    }
     
     let defaultDuration = 120
     let minDuration = 1

@@ -63,7 +63,7 @@ class WorkoutsProvider: NSObject {
         commitChanges()
     }
     
-    func searchStepsWithText(searchText: String) -> [Step] {
+    func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
         var steps = [Step]()
         for workout in workouts {
             steps.appendContentsOf(workout.steps)

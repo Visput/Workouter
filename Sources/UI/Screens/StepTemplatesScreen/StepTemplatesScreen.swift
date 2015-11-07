@@ -13,7 +13,9 @@ class StepTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((templateStep: Step) -> ())?
     var templateDidCancelAction: (() -> ())?
     
-    private var templates = [Step]()
+    var searchRequest = StepsSearchRequest.emptyRequest()
+    
+    private var steps = [Step]()
     
     private var searchController: SearchController!
     
@@ -27,34 +29,38 @@ class StepTemplatesScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
-        searchTemplates()
+        fillViewWithSearchRequest(searchRequest)
+        searchStepsWithRequest(searchRequest)
     }
 }
 
 extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return templates.count
+        return steps.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StepTemplateCell.className()) as! StepTemplateCell
-        let step = templates[indexPath.row]
+        let step = steps[indexPath.row]
         cell.fillWithStep(step)
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let template = templates[indexPath.row]
-        templateDidSelectAction?(templateStep: template)
+        let step = steps[indexPath.row]
+        templateDidSelectAction?(templateStep: step)
     }
 }
 
 extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        searchTemplates()
+        let searchText = searchController.searchBar.text
+        searchRequest = searchRequest.requestBySettingSearchText(searchText)
+        
+        searchStepsWithRequest(searchRequest)
     }
     
     func didPresentSearchController(searchController: UISearchController) {
@@ -78,12 +84,17 @@ extension StepTemplatesScreen {
         definesPresentationContext = true
     }
     
-    private func searchTemplates() {
-        templates = [Step]()
-        templates.append(Step.emptyStep())
+    private func searchStepsWithRequest(searchRequest: StepsSearchRequest) {
+        steps = [Step]()
+        steps.append(Step.emptyStep())
         
-        let searchText = searchController.searchBar.text ?? ""
-        let searchResults = workoutsProvider.searchStepsWithText(searchText)
-        templates.appendContentsOf(searchResults)
+        let searchResults = workoutsProvider.searchStepsWithRequest(searchRequest)
+        steps.appendContentsOf(searchResults)
+        
+        templatesView.templatesTableView.reloadData()
+    }
+    
+    private func fillViewWithSearchRequest(searchRequest: StepsSearchRequest) {
+        searchController.searchBar.text = searchRequest.searchText
     }
 }

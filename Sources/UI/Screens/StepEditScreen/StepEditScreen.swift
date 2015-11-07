@@ -12,15 +12,7 @@ class StepEditScreen: BaseScreen {
     
     var stepDidEditAction: ((step: Step) -> ())?
     
-    var step: Step! {
-        didSet {
-            if step == nil {
-                step = Step.emptyStep()
-            } else if isViewLoaded() {
-                fillViewWithStep(step)
-            }
-        }
-    }
+    var step: Step = Step.emptyStep()
     
     private var descriptionController: TextViewController!
     private var durationController: DurationViewController!
@@ -41,8 +33,12 @@ class StepEditScreen: BaseScreen {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "StepDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
+            
         } else if segue.identifier! == "StepDuration" {
             durationController = segue.destinationViewController as! DurationViewController
+            durationController.didSelectDurationAction = { [unowned self] duration in
+                self.step = self.step.stepBySettingDuration(duration)
+            }
         }
     }
 }
@@ -50,7 +46,6 @@ class StepEditScreen: BaseScreen {
 extension StepEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
-        step = step.stepBySettingDuration(durationController.duration)
         stepDidEditAction?(step: step)
     }
 }

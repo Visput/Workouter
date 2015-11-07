@@ -12,13 +12,10 @@ class WorkoutEditScreen: BaseScreen {
     
     var workoutDidEditAction: ((workout: Workout) -> ())?
     
-    var workout: Workout! {
+    var workout: Workout = Workout.emptyWorkout() {
         didSet {
-            if workout == nil {
-                workout = Workout.emptyWorkout()
-            } else if isViewLoaded() {
-                fillViewWithWorkout(workout)
-            }
+            guard isViewLoaded() else { return }
+            fillViewWithWorkout(workout)
         }
     }
     
@@ -101,10 +98,18 @@ extension WorkoutEditScreen {
     }
     
     @IBAction private func addStepButtonDidPress(sender: AnyObject) {
-        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(nil, animated: true) { [unowned self] step in
-            self.workout = self.workout.workoutByAddingStep(step)
-            self.navigationManager.popScreenAnimated(true)
-        }
+        let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
+        
+        navigationManager.presentStepTemplatesScreenWithRequest(searchRequest, animated: true, templateDidSelectAction: { [unowned self] step in
+            self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { step in
+                self.workout = self.workout.workoutByAddingStep(step)
+                self.navigationManager.popScreenAnimated(true)
+            }
+            self.navigationManager.dismissScreenAnimated(true)
+            
+        }, templateDidCancelAction: { () -> () in
+            self.navigationManager.dismissScreenAnimated(true)
+        })
     }
 }
 
