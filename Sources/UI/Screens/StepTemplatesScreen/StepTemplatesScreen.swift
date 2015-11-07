@@ -80,7 +80,6 @@ extension StepTemplatesScreen {
         searchController.searchResultsUpdater = self
         templatesView.templatesTableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.sizeToFit()
-        searchController.active = true
         definesPresentationContext = true
     }
     

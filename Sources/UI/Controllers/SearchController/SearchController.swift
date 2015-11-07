@@ -13,7 +13,9 @@ class SearchController: UISearchController {
     var enabled = true {
         didSet {
             searchBar.userInteractionEnabled = enabled
-            searchBar.alpha = enabled ? 1.0 : 0.5
+            UIView.animateWithDuration(0.2) { () -> Void in
+                self.searchBar.alpha = self.enabled ? 1.0 : 0.5
+            }
         }
     }
     
