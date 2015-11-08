@@ -64,15 +64,25 @@ class WorkoutsProvider: NSObject {
     }
     
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
-        var steps = [Step]()
+        var searchResults = [Step]()
         for workout in workouts {
             for step in workout.steps {
                 guard request.searchText == "" ||
                     step.name.containsString(request.searchText) else { continue }
-                steps.append(step)
+                searchResults.append(step)
             }
         }
-        return steps
+        return searchResults
+    }
+    
+    func searchWorkoutsWithRequest(request: WorkoutsSearchRequest) -> [Workout] {
+        var searchResults = [Workout]()
+        for workout in workouts {
+            guard request.searchText == "" ||
+                workout.name.containsString(request.searchText) else { continue }
+            searchResults.append(workout)
+        }
+        return searchResults
     }
     
     private func commitChanges() {

@@ -119,6 +119,10 @@ extension WorkoutEditScreen {
         workoutEditView.nameField.text = workout.name
         descriptionController.text = workout.workoutDescription
         
+        if workout.isEmpty() {
+            workoutEditView.nameField.becomeFirstResponder()
+        }
+        
         if needsReloadStepsTableView {
             workoutEditView.stepsTableView.reloadData()
         }

@@ -10,15 +10,13 @@ import UIKit
 
 class WorkoutTemplateCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet private weak var nameLabel: UILabel!
+    
+    func fillWithWorkout(workout: Workout) {
+        if workout.isEmpty() {
+            nameLabel.text = NSLocalizedString("Empty Workout", comment: "")
+        } else {
+            nameLabel.text = workout.name
+        }
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

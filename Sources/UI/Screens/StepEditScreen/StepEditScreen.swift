@@ -56,5 +56,9 @@ extension StepEditScreen {
         stepEditView.nameField.text = step.name
         durationController.setDuration(step.duration, animated: false)
         descriptionController.text = step.stepDescription
+        
+        if step.isEmpty() {
+            stepEditView.nameField.becomeFirstResponder()
+        }
     }
 }

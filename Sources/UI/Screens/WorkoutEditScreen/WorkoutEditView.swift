@@ -17,4 +17,9 @@ class WorkoutEditView: BaseView {
         super.awakeFromNib()
         stepsTableView.setEditing(true, animated: false)
     }
+    
+    override func willAppear(animated: Bool) {
+        super.willAppear(animated)
+        stepsTableView.deselectSelectedRowAnimated(true)
+    }
 }

@@ -11,31 +11,55 @@ import UIKit
 
 class BaseView: UIView {
 
+    @IBOutlet weak var bottomSpace: NSLayoutConstraint!
+    var bottomSpaceDefaultValue: CGFloat = 0.0
+    
+    enum AppearanceState {
+        case Undefined
+        case WillAppear
+        case DidAppear
+        case WillDisappear
+        case DidDisappear
+    }
+    
+    var appearanceState = AppearanceState.Undefined
 }
 
 extension BaseView {
     
     func willAppear(animated: Bool) {
+        appearanceState = .WillAppear
         registerForKeyboardNotifications()
     }
     
     func didAppear(animated: Bool) {
-        
+        appearanceState = .DidAppear
     }
     
     func willDisappear(animated: Bool) {
-        
+        appearanceState = .WillDisappear
+        unregisterFromKeyboardNotifications()
     }
     
     func didDisappear(animated: Bool) {
-        unregisterFromKeyboardNotifications()
+        appearanceState = .DidDisappear
     }
 }
 
 extension BaseView {
     
     func keyboardWillShow(notification: NSNotification, keyboardHeight: CGFloat) {
+        guard bottomSpace != nil else { return }
         
+        animateWithKeyboardNotification(notification, animations: { () -> () in
+            self.bottomSpace.constant = keyboardHeight
+            
+            // Call 'layoutIfNeeded' only if view already appeared.
+            // It will prevent from unnecessary animations when keyboard and view appear at the same moment.
+            if self.appearanceState != .Undefined && self.appearanceState != .WillAppear {
+                self.layoutIfNeeded()
+            }
+        }, completion: nil)
     }
     
     func keyboardDidShow(notification: NSNotification, keyboardHeight: CGFloat) {
@@ -43,7 +67,12 @@ extension BaseView {
     }
     
     func keyboardWillHide(notification: NSNotification, keyboardHeight: CGFloat) {
+        guard bottomSpace != nil else { return }
         
+        animateWithKeyboardNotification(notification, animations: { () -> () in
+            self.bottomSpace.constant = self.bottomSpaceDefaultValue
+            self.layoutIfNeeded()
+            }, completion: nil)
     }
     
     func keyboardDidHide(notification: NSNotification, keyboardHeight: CGFloat) {
@@ -51,9 +80,9 @@ extension BaseView {
     }
     
     func animateWithKeyboardNotification(notification: NSNotification, animations: () -> (), completion: ((completed: Bool) -> ())?) {
-        let duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         let curve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).unsignedIntegerValue
         let options = UIViewAnimationOptions(rawValue: curve)
+        let duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         
         UIView.animateWithDuration(duration, delay: 0, options: options, animations: animations, completion: completion)
     }

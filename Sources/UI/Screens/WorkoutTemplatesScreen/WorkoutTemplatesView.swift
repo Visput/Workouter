@@ -10,4 +10,10 @@ import UIKit
 
 class WorkoutTemplatesView: BaseView {
 
+    @IBOutlet private(set) weak var templatesTableView: UITableView!
+    
+    override func willAppear(animated: Bool) {
+        super.willAppear(animated)
+        templatesTableView.deselectSelectedRowAnimated(true)
+    }
 }

@@ -49,42 +49,9 @@ class WorkoutsView: BaseView {
     
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
     @IBOutlet private weak var modeButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var bottomSpace: NSLayoutConstraint!
-}
 
-extension WorkoutsView {
- 
     override func willAppear(animated: Bool) {
         super.willAppear(animated)
-        deselectSelectedRow()
-    }
-}
-
-extension WorkoutsView {
-    
-    override func keyboardWillShow(notification: NSNotification, keyboardHeight: CGFloat) {
-        super.keyboardWillShow(notification, keyboardHeight: keyboardHeight)
-        
-        animateWithKeyboardNotification(notification, animations: { () -> () in
-            self.bottomSpace.constant = keyboardHeight
-            self.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
-    override func keyboardWillHide(notification: NSNotification, keyboardHeight: CGFloat) {
-        super.keyboardWillHide(notification, keyboardHeight: keyboardHeight)
-        
-        animateWithKeyboardNotification(notification, animations: { () -> () in
-            self.bottomSpace.constant = 0
-            self.layoutIfNeeded()
-        }, completion: nil)
-    }
-}
-
-extension WorkoutsView {
-    
-    private func deselectSelectedRow() {
-        guard let indexPath = workoutsTableView.indexPathForSelectedRow else { return }
-        workoutsTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        workoutsTableView.deselectSelectedRowAnimated(true)
     }
 }
