@@ -88,6 +88,35 @@ extension NavigationManager {
 
 extension NavigationManager {
     
+    func presentStepTemplatesScreenWithRequest(searchRequest: StepsSearchRequest,
+        animated: Bool,
+        templateDidSelectAction: ((step: Step) -> ())?,
+        templateDidCancelAction: (() -> ())?) {
+            
+        let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
+        screen.searchRequest = searchRequest
+        screen.templateDidSelectAction = templateDidSelectAction
+        screen.templateDidCancelAction = templateDidCancelAction
+        
+        presentScreen(screen, animated: animated)
+    }
+    
+    func presentWorkoutTemplatesScreenWithRequest(searchRequest: WorkoutsSearchRequest,
+        animated: Bool,
+        templateDidSelectAction: ((workout: Workout) -> ())?,
+        templateDidCancelAction: (() -> ())?) {
+            
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
+        screen.searchRequest = searchRequest
+        screen.templateDidSelectAction = templateDidSelectAction
+        screen.templateDidCancelAction = templateDidCancelAction
+        
+        presentScreen(screen, animated: animated)
+    }
+}
+
+extension NavigationManager {
+    
     func popToWorkoutsScreenWithSearchActive(searchActive: Bool, animated: Bool) {
         popToRootScreenAnimated(animated)
         let screen = navigationController.viewControllers[0] as! WorkoutsScreen
@@ -110,14 +139,5 @@ extension NavigationManager {
         screen.stepDidEditAction = stepDidEditAction
         
         pushScreen(screen, animated: animated)
-    }
-    
-    func presentStepTemplatesScreenWithRequest(searchRequest: StepsSearchRequest, animated: Bool, templateDidSelectAction: ((step: Step) -> ())?, templateDidCancelAction: (() -> ())?) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
-        screen.searchRequest = searchRequest
-        screen.templateDidSelectAction = templateDidSelectAction
-        screen.templateDidCancelAction = templateDidCancelAction
-        
-        presentScreen(screen, animated: animated)
     }
 }

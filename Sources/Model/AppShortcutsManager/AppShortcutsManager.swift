@@ -45,6 +45,7 @@ class AppShortcutsManager: NSObject {
         
         switch (shortcutId) {
         case .StartWorkout:
+            navigationManager.dismissScreenAnimated(false)
             if workoutsProvider.workouts.count > 0 {
                 let workout = workoutsProvider.workouts[0]
                 navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
@@ -53,12 +54,22 @@ class AppShortcutsManager: NSObject {
             }
             break
         case .NewWorkout:
-            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(Workout.emptyWorkout(), animated: false) { [unowned self] workout in
-                self.workoutsProvider.addWorkout(workout)
-                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-            }
+            navigationManager.dismissScreenAnimated(false)
+            navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
+            navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(), animated: false, templateDidSelectAction: { [unowned self] workout in
+                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
+                    self.workoutsProvider.addWorkout(workout)
+                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+                }
+                self.navigationManager.dismissScreenAnimated(true)
+                
+            }, templateDidCancelAction: { () -> () in
+                self.navigationManager.dismissScreenAnimated(true)
+            })
+            
             break
         case .SearchWorkout:
+            navigationManager.dismissScreenAnimated(false)
             navigationManager.popToWorkoutsScreenWithSearchActive(true, animated: false)
             break
         }

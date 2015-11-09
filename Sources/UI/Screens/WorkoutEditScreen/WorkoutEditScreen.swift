@@ -101,7 +101,7 @@ extension WorkoutEditScreen {
         let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
         
         navigationManager.presentStepTemplatesScreenWithRequest(searchRequest, animated: true, templateDidSelectAction: { [unowned self] step in
-            self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { step in
+            self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: false) { step in
                 self.workout = self.workout.workoutByAddingStep(step)
                 self.navigationManager.popScreenAnimated(true)
             }

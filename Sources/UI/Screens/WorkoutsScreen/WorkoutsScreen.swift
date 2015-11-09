@@ -147,11 +147,17 @@ extension WorkoutsScreen {
     }
 
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(Workout.emptyWorkout(), animated: true) { [unowned self] workout in
-            self.workoutsProvider.addWorkout(workout)
-            self.workoutsView.workoutsTableView.reloadData()
-            self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-        }
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(), animated: true, templateDidSelectAction: { [unowned self] workout in
+            self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
+                self.workoutsProvider.addWorkout(workout)
+                self.workoutsView.workoutsTableView.reloadData()
+                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+            }
+            self.navigationManager.dismissScreenAnimated(true)
+            
+        }, templateDidCancelAction: { () -> () in
+            self.navigationManager.dismissScreenAnimated(true)
+        })
     }
 }
 

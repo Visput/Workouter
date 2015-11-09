@@ -10,7 +10,7 @@ import UIKit
 
 class StepTemplatesScreen: BaseScreen {
 
-    var templateDidSelectAction: ((templateStep: Step) -> ())?
+    var templateDidSelectAction: ((step: Step) -> ())?
     var templateDidCancelAction: (() -> ())?
     
     var searchRequest = StepsSearchRequest.emptyRequest()
@@ -50,7 +50,7 @@ extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let step = steps[indexPath.row]
-        templateDidSelectAction?(templateStep: step)
+        templateDidSelectAction?(step: step)
     }
 }
 
