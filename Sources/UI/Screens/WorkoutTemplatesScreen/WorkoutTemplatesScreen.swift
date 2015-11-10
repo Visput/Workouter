@@ -13,7 +13,7 @@ class WorkoutTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((workout: Workout) -> ())?
     var templateDidCancelAction: (() -> ())?
     
-    var searchRequest = WorkoutsSearchRequest.emptyRequest()
+    var searchRequest = WorkoutsSearchRequest.emptyTemplatesRequest()
     
     private var workouts = [Workout]()
     
@@ -53,7 +53,7 @@ extension WorkoutTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
         
         var workout = workouts[indexPath.row]
         if !workout.isEmpty() {
-            workout = workout.workoutBySettingName(workout.name + workoutNameSufix)
+            workout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
         }
         templateDidSelectAction?(workout: workout)
     }

@@ -17,6 +17,7 @@ class WorkoutsScreen: BaseScreen {
         }
     }
     
+    private var searchResults: [Workout]?
     private var searchController: SearchController!
     
     private var workoutsProvider: WorkoutsProvider {
@@ -53,12 +54,12 @@ class WorkoutsScreen: BaseScreen {
 extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workoutsProvider.workouts.count
+        return searchController.active ? searchResults!.count : workoutsProvider.workouts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutCell.className()) as! WorkoutCell
-        let workout = workoutsProvider.workouts[indexPath.row]
+        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         cell.fillWithWorkout(workout)
         
         return cell
@@ -88,7 +89,7 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let workout = workoutsProvider.workouts[indexPath.row]
+        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         
         if workoutsView.mode == .Edit {
             navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
@@ -106,11 +107,18 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
 extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        let searchRequest = WorkoutsSearchRequest(searchText: searchText!, isTemplates: false)
         
+        searchWorkoutsWithRequest(searchRequest)
     }
     
     func didPresentSearchController(searchController: UISearchController) {
         searchController.searchBar.becomeFirstResponder()
+    }
+    
+    func willDismissSearchController(searchController: UISearchController) {
+        resetSearchResults()
     }
 }
 
@@ -123,7 +131,7 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
             let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
         
         previewingContext.sourceRect = cell.frame
-        let workout = workoutsProvider.workouts[indexPath.row]
+        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         let previewScreen = navigationManager.workoutDetailsScreenWithWorkout(workout)
         
         return previewScreen
@@ -191,11 +199,22 @@ extension WorkoutsScreen {
         if activate {
             setStandardViewMode()
             searchController.active = true
+            searchController.searchBar.becomeFirstResponder()
         } else {
             searchController.active = false
         }
         
         // Request satisfied, reset the trigger.
         needsActivateSearch = nil
+    }
+    
+    private func searchWorkoutsWithRequest(searchRequest: WorkoutsSearchRequest) {
+        searchResults = workoutsProvider.searchWorkoutsWithRequest(searchRequest)
+        workoutsView.workoutsTableView.reloadData()
+    }
+    
+    private func resetSearchResults() {
+        searchResults = nil
+        workoutsView.workoutsTableView.reloadData()
     }
 }
