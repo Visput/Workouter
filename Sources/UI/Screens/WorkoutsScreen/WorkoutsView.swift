@@ -50,6 +50,13 @@ class WorkoutsView: BaseView {
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
     @IBOutlet private weak var modeButtonItem: UIBarButtonItem!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        workoutsTableView.rowHeight = UITableViewAutomaticDimension
+        workoutsTableView.estimatedRowHeight = 85.0
+    }
+    
     override func willAppear(animated: Bool) {
         super.willAppear(animated)
         workoutsTableView.deselectSelectedRowAnimated(true)
