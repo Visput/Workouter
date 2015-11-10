@@ -117,7 +117,7 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
         searchController.searchBar.becomeFirstResponder()
     }
     
-    func willDismissSearchController(searchController: UISearchController) {
+    func didDismissSearchController(searchController: UISearchController) {
         resetSearchResults()
     }
 }

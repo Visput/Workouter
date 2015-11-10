@@ -11,8 +11,10 @@ import UIKit
 class WorkoutCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     func fillWithWorkout(workout: Workout) {
         nameLabel.text = workout.name
+        descriptionLabel.text = workout.workoutDescription
     }
 }
