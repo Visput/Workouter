@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         modelProvider.workoutsProvider.loadWorkouts()
         modelProvider.shortcutsManager.updateShortcuts()
         
-        return !modelProvider.shortcutsManager.performActionForShortcutInAppLaunchOptions(launchOptions)
+        return !modelProvider.shortcutsManager.handleShortcutInAppLaunchOptions(launchOptions)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
+        modelProvider.shortcutsManager.performActionForLaunchedShortcutIfNeeded()
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -13,6 +13,8 @@ class AppShortcutsManager: NSObject {
     let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
     
+    private var launchedShortcut: UIApplicationShortcutItem?
+    
     private enum ShortcutIdentifier: String {
         case StartWorkout
         case NewWorkout
@@ -34,14 +36,21 @@ class AppShortcutsManager: NSObject {
         super.init()
     }
     
-    func performActionForShortcutInAppLaunchOptions(launchOptions: [NSObject: AnyObject]?) -> Bool {
-        guard let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem else { return false }
+    func handleShortcutInAppLaunchOptions(launchOptions: [NSObject: AnyObject]?) -> Bool {
+        guard let shortcut = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem else { return false }
+        launchedShortcut = shortcut
         
-        return performActionForShortcut(shortcutItem)
+        return true
     }
     
-    func performActionForShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
-        guard let shortcutId = ShortcutIdentifier(type: shortcutItem.type) else { return false }
+    func performActionForLaunchedShortcutIfNeeded() {
+        guard launchedShortcut != nil else { return }
+        performActionForShortcut(launchedShortcut!)
+        launchedShortcut = nil
+    }
+    
+    func performActionForShortcut(shortcut: UIApplicationShortcutItem) -> Bool {
+        guard let shortcutId = ShortcutIdentifier(type: shortcut.type) else { return false }
         
         switch (shortcutId) {
         case .StartWorkout:
