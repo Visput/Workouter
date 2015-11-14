@@ -1,0 +1,10 @@
+line_length: 140
+
+disabled_rules:
+- trailing_whitespace
+- force_cast
+- nesting
+
+excluded:
+- Pods
+
