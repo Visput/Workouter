@@ -29,7 +29,7 @@ class ObserverSet<ObserverType>: SequenceType {
     func removeAllObservers() {
         weakStorage.removeAllObjects()
     }
-
+    
     func containsObserver(observer: ObserverType) -> Bool {
         guard observer is AnyObject else { fatalError("Observer (\(observer)) should be subclass of AnyObject") }
         return weakStorage.containsObject(observer as? AnyObject)

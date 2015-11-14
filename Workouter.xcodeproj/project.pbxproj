@@ -601,6 +601,7 @@
 				F01375C01A4CA18E00C683A8 /* Resources */,
 				482C91626C752C0555903F4B /* Embed Pods Frameworks */,
 				943E413A2EDEEEE6745F58E9 /* Copy Pods Resources */,
+				9F98D8A71BF7D9040023F8CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -622,6 +623,7 @@
 				7216F9BDD797865C30700760 /* Embed Pods Frameworks */,
 				2481CFFA37F19F1502A10E3D /* Copy Pods Resources */,
 				F02CAB801B4B871E00F28D72 /* ShellScript */,
+				9F98D8A51BF7D8DF0023F8CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -643,6 +645,7 @@
 				B5B198CBE2D7A648C5FE2EE5 /* Embed Pods Frameworks */,
 				BA7E9037CED7D607BB7393ED /* Copy Pods Resources */,
 				F09706851ACA585900498DEE /* ShellScript */,
+				9F98D8A61BF7D8FA0023F8CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -815,6 +818,45 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9F98D8A51BF7D8DF0023F8CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9F98D8A61BF7D8FA0023F8CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9F98D8A71BF7D9040023F8CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		B5B198CBE2D7A648C5FE2EE5 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

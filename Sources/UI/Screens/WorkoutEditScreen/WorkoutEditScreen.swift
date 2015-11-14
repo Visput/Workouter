@@ -29,7 +29,7 @@ class WorkoutEditScreen: BaseScreen {
     private var workoutEditView: WorkoutEditView {
         return view as! WorkoutEditView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fillViewWithWorkout(workout)
@@ -68,17 +68,23 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCellEditingStyle.Delete
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            needsReloadStepsTableView = false
-            workout = workout.workoutByRemovingStepAtIndex(indexPath.row);
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
-        }
+    func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            
+            if editingStyle == .Delete {
+                needsReloadStepsTableView = false
+                workout = workout.workoutByRemovingStepAtIndex(indexPath.row);
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            }
     }
     
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        needsReloadStepsTableView = false
-        workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    func tableView(tableView: UITableView,
+        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+        toIndexPath destinationIndexPath: NSIndexPath) {
+            
+            needsReloadStepsTableView = false
+            workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -100,15 +106,18 @@ extension WorkoutEditScreen {
     @IBAction private func addStepButtonDidPress(sender: AnyObject) {
         let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
         
-        navigationManager.presentStepTemplatesScreenWithRequest(searchRequest, animated: true, templateDidSelectAction: { [unowned self] step in
-            self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: false) { step in
-                self.workout = self.workout.workoutByAddingStep(step)
-                self.navigationManager.popScreenAnimated(true)
-            }
-            self.navigationManager.dismissScreenAnimated(true)
-            
-        }, templateDidCancelAction: { () -> () in
-            self.navigationManager.dismissScreenAnimated(true)
+        navigationManager.presentStepTemplatesScreenWithRequest(searchRequest,
+            animated: true,
+            templateDidSelectAction: { [unowned self] step in
+                
+                self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: false) { step in
+                    self.workout = self.workout.workoutByAddingStep(step)
+                    self.navigationManager.popScreenAnimated(true)
+                }
+                self.navigationManager.dismissScreenAnimated(true)
+                
+            }, templateDidCancelAction: { () -> () in
+                self.navigationManager.dismissScreenAnimated(true)
         })
     }
 }

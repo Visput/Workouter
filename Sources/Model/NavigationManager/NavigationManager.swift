@@ -93,12 +93,12 @@ extension NavigationManager {
         templateDidSelectAction: ((step: Step) -> ())?,
         templateDidCancelAction: (() -> ())?) {
             
-        let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
-        screen.searchRequest = searchRequest
-        screen.templateDidSelectAction = templateDidSelectAction
-        screen.templateDidCancelAction = templateDidCancelAction
-        
-        presentScreen(screen, animated: animated)
+            let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
+            screen.searchRequest = searchRequest
+            screen.templateDidSelectAction = templateDidSelectAction
+            screen.templateDidCancelAction = templateDidCancelAction
+            
+            presentScreen(screen, animated: animated)
     }
     
     func presentWorkoutTemplatesScreenWithRequest(searchRequest: WorkoutsSearchRequest,
@@ -106,12 +106,12 @@ extension NavigationManager {
         templateDidSelectAction: ((workout: Workout) -> ())?,
         templateDidCancelAction: (() -> ())?) {
             
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
-        screen.searchRequest = searchRequest
-        screen.templateDidSelectAction = templateDidSelectAction
-        screen.templateDidCancelAction = templateDidCancelAction
-        
-        presentScreen(screen, animated: animated)
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
+            screen.searchRequest = searchRequest
+            screen.templateDidSelectAction = templateDidSelectAction
+            screen.templateDidCancelAction = templateDidCancelAction
+            
+            presentScreen(screen, animated: animated)
     }
 }
 
@@ -123,21 +123,27 @@ extension NavigationManager {
         screen.needsActivateSearch = searchActive
     }
     
-    func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout, animated: Bool, workoutDidEditAction: ((workout: Workout) -> ())?) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
-        screen.workout = workout
-        screen.workoutDidEditAction = workoutDidEditAction
-        
-        let screens = [navigationController.viewControllers[0], screen]
-        
-        setScreens(screens, animated: animated)
+    func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout,
+        animated: Bool,
+        workoutDidEditAction: ((workout: Workout) -> ())?) {
+            
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            screen.workout = workout
+            screen.workoutDidEditAction = workoutDidEditAction
+            
+            let screens = [navigationController.viewControllers[0], screen]
+            
+            setScreens(screens, animated: animated)
     }
     
-    func pushStepEditScreenFromCurrentScreenWithStep(step: Step, animated: Bool, stepDidEditAction: ((step: Step) -> ())?) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
-        screen.step = step
-        screen.stepDidEditAction = stepDidEditAction
-        
-        pushScreen(screen, animated: animated)
+    func pushStepEditScreenFromCurrentScreenWithStep(step: Step,
+        animated: Bool,
+        stepDidEditAction: ((step: Step) -> ())?) {
+            
+            let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
+            screen.step = step
+            screen.stepDidEditAction = stepDidEditAction
+            
+            pushScreen(screen, animated: animated)
     }
 }

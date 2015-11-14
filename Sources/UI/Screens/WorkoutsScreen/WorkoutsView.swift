@@ -49,7 +49,7 @@ class WorkoutsView: BaseView {
     
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
     @IBOutlet private weak var modeButtonItem: UIBarButtonItem!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

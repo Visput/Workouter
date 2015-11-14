@@ -45,7 +45,7 @@ class DurationComponent {
             valueToSecondsRatio <= 0 ||
             value < 0 ||
             value > maxValue {
-            return nil
+                return nil
         }
     }
     

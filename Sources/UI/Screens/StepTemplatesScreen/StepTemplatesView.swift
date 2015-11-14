@@ -9,7 +9,7 @@
 import UIKit
 
 class StepTemplatesView: BaseView {
-
+    
     @IBOutlet private(set) weak var templatesTableView: UITableView!
     
     override func willAppear(animated: Bool) {

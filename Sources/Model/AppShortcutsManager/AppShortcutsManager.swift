@@ -25,7 +25,7 @@ class AppShortcutsManager: NSObject {
             guard let type = type.componentsSeparatedByString(".").last else { return nil }
             self.init(rawValue: type)
         }
-
+        
         var type: String {
             return NSBundle.mainBundle().bundleIdentifier! + ".\(self.rawValue)"
         }
@@ -56,7 +56,7 @@ class AppShortcutsManager: NSObject {
     func performActionForShortcut(shortcut: UIApplicationShortcutItem) -> Bool {
         guard let shortcutId = ShortcutIdentifier(type: shortcut.type) else { return false }
         
-        switch (shortcutId) {
+        switch shortcutId {
         case .StartWorkout:
             navigationManager.dismissScreenAnimated(false)
             if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
@@ -68,15 +68,18 @@ class AppShortcutsManager: NSObject {
         case .NewWorkout:
             navigationManager.dismissScreenAnimated(false)
             navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
-            navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(), animated: false, templateDidSelectAction: { [unowned self] workout in
-                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
-                    self.workoutsProvider.addWorkout(workout)
-                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-                }
-                self.navigationManager.dismissScreenAnimated(true)
-                
-            }, templateDidCancelAction: { () -> () in
-                self.navigationManager.dismissScreenAnimated(true)
+            navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
+                animated: false,
+                templateDidSelectAction: { [unowned self] workout in
+                    
+                    self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
+                        self.workoutsProvider.addWorkout(workout)
+                        self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+                    }
+                    self.navigationManager.dismissScreenAnimated(true)
+                    
+                }, templateDidCancelAction: { () -> () in
+                    self.navigationManager.dismissScreenAnimated(true)
             })
             
             break

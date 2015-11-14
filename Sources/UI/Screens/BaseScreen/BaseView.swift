@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class BaseView: UIView {
-
+    
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     var bottomSpaceDefaultValue: CGFloat = 0.0
     
@@ -59,7 +59,7 @@ extension BaseView {
             if self.appearanceState != .Undefined && self.appearanceState != .WillAppear {
                 self.layoutIfNeeded()
             }
-        }, completion: nil)
+            }, completion: nil)
     }
     
     func keyboardDidShow(notification: NSNotification, keyboardHeight: CGFloat) {
@@ -79,12 +79,15 @@ extension BaseView {
         
     }
     
-    func animateWithKeyboardNotification(notification: NSNotification, animations: () -> (), completion: ((completed: Bool) -> ())?) {
-        let curve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).unsignedIntegerValue
-        let options = UIViewAnimationOptions(rawValue: curve)
-        let duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        
-        UIView.animateWithDuration(duration, delay: 0, options: options, animations: animations, completion: completion)
+    func animateWithKeyboardNotification(notification: NSNotification,
+        animations: () -> (),
+        completion: ((completed: Bool) -> ())?) {
+            
+            let curve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).unsignedIntegerValue
+            let options = UIViewAnimationOptions(rawValue: curve)
+            let duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+            
+            UIView.animateWithDuration(duration, delay: 0, options: options, animations: animations, completion: completion)
     }
     
     func keyboardNotificationDidReceive(notification: NSNotification) {

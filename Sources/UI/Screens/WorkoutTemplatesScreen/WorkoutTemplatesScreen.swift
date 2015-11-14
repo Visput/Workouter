@@ -9,7 +9,7 @@
 import UIKit
 
 class WorkoutTemplatesScreen: BaseScreen {
-
+    
     var templateDidSelectAction: ((workout: Workout) -> ())?
     var templateDidCancelAction: (() -> ())?
     
@@ -102,6 +102,3 @@ extension WorkoutTemplatesScreen {
         searchController.searchBar.text = searchRequest.searchText
     }
 }
-
-
-

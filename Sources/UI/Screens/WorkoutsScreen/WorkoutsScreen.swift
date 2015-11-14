@@ -31,7 +31,7 @@ class WorkoutsScreen: BaseScreen {
     private var workoutsView: WorkoutsView {
         return view as! WorkoutsView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
@@ -77,25 +77,33 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCellEditingStyle.Delete
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            workoutsProvider.removeWorkoutAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
-        }
+    func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            
+            if editingStyle == .Delete {
+                workoutsProvider.removeWorkoutAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            }
     }
     
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    func tableView(tableView: UITableView,
+        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+        toIndexPath destinationIndexPath: NSIndexPath) {
+            
+            workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         
         if workoutsView.mode == .Edit {
-            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: true) { [unowned self] workout in
-                self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
-                self.workoutsView.workoutsTableView.reloadData()
-                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
+                animated: true) { [unowned self] workout in
+                    
+                    self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
+                    self.workoutsView.workoutsTableView.reloadData()
+                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
             }
             
         } else {
@@ -123,22 +131,25 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
 }
 
 extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
-
-    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-
-        guard workoutsView.mode == .Standard,
-            let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
-            let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
-        
-        previewingContext.sourceRect = cell.frame
-        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
-        let previewScreen = navigationManager.workoutDetailsScreenWithWorkout(workout)
-        
-        return previewScreen
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        viewControllerForLocation location: CGPoint) -> UIViewController? {
+            
+            guard workoutsView.mode == .Standard,
+                let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
+                let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
+            
+            previewingContext.sourceRect = cell.frame
+            let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
+            let previewScreen = navigationManager.workoutDetailsScreenWithWorkout(workout)
+            
+            return previewScreen
     }
     
-    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
-        navigationManager.pushScreen(viewControllerToCommit, animated: true)
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        commitViewController viewControllerToCommit: UIViewController) {
+            
+            navigationManager.pushScreen(viewControllerToCommit, animated: true)
     }
     
     private func registerForPreviewing() {
@@ -153,18 +164,21 @@ extension WorkoutsScreen {
     @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
         switchViewMode()
     }
-
+    
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(), animated: true, templateDidSelectAction: { [unowned self] workout in
-            self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
-                self.workoutsProvider.addWorkout(workout)
-                self.workoutsView.workoutsTableView.reloadData()
-                self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-            }
-            self.navigationManager.dismissScreenAnimated(true)
-            
-        }, templateDidCancelAction: { () -> () in
-            self.navigationManager.dismissScreenAnimated(true)
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
+            animated: true,
+            templateDidSelectAction: { [unowned self] workout in
+                
+                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
+                    self.workoutsProvider.addWorkout(workout)
+                    self.workoutsView.workoutsTableView.reloadData()
+                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
+                }
+                self.navigationManager.dismissScreenAnimated(true)
+                
+            }, templateDidCancelAction: { () -> () in
+                self.navigationManager.dismissScreenAnimated(true)
         })
     }
 }

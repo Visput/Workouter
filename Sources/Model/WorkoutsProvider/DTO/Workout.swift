@@ -13,21 +13,21 @@ class Workout: NSObject, NSCoding {
     let name: String
     let workoutDescription: String
     let steps: [Step]
-    let id: String
+    let identifier: String
     
-    required init(name: String, description:String, steps: [Step]) {
+    required init(name: String, description: String, steps: [Step]) {
         self.name = name
         self.workoutDescription = description
         self.steps = steps
-        self.id = NSUUID().UUIDString
+        self.identifier = NSUUID().UUIDString
         super.init()
     }
     
-    required init(name: String, description: String, steps: [Step], id: String) {
+    required init(name: String, description: String, steps: [Step], identifier: String) {
         self.name = name
         self.workoutDescription = description
         self.steps = steps
-        self.id = id
+        self.identifier = identifier
         super.init()
     }
     
@@ -35,7 +35,7 @@ class Workout: NSObject, NSCoding {
         name = aDecoder.decodeObjectForKey("name") as! String
         workoutDescription = aDecoder.decodeObjectForKey("description") as! String
         steps = aDecoder.decodeObjectForKey("steps") as! [Step]
-        id = aDecoder.decodeObjectForKey("id") as! String
+        identifier = aDecoder.decodeObjectForKey("identifier") as! String
         super.init()
     }
     
@@ -43,7 +43,7 @@ class Workout: NSObject, NSCoding {
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(workoutDescription, forKey: "description")
         aCoder.encodeObject(steps, forKey: "steps")
-        aCoder.encodeObject(id, forKey: "id")
+        aCoder.encodeObject(identifier, forKey: "identifier")
     }
     
     /**
@@ -60,18 +60,18 @@ class Workout: NSObject, NSCoding {
 extension Workout {
     
     func workoutBySettingName(name: String) -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, id: id)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, identifier: identifier)
     }
     
     func workoutBySettingDescription(description: String) -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, id: id)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, identifier: identifier)
     }
     
     func workoutByAddingStep(step: Step) -> Self {
         var newSteps = steps
         newSteps.append(step)
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, id: id)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
     }
     
     func workoutByRemovingStep(step: Step) -> Self {
@@ -88,14 +88,14 @@ extension Workout {
         var newSteps = steps
         newSteps.removeAtIndex(index)
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, id: id)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
     }
     
     func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Self {
         var newSteps = steps
         newSteps[index] = newStep
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, id: id)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
     }
     
     func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Self {
@@ -103,8 +103,8 @@ extension Workout {
         var newSteps = steps
         newSteps.removeAtIndex(fromIndex)
         newSteps.insert(stepToMove, atIndex: toIndex)
-
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, id: id)
+        
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
     }
 }
 
