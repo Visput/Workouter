@@ -10,7 +10,17 @@ import UIKit
 
 class StatisticsProvider: NSObject {
 
-    let workoutsProvider: WorkoutsProvider
+    var mostFrequentlyPlayedWorkout: Workout? {
+        var workout: Workout? = nil
+        if workoutsProvider.workouts.count > 0 {
+            workout = workoutsProvider.workouts[0]
+        }
+        return workout
+    }
+    
+    let observers = ObserverSet<StatisticsProviderObserving>()
+    
+    private let workoutsProvider: WorkoutsProvider
     
     required init(workoutsProvider: WorkoutsProvider) {
         self.workoutsProvider = workoutsProvider
@@ -18,17 +28,20 @@ class StatisticsProvider: NSObject {
         
         self.workoutsProvider.observers.addObserver(self)
     }
-    
-    func mostFrequentlyPlayedWorkout() -> Workout? {
-        guard workoutsProvider.workouts.count > 0 else { return nil }
-        
-        return workoutsProvider.workouts[0];
-    }
 }
 
 extension StatisticsProvider: WorkoutsProviderObserving {
     
     func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+        notifyObserversDidUpdateMostFrequentlyPlayedWorkout(mostFrequentlyPlayedWorkout)
+    }
+}
 
+extension StatisticsProvider {
+    
+    private func notifyObserversDidUpdateMostFrequentlyPlayedWorkout(workout: Workout?) {
+        for observer in observers {
+            observer.statisticsProvider(self, didUpdateMostFrequentlyPlayedWorkout: workout)
+        }
     }
 }

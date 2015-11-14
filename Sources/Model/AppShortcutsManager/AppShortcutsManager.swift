@@ -12,6 +12,7 @@ class AppShortcutsManager: NSObject {
     
     let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
+    let statisticsProvider: StatisticsProvider
     
     private var launchedShortcut: UIApplicationShortcutItem?
     
@@ -30,10 +31,13 @@ class AppShortcutsManager: NSObject {
         }
     }
     
-    required init(navigationManager: NavigationManager, workoutsProvider: WorkoutsProvider) {
+    required init(navigationManager: NavigationManager, workoutsProvider: WorkoutsProvider, statisticsProvider: StatisticsProvider) {
         self.navigationManager = navigationManager
         self.workoutsProvider = workoutsProvider
+        self.statisticsProvider = statisticsProvider
         super.init()
+        
+        self.statisticsProvider.observers.addObserver(self)
     }
     
     func handleShortcutInAppLaunchOptions(launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -55,8 +59,7 @@ class AppShortcutsManager: NSObject {
         switch (shortcutId) {
         case .StartWorkout:
             navigationManager.dismissScreenAnimated(false)
-            if workoutsProvider.workouts.count > 0 {
-                let workout = workoutsProvider.workouts[0]
+            if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
                 navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
             } else {
                 navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
@@ -90,8 +93,7 @@ class AppShortcutsManager: NSObject {
         var shortcuts: [UIApplicationShortcutItem] = []
         
         // Start Workout.
-        if workoutsProvider.workouts.count > 0 {
-            let workout = workoutsProvider.workouts[0]
+        if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
             let playWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.StartWorkout.type,
                 localizedTitle: NSLocalizedString("Start Workout", comment: ""))
             playWorkoutShortcut.localizedSubtitle = workout.name
@@ -109,5 +111,12 @@ class AppShortcutsManager: NSObject {
         shortcuts.append(searchWorkoutShortcut)
         
         UIApplication.sharedApplication().shortcutItems = shortcuts
+    }
+}
+
+extension AppShortcutsManager: StatisticsProviderObserving {
+    
+    func statisticsProvider(provider: StatisticsProvider, didUpdateMostFrequentlyPlayedWorkout workout: Workout?) {
+        updateShortcuts()
     }
 }

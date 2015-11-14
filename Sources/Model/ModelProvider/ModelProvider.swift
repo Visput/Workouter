@@ -22,8 +22,12 @@ class ModelProvider: NSObject {
         navigationManager = NavigationManager()
         workoutsProvider = WorkoutsProvider()
         workoutPlayer = WorkoutPlayer()
-        shortcutsManager = AppShortcutsManager(navigationManager: navigationManager, workoutsProvider: workoutsProvider)
         statisticsProvider = StatisticsProvider(workoutsProvider: workoutsProvider)
+        
+        shortcutsManager = AppShortcutsManager(navigationManager: navigationManager,
+            workoutsProvider: workoutsProvider,
+            statisticsProvider: statisticsProvider)
+        
         super.init()
     }
 }
