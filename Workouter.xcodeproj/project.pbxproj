@@ -35,6 +35,12 @@
 		9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
 		9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
+		9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
+		9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
+		9F469AE51BF6D08300C29AA9 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */; };
+		9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */; };
+		9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */; };
+		9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */; };
 		9F6BD7751BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7761BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */; };
@@ -131,6 +137,9 @@
 		9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProvider.swift; sourceTree = "<group>"; };
+		9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
+		9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsProviderObserving.swift; sourceTree = "<group>"; };
 		9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsSearchRequest.swift; sourceTree = "<group>"; };
 		9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +296,22 @@
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
+		9F469AD51BF6918D00C29AA9 /* StatisticsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */,
+			);
+			path = StatisticsProvider;
+			sourceTree = "<group>";
+		};
+		9F469AE31BF6D08300C29AA9 /* ObserverSet */ = {
+			isa = PBXGroup;
+			children = (
+				9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */,
+			);
+			path = ObserverSet;
+			sourceTree = "<group>";
+		};
 		9F6BD7771BEF1CDD00F5222A /* UITableView+Deselect */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +395,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F469AE31BF6D08300C29AA9 /* ObserverSet */,
 				9FDA599E1BEF2A2D00D350C5 /* UIView+FirstResponder */,
 				9F6BD7771BEF1CDD00F5222A /* UITableView+Deselect */,
 				9F37F5711BE056BB00772BB7 /* NSObject+ClassName */,
@@ -441,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C342521A9E4BC800B9D480 /* ModelProvider */,
+				9F469AD51BF6918D00C29AA9 /* StatisticsProvider */,
 				9F37F57D1BE0AE4300772BB7 /* NavigationManager */,
 				9F37F5751BE057D600772BB7 /* AppShortcutsManager */,
 				F0C342551A9E4BC800B9D480 /* WorkoutPlayer */,
@@ -470,6 +497,7 @@
 			children = (
 				F0C342581A9E4BC800B9D480 /* DTO */,
 				F0C3425B1A9E4BC800B9D480 /* WorkoutsProvider.swift */,
+				9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */,
 			);
 			path = WorkoutsProvider;
 			sourceTree = "<group>";
@@ -884,10 +912,13 @@
 				9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
 				F02CAB551B4B871E00F28D72 /* WorkoutCell.swift in Sources */,
+				9F469AE51BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
+				9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
 				9F71076E1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC461BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */,
+				9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0DFC431BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				F02CAB571B4B871E00F28D72 /* WorkoutPlayer.swift in Sources */,
 				9F341AD61BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
@@ -927,10 +958,13 @@
 				9F341ACF1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD77A1BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
 				F09702C31ACA48E700498DEE /* WorkoutCell.swift in Sources */,
+				9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
+				9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
 				9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */,
+				9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0DFC441BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,

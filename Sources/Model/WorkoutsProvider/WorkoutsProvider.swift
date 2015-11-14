@@ -11,6 +11,7 @@ import Foundation
 
 class WorkoutsProvider: NSObject {
     
+    let observers = ObserverSet<WorkoutsProviderObserving>()
     private(set) var workouts: [Workout]!
     
     private var workoutsFilePath: String = {
@@ -49,6 +50,7 @@ class WorkoutsProvider: NSObject {
     
     func addWorkout(workout: Workout) {
         workouts.append(workout)
+        notifyObserversDidUpdateWorkouts()
         commitChanges()
     }
     
@@ -60,6 +62,7 @@ class WorkoutsProvider: NSObject {
     
     func removeWorkoutAtIndex(index: Int) {
         workouts.removeAtIndex(index)
+        notifyObserversDidUpdateWorkouts()
         commitChanges()
     }
     
@@ -67,11 +70,13 @@ class WorkoutsProvider: NSObject {
         let workoutToMove = workouts[fromIndex]
         workouts.removeAtIndex(fromIndex)
         workouts.insert(workoutToMove, atIndex: toIndex)
+        notifyObserversDidUpdateWorkouts()
         commitChanges()
     }
     
     func replaceWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
         workouts[index] = newWorkout
+        notifyObserversDidUpdateWorkouts()
         commitChanges()
     }
     
@@ -99,5 +104,14 @@ class WorkoutsProvider: NSObject {
     
     private func commitChanges() {
         NSKeyedArchiver.archiveRootObject(workouts, toFile: workoutsFilePath)
+    }
+}
+
+extension WorkoutsProvider {
+    
+    private func notifyObserversDidUpdateWorkouts() {
+        for observer in observers {
+            observer.workoutsProvider(self, didUpdateWorkouts: workouts)
+        }
     }
 }
