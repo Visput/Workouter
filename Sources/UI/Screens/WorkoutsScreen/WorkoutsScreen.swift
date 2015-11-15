@@ -49,6 +49,11 @@ class WorkoutsScreen: BaseScreen {
         super.viewDidAppear(animated)
         activateSearchControllerIfNeeded()
     }
+    
+    deinit {
+        // iOS 9 bug requires to manually remove search controller view from it's superview.
+        searchController.view.removeFromSuperview()
+    }
 }
 
 extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {

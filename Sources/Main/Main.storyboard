@@ -48,7 +48,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="AM1-Lf-SlU"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -740,43 +740,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-eg-sSv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="85" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-eg-sSv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTemplateCell" id="4G0-6Q-z9h" customClass="WorkoutTemplateCell" customModule="Workouter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="600" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4G0-6Q-z9h" id="ojY-8w-DHl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTemplateCell" id="Atb-ve-d7q" customClass="WorkoutTemplateCell" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="600" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Atb-ve-d7q" id="ShE-cN-usN">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-p5-29a">
-                                                    <rect key="frame" x="20" y="0.0" width="560" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBE-Vb-HDb">
+                                                    <rect key="frame" x="20" y="18" width="560" height="43"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="ckn-mV-YET"/>
+                                                        <constraint firstAttribute="height" constant="44" id="faM-F4-roX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="faM-F4-roX"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiE-8O-pYR">
+                                                    <rect key="frame" x="20" y="66" width="560" height="0.0"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="RxL-5s-6Jn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="RxL-5s-6Jn"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Pfa-p5-29a" firstAttribute="leading" secondItem="ojY-8w-DHl" secondAttribute="leadingMargin" constant="12" id="BYQ-kb-lre"/>
-                                                <constraint firstItem="Pfa-p5-29a" firstAttribute="trailing" secondItem="ojY-8w-DHl" secondAttribute="trailingMargin" constant="-12" id="YKI-xb-PqP"/>
-                                                <constraint firstItem="Pfa-p5-29a" firstAttribute="top" secondItem="ojY-8w-DHl" secondAttribute="top" id="ZPw-bl-beU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Pfa-p5-29a" secondAttribute="bottom" id="yuc-YW-TeH"/>
+                                                <constraint firstItem="PBE-Vb-HDb" firstAttribute="top" secondItem="ShE-cN-usN" secondAttribute="topMargin" constant="10" id="4fx-Qv-Jl9"/>
+                                                <constraint firstItem="HiE-8O-pYR" firstAttribute="top" secondItem="PBE-Vb-HDb" secondAttribute="bottom" constant="2" id="5eH-qs-X3e"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PBE-Vb-HDb" secondAttribute="bottom" id="FWs-s5-peo"/>
+                                                <constraint firstItem="PBE-Vb-HDb" firstAttribute="trailing" secondItem="ShE-cN-usN" secondAttribute="trailingMargin" constant="-12" id="VJ9-Tl-l9B"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HiE-8O-pYR" secondAttribute="bottom" constant="10" id="bPM-ev-qe8"/>
+                                                <constraint firstItem="HiE-8O-pYR" firstAttribute="leading" secondItem="ShE-cN-usN" secondAttribute="leadingMargin" constant="12" id="dQn-cw-X4Y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HiE-8O-pYR" secondAttribute="trailing" constant="12" id="gvI-mU-51O"/>
+                                                <constraint firstItem="HiE-8O-pYR" firstAttribute="top" secondItem="PBE-Vb-HDb" secondAttribute="bottom" constant="5" id="hne-hA-1Fk"/>
+                                                <constraint firstItem="PBE-Vb-HDb" firstAttribute="leading" secondItem="ShE-cN-usN" secondAttribute="leadingMargin" constant="12" id="mQK-tz-day"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="yuc-YW-TeH"/>
+                                                    <exclude reference="FWs-s5-peo"/>
+                                                    <exclude reference="5eH-qs-X3e"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="Pfa-p5-29a" id="wM8-lh-cCd"/>
+                                            <outlet property="descriptionLabel" destination="HiE-8O-pYR" id="OmE-YG-Qal"/>
+                                            <outlet property="nameLabel" destination="PBE-Vb-HDb" id="9lQ-5Z-oKQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -27,7 +27,15 @@ class WorkoutsProvider: NSObject {
             let step2 = Step(name: "Step 2", description: "Step 2 description",  duration: 120)
             let steps = [step1, step2];
             workouts = []
-            workouts.append(Workout(name: "Workout 3", description: "", steps: steps))
+            workouts.append(Workout(name: "Workout 1",
+                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
+                steps: steps))
+            workouts.append(Workout(name: "Workout 2 Workout 2 Workout 2 Workout 2 Workout 2",
+                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
+                steps: steps))
+            workouts.append(Workout(name: "Workout 3 Workout 3 Workout 3 Workout 3 Workout 3",
+                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
+                steps: steps))
             workouts.append(Workout(name: "Workout 4", description: "Workout 4 description", steps: steps))
             workouts.append(Workout(name: "Workout 5", description: "Workout 5 description", steps: steps))
             workouts.append(Workout(name: "Workout 6", description: "Workout 6 description", steps: steps))

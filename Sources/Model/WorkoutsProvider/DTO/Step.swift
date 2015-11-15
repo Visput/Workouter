@@ -23,14 +23,14 @@ class Step: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
-        stepDescription = aDecoder.decodeObjectForKey("description") as! String
+        stepDescription = aDecoder.decodeObjectForKey("stepDescription") as! String
         duration = aDecoder.decodeIntegerForKey("duration")
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeObject(stepDescription, forKey: "description")
+        aCoder.encodeObject(stepDescription, forKey: "stepDescription")
         aCoder.encodeInteger(duration, forKey: "duration")
     }
 }

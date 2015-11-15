@@ -11,6 +11,7 @@ import UIKit
 class WorkoutTemplateCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     func fillWithWorkout(workout: Workout) {
         if workout.isEmpty() {
@@ -18,5 +19,7 @@ class WorkoutTemplateCell: UITableViewCell {
         } else {
             nameLabel.text = workout.name
         }
+        
+        descriptionLabel.text = workout.workoutDescription
     }
 }

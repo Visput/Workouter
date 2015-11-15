@@ -32,6 +32,11 @@ class WorkoutTemplatesScreen: BaseScreen {
         fillViewWithSearchRequest(searchRequest)
         searchWorkoutsWithRequest(searchRequest)
     }
+    
+    deinit {
+        // iOS 9 bug requires to manually remove search controller view from it's superview.
+        searchController.view.removeFromSuperview()
+    }
 }
 
 extension WorkoutTemplatesScreen: UITableViewDelegate, UITableViewDataSource {

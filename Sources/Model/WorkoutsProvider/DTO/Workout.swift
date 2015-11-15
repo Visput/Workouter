@@ -33,7 +33,7 @@ class Workout: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
-        workoutDescription = aDecoder.decodeObjectForKey("description") as! String
+        workoutDescription = aDecoder.decodeObjectForKey("workoutDescription") as! String
         steps = aDecoder.decodeObjectForKey("steps") as! [Step]
         identifier = aDecoder.decodeObjectForKey("identifier") as! String
         super.init()
@@ -41,7 +41,7 @@ class Workout: NSObject, NSCoding {
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeObject(workoutDescription, forKey: "description")
+        aCoder.encodeObject(workoutDescription, forKey: "workoutDescription")
         aCoder.encodeObject(steps, forKey: "steps")
         aCoder.encodeObject(identifier, forKey: "identifier")
     }
@@ -53,7 +53,7 @@ class Workout: NSObject, NSCoding {
      - returns: New instance of Workout.
      */
     func clone() -> Self {
-        return self.dynamicType.init(name: name, description: description, steps: steps)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps)
     }
 }
 

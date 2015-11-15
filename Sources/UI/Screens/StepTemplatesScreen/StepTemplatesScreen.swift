@@ -32,6 +32,11 @@ class StepTemplatesScreen: BaseScreen {
         fillViewWithSearchRequest(searchRequest)
         searchStepsWithRequest(searchRequest)
     }
+    
+    deinit {
+        // iOS 9 bug requires to manually remove search controller view from it's superview.
+        searchController.view.removeFromSuperview()
+    }
 }
 
 extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
