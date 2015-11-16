@@ -22,6 +22,7 @@ class WorkoutTemplatesScreen: BaseScreen {
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
     }
+    
     private var templatesView: WorkoutTemplatesView {
         return view as! WorkoutTemplatesView
     }

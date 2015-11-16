@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchController: UISearchController {
-
+    
     var enabled = true {
         didSet {
             searchBar.userInteractionEnabled = enabled
