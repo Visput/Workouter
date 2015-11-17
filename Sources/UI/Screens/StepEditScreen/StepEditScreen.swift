@@ -32,7 +32,7 @@ class StepEditScreen: BaseScreen {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier! == "WorkoutName" {
+        if segue.identifier! == "StepName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
             

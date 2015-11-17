@@ -24,11 +24,11 @@ extension NSAttributedString {
     }
 
     class func durationStringForDuration(duration: Int, showSeconds: Bool, valueFont: UIFont, unitFont: UIFont) -> Self {
-        let hourShortUnit = NSLocalizedString("h", comment: "")
-        let hourSingularUnit = NSLocalizedString("hour", comment: "")
+        let hourShortUnit = NSLocalizedString(" h", comment: "")
+        let hourSingularUnit = NSLocalizedString(" hour", comment: "")
         let hourPluralUnit = NSLocalizedString("hours", comment: "")
-        let minuteUnit = NSLocalizedString("min", comment: "")
-        let secondUnit = NSLocalizedString("sec", comment: "")
+        let minuteUnit = NSLocalizedString(" min", comment: "")
+        let secondUnit = NSLocalizedString(" sec", comment: "")
         
         let durationString = NSMutableAttributedString()
         

@@ -264,7 +264,7 @@
         <!--Edit Step-->
         <scene sceneID="rCW-qK-t5e">
             <objects>
-                <viewController storyboardIdentifier="StepEditScreen" id="DeW-bz-VWC" customClass="StepEditScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StepEditScreen" automaticallyAdjustsScrollViewInsets="NO" id="DeW-bz-VWC" customClass="StepEditScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5ya-1b-Pyd"/>
                         <viewControllerLayoutGuide type="bottom" id="sRR-Vz-xyo"/>
@@ -273,15 +273,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-hR-XR7">
-                                <rect key="frame" x="20" y="78" width="560" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="gzi-2C-Fiw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="52f-QM-Ujt">
                                 <rect key="frame" x="20" y="125" width="560" height="128"/>
                                 <animations/>
@@ -296,17 +287,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-mG-71o">
-                                <rect key="frame" x="20" y="124" width="560" height="128"/>
+                                <rect key="frame" x="20" y="154" width="560" height="100"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="iMy-52-OgE"/>
+                                    <constraint firstAttribute="height" constant="100" id="iMy-52-OgE"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="HpB-m2-ign" kind="embed" identifier="StepDescription" id="aFV-Nt-De2"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29b-Uj-haV">
-                                <rect key="frame" x="20" y="268" width="560" height="216"/>
+                                <rect key="frame" x="20" y="270" width="560" height="216"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="WK1-lt-mKa"/>
@@ -315,19 +306,29 @@
                                     <segue destination="g20-OQ-sS2" kind="embed" identifier="StepDuration" id="Gqf-hR-YDe"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-B6-40e">
+                                <rect key="frame" x="20" y="78" width="560" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6OH-qa-57s"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="HpB-m2-ign" kind="embed" identifier="StepName" id="EvO-Os-6LK"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pPw-hR-XR7" firstAttribute="trailing" secondItem="kkh-o0-1RU" secondAttribute="trailingMargin" id="2tg-EF-6aQ"/>
+                            <constraint firstItem="Q2g-B6-40e" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="14" id="A8b-MV-3V4"/>
+                            <constraint firstItem="Q2g-B6-40e" firstAttribute="trailing" secondItem="kkh-o0-1RU" secondAttribute="trailingMargin" id="BPE-ni-CsU"/>
                             <constraint firstItem="29b-Uj-haV" firstAttribute="top" secondItem="Sp7-mG-71o" secondAttribute="bottom" constant="16" id="EC1-ev-MDd"/>
-                            <constraint firstItem="Sp7-mG-71o" firstAttribute="top" secondItem="pPw-hR-XR7" secondAttribute="bottom" constant="16" id="GHA-lS-PaO"/>
-                            <constraint firstItem="pPw-hR-XR7" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leadingMargin" id="RfS-u4-CLs"/>
+                            <constraint firstItem="Sp7-mG-71o" firstAttribute="top" secondItem="Q2g-B6-40e" secondAttribute="bottom" constant="16" id="FMV-GI-4MA"/>
                             <constraint firstItem="Sp7-mG-71o" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leadingMargin" id="TKZ-XZ-9in"/>
                             <constraint firstAttribute="trailingMargin" secondItem="29b-Uj-haV" secondAttribute="trailing" id="ThS-Xd-Xl6"/>
                             <constraint firstItem="29b-Uj-haV" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leadingMargin" id="ToZ-9R-q1D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sp7-mG-71o" secondAttribute="trailing" id="g77-bN-qny"/>
-                            <constraint firstItem="pPw-hR-XR7" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="14" id="oLc-ZN-MoA"/>
+                            <constraint firstItem="Q2g-B6-40e" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leadingMargin" id="k1Z-i8-1BF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -335,9 +336,6 @@
                                 <exclude reference="smF-zl-CAi"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outlet property="nameField" destination="pPw-hR-XR7" id="xdE-Se-ybd"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Step" id="oqA-g8-udP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GV3-kA-uPR"/>
@@ -530,7 +528,7 @@
         <!--Workout-->
         <scene sceneID="XLc-jd-tcq">
             <objects>
-                <viewController storyboardIdentifier="WorkoutEditScreen" id="5cI-Xv-1fW" customClass="WorkoutEditScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutEditScreen" automaticallyAdjustsScrollViewInsets="NO" id="5cI-Xv-1fW" customClass="WorkoutEditScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5L6-bs-NfR"/>
                         <viewControllerLayoutGuide type="bottom" id="f2g-Ez-33A"/>
@@ -540,17 +538,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96P-wQ-twa">
-                                <rect key="frame" x="20" y="154" width="560" height="107"/>
+                                <rect key="frame" x="20" y="154" width="560" height="100"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="l8i-0t-CY9"/>
+                                    <constraint firstAttribute="height" constant="100" id="l8i-0t-CY9"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="bNs-2E-unv"/>
+                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
+                                <rect key="frame" x="20" y="78" width="560" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
                                 </connections>
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-x6-9TF">
-                                <rect key="frame" x="20" y="277" width="560" height="323"/>
+                                <rect key="frame" x="20" y="270" width="560" height="330"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="qOL-s5-Xtd">
@@ -650,16 +658,6 @@
                                     <outlet property="delegate" destination="5cI-Xv-1fW" id="YEs-BV-hTb"/>
                                 </connections>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
-                                <rect key="frame" x="20" y="78" width="560" height="60"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1124,6 +1122,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dQt-nY-fnQ"/>
+        <segue reference="EvO-Os-6LK"/>
     </inferredMetricsTieBreakers>
 </document>
