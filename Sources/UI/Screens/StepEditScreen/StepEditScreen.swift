@@ -35,10 +35,16 @@ class StepEditScreen: BaseScreen {
         if segue.identifier! == "StepName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
+            nameController.didChangeTextAction = { [unowned self] text in
+                self.step = self.step.stepBySettingName(text)
+            }
             
         } else if segue.identifier! == "StepDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
             descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
+            descriptionController.didChangeTextAction = { [unowned self] text in
+                self.step = self.step.stepBySettingDescription(text)
+            }
             
         } else if segue.identifier! == "StepDuration" {
             durationController = segue.destinationViewController as! DurationViewController
@@ -63,7 +69,8 @@ extension StepEditScreen {
         nameController.textMaxLength = step.nameMaxLength
         descriptionController.text = step.stepDescription
         descriptionController.textMaxLength = step.descriptionMaxLength
-        durationController.setDuration(step.duration, animated: false)
+        let duration = step.isEmpty() ? durationController.defaultDuration : step.duration
+        durationController.setDuration(duration, animated: false)
         
         if step.isEmpty() {
             nameController.active = true

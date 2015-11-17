@@ -45,7 +45,7 @@ extension Step {
     }
     
     func stepBySettingDescription(description: String) -> Self {
-        return self.dynamicType.init(name: name, description: stepDescription, duration: duration)
+        return self.dynamicType.init(name: name, description: description, duration: duration)
     }
     
     func stepBySettingDuration(duration: Int) -> Self {

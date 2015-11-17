@@ -11,6 +11,8 @@ import VPAttributedFormat
 
 class TextViewController: UIViewController {
     
+    var didChangeTextAction: ((text: String) -> ())?
+    
     /// Max number of chars allowed to input.
     /// Set 0 to disable limit.
     /// Equals to 0 by default.
@@ -90,5 +92,6 @@ extension TextViewController: UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
         text = textView.text
+        didChangeTextAction?(text: text)
     }
 }

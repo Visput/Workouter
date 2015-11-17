@@ -40,10 +40,16 @@ class WorkoutEditScreen: BaseScreen {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
+            nameController.didChangeTextAction = { [unowned self] text in
+                self.workout = self.workout.workoutBySettingName(text)
+            }
             
         } else if segue.identifier! == "WorkoutDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
             descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
+            descriptionController.didChangeTextAction = { [unowned self] text in
+                self.workout = self.workout.workoutBySettingDescription(text)
+            }
         }
     }
 }

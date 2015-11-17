@@ -42,6 +42,7 @@ class DurationViewController: UIViewController {
     
     func setDuration(newDuration: Int, animated: Bool) {
         duration = newDuration
+        
         if isViewLoaded() {
             setComponentsWithDuration(duration, animated:animated)
         }

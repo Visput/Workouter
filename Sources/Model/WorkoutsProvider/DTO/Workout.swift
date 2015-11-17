@@ -67,7 +67,7 @@ extension Workout {
     }
     
     func workoutBySettingDescription(description: String) -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, identifier: identifier)
+        return self.dynamicType.init(name: name, description: description, steps: steps, identifier: identifier)
     }
     
     func workoutByAddingStep(step: Step) -> Self {
