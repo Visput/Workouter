@@ -20,6 +20,7 @@ class WorkoutEditScreen: BaseScreen {
     }
     
     private var descriptionController: TextViewController!
+    private var nameController: TextViewController!
     private var needsReloadStepsTableView = true
     
     private var navigationManager: NavigationManager {
@@ -36,8 +37,13 @@ class WorkoutEditScreen: BaseScreen {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier! == "WorkoutDescription" {
+        if segue.identifier! == "WorkoutName" {
+            nameController = segue.destinationViewController as! TextViewController
+            nameController.placeholder = NSLocalizedString("Name", comment: "")
+            
+        } else if segue.identifier! == "WorkoutDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
+            descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
         }
     }
 }
@@ -125,11 +131,13 @@ extension WorkoutEditScreen {
 extension WorkoutEditScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
-        workoutEditView.nameField.text = workout.name
+        nameController.text = workout.name
+        nameController.textMaxLength = workout.nameMaxLength
         descriptionController.text = workout.workoutDescription
+        descriptionController.textMaxLength = workout.descriptionMaxLength
         
         if workout.isEmpty() {
-            workoutEditView.nameField.becomeFirstResponder()
+            nameController.active = true
         }
         
         if needsReloadStepsTableView {

@@ -75,8 +75,8 @@ class DurationComponent {
         var stringValue: String? = nil
         if row >= 0 && row < numberOfRows {
             stringValue = "\(row % maxValue)"
-            
         }
+        
         return stringValue
     }
 }

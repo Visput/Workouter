@@ -15,6 +15,7 @@ class StepEditScreen: BaseScreen {
     var step: Step = Step.emptyStep()
     
     private var descriptionController: TextViewController!
+    private var nameController: TextViewController!
     private var durationController: DurationViewController!
     
     private var navigationManager: NavigationManager {
@@ -31,8 +32,13 @@ class StepEditScreen: BaseScreen {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier! == "StepDescription" {
+        if segue.identifier! == "WorkoutName" {
+            nameController = segue.destinationViewController as! TextViewController
+            nameController.placeholder = NSLocalizedString("Name", comment: "")
+            
+        } else if segue.identifier! == "StepDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
+            descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
             
         } else if segue.identifier! == "StepDuration" {
             durationController = segue.destinationViewController as! DurationViewController
@@ -53,12 +59,14 @@ extension StepEditScreen {
 extension StepEditScreen {
     
     private func fillViewWithStep(step: Step) {
-        stepEditView.nameField.text = step.name
-        durationController.setDuration(step.duration, animated: false)
+        nameController.text = step.name
+        nameController.textMaxLength = step.nameMaxLength
         descriptionController.text = step.stepDescription
+        descriptionController.textMaxLength = step.descriptionMaxLength
+        durationController.setDuration(step.duration, animated: false)
         
         if step.isEmpty() {
-            stepEditView.nameField.becomeFirstResponder()
+            nameController.active = true
         }
     }
 }

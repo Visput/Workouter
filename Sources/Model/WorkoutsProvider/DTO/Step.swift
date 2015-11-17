@@ -10,6 +10,9 @@ import UIKit
 
 class Step: NSObject, NSCoding {
     
+    let nameMaxLength = 70
+    let descriptionMaxLength = 140
+    
     private(set) var name: String
     private(set) var stepDescription: String
     private(set) var duration: Int // Seconds.

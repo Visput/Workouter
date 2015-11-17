@@ -10,6 +10,5 @@ import Foundation
 import UIKit
 
 class StepEditView: BaseView {
-    
-    @IBOutlet private(set) weak var nameField: UITextField!
+
 }

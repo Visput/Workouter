@@ -10,6 +10,9 @@ import Foundation
 
 class Workout: NSObject, NSCoding {
     
+    let nameMaxLength = 70
+    let descriptionMaxLength = 140
+    
     let name: String
     let workoutDescription: String
     let steps: [Step]

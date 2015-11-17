@@ -10,7 +10,6 @@ import UIKit
 
 class WorkoutEditView: BaseView {
     
-    @IBOutlet private(set) weak var nameField: UITextField!
     @IBOutlet private(set) weak var stepsTableView: UITableView!
     
     override func awakeFromNib() {

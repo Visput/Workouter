@@ -7,54 +7,88 @@
 //
 
 import UIKit
+import VPAttributedFormat
 
 class TextViewController: UIViewController {
     
-    var text: String? {
-        get {
-            return textView.text
-        }
-        set {
-            textView.text = newValue
-            textViewDidChange(textView)
-        }
-    }
-    
-    var attributedText: NSAttributedString? {
-        get {
-            return textView.attributedText
-        }
-        set {
-            textView.attributedText = newValue
-            textViewDidChange(textView)
+    /// Max number of chars allowed to input.
+    /// Set 0 to disable limit.
+    /// Equals to 0 by default.
+    var textMaxLength = 0 {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
         }
     }
     
-    var placeholder: String? {
-        get {
-            return placeholderLabel.text
-        }
-        set {
-            placeholderLabel.text = newValue
+    var text: String = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
         }
     }
     
-    var attributedPlaceholder: NSAttributedString? {
-        get {
-            return placeholderLabel.attributedText
+    var placeholder: String = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
         }
-        set {
-            placeholderLabel.attributedText = newValue
+    }
+    
+    var active: Bool {
+        get {
+            return isViewLoaded() && textView.isFirstResponder()
+        }
+        set (isActive) {
+            guard isViewLoaded() else { return }
+            if isActive {
+                textView.becomeFirstResponder()
+            } else {
+                textView.resignFirstResponder()
+            }
         }
     }
     
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var textLimitLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Use default placeholder/text from storyboard/xib.
+        if placeholder.isEmpty && placeholderLabel.text != nil {
+            placeholder = placeholderLabel.text!
+        }
+        if text.isEmpty {
+            text = textView.text
+        }
+        
+        updateViews()
+    }
+    
+    private func updateViews() {
+        if textMaxLength > 0 && text.characters.count > textMaxLength {
+            let index = text.startIndex.advancedBy(textMaxLength)
+            text = text.substringToIndex(index)
+        }
+        
+        textView.text = text
+        
+        placeholderLabel.text = placeholder
+        placeholderLabel.hidden = !textView.text.isEmpty
+        
+        textLimitLabel.hidden = textMaxLength <= 0
+        withVaList([textView.text.characters.count, textMaxLength]) { pointer in
+            textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+        }
+    }
 }
 
 extension TextViewController: UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
-        placeholderLabel.hidden = !textView.text.isEmpty || !textView.attributedText.string.isEmpty
+        text = textView.text
     }
 }
