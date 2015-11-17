@@ -54,7 +54,7 @@ class WorkoutsView: BaseView {
         super.awakeFromNib()
         
         workoutsTableView.rowHeight = UITableViewAutomaticDimension
-        workoutsTableView.estimatedRowHeight = 85.0
+        workoutsTableView.estimatedRowHeight = 100.0
     }
     
     override func willAppear(animated: Bool) {

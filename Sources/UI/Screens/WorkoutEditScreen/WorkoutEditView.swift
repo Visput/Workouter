@@ -16,6 +16,8 @@ class WorkoutEditView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         stepsTableView.setEditing(true, animated: false)
+        stepsTableView.rowHeight = UITableViewAutomaticDimension
+        stepsTableView.estimatedRowHeight = 70.0
     }
     
     override func willAppear(animated: Bool) {

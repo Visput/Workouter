@@ -46,11 +46,19 @@ extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(StepTemplateCell.className()) as! StepTemplateCell
-        let step = steps[indexPath.row]
-        cell.fillWithStep(step)
+        var resultCell: UITableViewCell! = nil
         
-        return cell
+        let step = steps[indexPath.row]
+        if step.isEmpty() {
+            resultCell = tableView.dequeueReusableCellWithIdentifier(NewStepTemplateCell.className())
+            
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(StepTemplateCell.className()) as! StepTemplateCell
+            cell.fillWithStep(step)
+            resultCell = cell
+        }
+        
+        return resultCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -16,7 +16,7 @@ class WorkoutTemplatesView: BaseView {
         super.awakeFromNib()
         
         templatesTableView.rowHeight = UITableViewAutomaticDimension
-        templatesTableView.estimatedRowHeight = 70.0
+        templatesTableView.estimatedRowHeight = 85.0
     }
     
     override func willAppear(animated: Bool) {

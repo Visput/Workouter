@@ -17,5 +17,8 @@ class StepCell: UITableViewCell {
     func fillWithStep(step: Step) {
         nameLabel.text = step.name
         descriptionLabel.text = step.stepDescription
+        durationLabel.attributedText = NSAttributedString.durationStringForStep(step,
+            valueFont: UIFont.systemFontOfSize(21.0),
+            unitFont: UIFont.systemFontOfSize(10))
     }
 }

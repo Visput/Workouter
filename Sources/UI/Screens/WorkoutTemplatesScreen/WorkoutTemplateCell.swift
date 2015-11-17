@@ -12,14 +12,16 @@ class WorkoutTemplateCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var stepsCountLabel: UILabel!
+    @IBOutlet private weak var durationLabel: UILabel!
     
     func fillWithWorkout(workout: Workout) {
-        if workout.isEmpty() {
-            nameLabel.text = NSLocalizedString("Empty Workout", comment: "")
-        } else {
-            nameLabel.text = workout.name
-        }
-        
+        nameLabel.text = workout.name
         descriptionLabel.text = workout.workoutDescription
+        stepsCountLabel.text = String(workout.steps.count)
+        
+        durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
+            valueFont: UIFont.systemFontOfSize(12.0),
+            unitFont: UIFont.systemFontOfSize(8))
     }
 }

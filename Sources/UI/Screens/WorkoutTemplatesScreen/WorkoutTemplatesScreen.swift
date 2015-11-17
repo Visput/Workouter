@@ -47,11 +47,19 @@ extension WorkoutTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutTemplateCell.className()) as! WorkoutTemplateCell
-        let workout = workouts[indexPath.row]
-        cell.fillWithWorkout(workout)
+        var resultCell: UITableViewCell! = nil
         
-        return cell
+        let workout = workouts[indexPath.row]
+        if workout.isEmpty() {
+            resultCell = tableView.dequeueReusableCellWithIdentifier(NewWorkoutTemplateCell.className())
+            
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutTemplateCell.className()) as! WorkoutTemplateCell
+            cell.fillWithWorkout(workout)
+            resultCell = cell
+        }
+        
+        return resultCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

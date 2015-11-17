@@ -15,12 +15,10 @@ class StepTemplateCell: UITableViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     
     func fillWithStep(step: Step) {
-        if step.isEmpty() {
-            nameLabel.text = NSLocalizedString("Empty Step", comment: "")
-        } else {
-            nameLabel.text = step.name
-        }
-        
+        nameLabel.text = step.name
         descriptionLabel.text = step.stepDescription
+        durationLabel.attributedText = NSAttributedString.durationStringForStep(step,
+            valueFont: UIFont.systemFontOfSize(21.0),
+            unitFont: UIFont.systemFontOfSize(10))
     }
 }
