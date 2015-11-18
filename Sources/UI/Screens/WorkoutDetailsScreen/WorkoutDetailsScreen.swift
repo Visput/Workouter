@@ -17,7 +17,7 @@ class WorkoutDetailsScreen: BaseScreen {
         title = workout.name
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.AllButUpsideDown
     }
 }

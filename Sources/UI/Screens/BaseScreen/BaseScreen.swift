@@ -41,4 +41,8 @@ class BaseScreen: UIViewController {
         super.viewDidDisappear(animated)
         baseView.didDisappear(animated)
     }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
 }

@@ -10,7 +10,11 @@ import UIKit
 
 class NavigationManager: NSObject {
     
-    var window: UIWindow!
+    var window: UIWindow! {
+        didSet {
+            navigationController.delegate = self
+        }
+    }
     
     var storyboard: UIStoryboard {
         return window.rootViewController!.storyboard!
@@ -18,6 +22,14 @@ class NavigationManager: NSObject {
     
     var navigationController: UINavigationController {
         return window.rootViewController! as! UINavigationController
+    }
+}
+
+extension NavigationManager: UINavigationControllerDelegate {
+    
+    func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        guard let viewController = navigationController.topViewController else { return UIInterfaceOrientationMask.Portrait }
+        return viewController.supportedInterfaceOrientations()
     }
 }
 
@@ -37,6 +49,8 @@ extension NavigationManager {
     
     func presentScreen(screen: UIViewController, animated: Bool) {
         let presentationController = UINavigationController(rootViewController: screen)
+        presentationController.delegate = self
+        
         navigationController.presentViewController(presentationController, animated: animated, completion: nil)
     }
     
