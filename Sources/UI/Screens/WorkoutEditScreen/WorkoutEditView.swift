@@ -11,6 +11,7 @@ import UIKit
 class WorkoutEditView: BaseView {
     
     @IBOutlet private(set) weak var stepsTableView: UITableView!
+    @IBOutlet private weak var newStepButton: ProgressButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

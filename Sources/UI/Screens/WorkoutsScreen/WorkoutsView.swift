@@ -30,7 +30,6 @@ class WorkoutsView: BaseView {
             switch mode {
             case .Edit:
                 workoutsTableView.setEditing(true, animated: true)
-                break
             case .Standard:
                 workoutsTableView.setEditing(false, animated: true)
             }
