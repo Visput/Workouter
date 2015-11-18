@@ -13,6 +13,17 @@ class TextViewController: UIViewController {
     
     var didChangeTextAction: ((text: String) -> ())?
     
+    /// Use this property if you need to activate another text controller
+    /// when user clicks 'return' key.
+    /// If this property is nil then current text controller will be
+    /// deactivated when user clicks 'return' key.
+    var nextTextViewController: TextViewController? {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
+        }
+    }
+    
     /// Max number of chars allowed to input.
     /// Set 0 to disable limit.
     /// Equals to 0 by default.
@@ -58,15 +69,9 @@ class TextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Use default placeholder/text from storyboard/xib.
-        if placeholder.isEmpty && placeholderLabel.text != nil {
-            placeholder = placeholderLabel.text!
-        }
-        if text.isEmpty {
-            text = textView.text
-        }
-        
+
+        configureReturnKey()
+        configureDefaultValues()
         updateViews()
     }
     
@@ -74,6 +79,9 @@ class TextViewController: UIViewController {
         if textMaxLength > 0 && text.characters.count > textMaxLength {
             let index = text.startIndex.advancedBy(textMaxLength)
             text = text.substringToIndex(index)
+        }
+        if text.containsString("\n") {
+            text = text.stringByReplacingOccurrencesOfString("\n", withString: " ")
         }
         
         textView.text = text
@@ -86,6 +94,24 @@ class TextViewController: UIViewController {
             textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
         }
     }
+    
+    private func configureReturnKey() {
+        if nextTextViewController != nil {
+            textView.returnKeyType = .Next
+        } else {
+            textView.returnKeyType = .Done
+        }
+    }
+    
+    private func configureDefaultValues() {
+        // Use default placeholder/text from storyboard/xib.
+        if placeholder.isEmpty && placeholderLabel.text != nil {
+            placeholder = placeholderLabel.text!
+        }
+        if text.isEmpty {
+            text = textView.text
+        }
+    }
 }
 
 extension TextViewController: UITextViewDelegate {
@@ -93,5 +119,18 @@ extension TextViewController: UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
         text = textView.text
         didChangeTextAction?(text: text)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        guard text != "\n" else {
+            textView.resignFirstResponder()
+            if nextTextViewController != nil {
+                nextTextViewController!.active = true
+            }
+            
+            return false
+        }
+        
+        return true
     }
 }

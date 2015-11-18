@@ -33,6 +33,7 @@ class WorkoutEditScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextControllers()
         fillViewWithWorkout(workout)
     }
     
@@ -150,5 +151,9 @@ extension WorkoutEditScreen {
             workoutEditView.stepsTableView.reloadData()
         }
         needsReloadStepsTableView = true
+    }
+    
+    private func configureTextControllers() {
+        nameController.nextTextViewController = descriptionController
     }
 }

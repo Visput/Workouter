@@ -28,6 +28,7 @@ class StepEditScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextControllers()
         fillViewWithStep(step)
     }
     
@@ -75,5 +76,9 @@ extension StepEditScreen {
         if step.isEmpty() {
             nameController.active = true
         }
+    }
+    
+    private func configureTextControllers() {
+        nameController.nextTextViewController = descriptionController
     }
 }
