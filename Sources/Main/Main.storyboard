@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9I-bn-3tl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9I-bn-3tl">
                                                     <rect key="frame" x="20" y="18" width="560" height="39"/>
                                                     <animations/>
                                                     <constraints>
@@ -541,7 +541,7 @@
                                 <rect key="frame" x="20" y="154" width="560" height="100"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="l8i-0t-CY9"/>
+                                    <constraint firstAttribute="height" priority="999" constant="100" id="l8i-0t-CY9"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
@@ -593,7 +593,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-u7-Mud">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-u7-Mud">
                                                     <rect key="frame" x="8" y="18" width="0.0" height="28"/>
                                                     <animations/>
                                                     <constraints>
@@ -730,12 +730,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d / %d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="481" y="34" width="49" height="26"/>
+                                <rect key="frame" x="484" y="40" width="49" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="sbd-go-pUW"/>
-                                    <constraint firstAttribute="height" constant="26" id="trs-3c-JZb"/>
+                                    <constraint firstAttribute="height" constant="20" id="trs-3c-JZb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -757,7 +757,7 @@
                             <constraint firstItem="fP7-v8-OzO" firstAttribute="top" secondItem="eJG-Xn-t72" secondAttribute="bottom" id="WbD-54-EWj"/>
                             <constraint firstAttribute="trailing" secondItem="6XD-d6-RvV" secondAttribute="trailing" id="g42-wh-zH9"/>
                             <constraint firstAttribute="bottom" secondItem="6XD-d6-RvV" secondAttribute="bottom" id="h5V-dt-L2i"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eJG-Xn-t72" secondAttribute="trailing" constant="10" id="nj5-Qb-j8S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJG-Xn-t72" secondAttribute="trailing" constant="7" id="nj5-Qb-j8S"/>
                             <constraint firstItem="6XD-d6-RvV" firstAttribute="top" secondItem="jSz-y1-qKl" secondAttribute="top" id="p6z-NL-6Dg"/>
                         </constraints>
                     </view>
