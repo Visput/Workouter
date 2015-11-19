@@ -36,8 +36,10 @@ class StepEditScreen: BaseScreen {
         if segue.identifier! == "StepName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
+            nameController.optional = false
             nameController.didChangeTextAction = { [unowned self] text in
                 self.step = self.step.stepBySettingName(text)
+                self.nameController.valid = true
             }
             
         } else if segue.identifier! == "StepDescription" {
@@ -59,7 +61,10 @@ class StepEditScreen: BaseScreen {
 extension StepEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
-        stepDidEditAction?(step: step)
+        stepEditView.endEditing(true)
+        if validateStep() {
+            stepDidEditAction?(step: step)
+        }
     }
 }
 
@@ -80,5 +85,9 @@ extension StepEditScreen {
     
     private func configureTextControllers() {
         nameController.nextTextViewController = descriptionController
+    }
+    
+    private func validateStep() -> Bool {
+        return nameController.validate()!
     }
 }

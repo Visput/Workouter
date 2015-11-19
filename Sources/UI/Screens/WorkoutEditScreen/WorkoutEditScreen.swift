@@ -41,8 +41,10 @@ class WorkoutEditScreen: BaseScreen {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
+            nameController.optional = false
             nameController.didChangeTextAction = { [unowned self] text in
                 self.workout = self.workout.workoutBySettingName(text)
+                self.nameController.valid = true
             }
             
         } else if segue.identifier! == "WorkoutDescription" {
@@ -113,7 +115,10 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
 extension WorkoutEditScreen {
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
-        workoutDidEditAction?(workout: workout)
+        workoutEditView.endEditing(true)
+        if validateWorkout() {
+            workoutDidEditAction?(workout: workout)
+        }
     }
     
     @IBAction private func addStepButtonDidPress(sender: AnyObject) {
@@ -125,6 +130,7 @@ extension WorkoutEditScreen {
                 
                 self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: false) { step in
                     self.workout = self.workout.workoutByAddingStep(step)
+                    self.workoutEditView.newStepButton.valid = true
                     self.navigationManager.popScreenAnimated(true)
                 }
                 self.navigationManager.dismissScreenAnimated(true)
@@ -155,5 +161,12 @@ extension WorkoutEditScreen {
     
     private func configureTextControllers() {
         nameController.nextTextViewController = descriptionController
+    }
+    
+    private func validateWorkout() -> Bool {
+        workoutEditView.newStepButton.valid = workout.steps.count > 0
+        nameController.validate()
+        
+        return workoutEditView.newStepButton.valid && nameController.valid
     }
 }

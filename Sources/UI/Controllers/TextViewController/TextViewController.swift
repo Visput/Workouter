@@ -62,6 +62,19 @@ class TextViewController: UIViewController {
         }
     }
     
+    var optional = true
+    
+    var valid = true {
+        didSet {
+            guard isViewLoaded() else { return }
+            if valid {
+                view.layer.borderColor = UIColor.secondaryColor().CGColor
+            } else {
+                view.layer.borderColor = UIColor.invalidStateColor().CGColor
+            }
+        }
+    }
+    
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var textLimitLabel: UILabel!
@@ -71,10 +84,17 @@ class TextViewController: UIViewController {
         super.viewDidLoad()
 
         configureReturnKey()
-        configureDefaultValues()
+        applyDefaultValues()
         updateViews()
     }
     
+    
+    func validate() -> Bool? {
+        guard isViewLoaded() else { return nil }
+        
+        valid = optional || !textView.text.isEmpty
+        return valid
+    }
 }
 
 extension TextViewController: UITextViewDelegate {
@@ -129,7 +149,9 @@ extension TextViewController {
         }
     }
     
-    private func configureDefaultValues() {
+    private func applyDefaultValues() {
+        valid = true
+        
         // Use default placeholder/text from storyboard/xib.
         if placeholder.isEmpty && placeholderLabel.text != nil {
             placeholder = placeholderLabel.text!
