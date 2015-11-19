@@ -10,24 +10,22 @@ import UIKit
 
 class ProgressButton: UIButton {
 
-    var color: UIColor = UIColor.blackColor() {
+    var color = UIColor.lightPrimaryColor() {
         didSet {
-            fillWithColor(color)
+            if valid {
+                currentColor = color
+            }
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        fillWithColor(color)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        fillWithColor(color)
-    }
-    
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    var valid = true {
+        didSet {
+            if valid {
+                currentColor = color
+            } else {
+                currentColor = UIColor.invalidStateColor()
+            }
+        }
     }
     
     override var enabled: Bool {
@@ -60,8 +58,40 @@ class ProgressButton: UIButton {
         }
     }
     
+    private var currentColor: UIColor! {
+        didSet {
+            applyCurrentColor()
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        currentColor = color
+        applyCurrentColor()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        currentColor = color
+        applyCurrentColor()
+    }
+}
+
+extension ProgressButton {
+    
+    private func applyCurrentColor() {
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 8.0
+        
+        layer.borderColor = currentColor.CGColor
+        setTitleColor(colorForState(.Normal), forState: .Normal)
+        setTitleColor(colorForState(.Selected), forState: .Selected)
+        setTitleColor(colorForState(.Highlighted), forState: .Highlighted)
+        setTitleColor(colorForState(.Disabled), forState: .Disabled)
+    }
+    
     private func colorForState(state: UIControlState) -> UIColor {
-        var resultColor = color
+        var resultColor = currentColor
         
         if state == .Selected || state == .Highlighted {
             var red: CGFloat = 0
@@ -69,7 +99,7 @@ class ProgressButton: UIButton {
             var blue: CGFloat = 0
             var alpha: CGFloat = 0
             
-            if color.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            if currentColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
                 resultColor = UIColor(red: max(red - 0.2, 0.0),
                     green: max(green - 0.2, 0.0),
                     blue: max(blue - 0.2, 0.0),
@@ -77,20 +107,9 @@ class ProgressButton: UIButton {
             }
             
         } else if state == .Disabled {
-            resultColor = UIColor.grayColor().colorWithAlphaComponent(0.7)
+            resultColor = UIColor.disabledStateColor()
         }
         
         return resultColor
-    }
-    
-    private func fillWithColor(color: UIColor) {
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 8.0
-        
-        layer.borderColor = color.CGColor
-        setTitleColor(colorForState(.Normal), forState: .Normal)
-        setTitleColor(colorForState(.Selected), forState: .Selected)
-        setTitleColor(colorForState(.Highlighted), forState: .Highlighted)
-        setTitleColor(colorForState(.Disabled), forState: .Disabled)
     }
 }

@@ -72,8 +72,35 @@ class TextViewController: UIViewController {
 
         configureReturnKey()
         configureDefaultValues()
+        configureTextView()
         updateViews()
     }
+    
+}
+
+extension TextViewController: UITextViewDelegate {
+    
+    func textViewDidChange(textView: UITextView) {
+        text = textView.text
+        didChangeTextAction?(text: text)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        // Deactivate controller when user clicks on return key.
+        guard text != "\n" else {
+            textView.resignFirstResponder()
+            if nextTextViewController != nil {
+                nextTextViewController!.active = true
+            }
+            
+            return false
+        }
+        
+        return true
+    }
+}
+
+extension TextViewController {
     
     private func updateViews() {
         if textMaxLength > 0 && text.characters.count > textMaxLength {
@@ -112,25 +139,10 @@ class TextViewController: UIViewController {
             text = textView.text
         }
     }
-}
-
-extension TextViewController: UITextViewDelegate {
     
-    func textViewDidChange(textView: UITextView) {
-        text = textView.text
-        didChangeTextAction?(text: text)
-    }
-    
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        guard text != "\n" else {
-            textView.resignFirstResponder()
-            if nextTextViewController != nil {
-                nextTextViewController!.active = true
-            }
-            
-            return false
-        }
-        
-        return true
+    private func configureTextView() {
+        textView.layer.borderWidth = 1.0
+        textView.layer.cornerRadius = 8.0
+        textView.layer.borderColor = UIColor.lightPrimaryColor().CGColor
     }
 }

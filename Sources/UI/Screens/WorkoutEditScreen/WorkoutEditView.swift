@@ -18,7 +18,6 @@ class WorkoutEditView: BaseView {
         stepsTableView.setEditing(true, animated: false)
         stepsTableView.rowHeight = UITableViewAutomaticDimension
         stepsTableView.estimatedRowHeight = 70.0
-        newStepButton.color = UIColor.lightPrimaryColor()
     }
     
     override func willAppear(animated: Bool) {
