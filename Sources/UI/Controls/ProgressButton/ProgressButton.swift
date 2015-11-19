@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressButton: UIButton {
+ @IBDesignable class ProgressButton: UIButton {
 
     @IBInspectable dynamic var color: UIColor = UIColor.blackColor() {
         didSet {
