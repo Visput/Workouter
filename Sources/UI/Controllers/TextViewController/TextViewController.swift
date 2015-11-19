@@ -68,7 +68,7 @@ class TextViewController: UIViewController {
         didSet {
             guard isViewLoaded() else { return }
             if valid {
-                view.layer.borderColor = UIColor.secondaryColor().CGColor
+                view.layer.borderColor = UIColor.secondaryTextColor().CGColor
             } else {
                 view.layer.borderColor = UIColor.invalidStateColor().CGColor
             }
@@ -150,6 +150,7 @@ extension TextViewController {
     }
     
     private func applyDefaultValues() {
+        textView.textColor = UIColor.primaryTextColor()
         valid = true
         
         // Use default placeholder/text from storyboard/xib.

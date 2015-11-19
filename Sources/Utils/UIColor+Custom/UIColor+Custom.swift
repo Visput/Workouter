@@ -11,19 +11,15 @@ import UIKit
 extension UIColor {
     
     class func primaryColor() -> UIColor {
-        return UIColor(red: 0.137, green:0.4319, blue:0.5122, alpha:1.0)
+        return UIColor(red: 0.1451, green:0.7804, blue:0.5294, alpha:1.0)
     }
     
     class func lightPrimaryColor() -> UIColor {
-        return UIColor(red: 0.3504, green:0.7259, blue:0.8202, alpha:1.0)
-    }
-    
-    class func secondaryColor() -> UIColor {
-        return UIColor(red: 0.0549, green:0.4549, blue:0.8235, alpha:1.0)
+        return UIColor(red: 0.3451, green:0.9804, blue:0.7294, alpha:1.0)
     }
     
     class func primaryTextColor() -> UIColor {
-        return UIColor(red: 0.3059, green:0.4157, blue:0.4706, alpha:1.0)
+        return UIColor(red: 0.1059, green:0.2157, blue:0.2706, alpha:1.0)
     }
     
     class func secondaryTextColor() -> UIColor {
@@ -35,6 +31,10 @@ extension UIColor {
     }
     
     class func invalidStateColor() -> UIColor {
-        return UIColor(red: 0.9216, green:0.2314, blue:0.1922, alpha:1.0)
+        return UIColor(red: 0.9333, green:0.2392, blue:0.149, alpha:1.0)
+    }
+    
+    class func backgroundColor() -> UIColor {
+        return UIColor(red: 0.9294, green:0.9412, blue:0.9569, alpha:1.0)
     }
 }

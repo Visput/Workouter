@@ -14,11 +14,19 @@ class AppAppearance {
         UINavigationBar.appearance().tintColor = UIColor.primaryColor()
         UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName : UIFont.systemFontOfSize(22.0),
+            NSFontAttributeName : UIFont.systemFontOfSize(22.0, weight: UIFontWeightLight),
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
+        UINavigationBar.appearance().shadowImage = UIImage()
         
-        ProgressButton.appearance().color = UIColor.lightPrimaryColor()
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
+                NSForegroundColorAttributeName : UIColor.primaryColor(),
+            ],
+            forState: .Normal)
+        
+        ProgressButton.appearance().color = UIColor.primaryColor()
         ProgressButton.appearance().disabledStateColor = UIColor.disabledStateColor()
         ProgressButton.appearance().invalidStateColor = UIColor.invalidStateColor()
     }
