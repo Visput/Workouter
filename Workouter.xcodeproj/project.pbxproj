@@ -49,8 +49,6 @@
 		9F5A7D181BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */; };
 		9F6066501BFC60AC0009311C /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60664F1BFC60AC0009311C /* ProgressButton.swift */; };
 		9F6066511BFC60AC0009311C /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60664F1BFC60AC0009311C /* ProgressButton.swift */; };
-		9F6066591BFD09F40009311C /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6066581BFD09F40009311C /* UIColor+Custom.swift */; };
-		9F60665A1BFD09F40009311C /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6066581BFD09F40009311C /* UIColor+Custom.swift */; };
 		9F6BD7751BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7761BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */; };
@@ -59,6 +57,8 @@
 		9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
 		9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
+		9F8782141BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
+		9F8782151BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
 		9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F59B1BE337E300A3844D /* DurationComponent.swift */; };
@@ -160,11 +160,11 @@
 		9F5A7D131BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWorkoutTemplateCell.swift; sourceTree = "<group>"; };
 		9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStepTemplateCell.swift; sourceTree = "<group>"; };
 		9F60664F1BFC60AC0009311C /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
-		9F6066581BFD09F40009311C /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsSearchRequest.swift; sourceTree = "<group>"; };
 		9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		9FA2F5901BE317F400A3844D /* DurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationViewController.swift; sourceTree = "<group>"; };
 		9FA2F59B1BE337E300A3844D /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationComponent.swift; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
@@ -354,14 +354,6 @@
 			path = ProgressButton;
 			sourceTree = "<group>";
 		};
-		9F6066571BFD09CE0009311C /* UIColor+Custom */ = {
-			isa = PBXGroup;
-			children = (
-				9F6066581BFD09F40009311C /* UIColor+Custom.swift */,
-			);
-			path = "UIColor+Custom";
-			sourceTree = "<group>";
-		};
 		9F6BD7771BEF1CDD00F5222A /* UITableView+Deselect */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +386,14 @@
 				9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */,
 			);
 			path = "UIView+IBInspectable";
+			sourceTree = "<group>";
+		};
+		9F8782121BFE5ABA00D431C2 /* UIColor+Palette */ = {
+			isa = PBXGroup;
+			children = (
+				9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */,
+			);
+			path = "UIColor+Palette";
 			sourceTree = "<group>";
 		};
 		9FA2F5831BE314B700A3844D /* Controls */ = {
@@ -463,8 +463,8 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F8782121BFE5ABA00D431C2 /* UIColor+Palette */,
 				9F8782091BFD965800D431C2 /* UIView+IBInspectable */,
-				9F6066571BFD09CE0009311C /* UIColor+Custom */,
 				9FBC31161BFA561300453C6C /* NSAttributedString+Duration */,
 				9F469AE31BF6D08300C29AA9 /* ObserverSet */,
 				9FDA599E1BEF2A2D00D350C5 /* UIView+FirstResponder */,
@@ -1032,6 +1032,7 @@
 				9F469AE51BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
+				9F8782141BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */,
 				9F71076E1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC461BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */,
@@ -1052,7 +1053,6 @@
 				9FC35E681BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
 				9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
 				9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */,
-				9F6066591BFD09F40009311C /* UIColor+Custom.swift in Sources */,
 				F02CAB5C1B4B871E00F28D72 /* WorkoutsProvider.swift in Sources */,
 				9F0DFC401BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
 				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
@@ -1086,6 +1086,7 @@
 				9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
+				9F8782151BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */,
 				9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */,
@@ -1106,7 +1107,6 @@
 				9FC35E691BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
 				9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
 				9FA2F59D1BE337E300A3844D /* DurationComponent.swift in Sources */,
-				9F60665A1BFD09F40009311C /* UIColor+Custom.swift in Sources */,
 				F09702CA1ACA48E700498DEE /* WorkoutsProvider.swift in Sources */,
 				9F0DFC411BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
 				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
