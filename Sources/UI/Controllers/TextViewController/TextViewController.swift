@@ -72,7 +72,6 @@ class TextViewController: UIViewController {
 
         configureReturnKey()
         configureDefaultValues()
-        configureTextView()
         updateViews()
     }
     
@@ -138,11 +137,5 @@ extension TextViewController {
         if text.isEmpty {
             text = textView.text
         }
-    }
-    
-    private func configureTextView() {
-        textView.layer.borderWidth = 1.0
-        textView.layer.cornerRadius = 8.0
-        textView.layer.borderColor = UIColor.lightPrimaryColor().CGColor
     }
 }

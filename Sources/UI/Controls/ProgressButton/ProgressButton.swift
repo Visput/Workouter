@@ -10,84 +10,82 @@ import UIKit
 
 class ProgressButton: UIButton {
 
-    var color = UIColor.lightPrimaryColor() {
+    @IBInspectable dynamic var color: UIColor = UIColor.blackColor() {
         didSet {
-            if valid {
-                currentColor = color
-            }
+            updateAppearance()
+        }
+    }
+    
+    @IBInspectable dynamic var invalidStateColor: UIColor = UIColor.redColor() {
+        didSet {
+            updateAppearance()
+        }
+    }
+    
+    @IBInspectable dynamic var disabledStateColor: UIColor = UIColor.lightGrayColor() {
+        didSet {
+            updateAppearance()
+        }
+    }
+    
+    @IBInspectable dynamic var cornerRadius: CGFloat = 8.0 {
+        didSet {
+            updateAppearance()
         }
     }
     
     var valid = true {
         didSet {
-            if valid {
-                currentColor = color
-            } else {
-                currentColor = UIColor.invalidStateColor()
-            }
+            updateAppearance()
         }
     }
     
     override var enabled: Bool {
         didSet {
-            if enabled {
-                layer.borderColor = colorForState(.Normal).CGColor
-            } else {
-                layer.borderColor = colorForState(.Disabled).CGColor
-            }
+            updateAppearance()
         }
     }
     
     override var selected: Bool {
         didSet {
-            if selected {
-                layer.borderColor = colorForState(.Selected).CGColor
-            } else {
-                layer.borderColor = colorForState(.Normal).CGColor
-            }
+            updateAppearance()
         }
     }
     
     override var highlighted: Bool {
         didSet {
-            if highlighted {
-                layer.borderColor = colorForState(.Highlighted).CGColor
-            } else {
-                layer.borderColor = colorForState(.Normal).CGColor
-            }
+            updateAppearance()
         }
     }
     
-    private var currentColor: UIColor! {
-        didSet {
-            applyCurrentColor()
-        }
-    }
+    private var currentColor: UIColor!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        currentColor = color
-        applyCurrentColor()
+        updateAppearance()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        currentColor = color
-        applyCurrentColor()
+        updateAppearance()
     }
 }
 
 extension ProgressButton {
     
-    private func applyCurrentColor() {
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 8.0
+    private func updateAppearance() {
+        if valid {
+            currentColor = color
+        } else {
+            currentColor = invalidStateColor
+        }
         
-        layer.borderColor = currentColor.CGColor
-        setTitleColor(colorForState(.Normal), forState: .Normal)
-        setTitleColor(colorForState(.Selected), forState: .Selected)
-        setTitleColor(colorForState(.Highlighted), forState: .Highlighted)
-        setTitleColor(colorForState(.Disabled), forState: .Disabled)
+        layer.borderWidth = 1.0
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = cornerRadius > 0
+        layer.borderColor = colorForState(state).CGColor
+        
+        setTitleColor(colorForState(state), forState: state)
     }
     
     private func colorForState(state: UIControlState) -> UIColor {
@@ -107,7 +105,7 @@ extension ProgressButton {
             }
             
         } else if state == .Disabled {
-            resultColor = UIColor.disabledStateColor()
+            resultColor = disabledStateColor
         }
         
         return resultColor

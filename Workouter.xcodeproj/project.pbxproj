@@ -57,6 +57,8 @@
 		9F6BD77A1BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */; };
 		9F71076E1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
 		9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
+		9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
+		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F59B1BE337E300A3844D /* DurationComponent.swift */; };
@@ -162,6 +164,7 @@
 		9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsSearchRequest.swift; sourceTree = "<group>"; };
 		9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9FA2F5901BE317F400A3844D /* DurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationViewController.swift; sourceTree = "<group>"; };
 		9FA2F59B1BE337E300A3844D /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationComponent.swift; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
@@ -385,6 +388,14 @@
 			path = TextViewController;
 			sourceTree = "<group>";
 		};
+		9F8782091BFD965800D431C2 /* UIView+IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */,
+			);
+			path = "UIView+IBInspectable";
+			sourceTree = "<group>";
+		};
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +463,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F8782091BFD965800D431C2 /* UIView+IBInspectable */,
 				9F6066571BFD09CE0009311C /* UIColor+Custom */,
 				9FBC31161BFA561300453C6C /* NSAttributedString+Duration */,
 				9F469AE31BF6D08300C29AA9 /* ObserverSet */,
@@ -1033,6 +1045,7 @@
 				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
+				9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */,
 				9FBC31181BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
 				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
@@ -1086,6 +1099,7 @@
 				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8171BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
+				9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */,
 				9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
 				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,

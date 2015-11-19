@@ -17,5 +17,9 @@ class AppAppearance {
             NSFontAttributeName : UIFont.systemFontOfSize(22.0),
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
+        
+        ProgressButton.appearance().color = UIColor.lightPrimaryColor()
+        ProgressButton.appearance().disabledStateColor = UIColor.disabledStateColor()
+        ProgressButton.appearance().invalidStateColor = UIColor.invalidStateColor()
     }
 }
