@@ -21,7 +21,7 @@ class WorkoutTemplateCell: UITableViewCell {
         stepsCountLabel.text = String(workout.steps.count)
         
         durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
-            valueFont: UIFont.systemFontOfSize(12.0),
-            unitFont: UIFont.systemFontOfSize(8))
+            valueFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightLight),
+            unitFont: UIFont.systemFontOfSize(8, weight: UIFontWeightLight))
     }
 }

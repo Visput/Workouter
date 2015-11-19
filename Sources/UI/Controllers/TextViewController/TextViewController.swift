@@ -68,7 +68,7 @@ class TextViewController: UIViewController {
         didSet {
             guard isViewLoaded() else { return }
             if valid {
-                view.layer.borderColor = UIColor.secondaryTextColor().CGColor
+                view.layer.borderColor = UIColor.borderColor().CGColor
             } else {
                 view.layer.borderColor = UIColor.invalidStateColor().CGColor
             }
