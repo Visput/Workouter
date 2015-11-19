@@ -12,12 +12,12 @@ class AppAppearance {
     
     class func applyAppearance() {
         UINavigationBar.appearance().tintColor = UIColor.primaryColor()
-        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "background_white"), forBarMetrics: .Default)
         UINavigationBar.appearance().titleTextAttributes = [
             NSFontAttributeName : UIFont.systemFontOfSize(22.0, weight: UIFontWeightLight),
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
-        UINavigationBar.appearance().shadowImage = UIImage()
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
@@ -25,6 +25,18 @@ class AppAppearance {
                 NSForegroundColorAttributeName : UIColor.primaryColor(),
             ],
             forState: .Normal)
+        
+        UITextView.appearance().tintColor = UIColor.primaryColor()
+        
+        UITextField.appearance().tintColor = UIColor.primaryColor()
+        UITextField.appearance().defaultTextAttributes = [
+            NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
+            NSForegroundColorAttributeName : UIColor.primaryTextColor()
+        ]
+        
+        UISearchBar.appearance().tintColor = UIColor.primaryColor()
+        UISearchBar.appearance().searchBarStyle = .Minimal
+        UISearchBar.appearance().backgroundColor = UIColor.whiteColor()
         
         ProgressButton.appearance().color = UIColor.primaryColor()
         ProgressButton.appearance().disabledStateColor = UIColor.disabledStateColor()

@@ -33,4 +33,8 @@ extension UIColor {
     class func borderColor() -> UIColor {
         return UIColor(red: 0.5137, green:0.5686, blue:0.6039, alpha:0.7)
     }
+    
+    class func backgroundColor() -> UIColor {
+        return UIColor(red: 0.9294, green:0.9412, blue:0.9569, alpha:1.0)
+    }
 }

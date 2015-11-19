@@ -57,7 +57,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-6b-rcU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-6b-rcU">
                                                     <rect key="frame" x="20" y="67" width="51" height="14"/>
                                                     <animations/>
                                                     <constraints>
@@ -91,7 +91,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60O-ng-xEJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60O-ng-xEJ">
                                                     <rect key="frame" x="98" y="67" width="35" height="14"/>
                                                     <animations/>
                                                     <constraints>
@@ -172,13 +172,24 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="t9y-e9-iyz"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pK9-6x-BYi" userLabel="Status Bar Background">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="0RS-nK-9w5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pK9-6x-BYi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="9dY-df-QOk"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="9mt-W1-wGt" secondAttribute="bottom" id="GPs-HA-idZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9mt-W1-wGt" secondAttribute="bottom" id="UBl-rB-PcJ"/>
                             <constraint firstAttribute="trailing" secondItem="9mt-W1-wGt" secondAttribute="trailing" id="Vup-bb-LtM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pK9-6x-BYi" secondAttribute="trailing" constant="-20" id="Wj1-Oh-Jfb"/>
+                            <constraint firstItem="pK9-6x-BYi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="gtT-ub-be5"/>
                             <constraint firstItem="9mt-W1-wGt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="iac-vl-Dp0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9mt-W1-wGt" secondAttribute="trailing" constant="-20" id="kAk-Nw-5xF"/>
                             <constraint firstItem="9mt-W1-wGt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="mFw-5n-QGq"/>
@@ -497,6 +508,14 @@
                                     <outlet property="delegate" destination="wge-Zj-SEy" id="8kr-uh-vTw"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1j-bz-Usc" userLabel="Status Bar Background">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="HDZ-Rb-FME"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -504,6 +523,9 @@
                             <constraint firstItem="hmX-6c-N8q" firstAttribute="top" secondItem="bSH-yX-aqW" secondAttribute="topMargin" id="7Co-q9-yNj"/>
                             <constraint firstItem="hmX-6c-N8q" firstAttribute="leading" secondItem="bSH-yX-aqW" secondAttribute="leadingMargin" constant="-20" id="KRZ-e0-jOb"/>
                             <constraint firstItem="MgP-AH-7fo" firstAttribute="top" secondItem="hmX-6c-N8q" secondAttribute="bottom" id="N5L-HE-70O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f1j-bz-Usc" secondAttribute="trailing" constant="-20" id="Os0-Ku-A99"/>
+                            <constraint firstItem="f1j-bz-Usc" firstAttribute="leading" secondItem="bSH-yX-aqW" secondAttribute="leadingMargin" constant="-20" id="P31-3p-Ugo"/>
+                            <constraint firstItem="f1j-bz-Usc" firstAttribute="top" secondItem="bSH-yX-aqW" secondAttribute="topMargin" id="ujL-Dp-ABf"/>
                             <constraint firstItem="hmX-6c-N8q" firstAttribute="trailing" secondItem="bSH-yX-aqW" secondAttribute="trailingMargin" constant="20" id="zTo-WB-kyK"/>
                         </constraints>
                         <connections>
@@ -1021,7 +1043,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-dc-pdq">
-                                                    <rect key="frame" x="142" y="52" width="0.0" height="13"/>
+                                                    <rect key="frame" x="142" y="52" width="0.0" height="14"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="B6h-Qo-pVu"/>
@@ -1116,14 +1138,25 @@
                                     <outlet property="delegate" destination="KzS-hr-I4E" id="DBF-3Q-Hu4"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBC-2F-JnQ" userLabel="Status Bar Background">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="86W-fJ-BKZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Sdq-HL-jAu" firstAttribute="top" secondItem="Je0-eg-sSv" secondAttribute="bottom" id="ICO-I3-quR"/>
+                            <constraint firstItem="qBC-2F-JnQ" firstAttribute="leading" secondItem="rXF-jP-OTv" secondAttribute="leadingMargin" constant="-20" id="Rt3-xF-Slc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Je0-eg-sSv" secondAttribute="trailing" constant="-20" id="Sj1-MM-ke5"/>
                             <constraint firstItem="Je0-eg-sSv" firstAttribute="leading" secondItem="rXF-jP-OTv" secondAttribute="leadingMargin" constant="-20" id="WeK-Qy-Spb"/>
                             <constraint firstItem="Je0-eg-sSv" firstAttribute="top" secondItem="rXF-jP-OTv" secondAttribute="topMargin" id="mwj-TG-iW3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qBC-2F-JnQ" secondAttribute="trailing" constant="-20" id="nvE-Pd-uIT"/>
+                            <constraint firstItem="qBC-2F-JnQ" firstAttribute="top" secondItem="rXF-jP-OTv" secondAttribute="topMargin" id="qoZ-Oy-veZ"/>
                         </constraints>
                         <connections>
                             <outlet property="bottomSpace" destination="ICO-I3-quR" id="AZI-cf-6TM"/>
