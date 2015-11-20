@@ -19,6 +19,7 @@
 		9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC451BE88F32002AEACC /* WorkoutTemplateCell.swift */; };
 		9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC481BE88F45002AEACC /* StepTemplateCell.swift */; };
 		9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC481BE88F45002AEACC /* StepTemplateCell.swift */; };
+		9F0F41C31BFF07F900989101 /* AppPalette.clr in Resources */ = {isa = PBXBuildFile; fileRef = 9F0F41C21BFF07F900989101 /* AppPalette.clr */; };
 		9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */; };
@@ -145,7 +146,7 @@
 		9F0DFC421BE88DEF002AEACC /* StepTemplatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTemplatesView.swift; sourceTree = "<group>"; };
 		9F0DFC451BE88F32002AEACC /* WorkoutTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTemplateCell.swift; sourceTree = "<group>"; };
 		9F0DFC481BE88F45002AEACC /* StepTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTemplateCell.swift; sourceTree = "<group>"; };
-		9F1DA2BE1BFEA31D0072AEE7 /* ColorPalette.clr */ = {isa = PBXFileReference; lastKnownFileType = text; name = ColorPalette.clr; path = ColorPalette/ColorPalette.clr; sourceTree = "<group>"; };
+		9F0F41C21BFF07F900989101 /* AppPalette.clr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppPalette.clr; path = AppPalette/AppPalette.clr; sourceTree = "<group>"; };
 		9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditScreen.swift; sourceTree = "<group>"; };
 		9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditView.swift; sourceTree = "<group>"; };
 		9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
@@ -506,7 +507,7 @@
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F1DA2BE1BFEA31D0072AEE7 /* ColorPalette.clr */,
+				9F0F41C21BFF07F900989101 /* AppPalette.clr */,
 				F09702DA1ACA492100498DEE /* Workouter-Info.plist */,
 				F09702DB1ACA492100498DEE /* WorkouterQA-Info.plist */,
 				F0C3424A1A9E4BC800B9D480 /* Images.xcassets */,
@@ -781,6 +782,7 @@
 			files = (
 				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
+				9F0F41C31BFF07F900989101 /* AppPalette.clr in Resources */,
 				F02CAB7D1B4B871E00F28D72 /* Main.storyboard in Resources */,
 				F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */,
 			);
@@ -902,7 +904,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Resources/ColorPalette/RMRHexColorGen -i Resources/ColorPalette/ColorPalette.clr -o Sources/Utils/UIColor+Palette/ -clr";
+			shellScript = "Resources/AppPalette/RMRHexColorGen -i Resources/AppPalette/AppPalette.clr -o Sources/Utils/UIColor+Palette/ -clr";
 		};
 		9F98D8A51BF7D8DF0023F8CD /* Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
