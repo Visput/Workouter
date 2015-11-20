@@ -569,7 +569,7 @@
                                     <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="ProgressButton" customModule="Workouter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="20" y="270" width="560" height="40"/>
                                 <animations/>
                                 <constraints>
@@ -580,11 +580,6 @@
                                 <state key="normal" title="Add Step">
                                     <color key="titleColor" red="0.25490196079999999" green="0.66666666669999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.25490196079999999" green="0.66666666669999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="lCA-9r-L2J"/>
@@ -735,11 +730,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-d6-RvV">
-                                <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -765,7 +760,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d / %d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="484" y="80" width="49" height="20"/>
+                                <rect key="frame" x="484" y="40" width="49" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1179,6 +1174,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aFV-Nt-De2"/>
+        <segue reference="dQt-nY-fnQ"/>
     </inferredMetricsTieBreakers>
 </document>

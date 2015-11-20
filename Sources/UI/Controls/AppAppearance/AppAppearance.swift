@@ -38,8 +38,9 @@ class AppAppearance {
         UISearchBar.appearance().searchBarStyle = .Minimal
         UISearchBar.appearance().backgroundColor = UIColor.whiteColor()
         
-        ProgressButton.appearance().color = UIColor.primaryColor()
-        ProgressButton.appearance().disabledStateColor = UIColor.disabledStateColor()
-        ProgressButton.appearance().invalidStateColor = UIColor.invalidStateColor()
+        TintButton.appearance().primaryColor = UIColor.primaryColor()
+        TintButton.appearance().secondaryColor = UIColor.whiteColor()
+        TintButton.appearance().disabledStateColor = UIColor.disabledStateColor()
+        TintButton.appearance().invalidStateColor = UIColor.invalidStateColor()
     }
 }

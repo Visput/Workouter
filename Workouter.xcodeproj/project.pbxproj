@@ -47,8 +47,6 @@
 		9F5A7D151BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D131BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift */; };
 		9F5A7D171BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */; };
 		9F5A7D181BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */; };
-		9F6066501BFC60AC0009311C /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60664F1BFC60AC0009311C /* ProgressButton.swift */; };
-		9F6066511BFC60AC0009311C /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60664F1BFC60AC0009311C /* ProgressButton.swift */; };
 		9F6BD7751BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7761BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */; };
 		9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */; };
@@ -59,6 +57,8 @@
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F8782141BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
 		9F8782151BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
+		9F8782181BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
+		9F8782191BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F59B1BE337E300A3844D /* DurationComponent.swift */; };
@@ -159,12 +159,12 @@
 		9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsProviderObserving.swift; sourceTree = "<group>"; };
 		9F5A7D131BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWorkoutTemplateCell.swift; sourceTree = "<group>"; };
 		9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStepTemplateCell.swift; sourceTree = "<group>"; };
-		9F60664F1BFC60AC0009311C /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsSearchRequest.swift; sourceTree = "<group>"; };
 		9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
 		9FA2F5901BE317F400A3844D /* DurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationViewController.swift; sourceTree = "<group>"; };
 		9FA2F59B1BE337E300A3844D /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationComponent.swift; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
@@ -346,14 +346,6 @@
 			path = ObserverSet;
 			sourceTree = "<group>";
 		};
-		9F60664E1BFC60640009311C /* ProgressButton */ = {
-			isa = PBXGroup;
-			children = (
-				9F60664F1BFC60AC0009311C /* ProgressButton.swift */,
-			);
-			path = ProgressButton;
-			sourceTree = "<group>";
-		};
 		9F6BD7771BEF1CDD00F5222A /* UITableView+Deselect */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,11 +388,19 @@
 			path = "UIColor+Palette";
 			sourceTree = "<group>";
 		};
+		9F8782161BFE941000D431C2 /* TintButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F8782171BFE941000D431C2 /* TintButton.swift */,
+			);
+			path = TintButton;
+			sourceTree = "<group>";
+		};
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9F8782161BFE941000D431C2 /* TintButton */,
 				9F3DF9721BFD5CD700BBD535 /* AppAppearance */,
-				9F60664E1BFC60640009311C /* ProgressButton */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1020,11 +1020,11 @@
 				9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F0DFC3D1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F02CAB521B4B871E00F28D72 /* Step.swift in Sources */,
-				9F6066501BFC60AC0009311C /* ProgressButton.swift in Sources */,
 				F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */,
 				9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
 				9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
+				9F8782181BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
@@ -1074,11 +1074,11 @@
 				9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F0DFC3E1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F09702C01ACA48E700498DEE /* Step.swift in Sources */,
-				9F6066511BFC60AC0009311C /* ProgressButton.swift in Sources */,
 				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
+				9F8782191BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9F341ACF1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD77A1BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
