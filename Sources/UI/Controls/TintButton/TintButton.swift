@@ -16,7 +16,7 @@ import UIKit
         }
     }
     
-    @IBInspectable dynamic var secondaryColor: UIColor = UIColor.clearColor() {
+    @IBInspectable dynamic var secondaryColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
         }
@@ -40,13 +40,13 @@ import UIKit
         }
     }
     
-    var valid = true {
+    @IBInspectable dynamic var valid: Bool = true {
         didSet {
             updateAppearance()
         }
     }
     
-    var filled = false {
+    @IBInspectable dynamic var filled: Bool = false {
         didSet {
             updateAppearance()
         }
