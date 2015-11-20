@@ -688,6 +688,7 @@
 			buildConfigurationList = F02CAB811B4B871E00F28D72 /* Build configuration list for PBXNativeTarget "Workouter" */;
 			buildPhases = (
 				677285D3AA9E6D587CDD8862 /* Check Pods Manifest.lock */,
+				9F94440F1BFFB0AD003E333B /* Run App Color Palette Generator */,
 				F02CAB501B4B871E00F28D72 /* Sources */,
 				F02CAB611B4B871E00F28D72 /* Frameworks */,
 				F02CAB7A1B4B871E00F28D72 /* Resources */,
@@ -710,6 +711,7 @@
 			buildConfigurationList = F09702D51ACA48E700498DEE /* Build configuration list for PBXNativeTarget "WorkouterQA" */;
 			buildPhases = (
 				CDBD309B54236A1178EA6FC9 /* Check Pods Manifest.lock */,
+				9F94440E1BFFB008003E333B /* Run App Color Palette Generator */,
 				F09702BE1ACA48E700498DEE /* Sources */,
 				F09702CF1ACA48E700498DEE /* Frameworks */,
 				F09702D01ACA48E700498DEE /* Resources */,
@@ -717,7 +719,6 @@
 				BA7E9037CED7D607BB7393ED /* Copy Pods Resources */,
 				F09706851ACA585900498DEE /* Run Fabric */,
 				9F98D8A61BF7D8FA0023F8CD /* Run Swift Lint */,
-				9F1DA2BD1BFEA1E70072AEE7 /* Run Color Palette Generator */,
 			);
 			buildRules = (
 			);
@@ -892,14 +893,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F1DA2BD1BFEA1E70072AEE7 /* Run Color Palette Generator */ = {
+		9F94440E1BFFB008003E333B /* Run App Color Palette Generator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Color Palette Generator";
+			name = "Run App Color Palette Generator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Resources/AppPalette/SwiftAppPaletteGenerator -i Resources/AppPalette/AppPalette.clr -o Sources/Utils/UIColor+AppPalette/ -clr";
+		};
+		9F94440F1BFFB0AD003E333B /* Run App Color Palette Generator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run App Color Palette Generator";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
