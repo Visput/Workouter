@@ -11,30 +11,30 @@ import UIKit
 extension UIColor {
     
     class func primaryColor() -> UIColor {
-        return UIColor(red: 0.1451, green:0.7804, blue:0.5294, alpha:1.0)
+        return UIColor(red: 0.1506, green:0.7483, blue:0.4551, alpha:1.0)
     }
     
     class func primaryTextColor() -> UIColor {
-        return UIColor(red: 0.1059, green:0.2157, blue:0.2706, alpha:1.0)
+        return UIColor(red: 0.0841, green:0.1626, blue:0.2083, alpha:1.0)
     }
     
     class func secondaryTextColor() -> UIColor {
-        return UIColor(red: 0.6549, green:0.6549, blue:0.6549, alpha:1.0)
+        return UIColor(red: 0.5897, green:0.5896, blue:0.5896, alpha:1.0)
     }
     
     class func disabledStateColor() -> UIColor {
-        return UIColor.grayColor().colorWithAlphaComponent(0.7)
+        return UIColor ( red: 0.2781, green: 0.2781, blue: 0.2781, alpha: 0.7)
     }
     
     class func invalidStateColor() -> UIColor {
-        return UIColor(red: 0.9333, green:0.2392, blue:0.149, alpha:1.0)
+        return UIColor(red: 0.9045, green:0.1463, blue:0.1164, alpha:1.0)
     }
     
     class func borderColor() -> UIColor {
-        return UIColor(red: 0.5137, green:0.5686, blue:0.6039, alpha:0.7)
+        return UIColor(red: 0.4402, green:0.4958, blue:0.5337, alpha:0.7)
     }
     
     class func backgroundColor() -> UIColor {
-        return UIColor(red: 0.9294, green:0.9412, blue:0.9569, alpha:1.0)
+        return UIColor(red: 0.9121, green:0.9259, blue:0.9458, alpha:1.0)
     }
 }
