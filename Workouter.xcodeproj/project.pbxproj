@@ -56,8 +56,6 @@
 		9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71076D1BDD8BA200D7B647 /* TextViewController.swift */; };
 		9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
-		9F8782141BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
-		9F8782151BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */; };
 		9F8782181BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9F8782191BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
@@ -70,6 +68,8 @@
 		9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */; };
 		9FC35E681BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */; };
 		9FC35E691BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */; };
+		9FCB7B8E1BFF9FEC00D74467 /* UIColor+AppPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */; };
+		9FCB7B8F1BFFA02A00D74467 /* UIColor+AppPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */; };
 		9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */; };
 		9FD4A8171BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */; };
 		9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
@@ -165,13 +165,13 @@
 		9F6BD7781BEF1CFF00F5222A /* UITableView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		9F71076D1BDD8BA200D7B647 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
-		9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
 		9FA2F5901BE317F400A3844D /* DurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationViewController.swift; sourceTree = "<group>"; };
 		9FA2F59B1BE337E300A3844D /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationComponent.swift; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
 		9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsView.swift; sourceTree = "<group>"; };
+		9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppPalette.swift"; sourceTree = "<group>"; };
 		9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsSearchRequest.swift; sourceTree = "<group>"; };
 		9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProviderObserving.swift; sourceTree = "<group>"; };
@@ -382,14 +382,6 @@
 			path = "UIView+IBInspectable";
 			sourceTree = "<group>";
 		};
-		9F8782121BFE5ABA00D431C2 /* UIColor+Palette */ = {
-			isa = PBXGroup;
-			children = (
-				9F8782131BFE5ABA00D431C2 /* UIColor+Palette.swift */,
-			);
-			path = "UIColor+Palette";
-			sourceTree = "<group>";
-		};
 		9F8782161BFE941000D431C2 /* TintButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +424,14 @@
 			path = SearchController;
 			sourceTree = "<group>";
 		};
+		9FCB7B8C1BFF9FEC00D74467 /* UIColor+AppPalette */ = {
+			isa = PBXGroup;
+			children = (
+				9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */,
+			);
+			path = "UIColor+AppPalette";
+			sourceTree = "<group>";
+		};
 		9FDA599E1BEF2A2D00D350C5 /* UIView+FirstResponder */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,7 +465,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9F8782121BFE5ABA00D431C2 /* UIColor+Palette */,
+				9FCB7B8C1BFF9FEC00D74467 /* UIColor+AppPalette */,
 				9F8782091BFD965800D431C2 /* UIView+IBInspectable */,
 				9FBC31161BFA561300453C6C /* NSAttributedString+Duration */,
 				9F469AE31BF6D08300C29AA9 /* ObserverSet */,
@@ -904,7 +904,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Resources/AppPalette/RMRHexColorGen -i Resources/AppPalette/AppPalette.clr -o Sources/Utils/UIColor+Palette/ -clr";
+			shellScript = "Resources/AppPalette/SwiftAppPaletteGenerator -i Resources/AppPalette/AppPalette.clr -o Sources/Utils/UIColor+AppPalette/ -clr";
 		};
 		9F98D8A51BF7D8DF0023F8CD /* Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1052,10 +1052,10 @@
 				9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD7791BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
 				F02CAB551B4B871E00F28D72 /* WorkoutCell.swift in Sources */,
+				9FCB7B8E1BFF9FEC00D74467 /* UIColor+AppPalette.swift in Sources */,
 				9F469AE51BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
-				9F8782141BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */,
 				9F71076E1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC461BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */,
@@ -1106,10 +1106,10 @@
 				9F341ACF1BDF171D00AEDEB1 /* StepEditView.swift in Sources */,
 				9F6BD77A1BEF1CFF00F5222A /* UITableView+Deselect.swift in Sources */,
 				F09702C31ACA48E700498DEE /* WorkoutCell.swift in Sources */,
+				9FCB7B8F1BFFA02A00D74467 /* UIColor+AppPalette.swift in Sources */,
 				9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
-				9F8782151BFE5ABA00D431C2 /* UIColor+Palette.swift in Sources */,
 				9F71076F1BDD8BA200D7B647 /* TextViewController.swift in Sources */,
 				9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */,

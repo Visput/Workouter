@@ -1,5 +1,9 @@
 #FF21CE99 primary
-#FF1FBCD2 secondary
+#FF71E4C1 lightPrimary
+#FF009165 darkPrimary
+#FF2E79CD secondary
+#FF7AACE3 lightSecondary
+#FF084890 darkSecondary
 #FF1B3745 primaryText
 #FFA7A7A7 secondaryText
 #B2595959 disabledState
