@@ -11,7 +11,11 @@ import UIKit
 extension UIColor {
     
     class func primaryColor() -> UIColor {
-        return UIColor(red: 0.1506, green:0.7483, blue:0.4551, alpha:1.0)
+        return UIColor(red: 33.0 / 255.0, green:206.0 / 255.0, blue:153.0 / 255.0, alpha:1.0)
+    }
+    
+    class func secondaryColor() -> UIColor {
+        return UIColor(red: 31.0 / 255.0, green:188.0 / 255.0, blue:210.0 / 255.0, alpha:1.0)
     }
     
     class func primaryTextColor() -> UIColor {
