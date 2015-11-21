@@ -15,6 +15,13 @@ extension UIColor {
             alpha:1)
     }
 
+    class func transparentPrimaryColor() -> UIColor {
+        return UIColor(red: 0.1294117718935013,
+            green:0.8078431487083435,
+            blue:0.6000000238418579,
+            alpha:0.09803921729326248)
+    }
+
     class func lightPrimaryColor() -> UIColor {
         return UIColor(red: 0.4431372582912445,
             green:0.8941176533699036,

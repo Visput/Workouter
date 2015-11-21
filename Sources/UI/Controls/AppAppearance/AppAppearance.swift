@@ -11,6 +11,7 @@ import UIKit
 class AppAppearance {
     
     class func applyAppearance() {
+        // UINavigationBar.
         UINavigationBar.appearance().tintColor = UIColor.primaryColor()
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "background_white"), forBarMetrics: .Default)
@@ -19,6 +20,7 @@ class AppAppearance {
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
         
+        // UIBarButtonItem.
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
@@ -26,18 +28,27 @@ class AppAppearance {
             ],
             forState: .Normal)
         
+        // UITextView.
         UITextView.appearance().tintColor = UIColor.primaryColor()
         
+        // UITextField.
         UITextField.appearance().tintColor = UIColor.primaryColor()
         UITextField.appearance().defaultTextAttributes = [
             NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
         
+        // UISearchBar.
         UISearchBar.appearance().tintColor = UIColor.primaryColor()
         UISearchBar.appearance().searchBarStyle = .Minimal
         UISearchBar.appearance().backgroundColor = UIColor.whiteColor()
         
+        // UITableViewCell.
+        let colorView = UIView()
+        colorView.backgroundColor = UIColor.transparentPrimaryColor()
+        UITableViewCell.appearance().selectedBackgroundView = colorView
+        
+        // TintButton.
         TintButton.appearance().primaryColor = UIColor.primaryColor()
         TintButton.appearance().secondaryColor = UIColor.whiteColor()
         TintButton.appearance().disabledStateColor = UIColor.disabledStateColor()
