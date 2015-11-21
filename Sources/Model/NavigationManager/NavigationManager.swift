@@ -58,6 +58,15 @@ extension NavigationManager {
         navigationController.dismissViewControllerAnimated(animated, completion: nil)
     }
     
+    func presentDialog(dialog: UIViewController, animated: Bool) {
+        dialog.modalPresentationStyle = .OverCurrentContext
+        navigationController.presentViewController(dialog, animated: animated, completion: nil)
+    }
+    
+    func dismissDialogAnimated(animated: Bool) {
+        navigationController.dismissViewControllerAnimated(animated, completion: nil)
+    }
+    
     private func setScreens(screens: [UIViewController], animated: Bool) {
         navigationController.setViewControllers(screens, animated: animated)
     }
@@ -159,5 +168,30 @@ extension NavigationManager {
             screen.stepDidEditAction = stepDidEditAction
             
             pushScreen(screen, animated: animated)
+    }
+}
+
+extension NavigationManager {
+    
+    func presentInfoDialogWithTitle(title: String, text: String) {
+        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        dialog.primaryText = title
+        dialog.secondaryText = text
+        dialog.style = .Info
+        dialog.cancelAction = { [unowned self] in
+            self.dismissDialogAnimated(true)
+        }
+        presentDialog(dialog, animated: true)
+    }
+    
+    func presentErrorDialogWithTitle(title: String, text: String) {
+        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        dialog.primaryText = title
+        dialog.secondaryText = text
+        dialog.style = .Error
+        dialog.cancelAction = { [unowned self] in
+            self.dismissDialogAnimated(true)
+        }
+        presentDialog(dialog, animated: true)
     }
 }

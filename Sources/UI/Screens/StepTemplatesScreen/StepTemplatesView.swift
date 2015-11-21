@@ -12,9 +12,8 @@ class StepTemplatesView: BaseView {
     
     @IBOutlet private(set) weak var templatesTableView: UITableView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override func didLoad() {
+        super.didLoad()
         templatesTableView.rowHeight = UITableViewAutomaticDimension
         templatesTableView.estimatedRowHeight = 70.0
     }

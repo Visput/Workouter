@@ -16,6 +16,7 @@ class BaseView: UIView {
     
     enum AppearanceState {
         case Undefined
+        case DidLoad
         case WillAppear
         case DidAppear
         case WillDisappear
@@ -26,6 +27,10 @@ class BaseView: UIView {
 }
 
 extension BaseView {
+    
+    func didLoad() {
+        appearanceState = .DidLoad
+    }
     
     func willAppear(animated: Bool) {
         appearanceState = .WillAppear
@@ -51,14 +56,18 @@ extension BaseView {
     func keyboardWillShow(notification: NSNotification, keyboardHeight: CGFloat) {
         guard bottomSpace != nil else { return }
         
-        animateWithKeyboardNotification(notification, animations: { () -> () in
-            self.bottomSpace.constant = keyboardHeight
-            
-            // Call 'layoutIfNeeded' only if view already appeared.
-            // It will prevent from unnecessary animations when keyboard and view appear at the same moment.
-            if self.appearanceState != .Undefined && self.appearanceState != .WillAppear {
-                self.layoutIfNeeded()
-            }
+        animateWithKeyboardNotification(notification,
+            animations: { () -> () in
+                self.bottomSpace.constant = keyboardHeight
+                
+                // Call 'layoutIfNeeded' only if view already appeared.
+                // It will prevent from unnecessary animations when keyboard and view appear at the same moment.
+                if self.appearanceState != .Undefined &&
+                    self.appearanceState != .DidLoad &&
+                    self.appearanceState != .WillAppear {
+                        
+                        self.layoutIfNeeded()
+                }
             }, completion: nil)
     }
     
@@ -69,9 +78,10 @@ extension BaseView {
     func keyboardWillHide(notification: NSNotification, keyboardHeight: CGFloat) {
         guard bottomSpace != nil else { return }
         
-        animateWithKeyboardNotification(notification, animations: { () -> () in
-            self.bottomSpace.constant = self.bottomSpaceDefaultValue
-            self.layoutIfNeeded()
+        animateWithKeyboardNotification(notification,
+            animations: { () -> () in
+                self.bottomSpace.constant = self.bottomSpaceDefaultValue
+                self.layoutIfNeeded()
             }, completion: nil)
     }
     

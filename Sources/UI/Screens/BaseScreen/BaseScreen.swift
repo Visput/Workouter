@@ -22,6 +22,11 @@ class BaseScreen: UIViewController {
         return view as! BaseView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        baseView.didLoad()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         baseView.willAppear(animated)

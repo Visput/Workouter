@@ -13,8 +13,8 @@ class WorkoutEditView: BaseView {
     @IBOutlet private(set) weak var stepsTableView: UITableView!
     @IBOutlet private(set) weak var newStepButton: TintButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func didLoad() {
+        super.didLoad()
         stepsTableView.setEditing(true, animated: false)
         stepsTableView.rowHeight = UITableViewAutomaticDimension
         stepsTableView.estimatedRowHeight = 70.0

@@ -13,35 +13,42 @@ class TextViewController: UIViewController {
     
     var didChangeTextAction: ((text: String) -> ())?
     
-    /// Use this property if you need to activate another text controller
-    /// when user clicks 'return' key.
-    /// If this property is nil then current text controller will be
-    /// deactivated when user clicks 'return' key.
-    var nextTextViewController: TextViewController? {
-        didSet {
-            guard isViewLoaded() else { return }
-            configureReturnKey()
-        }
-    }
-    
-    /// Max number of chars allowed to input.
-    /// Set 0 to disable limit.
-    /// Equals to 0 by default.
-    var textMaxLength = 0 {
+    var text = "" {
         didSet {
             guard isViewLoaded() else { return }
             updateViews()
         }
     }
     
-    var text: String = "" {
+    var placeholder = "" {
         didSet {
             guard isViewLoaded() else { return }
             updateViews()
         }
     }
     
-    var placeholder: String = "" {
+    var descriptionTitle: String = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    var descriptionText: String = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    var errorTitle: String = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    var errorText: String = "" {
         didSet {
             guard isViewLoaded() else { return }
             updateViews()
@@ -67,32 +74,48 @@ class TextViewController: UIViewController {
     var valid = true {
         didSet {
             guard isViewLoaded() else { return }
-            if valid {
-                view.layer.borderColor = UIColor.borderColor().CGColor
-            } else {
-                view.layer.borderColor = UIColor.invalidStateColor().CGColor
-            }
+            updateViews()
+        }
+    }
+    
+    var navigationManager: NavigationManager!
+    
+    /// Use this property if you need to activate another text controller
+    /// when user clicks 'return' key.
+    /// If this property is nil then current text controller will be
+    /// deactivated when user clicks 'return' key.
+    var nextTextViewController: TextViewController? {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
+        }
+    }
+    
+    /// Max number of chars allowed to input.
+    /// Set 0 to disable limit.
+    /// Equals to 0 by default.
+    var textMaxLength = 0 {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
         }
     }
     
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var textLimitLabel: UILabel!
-    
+    @IBOutlet private weak var descriptionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureReturnKey()
-        applyDefaultValues()
         updateViews()
     }
     
-    
     func validate() -> Bool? {
         guard isViewLoaded() else { return nil }
-        
         valid = optional || !textView.text.isEmpty
+        
         return valid
     }
 }
@@ -136,8 +159,14 @@ extension TextViewController {
         placeholderLabel.hidden = !textView.text.isEmpty
         
         textLimitLabel.hidden = textMaxLength <= 0
-        withVaList([textView.text.characters.count, textMaxLength]) { pointer in
+        withVaList([textMaxLength - textView.text.characters.count]) { pointer in
             textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+        }
+        
+        if valid {
+            view.layer.borderColor = UIColor.borderColor().CGColor
+        } else {
+            view.layer.borderColor = UIColor.invalidStateColor().CGColor
         }
     }
     
@@ -148,17 +177,11 @@ extension TextViewController {
             textView.returnKeyType = .Done
         }
     }
+}
+
+extension TextViewController {
     
-    private func applyDefaultValues() {
-        textView.textColor = UIColor.primaryTextColor()
-        valid = true
-        
-        // Use default placeholder/text from storyboard/xib.
-        if placeholder.isEmpty && placeholderLabel.text != nil {
-            placeholder = placeholderLabel.text!
-        }
-        if text.isEmpty {
-            text = textView.text
-        }
+    @IBAction func descriptionButtonDidPress(sender: AnyObject) {
+        navigationManager.presentInfoDialogWithTitle(descriptionTitle, text: descriptionText)
     }
 }

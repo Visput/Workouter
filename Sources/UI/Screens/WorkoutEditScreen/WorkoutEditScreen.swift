@@ -40,7 +40,10 @@ class WorkoutEditScreen: BaseScreen {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
+            nameController.navigationManager = navigationManager
             nameController.placeholder = NSLocalizedString("Name", comment: "")
+            nameController.descriptionTitle = NSLocalizedString("Workout Name", comment: "")
+            nameController.descriptionText = NSLocalizedString("Workout Name is short description of your workout.", comment: "")
             nameController.optional = false
             nameController.didChangeTextAction = { [unowned self] text in
                 self.workout = self.workout.workoutBySettingName(text)

@@ -30,6 +30,8 @@ class AppAppearance {
         
         // UITextView.
         UITextView.appearance().tintColor = UIColor.primaryColor()
+        UITextView.appearance().font = UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight)
+        UITextView.appearance().textColor = UIColor.primaryTextColor()
         
         // UITextField.
         UITextField.appearance().tintColor = UIColor.primaryColor()
