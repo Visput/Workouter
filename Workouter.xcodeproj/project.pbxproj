@@ -36,6 +36,8 @@
 		9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
 		9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
+		9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
+		9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
 		9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
@@ -163,6 +165,7 @@
 		9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
 		9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProvider.swift; sourceTree = "<group>"; };
 		9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
@@ -335,6 +338,14 @@
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
+		9F38C3431C011D74007AAC68 /* UIImageView+Stretch */ = {
+			isa = PBXGroup;
+			children = (
+				9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */,
+			);
+			path = "UIImageView+Stretch";
+			sourceTree = "<group>";
+		};
 		9F3DF9721BFD5CD700BBD535 /* AppAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +515,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F38C3431C011D74007AAC68 /* UIImageView+Stretch */,
 				9FCB7B8C1BFF9FEC00D74467 /* UIColor+AppPalette */,
 				9F8782091BFD965800D431C2 /* UIView+IBInspectable */,
 				9FBC31161BFA561300453C6C /* NSAttributedString+Duration */,
@@ -1118,6 +1130,7 @@
 				9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0DFC431BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D141BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
+				9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,
 				F02CAB571B4B871E00F28D72 /* WorkoutPlayer.swift in Sources */,
 				9F341AD61BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
@@ -1176,6 +1189,7 @@
 				9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0DFC441BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D151BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
+				9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,
 				F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,

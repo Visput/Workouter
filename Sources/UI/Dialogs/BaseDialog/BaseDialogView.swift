@@ -14,6 +14,6 @@ class BaseDialogView: BaseView {
     
     override func didLoad() {
         super.didLoad()
-        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
     }
 }
