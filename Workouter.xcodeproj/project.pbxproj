@@ -669,9 +669,9 @@
 		F0C3425D1A9E4BC800B9D480 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9F9444111BFFF341003E333B /* Dialogs */,
 				9FA2F5831BE314B700A3844D /* Controls */,
 				9F71076B1BDD63A500D7B647 /* Controllers */,
+				9F9444111BFFF341003E333B /* Dialogs */,
 				F0C3425E1A9E4BC800B9D480 /* Screens */,
 			);
 			path = UI;

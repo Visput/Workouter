@@ -190,9 +190,9 @@ extension TextViewController {
     
     @IBAction private func descriptionButtonDidPress(sender: AnyObject) {
         if valid {
-            navigationManager.presentInfoDialogWithTitle(descriptionTitle, message: descriptionMessage)
+            navigationManager.showInfoDialogWithTitle(descriptionTitle, message: descriptionMessage)
         } else {
-            navigationManager.presentErrorDialogWithTitle(errorTitle, message: errorMessage)
+            navigationManager.showErrorDialogWithTitle(errorTitle, message: errorMessage)
         }
     }
 }

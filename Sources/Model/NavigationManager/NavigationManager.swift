@@ -58,7 +58,7 @@ extension NavigationManager {
         navigationController.dismissViewControllerAnimated(animated, completion: nil)
     }
     
-    func presentDialog(dialog: UIViewController, animated: Bool) {
+    func showDialog(dialog: UIViewController, animated: Bool) {
         dialog.modalPresentationStyle = .OverCurrentContext
         navigationController.presentViewController(dialog, animated: animated, completion: nil)
     }
@@ -173,19 +173,19 @@ extension NavigationManager {
 
 extension NavigationManager {
     
-    func presentInfoDialogWithTitle(title: String, message: String) {
+    func showInfoDialogWithTitle(title: String, message: String) {
         let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Info
-        presentDialog(dialog, animated: true)
+        showDialog(dialog, animated: true)
     }
     
-    func presentErrorDialogWithTitle(title: String, message: String) {
+    func showErrorDialogWithTitle(title: String, message: String) {
         let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Error
-        presentDialog(dialog, animated: true)
+        showDialog(dialog, animated: true)
     }
 }
