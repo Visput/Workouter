@@ -96,7 +96,7 @@ extension StepEditScreen {
         if valid {
             nameController.setValid()
         } else {
-            nameController.setInvalidWithErrorTitle("Step Name", errorMessage: "Step name is required field.")
+            nameController.setInvalidWithErrorTitle("Error", errorMessage: "Step name is required field.")
         }
         return valid
     }

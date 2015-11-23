@@ -58,13 +58,13 @@ extension NavigationManager {
         navigationController.dismissViewControllerAnimated(animated, completion: nil)
     }
     
-    func showDialog(dialog: UIViewController, animated: Bool) {
+    func showDialog(dialog: UIViewController) {
         dialog.modalPresentationStyle = .OverCurrentContext
-        navigationController.presentViewController(dialog, animated: animated, completion: nil)
+        navigationController.presentViewController(dialog, animated: false, completion: nil)
     }
     
-    func dismissDialogAnimated(animated: Bool) {
-        navigationController.dismissViewControllerAnimated(animated, completion: nil)
+    func dismissDialog() {
+        navigationController.dismissViewControllerAnimated(false, completion: nil)
     }
     
     private func setScreens(screens: [UIViewController], animated: Bool) {
@@ -178,7 +178,7 @@ extension NavigationManager {
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Info
-        showDialog(dialog, animated: true)
+        showDialog(dialog)
     }
     
     func showErrorDialogWithTitle(title: String, message: String) {
@@ -186,6 +186,6 @@ extension NavigationManager {
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Error
-        showDialog(dialog, animated: true)
+        showDialog(dialog)
     }
 }

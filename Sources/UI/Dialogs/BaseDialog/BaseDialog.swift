@@ -20,21 +20,37 @@ class BaseDialog: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "cancelButtonDidPress:")
-        tapRecognizer.delegate = self
-        baseView.addGestureRecognizer(tapRecognizer)
+        configureGestureRecognizers()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        baseView.animateShowingWithCompletion {_ in }
     }
     
     @IBAction func cancelButtonDidPress(sender: AnyObject) {
-        navigationManager.dismissDialogAnimated(true)
+        baseView.animateHidingWithCompletion {_ in
+            self.navigationManager.dismissDialog()
+        }
     }
 }
 
 extension BaseDialog: UIGestureRecognizerDelegate {
     
+    func configureGestureRecognizers() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "cancelButtonDidPress:")
+        tapRecognizer.delegate = self
+        
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: "cancelButtonDidPress:")
+        swipeRecognizer.direction = .Down
+        
+        baseView.backgroundView.addGestureRecognizer(tapRecognizer)
+        baseView.addGestureRecognizer(swipeRecognizer)
+    }
+    
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         // Prevent dialog dismissing when user touches content view.
-        let touchPoint = touch.locationInView(baseView)
+        let touchPoint = touch.locationInView(baseView.backgroundView)
         guard !CGRectContainsPoint(baseView.contentView.frame, touchPoint) else { return false }
         
         return true

@@ -11,9 +11,64 @@ import UIKit
 class BaseDialogView: BaseView {    
     
     @IBOutlet private(set) weak var contentView: UIView!
+    @IBOutlet private(set) weak var contentViewBottomSpace: NSLayoutConstraint!
+    
+    private(set) var backgroundView: UIView!
     
     override func didLoad() {
         super.didLoad()
-        backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        backgroundColor = UIColor.clearColor()
+        configureBackgroundView()
+        contentViewBottomSpace.constant = -contentView.bounds.size.height
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundView.frame = bounds
+    }
+}
+
+extension BaseDialogView {
+    
+    func animateShowingWithCompletion(completion: (Bool) -> Void) {
+        let animationDuration = 0.7
+        
+        UIView.animateWithDuration(animationDuration) {
+            self.backgroundView.alpha = 0.5
+        }
+        
+        UIView.animateWithDuration(animationDuration,
+            delay: 0.0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 10.0,
+            options: [.CurveEaseInOut],
+            animations: {
+                self.contentViewBottomSpace.constant = 0.0
+                self.layoutIfNeeded()
+            }, completion: completion)
+    }
+    
+    func animateHidingWithCompletion(completion: (Bool) -> Void) {
+        let animationDuration = 0.4
+        
+        UIView.animateWithDuration(animationDuration,
+            delay: 0.0,
+            options: .CurveEaseOut,
+            animations: { () -> Void in
+                self.backgroundView.alpha = 0.0
+                self.contentViewBottomSpace.constant = -self.contentView.bounds.size.height
+                self.layoutIfNeeded()
+            }, completion: completion)
+    }
+}
+
+extension BaseDialogView {
+    
+    private func configureBackgroundView() {
+        backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.blackColor()
+        backgroundView.alpha = 0.0
+        addSubview(backgroundView)
+        sendSubviewToBack(backgroundView)
     }
 }

@@ -174,7 +174,7 @@ extension WorkoutEditScreen {
         if nameValid {
             nameController.setValid()
         } else {
-            nameController.setInvalidWithErrorTitle("Workout Name", errorMessage: "Workout name is required field.")
+            nameController.setInvalidWithErrorTitle("Error", errorMessage: "Workout name is required field.")
         }
     
         return workoutEditView.newStepButton.valid && nameController.valid
