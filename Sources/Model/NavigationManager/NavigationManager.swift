@@ -16,9 +16,13 @@ class NavigationManager: NSObject {
         }
     }
     
-    var storyboard: UIStoryboard {
+    var screensStoryboard: UIStoryboard {
         return window.rootViewController!.storyboard!
     }
+    
+    lazy var dialogsStoryboard: UIStoryboard = {
+        return UIStoryboard(name: "Dialogs", bundle: NSBundle.mainBundle())
+    }()
     
     var navigationController: UINavigationController {
         return window.rootViewController! as! UINavigationController
@@ -75,21 +79,21 @@ extension NavigationManager {
 extension NavigationManager {
     
     func workoutDetailsScreenWithWorkout(workout: Workout) -> WorkoutDetailsScreen {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
         return screen
     }
     
     func pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout: Workout, animated: Bool) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
         pushScreen(screen, animated: animated)
     }
     
     func pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout: Workout, animated: Bool) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
         var screens = navigationController.viewControllers
@@ -100,7 +104,7 @@ extension NavigationManager {
     }
     
     func pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout: Workout, animated: Bool) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
         let screens = [navigationController.viewControllers[0], screen]
@@ -116,7 +120,7 @@ extension NavigationManager {
         templateDidSelectAction: ((step: Step) -> Void)?,
         templateDidCancelAction: (() -> Void)?) {
             
-            let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
             screen.searchRequest = searchRequest
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
@@ -129,7 +133,7 @@ extension NavigationManager {
         templateDidSelectAction: ((workout: Workout) -> Void)?,
         templateDidCancelAction: (() -> Void)?) {
             
-            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
             screen.searchRequest = searchRequest
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
@@ -150,7 +154,7 @@ extension NavigationManager {
         animated: Bool,
         workoutDidEditAction: ((workout: Workout) -> Void)?) {
             
-            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
             screen.workout = workout
             screen.workoutDidEditAction = workoutDidEditAction
             
@@ -163,7 +167,7 @@ extension NavigationManager {
         animated: Bool,
         stepDidEditAction: ((step: Step) -> Void)?) {
             
-            let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step
             screen.stepDidEditAction = stepDidEditAction
             
@@ -174,7 +178,7 @@ extension NavigationManager {
 extension NavigationManager {
     
     func showInfoDialogWithTitle(title: String, message: String) {
-        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        let dialog = dialogsStoryboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Info
@@ -182,7 +186,7 @@ extension NavigationManager {
     }
     
     func showErrorDialogWithTitle(title: String, message: String) {
-        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        let dialog = dialogsStoryboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Error
