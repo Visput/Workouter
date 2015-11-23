@@ -57,7 +57,7 @@ extension BaseView {
         guard bottomSpace != nil else { return }
         
         animateWithKeyboardNotification(notification,
-            animations: { () -> () in
+            animations: { 
                 self.bottomSpace.constant = keyboardHeight
                 
                 // Call 'layoutIfNeeded' only if view already appeared.
@@ -79,7 +79,7 @@ extension BaseView {
         guard bottomSpace != nil else { return }
         
         animateWithKeyboardNotification(notification,
-            animations: { () -> () in
+            animations: { 
                 self.bottomSpace.constant = self.bottomSpaceDefaultValue
                 self.layoutIfNeeded()
             }, completion: nil)
@@ -90,8 +90,8 @@ extension BaseView {
     }
     
     func animateWithKeyboardNotification(notification: NSNotification,
-        animations: () -> (),
-        completion: ((completed: Bool) -> ())?) {
+        animations: () -> Void,
+        completion: ((completed: Bool) -> Void)?) {
             
             let curve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).unsignedIntegerValue
             let options = UIViewAnimationOptions(rawValue: curve)

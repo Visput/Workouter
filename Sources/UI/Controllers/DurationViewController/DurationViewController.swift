@@ -10,7 +10,7 @@ import UIKit
 
 class DurationViewController: UIViewController {
     
-    var didSelectDurationAction: ((duration: Int) -> ())?
+    var didSelectDurationAction: ((duration: Int) -> Void)?
     
     private(set) var duration: Int {
         didSet {

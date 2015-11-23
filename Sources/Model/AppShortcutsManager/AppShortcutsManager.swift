@@ -78,7 +78,7 @@ class AppShortcutsManager: NSObject {
                     }
                     self.navigationManager.dismissScreenAnimated(true)
                     
-                }, templateDidCancelAction: { () -> () in
+                }, templateDidCancelAction: {
                     self.navigationManager.dismissScreenAnimated(true)
             })
             

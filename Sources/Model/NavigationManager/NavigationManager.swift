@@ -113,8 +113,8 @@ extension NavigationManager {
     
     func presentStepTemplatesScreenWithRequest(searchRequest: StepsSearchRequest,
         animated: Bool,
-        templateDidSelectAction: ((step: Step) -> ())?,
-        templateDidCancelAction: (() -> ())?) {
+        templateDidSelectAction: ((step: Step) -> Void)?,
+        templateDidCancelAction: (() -> Void)?) {
             
             let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
             screen.searchRequest = searchRequest
@@ -126,8 +126,8 @@ extension NavigationManager {
     
     func presentWorkoutTemplatesScreenWithRequest(searchRequest: WorkoutsSearchRequest,
         animated: Bool,
-        templateDidSelectAction: ((workout: Workout) -> ())?,
-        templateDidCancelAction: (() -> ())?) {
+        templateDidSelectAction: ((workout: Workout) -> Void)?,
+        templateDidCancelAction: (() -> Void)?) {
             
             let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
             screen.searchRequest = searchRequest
@@ -148,7 +148,7 @@ extension NavigationManager {
     
     func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout,
         animated: Bool,
-        workoutDidEditAction: ((workout: Workout) -> ())?) {
+        workoutDidEditAction: ((workout: Workout) -> Void)?) {
             
             let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
             screen.workout = workout
@@ -161,7 +161,7 @@ extension NavigationManager {
     
     func pushStepEditScreenFromCurrentScreenWithStep(step: Step,
         animated: Bool,
-        stepDidEditAction: ((step: Step) -> ())?) {
+        stepDidEditAction: ((step: Step) -> Void)?) {
             
             let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step

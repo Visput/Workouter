@@ -10,8 +10,8 @@ import UIKit
 
 class WorkoutTemplatesScreen: BaseScreen {
     
-    var templateDidSelectAction: ((workout: Workout) -> ())?
-    var templateDidCancelAction: (() -> ())?
+    var templateDidSelectAction: ((workout: Workout) -> Void)?
+    var templateDidCancelAction: (() -> Void)?
     
     var searchRequest = WorkoutsSearchRequest.emptyTemplatesRequest()
     

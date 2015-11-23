@@ -10,7 +10,7 @@ import UIKit
 
 class StepEditScreen: BaseScreen {
     
-    var stepDidEditAction: ((step: Step) -> ())?
+    var stepDidEditAction: ((step: Step) -> Void)?
     
     var step: Step = Step.emptyStep()
     

@@ -182,7 +182,7 @@ extension WorkoutsScreen {
                 }
                 self.navigationManager.dismissScreenAnimated(true)
                 
-            }, templateDidCancelAction: { () -> () in
+            }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }

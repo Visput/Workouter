@@ -11,7 +11,7 @@ import VPAttributedFormat
 
 class TextViewController: BaseViewController {
     
-    var didChangeTextAction: ((text: String) -> ())?
+    var didChangeTextAction: ((text: String) -> Void)?
     
     var text = "" {
         didSet {

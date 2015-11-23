@@ -10,8 +10,8 @@ import UIKit
 
 class StepTemplatesScreen: BaseScreen {
 
-    var templateDidSelectAction: ((step: Step) -> ())?
-    var templateDidCancelAction: (() -> ())?
+    var templateDidSelectAction: ((step: Step) -> Void)?
+    var templateDidCancelAction: (() -> Void)?
     
     var searchRequest = StepsSearchRequest.emptyRequest()
     

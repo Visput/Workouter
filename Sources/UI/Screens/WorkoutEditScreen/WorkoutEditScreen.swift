@@ -10,7 +10,7 @@ import UIKit
 
 class WorkoutEditScreen: BaseScreen {
     
-    var workoutDidEditAction: ((workout: Workout) -> ())?
+    var workoutDidEditAction: ((workout: Workout) -> Void)?
     
     var workout: Workout = Workout.emptyWorkout() {
         didSet {
@@ -137,7 +137,7 @@ extension WorkoutEditScreen {
                 }
                 self.navigationManager.dismissScreenAnimated(true)
                 
-            }, templateDidCancelAction: { () -> () in
+            }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }
