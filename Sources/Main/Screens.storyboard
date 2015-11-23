@@ -301,7 +301,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-mG-71o">
-                                <rect key="frame" x="16" y="154" width="343" height="100"/>
+                                <rect key="frame" x="16" y="156" width="343" height="100"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="iMy-52-OgE"/>
@@ -311,7 +311,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29b-Uj-haV">
-                                <rect key="frame" x="16" y="270" width="343" height="216"/>
+                                <rect key="frame" x="16" y="272" width="343" height="216"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="WK1-lt-mKa"/>
@@ -321,7 +321,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-B6-40e">
-                                <rect key="frame" x="16" y="78" width="343" height="60"/>
+                                <rect key="frame" x="16" y="80" width="343" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6OH-qa-57s"/>
@@ -334,7 +334,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Q2g-B6-40e" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="14" id="A8b-MV-3V4"/>
+                            <constraint firstItem="Q2g-B6-40e" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="16" id="A8b-MV-3V4"/>
                             <constraint firstItem="Q2g-B6-40e" firstAttribute="trailing" secondItem="kkh-o0-1RU" secondAttribute="trailingMargin" id="BPE-ni-CsU"/>
                             <constraint firstItem="29b-Uj-haV" firstAttribute="top" secondItem="Sp7-mG-71o" secondAttribute="bottom" constant="16" id="EC1-ev-MDd"/>
                             <constraint firstItem="Sp7-mG-71o" firstAttribute="top" secondItem="Q2g-B6-40e" secondAttribute="bottom" constant="16" id="FMV-GI-4MA"/>
@@ -350,6 +350,10 @@
                                 <exclude reference="smF-zl-CAi"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="nameViewHeight" destination="6OH-qa-57s" id="OkE-LH-v6Y"/>
+                            <outlet property="nameViewTopSpace" destination="A8b-MV-3V4" id="fRV-fr-kIn"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Step" id="oqA-g8-udP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GV3-kA-uPR"/>
@@ -566,7 +570,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
-                                <rect key="frame" x="16" y="78" width="343" height="60"/>
+                                <rect key="frame" x="16" y="80" width="343" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
@@ -576,7 +580,7 @@
                                 </connections>
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-x6-9TF">
-                                <rect key="frame" x="16" y="318" width="343" height="349"/>
+                                <rect key="frame" x="16" y="320" width="343" height="347"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -653,7 +657,7 @@
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96P-wQ-twa">
-                                <rect key="frame" x="16" y="154" width="343" height="100"/>
+                                <rect key="frame" x="16" y="156" width="343" height="100"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="100" id="l8i-0t-CY9"/>
@@ -663,7 +667,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="195" y="270" width="164" height="40"/>
+                                <rect key="frame" x="195" y="272" width="164" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
@@ -688,7 +692,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="270" width="164" height="40"/>
+                                <rect key="frame" x="16" y="272" width="164" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
@@ -717,7 +721,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cpu-SS-bXz" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="14" id="1rf-Ng-eS5"/>
+                            <constraint firstItem="cpu-SS-bXz" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="16" id="1rf-Ng-eS5"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailingMargin" id="9TD-9g-fLW"/>
                             <constraint firstItem="f2g-Ez-33A" firstAttribute="top" secondItem="v9P-x6-9TF" secondAttribute="bottom" id="BqS-Wa-EZC"/>
                             <constraint firstItem="xGX-C2-eLq" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="Edp-lo-byO"/>
@@ -790,11 +794,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-d6-RvV">
-                                <rect key="frame" x="0.0" y="-2" width="315" height="62"/>
+                                <rect key="frame" x="0.0" y="-2" width="315" height="102"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
@@ -833,7 +837,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="288" y="38" width="44" height="20"/>
+                                <rect key="frame" x="288" y="78" width="44" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1271,6 +1275,6 @@
         <image name="icon_info_small_primary" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dQt-nY-fnQ"/>
+        <segue reference="aFV-Nt-De2"/>
     </inferredMetricsTieBreakers>
 </document>

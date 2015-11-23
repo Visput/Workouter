@@ -4,7 +4,10 @@ function_body_length: 70
 disabled_rules:
 - trailing_whitespace
 - force_cast
+
+# Disabled rules because of bugs.
 - nesting
+- control_statement
 
 excluded:
 - Pods

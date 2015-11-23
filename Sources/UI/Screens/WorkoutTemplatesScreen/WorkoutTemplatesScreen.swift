@@ -50,7 +50,7 @@ extension WorkoutTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
         var resultCell: UITableViewCell! = nil
         
         let workout = workouts[indexPath.row]
-        if workout.isEmpty() {
+        if workout.name.isEmpty {
             resultCell = tableView.dequeueReusableCellWithIdentifier(NewWorkoutTemplateCell.className())
             
         } else {
@@ -66,7 +66,7 @@ extension WorkoutTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
         let workoutNameSufix = NSLocalizedString(" Copy", comment: "")
         
         var workout = workouts[indexPath.row]
-        if !workout.isEmpty() {
+        if !workout.name.isEmpty {
             workout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
         }
         templateDidSelectAction?(workout: workout)

@@ -68,17 +68,11 @@ extension Step {
 
 extension Step {
     
-    class func emptyExersize() -> Self {
+    class func emptyExersizeStep() -> Self {
         return self.init(type: .Exercise, name: "", description: "", duration: 0)
     }
     
-    class func emptyRest() -> Self {
+    class func emptyRestStep() -> Self {
         return self.init(type: .Rest, name: "", description: "", duration: 0)
-    }
-    
-    func isEmpty() -> Bool {
-        return name == "" &&
-            stepDescription == "" &&
-            duration == 0
     }
 }

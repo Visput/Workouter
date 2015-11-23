@@ -28,8 +28,8 @@ class WorkoutsProvider: NSObject {
                 description: "Step 1 description Step 1 description Step 1 description Step 1 description",
                 duration: 60)
             let step2 = Step(type: .Rest,
-                name: "Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2",
-                description: "Step 2 description",
+                name: "Rest",
+                description: "",
                 duration: 120)
             let step3 = Step(type: .Exercise,
                 name: "Step 3 Step 3 Step 3 Step 3 Step 3 Step 3 Step 3",
@@ -95,8 +95,8 @@ class WorkoutsProvider: NSObject {
         var searchResults = [Step]()
         for workout in workouts {
             for step in workout.steps {
-                guard request.searchText == "" ||
-                    step.name.containsString(request.searchText) else { continue }
+                guard (request.includeRestSteps || step.type == .Exercise) &&
+                    (request.searchText == "" || step.name.containsString(request.searchText)) else { continue }
                 searchResults.append(step)
             }
         }

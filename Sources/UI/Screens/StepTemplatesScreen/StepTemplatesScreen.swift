@@ -49,7 +49,7 @@ extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
         var resultCell: UITableViewCell! = nil
         
         let step = steps[indexPath.row]
-        if step.isEmpty() {
+        if step.name.isEmpty {
             resultCell = tableView.dequeueReusableCellWithIdentifier(NewStepTemplateCell.className())
             
         } else {
@@ -98,7 +98,7 @@ extension StepTemplatesScreen {
     
     private func searchStepsWithRequest(searchRequest: StepsSearchRequest) {
         steps = [Step]()
-        steps.append(Step.emptyExersize())
+        steps.append(Step.emptyExersizeStep())
         
         let searchResults = workoutsProvider.searchStepsWithRequest(searchRequest)
         steps.appendContentsOf(searchResults)

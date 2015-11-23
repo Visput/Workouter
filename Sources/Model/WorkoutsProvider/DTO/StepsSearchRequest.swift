@@ -12,10 +12,12 @@ class StepsSearchRequest: NSObject {
     
     let workout: Workout
     let searchText: String
+    let includeRestSteps: Bool
 
-    required init(workout: Workout, searchText: String) {
+    required init(workout: Workout, searchText: String, includeRestSteps: Bool) {
         self.workout = workout
         self.searchText = searchText
+        self.includeRestSteps = includeRestSteps
         super.init()
     }
 }
@@ -23,22 +25,21 @@ class StepsSearchRequest: NSObject {
 extension StepsSearchRequest {
     
     func requestBySettingWorkout(workout: Workout) -> Self {
-        return self.dynamicType.init(workout: workout, searchText: searchText)
+        return self.dynamicType.init(workout: workout, searchText: searchText, includeRestSteps: includeRestSteps)
     }
     
     func requestBySettingSearchText(searchText: String) -> Self {
-        return self.dynamicType.init(workout: workout, searchText: searchText)
+        return self.dynamicType.init(workout: workout, searchText: searchText, includeRestSteps: includeRestSteps)
+    }
+    
+    func requestByIncludingRestSteps(includeRestSteps: Bool) -> Self {
+        return self.dynamicType.init(workout: workout, searchText: searchText, includeRestSteps: includeRestSteps)
     }
 }
 
 extension StepsSearchRequest {
     
     class func emptyRequest() -> Self {
-        return self.init(workout: Workout.emptyWorkout(), searchText: "")
-    }
-    
-    func isEmpty() -> Bool {
-        return workout.isEmpty() &&
-            searchText == ""
+        return self.init(workout: Workout.emptyWorkout(), searchText: "", includeRestSteps: false)
     }
 }

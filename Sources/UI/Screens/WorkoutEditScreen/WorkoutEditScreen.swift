@@ -12,7 +12,7 @@ class WorkoutEditScreen: BaseScreen {
     
     var workoutDidEditAction: ((workout: Workout) -> Void)?
     
-    var workout: Workout = Workout.emptyWorkout() {
+    var workout: Workout! {
         didSet {
             guard isViewLoaded() else { return }
             fillViewWithWorkout(workout)
@@ -40,23 +40,11 @@ class WorkoutEditScreen: BaseScreen {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
-            nameController.placeholder = NSLocalizedString("Name", comment: "")
-            nameController.descriptionTitle = NSLocalizedString("Workout Name", comment: "")
-            nameController.descriptionMessage = NSLocalizedString("Workout name is short description of your workout.", comment: "")
-            nameController.didChangeTextAction = { [unowned self] text in
-                self.workout = self.workout.workoutBySettingName(text)
-                self.nameController.setValid()
-            }
+            configureNameController()
             
         } else if segue.identifier! == "WorkoutDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
-            descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
-            descriptionController.descriptionTitle = NSLocalizedString("Workout Description", comment: "")
-            descriptionController.descriptionMessage = NSLocalizedString("Workout description is detailed information about your workout.",
-                comment: "")
-            descriptionController.didChangeTextAction = { [unowned self] text in
-                self.workout = self.workout.workoutBySettingDescription(text)
-            }
+            configureDescriptionController()
         }
     }
 }
@@ -126,7 +114,7 @@ extension WorkoutEditScreen {
     }
     
     @IBAction private func newExersizeStepButtonDidPress(sender: AnyObject) {
-        let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
+        let searchRequest = StepsSearchRequest(workout: workout, searchText: "", includeRestSteps: false)
         
         navigationManager.presentStepTemplatesScreenWithRequest(searchRequest,
             animated: true,
@@ -145,7 +133,12 @@ extension WorkoutEditScreen {
     }
     
     @IBAction private func newRestStepButtonDidPress(sender: AnyObject) {
-        
+        let step = Step.emptyRestStep().stepBySettingName(NSLocalizedString("Rest", comment: ""))
+        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: true) { [unowned self] step in
+            self.workout = self.workout.workoutByAddingStep(step)
+            self.workoutEditView.newExersizeStepButton.valid = true
+            self.navigationManager.popScreenAnimated(true)
+        }
     }
 }
 
@@ -157,7 +150,7 @@ extension WorkoutEditScreen {
         descriptionController.text = workout.workoutDescription
         descriptionController.textMaxLength = workout.descriptionMaxLength
         
-        if workout.isEmpty() {
+        if workout.name.isEmpty {
             nameController.active = true
         }
         
@@ -175,14 +168,33 @@ extension WorkoutEditScreen {
         nameController.nextTextViewController = descriptionController
     }
     
+    private func configureNameController() {
+        nameController.placeholder = NSLocalizedString("Name", comment: "")
+        nameController.descriptionTitle = NSLocalizedString("Workout Name", comment: "")
+        nameController.descriptionMessage = NSLocalizedString("Workout name is short description of your workout.", comment: "")
+        nameController.didChangeTextAction = { [unowned self] text in
+            self.workout = self.workout.workoutBySettingName(text)
+            self.nameController.setValid()
+        }
+    }
+    
+    private func configureDescriptionController() {
+        descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
+        descriptionController.descriptionTitle = NSLocalizedString("Workout Description", comment: "")
+        descriptionController.descriptionMessage = NSLocalizedString("Workout description is detailed information about your workout.",
+            comment: "")
+        descriptionController.didChangeTextAction = { [unowned self] text in
+            self.workout = self.workout.workoutBySettingDescription(text)
+        }
+    }
+    
     private func validateWorkout() -> Bool {
         workoutEditView.newExersizeStepButton.valid = workout.steps.count > 0
         
-        let nameValid = !nameController.text.isEmpty
-        if nameValid {
-            nameController.setValid()
-        } else {
+        if workout.name.isEmpty {
             nameController.setInvalidWithErrorTitle("Error", errorMessage: "Workout name is required field.")
+        } else {
+            nameController.setValid()
         }
     
         return workoutEditView.newExersizeStepButton.valid && nameController.valid
