@@ -168,13 +168,21 @@ extension TextViewController {
             textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
         }
         
-        if valid {
-            view.layer.borderColor = UIColor.borderColor().CGColor
-            descriptionButton.setImage(UIImage(named: "icon_info_small_primary"), forState: .Normal)
-        } else {
-            view.layer.borderColor = UIColor.invalidStateColor().CGColor
-            descriptionButton.setImage(UIImage(named: "icon_info_small_invalid_state"), forState: .Normal)
+        var viewBorderColor = UIColor.borderColor().CGColor
+        var buttonImage = UIImage(named: "icon_info_small_primary")
+        if !valid {
+            viewBorderColor = UIColor.invalidStateColor().CGColor
+            buttonImage = UIImage(named: "icon_info_small_invalid_state")
         }
+        
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.duration = UIView.defaultAnimationDuration
+        borderColorAnimation.fromValue = view.layer.borderColor
+        borderColorAnimation.toValue = viewBorderColor
+        view.layer.addAnimation(borderColorAnimation, forKey: nil)
+        view.layer.borderColor = viewBorderColor
+        
+        descriptionButton.setImage(buttonImage, forState: .Normal)
     }
     
     private func configureReturnKey() {
