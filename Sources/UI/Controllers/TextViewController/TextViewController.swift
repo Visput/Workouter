@@ -9,7 +9,7 @@
 import UIKit
 import VPAttributedFormat
 
-class TextViewController: UIViewController {
+class TextViewController: BaseViewController {
     
     var didChangeTextAction: ((text: String) -> ())?
     
@@ -78,8 +78,6 @@ class TextViewController: UIViewController {
         }
     }
     
-    var navigationManager: NavigationManager!
-    
     /// Use this property if you need to activate another text controller
     /// when user clicks 'return' key.
     /// If this property is nil then current text controller will be
@@ -105,6 +103,10 @@ class TextViewController: UIViewController {
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var textLimitLabel: UILabel!
     @IBOutlet private weak var descriptionButton: UIButton!
+    
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class BaseDialog: BaseScreen {
-    
-    var cancelAction: (() -> ())?
+class BaseDialog: BaseViewController {
 
     private var baseView: BaseDialogView {
         return view as! BaseDialogView
+    }
+    
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
     }
     
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class BaseDialog: BaseScreen {
     }
     
     @IBAction func cancelButtonDidPress(sender: AnyObject) {
-        cancelAction?()
+        navigationManager.dismissDialogAnimated(true)
     }
 }
 

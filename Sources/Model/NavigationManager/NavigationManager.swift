@@ -178,9 +178,6 @@ extension NavigationManager {
         dialog.primaryText = title
         dialog.secondaryText = text
         dialog.style = .Info
-        dialog.cancelAction = { [unowned self] in
-            self.dismissDialogAnimated(true)
-        }
         presentDialog(dialog, animated: true)
     }
     
@@ -189,9 +186,6 @@ extension NavigationManager {
         dialog.primaryText = title
         dialog.secondaryText = text
         dialog.style = .Error
-        dialog.cancelAction = { [unowned self] in
-            self.dismissDialogAnimated(true)
-        }
         presentDialog(dialog, animated: true)
     }
 }

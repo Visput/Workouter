@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepTemplatesView: BaseView {
+class StepTemplatesView: BaseScreenView {
     
     @IBOutlet private(set) weak var templatesTableView: UITableView!
     

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class StepEditView: BaseView {
+class StepEditView: BaseScreenView {
 
     override func willDisappear(animated: Bool) {
         endEditing(true)

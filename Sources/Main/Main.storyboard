@@ -740,7 +740,7 @@
                         <viewControllerLayoutGuide type="top" id="BY6-gh-2jQ"/>
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl">
+                    <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
