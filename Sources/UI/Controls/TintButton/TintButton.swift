@@ -110,15 +110,27 @@ extension TintButton {
             alpha = 1.0
         }
         
+        
+        // Filling animation.
+        let buttonBorderColor = primaryColorForCurrentState.CGColor
+        var buttonTitleColor = primaryColorForCurrentState
+        var buttonBackgroundColor = secondaryColor
+        
         if filled {
-            layer.borderColor = primaryColorForCurrentState.CGColor
-            setTitleColor(secondaryColor, forState: state)
-            backgroundColor = primaryColorForCurrentState
-            
-        } else {
-            layer.borderColor = primaryColorForCurrentState.CGColor
-            setTitleColor(primaryColorForCurrentState, forState: state)
-            backgroundColor = secondaryColor
+            buttonTitleColor = secondaryColor
+            buttonBackgroundColor = primaryColorForCurrentState
+        }
+        
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.duration = UIView.defaultAnimationDuration
+        borderColorAnimation.fromValue = layer.borderColor
+        borderColorAnimation.toValue = buttonBorderColor
+        layer.addAnimation(borderColorAnimation, forKey: nil)
+        layer.borderColor = buttonBorderColor
+        
+        UIView.animateWithDefaultDuration {
+            self.setTitleColor(buttonTitleColor, forState: self.state)
+            self.backgroundColor = buttonBackgroundColor
         }
         
         // Other.

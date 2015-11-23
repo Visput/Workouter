@@ -11,14 +11,14 @@ import UIKit
 extension UIView {
     
     class var defaultAnimationDuration: NSTimeInterval {
-        return 0.2
+        return 0.3
     }
     
-    class func animate(animations: () -> Void) {
+    class func animateWithDefaultDuration(animations: () -> Void) {
         UIView.animateWithDuration(defaultAnimationDuration, animations: animations)
     }
     
-    class func animate(animations: () -> Void, completion: (Bool) -> Void) {
+    class func animateWithDefaultDuration(animations: () -> Void, completion: (Bool) -> Void) {
         UIView.animateWithDuration(defaultAnimationDuration, animations: animations, completion: completion)
     }
 }

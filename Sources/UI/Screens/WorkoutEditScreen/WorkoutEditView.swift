@@ -11,7 +11,8 @@ import UIKit
 class WorkoutEditView: BaseScreenView {
     
     @IBOutlet private(set) weak var stepsTableView: UITableView!
-    @IBOutlet private(set) weak var newStepButton: TintButton!
+    @IBOutlet private(set) weak var newExersizeStepButton: TintButton!
+    @IBOutlet private(set) weak var newRestStepButton: TintButton!
     
     override func didLoad() {
         super.didLoad()

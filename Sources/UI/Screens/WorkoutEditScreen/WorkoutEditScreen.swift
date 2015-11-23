@@ -125,7 +125,7 @@ extension WorkoutEditScreen {
         }
     }
     
-    @IBAction private func addStepButtonDidPress(sender: AnyObject) {
+    @IBAction private func newExersizeStepButtonDidPress(sender: AnyObject) {
         let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
         
         navigationManager.presentStepTemplatesScreenWithRequest(searchRequest,
@@ -134,7 +134,7 @@ extension WorkoutEditScreen {
                 
                 self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step, animated: false) { step in
                     self.workout = self.workout.workoutByAddingStep(step)
-                    self.workoutEditView.newStepButton.valid = true
+                    self.workoutEditView.newExersizeStepButton.valid = true
                     self.navigationManager.popScreenAnimated(true)
                 }
                 self.navigationManager.dismissScreenAnimated(true)
@@ -142,6 +142,10 @@ extension WorkoutEditScreen {
             }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)
         })
+    }
+    
+    @IBAction private func newRestStepButtonDidPress(sender: AnyObject) {
+        
     }
 }
 
@@ -161,6 +165,10 @@ extension WorkoutEditScreen {
             workoutEditView.stepsTableView.reloadData()
         }
         needsReloadStepsTableView = true
+        
+        let isLastStepExersize = workout.steps.last != nil && workout.steps.last!.type == .Exercise
+        workoutEditView.newExersizeStepButton.filled = !isLastStepExersize
+        workoutEditView.newRestStepButton.filled = isLastStepExersize
     }
     
     private func configureTextControllers() {
@@ -168,7 +176,7 @@ extension WorkoutEditScreen {
     }
     
     private func validateWorkout() -> Bool {
-        workoutEditView.newStepButton.valid = workout.steps.count > 0
+        workoutEditView.newExersizeStepButton.valid = workout.steps.count > 0
         
         let nameValid = !nameController.text.isEmpty
         if nameValid {
@@ -177,6 +185,6 @@ extension WorkoutEditScreen {
             nameController.setInvalidWithErrorTitle("Error", errorMessage: "Workout name is required field.")
         }
     
-        return workoutEditView.newStepButton.valid && nameController.valid
+        return workoutEditView.newExersizeStepButton.valid && nameController.valid
     }
 }

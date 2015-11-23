@@ -23,13 +23,16 @@ class WorkoutsProvider: NSObject {
     func loadWorkouts() {
         workouts = NSKeyedUnarchiver.unarchiveObjectWithFile(workoutsFilePath) as? [Workout]
         if workouts == nil {
-            let step1 = Step(name: "Step 1",
+            let step1 = Step(type: .Exercise,
+                name: "Step 1",
                 description: "Step 1 description Step 1 description Step 1 description Step 1 description",
                 duration: 60)
-            let step2 = Step(name: "Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2",
+            let step2 = Step(type: .Rest,
+                name: "Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2 Step 2",
                 description: "Step 2 description",
                 duration: 120)
-            let step3 = Step(name: "Step 3 Step 3 Step 3 Step 3 Step 3 Step 3 Step 3",
+            let step3 = Step(type: .Exercise,
+                name: "Step 3 Step 3 Step 3 Step 3 Step 3 Step 3 Step 3",
                 description: "Step 1 description Step 1 description Step 1 description Step 1 description",
                 duration: 120)
             let steps = [step1, step2, step3]

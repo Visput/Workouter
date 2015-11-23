@@ -12,7 +12,7 @@ class StepEditScreen: BaseScreen {
     
     var stepDidEditAction: ((step: Step) -> Void)?
     
-    var step: Step = Step.emptyStep()
+    var step: Step = Step.emptyExersize()
     
     private var descriptionController: TextViewController!
     private var nameController: TextViewController!

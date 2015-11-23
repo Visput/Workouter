@@ -575,32 +575,8 @@
                                     <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="270" width="343" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
-                                    <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <state key="normal" title="Add Step"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lCA-9r-L2J"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="addStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="b0u-eE-nhh"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-x6-9TF">
-                                <rect key="frame" x="16" y="315" width="343" height="352"/>
+                                <rect key="frame" x="16" y="318" width="343" height="349"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -686,6 +662,57 @@
                                     <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="195" y="270" width="164" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
+                                    <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Add Step"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VM3-KI-ZQa"/>
+                                        <exclude reference="lCA-9r-L2J"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="newExersizeStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="10t-a5-bWx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="270" width="164" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
+                                    <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
+                                    <constraint firstAttribute="height" constant="40" id="U7T-SL-jgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Add Rest"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Q1C-01-3Lq"/>
+                                        <exclude reference="TNP-9V-yIK"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="newRestStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="tds-cf-QfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -693,27 +720,49 @@
                             <constraint firstItem="cpu-SS-bXz" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="14" id="1rf-Ng-eS5"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailingMargin" id="9TD-9g-fLW"/>
                             <constraint firstItem="f2g-Ez-33A" firstAttribute="top" secondItem="v9P-x6-9TF" secondAttribute="bottom" id="BqS-Wa-EZC"/>
+                            <constraint firstItem="xGX-C2-eLq" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="Edp-lo-byO"/>
+                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="width" secondItem="xGX-C2-eLq" secondAttribute="width" id="GNr-NZ-7oL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0MX-Ig-FKe" secondAttribute="trailing" id="Hcu-nS-okC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="96P-wQ-twa" secondAttribute="trailing" id="IVM-cc-dnH"/>
                             <constraint firstItem="cpu-SS-bXz" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" id="J6v-9w-rgn"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="0MX-Ig-FKe" secondAttribute="bottom" constant="5" id="JLM-o4-65j"/>
+                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="xGX-C2-eLq" secondAttribute="bottom" constant="8" id="LFU-1E-Hnj"/>
+                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="top" secondItem="xGX-C2-eLq" secondAttribute="top" id="PPx-Is-VgR"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" id="QKB-nr-D0f"/>
                             <constraint firstItem="96P-wQ-twa" firstAttribute="top" secondItem="cpu-SS-bXz" secondAttribute="bottom" constant="16" id="R5Y-jN-OcE"/>
+                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="xGX-C2-eLq" secondAttribute="trailing" constant="15" id="S7g-TW-hKj"/>
                             <constraint firstItem="96P-wQ-twa" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" id="T5K-du-0dO"/>
+                            <constraint firstItem="xGX-C2-eLq" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" id="TqA-aP-aLh"/>
+                            <constraint firstItem="xGX-C2-eLq" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="ZiY-2P-cVi"/>
                             <constraint firstItem="cpu-SS-bXz" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailingMargin" id="aYd-US-Rvt"/>
                             <constraint firstItem="0MX-Ig-FKe" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="al7-Xs-eC7"/>
                             <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" id="cNN-Zm-uwx"/>
+                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="height" secondItem="xGX-C2-eLq" secondAttribute="height" id="jEw-Ff-WPk"/>
+                            <constraint firstItem="xGX-C2-eLq" firstAttribute="width" secondItem="0MX-Ig-FKe" secondAttribute="width" id="m3I-GA-PwE"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="p0u-ZS-QT6"/>
                             <constraint firstItem="0MX-Ig-FKe" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailingMargin" id="pZW-Kj-k4w"/>
+                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="xGX-C2-eLq" secondAttribute="trailing" constant="16" id="tP4-36-HuU"/>
+                            <constraint firstItem="xGX-C2-eLq" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leadingMargin" constant="-4" id="tcB-Xn-7OH"/>
                             <constraint firstItem="0MX-Ig-FKe" firstAttribute="centerX" secondItem="2Ub-Qo-fSW" secondAttribute="centerX" id="vxK-GN-gDd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ZiY-2P-cVi"/>
+                                <exclude reference="m3I-GA-PwE"/>
+                                <exclude reference="tcB-Xn-7OH"/>
+                                <exclude reference="JLM-o4-65j"/>
                                 <exclude reference="p0u-ZS-QT6"/>
+                                <exclude reference="al7-Xs-eC7"/>
+                                <exclude reference="cNN-Zm-uwx"/>
+                                <exclude reference="pZW-Kj-k4w"/>
+                                <exclude reference="tP4-36-HuU"/>
+                                <exclude reference="vxK-GN-gDd"/>
                             </mask>
                         </variation>
                         <connections>
                             <outlet property="bottomSpace" destination="BqS-Wa-EZC" id="N6o-Mz-3VL"/>
-                            <outlet property="newStepButton" destination="0MX-Ig-FKe" id="0kj-NE-LXq"/>
+                            <outlet property="newExersizeStepButton" destination="0MX-Ig-FKe" id="f9t-eR-L4x"/>
+                            <outlet property="newRestStepButton" destination="xGX-C2-eLq" id="tUq-7a-W1U"/>
                             <outlet property="stepsTableView" destination="v9P-x6-9TF" id="pOU-m6-ORc"/>
                         </connections>
                     </view>
@@ -1061,7 +1110,6 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="addStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="Ka8-oH-siH"/>
                                             <action selector="cancelButtonDidPress:" destination="xZB-D1-2hs" eventType="touchUpInside" id="B9f-DE-gJr"/>
                                         </connections>
                                     </button>

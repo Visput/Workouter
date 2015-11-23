@@ -98,7 +98,7 @@ extension StepTemplatesScreen {
     
     private func searchStepsWithRequest(searchRequest: StepsSearchRequest) {
         steps = [Step]()
-        steps.append(Step.emptyStep())
+        steps.append(Step.emptyExersize())
         
         let searchResults = workoutsProvider.searchStepsWithRequest(searchRequest)
         steps.appendContentsOf(searchResults)
