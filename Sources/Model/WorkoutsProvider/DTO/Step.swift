@@ -19,7 +19,7 @@ class Step: NSObject, NSCoding {
     
     required init(name: String, description: String, duration: Int) {
         self.name = name
-        self.stepDescription = description;
+        self.stepDescription = description
         self.duration = duration
         super.init()
     }

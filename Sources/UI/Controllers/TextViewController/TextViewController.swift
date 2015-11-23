@@ -27,28 +27,14 @@ class TextViewController: BaseViewController {
         }
     }
     
-    var descriptionTitle: String = "" {
+    var descriptionTitle = "" {
         didSet {
             guard isViewLoaded() else { return }
             updateViews()
         }
     }
     
-    var descriptionText: String = "" {
-        didSet {
-            guard isViewLoaded() else { return }
-            updateViews()
-        }
-    }
-    
-    var errorTitle: String = "" {
-        didSet {
-            guard isViewLoaded() else { return }
-            updateViews()
-        }
-    }
-    
-    var errorText: String = "" {
+    var descriptionMessage = "" {
         didSet {
             guard isViewLoaded() else { return }
             updateViews()
@@ -66,15 +52,6 @@ class TextViewController: BaseViewController {
             } else {
                 textView.resignFirstResponder()
             }
-        }
-    }
-    
-    var optional = true
-    
-    var valid = true {
-        didSet {
-            guard isViewLoaded() else { return }
-            updateViews()
         }
     }
     
@@ -99,6 +76,27 @@ class TextViewController: BaseViewController {
         }
     }
     
+    private(set) var valid = true {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    private var errorTitle = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    private var errorMessage = "" {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var textLimitLabel: UILabel!
@@ -114,11 +112,16 @@ class TextViewController: BaseViewController {
         updateViews()
     }
     
-    func validate() -> Bool? {
-        guard isViewLoaded() else { return nil }
-        valid = optional || !textView.text.isEmpty
-        
-        return valid
+    func setInvalidWithErrorTitle(errorTitle: String, errorMessage: String) {
+        self.errorTitle = errorTitle
+        self.errorMessage = errorMessage
+        valid = false
+    }
+    
+    func setValid() {
+        self.errorTitle = ""
+        self.errorMessage = ""
+        valid = true
     }
 }
 
@@ -167,8 +170,10 @@ extension TextViewController {
         
         if valid {
             view.layer.borderColor = UIColor.borderColor().CGColor
+            descriptionButton.setImage(UIImage(named: "icon_info_small_primary"), forState: .Normal)
         } else {
             view.layer.borderColor = UIColor.invalidStateColor().CGColor
+            descriptionButton.setImage(UIImage(named: "icon_info_small_invalid_state"), forState: .Normal)
         }
     }
     
@@ -183,7 +188,11 @@ extension TextViewController {
 
 extension TextViewController {
     
-    @IBAction func descriptionButtonDidPress(sender: AnyObject) {
-        navigationManager.presentInfoDialogWithTitle(descriptionTitle, text: descriptionText)
+    @IBAction private func descriptionButtonDidPress(sender: AnyObject) {
+        if valid {
+            navigationManager.presentInfoDialogWithTitle(descriptionTitle, message: descriptionMessage)
+        } else {
+            navigationManager.presentErrorDialogWithTitle(errorTitle, message: errorMessage)
+        }
     }
 }

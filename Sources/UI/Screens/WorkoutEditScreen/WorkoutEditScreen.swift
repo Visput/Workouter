@@ -42,16 +42,18 @@ class WorkoutEditScreen: BaseScreen {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
             nameController.descriptionTitle = NSLocalizedString("Workout Name", comment: "")
-            nameController.descriptionText = NSLocalizedString("Workout Name is short description of your workout.", comment: "")
-            nameController.optional = false
+            nameController.descriptionMessage = NSLocalizedString("Workout name is short description of your workout.", comment: "")
             nameController.didChangeTextAction = { [unowned self] text in
                 self.workout = self.workout.workoutBySettingName(text)
-                self.nameController.valid = true
+                self.nameController.setValid()
             }
             
         } else if segue.identifier! == "WorkoutDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
             descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
+            descriptionController.descriptionTitle = NSLocalizedString("Workout Description", comment: "")
+            descriptionController.descriptionMessage = NSLocalizedString("Workout description is detailed information about your workout.",
+                comment: "")
             descriptionController.didChangeTextAction = { [unowned self] text in
                 self.workout = self.workout.workoutBySettingDescription(text)
             }
@@ -91,7 +93,7 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
             
             if editingStyle == .Delete {
                 needsReloadStepsTableView = false
-                workout = workout.workoutByRemovingStepAtIndex(indexPath.row);
+                workout = workout.workoutByRemovingStepAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
             }
     }
@@ -167,8 +169,14 @@ extension WorkoutEditScreen {
     
     private func validateWorkout() -> Bool {
         workoutEditView.newStepButton.valid = workout.steps.count > 0
-        nameController.validate()
         
+        let nameValid = !nameController.text.isEmpty
+        if nameValid {
+            nameController.setValid()
+        } else {
+            nameController.setInvalidWithErrorTitle("Workout Name", errorMessage: "Workout name is required field.")
+        }
+    
         return workoutEditView.newStepButton.valid && nameController.valid
     }
 }

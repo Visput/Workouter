@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
             Parse.enableLocalDatastore()
             Parse.setApplicationId(NSBundle.mainBundle().objectForInfoDictionaryKey("ParseAppID") as! String,
-                clientKey:NSBundle.mainBundle().objectForInfoDictionaryKey("ParseClientID") as! String);
+                clientKey:NSBundle.mainBundle().objectForInfoDictionaryKey("ParseClientID") as! String)
             
             // Initalize model.
             modelProvider = ModelProvider.provider

@@ -173,18 +173,18 @@ extension NavigationManager {
 
 extension NavigationManager {
     
-    func presentInfoDialogWithTitle(title: String, text: String) {
+    func presentInfoDialogWithTitle(title: String, message: String) {
         let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
-        dialog.secondaryText = text
+        dialog.secondaryText = message
         dialog.style = .Info
         presentDialog(dialog, animated: true)
     }
     
-    func presentErrorDialogWithTitle(title: String, text: String) {
+    func presentErrorDialogWithTitle(title: String, message: String) {
         let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
-        dialog.secondaryText = text
+        dialog.secondaryText = message
         dialog.style = .Error
         presentDialog(dialog, animated: true)
     }

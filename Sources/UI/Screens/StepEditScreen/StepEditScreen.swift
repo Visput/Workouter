@@ -36,15 +36,19 @@ class StepEditScreen: BaseScreen {
         if segue.identifier! == "StepName" {
             nameController = segue.destinationViewController as! TextViewController
             nameController.placeholder = NSLocalizedString("Name", comment: "")
-            nameController.optional = false
+            nameController.descriptionTitle = NSLocalizedString("Step Name", comment: "")
+            nameController.descriptionMessage = NSLocalizedString("Step name is short description of your step.", comment: "")
             nameController.didChangeTextAction = { [unowned self] text in
                 self.step = self.step.stepBySettingName(text)
-                self.nameController.valid = true
+                self.nameController.setValid()
             }
             
         } else if segue.identifier! == "StepDescription" {
             descriptionController = segue.destinationViewController as! TextViewController
             descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
+            descriptionController.descriptionTitle = NSLocalizedString("Step Description", comment: "")
+            descriptionController.descriptionMessage = NSLocalizedString("Step description is detailed information about your step.",
+                comment: "")
             descriptionController.didChangeTextAction = { [unowned self] text in
                 self.step = self.step.stepBySettingDescription(text)
             }
@@ -88,6 +92,12 @@ extension StepEditScreen {
     }
     
     private func validateStep() -> Bool {
-        return nameController.validate()!
+        let valid = !nameController.text.isEmpty
+        if valid {
+            nameController.setValid()
+        } else {
+            nameController.setInvalidWithErrorTitle("Step Name", errorMessage: "Step name is required field.")
+        }
+        return valid
     }
 }

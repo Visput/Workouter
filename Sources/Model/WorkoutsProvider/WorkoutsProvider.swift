@@ -32,7 +32,7 @@ class WorkoutsProvider: NSObject {
             let step3 = Step(name: "Step 3 Step 3 Step 3 Step 3 Step 3 Step 3 Step 3",
                 description: "Step 1 description Step 1 description Step 1 description Step 1 description",
                 duration: 120)
-            let steps = [step1, step2, step3];
+            let steps = [step1, step2, step3]
             workouts = []
             workouts.append(Workout(name: "Workout 1",
                 description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
