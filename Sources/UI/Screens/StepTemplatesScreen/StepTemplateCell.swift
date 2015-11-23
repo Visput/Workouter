@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepTemplateCell: UITableViewCell {
+final class StepTemplateCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!

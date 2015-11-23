@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DurationViewController: UIViewController {
+final class DurationViewController: UIViewController {
     
     var didSelectDurationAction: ((duration: Int) -> Void)?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutPlayer: NSObject {
+final class WorkoutPlayer: NSObject {
     
     private(set) var workout: Workout?
    

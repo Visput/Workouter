@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppShortcutsManager: NSObject {
+final class AppShortcutsManager: NSObject {
     
     let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider

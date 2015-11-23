@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextDialog: BaseDialog {
+final class TextDialog: BaseDialog {
     
     enum Style {
         case Info

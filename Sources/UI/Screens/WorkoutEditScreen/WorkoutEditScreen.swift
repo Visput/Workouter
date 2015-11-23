@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutEditScreen: BaseScreen {
+final class WorkoutEditScreen: BaseScreen {
     
     var workoutDidEditAction: ((workout: Workout) -> Void)?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutDetailsScreen: BaseScreen {
+final class WorkoutDetailsScreen: BaseScreen {
     
     var workout: Workout!
     

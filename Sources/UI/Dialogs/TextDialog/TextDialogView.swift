@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextDialogView: BaseDialogView {
+final class TextDialogView: BaseDialogView {
     
     @IBOutlet private(set) weak var primaryTextLabel: UILabel!
     @IBOutlet private(set) weak var secondaryTextLabel: UILabel!

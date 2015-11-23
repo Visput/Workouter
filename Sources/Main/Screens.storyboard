@@ -679,7 +679,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -794,11 +794,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-d6-RvV">
-                                <rect key="frame" x="0.0" y="-2" width="315" height="102"/>
+                                <rect key="frame" x="0.0" y="-2" width="315" height="62"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
@@ -837,7 +837,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="288" y="78" width="44" height="20"/>
+                                <rect key="frame" x="288" y="38" width="44" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1275,6 +1275,6 @@
         <image name="icon_info_small_primary" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aFV-Nt-De2"/>
+        <segue reference="dQt-nY-fnQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppAppearance {
+final class AppAppearance {
     
     class func applyAppearance() {
         // UINavigationBar.

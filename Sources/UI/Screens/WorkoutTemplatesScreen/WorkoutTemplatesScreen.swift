@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutTemplatesScreen: BaseScreen {
+final class WorkoutTemplatesScreen: BaseScreen {
     
     var templateDidSelectAction: ((workout: Workout) -> Void)?
     var templateDidCancelAction: (() -> Void)?

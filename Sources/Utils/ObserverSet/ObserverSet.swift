@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ObserverSet<ObserverType>: SequenceType {
+final class ObserverSet<ObserverType>: SequenceType {
     
     var count: Int {
         return weakStorage.count

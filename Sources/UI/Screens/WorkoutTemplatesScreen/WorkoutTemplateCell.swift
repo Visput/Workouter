@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutTemplateCell: UITableViewCell {
+final class WorkoutTemplateCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!

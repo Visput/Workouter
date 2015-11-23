@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutTemplatesView: BaseScreenView {
+final class WorkoutTemplatesView: BaseScreenView {
 
     @IBOutlet private(set) weak var templatesTableView: UITableView!
     

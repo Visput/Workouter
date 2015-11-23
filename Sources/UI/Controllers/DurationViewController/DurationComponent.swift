@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DurationComponent {
+final class DurationComponent {
     
     let numberOfRows: Int
     let maxValue: Int

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatisticsProvider: NSObject {
+final class StatisticsProvider: NSObject {
 
     var mostFrequentlyPlayedWorkout: Workout? {
         var workout: Workout? = nil

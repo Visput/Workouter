@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class WorkoutsProvider: NSObject {
+final class WorkoutsProvider: NSObject {
     
     let observers = ObserverSet<WorkoutsProviderObserving>()
     private(set) var workouts: [Workout]!

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModelProvider: NSObject {
+final class ModelProvider: NSObject {
     
     static let provider = ModelProvider()
     

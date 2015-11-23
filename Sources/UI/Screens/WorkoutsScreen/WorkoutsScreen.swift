@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutsScreen: BaseScreen {
+final class WorkoutsScreen: BaseScreen {
     
     var needsActivateSearch: Bool? {
         didSet {

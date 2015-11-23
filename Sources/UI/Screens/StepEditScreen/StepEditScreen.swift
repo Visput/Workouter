@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepEditScreen: BaseScreen {
+final class StepEditScreen: BaseScreen {
     
     var stepDidEditAction: ((step: Step) -> Void)?
     

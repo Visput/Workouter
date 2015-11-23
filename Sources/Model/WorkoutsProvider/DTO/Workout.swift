@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Workout: NSObject, NSCoding {
+final class Workout: NSObject, NSCoding {
     
     let nameMaxLength = 70
     let descriptionMaxLength = 140

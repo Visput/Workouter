@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutsSearchRequest: NSObject {
+final class WorkoutsSearchRequest: NSObject {
     
     let searchText: String
     

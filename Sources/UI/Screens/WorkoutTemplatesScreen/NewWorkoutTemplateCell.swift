@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NewWorkoutTemplateCell: UITableViewCell {
+final class NewWorkoutTemplateCell: UITableViewCell {
 
 }

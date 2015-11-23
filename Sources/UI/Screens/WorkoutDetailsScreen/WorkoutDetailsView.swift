@@ -8,6 +8,6 @@
 
 import UIKit
 
-class WorkoutDetailsView: BaseScreenView {
+final class WorkoutDetailsView: BaseScreenView {
 
 }

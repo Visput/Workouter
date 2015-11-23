@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class StepEditView: BaseScreenView {
+final class StepEditView: BaseScreenView {
     
     @IBOutlet private weak var nameViewHeight: NSLayoutConstraint!
     private let nameViewHeightDefaultValue: CGFloat = 60.0

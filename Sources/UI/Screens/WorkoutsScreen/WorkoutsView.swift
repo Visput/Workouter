@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WorkoutsView: BaseScreenView {
+final class WorkoutsView: BaseScreenView {
     
     enum ViewMode {
         case Standard

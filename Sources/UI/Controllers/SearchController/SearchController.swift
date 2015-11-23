@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchController: UISearchController {
+final class SearchController: UISearchController {
     
     var enabled = true {
         didSet {

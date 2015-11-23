@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Step: NSObject, NSCoding {
+final class Step: NSObject, NSCoding {
     
     enum Type: Int {
         case Exercise

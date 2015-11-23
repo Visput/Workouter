@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationManager: NSObject {
+final class NavigationManager: NSObject {
     
     var window: UIWindow! {
         didSet {

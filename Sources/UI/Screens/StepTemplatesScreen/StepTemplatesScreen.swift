@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepTemplatesScreen: BaseScreen {
+final class StepTemplatesScreen: BaseScreen {
 
     var templateDidSelectAction: ((step: Step) -> Void)?
     var templateDidCancelAction: (() -> Void)?

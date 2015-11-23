@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutEditView: BaseScreenView {
+final class WorkoutEditView: BaseScreenView {
     
     @IBOutlet private(set) weak var stepsTableView: UITableView!
     @IBOutlet private(set) weak var newExersizeStepButton: TintButton!
