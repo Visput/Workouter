@@ -71,6 +71,10 @@ extension NavigationManager {
         navigationController.dismissViewControllerAnimated(false, completion: nil)
     }
     
+    func setNavigationBarHidden(hidden: Bool, animated: Bool) {
+        navigationController.setNavigationBarHidden(hidden, animated: animated)
+    }
+    
     private func setScreens(screens: [UIViewController], animated: Bool) {
         navigationController.setViewControllers(screens, animated: animated)
     }
@@ -140,6 +144,12 @@ extension NavigationManager {
             
             presentScreen(screen, animated: animated)
     }
+    
+    func presentAuthenticationScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
+        
+        presentScreen(screen, animated: animated)
+    }
 }
 
 extension NavigationManager {
@@ -170,6 +180,19 @@ extension NavigationManager {
             let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step
             screen.stepDidEditAction = stepDidEditAction
+            
+            pushScreen(screen, animated: animated)
+    }
+    
+    func pushSettingsScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(SettingsScreen.className()) as! SettingsScreen
+        
+        pushScreen(screen, animated: animated)
+    }
+    
+    func pushWorkoutPlayerScreenWithWorkout(workout: Workout,
+        animated: Bool) {
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
             
             pushScreen(screen, animated: animated)
     }

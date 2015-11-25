@@ -12,6 +12,7 @@ final class ModelProvider: NSObject {
     
     static let provider = ModelProvider()
     
+    let accountManager: AccountManager
     let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
     let workoutPlayer: WorkoutPlayer
@@ -19,6 +20,7 @@ final class ModelProvider: NSObject {
     let statisticsProvider: StatisticsProvider
     
     override init() {
+        accountManager = AccountManager()
         navigationManager = NavigationManager()
         workoutsProvider = WorkoutsProvider()
         workoutPlayer = WorkoutPlayer()

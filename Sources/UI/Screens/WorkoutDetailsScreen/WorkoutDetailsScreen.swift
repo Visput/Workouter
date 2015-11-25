@@ -12,12 +12,22 @@ final class WorkoutDetailsScreen: BaseScreen {
     
     var workout: Workout!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = workout.name
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.AllButUpsideDown
+    private var workoutDetailsView: WorkoutDetailsView {
+        return view as! WorkoutDetailsView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+extension WorkoutDetailsScreen {
+    
+    @IBAction private func startWorkoutButtonDidPress(sender: AnyObject) {
+        navigationManager.pushWorkoutPlayerScreenWithWorkout(workout, animated: true)
     }
 }
