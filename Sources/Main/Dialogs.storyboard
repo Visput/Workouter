@@ -27,7 +27,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="imageStretchable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_primary" translatesAutoresizingMaskIntoConstraints="NO" id="BEl-nH-boN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info" translatesAutoresizingMaskIntoConstraints="NO" id="BEl-nH-boN">
                                         <rect key="frame" x="147" y="32" width="80" height="80"/>
                                         <animations/>
                                         <constraints>
@@ -138,6 +138,6 @@
     </scenes>
     <resources>
         <image name="background_dialog_white" width="320" height="130"/>
-        <image name="icon_info_primary" width="80" height="80"/>
+        <image name="icon_info" width="80" height="80"/>
     </resources>
 </document>

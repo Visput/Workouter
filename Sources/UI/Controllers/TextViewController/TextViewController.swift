@@ -169,10 +169,10 @@ extension TextViewController {
         }
         
         var viewBorderColor = UIColor.borderColor().CGColor
-        var buttonImage = UIImage(named: "icon_info_small_primary")
+        var buttonImage = UIImage(named: "icon_info_small")
         if !valid {
             viewBorderColor = UIColor.invalidStateColor().CGColor
-            buttonImage = UIImage(named: "icon_info_small_invalid_state")
+            buttonImage = UIImage(named: "icon_attention_small")
         }
         
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")

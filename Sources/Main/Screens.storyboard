@@ -831,7 +831,7 @@
                                     <constraint firstAttribute="height" constant="40" id="T3U-hZ-jn0"/>
                                     <constraint firstAttribute="width" constant="44" id="eje-k2-Lr2"/>
                                 </constraints>
-                                <state key="normal" image="icon_info_small_primary"/>
+                                <state key="normal" image="icon_info_small"/>
                                 <connections>
                                     <action selector="descriptionButtonDidPress:" destination="HpB-m2-ign" eventType="touchUpInside" id="baP-Iy-04n"/>
                                 </connections>
@@ -1272,7 +1272,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_info_small_primary" width="22" height="22"/>
+        <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dQt-nY-fnQ"/>
