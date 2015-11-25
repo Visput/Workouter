@@ -150,10 +150,6 @@ extension WorkoutEditScreen {
         descriptionController.text = workout.workoutDescription
         descriptionController.textMaxLength = workout.descriptionMaxLength
         
-        if workout.name.isEmpty {
-            nameController.active = true
-        }
-        
         if needsReloadStepsTableView {
             workoutEditView.stepsTableView.reloadData()
         }

@@ -17,14 +17,8 @@ class BaseDialogView: BaseView {
     
     override func didLoad() {
         super.didLoad()
-        backgroundColor = UIColor.clearColor()
         configureBackgroundView()
         contentViewBottomSpace.constant = -contentView.bounds.size.height
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        backgroundView.frame = bounds
     }
 }
 
@@ -65,8 +59,12 @@ extension BaseDialogView {
 extension BaseDialogView {
     
     private func configureBackgroundView() {
+        backgroundColor = UIColor.clearColor()
+        
         backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.blackColor()
+        backgroundView.frame = bounds
+        backgroundView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         backgroundView.alpha = 0.0
         addSubview(backgroundView)
         sendSubviewToBack(backgroundView)
