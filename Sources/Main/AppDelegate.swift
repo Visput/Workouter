@@ -54,8 +54,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
-        modelProvider.navigationManager.presentAuthenticationScreenAnimated(false)
         modelProvider.shortcutsManager.performActionForLaunchedShortcutIfNeeded()
+        modelProvider.navigationManager.presentAuthenticationScreenAnimated(false)
     }
     
     func applicationWillTerminate(application: UIApplication) {

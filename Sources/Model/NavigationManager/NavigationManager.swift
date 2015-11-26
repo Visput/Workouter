@@ -171,7 +171,6 @@ extension NavigationManager {
     
     func presentAuthenticationScreenAnimated(animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
-        
         presentScreen(screen, wrapWithNavigationController: false, animated: animated)
     }
 }
