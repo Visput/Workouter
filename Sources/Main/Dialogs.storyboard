@@ -74,7 +74,7 @@
                                             <constraint firstAttribute="height" priority="998" constant="40" id="xb4-MN-lxm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <state key="normal" title="Got It"/>
+                                        <state key="normal" title="Got it"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>

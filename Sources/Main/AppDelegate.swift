@@ -31,7 +31,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             Parse.setApplicationId(NSBundle.mainBundle().objectForInfoDictionaryKey("ParseAppID") as! String,
                 clientKey:NSBundle.mainBundle().objectForInfoDictionaryKey("ParseClientID") as! String)
             
-            // Initalize model.
+            // Initiate model.
             modelProvider = ModelProvider.provider
             modelProvider.navigationManager.window = window!
             modelProvider.workoutsProvider.loadWorkouts()
@@ -54,6 +54,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
+        modelProvider.navigationManager.presentAuthenticationScreenAnimated(false)
         modelProvider.shortcutsManager.performActionForLaunchedShortcutIfNeeded()
     }
     

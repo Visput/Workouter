@@ -72,10 +72,12 @@ final class AppShortcutsManager: NSObject {
                 animated: false,
                 templateDidSelectAction: { [unowned self] workout in
                     
-                    self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
-                        self.workoutsProvider.addWorkout(workout)
-                        self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-                    }
+                    self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
+                        showWorkoutDetailsOnCompletion: true,
+                        animated: false,
+                        workoutDidEditAction: { workout in
+                            self.workoutsProvider.addWorkout(workout)
+                    })
                     self.navigationManager.dismissScreenAnimated(true)
                     
                 }, templateDidCancelAction: {

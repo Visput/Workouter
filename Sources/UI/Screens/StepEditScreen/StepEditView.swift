@@ -16,16 +16,6 @@ final class StepEditView: BaseScreenView {
     
     @IBOutlet private weak var nameViewTopSpace: NSLayoutConstraint!
     private let nameViewTopSpaceDefaultValue: CGFloat = 16.0
-
-    override func willDisappear(animated: Bool) {
-        endEditing(true)
-        super.willDisappear(animated)
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        endEditing(true)
-    }
 }
 
 extension StepEditView {

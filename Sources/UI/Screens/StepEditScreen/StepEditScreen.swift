@@ -53,6 +53,7 @@ extension StepEditScreen {
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
         stepEditView.endEditing(true)
         if validateStep() {
+            navigationManager.popScreenAnimated(true)
             stepDidEditAction?(step: step)
         }
     }

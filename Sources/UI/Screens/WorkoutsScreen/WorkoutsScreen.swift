@@ -104,12 +104,13 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         
         if workoutsView.mode == .Edit {
             navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
-                animated: true) { [unowned self] workout in
+                showWorkoutDetailsOnCompletion: true,
+                animated: true,
+                workoutDidEditAction: { [unowned self] workout in
                     
                     self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
                     self.workoutsView.workoutsTableView.reloadData()
-                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-            }
+                })
             
         } else {
             navigationManager.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout, animated: true)
@@ -175,11 +176,14 @@ extension WorkoutsScreen {
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
                 
-                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout, animated: false) { workout in
+                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
+                    showWorkoutDetailsOnCompletion: true,
+                    animated: true,
+                    workoutDidEditAction: { [unowned self] workout in
+                        
                     self.workoutsProvider.addWorkout(workout)
                     self.workoutsView.workoutsTableView.reloadData()
-                    self.navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-                }
+                })
                 self.navigationManager.dismissScreenAnimated(true)
                 
             }, templateDidCancelAction: { 

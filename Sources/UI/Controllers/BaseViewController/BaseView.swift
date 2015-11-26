@@ -44,10 +44,16 @@ extension BaseView {
     func willDisappear(animated: Bool) {
         appearanceState = .WillDisappear
         unregisterFromKeyboardNotifications()
+        endEditing(true)
     }
     
     func didDisappear(animated: Bool) {
         appearanceState = .DidDisappear
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        endEditing(true)
     }
 }
 

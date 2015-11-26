@@ -38,23 +38,23 @@ extension UIColor {
     }
 
     class func secondaryColor() -> UIColor {
-        return UIColor(red: 0.1803921610116959,
-            green:0.4745098054409027,
-            blue:0.8039215803146362,
+        return UIColor(red: 0.95686274766922,
+            green:0.1529411822557449,
+            blue:0.3254902064800262,
             alpha:1)
     }
 
     class func lightSecondaryColor() -> UIColor {
-        return UIColor(red: 0.47843137383461,
-            green:0.6745098233222961,
-            blue:0.8901960849761963,
+        return UIColor(red: 0.9764705896377563,
+            green:0.4862745106220245,
+            blue:0.5921568870544434,
             alpha:1)
     }
 
     class func darkSecondaryColor() -> UIColor {
-        return UIColor(red: 0.0313725508749485,
-            green:0.2823529541492462,
-            blue:0.5647059082984924,
+        return UIColor(red: 0.800000011920929,
+            green:0,
+            blue:0.1725490242242813,
             alpha:1)
     }
 

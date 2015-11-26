@@ -27,6 +27,13 @@ final class NavigationManager: NSObject {
     var navigationController: UINavigationController {
         return window.rootViewController! as! UINavigationController
     }
+    
+    var isAuthenticationScreenPresented: Bool {
+        get {
+            return navigationController.presentedViewController != nil &&
+            navigationController.presentedViewController!.isKindOfClass(AuthenticationScreen)
+        }
+    }
 }
 
 extension NavigationManager: UINavigationControllerDelegate {
@@ -40,22 +47,37 @@ extension NavigationManager: UINavigationControllerDelegate {
 extension NavigationManager {
     
     func pushScreen(screen: UIViewController, animated: Bool) {
-        navigationController.pushViewController(screen, animated: animated)
+        if !isAuthenticationScreenPresented {
+            navigationController.pushViewController(screen, animated: animated)
+        }
     }
     
     func popScreenAnimated(animated: Bool) {
-        navigationController.popViewControllerAnimated(animated)
+        if !isAuthenticationScreenPresented {
+            navigationController.popViewControllerAnimated(animated)
+        }
     }
     
     func popToRootScreenAnimated(animated: Bool) {
-        navigationController.popToRootViewControllerAnimated(animated)
+        if !isAuthenticationScreenPresented {
+            navigationController.popToRootViewControllerAnimated(animated)
+        }
     }
     
-    func presentScreen(screen: UIViewController, animated: Bool) {
-        let presentationController = UINavigationController(rootViewController: screen)
-        presentationController.delegate = self
+    func presentScreen(screen: UIViewController,
+        wrapWithNavigationController: Bool,
+        animated: Bool) {
+            
+            if !isAuthenticationScreenPresented {
+                if wrapWithNavigationController {
+                    let presentationController = UINavigationController(rootViewController: screen)
+                    presentationController.delegate = self
         
-        navigationController.presentViewController(presentationController, animated: animated, completion: nil)
+                    navigationController.presentViewController(presentationController, animated: animated, completion: nil)
+                } else {
+                    navigationController.presentViewController(screen, animated: animated, completion: nil)
+                }
+            }
     }
     
     func dismissScreenAnimated(animated: Bool) {
@@ -76,7 +98,9 @@ extension NavigationManager {
     }
     
     private func setScreens(screens: [UIViewController], animated: Bool) {
-        navigationController.setViewControllers(screens, animated: animated)
+        if !isAuthenticationScreenPresented {
+            navigationController.setViewControllers(screens, animated: animated)
+        }
     }
 }
 
@@ -129,7 +153,7 @@ extension NavigationManager {
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
             
-            presentScreen(screen, animated: animated)
+            presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
     func presentWorkoutTemplatesScreenWithRequest(searchRequest: WorkoutsSearchRequest,
@@ -142,13 +166,44 @@ extension NavigationManager {
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
             
-            presentScreen(screen, animated: animated)
+            presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
     func presentAuthenticationScreenAnimated(animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
         
-        presentScreen(screen, animated: animated)
+        presentScreen(screen, wrapWithNavigationController: false, animated: animated)
+    }
+}
+
+extension NavigationManager {
+    
+    func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout,
+        showWorkoutDetailsOnCompletion: Bool,
+        animated: Bool,
+        workoutDidEditAction: ((workout: Workout) -> Void)?) {
+            
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            screen.workout = workout
+            screen.showWorkoutDetailsOnCompletion = showWorkoutDetailsOnCompletion
+            screen.workoutDidEditAction = workoutDidEditAction
+            
+            let screens = [navigationController.viewControllers[0], screen]
+            
+            setScreens(screens, animated: animated)
+    }
+    
+    func pushWorkoutEditScreenFromCurrentScreenWithWorkout(workout: Workout,
+        showWorkoutDetailsOnCompletion: Bool,
+        animated: Bool,
+        workoutDidEditAction: ((workout: Workout) -> Void)?) {
+            
+            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            screen.workout = workout
+            screen.showWorkoutDetailsOnCompletion = showWorkoutDetailsOnCompletion
+            screen.workoutDidEditAction = workoutDidEditAction
+            
+            pushScreen(screen, animated: animated)
     }
 }
 
@@ -158,19 +213,6 @@ extension NavigationManager {
         popToRootScreenAnimated(animated)
         let screen = navigationController.viewControllers[0] as! WorkoutsScreen
         screen.needsActivateSearch = searchActive
-    }
-    
-    func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout,
-        animated: Bool,
-        workoutDidEditAction: ((workout: Workout) -> Void)?) {
-            
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
-            screen.workout = workout
-            screen.workoutDidEditAction = workoutDidEditAction
-            
-            let screens = [navigationController.viewControllers[0], screen]
-            
-            setScreens(screens, animated: animated)
     }
     
     func pushStepEditScreenFromCurrentScreenWithStep(step: Step,

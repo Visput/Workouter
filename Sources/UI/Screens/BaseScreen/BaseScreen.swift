@@ -10,4 +10,7 @@ import UIKit
 
 class BaseScreen: BaseViewController {
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
 }
