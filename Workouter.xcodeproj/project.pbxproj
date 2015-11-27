@@ -83,6 +83,8 @@
 		9F8782191BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9F88A3FB1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
 		9F88A3FC1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
+		9F88A40C1C085C3A00C1FDD9 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A40B1C085C3A00C1FDD9 /* TextFieldController.swift */; };
+		9F88A40D1C085C3A00C1FDD9 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A40B1C085C3A00C1FDD9 /* TextFieldController.swift */; };
 		9F9444181C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F94441B1C0001BE003E333B /* BaseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F94441A1C0001BE003E333B /* BaseDialog.swift */; };
@@ -212,6 +214,7 @@
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
 		9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
+		9F88A40B1C085C3A00C1FDD9 /* TextFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		9F9444171C0001A2003E333B /* BaseDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialogView.swift; sourceTree = "<group>"; };
 		9F94441A1C0001BE003E333B /* BaseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialog.swift; sourceTree = "<group>"; };
 		9F94441D1C000330003E333B /* TextDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialog.swift; sourceTree = "<group>"; };
@@ -469,6 +472,7 @@
 		9F71076B1BDD63A500D7B647 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9F88A40A1C085C1D00C1FDD9 /* TextFieldController */,
 				9F697E4C1C02995B00BAB0EC /* BaseViewController */,
 				9FC35E591BE48A6F0068A2D2 /* SearchController */,
 				9FA2F58F1BE317F400A3844D /* DurationViewController */,
@@ -507,6 +511,14 @@
 				9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */,
 			);
 			path = "UIScreen+Size";
+			sourceTree = "<group>";
+		};
+		9F88A40A1C085C1D00C1FDD9 /* TextFieldController */ = {
+			isa = PBXGroup;
+			children = (
+				9F88A40B1C085C3A00C1FDD9 /* TextFieldController.swift */,
+			);
+			path = TextFieldController;
 			sourceTree = "<group>";
 		};
 		9F9444111BFFF341003E333B /* Dialogs */ = {
@@ -1239,6 +1251,7 @@
 				9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0F07321C06286400DA0152 /* SettingsView.swift in Sources */,
 				9F0F072F1C06284E00DA0152 /* SettingsScreen.swift in Sources */,
+				9F88A40C1C085C3A00C1FDD9 /* TextFieldController.swift in Sources */,
 				9F0DFC431BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D141BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,
@@ -1309,6 +1322,7 @@
 				9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0F07331C06286400DA0152 /* SettingsView.swift in Sources */,
 				9F0F07301C06284E00DA0152 /* SettingsScreen.swift in Sources */,
+				9F88A40D1C085C3A00C1FDD9 /* TextFieldController.swift in Sources */,
 				9F0DFC441BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D151BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,

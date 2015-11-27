@@ -85,12 +85,22 @@ extension NavigationManager {
     }
     
     func showDialog(dialog: UIViewController) {
-        dialog.modalPresentationStyle = .OverCurrentContext
-        navigationController.presentViewController(dialog, animated: false, completion: nil)
+        if !isAuthenticationScreenPresented || dialog.isKindOfClass(TextDialog) {
+            dialog.modalPresentationStyle = .OverCurrentContext
+            
+            // Dialog is allowed to be presented over already presented view controller.
+            let presentingViewController = navigationController.presentedViewController ?? navigationController
+            presentingViewController.presentViewController(dialog, animated: false, completion: nil)
+        }
     }
     
     func dismissDialog() {
-        navigationController.dismissViewControllerAnimated(false, completion: nil)
+        // Check if dialog was presented over navigation controller or over already presented view controller.
+        var presentingViewController: UIViewController = navigationController
+        if navigationController.presentedViewController?.presentedViewController != nil {
+            presentingViewController = navigationController.presentedViewController!
+        }
+        presentingViewController.dismissViewControllerAnimated(false, completion: nil)
     }
     
     func setNavigationBarHidden(hidden: Bool, animated: Bool) {

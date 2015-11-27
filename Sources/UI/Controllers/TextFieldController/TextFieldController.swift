@@ -1,16 +1,15 @@
 //
-//  TextViewController.swift
+//  TextFieldController.swift
 //  Workouter
 //
-//  Created by Uladzimir Papko on 10/25/15.
+//  Created by Uladzimir Papko on 11/27/15.
 //  Copyright © 2015 visput. All rights reserved.
 //
 
 import UIKit
-import VPAttributedFormat
 
-class TextViewController: BaseViewController {
-    
+class TextFieldController: BaseViewController {
+
     var didChangeTextAction: ((text: String) -> Void)?
     
     var text = "" {
@@ -43,15 +42,29 @@ class TextViewController: BaseViewController {
     
     var active: Bool {
         get {
-            return isViewLoaded() && textView.isFirstResponder()
+            return isViewLoaded() && textField.isFirstResponder()
         }
         set (isActive) {
             guard isViewLoaded() else { return }
             if isActive {
-                textView.becomeFirstResponder()
+                textField.becomeFirstResponder()
             } else {
-                textView.resignFirstResponder()
+                textField.resignFirstResponder()
             }
+        }
+    }
+    
+    var keyboardType = UIKeyboardType.Default {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
+        }
+    }
+    
+    var secureTextEntry = false {
+        didSet {
+            guard isViewLoaded() else { return }
+            updateViews()
         }
     }
     
@@ -59,20 +72,10 @@ class TextViewController: BaseViewController {
     /// when user clicks 'return' key.
     /// If this property is nil then current text controller will be
     /// deactivated when user clicks 'return' key.
-    var nextTextViewController: TextViewController? {
+    var nextTextFieldController: TextFieldController? {
         didSet {
             guard isViewLoaded() else { return }
             configureReturnKey()
-        }
-    }
-    
-    /// Max number of chars allowed to input.
-    /// Set 0 to disable limit.
-    /// Equals to 0 by default.
-    var textMaxLength = 0 {
-        didSet {
-            guard isViewLoaded() else { return }
-            updateViews()
         }
     }
     
@@ -96,10 +99,10 @@ class TextViewController: BaseViewController {
             updateViews()
         }
     }
+
+    private let textMaxLength = 30
     
-    @IBOutlet private weak var textView: UITextView!
-    @IBOutlet private weak var placeholderLabel: UILabel!
-    @IBOutlet private weak var textLimitLabel: UILabel!
+    @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var descriptionButton: UIButton!
     
     private var navigationManager: NavigationManager {
@@ -125,29 +128,24 @@ class TextViewController: BaseViewController {
     }
 }
 
-extension TextViewController: UITextViewDelegate {
+extension TextFieldController: UITextFieldDelegate {
     
-    func textViewDidChange(textView: UITextView) {
-        text = textView.text
-        didChangeTextAction?(text: text)
-    }
-    
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        // Deactivate controller when user clicks on return key.
-        guard text != "\n" else {
-            textView.resignFirstResponder()
-            if nextTextViewController != nil {
-                nextTextViewController!.active = true
-            }
-            
-            return false
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if nextTextFieldController != nil {
+            nextTextFieldController!.active = true
         }
         
         return true
     }
 }
 
-extension TextViewController {
+extension TextFieldController {
+    
+    @IBAction private func textFieldDidChangeText(textField: UITextField) {
+        text = textField.text!
+        didChangeTextAction?(text: text)
+    }
     
     @IBAction private func descriptionButtonDidPress(sender: AnyObject) {
         if valid {
@@ -158,49 +156,46 @@ extension TextViewController {
     }
 }
 
-extension TextViewController {
+extension TextFieldController {
     
     private func updateViews() {
         if textMaxLength > 0 && text.characters.count > textMaxLength {
             let index = text.startIndex.advancedBy(textMaxLength)
             text = text.substringToIndex(index)
         }
-        if text.containsString("\n") {
-            text = text.stringByReplacingOccurrencesOfString("\n", withString: " ")
+        
+        textField.text = text
+        textField.keyboardType = keyboardType
+        textField.secureTextEntry = secureTextEntry
+        textField.autocapitalizationType = .Words
+        if secureTextEntry || (keyboardType != .Default && keyboardType != .NamePhonePad) {
+            textField.autocapitalizationType = .None
         }
         
-        textView.text = text
-        
-        placeholderLabel.text = placeholder
-        placeholderLabel.hidden = !textView.text.isEmpty
-        
-        textLimitLabel.hidden = textMaxLength <= 0
-        withVaList([textMaxLength - textView.text.characters.count]) { pointer in
-            textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
-        }
-        
-        var viewBorderColor = UIColor.borderColor().CGColor
+        var textColor = UIColor.primaryTextColor()
+        var placeholderColor = UIColor.secondaryTextColor()
         var buttonImage = UIImage(named: "icon_info_small")
         if !valid {
-            viewBorderColor = UIColor.invalidStateColor().CGColor
+            textColor = UIColor.invalidStateColor()
+            placeholderColor = UIColor.invalidStateColor()
             buttonImage = UIImage(named: "icon_attention_small")
         }
         
-        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
-        borderColorAnimation.duration = UIView.defaultAnimationDuration
-        borderColorAnimation.fromValue = view.layer.borderColor
-        borderColorAnimation.toValue = viewBorderColor
-        view.layer.addAnimation(borderColorAnimation, forKey: nil)
-        view.layer.borderColor = viewBorderColor
+        self.textField.textColor = textColor
+        self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholder,
+            attributes: [
+                NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
+                NSForegroundColorAttributeName : placeholderColor
+            ])
         
         descriptionButton.setImage(buttonImage, forState: .Normal)
     }
     
     private func configureReturnKey() {
-        if nextTextViewController != nil {
-            textView.returnKeyType = .Next
+        if nextTextFieldController != nil {
+            textField.returnKeyType = .Next
         } else {
-            textView.returnKeyType = .Done
+            textField.returnKeyType = .Done
         }
     }
 }

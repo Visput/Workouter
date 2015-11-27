@@ -93,6 +93,11 @@ final class TintButton: UIButton {
         super.setTitle(title, forState: state)
         updateAppearance()
     }
+    
+    override func setAttributedTitle(title: NSAttributedString?, forState state: UIControlState) {
+        super.setAttributedTitle(title, forState: state)
+        updateAppearance()
+    }
 }
 
 extension TintButton {

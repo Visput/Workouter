@@ -28,6 +28,11 @@ class BaseDialog: BaseViewController {
         baseView.animateShowingWithCompletion {_ in }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        guard presentingViewController != nil else { return super.preferredStatusBarStyle() }
+        return presentingViewController!.preferredStatusBarStyle()
+    }
+    
     @IBAction func cancelButtonDidPress(sender: AnyObject) {
         baseView.animateHidingWithCompletion {_ in
             self.navigationManager.dismissDialog()
