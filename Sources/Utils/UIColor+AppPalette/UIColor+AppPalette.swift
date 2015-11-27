@@ -23,38 +23,10 @@ extension UIColor {
             alpha:0.09803921729326248)
     }
 
-    class func lightPrimaryColor() -> UIColor {
-        return UIColor(red: 0.4431372582912445,
-            green:0.8941176533699036,
-            blue:0.7568627595901489,
-            alpha:1)
-    }
-
-    class func darkPrimaryColor() -> UIColor {
-        return UIColor(red: 0,
-            green:0.5686274766921997,
-            blue:0.3960784375667572,
-            alpha:1)
-    }
-
     class func secondaryColor() -> UIColor {
         return UIColor(red: 0.95686274766922,
             green:0.1529411822557449,
             blue:0.3254902064800262,
-            alpha:1)
-    }
-
-    class func lightSecondaryColor() -> UIColor {
-        return UIColor(red: 0.9764705896377563,
-            green:0.4862745106220245,
-            blue:0.5921568870544434,
-            alpha:1)
-    }
-
-    class func darkSecondaryColor() -> UIColor {
-        return UIColor(red: 0.800000011920929,
-            green:0,
-            blue:0.1725490242242813,
             alpha:1)
     }
 
@@ -66,17 +38,17 @@ extension UIColor {
     }
 
     class func secondaryTextColor() -> UIColor {
-        return UIColor(red: 0.6549019813537598,
-            green:0.6549019813537598,
-            blue:0.6549019813537598,
+        return UIColor(red: 0.6941176652908325,
+            green:0.7490196228027344,
+            blue:0.7686274647712708,
             alpha:1)
     }
 
     class func disabledStateColor() -> UIColor {
-        return UIColor(red: 0.3490196168422699,
-            green:0.3490196168422699,
-            blue:0.3490196168422699,
-            alpha:0.6980392336845398)
+        return UIColor(red: 0.6941176652908325,
+            green:0.7490196228027344,
+            blue:0.7686274647712708,
+            alpha:0.6000000238418579)
     }
 
     class func invalidStateColor() -> UIColor {
@@ -87,16 +59,9 @@ extension UIColor {
     }
 
     class func borderColor() -> UIColor {
-        return UIColor(red: 0.5137255191802979,
-            green:0.5686274766921997,
-            blue:0.6039215922355652,
-            alpha:0.6980392336845398)
-    }
-
-    class func backgroundColor() -> UIColor {
-        return UIColor(red: 0.929411768913269,
-            green:0.9411764740943909,
-            blue:0.95686274766922,
+        return UIColor(red: 0.6941176652908325,
+            green:0.7490196228027344,
+            blue:0.7686274647712708,
             alpha:1)
     }
 

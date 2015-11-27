@@ -74,11 +74,23 @@ final class TintButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        applyDefaultValues()
         updateAppearance()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        applyDefaultValues()
+        updateAppearance()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateAppearance()
+    }
+    
+    override func setTitle(title: String?, forState state: UIControlState) {
+        super.setTitle(title, forState: state)
         updateAppearance()
     }
 }
@@ -133,8 +145,13 @@ extension TintButton {
             self.backgroundColor = buttonBackgroundColor
         }
         
+        // Layout
+        let titleWidth = titleLabel != nil ? titleLabel!.intrinsicContentSize().width : 0.0
+        let imageWidth = imageView != nil ? imageView!.frame.size.width : 0.0
+        let widthInset = (frame.size.width - titleWidth) / 2.0 - imageWidth - contentEdgeInsets.left
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: widthInset, bottom: 0.0, right: 0.0)
+        
         // Other.
-        layer.borderWidth = 1.0
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = cornerRadius > 0
     }
@@ -155,5 +172,14 @@ extension TintButton {
         }
         
         return selectedColor
+    }
+    
+    private func applyDefaultValues() {
+        layer.borderWidth = 1.0
+        adjustsImageWhenHighlighted = false
+        adjustsImageWhenDisabled = true
+        contentHorizontalAlignment = .Left
+        contentVerticalAlignment = .Center
+        contentEdgeInsets = UIEdgeInsets(top: 0, left: 10.0, bottom: 0.0, right: 0.0)
     }
 }

@@ -33,7 +33,6 @@
 		9F0F073F1C063B2D00DA0152 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
-		9F0F41C31BFF07F900989101 /* AppPalette.clr in Resources */ = {isa = PBXBuildFile; fileRef = 9F0F41C21BFF07F900989101 /* AppPalette.clr */; };
 		9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
 		9F341ACE1BDF171D00AEDEB1 /* StepEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */; };
@@ -82,6 +81,8 @@
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F8782181BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9F8782191BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
+		9F88A3FB1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
+		9F88A3FC1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
 		9F9444181C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F94441B1C0001BE003E333B /* BaseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F94441A1C0001BE003E333B /* BaseDialog.swift */; };
@@ -210,6 +211,7 @@
 		9F7967EF1C039EA300DE9C4A /* Dialogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dialogs.storyboard; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
+		9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
 		9F9444171C0001A2003E333B /* BaseDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialogView.swift; sourceTree = "<group>"; };
 		9F94441A1C0001BE003E333B /* BaseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialog.swift; sourceTree = "<group>"; };
 		9F94441D1C000330003E333B /* TextDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialog.swift; sourceTree = "<group>"; };
@@ -499,6 +501,14 @@
 			path = TintButton;
 			sourceTree = "<group>";
 		};
+		9F88A3F91C08580300C1FDD9 /* UIScreen+Size */ = {
+			isa = PBXGroup;
+			children = (
+				9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */,
+			);
+			path = "UIScreen+Size";
+			sourceTree = "<group>";
+		};
 		9F9444111BFFF341003E333B /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +611,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F88A3F91C08580300C1FDD9 /* UIScreen+Size */,
 				9F697E541C029E9100BAB0EC /* UIView+Animation */,
 				9F38C3431C011D74007AAC68 /* UIImageView+Stretch */,
 				9FCB7B8C1BFF9FEC00D74467 /* UIColor+AppPalette */,
@@ -928,7 +939,6 @@
 				9F7967F01C039EA300DE9C4A /* Dialogs.storyboard in Resources */,
 				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
-				9F0F41C31BFF07F900989101 /* AppPalette.clr in Resources */,
 				F02CAB7D1B4B871E00F28D72 /* Screens.storyboard in Resources */,
 				F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */,
 			);
@@ -1207,6 +1217,7 @@
 				9F94441E1C000330003E333B /* TextDialog.swift in Sources */,
 				9F0DFC3D1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F02CAB521B4B871E00F28D72 /* Step.swift in Sources */,
+				9F88A3FB1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */,
 				F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */,
 				9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
@@ -1276,6 +1287,7 @@
 				9F94441F1C000330003E333B /* TextDialog.swift in Sources */,
 				9F0DFC3E1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F09702C01ACA48E700498DEE /* Step.swift in Sources */,
+				9F88A3FC1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */,
 				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,

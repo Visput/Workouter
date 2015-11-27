@@ -1,13 +1,8 @@
 #FF21CE99 primary
 #1921CE99 transparentPrimary
-#FF71E4C1 lightPrimary
-#FF009165 darkPrimary
 #FFF42753 secondary
-#FFF97C97 lightSecondary
-#FFCC002C darkSecondary
 #FF1B3745 primaryText
-#FFA7A7A7 secondaryText
-#B2595959 disabledState
+#FFB1BFC4 secondaryText
+#99B1BFC4 disabledState
 #FFEE3D26 invalidState
-#B283919A border
-#FFEDF0F4 background
+#FFB1BFC4 border

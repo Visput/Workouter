@@ -687,6 +687,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="195" y="272" width="164" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
                                     <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
@@ -712,6 +713,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="272" width="164" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
                                     <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
@@ -834,7 +836,7 @@
                                     <constraint firstAttribute="width" constant="562" id="dG5-1R-qPz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -864,7 +866,7 @@
                                     <constraint firstAttribute="height" constant="20" id="trs-3c-JZb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1065,12 +1067,12 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="144"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="Yyp-MN-FoB"/>
+                                    <constraint firstAttribute="height" constant="144" id="bH7-TA-ROW"/>
                                     <constraint firstAttribute="width" secondItem="T4R-MP-rxp" secondAttribute="height" multiplier="383:144" id="hh6-dl-qwI"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Yyp-MN-FoB"/>
+                                        <exclude reference="hh6-dl-qwI"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -1092,18 +1094,20 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsN-wN-o2I" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="176" width="343" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="3u7-DY-wkR"/>
                                     <constraint firstAttribute="width" constant="180" id="9gD-uN-VGL"/>
                                     <constraint firstAttribute="height" constant="40" id="w4o-98-6IH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <state key="normal" title="Facebook Connect"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Facebook Connect" image="icon_facebook"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1118,7 +1122,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9o-xO-07n">
                                 <rect key="frame" x="16" y="248" width="343" height="1"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.51372551918029785" green="0.56862747669219971" blue="0.60392159223556519" alpha="0.69803923368453979" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="2VG-4p-CBr"/>
                                 </constraints>
@@ -1132,7 +1136,7 @@
                                     <constraint firstAttribute="height" constant="21" id="oD7-mv-7pI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.51372551918029785" green="0.56862747669219971" blue="0.60392159223556519" alpha="0.69803923368453979" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FA9-4Q-XKn">
@@ -1150,14 +1154,14 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.51372551918029785" green="0.56862747669219971" blue="0.60392159223556519" alpha="0.69803923368453979" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weH-q7-ja9">
                                 <rect key="frame" x="16" y="321" width="343" height="1"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.51372551918029785" green="0.56862747669219971" blue="0.60392159223556519" alpha="0.69803923368453979" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oiL-cL-P5V"/>
                                 </constraints>
@@ -1170,7 +1174,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qty-Fz-BG0">
                                 <rect key="frame" x="16" y="360" width="343" height="1"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.51372551918029785" green="0.56862747669219971" blue="0.60392159223556519" alpha="0.69803923368453979" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="5Wn-TR-XR3"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="P0S-c5-mi6"/>
@@ -1181,12 +1185,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1w-Re-iEy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1w-Re-iEy">
                                 <rect key="frame" x="26" y="281" width="323" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZEL-6G-cDx"/>
                                 </constraints>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -1242,10 +1247,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrn-f3-dnK" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="195" y="417" width="164" height="40"/>
+                                <rect key="frame" x="16" y="417" width="343" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="cPl-MG-OzY"/>
+                                    <constraint firstAttribute="height" constant="40" id="kU8-Zf-xZe"/>
                                     <constraint firstAttribute="width" constant="180" id="xWS-RW-cuX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
@@ -1254,7 +1261,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1267,12 +1274,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRk-Gl-2Nm" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="417" width="164" height="40"/>
+                                <rect key="frame" x="16" y="473" width="343" height="40"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="998" constant="40" id="4cX-r5-IkR"/>
                                     <constraint firstAttribute="height" constant="40" id="O8P-rW-Vli"/>
                                     <constraint firstAttribute="width" constant="180" id="lPS-iL-epi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xQL-u8-X0s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <state key="normal" title="Try it out"/>
@@ -1296,6 +1305,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lrn-f3-dnK" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="0QM-fZ-DGs"/>
+                            <constraint firstItem="lrn-f3-dnK" firstAttribute="top" secondItem="7pd-H0-Bh0" secondAttribute="bottom" constant="16" id="3PF-6h-KWh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lrn-f3-dnK" secondAttribute="trailing" id="5u2-hJ-pJP"/>
                             <constraint firstItem="FA9-4Q-XKn" firstAttribute="top" secondItem="moQ-OL-PT0" secondAttribute="bottom" constant="22" id="6ac-VN-u1d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="weH-q7-ja9" secondAttribute="trailing" id="9cj-UT-V3A"/>
                             <constraint firstItem="T4R-MP-rxp" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="topMargin" id="9mQ-vg-Zmm"/>
@@ -1320,6 +1332,7 @@
                             <constraint firstItem="7pd-H0-Bh0" firstAttribute="top" secondItem="xUL-qE-ngJ" secondAttribute="bottom" id="YmL-ri-0zx"/>
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="width" secondItem="dRk-Gl-2Nm" secondAttribute="width" id="ac4-Sq-mAB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FA9-4Q-XKn" secondAttribute="trailing" id="b9A-L8-ngS"/>
+                            <constraint firstItem="dRk-Gl-2Nm" firstAttribute="top" secondItem="lrn-f3-dnK" secondAttribute="bottom" constant="16" id="cG8-6j-lzb"/>
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="top" secondItem="dRk-Gl-2Nm" secondAttribute="top" id="dJh-G7-cdD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xhf-a5-fTR" secondAttribute="trailing" constant="-20" id="ec0-vu-pVq"/>
                             <constraint firstItem="dRk-Gl-2Nm" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="fzN-Qe-tY4"/>
@@ -1331,8 +1344,10 @@
                             <constraint firstItem="T4R-MP-rxp" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" constant="-20" id="jeC-DJ-VBt"/>
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="height" secondItem="dRk-Gl-2Nm" secondAttribute="height" id="jlu-Li-ZFM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7pd-H0-Bh0" secondAttribute="trailing" constant="10" id="jrO-3l-dFv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dRk-Gl-2Nm" secondAttribute="trailing" id="mVL-0L-q7c"/>
                             <constraint firstItem="xUL-qE-ngJ" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" constant="10" id="pcT-D5-VPH"/>
                             <constraint firstItem="xUL-qE-ngJ" firstAttribute="top" secondItem="g1w-Re-iEy" secondAttribute="bottom" id="qC4-Ps-HUh"/>
+                            <constraint firstItem="dRk-Gl-2Nm" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="qXY-9c-DnJ"/>
                             <constraint firstItem="Qty-Fz-BG0" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="s9R-ho-9zA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g1w-Re-iEy" secondAttribute="trailing" constant="10" id="uLh-NF-WrF"/>
                             <constraint firstItem="g1w-Re-iEy" firstAttribute="top" secondItem="y9o-xO-07n" secondAttribute="bottom" constant="32" id="umH-2s-Lfh"/>
@@ -1344,8 +1359,18 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Jpf-Cq-7qg"/>
+                                <exclude reference="MVX-da-buh"/>
+                                <exclude reference="ac4-Sq-mAB"/>
+                                <exclude reference="dJh-G7-cdD"/>
+                                <exclude reference="jGL-S6-T3f"/>
+                                <exclude reference="jlu-Li-ZFM"/>
+                                <exclude reference="fzN-Qe-tY4"/>
+                                <exclude reference="wXM-Bg-s3f"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="headerHeight" destination="bH7-TA-ROW" id="f3Y-6G-s9t"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -1668,6 +1693,7 @@
     </scenes>
     <resources>
         <image name="background_green" width="375" height="144"/>
+        <image name="icon_facebook" width="21" height="20"/>
         <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
