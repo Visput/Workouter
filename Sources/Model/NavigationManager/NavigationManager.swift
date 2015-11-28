@@ -86,6 +86,7 @@ extension NavigationManager {
     
     func showDialog(dialog: UIViewController) {
         if !isAuthenticationScreenPresented || dialog.isKindOfClass(TextDialog) {
+            window.endEditing(true)
             dialog.modalPresentationStyle = .OverCurrentContext
             
             // Dialog is allowed to be presented over already presented view controller.
