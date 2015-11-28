@@ -109,6 +109,10 @@
 		9FD745C71C09653900E48508 /* TextControllerChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745C51C09653900E48508 /* TextControllerChaining.swift */; };
 		9FD745C81C09674D00E48508 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745C21C09651E00E48508 /* TextViewController.swift */; };
 		9FD745C91C09675000E48508 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745C11C09651E00E48508 /* TextFieldController.swift */; };
+		9FD745CC1C09832000E48508 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CA1C09832000E48508 /* iTunesArtwork.png */; };
+		9FD745CD1C09832000E48508 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CA1C09832000E48508 /* iTunesArtwork.png */; };
+		9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */; };
+		9FD745CF1C09832000E48508 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */; };
 		9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
 		9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
 		9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */; };
@@ -229,6 +233,8 @@
 		9FD745C11C09651E00E48508 /* TextFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		9FD745C21C09651E00E48508 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		9FD745C51C09653900E48508 /* TextControllerChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextControllerChaining.swift; sourceTree = "<group>"; };
+		9FD745CA1C09832000E48508 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProviderObserving.swift; sourceTree = "<group>"; };
 		E9E817D60F4699BF98BB274C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -664,6 +670,8 @@
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9FD745CA1C09832000E48508 /* iTunesArtwork.png */,
+				9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */,
 				9F0F41C21BFF07F900989101 /* AppPalette.clr */,
 				F09702DA1ACA492100498DEE /* Workouter-Info.plist */,
 				F09702DB1ACA492100498DEE /* WorkouterQA-Info.plist */,
@@ -944,7 +952,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD745CC1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				9F7967F01C039EA300DE9C4A /* Dialogs.storyboard in Resources */,
+				9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
 				F02CAB7D1B4B871E00F28D72 /* Screens.storyboard in Resources */,
@@ -956,7 +966,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD745CD1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				F09702D11ACA48E700498DEE /* LaunchScreen.xib in Resources */,
+				9FD745CF1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				F09702D21ACA48E700498DEE /* Images.xcassets in Resources */,
 				F09702D31ACA48E700498DEE /* Screens.storyboard in Resources */,
 				9F7967F11C039EA300DE9C4A /* Dialogs.storyboard in Resources */,
