@@ -131,10 +131,10 @@ extension TextViewController: UITextViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         // Deactivate controller when user clicks on return key.
         guard text != "\n" else {
-            textView.resignFirstResponder()
             if nextTextController != nil {
                 nextTextController!.active = true
             }
+            active = false
             
             return false
         }

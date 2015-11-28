@@ -28,7 +28,7 @@ final class AuthenticationScreen: BaseScreen {
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return keyboardPresented ? .Default : .LightContent
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -44,6 +44,19 @@ final class AuthenticationScreen: BaseScreen {
             passwordController = segue.destinationViewController as! TextFieldController
             configurePasswordController()
         }
+    }
+}
+
+extension AuthenticationScreen {
+    
+    override func keyboardWillShow(notification: NSNotification) {
+        super.keyboardWillShow(notification)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override func keyboardWillHide(notification: NSNotification) {
+        super.keyboardWillHide(notification)
+        setNeedsStatusBarAppearanceUpdate()
     }
 }
 

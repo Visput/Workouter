@@ -476,9 +476,9 @@
 			isa = PBXGroup;
 			children = (
 				9FD745C01C09651E00E48508 /* TextController */,
-				9F697E4C1C02995B00BAB0EC /* BaseViewController */,
 				9FC35E591BE48A6F0068A2D2 /* SearchController */,
 				9FA2F58F1BE317F400A3844D /* DurationViewController */,
+				9F697E4C1C02995B00BAB0EC /* BaseViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

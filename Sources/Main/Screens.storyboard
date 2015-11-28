@@ -1077,14 +1077,14 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he8-T0-7Vw">
-                                <rect key="frame" x="4" y="8" width="367" height="128"/>
+                                <rect key="frame" x="-4" y="0.0" width="383" height="144"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-a5-fTR">
-                                <rect key="frame" x="-4" y="143" width="383" height="1"/>
+                                <rect key="frame" x="-4" y="144" width="383" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.95686274766921997" green="0.15294118225574493" blue="0.32549020648002625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1279,6 +1279,7 @@
                                     <mask key="constraints">
                                         <exclude reference="4cX-r5-IkR"/>
                                         <exclude reference="lPS-iL-epi"/>
+                                        <exclude reference="xQL-u8-X0s"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1292,13 +1293,15 @@
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="0QM-fZ-DGs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lrn-f3-dnK" secondAttribute="trailing" id="5u2-hJ-pJP"/>
                             <constraint firstItem="FA9-4Q-XKn" firstAttribute="top" secondItem="moQ-OL-PT0" secondAttribute="bottom" constant="22" id="6ac-VN-u1d"/>
-                            <constraint firstItem="T4R-MP-rxp" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="topMargin" id="9mQ-vg-Zmm"/>
-                            <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="7" id="BL1-NB-7yU"/>
+                            <constraint firstItem="T4R-MP-rxp" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="top" id="9mQ-vg-Zmm"/>
+                            <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" id="BL1-NB-7yU"/>
                             <constraint firstItem="y9o-xO-07n" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="ENL-Gx-QjQ"/>
                             <constraint firstItem="FA9-4Q-XKn" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="EpT-z6-Qy0"/>
                             <constraint firstItem="moQ-OL-PT0" firstAttribute="top" secondItem="ZsN-wN-o2I" secondAttribute="bottom" constant="22" id="FFN-1w-HuV"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" constant="-12" id="HD1-TH-2wL"/>
+                            <constraint firstItem="he8-T0-7Vw" firstAttribute="trailing" secondItem="T4R-MP-rxp" secondAttribute="trailing" id="IKM-0U-JaL"/>
                             <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="7" id="Jpf-Cq-7qg"/>
+                            <constraint firstItem="he8-T0-7Vw" firstAttribute="top" secondItem="T4R-MP-rxp" secondAttribute="top" id="Kn8-wI-yUc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lrn-f3-dnK" secondAttribute="trailing" id="MVX-da-buh"/>
                             <constraint firstItem="XwH-ow-Ij2" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="O82-io-LSY"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="topMargin" constant="8" id="OJk-Pv-inM"/>
@@ -1318,7 +1321,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xhf-a5-fTR" secondAttribute="trailing" constant="-20" id="ec0-vu-pVq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XwH-ow-Ij2" secondAttribute="trailing" id="fbI-wK-cPs"/>
                             <constraint firstItem="dRk-Gl-2Nm" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="fzN-Qe-tY4"/>
-                            <constraint firstItem="he8-T0-7Vw" firstAttribute="bottom" secondItem="T4R-MP-rxp" secondAttribute="bottom" constant="-8" id="gWl-KI-48Z"/>
+                            <constraint firstItem="he8-T0-7Vw" firstAttribute="bottom" secondItem="T4R-MP-rxp" secondAttribute="bottom" id="gWl-KI-48Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y9o-xO-07n" secondAttribute="trailing" id="hS9-BR-v0B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="he8-T0-7Vw" secondAttribute="trailing" constant="-12" id="ivf-eF-L8M"/>
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="leading" secondItem="dRk-Gl-2Nm" secondAttribute="trailing" constant="15" id="jGL-S6-T3f"/>
@@ -1327,6 +1330,7 @@
                             <constraint firstItem="lrn-f3-dnK" firstAttribute="height" secondItem="dRk-Gl-2Nm" secondAttribute="height" id="jlu-Li-ZFM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dRk-Gl-2Nm" secondAttribute="trailing" id="mVL-0L-q7c"/>
                             <constraint firstItem="dRk-Gl-2Nm" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="qXY-9c-DnJ"/>
+                            <constraint firstItem="he8-T0-7Vw" firstAttribute="leading" secondItem="T4R-MP-rxp" secondAttribute="leading" id="sEf-QJ-njr"/>
                             <constraint firstItem="y9o-xO-07n" firstAttribute="top" secondItem="ZsN-wN-o2I" secondAttribute="bottom" constant="32" id="wGR-WF-6Gs"/>
                             <constraint firstItem="pQN-8D-B0A" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leadingMargin" id="wHg-ny-TWy"/>
                             <constraint firstItem="pQN-8D-B0A" firstAttribute="top" secondItem="y9o-xO-07n" secondAttribute="bottom" constant="32" id="yKj-EL-v2m"/>
@@ -1335,6 +1339,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="HD1-TH-2wL"/>
+                                <exclude reference="OJk-Pv-inM"/>
+                                <exclude reference="ivf-eF-L8M"/>
                                 <exclude reference="Jpf-Cq-7qg"/>
                                 <exclude reference="MVX-da-buh"/>
                                 <exclude reference="ac4-Sq-mAB"/>
@@ -1346,6 +1353,8 @@
                         </variation>
                         <connections>
                             <outlet property="headerHeight" destination="bH7-TA-ROW" id="f3Y-6G-s9t"/>
+                            <outlet property="headerTopSpace" destination="9mQ-vg-Zmm" id="pnl-x5-Niy"/>
+                            <outlet property="tryItOutButton" destination="dRk-Gl-2Nm" id="HiB-W4-cYb"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -127,10 +127,10 @@ class TextFieldController: BaseViewController, TextControllerChaining {
 extension TextFieldController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         if nextTextController != nil {
             nextTextController!.active = true
         }
+        active = false
         
         return true
     }
