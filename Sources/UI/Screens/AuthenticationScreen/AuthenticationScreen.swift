@@ -70,8 +70,8 @@ extension AuthenticationScreen {
 extension AuthenticationScreen {
     
     private func configureTextControllers() {
-        nicknameController.nextTextFieldController = emailController
-        emailController.nextTextFieldController = passwordController
+        nicknameController.nextTextController = emailController
+        emailController.nextTextController = passwordController
     }
     
     private func configureNicknameController() {

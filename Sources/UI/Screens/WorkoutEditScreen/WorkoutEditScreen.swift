@@ -175,7 +175,7 @@ extension WorkoutEditScreen {
     }
     
     private func configureTextControllers() {
-        nameController.nextTextViewController = descriptionController
+        nameController.nextTextController = descriptionController
     }
     
     private func configureNameController() {
