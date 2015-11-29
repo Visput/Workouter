@@ -18,7 +18,8 @@ final class StepCell: UITableViewCell {
         nameLabel.text = step.name
         descriptionLabel.text = step.stepDescription
         durationLabel.attributedText = NSAttributedString.durationStringForStep(step,
-            valueFont: UIFont.systemFontOfSize(21.0, weight: UIFontWeightLight),
-            unitFont: UIFont.systemFontOfSize(10, weight: UIFontWeightLight))
+            valueFont: UIFont.systemFontOfSize(22.0, weight: UIFontWeightLight),
+            unitFont: UIFont.systemFontOfSize(10.0, weight: UIFontWeightLight),
+            color: UIColor.primaryTextColor())
     }
 }

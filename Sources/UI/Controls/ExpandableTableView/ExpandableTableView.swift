@@ -11,23 +11,27 @@ import UIKit
 class ExpandableTableView: UIView {
 
     var delegate: ExpandableTableViewDelegate?
-    var dataSource: ExpandableTableViewDataSource!
     
-    var rowHeight = UITableViewAutomaticDimension
-    var estimatedRowHeight: CGFloat = 0.0
+    var dataSource: ExpandableTableViewDataSource! {
+        didSet {
+            configureTableView()
+        }
+    }
+    
+    var rowHeight = UITableViewAutomaticDimension {
+        didSet {
+            tableView.rowHeight = rowHeight
+        }
+    }
+    
+    var estimatedRowHeight: CGFloat = 0.0 {
+        didSet {
+            tableView.rowHeight = rowHeight
+        }
+    }
     
     @IBOutlet private var tableView: UITableView!
     private var sectionHeaders = [ExpandableTableViewSectionHeader]()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureTableView()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configureTableView()
-    }
 }
 
 extension ExpandableTableView {
@@ -134,16 +138,19 @@ extension ExpandableTableView {
             // Configure table view if it isn't initialized by interface builder.
             tableView = UITableView(frame: bounds, style: .Grouped)
             tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            tableView.translatesAutoresizingMaskIntoConstraints = true
             addSubview(tableView)
         }
-        tableView.tableFooterView = UIView(frame: CGRectZero)
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Call 'reloadData' before setting 'tableFooterView' because
+        // 'tableFooterView' initialization results in calling 'reloadData' for 'UITableView' object.
         reloadData()
     }
     
-    private func sectionHeaderDidPress(sectionHeader: ExpandableTableViewSectionHeader) {
+    @IBAction private func sectionHeaderDidPress(sectionHeader: ExpandableTableViewSectionHeader) {
         if sectionHeader.opened {
             closeSection(sectionHeaders.indexOf(sectionHeader)!, animated: true)
         } else {

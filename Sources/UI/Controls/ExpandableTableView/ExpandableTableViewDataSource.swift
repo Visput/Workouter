@@ -13,5 +13,5 @@ import UIKit
     func numberOfSectionsInExpandableTableView(tableView: ExpandableTableView) -> Int
     func expandableTableView(tableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int
     func expandableTableView(tableView: ExpandableTableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    func expandableTableView(tableView: ExpandableTableView, sectionHeaderAtIndex index: Int) -> ExpandableTableViewSectionHeader
+    func expandableTableView(tableView: ExpandableTableView, sectionHeaderAtIndex section: Int) -> ExpandableTableViewSectionHeader
 }

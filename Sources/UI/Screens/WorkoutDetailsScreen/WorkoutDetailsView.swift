@@ -10,4 +10,13 @@ import UIKit
 
 final class WorkoutDetailsView: BaseScreenView {
 
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var stepsTableView: ExpandableTableView!
+    
+    override func didLoad() {
+        super.didLoad()
+        stepsTableView.rowHeight = UITableViewAutomaticDimension
+        stepsTableView.estimatedRowHeight = 80.0
+    }
 }

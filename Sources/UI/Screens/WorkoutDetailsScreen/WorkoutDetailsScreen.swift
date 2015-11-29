@@ -27,7 +27,46 @@ final class WorkoutDetailsScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        workoutDetailsView.stepsTableView.delegate = self
+        workoutDetailsView.stepsTableView.dataSource = self
+        
         fillViewWithWorkout(workout)
+    }
+}
+
+extension WorkoutDetailsScreen: ExpandableTableViewDelegate, ExpandableTableViewDataSource {
+    
+    func numberOfSectionsInExpandableTableView(tableView: ExpandableTableView) -> Int {
+        return workout.steps.count
+    }
+    
+    func expandableTableView(tableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
+        let step = workout.steps[section]
+        
+        return step.stepDescription.isEmpty ? 0 : 1
+    }
+    
+    func expandableTableView(tableView: ExpandableTableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let step = workout.steps[indexPath.section]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(StepDetailsCell.className()) as! StepDetailsCell
+        cell.fillWithStep(step)
+        
+        return cell
+    }
+    
+    func expandableTableView(tableView: ExpandableTableView, sectionHeaderAtIndex section: Int) -> ExpandableTableViewSectionHeader {
+        let step = workout.steps[section]
+        
+        let header = NSBundle.mainBundle().loadNibNamed(StepsTableViewSectionHeader.className(),
+            owner: nil,
+            options: nil).last as! StepsTableViewSectionHeader
+        header.frame.size.width = tableView.frame.size.width
+        
+        header.fillWithStep(step)
+        header.sizeToFit()
+        
+        return header
     }
 }
 
@@ -50,6 +89,8 @@ extension WorkoutDetailsScreen {
 extension WorkoutDetailsScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
-        
+        workoutDetailsView.nameLabel.text = workout.name
+        workoutDetailsView.descriptionLabel.text = workout.workoutDescription
+        workoutDetailsView.stepsTableView.reloadData()
     }
 }

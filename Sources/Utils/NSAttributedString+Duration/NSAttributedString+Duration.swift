@@ -11,19 +11,40 @@ import UIKit
 
 extension NSAttributedString {
     
-    class func durationStringForStep(step: Step, valueFont: UIFont, unitFont: UIFont) -> Self {
-        return durationStringForDuration(step.duration, showSeconds: true, valueFont: valueFont, unitFont: unitFont)
+    class func durationStringForStep(step: Step,
+        valueFont: UIFont,
+        unitFont: UIFont,
+        color: UIColor) -> Self {
+            
+        return durationStringForDuration(step.duration,
+            showSeconds: true,
+            valueFont: valueFont,
+            unitFont: unitFont,
+            color: color)
     }
     
-    class func durationStringForWorkout(workout: Workout, valueFont: UIFont, unitFont: UIFont) -> Self {
+    class func durationStringForWorkout(workout: Workout,
+        valueFont: UIFont,
+        unitFont: UIFont,
+        color: UIColor) -> Self {
+            
         let totalDuration = workout.steps.reduce(0) { (sum: Int, step: Step) in
             sum + step.duration
         }
         
-        return durationStringForDuration(totalDuration, showSeconds: false, valueFont: valueFont, unitFont: unitFont)
+        return durationStringForDuration(totalDuration,
+            showSeconds: false,
+            valueFont: valueFont,
+            unitFont: unitFont,
+            color: color)
     }
 
-    class func durationStringForDuration(duration: Int, showSeconds: Bool, valueFont: UIFont, unitFont: UIFont) -> Self {
+    class func durationStringForDuration(duration: Int,
+        showSeconds: Bool,
+        valueFont: UIFont,
+        unitFont: UIFont,
+        color: UIColor) -> Self {
+            
         let hourShortUnit = NSLocalizedString(" h", comment: "")
         let hourSingularUnit = NSLocalizedString(" hour", comment: "")
         let hourPluralUnit = NSLocalizedString("hours", comment: "")
@@ -37,14 +58,14 @@ extension NSAttributedString {
         func appendComponent(value: Int, unit: String) {
             if durationString.length > 0 {
                 durationString.appendAttributedString(NSAttributedString(string: " ",
-                    attributes: [NSFontAttributeName: valueFont]))
+                    attributes: [NSFontAttributeName: valueFont, NSForegroundColorAttributeName: color]))
             }
             
             durationString.appendAttributedString(NSAttributedString(string: String(value),
-                attributes: [NSFontAttributeName: valueFont]))
+                attributes: [NSFontAttributeName: valueFont, NSForegroundColorAttributeName: color]))
             
             durationString.appendAttributedString(NSAttributedString(string: unit,
-                attributes: [NSFontAttributeName: unitFont]))
+                attributes: [NSFontAttributeName: unitFont, NSForegroundColorAttributeName: color]))
         }
         
         if components.hours > 0 {
