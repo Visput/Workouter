@@ -411,49 +411,49 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-mG-71o">
-                                <rect key="frame" x="16" y="156" width="343" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-QY-HET">
+                                <rect key="frame" x="16" y="80" width="343" height="408"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-B6-40e">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="6OH-qa-57s"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="HpB-m2-ign" kind="embed" identifier="StepName" id="EvO-Os-6LK"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-mG-71o">
+                                        <rect key="frame" x="0.0" y="76" width="343" height="100"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="iMy-52-OgE"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="HpB-m2-ign" kind="embed" identifier="StepDescription" id="aFV-Nt-De2"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29b-Uj-haV">
+                                        <rect key="frame" x="0.0" y="192" width="343" height="216"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="WK1-lt-mKa"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="g20-OQ-sS2" kind="embed" identifier="StepDuration" id="Gqf-hR-YDe"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="iMy-52-OgE"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="StepDescription" id="aFV-Nt-De2"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29b-Uj-haV">
-                                <rect key="frame" x="16" y="272" width="343" height="216"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="WK1-lt-mKa"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="g20-OQ-sS2" kind="embed" identifier="StepDuration" id="Gqf-hR-YDe"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-B6-40e">
-                                <rect key="frame" x="16" y="80" width="343" height="60"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6OH-qa-57s"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="StepName" id="EvO-Os-6LK"/>
-                                </connections>
-                            </containerView>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Q2g-B6-40e" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="16" id="A8b-MV-3V4"/>
-                            <constraint firstItem="Q2g-B6-40e" firstAttribute="trailing" secondItem="kkh-o0-1RU" secondAttribute="trailing" constant="-16" id="BPE-ni-CsU"/>
-                            <constraint firstItem="29b-Uj-haV" firstAttribute="top" secondItem="Sp7-mG-71o" secondAttribute="bottom" constant="16" id="EC1-ev-MDd"/>
-                            <constraint firstItem="Sp7-mG-71o" firstAttribute="top" secondItem="Q2g-B6-40e" secondAttribute="bottom" constant="16" id="FMV-GI-4MA"/>
-                            <constraint firstItem="Sp7-mG-71o" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leading" constant="16" id="TKZ-XZ-9in"/>
-                            <constraint firstAttribute="trailing" secondItem="29b-Uj-haV" secondAttribute="trailing" constant="16" id="ThS-Xd-Xl6"/>
-                            <constraint firstItem="29b-Uj-haV" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leading" constant="16" id="ToZ-9R-q1D"/>
-                            <constraint firstAttribute="trailing" secondItem="Sp7-mG-71o" secondAttribute="trailing" constant="16" id="g77-bN-qny"/>
-                            <constraint firstItem="Q2g-B6-40e" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leading" constant="16" id="k1Z-i8-1BF"/>
+                            <constraint firstAttribute="trailing" secondItem="X0a-QY-HET" secondAttribute="trailing" constant="16" id="JNG-ot-xni"/>
+                            <constraint firstItem="X0a-QY-HET" firstAttribute="top" secondItem="5ya-1b-Pyd" secondAttribute="bottom" constant="16" id="jBQ-2a-NDr"/>
+                            <constraint firstItem="X0a-QY-HET" firstAttribute="leading" secondItem="kkh-o0-1RU" secondAttribute="leading" constant="16" id="mVj-IL-Kvu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -463,7 +463,6 @@
                         </variation>
                         <connections>
                             <outlet property="nameViewHeight" destination="6OH-qa-57s" id="OkE-LH-v6Y"/>
-                            <outlet property="nameViewTopSpace" destination="A8b-MV-3V4" id="fRV-fr-kIn"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Step" id="oqA-g8-udP">
@@ -681,16 +680,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
-                                <rect key="frame" x="16" y="80" width="343" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ue1-yu-6gH">
+                                <rect key="frame" x="16" y="80" width="343" height="232"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96P-wQ-twa">
+                                        <rect key="frame" x="0.0" y="76" width="343" height="100"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="100" id="l8i-0t-CY9"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
+                                        </connections>
+                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QuB-pj-8Uc">
+                                        <rect key="frame" x="0.0" y="192" width="343" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
+                                                    <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
+                                                    <constraint firstAttribute="height" constant="40" id="U7T-SL-jgg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <state key="normal" title="Add Rest"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Q1C-01-3Lq"/>
+                                                        <exclude reference="TNP-9V-yIK"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="newRestStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="tds-cf-QfJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                                <rect key="frame" x="180" y="0.0" width="164" height="40"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="INO-vJ-yt8"/>
+                                                    <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
+                                                    <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <state key="normal" title="Add Step"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="VM3-KI-ZQa"/>
+                                                        <exclude reference="lCA-9r-L2J"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="newExersizeStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="10t-a5-bWx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
-                                </connections>
-                            </containerView>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-x6-9TF">
                                 <rect key="frame" x="4" y="320" width="367" height="347"/>
                                 <animations/>
@@ -768,115 +843,18 @@
                                     <outlet property="delegate" destination="5cI-Xv-1fW" id="YEs-BV-hTb"/>
                                 </connections>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96P-wQ-twa">
-                                <rect key="frame" x="16" y="156" width="343" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="999" constant="100" id="l8i-0t-CY9"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
-                                </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="195" y="272" width="164" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
-                                    <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <state key="normal" title="Add Step"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="VM3-KI-ZQa"/>
-                                        <exclude reference="lCA-9r-L2J"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="newExersizeStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="10t-a5-bWx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="272" width="164" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
-                                    <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
-                                    <constraint firstAttribute="height" constant="40" id="U7T-SL-jgg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <state key="normal" title="Add Rest"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Q1C-01-3Lq"/>
-                                        <exclude reference="TNP-9V-yIK"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="newRestStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="tds-cf-QfJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cpu-SS-bXz" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="16" id="1rf-Ng-eS5"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailing" constant="-4" id="9TD-9g-fLW"/>
                             <constraint firstItem="f2g-Ez-33A" firstAttribute="top" secondItem="v9P-x6-9TF" secondAttribute="bottom" id="BqS-Wa-EZC"/>
-                            <constraint firstItem="xGX-C2-eLq" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="Edp-lo-byO"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="width" secondItem="xGX-C2-eLq" secondAttribute="width" id="GNr-NZ-7oL"/>
-                            <constraint firstAttribute="trailing" secondItem="0MX-Ig-FKe" secondAttribute="trailing" constant="16" id="Hcu-nS-okC"/>
-                            <constraint firstAttribute="trailing" secondItem="96P-wQ-twa" secondAttribute="trailing" constant="16" id="IVM-cc-dnH"/>
-                            <constraint firstItem="cpu-SS-bXz" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="J6v-9w-rgn"/>
-                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="0MX-Ig-FKe" secondAttribute="bottom" constant="5" id="JLM-o4-65j"/>
-                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="xGX-C2-eLq" secondAttribute="bottom" constant="8" id="LFU-1E-Hnj"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="top" secondItem="xGX-C2-eLq" secondAttribute="top" id="PPx-Is-VgR"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="4" id="QKB-nr-D0f"/>
-                            <constraint firstItem="96P-wQ-twa" firstAttribute="top" secondItem="cpu-SS-bXz" secondAttribute="bottom" constant="16" id="R5Y-jN-OcE"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="xGX-C2-eLq" secondAttribute="trailing" constant="15" id="S7g-TW-hKj"/>
-                            <constraint firstItem="96P-wQ-twa" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="T5K-du-0dO"/>
-                            <constraint firstItem="xGX-C2-eLq" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="TqA-aP-aLh"/>
-                            <constraint firstItem="xGX-C2-eLq" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="ZiY-2P-cVi"/>
-                            <constraint firstItem="cpu-SS-bXz" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailing" constant="-16" id="aYd-US-Rvt"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="al7-Xs-eC7"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" id="cNN-Zm-uwx"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="height" secondItem="xGX-C2-eLq" secondAttribute="height" id="jEw-Ff-WPk"/>
-                            <constraint firstItem="xGX-C2-eLq" firstAttribute="width" secondItem="0MX-Ig-FKe" secondAttribute="width" id="m3I-GA-PwE"/>
-                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="96P-wQ-twa" secondAttribute="bottom" constant="16" id="p0u-ZS-QT6"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailing" id="pZW-Kj-k4w"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="leading" secondItem="xGX-C2-eLq" secondAttribute="trailing" constant="16" id="tP4-36-HuU"/>
-                            <constraint firstItem="xGX-C2-eLq" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="-4" id="tcB-Xn-7OH"/>
-                            <constraint firstItem="0MX-Ig-FKe" firstAttribute="centerX" secondItem="2Ub-Qo-fSW" secondAttribute="centerX" id="vxK-GN-gDd"/>
+                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="Ue1-yu-6gH" secondAttribute="bottom" constant="8" id="kky-J3-NB8"/>
+                            <constraint firstItem="Ue1-yu-6gH" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="16" id="qOb-LI-F4f"/>
+                            <constraint firstItem="Ue1-yu-6gH" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="udK-oA-E2m"/>
+                            <constraint firstAttribute="trailing" secondItem="Ue1-yu-6gH" secondAttribute="trailing" constant="16" id="xSQ-Ah-cfx"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="ZiY-2P-cVi"/>
-                                <exclude reference="m3I-GA-PwE"/>
-                                <exclude reference="tcB-Xn-7OH"/>
-                                <exclude reference="JLM-o4-65j"/>
-                                <exclude reference="p0u-ZS-QT6"/>
-                                <exclude reference="al7-Xs-eC7"/>
-                                <exclude reference="cNN-Zm-uwx"/>
-                                <exclude reference="pZW-Kj-k4w"/>
-                                <exclude reference="tP4-36-HuU"/>
-                                <exclude reference="vxK-GN-gDd"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="bottomSpace" destination="BqS-Wa-EZC" id="N6o-Mz-3VL"/>
                             <outlet property="newExersizeStepButton" destination="0MX-Ig-FKe" id="f9t-eR-L4x"/>
@@ -908,7 +886,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-RC-2L0">
@@ -940,7 +918,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="303" y="38" width="44" height="20"/>
+                                <rect key="frame" x="303" y="78" width="44" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -958,7 +936,7 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-d6-RvV">
-                                <rect key="frame" x="0.0" y="-2" width="317" height="62"/>
+                                <rect key="frame" x="0.0" y="-2" width="317" height="102"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
@@ -1843,7 +1821,7 @@
         <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aFV-Nt-De2"/>
         <segue reference="agX-cA-ZSk"/>
-        <segue reference="dQt-nY-fnQ"/>
     </inferredMetricsTieBreakers>
 </document>
