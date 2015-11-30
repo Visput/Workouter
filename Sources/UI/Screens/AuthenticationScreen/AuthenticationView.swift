@@ -12,7 +12,6 @@ final class AuthenticationView: BaseScreenView {
     
     @IBOutlet private weak var headerHeight: NSLayoutConstraint!
     @IBOutlet private weak var headerTopSpace: NSLayoutConstraint!
-    @IBOutlet private(set) weak var tryItOutButton: UIButton!
     
     override func didLoad() {
         super.didLoad()
@@ -29,7 +28,6 @@ final class AuthenticationView: BaseScreenView {
         animateWithKeyboardNotification(notification,
             animations: { () -> Void in
                 self.headerTopSpace.constant = -self.headerHeight.constant
-                self.tryItOutButton.alpha = 0.0
                 self.layoutIfNeeded()
             }, completion: nil)
     }
@@ -38,7 +36,6 @@ final class AuthenticationView: BaseScreenView {
         animateWithKeyboardNotification(notification,
             animations: { () -> Void in
                 self.headerTopSpace.constant = 0
-                self.tryItOutButton.alpha = 1.0
                 self.layoutIfNeeded()
             }, completion: nil)
     }

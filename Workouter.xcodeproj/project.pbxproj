@@ -29,8 +29,6 @@
 		9F0F07331C06286400DA0152 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07311C06286400DA0152 /* SettingsView.swift */; };
 		9F0F073C1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073A1C063B2D00DA0152 /* AuthenticationScreen.swift */; };
 		9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073A1C063B2D00DA0152 /* AuthenticationScreen.swift */; };
-		9F0F073E1C063B2D00DA0152 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
-		9F0F073F1C063B2D00DA0152 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
@@ -83,8 +81,6 @@
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F8782181BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
 		9F8782191BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
-		9F88A3FB1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
-		9F88A3FC1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
 		9F9444181C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444171C0001A2003E333B /* BaseDialogView.swift */; };
 		9F94441B1C0001BE003E333B /* BaseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F94441A1C0001BE003E333B /* BaseDialog.swift */; };
@@ -131,6 +127,10 @@
 		9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
 		9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */; };
 		9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */; };
+		9FE797D41C0CB483009A52C5 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
+		9FE797D51C0CB483009A52C5 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
+		9FE797D61C0CB554009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
+		9FE797D71C0CB555009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		B400FD0169EBB56041A81267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
 		F02CAB521B4B871E00F28D72 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* Step.swift */; };
@@ -1277,12 +1277,11 @@
 				9F64FA831C0AE88500B63798 /* StepsTableViewSectionHeader.swift in Sources */,
 				9F0DFC3D1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F02CAB521B4B871E00F28D72 /* Step.swift in Sources */,
-				9F88A3FB1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */,
 				F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */,
+				9FE797D61C0CB554009A52C5 /* AuthenticationView.swift in Sources */,
 				9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
 				9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
-				9F0F073E1C063B2D00DA0152 /* AuthenticationView.swift in Sources */,
 				9F8782181BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9F697E4E1C02995B00BAB0EC /* BaseViewController.swift in Sources */,
@@ -1300,6 +1299,7 @@
 				9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0F07321C06286400DA0152 /* SettingsView.swift in Sources */,
 				9F0F072F1C06284E00DA0152 /* SettingsScreen.swift in Sources */,
+				9FE797D41C0CB483009A52C5 /* UIScreen+Size.swift in Sources */,
 				9F0DFC431BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D141BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,
@@ -1355,12 +1355,11 @@
 				9F64FA841C0AE88500B63798 /* StepsTableViewSectionHeader.swift in Sources */,
 				9F0DFC3E1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F09702C01ACA48E700498DEE /* Step.swift in Sources */,
-				9F88A3FC1C08580300C1FDD9 /* UIScreen+Size.swift in Sources */,
 				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
+				9FE797D71C0CB555009A52C5 /* AuthenticationView.swift in Sources */,
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
-				9F0F073F1C063B2D00DA0152 /* AuthenticationView.swift in Sources */,
 				9F8782191BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9FD745C71C09653900E48508 /* TextControllerChaining.swift in Sources */,
@@ -1378,6 +1377,7 @@
 				9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
 				9F0F07331C06286400DA0152 /* SettingsView.swift in Sources */,
 				9F0F07301C06284E00DA0152 /* SettingsScreen.swift in Sources */,
+				9FE797D51C0CB483009A52C5 /* UIScreen+Size.swift in Sources */,
 				9F0DFC441BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D151BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9FD745C91C09675000E48508 /* TextFieldController.swift in Sources */,

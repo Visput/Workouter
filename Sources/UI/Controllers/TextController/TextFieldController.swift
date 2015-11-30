@@ -168,21 +168,25 @@ extension TextFieldController {
             textField.autocapitalizationType = .None
         }
         
-        var textColor = UIColor.primaryTextColor()
-        var placeholderColor = UIColor.secondaryTextColor()
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
+            attributes: [
+                NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
+                NSForegroundColorAttributeName : UIColor.secondaryTextColor()
+            ])
+        
+        var viewBorderColor = UIColor.borderColor().CGColor
         var buttonImage = UIImage(named: "icon_info_small")
         if !valid {
-            textColor = UIColor.invalidStateColor()
-            placeholderColor = UIColor.invalidStateColor()
+            viewBorderColor = UIColor.invalidStateColor().CGColor
             buttonImage = UIImage(named: "icon_attention_small")
         }
         
-        self.textField.textColor = textColor
-        self.textField.attributedPlaceholder = NSAttributedString(string: self.placeholder,
-            attributes: [
-                NSFontAttributeName : UIFont.systemFontOfSize(17.0, weight: UIFontWeightLight),
-                NSForegroundColorAttributeName : placeholderColor
-            ])
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.duration = UIView.defaultAnimationDuration
+        borderColorAnimation.fromValue = view.layer.borderColor
+        borderColorAnimation.toValue = viewBorderColor
+        view.layer.addAnimation(borderColorAnimation, forKey: nil)
+        view.layer.borderColor = viewBorderColor
         
         descriptionButton.setImage(buttonImage, forState: .Normal)
     }

@@ -11,8 +11,6 @@ import UIKit
 final class AuthenticationScreen: BaseScreen {
     
     private var nicknameController: TextFieldController!
-    private var emailController: TextFieldController!
-    private var passwordController: TextFieldController!
 
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -24,7 +22,6 @@ final class AuthenticationScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextControllers()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -35,14 +32,6 @@ final class AuthenticationScreen: BaseScreen {
         if segue.identifier! == "UserNickname" {
             nicknameController = segue.destinationViewController as! TextFieldController
             configureNicknameController()
-            
-        } else if segue.identifier! == "UserEmail" {
-            emailController = segue.destinationViewController as! TextFieldController
-            configureEmailController()
-            
-        } else if segue.identifier! == "UserPassword" {
-            passwordController = segue.destinationViewController as! TextFieldController
-            configurePasswordController()
         }
     }
 }
@@ -67,25 +56,15 @@ extension AuthenticationScreen {
         navigationManager.dismissScreenAnimated(true)
     }
     
-    @IBAction private func signInWithEmailButtonDidPress(sender: AnyObject) {
+    @IBAction private func signInWithNicknameButtonDidPress(sender: AnyObject) {
         authenticationView.endEditing(true)
         if validateUserData() {
             navigationManager.dismissScreenAnimated(true)
         }
     }
-    
-    @IBAction private func tryItOutButtonDidPress(sender: AnyObject) {
-        authenticationView.endEditing(true)
-        navigationManager.dismissScreenAnimated(true)
-    }
 }
 
 extension AuthenticationScreen {
-    
-    private func configureTextControllers() {
-        nicknameController.nextTextController = emailController
-        emailController.nextTextController = passwordController
-    }
     
     private func configureNicknameController() {
         nicknameController.placeholder = NSLocalizedString("Nickname", comment: "")
@@ -96,27 +75,6 @@ extension AuthenticationScreen {
         }
     }
     
-    private func configureEmailController() {
-        emailController.placeholder = NSLocalizedString("Email", comment: "")
-        emailController.descriptionTitle = NSLocalizedString("Email", comment: "")
-        emailController.descriptionMessage = NSLocalizedString("Your regular email.\nWe use it for your account synchronization.",
-            comment: "")
-        emailController.keyboardType = .EmailAddress
-        emailController.didChangeTextAction = { [unowned self] text in
-            self.emailController.setValid()
-        }
-    }
-    
-    private func configurePasswordController() {
-        passwordController.placeholder = NSLocalizedString("Password", comment: "")
-        passwordController.descriptionTitle = NSLocalizedString("Password", comment: "")
-        passwordController.descriptionMessage = NSLocalizedString("Any word that you won't forget.", comment: "")
-        passwordController.secureTextEntry = true
-        passwordController.didChangeTextAction = { [unowned self] text in
-            self.passwordController.setValid()
-        }
-    }
-    
     private func validateUserData() -> Bool {
         if nicknameController.text.isEmpty {
             nicknameController.setInvalidWithErrorTitle("Error", errorMessage: "Nickname is required field.")
@@ -124,18 +82,6 @@ extension AuthenticationScreen {
             nicknameController.setValid()
         }
         
-        if emailController.text.isEmpty {
-            emailController.setInvalidWithErrorTitle("Error", errorMessage: "Email is required field.")
-        } else {
-            emailController.setValid()
-        }
-        
-        if passwordController.text.isEmpty {
-            passwordController.setInvalidWithErrorTitle("Error", errorMessage: "Password is required field.")
-        } else {
-            passwordController.setValid()
-        }
-        
-        return nicknameController.valid && emailController.valid && passwordController.valid
+        return nicknameController.valid
     }
 }
