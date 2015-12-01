@@ -1177,7 +1177,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Facebook Connect" image="icon_facebook"/>
+                                        <state key="normal" title="Facebook Connect" image="icon_facebook_green"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1676,7 +1676,7 @@
     </scenes>
     <resources>
         <image name="background_green" width="375" height="144"/>
-        <image name="icon_facebook" width="20" height="20"/>
+        <image name="icon_facebook_green" width="20" height="20"/>
         <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
