@@ -14,6 +14,10 @@ class BaseView: UIView {
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     var bottomSpaceDefaultValue: CGFloat = 0.0
     
+    /// If true then 'endEditing:' is called when user touches view.
+    /// Used for hiding keyboard.
+    var endEditingOnTouch = true
+    
     enum AppearanceState {
         case Undefined
         case DidLoad
@@ -51,7 +55,9 @@ extension BaseView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        endEditing(true)
+        if endEditingOnTouch {
+            endEditing(true)
+        }
     }
 }
 

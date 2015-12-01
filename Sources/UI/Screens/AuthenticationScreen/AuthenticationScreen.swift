@@ -20,12 +20,13 @@ final class AuthenticationScreen: BaseScreen {
         return view as! AuthenticationView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        nicknameController.active = true
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return keyboardPresented ? .Default : .LightContent
+        return .LightContent
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,29 +39,21 @@ final class AuthenticationScreen: BaseScreen {
 
 extension AuthenticationScreen {
     
-    override func keyboardWillShow(notification: NSNotification) {
-        super.keyboardWillShow(notification)
-        setNeedsStatusBarAppearanceUpdate()
+    private func signInWithFacebook() {
+        navigationManager.dismissScreenAnimated(true)
     }
     
-    override func keyboardWillHide(notification: NSNotification) {
-        super.keyboardWillHide(notification)
-        setNeedsStatusBarAppearanceUpdate()
+    private func signInWithNickname() {
+        if validateUserData() {
+            navigationManager.dismissScreenAnimated(true)
+        }
     }
 }
 
 extension AuthenticationScreen {
     
     @IBAction private func signInWithFacebookButtonDidPress(sender: AnyObject) {
-        authenticationView.endEditing(true)
-        navigationManager.dismissScreenAnimated(true)
-    }
-    
-    @IBAction private func signInWithNicknameButtonDidPress(sender: AnyObject) {
-        authenticationView.endEditing(true)
-        if validateUserData() {
-            navigationManager.dismissScreenAnimated(true)
-        }
+        signInWithFacebook()
     }
 }
 
@@ -70,8 +63,13 @@ extension AuthenticationScreen {
         nicknameController.placeholder = NSLocalizedString("Nickname", comment: "")
         nicknameController.descriptionTitle = NSLocalizedString("Nickname", comment: "")
         nicknameController.descriptionMessage = NSLocalizedString("Your short name best known by friends and family.", comment: "")
+        nicknameController.returnKeyTypeForDoneAction = .Go
         nicknameController.didChangeTextAction = { [unowned self] text in
             self.nicknameController.setValid()
+        }
+        nicknameController.didPressDoneAction = { [unowned self] in
+            self.nicknameController.active = true
+            self.signInWithNickname()
         }
     }
     

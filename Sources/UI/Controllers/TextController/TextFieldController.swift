@@ -11,6 +11,7 @@ import UIKit
 class TextFieldController: BaseViewController, TextControllerChaining {
 
     var didChangeTextAction: ((text: String) -> Void)?
+    var didPressDoneAction: (() -> Void)?
     
     var text = "" {
         didSet {
@@ -54,13 +55,6 @@ class TextFieldController: BaseViewController, TextControllerChaining {
         }
     }
     
-    var nextTextController: TextControllerChaining? {
-        didSet {
-            guard isViewLoaded() else { return }
-            configureReturnKey()
-        }
-    }
-    
     var active: Bool {
         get {
             return isViewLoaded() && textField.isFirstResponder()
@@ -72,6 +66,20 @@ class TextFieldController: BaseViewController, TextControllerChaining {
             } else {
                 textField.resignFirstResponder()
             }
+        }
+    }
+    
+    var nextTextController: TextControllerChaining? {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
+        }
+    }
+    
+    var returnKeyTypeForDoneAction = UIReturnKeyType.Done {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
         }
     }
     
@@ -130,7 +138,12 @@ extension TextFieldController: UITextFieldDelegate {
         if nextTextController != nil {
             nextTextController!.active = true
         }
+        
         active = false
+        
+        if nextTextController == nil {
+            didPressDoneAction?()
+        }
         
         return true
     }
@@ -195,7 +208,7 @@ extension TextFieldController {
         if nextTextController != nil {
             textField.returnKeyType = .Next
         } else {
-            textField.returnKeyType = .Done
+            textField.returnKeyType = returnKeyTypeForDoneAction
         }
     }
 }

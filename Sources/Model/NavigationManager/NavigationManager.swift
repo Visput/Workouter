@@ -16,19 +16,19 @@ final class NavigationManager: NSObject {
         }
     }
     
-    var screensStoryboard: UIStoryboard {
+    private var screensStoryboard: UIStoryboard {
         return window.rootViewController!.storyboard!
     }
     
-    lazy var dialogsStoryboard: UIStoryboard = {
+    private lazy var dialogsStoryboard: UIStoryboard = {
         return UIStoryboard(name: "Dialogs", bundle: NSBundle.mainBundle())
     }()
     
-    var navigationController: UINavigationController {
+    private var navigationController: UINavigationController {
         return window.rootViewController! as! UINavigationController
     }
     
-    var isAuthenticationScreenPresented: Bool {
+    private var isAuthenticationScreenPresented: Bool {
         get {
             return navigationController.presentedViewController != nil &&
             navigationController.presentedViewController!.isKindOfClass(AuthenticationScreen)
@@ -86,7 +86,6 @@ extension NavigationManager {
     
     func showDialog(dialog: UIViewController) {
         if !isAuthenticationScreenPresented || dialog.isKindOfClass(TextDialog) {
-            window.endEditing(true)
             dialog.modalPresentationStyle = .OverCurrentContext
             
             // Dialog is allowed to be presented over already presented view controller.

@@ -43,13 +43,33 @@ final class TextDialog: BaseDialog {
         }
     }
     
+    private var lastFirstResponder: UIResponder?
+    
     private var textView: TextDialogView {
         return view as! TextDialogView
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        lastFirstResponder = UIApplication.sharedApplication().keyWindow?.findFirstResponder()
+        lastFirstResponder?.resignFirstResponder()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        lastFirstResponder = UIApplication.sharedApplication().keyWindow?.findFirstResponder()
+        lastFirstResponder?.resignFirstResponder()
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+    }
+    
+    @IBAction override func cancelButtonDidPress(sender: AnyObject) {
+        super.cancelButtonDidPress(sender)
+        lastFirstResponder?.becomeFirstResponder()
+        lastFirstResponder = nil
     }
 }
 

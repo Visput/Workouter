@@ -12,6 +12,7 @@ import VPAttributedFormat
 class TextViewController: BaseViewController, TextControllerChaining {
     
     var didChangeTextAction: ((text: String) -> Void)?
+    var didPressDoneAction: (() -> Void)?
     
     var text = "" {
         didSet {
@@ -51,13 +52,6 @@ class TextViewController: BaseViewController, TextControllerChaining {
         }
     }
     
-    var nextTextController: TextControllerChaining? {
-        didSet {
-            guard isViewLoaded() else { return }
-            configureReturnKey()
-        }
-    }
-    
     var active: Bool {
         get {
             return isViewLoaded() && textView.isFirstResponder()
@@ -69,6 +63,20 @@ class TextViewController: BaseViewController, TextControllerChaining {
             } else {
                 textView.resignFirstResponder()
             }
+        }
+    }
+    
+    var nextTextController: TextControllerChaining? {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
+        }
+    }
+    
+    var returnKeyTypeForDoneAction = UIReturnKeyType.Done {
+        didSet {
+            guard isViewLoaded() else { return }
+            configureReturnKey()
         }
     }
     
@@ -134,7 +142,12 @@ extension TextViewController: UITextViewDelegate {
             if nextTextController != nil {
                 nextTextController!.active = true
             }
+            
             active = false
+            
+            if nextTextController == nil {
+                didPressDoneAction?()
+            }
             
             return false
         }
@@ -196,7 +209,7 @@ extension TextViewController {
         if nextTextController != nil {
             textView.returnKeyType = .Next
         } else {
-            textView.returnKeyType = .Done
+            textView.returnKeyType = returnKeyTypeForDoneAction
         }
     }
 }
