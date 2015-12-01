@@ -131,6 +131,10 @@
 		9FE797D51C0CB483009A52C5 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
 		9FE797D61C0CB554009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		9FE797D71C0CB555009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
+		9FE798651C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */; };
+		9FE798661C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */; };
+		9FE798681C0D71C6009A52C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798671C0D71C6009A52C5 /* WelcomeView.swift */; };
+		9FE798691C0D71C6009A52C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798671C0D71C6009A52C5 /* WelcomeView.swift */; };
 		B400FD0169EBB56041A81267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C342531A9E4BC800B9D480 /* ModelProvider.swift */; };
 		F02CAB521B4B871E00F28D72 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3425A1A9E4BC800B9D480 /* Step.swift */; };
@@ -258,6 +262,8 @@
 		9FD745F21C0AC5DF00E48508 /* StepDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailsCell.swift; sourceTree = "<group>"; };
 		9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProviderObserving.swift; sourceTree = "<group>"; };
+		9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		9FE798671C0D71C6009A52C5 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E9E817D60F4699BF98BB274C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01375C21A4CA18E00C683A8 /* WorkouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02CAB841B4B871E00F28D72 /* Workouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -633,6 +639,15 @@
 			path = "UIView+FirstResponder";
 			sourceTree = "<group>";
 		};
+		9FE798631C0D717E009A52C5 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */,
+				9FE798671C0D71C6009A52C5 /* WelcomeView.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
 		F01375A41A4CA18E00C683A8 = {
 			isa = PBXGroup;
 			children = (
@@ -801,6 +816,7 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9FE798631C0D717E009A52C5 /* WelcomeScreen */,
 				9F0F07391C063B2D00DA0152 /* AuthenticationScreen */,
 				9F0F072D1C06283200DA0152 /* SettingsScreen */,
 				9F0F07261C0627E300DA0152 /* WorkoutPlayerScreen */,
@@ -1282,6 +1298,7 @@
 				9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
 				9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
+				9FE798681C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
 				9F8782181BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9F697E4E1C02995B00BAB0EC /* BaseViewController.swift in Sources */,
@@ -1330,6 +1347,7 @@
 				9FD745EA1C0A92A800E48508 /* ExpandableTableView.swift in Sources */,
 				9F0F07281C06280900DA0152 /* WorkoutPlayerScreen.swift in Sources */,
 				9FD745EE1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
+				9FE798651C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F0DFC401BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
 				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
 				F02CAB5E1B4B871E00F28D72 /* BaseScreenView.swift in Sources */,
@@ -1360,6 +1378,7 @@
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
+				9FE798691C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
 				9F8782191BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9FD745C71C09653900E48508 /* TextControllerChaining.swift in Sources */,
@@ -1408,6 +1427,7 @@
 				9FD745EB1C0A92A800E48508 /* ExpandableTableView.swift in Sources */,
 				9F0F07291C06280900DA0152 /* WorkoutPlayerScreen.swift in Sources */,
 				9FD745EF1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
+				9FE798661C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F0DFC411BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
 				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
 				F09702CC1ACA48E700498DEE /* BaseScreenView.swift in Sources */,

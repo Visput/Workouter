@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817.5" y="-1085.5"/>
+            <point key="canvasLocation" x="-817.5" y="382.5"/>
         </scene>
         <!--Workout-->
         <scene sceneID="Ce4-j0-b24">
@@ -384,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bs-hn-A1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817.5" y="470.5"/>
+            <point key="canvasLocation" x="-329.5" y="382.5"/>
         </scene>
         <!--Step-->
         <scene sceneID="rCW-qK-t5e">
@@ -478,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvz-3Z-EEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.5" y="-1085.5"/>
+            <point key="canvasLocation" x="-329.5" y="-893.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hKI-wh-yrM">
@@ -492,9 +492,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="u1a-09-o8Q"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfx-cZ-kyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -666,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r78-js-uPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329.5" y="-1864.5"/>
+            <point key="canvasLocation" x="690.5" y="-893.5"/>
         </scene>
         <!--Workout-->
         <scene sceneID="XLc-jd-tcq">
@@ -875,7 +872,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7k-9G-yQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329.5" y="-1085.5"/>
+            <point key="canvasLocation" x="-817.5" y="-893.5"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="vFz-FK-YfT">
@@ -886,7 +883,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fP7-v8-OzO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jSz-y1-qKl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-RC-2L0">
@@ -918,7 +915,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-Xn-t72">
-                                <rect key="frame" x="303" y="78" width="44" height="20"/>
+                                <rect key="frame" x="303" y="38" width="44" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -936,7 +933,7 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-d6-RvV">
-                                <rect key="frame" x="0.0" y="-2" width="317" height="102"/>
+                                <rect key="frame" x="0.0" y="-2" width="317" height="62"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
@@ -999,7 +996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCn-Xw-yEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-85.5" y="-483"/>
+            <point key="canvasLocation" x="-573.5" y="-321"/>
         </scene>
         <!--Duration View Controller-->
         <scene sceneID="BWE-53-gTu">
@@ -1121,7 +1118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TL9-Wm-bm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.5" y="-255"/>
+            <point key="canvasLocation" x="-177.5" y="-243"/>
         </scene>
         <!--Authentication Screen-->
         <scene sceneID="fhC-Wo-mqX">
@@ -1283,7 +1280,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFh-sN-4Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817.5" y="-307.5"/>
+            <point key="canvasLocation" x="176.5" y="-1864.5"/>
+        </scene>
+        <!--Welcome Screen-->
+        <scene sceneID="pfb-qU-YTx">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeScreen" id="j2x-CI-gUs" customClass="WelcomeScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKd-b1-SXc"/>
+                        <viewControllerLayoutGuide type="bottom" id="tHG-4L-lxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jph-fq-DZq" customClass="WelcomeView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXO-VV-Mmi" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="611" width="343" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="1Ug-QZ-sUK"/>
+                                    <constraint firstAttribute="height" constant="40" id="PUY-QV-QVM"/>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="fFc-gf-zmD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Start training"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fFc-gf-zmD"/>
+                                        <exclude reference="1Ug-QZ-sUK"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="newRestStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="gVP-1r-aFv"/>
+                                    <action selector="startButtonDidPress:" destination="j2x-CI-gUs" eventType="touchUpInside" id="Wrt-Zp-5SN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tHG-4L-lxc" firstAttribute="top" secondItem="FXO-VV-Mmi" secondAttribute="bottom" constant="16" id="7Rd-BE-mEd"/>
+                            <constraint firstAttribute="trailing" secondItem="FXO-VV-Mmi" secondAttribute="trailing" constant="16" id="WFI-ze-hIe"/>
+                            <constraint firstItem="FXO-VV-Mmi" firstAttribute="leading" secondItem="jph-fq-DZq" secondAttribute="leading" constant="16" id="gC5-Xs-C2b"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ih-nK-FUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329.5" y="-1864.5"/>
         </scene>
         <!--Workout Template-->
         <scene sceneID="4cx-sx-ISc">
@@ -1524,7 +1576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahj-UP-RgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.5" y="-1864.5"/>
+            <point key="canvasLocation" x="176.5" y="-893.5"/>
         </scene>
         <!--Workout Player Screen-->
         <scene sceneID="co5-1L-I6T">
@@ -1575,7 +1627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcT-cI-9iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329.5" y="470.5"/>
+            <point key="canvasLocation" x="176.5" y="382.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="YFX-1V-LjZ">
@@ -1597,7 +1649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-hJ-Lve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.5" y="470.5"/>
+            <point key="canvasLocation" x="690.5" y="-1864.5"/>
         </scene>
         <!--Text Field Controller-->
         <scene sceneID="PZi-dx-gO5">
@@ -1671,7 +1723,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4o-rb-ybd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-296.5" y="-307"/>
+            <point key="canvasLocation" x="176.5" y="-1367"/>
         </scene>
     </scenes>
     <resources>
@@ -1680,6 +1732,6 @@
         <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aFV-Nt-De2"/>
+        <segue reference="dQt-nY-fnQ"/>
     </inferredMetricsTieBreakers>
 </document>

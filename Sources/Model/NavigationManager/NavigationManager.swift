@@ -27,13 +27,6 @@ final class NavigationManager: NSObject {
     private var navigationController: UINavigationController {
         return window.rootViewController! as! UINavigationController
     }
-    
-    private var isAuthenticationScreenPresented: Bool {
-        get {
-            return navigationController.presentedViewController != nil &&
-            navigationController.presentedViewController!.isKindOfClass(AuthenticationScreen)
-        }
-    }
 }
 
 extension NavigationManager: UINavigationControllerDelegate {
@@ -47,36 +40,28 @@ extension NavigationManager: UINavigationControllerDelegate {
 extension NavigationManager {
     
     func pushScreen(screen: UIViewController, animated: Bool) {
-        if !isAuthenticationScreenPresented {
-            navigationController.pushViewController(screen, animated: animated)
-        }
+        navigationController.pushViewController(screen, animated: animated)
     }
     
     func popScreenAnimated(animated: Bool) {
-        if !isAuthenticationScreenPresented {
-            navigationController.popViewControllerAnimated(animated)
-        }
+        navigationController.popViewControllerAnimated(animated)
     }
     
     func popToRootScreenAnimated(animated: Bool) {
-        if !isAuthenticationScreenPresented {
-            navigationController.popToRootViewControllerAnimated(animated)
-        }
+        navigationController.popToRootViewControllerAnimated(animated)
     }
     
     func presentScreen(screen: UIViewController,
         wrapWithNavigationController: Bool,
         animated: Bool) {
             
-            if !isAuthenticationScreenPresented {
-                if wrapWithNavigationController {
-                    let presentationController = UINavigationController(rootViewController: screen)
-                    presentationController.delegate = self
-        
-                    navigationController.presentViewController(presentationController, animated: animated, completion: nil)
-                } else {
-                    navigationController.presentViewController(screen, animated: animated, completion: nil)
-                }
+            if wrapWithNavigationController {
+                let presentationController = UINavigationController(rootViewController: screen)
+                presentationController.delegate = self
+                
+                navigationController.presentViewController(presentationController, animated: animated, completion: nil)
+            } else {
+                navigationController.presentViewController(screen, animated: animated, completion: nil)
             }
     }
     
@@ -85,13 +70,11 @@ extension NavigationManager {
     }
     
     func showDialog(dialog: UIViewController) {
-        if !isAuthenticationScreenPresented || dialog.isKindOfClass(TextDialog) {
-            dialog.modalPresentationStyle = .OverCurrentContext
-            
-            // Dialog is allowed to be presented over already presented view controller.
-            let presentingViewController = navigationController.presentedViewController ?? navigationController
-            presentingViewController.presentViewController(dialog, animated: false, completion: nil)
-        }
+        dialog.modalPresentationStyle = .OverCurrentContext
+        
+        // Dialog is allowed to be presented over already presented view controller.
+        let presentingViewController = navigationController.presentedViewController ?? navigationController
+        presentingViewController.presentViewController(dialog, animated: false, completion: nil)
     }
     
     func dismissDialog() {
@@ -108,9 +91,20 @@ extension NavigationManager {
     }
     
     private func setScreens(screens: [UIViewController], animated: Bool) {
-        if !isAuthenticationScreenPresented {
-            navigationController.setViewControllers(screens, animated: animated)
-        }
+        navigationController.setViewControllers(screens, animated: animated)
+    }
+}
+
+extension NavigationManager {
+    
+    func setWelcomeScreenAsRootAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WelcomeScreen.className()) as! WelcomeScreen
+        setScreens([screen], animated: animated)
+    }
+    
+    func setWorkoutsScreenAsRootAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+        setScreens([screen], animated: animated)
     }
 }
 
@@ -178,14 +172,14 @@ extension NavigationManager {
             
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
-    
-    func presentAuthenticationScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
-        presentScreen(screen, wrapWithNavigationController: false, animated: animated)
-    }
 }
 
 extension NavigationManager {
+    
+    func pushAuthenticationScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
+        pushScreen(screen, animated: animated)
+    }
     
     func pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout: Workout,
         showWorkoutDetailsOnCompletion: Bool,

@@ -22,7 +22,13 @@ final class AuthenticationScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        navigationManager.setNavigationBarHidden(true, animated: animated)
         nicknameController.active = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        navigationManager.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -40,12 +46,12 @@ final class AuthenticationScreen: BaseScreen {
 extension AuthenticationScreen {
     
     private func signInWithFacebook() {
-        navigationManager.dismissScreenAnimated(true)
+        navigationManager.setWorkoutsScreenAsRootAnimated(true)
     }
     
     private func signInWithNickname() {
-        if validateUserData() {
-            navigationManager.dismissScreenAnimated(true)
+        if validateNickname() {
+            navigationManager.setWorkoutsScreenAsRootAnimated(true)
         }
     }
 }
@@ -73,7 +79,7 @@ extension AuthenticationScreen {
         }
     }
     
-    private func validateUserData() -> Bool {
+    private func validateNickname() -> Bool {
         if nicknameController.text.isEmpty {
             nicknameController.setInvalidWithErrorTitle("Error", errorMessage: "Nickname is required field.")
         } else {

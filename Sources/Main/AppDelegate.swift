@@ -33,9 +33,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Initiate model.
             modelProvider = ModelProvider.provider
-            modelProvider.navigationManager.window = window!
             modelProvider.workoutsProvider.loadWorkouts()
             modelProvider.shortcutsManager.updateShortcuts()
+            modelProvider.navigationManager.window = window!
+            modelProvider.navigationManager.setWelcomeScreenAsRootAnimated(false)
             
             return !modelProvider.shortcutsManager.handleShortcutInAppLaunchOptions(launchOptions)
     }
@@ -55,7 +56,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
         modelProvider.shortcutsManager.performActionForLaunchedShortcutIfNeeded()
-        modelProvider.navigationManager.presentAuthenticationScreenAnimated(false)
     }
     
     func applicationWillTerminate(application: UIApplication) {
