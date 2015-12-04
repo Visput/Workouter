@@ -7,21 +7,22 @@
 //
 
 import UIKit
+import ObjectMapper
 
-final class Step: NSObject, NSCoding {
+final class Step: NSObject, NSCoding, Mappable {
     
     enum Type: Int {
-        case Exercise
+        case Exercise = 0
         case Rest
     }
     
     let nameMaxLength = 70
     let descriptionMaxLength = 140
     
-    private(set) var type: Type
-    private(set) var name: String
-    private(set) var stepDescription: String
-    private(set) var duration: Int // Seconds.
+    private(set) var type: Type = .Exercise
+    private(set) var name: String = ""
+    private(set) var stepDescription: String = ""
+    private(set) var duration: Int = 0 // Seconds.
     
     required init(type: Type, name: String, description: String, duration: Int) {
         self.type = type
@@ -44,6 +45,15 @@ final class Step: NSObject, NSCoding {
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(stepDescription, forKey: "stepDescription")
         aCoder.encodeInteger(duration, forKey: "duration")
+    }
+    
+    init?(_ map: Map) {}
+    
+    func mapping(map: Map) {
+        type <- map["type"]
+        name <- map["name"]
+        stepDescription <- map["description"]
+        duration <- map["duration"]
     }
 }
 

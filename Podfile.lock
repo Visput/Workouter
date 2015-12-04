@@ -5,11 +5,9 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
-  - Crashlytics (3.4.0):
+  - Crashlytics (3.4.1):
     - Fabric (~> 1.6.0)
-  - Fabric (1.6.0):
-    - Fabric/Base (= 1.6.0)
-  - Fabric/Base (1.6.0)
+  - Fabric (1.6.1)
   - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.8.0)
@@ -24,12 +22,13 @@ PODS:
   - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
   - Flurry-iOS-SDK/FlurrySDK (7.3.0)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
-  - TwitterCore (1.13.1):
+  - ObjectMapper (1.0.1)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
+  - TwitterCore (1.14.6):
     - Fabric
-  - TwitterKit (1.13.1):
-    - TwitterCore (= 1.13.1)
+  - TwitterKit (1.14.6):
+    - TwitterCore (= 1.14.6)
   - VPAttributedFormat (1.2.4)
 
 DEPENDENCIES:
@@ -39,6 +38,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Flurry-iOS-SDK/FlurrySDK
+  - ObjectMapper
   - Parse
   - TwitterCore
   - TwitterKit
@@ -46,15 +46,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
-  Crashlytics: 1ee87895c37472eb3f01f409ea1654a464d2f8d4
-  Fabric: d737eda3a26ac940a5430230eedb35f16b226131
+  Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
+  Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   Flurry-iOS-SDK: 054befae0fa0244fb000985bfe757d70f87a9f60
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
-  TwitterCore: 4f6fbd413f6d574d38bfbeeeb5cd75738caf567e
-  TwitterKit: 77ee49981d79c9663eae3920641addf7c8713b38
+  ObjectMapper: 98524bac0dca46c6b3d5ee02cd410fc700ec6ce2
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
+  TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
   VPAttributedFormat: da99a8f4e7adb39e019e8a8383a1fca83fc51205
 
 COCOAPODS: 0.39.0

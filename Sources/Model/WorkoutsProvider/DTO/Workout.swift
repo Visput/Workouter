@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import ObjectMapper
 
-final class Workout: NSObject, NSCoding {
+final class Workout: NSObject, NSCoding, Mappable {
     
     let nameMaxLength = 70
     let descriptionMaxLength = 140
     
-    let name: String
-    let workoutDescription: String
-    let steps: [Step]
-    let identifier: String
+    private(set) var name: String = ""
+    private(set) var workoutDescription: String = ""
+    private(set) var steps: [Step] = []
+    private(set) var identifier: String = ""
     
     required init(name: String, description: String, steps: [Step]) {
         self.name = name
@@ -47,6 +48,15 @@ final class Workout: NSObject, NSCoding {
         aCoder.encodeObject(workoutDescription, forKey: "workoutDescription")
         aCoder.encodeObject(steps, forKey: "steps")
         aCoder.encodeObject(identifier, forKey: "identifier")
+    }
+    
+    init?(_ map: Map) {}
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+        workoutDescription <- map["description"]
+        steps <- map["steps"]
+        identifier <- map["identifier"]
     }
     
     /**

@@ -6,6 +6,7 @@ inhibit_all_warnings!
 link_with ['Workouter', 'WorkouterQA', 'WorkouterTests']
 
 pod 'Parse'
+pod 'ObjectMapper'
 pod 'Flurry-iOS-SDK/FlurrySDK'
 
 pod 'Crashlytics'
