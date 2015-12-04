@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import ObjectMapper
 
 final class WorkoutsProvider: NSObject {
     
@@ -23,39 +24,9 @@ final class WorkoutsProvider: NSObject {
     func loadWorkouts() {
         workouts = NSKeyedUnarchiver.unarchiveObjectWithFile(workoutsFilePath) as? [Workout]
         if workouts == nil {
-            let step1 = Step(type: .Exercise,
-                name: "Step 1",
-                description: "Step 1 description Step 1 description Step 1 description Step 1 description",
-                duration: 60)
-            let step2 = Step(type: .Rest,
-                name: "Rest",
-                description: "",
-                duration: 120)
-            let step3 = Step(type: .Exercise,
-                name: "Step 3 Step 3 Step 3 Step 3 Step 3 Step 3 Step 3",
-                description: "Step 1 description Step 1 description Step 1 description Step 1 description",
-                duration: 120)
-            let steps = [step1, step2, step3]
-            workouts = []
-            workouts.append(Workout(name: "Workout 1",
-                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
-                steps: steps))
-            workouts.append(Workout(name: "Workout 2 Workout 2 Workout 2 Workout 2 Workout 2",
-                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
-                steps: steps))
-            workouts.append(Workout(name: "Workout 3 Workout 3 Workout 3 Workout 3 Workout 3",
-                description: "Workout 4 description Workout 4 description Workout 4 description Workout 4 description",
-                steps: steps))
-            workouts.append(Workout(name: "Workout 4", description: "Workout 4 description", steps: steps))
-            workouts.append(Workout(name: "Workout 5", description: "Workout 5 description", steps: steps))
-            workouts.append(Workout(name: "Workout 6", description: "Workout 6 description", steps: steps))
-            workouts.append(Workout(name: "Workout 3", description: "", steps: steps))
-            workouts.append(Workout(name: "Workout 4", description: "Workout 4 description", steps: steps))
-            workouts.append(Workout(name: "Workout 5", description: "Workout 5 description", steps: steps))
-            workouts.append(Workout(name: "Workout 3", description: "", steps: steps))
-            workouts.append(Workout(name: "Workout 4", description: "Workout 4 description", steps: steps))
-            workouts.append(Workout(name: "Workout 5", description: "Workout 5 description", steps: steps))
-            workouts.append(Workout(name: "Workout 6", description: "Workout 6 description", steps: steps))
+            let pathToDefaultWorkouts = NSBundle.mainBundle().pathForResource("DefaultWorkouts", ofType: ".json")!
+            let defaultWorkoutsJSON = try! NSString(contentsOfFile: pathToDefaultWorkouts, encoding: NSUTF8StringEncoding) as String
+            workouts = Mapper<Workout>().mapArray(defaultWorkoutsJSON)
         }
     }
     
