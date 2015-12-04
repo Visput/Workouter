@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandableTableView: UIView {
+final class ExpandableTableView: UIView {
 
     var delegate: ExpandableTableViewDelegate?
     

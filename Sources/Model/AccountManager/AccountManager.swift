@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AccountManager: NSObject {
+final class AccountManager: NSObject {
 
 }

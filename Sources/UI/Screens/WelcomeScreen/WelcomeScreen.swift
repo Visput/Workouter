@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeScreen: BaseScreen {
+final class WelcomeScreen: BaseScreen {
     
     private lazy var pageItems: [WelcomePageItem] = {
         let firstPageItem = WelcomePageItem(title: NSLocalizedString("Workouter", comment: ""),
@@ -29,6 +29,7 @@ class WelcomeScreen: BaseScreen {
         return [firstPageItem, secondPageItem, thirdPageItem]
     }()
     
+    private var autoSwipeTimer: NSTimer?
     private var pagesController: UIPageViewController!
 
     private var navigationManager: NavigationManager {
@@ -42,6 +43,16 @@ class WelcomeScreen: BaseScreen {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationManager.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        restartAutoSwipeTimer()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        stopAutoSwipeTimer()
+        super.viewDidDisappear(animated)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -83,7 +94,16 @@ extension WelcomeScreen: UIPageViewControllerDelegate, UIPageViewControllerDataS
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        let currentController = pagesController.viewControllers!.last as! WelcomePageContentController
+        return currentController.item.index
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController,
+        didFinishAnimating finished: Bool,
+        previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool) {
+            // Restart timer if user manually swiped to different page.
+            restartAutoSwipeTimer()
     }
 }
 
@@ -95,6 +115,34 @@ extension WelcomeScreen {
 }
 
 extension WelcomeScreen {
+    
+    private func restartAutoSwipeTimer() {
+        stopAutoSwipeTimer()
+        autoSwipeTimer = NSTimer.scheduledTimerWithTimeInterval(5.0,
+            target: self,
+            selector: "swipeToNextPage",
+            userInfo: nil,
+            repeats: false)
+    }
+    
+    private func stopAutoSwipeTimer() {
+        autoSwipeTimer?.invalidate()
+        autoSwipeTimer = nil
+    }
+    
+    @objc private func swipeToNextPage() {
+        let currentController = pagesController.viewControllers!.last!
+        let nextController = pageViewController(pagesController, viewControllerAfterViewController: currentController)
+        guard nextController != nil else { return }
+        
+        pagesController.setViewControllers([nextController!],
+            direction: UIPageViewControllerNavigationDirection.Forward,
+            animated: true,
+            completion: { [weak self] _ in
+                
+                self?.restartAutoSwipeTimer()
+            })
+    }
     
     private func configurePagesController() {
         pagesController.delegate = self

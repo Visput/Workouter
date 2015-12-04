@@ -8,6 +8,6 @@
 
 import UIKit
 
-class WelcomeView: BaseScreenView {
+final class WelcomeView: BaseScreenView {
 
 }

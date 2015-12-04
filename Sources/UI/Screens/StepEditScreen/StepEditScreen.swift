@@ -64,7 +64,7 @@ extension StepEditScreen {
     private func fillViewWithStep(step: Step) {
         switch step.type {
         case .Exercise:
-            stepEditView.setNameViewHidden(false)
+            stepEditView.nameContainerView.hidden = false
             nameController.text = step.name
             nameController.textMaxLength = step.nameMaxLength
             if step.name.isEmpty {
@@ -73,7 +73,7 @@ extension StepEditScreen {
             title = NSLocalizedString("Step", comment: "")
             
         case .Rest:
-            stepEditView.setNameViewHidden(true)
+            stepEditView.nameContainerView.hidden = true
             title = step.name
         }
         

@@ -327,7 +327,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeR-Xz-eLx" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="531" width="343" height="40"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="4og-4o-BQg"/>
                                             <constraint firstAttribute="height" constant="40" id="Rdw-70-LFb"/>
@@ -418,7 +417,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="6OH-qa-57s"/>
+                                            <constraint firstAttribute="height" priority="999" constant="60" id="6OH-qa-57s"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="HpB-m2-ign" kind="embed" identifier="StepName" id="EvO-Os-6LK"/>
@@ -462,7 +461,7 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outlet property="nameViewHeight" destination="6OH-qa-57s" id="OkE-LH-v6Y"/>
+                            <outlet property="nameContainerView" destination="Q2g-B6-40e" id="2Xe-KQ-hCQ"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Step" id="oqA-g8-udP">
@@ -706,7 +705,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
                                                     <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
@@ -733,7 +731,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                                 <rect key="frame" x="180" y="0.0" width="164" height="40"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="INO-vJ-yt8"/>
                                                     <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
@@ -1166,7 +1163,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsN-wN-o2I" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="32" width="343" height="40"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="998" constant="40" id="3u7-DY-wkR"/>
                                             <constraint firstAttribute="width" constant="180" id="9gD-uN-VGL"/>
@@ -1297,7 +1293,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXO-VV-Mmi" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="611" width="343" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="1Ug-QZ-sUK"/>
                                     <constraint firstAttribute="height" constant="40" id="PUY-QV-QVM"/>
@@ -1811,6 +1806,6 @@
         <image name="icon_info_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Wi-8y-Tdl"/>
+        <segue reference="aFV-Nt-De2"/>
     </inferredMetricsTieBreakers>
 </document>

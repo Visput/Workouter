@@ -81,7 +81,7 @@ extension BaseViewController {
 
 extension BaseViewController {
     
-    func keyboardNotificationDidReceive(notification: NSNotification) {
+    @objc func keyboardNotificationDidReceive(notification: NSNotification) {
         let keyboardHeight = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue().size.height
         
         if notification.name == UIKeyboardWillShowNotification {

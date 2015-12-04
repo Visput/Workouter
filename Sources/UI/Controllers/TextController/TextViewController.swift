@@ -9,7 +9,7 @@
 import UIKit
 import VPAttributedFormat
 
-class TextViewController: BaseViewController, TextControllerChaining {
+final class TextViewController: BaseViewController, TextControllerChaining {
     
     var didChangeTextAction: ((text: String) -> Void)?
     var didPressDoneAction: (() -> Void)?

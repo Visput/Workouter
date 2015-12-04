@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomePageContentController: UIViewController {
+final class WelcomePageContentController: UIViewController {
     
     @IBOutlet private(set) weak var iconView: UIImageView!
     @IBOutlet private(set) weak var titleLabel: UILabel!

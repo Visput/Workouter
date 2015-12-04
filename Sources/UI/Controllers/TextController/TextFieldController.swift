@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldController: BaseViewController, TextControllerChaining {
+final class TextFieldController: BaseViewController, TextControllerChaining {
 
     var didChangeTextAction: ((text: String) -> Void)?
     var didPressDoneAction: (() -> Void)?

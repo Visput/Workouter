@@ -67,7 +67,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="743-HJ-n7N" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="32" y="177" width="311" height="40"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="5RP-c3-4eE"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aBb-Gz-o61"/>
