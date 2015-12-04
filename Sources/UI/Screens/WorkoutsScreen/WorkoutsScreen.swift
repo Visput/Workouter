@@ -147,7 +147,7 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
             
             previewingContext.sourceRect = cell.frame
             let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
-            let previewScreen = navigationManager.workoutDetailsScreenWithWorkout(workout)
+            let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
             
             return previewScreen
     }

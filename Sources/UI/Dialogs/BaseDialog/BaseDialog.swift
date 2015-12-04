@@ -18,6 +18,16 @@ class BaseDialog: BaseViewController {
         return modelProvider.navigationManager
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        modalPresentationStyle = .OverCurrentContext
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        modalPresentationStyle = .OverCurrentContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureGestureRecognizers()
@@ -30,7 +40,12 @@ class BaseDialog: BaseViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         guard presentingViewController != nil else { return super.preferredStatusBarStyle() }
-        return presentingViewController!.preferredStatusBarStyle()
+        if presentingViewController!.isKindOfClass(UINavigationController) {
+            let navigationController = presentingViewController! as! UINavigationController
+            return navigationController.topViewController!.preferredStatusBarStyle()
+        } else {
+            return presentingViewController!.preferredStatusBarStyle()
+        }
     }
     
     @IBAction func cancelButtonDidPress(sender: AnyObject) {

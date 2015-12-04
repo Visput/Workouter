@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-9p-3F9">
-                                <rect key="frame" x="0.0" y="417.5" width="375" height="249.5"/>
+                                <rect key="frame" x="0.0" y="417" width="375" height="249.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_dialog_white" translatesAutoresizingMaskIntoConstraints="NO" id="0xI-OT-lws">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
@@ -34,7 +34,7 @@
                                             <constraint firstAttribute="height" constant="60" id="ex7-ZY-eCP"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oO-4s-36p">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oO-4s-36p">
                                         <rect key="frame" x="32" y="108" width="311" height="20.5"/>
                                         <animations/>
                                         <constraints>
@@ -50,7 +50,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P4-sT-LKf">
-                                        <rect key="frame" x="32" y="138.5" width="311" height="20.5"/>
+                                        <rect key="frame" x="32" y="138" width="311" height="20.5"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="xha-6d-FNx"/>

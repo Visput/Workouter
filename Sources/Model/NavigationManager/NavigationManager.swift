@@ -70,8 +70,6 @@ extension NavigationManager {
     }
     
     func showDialog(dialog: UIViewController) {
-        dialog.modalPresentationStyle = .OverCurrentContext
-        
         // Dialog is allowed to be presented over already presented view controller.
         let presentingViewController = navigationController.presentedViewController ?? navigationController
         presentingViewController.presentViewController(dialog, animated: false, completion: nil)
@@ -97,6 +95,24 @@ extension NavigationManager {
 
 extension NavigationManager {
     
+    func instantiateWorkoutDetailsScreenWithWorkout(workout: Workout) -> WorkoutDetailsScreen {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        screen.workout = workout
+        
+        return screen
+    }
+    
+    func instantiateWelcomePageContentControllerWithItem(item: WelcomePageItem) -> WelcomePageContentController {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WelcomePageContentController.className())
+            as! WelcomePageContentController
+        screen.item = item
+        
+        return screen
+    }
+}
+
+extension NavigationManager {
+    
     func setWelcomeScreenAsRootAnimated(animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WelcomeScreen.className()) as! WelcomeScreen
         setScreens([screen], animated: animated)
@@ -109,13 +125,6 @@ extension NavigationManager {
 }
 
 extension NavigationManager {
-    
-    func workoutDetailsScreenWithWorkout(workout: Workout) -> WorkoutDetailsScreen {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
-        screen.workout = workout
-        
-        return screen
-    }
     
     func pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen

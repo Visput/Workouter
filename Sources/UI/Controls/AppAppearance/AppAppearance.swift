@@ -50,6 +50,10 @@ final class AppAppearance {
         colorView.backgroundColor = UIColor.transparentPrimaryColor()
         UITableViewCell.appearance().selectedBackgroundView = colorView
         
+        // UIPageControl.
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.borderColor()
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.primaryColor()
+        
         // TintButton.
         TintButton.appearance().primaryColor = UIColor.primaryColor()
         TintButton.appearance().secondaryColor = UIColor.whiteColor()
