@@ -18,7 +18,7 @@ final class AppShortcutsManager: NSObject {
     
     private enum ShortcutIdentifier: String {
         case StartWorkout
-        case NewWorkout
+        case CreateWorkout
         case SearchWorkout
         
         init?(type: String) {
@@ -58,35 +58,36 @@ final class AppShortcutsManager: NSObject {
         
         switch shortcutId {
         case .StartWorkout:
-            navigationManager.dismissScreenAnimated(false)
+            navigationManager.dismissToRootScreenAnimated(false)
             if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
                 navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
             } else {
                 navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
             }
             break
-        case .NewWorkout:
-            navigationManager.dismissScreenAnimated(false)
+            
+        case .CreateWorkout:
+            navigationManager.dismissToRootScreenAnimated(false)
             navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
             navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
                 animated: false,
                 templateDidSelectAction: { [unowned self] workout in
                     
-                    self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
-                        showWorkoutDetailsOnCompletion: true,
-                        animated: false,
+                    self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
+                        animated: true,
                         workoutDidEditAction: { workout in
                             self.workoutsProvider.addWorkout(workout)
+                            self.navigationManager.dismissScreenAnimated(true)
+                            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                     })
-                    self.navigationManager.dismissScreenAnimated(true)
                     
                 }, templateDidCancelAction: {
                     self.navigationManager.dismissScreenAnimated(true)
             })
-            
             break
+            
         case .SearchWorkout:
-            navigationManager.dismissScreenAnimated(false)
+            navigationManager.dismissToRootScreenAnimated(false)
             navigationManager.popToWorkoutsScreenWithSearchActive(true, animated: false)
             break
         }
@@ -105,10 +106,10 @@ final class AppShortcutsManager: NSObject {
             shortcuts.append(playWorkoutShortcut)
         }
         
-        // New Workout.
-        let newWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.NewWorkout.type,
-            localizedTitle: NSLocalizedString("New Workout", comment: ""))
-        shortcuts.append(newWorkoutShortcut)
+        // Create Workout.
+        let createWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.CreateWorkout.type,
+            localizedTitle: NSLocalizedString("Create Workout", comment: ""))
+        shortcuts.append(createWorkoutShortcut)
         
         // Search Workout.
         let searchWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.SearchWorkout.type,

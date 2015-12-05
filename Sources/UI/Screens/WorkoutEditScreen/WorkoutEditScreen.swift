@@ -99,11 +99,12 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let stepIndex = indexPath.row
         let step = workout.steps[stepIndex]
-        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step,
+        navigationManager.presentStepEditScreenWithStep(step,
             animated: true,
             stepDidEditAction: { [unowned self] step in
                 
                 self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
+                self.navigationManager.dismissScreenAnimated(true)
             })
     }
 }
@@ -114,12 +115,6 @@ extension WorkoutEditScreen {
         workoutEditView.endEditing(true)
         if validateWorkout() {
             workoutDidEditAction?(workout: workout)
-            
-            if showWorkoutDetailsOnCompletion {
-                navigationManager.pushWorkoutDetailsScreenFromPreviousScreenWithWorkout(workout, animated: true)
-            } else {
-                navigationManager.popScreenAnimated(true)
-            }
         }
     }
     
@@ -130,13 +125,13 @@ extension WorkoutEditScreen {
             animated: true,
             templateDidSelectAction: { [unowned self] step in
                 
-                self.navigationManager.dismissScreenAnimated(true)
-                self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step,
-                    animated: false,
+                self.navigationManager.pushStepEditScreenWithStep(step,
+                    animated: true,
                     stepDidEditAction: { step in
                         
                         self.workout = self.workout.workoutByAddingStep(step)
                         self.workoutEditView.newExersizeStepButton.valid = true
+                        self.navigationManager.dismissScreenAnimated(true)
                     })
                 
             }, templateDidCancelAction: { 
@@ -146,12 +141,13 @@ extension WorkoutEditScreen {
     
     @IBAction private func newRestStepButtonDidPress(sender: AnyObject) {
         let step = Step.emptyRestStep().stepBySettingName(NSLocalizedString("Rest", comment: ""))
-        navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step,
+        navigationManager.presentStepEditScreenWithStep(step,
             animated: true,
             stepDidEditAction: { [unowned self] step in
                 
                 self.workout = self.workout.workoutByAddingStep(step)
                 self.workoutEditView.newExersizeStepButton.valid = true
+                self.navigationManager.dismissScreenAnimated(true)
             })
     }
 }

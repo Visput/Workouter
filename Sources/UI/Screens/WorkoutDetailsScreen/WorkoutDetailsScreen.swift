@@ -77,11 +77,11 @@ extension WorkoutDetailsScreen {
     }
     
     @IBAction private func editWorkoutButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutEditScreenFromCurrentScreenWithWorkout(workout,
-            showWorkoutDetailsOnCompletion: false,
+        navigationManager.presentWorkoutEditScreenWithWorkout(workout,
             animated: true,
             workoutDidEditAction: { [unowned self] workout in
                 self.workout = workout
+                self.navigationManager.dismissScreenAnimated(true)
         })
     }
 }

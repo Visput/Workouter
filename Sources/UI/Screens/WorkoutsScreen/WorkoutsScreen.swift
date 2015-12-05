@@ -103,17 +103,18 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         
         if workoutsView.mode == .Edit {
-            navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
-                showWorkoutDetailsOnCompletion: true,
+            navigationManager.presentWorkoutEditScreenWithWorkout(workout,
                 animated: true,
                 workoutDidEditAction: { [unowned self] workout in
                     
                     self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
                     self.workoutsView.workoutsTableView.reloadData()
+                    self.navigationManager.dismissScreenAnimated(true)
+                    self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                 })
             
         } else {
-            navigationManager.pushWorkoutDetailsScreenFromCurrentScreenWithWorkout(workout, animated: true)
+            navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
         }
     }
 }
@@ -176,14 +177,14 @@ extension WorkoutsScreen {
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
                 
-                self.navigationManager.dismissScreenAnimated(true)
-                self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
-                    showWorkoutDetailsOnCompletion: true,
+                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
                     animated: true,
                     workoutDidEditAction: { [unowned self] workout in
                         
                     self.workoutsProvider.addWorkout(workout)
                     self.workoutsView.workoutsTableView.reloadData()
+                    self.navigationManager.dismissScreenAnimated(true)
+                    self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                 })
                 
             }, templateDidCancelAction: { 
