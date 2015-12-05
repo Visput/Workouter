@@ -176,6 +176,7 @@ extension WorkoutsScreen {
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
                 
+                self.navigationManager.dismissScreenAnimated(true)
                 self.navigationManager.pushWorkoutEditScreenFromWorkoutsScreenWithWorkout(workout,
                     showWorkoutDetailsOnCompletion: true,
                     animated: true,
@@ -184,7 +185,6 @@ extension WorkoutsScreen {
                     self.workoutsProvider.addWorkout(workout)
                     self.workoutsView.workoutsTableView.reloadData()
                 })
-                self.navigationManager.dismissScreenAnimated(true)
                 
             }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)

@@ -130,6 +130,7 @@ extension WorkoutEditScreen {
             animated: true,
             templateDidSelectAction: { [unowned self] step in
                 
+                self.navigationManager.dismissScreenAnimated(true)
                 self.navigationManager.pushStepEditScreenFromCurrentScreenWithStep(step,
                     animated: false,
                     stepDidEditAction: { step in
@@ -137,7 +138,6 @@ extension WorkoutEditScreen {
                         self.workout = self.workout.workoutByAddingStep(step)
                         self.workoutEditView.newExersizeStepButton.valid = true
                     })
-                self.navigationManager.dismissScreenAnimated(true)
                 
             }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)

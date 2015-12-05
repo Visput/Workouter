@@ -12,7 +12,9 @@ final class NavigationManager: NSObject {
     
     var window: UIWindow! {
         didSet {
-            navigationController.delegate = self
+            rootNavigationController = window.rootViewController! as! UINavigationController
+            rootNavigationController.delegate = self
+            currentNavigationController = rootNavigationController
         }
     }
     
@@ -24,9 +26,9 @@ final class NavigationManager: NSObject {
         return UIStoryboard(name: "Dialogs", bundle: NSBundle.mainBundle())
     }()
     
-    private var navigationController: UINavigationController {
-        return window.rootViewController! as! UINavigationController
-    }
+    private var rootNavigationController: UINavigationController!
+    private var presentedNavigationController: UINavigationController?
+    private weak var currentNavigationController: UINavigationController!
 }
 
 extension NavigationManager: UINavigationControllerDelegate {
@@ -40,56 +42,63 @@ extension NavigationManager: UINavigationControllerDelegate {
 extension NavigationManager {
     
     func pushScreen(screen: UIViewController, animated: Bool) {
-        navigationController.pushViewController(screen, animated: animated)
+        currentNavigationController.pushViewController(screen, animated: animated)
     }
     
     func popScreenAnimated(animated: Bool) {
-        navigationController.popViewControllerAnimated(animated)
+        currentNavigationController.popViewControllerAnimated(animated)
     }
     
     func popToRootScreenAnimated(animated: Bool) {
-        navigationController.popToRootViewControllerAnimated(animated)
+        currentNavigationController.popToRootViewControllerAnimated(animated)
     }
     
     func presentScreen(screen: UIViewController,
         wrapWithNavigationController: Bool,
         animated: Bool) {
+            guard presentedNavigationController == nil else {
+                let currentScreen = presentedNavigationController!.topViewController!
+                fatalError("Can't present screen (\(screen)) over already presented screen (\(currentScreen))")
+            }
             
             if wrapWithNavigationController {
-                let presentationController = UINavigationController(rootViewController: screen)
-                presentationController.delegate = self
+                presentedNavigationController = UINavigationController(rootViewController: screen)
+                presentedNavigationController!.delegate = self
                 
-                navigationController.presentViewController(presentationController, animated: animated, completion: nil)
+                rootNavigationController.presentViewController(presentedNavigationController!, animated: animated, completion: nil)
+                currentNavigationController = presentedNavigationController!
             } else {
-                navigationController.presentViewController(screen, animated: animated, completion: nil)
+                rootNavigationController.presentViewController(screen, animated: animated, completion: nil)
             }
     }
     
     func dismissScreenAnimated(animated: Bool) {
-        navigationController.dismissViewControllerAnimated(animated, completion: nil)
+        rootNavigationController.dismissViewControllerAnimated(animated, completion: nil)
+        currentNavigationController = rootNavigationController
+        presentedNavigationController = nil
     }
     
     func showDialog(dialog: UIViewController) {
         // Dialog is allowed to be presented over already presented view controller.
-        let presentingViewController = navigationController.presentedViewController ?? navigationController
-        presentingViewController.presentViewController(dialog, animated: false, completion: nil)
+        let presentingViewController = currentNavigationController.presentedViewController ?? currentNavigationController
+        presentingViewController!.presentViewController(dialog, animated: false, completion: nil)
     }
     
     func dismissDialog() {
         // Check if dialog was presented over navigation controller or over already presented view controller.
-        var presentingViewController: UIViewController = navigationController
-        if navigationController.presentedViewController?.presentedViewController != nil {
-            presentingViewController = navigationController.presentedViewController!
+        var presentingViewController: UIViewController = currentNavigationController
+        if currentNavigationController.presentedViewController?.presentedViewController != nil {
+            presentingViewController = currentNavigationController.presentedViewController!
         }
         presentingViewController.dismissViewControllerAnimated(false, completion: nil)
     }
     
     func setNavigationBarHidden(hidden: Bool, animated: Bool) {
-        navigationController.setNavigationBarHidden(hidden, animated: animated)
+        currentNavigationController.setNavigationBarHidden(hidden, animated: animated)
     }
     
     private func setScreens(screens: [UIViewController], animated: Bool) {
-        navigationController.setViewControllers(screens, animated: animated)
+        currentNavigationController.setViewControllers(screens, animated: animated)
     }
 }
 
@@ -137,7 +146,7 @@ extension NavigationManager {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
-        var screens = navigationController.viewControllers
+        var screens = rootNavigationController.viewControllers
         screens.removeLast()
         screens.append(screen)
         
@@ -148,7 +157,7 @@ extension NavigationManager {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
-        let screens = [navigationController.viewControllers[0], screen]
+        let screens = [rootNavigationController.viewControllers[0], screen]
         
         setScreens(screens, animated: animated)
     }
@@ -200,7 +209,7 @@ extension NavigationManager {
             screen.showWorkoutDetailsOnCompletion = showWorkoutDetailsOnCompletion
             screen.workoutDidEditAction = workoutDidEditAction
             
-            let screens = [navigationController.viewControllers[0], screen]
+            let screens = [rootNavigationController.viewControllers[0], screen]
             
             setScreens(screens, animated: animated)
     }
@@ -223,7 +232,7 @@ extension NavigationManager {
     
     func popToWorkoutsScreenWithSearchActive(searchActive: Bool, animated: Bool) {
         popToRootScreenAnimated(animated)
-        let screen = navigationController.viewControllers[0] as! WorkoutsScreen
+        let screen = rootNavigationController.viewControllers[0] as! WorkoutsScreen
         screen.needsActivateSearch = searchActive
     }
     
