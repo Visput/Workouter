@@ -13,17 +13,17 @@ final class WelcomeScreen: BaseScreen {
     private lazy var pageItems: [WelcomePageItem] = {
         let firstPageItem = WelcomePageItem(title: NSLocalizedString("Workouter", comment: ""),
             subtitle: NSLocalizedString("Welcome to new world of health.", comment: ""),
-            icon: UIImage(named: "icon_info")!,
+            icon: UIImage(named: "icon_info_green")!,
             index: 0)
         
         let secondPageItem = WelcomePageItem(title: NSLocalizedString("Healthy", comment: ""),
             subtitle: NSLocalizedString("Workouter consistently improves your health.", comment: ""),
-            icon: UIImage(named: "icon_info")!,
+            icon: UIImage(named: "icon_info_green")!,
             index: 1)
         
         let thirdPageItem = WelcomePageItem(title: NSLocalizedString("Customizable", comment: ""),
             subtitle: NSLocalizedString("Workouter allows you create personal workouts.", comment: ""),
-            icon: UIImage(named: "icon_info")!,
+            icon: UIImage(named: "icon_info_green")!,
             index: 2)
         
         return [firstPageItem, secondPageItem, thirdPageItem]

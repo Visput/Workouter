@@ -907,7 +907,7 @@
                                     <constraint firstAttribute="height" constant="40" id="T3U-hZ-jn0"/>
                                     <constraint firstAttribute="width" constant="44" id="eje-k2-Lr2"/>
                                 </constraints>
-                                <state key="normal" image="icon_info_small"/>
+                                <state key="normal" image="icon_info_green_small"/>
                                 <connections>
                                     <action selector="descriptionButtonDidPress:" destination="HpB-m2-ign" eventType="touchUpInside" id="baP-Iy-04n"/>
                                 </connections>
@@ -1692,7 +1692,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Nzv-pc-xJ0"/>
                                     <constraint firstAttribute="width" constant="44" id="svS-iu-bi4"/>
                                 </constraints>
-                                <state key="normal" image="icon_info_small"/>
+                                <state key="normal" image="icon_info_green_small"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="47G-CP-Lnn"/>
@@ -1806,7 +1806,7 @@
     <resources>
         <image name="background_green" width="375" height="144"/>
         <image name="icon_facebook_green" width="20" height="20"/>
-        <image name="icon_info_small" width="22" height="22"/>
+        <image name="icon_info_green_small" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aFV-Nt-De2"/>

@@ -83,8 +83,8 @@ extension TextDialog {
             textView.iconView.image = icon
         } else {
             switch style {
-            case .Info: textView.iconView.image = UIImage(named: "icon_info")
-            case .Error: textView.iconView.image = UIImage(named: "icon_attention")
+            case .Info: textView.iconView.image = UIImage(named: "icon_info_green")
+            case .Error: textView.iconView.image = UIImage(named: "icon_attention_red")
             }
         }
     }
