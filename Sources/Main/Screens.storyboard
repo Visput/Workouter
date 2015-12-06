@@ -213,6 +213,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Workouts" id="UUS-jR-n5u">
+                        <barButtonItem key="backBarButtonItem" title=" " id="L1j-vj-Ruj"/>
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="sSU-yd-C0E">
                             <connections>
                                 <action selector="modeButtonDidPress:" destination="vXZ-lx-hvc" id="K4S-Xh-rvn"/>
@@ -371,7 +372,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Workout" id="Vfg-Wf-s8Z">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="J4Q-ec-dHl"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="J4Q-ec-dHl"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="KWB-u3-vYc">
                             <connections>
                                 <action selector="editWorkoutButtonDidPress:" destination="PdQ-wH-eFa" id="dmM-vB-uVV"/>
@@ -465,7 +466,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Step" id="oqA-g8-udP">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GV3-kA-uPR"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="GV3-kA-uPR"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="VG6-Gt-cZ1">
                             <connections>
                                 <action selector="doneButtonDidPress:" destination="DeW-bz-VWC" id="weo-hy-Q0w"/>
@@ -650,7 +651,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Step Template" id="Rfc-fg-JCC">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="2Hl-ZL-6r3"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="2Hl-ZL-6r3"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="KgH-o9-Nb7">
                             <connections>
                                 <action selector="cancelButtonDidPress:" destination="wge-Zj-SEy" id="wOG-Yd-fda"/>
@@ -857,7 +858,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Workout" id="S6U-G9-WlT">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="rJB-RT-FqB"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="rJB-RT-FqB"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1ZA-Xi-eV7">
                             <connections>
                                 <action selector="doneButtonDidPress:" destination="5cI-Xv-1fW" id="xrd-xd-TK9"/>
@@ -1570,7 +1571,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Workout Template" id="HnG-ux-cbh">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="6xX-Yk-FdX"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="6xX-Yk-FdX"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="hXy-Yo-O4h">
                             <connections>
                                 <action selector="cancelButtonDidPress:" destination="KzS-hr-I4E" id="HuV-ki-eMx"/>
@@ -1649,7 +1650,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="N4x-sV-3EW"/>
+                    <navigationItem key="navigationItem" title="Settings" id="N4x-sV-3EW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="mWM-r5-4Am"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>

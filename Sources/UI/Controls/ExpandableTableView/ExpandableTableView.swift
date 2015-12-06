@@ -42,7 +42,7 @@ extension ExpandableTableView {
         if sectionHeaders.count != dataSource.numberOfSectionsInExpandableTableView(self) {
             for var section = 0; section < dataSource.numberOfSectionsInExpandableTableView(self); section++ {
                 sectionHeader = dataSource.expandableTableView(self, sectionHeaderAtIndex: section)
-                sectionHeader.addTarget(self, action: "sectionHeaderDidPress:", forControlEvents: .TouchUpInside)
+                sectionHeader.addTarget(self, action: Selector("sectionHeaderDidPress:"), forControlEvents: .TouchUpInside)
                 sectionHeaders.append(sectionHeader)
             }
         }

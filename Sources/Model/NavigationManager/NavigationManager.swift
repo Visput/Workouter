@@ -48,14 +48,6 @@ final class NavigationManager: NSObject {
     }
 }
 
-extension NavigationManager: UINavigationControllerDelegate {
-    
-    func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
-        guard let viewController = navigationController.topViewController else { return UIInterfaceOrientationMask.Portrait }
-        return viewController.supportedInterfaceOrientations()
-    }
-}
-
 extension NavigationManager {
     
     // Push / Pop screen.
@@ -75,6 +67,22 @@ extension NavigationManager {
         inNavigationController navigationController: UINavigationController,
         animated: Bool) {
         navigationController.pushViewController(screen, animated: animated)
+            
+        // We use custom navigation back buttons.
+        // So we have to munually manage pop gesture.
+        navigationController.interactivePopGestureRecognizer?.delegate = self
+        navigationController.interactivePopGestureRecognizer?.enabled = true
+    }
+    
+    private func setScreens(screens: [UIViewController],
+        inNavigationController navigationController: UINavigationController,
+        animated: Bool) {
+            navigationController.setViewControllers(screens, animated: animated)
+            
+            // We use custom navigation back buttons.
+            // So we have to munually manage pop gesture.
+            navigationController.interactivePopGestureRecognizer?.delegate = self
+            navigationController.interactivePopGestureRecognizer?.enabled = true
     }
     
     private func popScreenInNavigationController(navigationController: UINavigationController,
@@ -85,12 +93,6 @@ extension NavigationManager {
     private func popToRootScreenInNavigationController(navigationController: UINavigationController,
         animated: Bool) {
         navigationController.popToRootViewControllerAnimated(animated)
-    }
-    
-    private func setScreens(screens: [UIViewController],
-        inNavigationController navigationController: UINavigationController,
-        animated: Bool) {
-            navigationController.setViewControllers(screens, animated: animated)
     }
     
     // Present / Dismiss screen.
@@ -297,5 +299,23 @@ extension NavigationManager {
         dialog.secondaryText = message
         dialog.style = .Error
         showDialog(dialog)
+    }
+}
+
+extension NavigationManager: UINavigationControllerDelegate {
+    
+    func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        guard let viewController = navigationController.topViewController else { return UIInterfaceOrientationMask.Portrait }
+        return viewController.supportedInterfaceOrientations()
+    }
+}
+
+extension NavigationManager: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard topNavigationController.viewControllers.count > 1 &&
+            !topNavigationController.navigationBarHidden else { return false }
+        
+        return true
     }
 }

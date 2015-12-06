@@ -93,6 +93,8 @@
 		9F94441F1C000330003E333B /* TextDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F94441D1C000330003E333B /* TextDialog.swift */; };
 		9F9444211C0003F1003E333B /* TextDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444201C0003F1003E333B /* TextDialogView.swift */; };
 		9F9444221C0003F1003E333B /* TextDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9444201C0003F1003E333B /* TextDialogView.swift */; };
+		9F9E82E81C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E82E71C14128E00920B66 /* UIBarButtonItem+Custom.swift */; };
+		9F9E82E91C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E82E71C14128E00920B66 /* UIBarButtonItem+Custom.swift */; };
 		9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F5901BE317F400A3844D /* DurationViewController.swift */; };
 		9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2F59B1BE337E300A3844D /* DurationComponent.swift */; };
@@ -249,6 +251,7 @@
 		9F94441A1C0001BE003E333B /* BaseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialog.swift; sourceTree = "<group>"; };
 		9F94441D1C000330003E333B /* TextDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialog.swift; sourceTree = "<group>"; };
 		9F9444201C0003F1003E333B /* TextDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialogView.swift; sourceTree = "<group>"; };
+		9F9E82E71C14128E00920B66 /* UIBarButtonItem+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Custom.swift"; sourceTree = "<group>"; };
 		9FA2F5901BE317F400A3844D /* DurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationViewController.swift; sourceTree = "<group>"; };
 		9FA2F59B1BE337E300A3844D /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationComponent.swift; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
@@ -573,6 +576,14 @@
 			path = TextDialog;
 			sourceTree = "<group>";
 		};
+		9F9E82E61C14122700920B66 /* UIBarButtonItem+Custom */ = {
+			isa = PBXGroup;
+			children = (
+				9F9E82E71C14128E00920B66 /* UIBarButtonItem+Custom.swift */,
+			);
+			path = "UIBarButtonItem+Custom";
+			sourceTree = "<group>";
+		};
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +692,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F9E82E61C14122700920B66 /* UIBarButtonItem+Custom */,
 				9F88A3F91C08580300C1FDD9 /* UIScreen+Size */,
 				9F697E541C029E9100BAB0EC /* UIView+Animation */,
 				9F38C3431C011D74007AAC68 /* UIImageView+Stretch */,
@@ -1363,6 +1375,7 @@
 				F02CAB5E1B4B871E00F28D72 /* BaseScreenView.swift in Sources */,
 				F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */,
 				9F6BD7751BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */,
+				9F9E82E81C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1445,6 +1458,7 @@
 				F09702CC1ACA48E700498DEE /* BaseScreenView.swift in Sources */,
 				F09702CD1ACA48E700498DEE /* WorkoutsView.swift in Sources */,
 				9F6BD7761BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */,
+				9F9E82E91C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

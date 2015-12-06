@@ -58,10 +58,10 @@ class BaseDialog: BaseViewController {
 extension BaseDialog: UIGestureRecognizerDelegate {
     
     func configureGestureRecognizers() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "cancelButtonDidPress:")
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("cancelButtonDidPress:"))
         tapRecognizer.delegate = self
         
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: "cancelButtonDidPress:")
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("cancelButtonDidPress:"))
         swipeRecognizer.direction = .Down
         
         baseView.backgroundView.addGestureRecognizer(tapRecognizer)
