@@ -234,11 +234,13 @@ extension NavigationManager {
     
     func presentWorkoutEditScreenWithWorkout(workout: Workout,
         animated: Bool,
-        workoutDidEditAction: ((workout: Workout) -> Void)?) {
+        workoutDidEditAction: ((workout: Workout) -> Void)?,
+        workoutDidCancelAction: (() -> Void)?) {
             
             let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
             screen.workout = workout
             screen.workoutDidEditAction = workoutDidEditAction
+            screen.workoutDidCancelAction = workoutDidCancelAction
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
@@ -266,11 +268,13 @@ extension NavigationManager {
     
     func presentStepEditScreenWithStep(step: Step,
         animated: Bool,
-        stepDidEditAction: ((step: Step) -> Void)?) {
+        stepDidEditAction: ((step: Step) -> Void)?,
+        stepDidCancelAction: (() -> Void)?) {
             
             let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step
             screen.stepDidEditAction = stepDidEditAction
+            screen.stepDidCancelAction = stepDidCancelAction
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     

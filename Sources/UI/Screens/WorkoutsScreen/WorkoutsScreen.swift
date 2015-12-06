@@ -111,6 +111,9 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
                     self.workoutsView.workoutsTableView.reloadData()
                     self.navigationManager.dismissScreenAnimated(true)
                     self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                    
+                }, workoutDidCancelAction: { [unowned self] in
+                    self.navigationManager.dismissScreenAnimated(true)
                 })
             
         } else {

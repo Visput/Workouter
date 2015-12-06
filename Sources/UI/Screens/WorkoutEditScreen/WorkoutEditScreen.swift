@@ -11,6 +11,7 @@ import UIKit
 final class WorkoutEditScreen: BaseScreen {
     
     var workoutDidEditAction: ((workout: Workout) -> Void)?
+    var workoutDidCancelAction: (() -> Void)?
     
     var workout: Workout! {
         didSet {
@@ -105,18 +106,14 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
                 
                 self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
                 self.navigationManager.dismissScreenAnimated(true)
+                
+            }, stepDidCancelAction: { [unowned self] in
+                self.navigationManager.dismissScreenAnimated(true)
             })
     }
 }
 
 extension WorkoutEditScreen {
-    
-    @IBAction private func doneButtonDidPress(sender: AnyObject) {
-        workoutEditView.endEditing(true)
-        if validateWorkout() {
-            workoutDidEditAction?(workout: workout)
-        }
-    }
     
     @IBAction private func newExersizeStepButtonDidPress(sender: AnyObject) {
         let searchRequest = StepsSearchRequest(workout: workout, searchText: "", includeRestSteps: false)
@@ -132,9 +129,9 @@ extension WorkoutEditScreen {
                         self.workout = self.workout.workoutByAddingStep(step)
                         self.workoutEditView.newExersizeStepButton.valid = true
                         self.navigationManager.dismissScreenAnimated(true)
-                    })
+                })
                 
-            }, templateDidCancelAction: { 
+            }, templateDidCancelAction: {
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }
@@ -148,11 +145,44 @@ extension WorkoutEditScreen {
                 self.workout = self.workout.workoutByAddingStep(step)
                 self.workoutEditView.newExersizeStepButton.valid = true
                 self.navigationManager.dismissScreenAnimated(true)
+            }, stepDidCancelAction: { [unowned self] in
+                self.navigationManager.dismissScreenAnimated(true)
             })
+    }
+    
+    @objc private func cancelButtonDidPress(sender: AnyObject) {
+        workoutEditView.endEditing(true)
+        workoutDidCancelAction?()
+    }
+    
+    @objc private func doneButtonDidPress(sender: AnyObject) {
+        workoutEditView.endEditing(true)
+        if validateWorkout() {
+            workoutDidEditAction?(workout: workout)
+        }
     }
 }
 
 extension WorkoutEditScreen {
+    
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        if backButtonShown() {
+            // Show red back button item instead of green button.
+            navigationItem.leftBarButtonItem = UIBarButtonItem.redBackItemWithAlignment(.Left,
+                target: self,
+                action: Selector("backButtonDidPress:"))
+            
+        } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem.redCancelItemWithAlignment(.Left,
+                target: self,
+                action: Selector("cancelButtonDidPress:"))
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
+            target: self,
+            action: Selector("doneButtonDidPress:"))
+    }
     
     private func fillViewWithWorkout(workout: Workout) {
         nameController.text = workout.name

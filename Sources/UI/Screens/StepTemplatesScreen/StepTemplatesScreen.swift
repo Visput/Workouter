@@ -83,7 +83,14 @@ extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelega
 
 extension StepTemplatesScreen {
     
-    @IBAction private func cancelButtonDidPress(sender: AnyObject) {
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
+            target: self,
+            action: Selector("cancelButtonDidPress:"))
+    }
+    
+    @objc private func cancelButtonDidPress(sender: AnyObject) {
         templateDidCancelAction?()
     }
     

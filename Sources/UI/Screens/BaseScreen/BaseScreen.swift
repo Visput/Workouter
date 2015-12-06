@@ -20,21 +20,27 @@ class BaseScreen: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        configureBackButton()
+        configureBarButtonItems()
     }
 }
 
 extension BaseScreen {
     
+    func backButtonShown() -> Bool {
+        return navigationController?.viewControllers.count > 1
+    }
+    
     func backButtonDidPress(sender: AnyObject) {
         navigationManager.popScreenAnimated(true)
     }
     
-    private func configureBackButton() {
+    func configureBarButtonItems() {
+        // Hide standard back button as we use custom buttons.
         navigationItem.hidesBackButton = true
         
-        if navigationController?.viewControllers.count > 1 {
-            navigationItem.leftBarButtonItem = UIBarButtonItem.backItemWithTarget(self,
+        if backButtonShown() {
+            navigationItem.leftBarButtonItem = UIBarButtonItem.greenBackItemWithAlignment(.Left,
+                target: self,
                 action: Selector("backButtonDidPress:"))
         }
     }

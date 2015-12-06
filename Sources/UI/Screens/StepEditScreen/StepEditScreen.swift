@@ -11,6 +11,7 @@ import UIKit
 final class StepEditScreen: BaseScreen {
     
     var stepDidEditAction: ((step: Step) -> Void)?
+    var stepDidCancelAction: (() -> Void)?
     
     var step: Step!
     
@@ -50,7 +51,12 @@ final class StepEditScreen: BaseScreen {
 
 extension StepEditScreen {
     
-    @IBAction private func doneButtonDidPress(sender: AnyObject) {
+    @objc private func cancelButtonDidPress(sender: AnyObject) {
+        stepEditView.endEditing(true)
+        stepDidCancelAction?()
+    }
+    
+    @objc private func doneButtonDidPress(sender: AnyObject) {
         stepEditView.endEditing(true)
         if validateStep() {
             stepDidEditAction?(step: step)
@@ -59,6 +65,25 @@ extension StepEditScreen {
 }
 
 extension StepEditScreen {
+    
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        if backButtonShown() {
+            // Show red back button item instead of green button.
+            navigationItem.leftBarButtonItem = UIBarButtonItem.redBackItemWithAlignment(.Left,
+                target: self,
+                action: Selector("backButtonDidPress:"))
+            
+        } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem.redCancelItemWithAlignment(.Left,
+                target: self,
+                action: Selector("cancelButtonDidPress:"))
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
+            target: self,
+            action: Selector("doneButtonDidPress:"))
+    }
     
     private func fillViewWithStep(step: Step) {
         switch step.type {

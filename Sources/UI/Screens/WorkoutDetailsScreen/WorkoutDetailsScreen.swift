@@ -82,7 +82,9 @@ extension WorkoutDetailsScreen {
             workoutDidEditAction: { [unowned self] workout in
                 self.workout = workout
                 self.navigationManager.dismissScreenAnimated(true)
-        })
+            }, workoutDidCancelAction: { [unowned self] in
+                self.navigationManager.dismissScreenAnimated(true)
+            })
     }
 }
 
