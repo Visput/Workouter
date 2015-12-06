@@ -40,6 +40,12 @@ final class TintButton: UIButton {
         }
     }
     
+    @IBInspectable dynamic var borderVisible: Bool = true {
+        didSet {
+            updateAppearance()
+        }
+    }
+    
     @IBInspectable dynamic var valid: Bool = true {
         didSet {
             updateAppearance()
@@ -103,6 +109,11 @@ final class TintButton: UIButton {
 extension TintButton {
     
     private func updateAppearance() {
+        // Layer.
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = cornerRadius > 0
+        layer.borderWidth = borderVisible ? 1.0 : 0.0
+        
         // Colors.
         if valid {
             currentPrimaryColor = primaryColor
@@ -155,10 +166,6 @@ extension TintButton {
         let imageWidth = imageView != nil ? imageView!.frame.size.width : 0.0
         let widthInset = (frame.size.width - titleWidth) / 2.0 - imageWidth - contentEdgeInsets.left
         titleEdgeInsets = UIEdgeInsets(top: 0, left: widthInset, bottom: 0.0, right: 0.0)
-        
-        // Other.
-        layer.cornerRadius = cornerRadius
-        layer.masksToBounds = cornerRadius > 0
     }
     
     private func selectedColorForColor(color: UIColor) -> UIColor {
@@ -180,7 +187,6 @@ extension TintButton {
     }
     
     private func applyDefaultValues() {
-        layer.borderWidth = 1.0
         adjustsImageWhenHighlighted = false
         adjustsImageWhenDisabled = true
         contentHorizontalAlignment = .Left

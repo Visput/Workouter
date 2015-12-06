@@ -20,11 +20,12 @@ extension UIBarButtonItem {
     
     private class func barButtonWithImageNamed(imageName: String,
         target: AnyObject,
-        action: Selector) -> UIButton {
+        action: Selector) -> TintButton {
             
-            let button = UIButton(type: .Custom)
+            let button = TintButton(type: .Custom)
+            button.borderVisible = false
             button.setImage(UIImage(named: imageName), forState: .Normal)
-            button.frame = CGRectMake(0.0, 0.0, 60.0, 48.0)
+            button.frame = CGRectMake(0.0, 0.0, 60.0, 44.0)
             button.contentHorizontalAlignment = .Left
             // Set bottom inset for correct allignment between bar button and bar title.
             button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 4.0, 0.0)
