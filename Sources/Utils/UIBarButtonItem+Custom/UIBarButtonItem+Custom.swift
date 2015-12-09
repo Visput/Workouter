@@ -26,7 +26,7 @@ extension UIBarButtonItem {
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_back_green",
+        let barButton = barButtonWithImageNamed("icon_back_red",
             horizontalAlignment: alignment,
             target: target,
             action: action)
@@ -38,7 +38,7 @@ extension UIBarButtonItem {
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_done_green",
+        let barButton = barButtonWithImageNamed("icon_done_simple_green",
             horizontalAlignment: alignment,
             target: target,
             action: action)
@@ -50,7 +50,7 @@ extension UIBarButtonItem {
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_cancel_red",
+        let barButton = barButtonWithImageNamed("icon_cancel_green",
             horizontalAlignment: alignment,
             target: target,
             action: action)
