@@ -75,7 +75,7 @@ extension CircleProgressView {
     
     private func drawProgressInRect(rect: CGRect) {
         let circle = circleDimensionsForRect(rect)
-        let context = UIGraphicsGetCurrentContext();
+        let context = UIGraphicsGetCurrentContext()
         
         // Circle.
         CGContextSetFillColorWithColor(context, fillColor.CGColor)
@@ -83,38 +83,38 @@ extension CircleProgressView {
         CGContextStrokePath(context)
         
         // Track.
-        var currentTrackAngle: CGFloat = 0.0
+        var currentTrackAngle: CGFloat = CGFloat(-M_PI_2)
         for progressItem in progressItems {
-            CGContextSetLineWidth(context, trackWidth);
-            CGContextSetStrokeColorWithColor(context, progressItem.trackTintColor.CGColor);
+            CGContextSetLineWidth(context, trackWidth)
+            CGContextSetStrokeColorWithColor(context, progressItem.trackTintColor.CGColor)
             
             let newTrackAngle = currentTrackAngle + (progressItem.progress / maxProgress).progressToRadians
             
-            CGContextAddArc(context, circle.center.x, circle.center.y, circle.radius, currentTrackAngle, newTrackAngle, 1);
-            CGContextStrokePath(context);
+            CGContextAddArc(context, circle.center.x, circle.center.y, circle.radius, currentTrackAngle, newTrackAngle, 0)
+            CGContextStrokePath(context)
+            
             currentTrackAngle = newTrackAngle
         }
         
         // Progress.
-        var currentProgressAngle: CGFloat = 0.0
+        var currentProgressAngle: CGFloat = CGFloat(-M_PI_2)
+        var currentProgress: CGFloat = 0.0
+        let finalProgressAngle = (progress / maxProgress).progressToRadians - CGFloat(M_PI_2)
+        
         for progressItem in progressItems {
-            CGContextSetLineWidth(context, progressWidth);
-            CGContextSetStrokeColorWithColor(context, progressItem.progressTintColor.CGColor);
+            guard currentProgress < progress else { break }
+            
+            CGContextSetLineWidth(context, progressWidth)
+            CGContextSetStrokeColorWithColor(context, progressItem.progressTintColor.CGColor)
             
             var newProgressAngle = currentProgressAngle + (progressItem.progress / maxProgress).progressToRadians
-            var needBreak = false
-            if newProgressAngle >= progress {
-                newProgressAngle = progress
-                needBreak = true
-            }
+            newProgressAngle = min(newProgressAngle, finalProgressAngle)
             
-            CGContextAddArc(context, circle.center.x, circle.center.y, circle.radius, currentProgressAngle, newProgressAngle, 0);
-            CGContextStrokePath(context);
+            CGContextAddArc(context, circle.center.x, circle.center.y, circle.radius, currentProgressAngle, newProgressAngle, 0)
+            CGContextStrokePath(context)
+            
             currentProgressAngle = newProgressAngle
-
-            if needBreak {
-                break
-            }
+            currentProgress = min(currentProgress + progressItem.progress, progress)
         }
     }
     
