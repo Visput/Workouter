@@ -62,6 +62,17 @@ final class WorkoutsProvider: NSObject {
         commitChanges()
     }
     
+    func replaceWorkout(workout: Workout, withWorkout newWorkout: Workout) {
+        for (index, aWorkout) in workouts.enumerate() {
+            if aWorkout.identifier == workout.identifier {
+                workouts[index] = newWorkout
+                notifyObserversDidUpdateWorkouts()
+                commitChanges()
+                break
+            }
+        }
+    }
+    
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
         var searchResults = [Step]()
         for workout in workouts {

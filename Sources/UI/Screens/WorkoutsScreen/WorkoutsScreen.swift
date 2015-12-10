@@ -35,6 +35,7 @@ final class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
+        workoutsProvider.observers.addObserver(self)
         
         registerForPreviewing()
         configureSearchController()
@@ -108,7 +109,6 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
                 workoutDidEditAction: { [unowned self] workout in
                     
                     self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
-                    self.workoutsView.workoutsTableView.reloadData()
                     self.navigationManager.dismissScreenAnimated(true)
                     self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                     
@@ -119,6 +119,13 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
         } else {
             navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
         }
+    }
+}
+
+extension WorkoutsScreen: WorkoutsProviderObserving {
+    
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+        workoutsView.workoutsTableView.reloadData()
     }
 }
 
@@ -185,7 +192,6 @@ extension WorkoutsScreen {
                     workoutDidEditAction: { [unowned self] workout in
                         
                     self.workoutsProvider.addWorkout(workout)
-                    self.workoutsView.workoutsTableView.reloadData()
                     self.navigationManager.dismissScreenAnimated(true)
                     self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                 })

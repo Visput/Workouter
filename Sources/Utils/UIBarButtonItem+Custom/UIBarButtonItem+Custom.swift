@@ -77,6 +77,8 @@ extension UIBarButtonItem {
             
             let button = TintButton(type: .Custom)
             button.borderVisible = false
+            button.primaryColor = UIColor.clearColor()
+            button.secondaryColor = UIColor.clearColor()
             button.setImage(UIImage(named: imageName), forState: .Normal)
             button.frame = CGRectMake(0.0, 0.0, 60.0, 44.0)
             button.contentHorizontalAlignment = horizontalAlignment

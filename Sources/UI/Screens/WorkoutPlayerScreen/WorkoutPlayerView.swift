@@ -10,4 +10,7 @@ import UIKit
 
 final class WorkoutPlayerView: BaseScreenView {
     
+    @IBOutlet private(set) weak var stepsPickerView: UIPickerView!
+    @IBOutlet private(set) weak var progressView: CircleProgressView!
+    
 }

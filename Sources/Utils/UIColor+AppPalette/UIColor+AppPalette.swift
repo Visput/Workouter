@@ -23,11 +23,25 @@ extension UIColor {
             alpha:0.09803921729326248)
     }
 
+    class func lightPrimaryColor() -> UIColor {
+        return UIColor(red: 0.8274509906768799,
+            green:0.9607843160629272,
+            blue:0.9215686321258545,
+            alpha:0.6666666865348816)
+    }
+
     class func secondaryColor() -> UIColor {
         return UIColor(red: 0.95686274766922,
             green:0.1529411822557449,
             blue:0.3254902064800262,
             alpha:1)
+    }
+
+    class func lightSecondaryColor() -> UIColor {
+        return UIColor(red: 0.9921568632125854,
+            green:0.8313725590705872,
+            blue:0.8666666746139526,
+            alpha:0.6666666865348816)
     }
 
     class func primaryTextColor() -> UIColor {
