@@ -17,6 +17,17 @@ final class WorkoutsScreen: BaseScreen {
         }
     }
     
+    private enum ScreenMode {
+        case Standard
+        case Edit
+    }
+    
+    private var mode = ScreenMode.Standard {
+        didSet {
+            configureModeAppearance()
+        }
+    }
+    
     private var searchResults: [Workout]?
     private var searchController: SearchController!
     
@@ -43,7 +54,7 @@ final class WorkoutsScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setStandardViewMode()
+        mode = .Standard
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -72,11 +83,11 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return workoutsView.mode == .Edit
+        return mode == .Edit
     }
     
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return workoutsView.mode == .Edit
+        return mode == .Edit
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
@@ -103,7 +114,7 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
         
-        if workoutsView.mode == .Edit {
+        if mode == .Edit {
             navigationManager.presentWorkoutEditScreenWithWorkout(workout,
                 animated: true,
                 workoutDidEditAction: { [unowned self] workout in
@@ -152,7 +163,7 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
-            guard workoutsView.mode == .Standard,
+            guard mode == .Standard,
                 let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
                 let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
             
@@ -178,8 +189,8 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
 
 extension WorkoutsScreen {
     
-    @IBAction private func modeButtonDidPress(sender: UIBarButtonItem) {
-        switchViewMode()
+    @objc private func modeButtonDidPress(sender: UIBarButtonItem) {
+        switchMode()
     }
     
     @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
@@ -204,19 +215,6 @@ extension WorkoutsScreen {
 
 extension WorkoutsScreen {
     
-    private func setStandardViewMode() {
-        workoutsView.mode = .Standard
-        searchController.enabled = true
-    }
-    
-    private func switchViewMode() {
-        workoutsView.switchMode()
-        searchController.enabled = !searchController.enabled
-    }
-}
-
-extension WorkoutsScreen {
-    
     private func configureSearchController() {
         searchController = SearchController(searchResultsController: nil)
         searchController.delegate = self
@@ -230,7 +228,7 @@ extension WorkoutsScreen {
         guard let activate = needsActivateSearch else { return }
         
         if activate {
-            setStandardViewMode()
+            mode = .Standard
             searchController.active = true
             searchController.searchBar.becomeFirstResponder()
         } else {
@@ -249,5 +247,35 @@ extension WorkoutsScreen {
     private func resetSearchResults() {
         searchResults = nil
         workoutsView.workoutsTableView.reloadData()
+    }
+}
+
+extension WorkoutsScreen {
+    
+    private func switchMode() {
+        switch mode {
+        case .Standard:
+            mode = .Edit
+        case .Edit:
+            mode = .Standard
+        }
+    }
+    
+    private func configureModeAppearance() {
+        switch mode {
+        case .Edit:
+            workoutsView.workoutsTableView.setEditing(true, animated: true)
+            searchController.enabled = false
+            navigationItem.leftBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Left,
+                target: self,
+                action: Selector("modeButtonDidPress:"))
+            
+        case .Standard:
+            workoutsView.workoutsTableView.setEditing(false, animated: true)
+            searchController.enabled = true
+            navigationItem.leftBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Left,
+                target: self,
+                action: Selector("modeButtonDidPress:"))
+        }
     }
 }

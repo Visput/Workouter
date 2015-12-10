@@ -80,7 +80,7 @@ extension WorkoutDetailsScreen {
         navigationManager.pushWorkoutPlayerScreenWithWorkout(workout, animated: true)
     }
     
-    @IBAction private func editWorkoutButtonDidPress(sender: AnyObject) {
+    @objc private func editWorkoutButtonDidPress(sender: AnyObject) {
         navigationManager.presentWorkoutEditScreenWithWorkout(workout,
             animated: true,
             workoutDidEditAction: { [unowned self] workout in
@@ -94,6 +94,13 @@ extension WorkoutDetailsScreen {
 }
 
 extension WorkoutDetailsScreen {
+    
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
+            target: self,
+            action: Selector("editWorkoutButtonDidPress:"))
+    }
     
     private func fillViewWithWorkout(workout: Workout) {
         workoutDetailsView.nameLabel.text = workout.name

@@ -70,6 +70,18 @@ extension UIBarButtonItem {
         return self.init(customView: barButton)
     }
     
+    class func greenEditItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
+        target: AnyObject,
+        action: Selector) -> Self {
+            
+            let barButton = barButtonWithImageNamed("icon_edit_green",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
+    }
+    
     private class func barButtonWithImageNamed(imageName: String,
         horizontalAlignment: UIControlContentHorizontalAlignment,
         target: AnyObject,

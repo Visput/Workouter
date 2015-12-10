@@ -196,18 +196,12 @@
                         </variation>
                         <connections>
                             <outlet property="bottomSpace" destination="GPs-HA-idZ" id="e4G-yu-gxe"/>
-                            <outlet property="modeButtonItem" destination="sSU-yd-C0E" id="9aH-Nw-t8T"/>
                             <outlet property="workoutsTableView" destination="9mt-W1-wGt" id="m7G-xK-0pV"/>
                         </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Workouts" id="UUS-jR-n5u">
                         <barButtonItem key="backBarButtonItem" title=" " id="L1j-vj-Ruj"/>
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="sSU-yd-C0E">
-                            <connections>
-                                <action selector="modeButtonDidPress:" destination="vXZ-lx-hvc" id="K4S-Xh-rvn"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xEl-tn-Trj">
                             <connections>
                                 <action selector="newWorkoutButtonDidPress:" destination="vXZ-lx-hvc" id="5sm-5e-gCL"/>
@@ -352,11 +346,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Workout" id="Vfg-Wf-s8Z">
                         <barButtonItem key="backBarButtonItem" title=" " id="J4Q-ec-dHl"/>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="KWB-u3-vYc">
-                            <connections>
-                                <action selector="editWorkoutButtonDidPress:" destination="PdQ-wH-eFa" id="dmM-vB-uVV"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
