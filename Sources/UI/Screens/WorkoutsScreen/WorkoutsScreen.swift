@@ -193,7 +193,7 @@ extension WorkoutsScreen {
         switchMode()
     }
     
-    @IBAction private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+    @objc private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
         navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
@@ -251,6 +251,13 @@ extension WorkoutsScreen {
 }
 
 extension WorkoutsScreen {
+    
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
+            target: self,
+            action: Selector("newWorkoutButtonDidPress:"))
+    }
     
     private func switchMode() {
         switch mode {

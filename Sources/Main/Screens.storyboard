@@ -202,11 +202,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Workouts" id="UUS-jR-n5u">
                         <barButtonItem key="backBarButtonItem" title=" " id="L1j-vj-Ruj"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xEl-tn-Trj">
-                            <connections>
-                                <action selector="newWorkoutButtonDidPress:" destination="vXZ-lx-hvc" id="5sm-5e-gCL"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1484,7 +1479,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" image="icon_cancel_green"/>
+                                <state key="normal" image="icon_cancel_gray"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1714,7 +1709,7 @@
     </scenes>
     <resources>
         <image name="background_green" width="375" height="144"/>
-        <image name="icon_cancel_green" width="40" height="40"/>
+        <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_facebook_green" width="20" height="20"/>
         <image name="icon_info_green_small" width="22" height="22"/>
     </resources>
