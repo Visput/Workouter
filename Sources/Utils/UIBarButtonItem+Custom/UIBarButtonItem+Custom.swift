@@ -38,7 +38,7 @@ extension UIBarButtonItem {
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_done_simple_green",
+        let barButton = barButtonWithImageNamed("icon_done_green",
             horizontalAlignment: alignment,
             target: target,
             action: action)
