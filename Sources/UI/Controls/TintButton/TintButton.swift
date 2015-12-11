@@ -164,8 +164,14 @@ extension TintButton {
         // Layout
         let titleWidth = titleLabel != nil ? titleLabel!.intrinsicContentSize().width : 0.0
         let imageWidth = imageView != nil ? imageView!.frame.size.width : 0.0
-        let widthInset = (frame.size.width - titleWidth) / 2.0 - imageWidth - contentEdgeInsets.left
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: widthInset, bottom: 0.0, right: 0.0)
+        
+        if titleWidth != 0 && imageWidth != 0 {
+            contentHorizontalAlignment = .Left
+            contentEdgeInsets = UIEdgeInsets(top: 0, left: 10.0, bottom: 0.0, right: 0.0)
+            
+            let widthInset = (frame.size.width - titleWidth) / 2.0 - imageWidth - contentEdgeInsets.left
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: widthInset, bottom: 0.0, right: 0.0)
+        }
     }
     
     private func selectedColorForColor(color: UIColor) -> UIColor {
@@ -189,8 +195,5 @@ extension TintButton {
     private func applyDefaultValues() {
         adjustsImageWhenHighlighted = false
         adjustsImageWhenDisabled = true
-        contentHorizontalAlignment = .Left
-        contentVerticalAlignment = .Center
-        contentEdgeInsets = UIEdgeInsets(top: 0, left: 10.0, bottom: 0.0, right: 0.0)
     }
 }

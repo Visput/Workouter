@@ -815,13 +815,23 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-MV-ezM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-MV-ezM" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="303" y="-3" width="44" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T3U-hZ-jn0"/>
                                     <constraint firstAttribute="width" constant="44" id="eje-k2-Lr2"/>
                                 </constraints>
-                                <state key="normal" image="icon_info_green_small"/>
+                                <state key="normal" image="icon_info_small_green"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderVisible" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="descriptionButtonDidPress:" destination="HpB-m2-ign" eventType="touchUpInside" id="baP-Iy-04n"/>
                                 </connections>
@@ -1471,14 +1481,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-Wb-y9r" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="6" y="20" width="60" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-Wb-y9r" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="72" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0aW-Ns-1r1"/>
-                                    <constraint firstAttribute="width" constant="60" id="I6e-Aw-gTD"/>
+                                    <constraint firstAttribute="width" constant="72" id="I6e-Aw-gTD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="icon_cancel_gray"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
@@ -1516,7 +1525,7 @@
                             <constraint firstItem="1Ts-dJ-AUV" firstAttribute="top" secondItem="mlw-ZN-l2c" secondAttribute="bottom" id="34U-K9-kM7"/>
                             <constraint firstAttribute="trailing" secondItem="mlw-ZN-l2c" secondAttribute="trailing" id="BCg-KF-11n"/>
                             <constraint firstItem="mlw-ZN-l2c" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" id="R6o-AQ-7oY"/>
-                            <constraint firstItem="7lY-Wb-y9r" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" constant="6" id="RXJ-Ms-TDe"/>
+                            <constraint firstItem="7lY-Wb-y9r" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" id="RXJ-Ms-TDe"/>
                             <constraint firstAttribute="trailing" secondItem="UFd-Xw-bhA" secondAttribute="trailing" constant="88" id="aGS-XZ-kq8"/>
                             <constraint firstItem="7lY-Wb-y9r" firstAttribute="top" secondItem="hbB-gH-uqJ" secondAttribute="bottom" id="kQK-w2-Fba">
                                 <variation key="heightClass=compact" constant="12"/>
@@ -1594,14 +1603,24 @@
                                     <outlet property="delegate" destination="4OE-UC-xVk" id="ExU-D0-NaZ"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkn-aK-fKo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkn-aK-fKo" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="299" y="0.0" width="44" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="47G-CP-Lnn"/>
                                     <constraint firstAttribute="height" constant="40" id="Nzv-pc-xJ0"/>
                                     <constraint firstAttribute="width" constant="44" id="svS-iu-bi4"/>
                                 </constraints>
-                                <state key="normal" image="icon_info_green_small"/>
+                                <state key="normal" image="icon_info_small_green"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderVisible" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="47G-CP-Lnn"/>
@@ -1711,7 +1730,7 @@
         <image name="background_green" width="375" height="144"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_facebook_green" width="20" height="20"/>
-        <image name="icon_info_green_small" width="22" height="22"/>
+        <image name="icon_info_small_green" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dQt-nY-fnQ"/>

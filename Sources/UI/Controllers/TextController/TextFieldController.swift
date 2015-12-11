@@ -188,10 +188,10 @@ extension TextFieldController {
             ])
         
         var viewBorderColor = UIColor.borderColor().CGColor
-        var buttonImage = UIImage(named: "icon_info_green_small")
+        var buttonImage = UIImage(named: "icon_info_small_green")
         if !valid {
             viewBorderColor = UIColor.invalidStateColor().CGColor
-            buttonImage = UIImage(named: "icon_attention_red_small")
+            buttonImage = UIImage(named: "icon_attention_small_red")
         }
         
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
