@@ -20,13 +20,11 @@ final class DescriptionButton: TintButton {
     private var animationImageView: UIImageView!
     
     private lazy var defaultAnimationImages: [UIImage] = {
-        let numberOfPieces = 7
+        let numberOfPieces = 9
         var images = [UIImage]()
-        images.append(UIImage(named: "icon_info_small_green")!)
         for var i = 1; i <= numberOfPieces; i++ {
-            images.append(UIImage(named: "icon_info_to_attention_small_\(i)")!)
+            images.append(UIImage(named: "icon_info_to_attention_small\(i)")!)
         }
-        images.append(UIImage(named: "icon_attention_small_red")!)
         return images
     }()
     
@@ -45,19 +43,8 @@ final class DescriptionButton: TintButton {
         
         if needAnimate {
             needAnimate = false
-            
-            // Animate switching to new validation state.
-            animationImageView.hidden = false
             animationImageView.animationImages = animationImages
             animationImageView.startAnimating()
-            
-            // Reduce waiting time to avoid image view flashing when animation is completed.
-            let waitingTime = animationImageView.animationDuration * Double(animationImages.count - 1) / Double(animationImages.count)
-            let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * waitingTime))
-            // Hide animation view when animation is completed.
-            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.animationImageView.hidden = true
-            })
         }
     }
     
@@ -65,10 +52,8 @@ final class DescriptionButton: TintButton {
         super.applyDefaultValues()
         
         animationImageView = UIImageView(frame: bounds)
-        animationImageView.backgroundColor = UIColor.whiteColor()
         animationImageView.contentMode = .Center
         animationImageView.autoresizingMask = [.FlexibleWidth, .FlexibleWidth]
-        animationImageView.hidden = true
         animationImageView.animationRepeatCount = 1
         animationImageView.animationDuration = 0.2
         addSubview(animationImageView)
