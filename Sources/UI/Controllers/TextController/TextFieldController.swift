@@ -106,14 +106,15 @@ final class TextFieldController: BaseViewController, TextControllerChaining {
 
     private let textMaxLength = 30
     
-    private lazy var descriptionIconAnimationImages = {
-        return [
-            UIImage(named: "icon_info_small_green")!,
-            UIImage(named: "icon_info_to_attention_small_1")!,
-            UIImage(named: "icon_info_to_attention_small_2")!,
-            UIImage(named: "icon_info_to_attention_small_3")!,
-            UIImage(named: "icon_attention_small_red")!
-        ]
+    private lazy var descriptionIconAnimationImages: [UIImage] = {
+        let numberOfPieces = 7
+        var images = [UIImage]()
+        images.append(UIImage(named: "icon_info_small_green")!)
+        for var i = 1; i <= numberOfPieces; i++ {
+            images.append(UIImage(named: "icon_info_to_attention_small_\(i)")!)
+        }
+        images.append(UIImage(named: "icon_attention_small_red")!)
+        return images
     }()
     
     @IBOutlet private weak var textField: UITextField!
