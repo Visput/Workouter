@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TintButton: UIButton {
+class TintButton: UIButton {
 
     @IBInspectable dynamic var primaryColor: UIColor = UIColor.blackColor() {
         didSet {
@@ -108,7 +108,7 @@ final class TintButton: UIButton {
 
 extension TintButton {
     
-    private func updateAppearance() {
+    func updateAppearance() {
         // Layer.
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = cornerRadius > 0
@@ -174,6 +174,11 @@ extension TintButton {
         }
     }
     
+    func applyDefaultValues() {
+        adjustsImageWhenHighlighted = false
+        adjustsImageWhenDisabled = true
+    }
+    
     private func selectedColorForColor(color: UIColor) -> UIColor {
         var selectedColor = color
         
@@ -190,10 +195,5 @@ extension TintButton {
         }
         
         return selectedColor
-    }
-    
-    private func applyDefaultValues() {
-        adjustsImageWhenHighlighted = false
-        adjustsImageWhenDisabled = true
     }
 }

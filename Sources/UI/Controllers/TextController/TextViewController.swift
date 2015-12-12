@@ -104,7 +104,7 @@ final class TextViewController: BaseViewController, TextControllerChaining {
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var placeholderLabel: UILabel!
     @IBOutlet private weak var textLimitLabel: UILabel!
-    @IBOutlet private weak var descriptionButton: UIButton!
+    @IBOutlet private weak var descriptionButton: DescriptionButton!
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -178,6 +178,7 @@ extension TextViewController {
             text = text.stringByReplacingOccurrencesOfString("\n", withString: " ")
         }
         
+        // Text View.
         textView.text = text
         
         placeholderLabel.text = placeholder
@@ -188,11 +189,10 @@ extension TextViewController {
             textLimitLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
         }
         
+        // Borders.
         var viewBorderColor = UIColor.borderColor().CGColor
-        var buttonImage = UIImage(named: "icon_info_small_green")
         if !valid {
             viewBorderColor = UIColor.invalidStateColor().CGColor
-            buttonImage = UIImage(named: "icon_attention_small_red")
         }
         
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -202,7 +202,8 @@ extension TextViewController {
         view.layer.addAnimation(borderColorAnimation, forKey: nil)
         view.layer.borderColor = viewBorderColor
         
-        descriptionButton.setImage(buttonImage, forState: .Normal)
+        // Description Button.
+        descriptionButton.valid = valid
     }
     
     private func configureReturnKey() {
