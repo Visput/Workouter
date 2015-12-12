@@ -106,8 +106,19 @@ final class TextFieldController: BaseViewController, TextControllerChaining {
 
     private let textMaxLength = 30
     
+    private lazy var descriptionIconAnimationImages = {
+        return [
+            UIImage(named: "icon_info_small_green")!,
+            UIImage(named: "icon_info_to_attention_small_1")!,
+            UIImage(named: "icon_info_to_attention_small_2")!,
+            UIImage(named: "icon_info_to_attention_small_3")!,
+            UIImage(named: "icon_attention_small_red")!
+        ]
+    }()
+    
     @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var descriptionButton: UIButton!
+    @IBOutlet private weak var descriptionButton: TintButton!
+    @IBOutlet private weak var descriptionAnimationView: UIImageView!
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -173,6 +184,7 @@ extension TextFieldController {
             text = text.substringToIndex(index)
         }
         
+        // Text Field.
         textField.text = text
         textField.keyboardType = keyboardType
         textField.secureTextEntry = secureTextEntry
@@ -187,11 +199,10 @@ extension TextFieldController {
                 NSForegroundColorAttributeName : UIColor.secondaryTextColor()
             ])
         
+        // Borders.
         var viewBorderColor = UIColor.borderColor().CGColor
-        var buttonImage = UIImage(named: "icon_info_small_green")
         if !valid {
             viewBorderColor = UIColor.invalidStateColor().CGColor
-            buttonImage = UIImage(named: "icon_attention_small_red")
         }
         
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -201,7 +212,34 @@ extension TextFieldController {
         view.layer.addAnimation(borderColorAnimation, forKey: nil)
         view.layer.borderColor = viewBorderColor
         
+        // Description Button.
+        var buttonImage = UIImage(named: "icon_attention_small_red")
+        var animationImages = descriptionIconAnimationImages
+        
+        if valid {
+            buttonImage = UIImage(named: "icon_info_small_green")
+            animationImages = descriptionIconAnimationImages.reverse()
+        }
+        
+        if descriptionButton.valid != valid {
+            // Animate switching to new validation state.
+            descriptionAnimationView.hidden = false
+            descriptionAnimationView.animationImages = animationImages
+            descriptionAnimationView.animationRepeatCount = 1
+            descriptionAnimationView.animationDuration = UIView.defaultAnimationDuration
+            descriptionAnimationView.startAnimating()
+            
+            // Reduce waiting time to avoid image view flashing when animation is completed.
+            let waitingTime = UIView.defaultAnimationDuration * Double(animationImages.count - 1) / Double(animationImages.count)
+            let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * waitingTime))
+            // Hide animation view when animation is completed.
+            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+                self.descriptionAnimationView.hidden = true
+            })
+        }
+        
         descriptionButton.setImage(buttonImage, forState: .Normal)
+        descriptionButton.valid = valid
     }
     
     private func configureReturnKey() {

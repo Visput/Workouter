@@ -831,6 +831,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderVisible" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="invalidStateColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="descriptionButtonDidPress:" destination="HpB-m2-ign" eventType="touchUpInside" id="baP-Iy-04n"/>
@@ -1620,6 +1623,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderVisible" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="invalidStateColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1632,14 +1638,22 @@
                                     <action selector="descriptionButtonDidPress:" destination="4OE-UC-xVk" eventType="touchUpInside" id="Zcx-QC-eAq"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-fE-YVJ">
+                                <rect key="frame" x="299" y="0.0" width="44" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zkn-aK-fKo" firstAttribute="leading" secondItem="iSy-WY-iE1" secondAttribute="trailing" id="0ni-uI-8h7"/>
                             <constraint firstItem="iSy-WY-iE1" firstAttribute="top" secondItem="nzY-7E-nnO" secondAttribute="top" id="2cw-VS-DTN"/>
                             <constraint firstAttribute="trailing" secondItem="zkn-aK-fKo" secondAttribute="trailing" id="Jrv-vm-QV7"/>
+                            <constraint firstItem="l2w-fE-YVJ" firstAttribute="centerX" secondItem="zkn-aK-fKo" secondAttribute="centerX" id="RTG-c6-YUl"/>
                             <constraint firstItem="zkn-aK-fKo" firstAttribute="bottom" secondItem="nzY-7E-nnO" secondAttribute="bottom" id="WVr-ed-dsL"/>
+                            <constraint firstItem="l2w-fE-YVJ" firstAttribute="centerY" secondItem="zkn-aK-fKo" secondAttribute="centerY" id="WdY-gF-KyP"/>
+                            <constraint firstItem="l2w-fE-YVJ" firstAttribute="width" secondItem="zkn-aK-fKo" secondAttribute="width" id="a9q-kg-Nlv"/>
                             <constraint firstItem="zkn-aK-fKo" firstAttribute="top" secondItem="nzY-7E-nnO" secondAttribute="top" id="bhV-LA-9rt"/>
+                            <constraint firstItem="l2w-fE-YVJ" firstAttribute="height" secondItem="zkn-aK-fKo" secondAttribute="height" id="nlP-kF-9W5"/>
                             <constraint firstItem="iSy-WY-iE1" firstAttribute="bottom" secondItem="nzY-7E-nnO" secondAttribute="bottom" id="roE-gp-91M"/>
                             <constraint firstItem="iSy-WY-iE1" firstAttribute="leading" secondItem="nzY-7E-nnO" secondAttribute="leading" constant="10" id="tC8-oi-LjS"/>
                         </constraints>
@@ -1653,6 +1667,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="descriptionAnimationView" destination="l2w-fE-YVJ" id="hsF-xl-w2c"/>
                         <outlet property="descriptionButton" destination="zkn-aK-fKo" id="I08-h3-5wb"/>
                         <outlet property="textField" destination="iSy-WY-iE1" id="D2X-dP-2rT"/>
                     </connections>
