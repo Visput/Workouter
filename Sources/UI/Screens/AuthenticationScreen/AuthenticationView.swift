@@ -12,6 +12,8 @@ final class AuthenticationView: BaseScreenView {
     
     @IBOutlet private weak var headerHeight: NSLayoutConstraint!
     @IBOutlet private weak var contentHeight: NSLayoutConstraint!
+    @IBOutlet private weak var heartViewWidth: NSLayoutConstraint!
+    @IBOutlet private weak var heartViewHeight: NSLayoutConstraint!
     @IBOutlet private(set) weak var heartView: UIImageView!
     
     private var heartbeatAnimationEnabled = false
@@ -23,7 +25,12 @@ final class AuthenticationView: BaseScreenView {
     
     override func didAppear(animated: Bool) {
         super.didAppear(animated)
-        startHeartbeatAnimation()
+        
+        // Execute animation after delay.
+        // Reason: immediate execution on screen appearance results in not smooth animation.
+        executeAfterDelay(0.3) {
+            self.startHeartbeatAnimation()
+        }
     }
     
     override func didDisappear(animated: Bool) {
@@ -51,20 +58,30 @@ extension AuthenticationView {
     private func animateHeartbeatIfNeeded() {
         guard heartbeatAnimationEnabled else { return }
         
-        UIView.animateWithDuration(0.1,
+        // Set beat frequency.
+        let beatsPerSec = 1.0
+        
+        // Set beat amplitude.
+        let inToOutRatio: CGFloat = 1.125
+        
+        // Execute animation.
+        let inAnimationDuration = 0.1 / beatsPerSec
+        let outAnimationDuration = 1 / beatsPerSec - inAnimationDuration
+        
+        UIView.animateWithDuration(inAnimationDuration,
             delay: 0.0,
             options: .CurveEaseIn,
             animations: { _ in
-                self.heartView.bounds.size.width = 45.0
-                self.heartView.bounds.size.height = 45.0
+                self.heartView.bounds.size.width = self.heartViewWidth.constant * inToOutRatio
+                self.heartView.bounds.size.height = self.heartViewHeight.constant * inToOutRatio
                 
             }, completion: { _ in
-                UIView.animateWithDuration(0.9,
+                UIView.animateWithDuration(outAnimationDuration,
                     delay: 0.0,
                     options: .CurveLinear,
                     animations: { _ in
-                        self.heartView.bounds.size.width = 40.0
-                        self.heartView.bounds.size.height = 40.0
+                        self.heartView.bounds.size.width = self.heartViewWidth.constant
+                        self.heartView.bounds.size.height = self.heartViewHeight.constant
                     }, completion: { _ in
                         self.animateHeartbeatIfNeeded()
                 })

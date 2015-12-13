@@ -33,6 +33,8 @@
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
+		9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
+		9F13C46F1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
 		9F1B75D11C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
 		9F1B75D21C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
 		9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */; };
@@ -47,8 +49,6 @@
 		9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */; };
 		9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
 		9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
-		9F37F5731BE056BB00772BB7 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */; };
-		9F37F5741BE0572400772BB7 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */; };
 		9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
@@ -226,6 +226,7 @@
 		9F0F07411C063C8600DA0152 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		9F0F41C21BFF07F900989101 /* AppPalette.clr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppPalette.clr; path = AppPalette/AppPalette.clr; sourceTree = "<group>"; };
 		9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionButton.swift; sourceTree = "<group>"; };
+		9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
 		9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
 		9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageItem.swift; sourceTree = "<group>"; };
 		9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditScreen.swift; sourceTree = "<group>"; };
@@ -233,7 +234,6 @@
 		9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditScreen.swift; sourceTree = "<group>"; };
 		9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
-		9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
@@ -430,6 +430,14 @@
 			path = DescriptionButton;
 			sourceTree = "<group>";
 		};
+		9F13C46C1C1D538600894C6C /* NSObject+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */,
+			);
+			path = "NSObject+Utils";
+			sourceTree = "<group>";
+		};
 		9F341AC91BDF171D00AEDEB1 /* StepEditScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,14 +455,6 @@
 				9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */,
 			);
 			path = WorkoutEditScreen;
-			sourceTree = "<group>";
-		};
-		9F37F5711BE056BB00772BB7 /* NSObject+ClassName */ = {
-			isa = PBXGroup;
-			children = (
-				9F37F5721BE056BB00772BB7 /* NSObject+ClassName.swift */,
-			);
-			path = "NSObject+ClassName";
 			sourceTree = "<group>";
 		};
 		9F37F5751BE057D600772BB7 /* AppShortcutsManager */ = {
@@ -720,6 +720,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F13C46C1C1D538600894C6C /* NSObject+Utils */,
 				9F9E82E61C14122700920B66 /* UIBarButtonItem+Custom */,
 				9F88A3F91C08580300C1FDD9 /* UIScreen+Size */,
 				9F697E541C029E9100BAB0EC /* UIView+Animation */,
@@ -730,7 +731,6 @@
 				9F469AE31BF6D08300C29AA9 /* ObserverSet */,
 				9FDA599E1BEF2A2D00D350C5 /* UIView+FirstResponder */,
 				9F6BD7771BEF1CDD00F5222A /* UITableView+Deselect */,
-				9F37F5711BE056BB00772BB7 /* NSObject+ClassName */,
 				F09702B91ACA425C00498DEE /* AnalyticsTracker */,
 			);
 			path = Utils;
@@ -1013,6 +1013,9 @@
 					F01375C11A4CA18E00C683A8 = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = F01375AC1A4CA18E00C683A8;
+					};
+					F09702BD1ACA48E700498DEE = {
+						DevelopmentTeam = PTGC6AGR96;
 					};
 				};
 			};
@@ -1361,6 +1364,7 @@
 				9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
 				9FD745C61C09653900E48508 /* TextControllerChaining.swift in Sources */,
+				9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */,
 				9F0DFC461BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F02CAB561B4B871E00F28D72 /* AnalyticsTracker.swift in Sources */,
 				9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
@@ -1377,7 +1381,6 @@
 				9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F697E511C02997C00BAB0EC /* BaseView.swift in Sources */,
-				9F37F5731BE056BB00772BB7 /* NSObject+ClassName.swift in Sources */,
 				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
@@ -1447,6 +1450,7 @@
 				9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */,
 				9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
+				9F13C46F1C1D538600894C6C /* NSObject+Utils.swift in Sources */,
 				9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
 				F09702C41ACA48E700498DEE /* AnalyticsTracker.swift in Sources */,
 				9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */,
@@ -1464,7 +1468,6 @@
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
 				9F697E521C02997C00BAB0EC /* BaseView.swift in Sources */,
-				9F37F5741BE0572400772BB7 /* NSObject+ClassName.swift in Sources */,
 				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8171BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
@@ -1667,6 +1670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1688,6 +1692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

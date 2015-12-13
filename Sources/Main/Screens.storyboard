@@ -1174,6 +1174,8 @@
                             <outlet property="contentHeight" destination="oWA-qa-GMm" id="sDD-Fx-589"/>
                             <outlet property="headerHeight" destination="bH7-TA-ROW" id="f3Y-6G-s9t"/>
                             <outlet property="heartView" destination="p3g-r0-Dqy" id="5Py-pP-9Jp"/>
+                            <outlet property="heartViewHeight" destination="Ma0-ia-j7l" id="YBn-ec-TZ2"/>
+                            <outlet property="heartViewWidth" destination="iCF-K2-Yii" id="sSc-Ny-JU2"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1711,7 +1713,7 @@
         <image name="background_green" width="375" height="144"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_facebook_green" width="20" height="20"/>
-        <image name="icon_heart_red" width="80" height="80"/>
+        <image name="icon_heart_red" width="45" height="45"/>
         <image name="icon_info_small_green" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
