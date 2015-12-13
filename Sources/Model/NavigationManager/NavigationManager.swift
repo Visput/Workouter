@@ -66,12 +66,12 @@ extension NavigationManager {
     private func pushScreen(screen: UIViewController,
         inNavigationController navigationController: UINavigationController,
         animated: Bool) {
-        navigationController.pushViewController(screen, animated: animated)
+            navigationController.pushViewController(screen, animated: animated)
             
-        // We use custom navigation back buttons.
-        // So we have to munually manage pop gesture.
-        navigationController.interactivePopGestureRecognizer?.delegate = self
-        navigationController.interactivePopGestureRecognizer?.enabled = true
+            // We use custom navigation back buttons.
+            // So we have to munually manage pop gesture.
+            navigationController.interactivePopGestureRecognizer?.delegate = self
+            navigationController.interactivePopGestureRecognizer?.enabled = true
     }
     
     private func setScreens(screens: [UIViewController],
@@ -87,12 +87,12 @@ extension NavigationManager {
     
     private func popScreenInNavigationController(navigationController: UINavigationController,
         animated: Bool) {
-        navigationController.popViewControllerAnimated(animated)
+            navigationController.popViewControllerAnimated(animated)
     }
     
     private func popToRootScreenInNavigationController(navigationController: UINavigationController,
         animated: Bool) {
-        navigationController.popToRootViewControllerAnimated(animated)
+            navigationController.popToRootViewControllerAnimated(animated)
     }
     
     // Present / Dismiss screen.
@@ -288,6 +288,11 @@ extension NavigationManager {
             let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
             screen.workout = workout
             pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func pushWorkoutGameScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutGameScreen.className()) as! WorkoutGameScreen
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func showInfoDialogWithTitle(title: String, message: String) {

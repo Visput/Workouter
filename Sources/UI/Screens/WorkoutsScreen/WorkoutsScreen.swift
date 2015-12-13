@@ -190,7 +190,8 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
 extension WorkoutsScreen {
     
     @objc private func modeButtonDidPress(sender: UIBarButtonItem) {
-        switchMode()
+        navigationManager.pushWorkoutGameScreenAnimated(true)
+        //switchMode()
     }
     
     @objc private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
