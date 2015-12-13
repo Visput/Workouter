@@ -62,7 +62,7 @@ extension AuthenticationView {
         let beatsPerSec = 1.0
         
         // Set beat amplitude.
-        let inToOutRatio: CGFloat = 1.125
+        let inToOutRatio: CGFloat = 1.13
         
         // Execute animation.
         let inAnimationDuration = 0.1 / beatsPerSec

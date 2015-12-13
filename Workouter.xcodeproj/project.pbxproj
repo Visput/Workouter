@@ -1014,8 +1014,11 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = F01375AC1A4CA18E00C683A8;
 					};
+					F02CAB4F1B4B871E00F28D72 = {
+						DevelopmentTeam = YVSH49GYZ4;
+					};
 					F09702BD1ACA48E700498DEE = {
-						DevelopmentTeam = PTGC6AGR96;
+						DevelopmentTeam = YVSH49GYZ4;
 					};
 				};
 			};
@@ -1628,6 +1631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1649,6 +1653,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
