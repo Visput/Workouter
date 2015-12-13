@@ -1046,7 +1046,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="he8-T0-7Vw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="124"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1130,9 +1130,17 @@
                                     <constraint firstItem="y9o-xO-07n" firstAttribute="leading" secondItem="ieS-ky-5XM" secondAttribute="leading" constant="16" id="z15-oE-Y4S"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_heart_red" translatesAutoresizingMaskIntoConstraints="NO" id="p3g-r0-Dqy">
+                                <rect key="frame" x="303" y="117" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ma0-ia-j7l"/>
+                                    <constraint firstAttribute="width" constant="40" id="iCF-K2-Yii"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="p3g-r0-Dqy" firstAttribute="trailing" secondItem="he8-T0-7Vw" secondAttribute="trailing" constant="-32" id="31K-Up-zfV"/>
                             <constraint firstItem="T4R-MP-rxp" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="top" id="9mQ-vg-Zmm"/>
                             <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="17" id="BL1-NB-7yU"/>
                             <constraint firstItem="ieS-ky-5XM" firstAttribute="top" secondItem="xhf-a5-fTR" secondAttribute="bottom" id="Gjo-8F-jrr"/>
@@ -1143,6 +1151,7 @@
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="top" constant="8" id="OJk-Pv-inM"/>
                             <constraint firstAttribute="trailing" secondItem="T4R-MP-rxp" secondAttribute="trailing" id="QWs-pm-iyy"/>
                             <constraint firstItem="xhf-a5-fTR" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leading" id="TnM-hl-aMW"/>
+                            <constraint firstItem="p3g-r0-Dqy" firstAttribute="bottom" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="13" id="e9j-Su-ZbN"/>
                             <constraint firstAttribute="trailing" secondItem="xhf-a5-fTR" secondAttribute="trailing" id="ec0-vu-pVq"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="bottom" secondItem="T4R-MP-rxp" secondAttribute="bottom" id="gWl-KI-48Z"/>
                             <constraint firstAttribute="trailing" secondItem="he8-T0-7Vw" secondAttribute="trailing" constant="-12" id="ivf-eF-L8M"/>
@@ -1164,6 +1173,7 @@
                         <connections>
                             <outlet property="contentHeight" destination="oWA-qa-GMm" id="sDD-Fx-589"/>
                             <outlet property="headerHeight" destination="bH7-TA-ROW" id="f3Y-6G-s9t"/>
+                            <outlet property="heartView" destination="p3g-r0-Dqy" id="5Py-pP-9Jp"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1701,6 +1711,7 @@
         <image name="background_green" width="375" height="144"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_facebook_green" width="20" height="20"/>
+        <image name="icon_heart_red" width="80" height="80"/>
         <image name="icon_info_small_green" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
