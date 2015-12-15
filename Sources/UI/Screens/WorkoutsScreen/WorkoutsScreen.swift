@@ -190,11 +190,10 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
 extension WorkoutsScreen {
     
     @objc private func modeButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.pushWorkoutGameScreenAnimated(true)
-        //switchMode()
+        switchMode()
     }
     
-    @objc private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+    private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
         navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
@@ -203,10 +202,10 @@ extension WorkoutsScreen {
                     animated: true,
                     workoutDidEditAction: { [unowned self] workout in
                         
-                    self.workoutsProvider.addWorkout(workout)
-                    self.navigationManager.dismissScreenAnimated(true)
-                    self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                })
+                        self.workoutsProvider.addWorkout(workout)
+                        self.navigationManager.dismissScreenAnimated(true)
+                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                    })
                 
             }, templateDidCancelAction: { 
                 self.navigationManager.dismissScreenAnimated(true)
@@ -253,13 +252,6 @@ extension WorkoutsScreen {
 
 extension WorkoutsScreen {
     
-    override func configureBarButtonItems() {
-        super.configureBarButtonItems()
-        navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
-            target: self,
-            action: Selector("newWorkoutButtonDidPress:"))
-    }
-    
     private func switchMode() {
         switch mode {
         case .Standard:
@@ -274,14 +266,14 @@ extension WorkoutsScreen {
         case .Edit:
             workoutsView.workoutsTableView.setEditing(true, animated: true)
             searchController.enabled = false
-            navigationItem.leftBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Left,
+            navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
                 target: self,
                 action: Selector("modeButtonDidPress:"))
             
         case .Standard:
             workoutsView.workoutsTableView.setEditing(false, animated: true)
             searchController.enabled = true
-            navigationItem.leftBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Left,
+            navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
                 target: self,
                 action: Selector("modeButtonDidPress:"))
         }

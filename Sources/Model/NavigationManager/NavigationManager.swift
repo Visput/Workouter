@@ -186,15 +186,21 @@ extension NavigationManager {
         pushScreen(screen, inNavigationController: rootNavigationController, animated: animated)
     }
     
-    func setWorkoutsScreenAsRootAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+    func setMainScreenAsRootAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(MainScreen.className()) as! MainScreen
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)
     }
     
-    func popToWorkoutsScreenWithSearchActive(searchActive: Bool, animated: Bool) {
-        popToRootScreenInNavigationController(rootNavigationController, animated: animated)
-        let screen = rootScreen as! WorkoutsScreen
+    func pushWorkoutsScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func pushWorkoutsScreenFromMainScreenWithSearchActive(searchActive: Bool, animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
         screen.needsActivateSearch = searchActive
+        let screens = [rootScreen, screen]
+        setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
     }
     
     func pushWorkoutDetailsScreenWithWorkout(workout: Workout, animated: Bool) {
@@ -203,7 +209,7 @@ extension NavigationManager {
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
-    func pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout: Workout, animated: Bool) {
+    func pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout: Workout, animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         let screens = [rootScreen, screen]
@@ -278,9 +284,10 @@ extension NavigationManager {
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
-    func pushSettingsScreenAnimated(animated: Bool) {
+    func presentSettingsScreenAnimated(animated: Bool, didCancelAction: (() -> Void)?) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(SettingsScreen.className()) as! SettingsScreen
-        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+        screen.didCancelAction = didCancelAction
+        presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
     func pushWorkoutPlayerScreenWithWorkout(workout: Workout,
@@ -292,6 +299,16 @@ extension NavigationManager {
     
     func pushWorkoutGameScreenAnimated(animated: Bool) {
         let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutGameScreen.className()) as! WorkoutGameScreen
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func pushStatisticsScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StatisticsScreen.className()) as! StatisticsScreen
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func pushAchievementsScreenAnimated(animated: Bool) {
+        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AchievementsScreen.className()) as! AchievementsScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     

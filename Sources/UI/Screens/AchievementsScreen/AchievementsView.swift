@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AchievementsView: BaseView {
+final class AchievementsView: BaseView {
     
 }

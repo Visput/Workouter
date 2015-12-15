@@ -211,6 +211,186 @@
             </objects>
             <point key="canvasLocation" x="-817.5" y="974.5"/>
         </scene>
+        <!--Main Screen-->
+        <scene sceneID="wiU-ou-YDU">
+            <objects>
+                <viewController storyboardIdentifier="MainScreen" id="wWn-aT-Jr2" customClass="MainScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FrW-PK-ZFp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q6R-g4-tlL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ak-t7-upM" customClass="MainView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6u-ZG-fTs" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="112" y="64" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="GkG-gH-gRX"/>
+                                    <constraint firstAttribute="height" constant="150" id="XpQ-VB-eDM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <state key="normal" title="Start Workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="predictedWorkoutButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="fjt-ju-tYd"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="n3K-Ff-MON">
+                                <rect key="frame" x="16" y="535" width="343" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0z-oI-HXe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="4Cu-0I-obH"/>
+                                            <constraint firstAttribute="height" constant="75" id="uvD-tM-jhj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <state key="normal" title="Statistics"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uvD-tM-jhj"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="statisticsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="8V0-SE-jFa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmR-3M-mIa" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="121.5" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="K2a-u3-HSK"/>
+                                            <constraint firstAttribute="width" constant="100" id="rtc-k1-NGN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <state key="normal" title="Achievements"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="K2a-u3-HSK"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="achievementsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="a8g-Ud-Vbz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-6g-EpC" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="243" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="POR-XI-kmq"/>
+                                            <constraint firstAttribute="height" constant="75" id="ljk-Vv-mB0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <state key="normal" title="Game"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ljk-Vv-mB0"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="gameButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="TpF-zM-Quc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2H2-rm-zFk"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plt-Du-f1i" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="230" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Z9J-3p-aE8"/>
+                                    <constraint firstAttribute="width" constant="75" id="cbN-yT-WRr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <state key="normal" title="All Workouts"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cbN-yT-WRr"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="workoutsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="yL5-bj-ggC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="n3K-Ff-MON" secondAttribute="bottom" constant="32" id="190-Ds-GCh"/>
+                            <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerX" secondItem="4Ak-t7-upM" secondAttribute="centerX" id="1ld-8S-lmm"/>
+                            <constraint firstAttribute="trailing" secondItem="plt-Du-f1i" secondAttribute="trailing" constant="16" id="PrI-nO-BgI"/>
+                            <constraint firstItem="n3K-Ff-MON" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="16" id="Uv5-wY-mPW"/>
+                            <constraint firstItem="r6u-ZG-fTs" firstAttribute="top" secondItem="FrW-PK-ZFp" secondAttribute="bottom" id="WM2-tm-xRS"/>
+                            <constraint firstAttribute="trailing" secondItem="n3K-Ff-MON" secondAttribute="trailing" constant="16" id="c0C-vE-pqq"/>
+                            <constraint firstItem="plt-Du-f1i" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="16" id="gaJ-kI-fQ1"/>
+                            <constraint firstItem="plt-Du-f1i" firstAttribute="top" secondItem="r6u-ZG-fTs" secondAttribute="bottom" constant="16" id="jnu-lM-Jvb"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJN-3N-fGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-817.5" y="1767.5"/>
+        </scene>
+        <!--Statistics Screen-->
+        <scene sceneID="EFs-eI-zOS">
+            <objects>
+                <viewController storyboardIdentifier="StatisticsScreen" id="sDs-zJ-z3c" customClass="StatisticsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t2y-yL-hBT"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYx-hE-6GN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z61-U4-Y8o" customClass="StatisticsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yX-KJ-in2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329.5" y="1767.5"/>
+        </scene>
         <!--Workout-->
         <scene sceneID="Ce4-j0-b24">
             <objects>
@@ -1780,6 +1960,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJx-vX-JYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-329.5" y="-1089.5"/>
+        </scene>
+        <!--Achievements Screen-->
+        <scene sceneID="WJp-3K-5NF">
+            <objects>
+                <viewController storyboardIdentifier="AchievementsScreen" id="cZb-cv-30f" customClass="AchievementsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HSu-JL-O2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="2zB-CD-Gka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Utq-Nj-JhA" customClass="AchievementsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXi-5N-YAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.5" y="1767.5"/>
         </scene>
     </scenes>
     <resources>

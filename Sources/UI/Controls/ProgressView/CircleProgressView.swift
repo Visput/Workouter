@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleProgressView: UIView {
+final class CircleProgressView: UIView {
     
     var trackWidth: CGFloat = 4.0 {
         didSet {

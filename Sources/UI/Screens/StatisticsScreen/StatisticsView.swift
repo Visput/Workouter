@@ -8,6 +8,6 @@
 
 import UIKit
 
-class StatisticsView: BaseView {
+final class StatisticsView: BaseView {
     
 }

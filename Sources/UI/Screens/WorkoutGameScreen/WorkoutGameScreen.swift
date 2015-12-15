@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutGameScreen: BaseScreen {
+final class WorkoutGameScreen: BaseScreen {
     
     private lazy var icons = {
         return [

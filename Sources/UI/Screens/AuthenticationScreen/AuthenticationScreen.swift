@@ -11,7 +11,7 @@ import UIKit
 final class AuthenticationScreen: BaseScreen {
     
     private var nicknameController: TextFieldController!
-
+    
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
@@ -46,12 +46,12 @@ final class AuthenticationScreen: BaseScreen {
 extension AuthenticationScreen {
     
     private func signInWithFacebook() {
-        navigationManager.setWorkoutsScreenAsRootAnimated(true)
+        navigationManager.setMainScreenAsRootAnimated(true)
     }
     
     private func signInWithNickname() {
         if validateNickname() {
-            navigationManager.setWorkoutsScreenAsRootAnimated(true)
+            navigationManager.setMainScreenAsRootAnimated(true)
         }
     }
 }

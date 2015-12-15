@@ -60,15 +60,15 @@ final class AppShortcutsManager: NSObject {
         case .StartWorkout:
             navigationManager.dismissToRootScreenAnimated(false)
             if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
-                navigationManager.pushWorkoutDetailsScreenFromWorkoutsScreenWithWorkout(workout, animated: false)
+                navigationManager.pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout, animated: false)
             } else {
-                navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
+                navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(false, animated: false)
             }
             break
             
         case .CreateWorkout:
             navigationManager.dismissToRootScreenAnimated(false)
-            navigationManager.popToWorkoutsScreenWithSearchActive(false, animated: false)
+            navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(false, animated: false)
             navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
                 animated: false,
                 templateDidSelectAction: { [unowned self] workout in
@@ -88,7 +88,7 @@ final class AppShortcutsManager: NSObject {
             
         case .SearchWorkout:
             navigationManager.dismissToRootScreenAnimated(false)
-            navigationManager.popToWorkoutsScreenWithSearchActive(true, animated: false)
+            navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(true, animated: false)
             break
         }
         

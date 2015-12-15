@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutGameView: BaseView {
+final class WorkoutGameView: BaseView {
     
     @IBOutlet private(set) weak var collectionView: UICollectionView!
     

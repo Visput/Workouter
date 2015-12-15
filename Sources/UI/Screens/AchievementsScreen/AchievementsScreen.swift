@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AchievementsScreen: BaseScreen {
+final class AchievementsScreen: BaseScreen {
     
 }

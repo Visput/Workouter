@@ -8,6 +8,6 @@
 
 import UIKit
 
-class StatisticsScreen: BaseScreen {
+final class StatisticsScreen: BaseScreen {
     
 }

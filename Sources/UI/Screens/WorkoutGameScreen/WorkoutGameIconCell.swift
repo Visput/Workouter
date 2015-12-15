@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutGameIconCell: UICollectionViewCell {
+final class WorkoutGameIconCell: UICollectionViewCell {
     
     @IBOutlet private(set) weak var iconView: UIImageView!
 }

@@ -14,60 +14,60 @@ extension UIBarButtonItem {
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_back_green",
-            horizontalAlignment: alignment,
-            target: target,
-            action: action)
-        
-        return self.init(customView: barButton)
+            let barButton = barButtonWithImageNamed("icon_back_green",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
     }
     
     class func redBackItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_back_red",
-            horizontalAlignment: alignment,
-            target: target,
-            action: action)
-        
-        return self.init(customView: barButton)
+            let barButton = barButtonWithImageNamed("icon_back_red",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
     }
     
     class func greenDoneItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_done_green",
-            horizontalAlignment: alignment,
-            target: target,
-            action: action)
-        
-        return self.init(customView: barButton)
+            let barButton = barButtonWithImageNamed("icon_done_green",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
     }
     
     class func greenCancelItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_cancel_green",
-            horizontalAlignment: alignment,
-            target: target,
-            action: action)
-        
-        return self.init(customView: barButton)
+            let barButton = barButtonWithImageNamed("icon_cancel_green",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
     }
     
     class func redCancelItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
         action: Selector) -> Self {
             
-        let barButton = barButtonWithImageNamed("icon_cancel_red",
-            horizontalAlignment: alignment,
-            target: target,
-            action: action)
-        
-        return self.init(customView: barButton)
+            let barButton = barButtonWithImageNamed("icon_cancel_red",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
     }
     
     class func greenEditItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
@@ -94,6 +94,18 @@ extension UIBarButtonItem {
             return self.init(customView: barButton)
     }
     
+    class func greenSettingsItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
+        target: AnyObject,
+        action: Selector) -> Self {
+            
+            let barButton = barButtonWithImageNamed("icon_edit_green",
+                horizontalAlignment: alignment,
+                target: target,
+                action: action)
+            
+            return self.init(customView: barButton)
+    }
+    
     private class func barButtonWithImageNamed(imageName: String,
         horizontalAlignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
@@ -110,6 +122,6 @@ extension UIBarButtonItem {
             button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 4.0, 0.0)
             button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
             
-        return button
+            return button
     }
 }
