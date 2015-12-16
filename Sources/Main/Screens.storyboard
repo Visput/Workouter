@@ -1230,13 +1230,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-a5-fTR">
-                                <rect key="frame" x="0.0" y="144" width="375" height="1"/>
-                                <color key="backgroundColor" red="0.95686274766921997" green="0.15294118225574493" blue="0.32549020648002625" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="foD-4W-Qn8"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieS-ky-5XM" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="145" width="375" height="209"/>
                                 <subviews>
@@ -1322,22 +1315,17 @@
                         <constraints>
                             <constraint firstItem="p3g-r0-Dqy" firstAttribute="trailing" secondItem="he8-T0-7Vw" secondAttribute="trailing" constant="-32" id="31K-Up-zfV"/>
                             <constraint firstItem="T4R-MP-rxp" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="top" id="9mQ-vg-Zmm"/>
-                            <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="17" id="BL1-NB-7yU"/>
-                            <constraint firstItem="ieS-ky-5XM" firstAttribute="top" secondItem="xhf-a5-fTR" secondAttribute="bottom" id="Gjo-8F-jrr"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leading" constant="-12" id="HD1-TH-2wL"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="trailing" secondItem="T4R-MP-rxp" secondAttribute="trailing" id="IKM-0U-JaL"/>
-                            <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="7" id="Jpf-Cq-7qg"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="top" secondItem="T4R-MP-rxp" secondAttribute="top" constant="20" id="Kn8-wI-yUc"/>
+                            <constraint firstItem="ieS-ky-5XM" firstAttribute="top" secondItem="T4R-MP-rxp" secondAttribute="bottom" constant="1" id="NSw-00-Ouc"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="top" secondItem="DWq-Dn-Fiq" secondAttribute="top" constant="8" id="OJk-Pv-inM"/>
                             <constraint firstAttribute="trailing" secondItem="T4R-MP-rxp" secondAttribute="trailing" id="QWs-pm-iyy"/>
-                            <constraint firstItem="xhf-a5-fTR" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leading" id="TnM-hl-aMW"/>
                             <constraint firstItem="p3g-r0-Dqy" firstAttribute="bottom" secondItem="he8-T0-7Vw" secondAttribute="bottom" constant="13" id="e9j-Su-ZbN"/>
-                            <constraint firstAttribute="trailing" secondItem="xhf-a5-fTR" secondAttribute="trailing" id="ec0-vu-pVq"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="bottom" secondItem="T4R-MP-rxp" secondAttribute="bottom" id="gWl-KI-48Z"/>
                             <constraint firstAttribute="trailing" secondItem="he8-T0-7Vw" secondAttribute="trailing" constant="-12" id="ivf-eF-L8M"/>
                             <constraint firstItem="T4R-MP-rxp" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leading" id="jeC-DJ-VBt"/>
                             <constraint firstAttribute="trailing" secondItem="ieS-ky-5XM" secondAttribute="trailing" id="oaT-Xl-JcD"/>
-                            <constraint firstItem="xhf-a5-fTR" firstAttribute="top" secondItem="T4R-MP-rxp" secondAttribute="bottom" id="q4l-qK-q0V"/>
                             <constraint firstItem="he8-T0-7Vw" firstAttribute="leading" secondItem="T4R-MP-rxp" secondAttribute="leading" id="sEf-QJ-njr"/>
                             <constraint firstItem="ieS-ky-5XM" firstAttribute="leading" secondItem="DWq-Dn-Fiq" secondAttribute="leading" id="uPz-LC-MSU"/>
                         </constraints>
@@ -1346,8 +1334,6 @@
                                 <exclude reference="HD1-TH-2wL"/>
                                 <exclude reference="OJk-Pv-inM"/>
                                 <exclude reference="ivf-eF-L8M"/>
-                                <exclude reference="BL1-NB-7yU"/>
-                                <exclude reference="Jpf-Cq-7qg"/>
                             </mask>
                         </variation>
                         <connections>
