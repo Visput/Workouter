@@ -23,7 +23,7 @@ extension MainScreen {
     
     override func configureBarButtonItems() {
         super.configureBarButtonItems()
-        navigationItem.leftBarButtonItem = UIBarButtonItem.greenSettingsItemWithAlignment(.Left,
+        navigationItem.leftBarButtonItem = UIBarButtonItem.greenAccountSettingsItemWithAlignment(.Left,
             target: self,
             action: Selector("settingsButtonDidPress:"))
     }
