@@ -108,7 +108,159 @@
                     <view key="view" contentMode="scaleToFill" id="m47-pJ-WIT" customClass="ReferFriendsView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FwU-OU-lnn">
+                                <rect key="frame" x="16" y="153" width="343" height="264"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tec-Aa-tMS" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="C4m-W7-Oyj"/>
+                                            <constraint firstAttribute="height" constant="40" id="mJM-ze-Xso"/>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="pra-D6-cbs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Facebook" image="icon_facebook_white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="C4m-W7-Oyj"/>
+                                                <exclude reference="pra-D6-cbs"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-oi-eFo" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eg6-E6-mgE"/>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="kPD-1A-Aak"/>
+                                            <constraint firstAttribute="width" constant="180" id="lyM-0K-rXs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Twitter" image="icon_facebook_white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lyM-0K-rXs"/>
+                                                <exclude reference="kPD-1A-Aak"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-qt-wu3" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="NXj-1d-1w5"/>
+                                            <constraint firstAttribute="height" constant="40" id="bap-Vs-Tgi"/>
+                                            <constraint firstAttribute="width" constant="180" id="qpf-Uf-yyB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Instagram" image="icon_facebook_white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qpf-Uf-yyB"/>
+                                                <exclude reference="NXj-1d-1w5"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQZ-ub-hNV" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="3EJ-Ix-wgB"/>
+                                            <constraint firstAttribute="height" constant="40" id="OFd-bm-xtL"/>
+                                            <constraint firstAttribute="width" constant="180" id="w8r-jz-H7q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Email" image="icon_facebook_white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="w8r-jz-H7q"/>
+                                                <exclude reference="3EJ-Ix-wgB"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-Fb-wAN" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="224" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6Yl-rQ-zN7"/>
+                                            <constraint firstAttribute="width" constant="180" id="Is8-hR-EHx"/>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="xBS-3g-nHL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Message" image="icon_facebook_white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Is8-hR-EHx"/>
+                                                <exclude reference="xBS-3g-nHL"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-Uy-scu">
+                                <rect key="frame" x="16" y="80" width="343" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Kd3-Y6-DI2"/>
+                                </constraints>
+                                <string key="text">Help spread the word about Workouter.
+Invite your friends to join Workouter today.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Kd3-Y6-DI2"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FwU-OU-lnn" firstAttribute="top" secondItem="ZiB-Uy-scu" secondAttribute="bottom" constant="32" id="4ZN-7u-vBw"/>
+                            <constraint firstAttribute="trailing" secondItem="ZiB-Uy-scu" secondAttribute="trailing" constant="16" id="Kve-DD-7CV"/>
+                            <constraint firstItem="FwU-OU-lnn" firstAttribute="leading" secondItem="m47-pJ-WIT" secondAttribute="leading" constant="16" id="Nfs-6s-t1O"/>
+                            <constraint firstItem="FwU-OU-lnn" firstAttribute="top" secondItem="SP6-aC-xb2" secondAttribute="bottom" constant="16" id="RF7-vT-Yd0"/>
+                            <constraint firstItem="ZiB-Uy-scu" firstAttribute="top" secondItem="SP6-aC-xb2" secondAttribute="bottom" constant="16" id="TsU-AA-fyM"/>
+                            <constraint firstItem="ZiB-Uy-scu" firstAttribute="leading" secondItem="m47-pJ-WIT" secondAttribute="leading" constant="16" id="WyA-RH-b8W"/>
+                            <constraint firstAttribute="trailing" secondItem="FwU-OU-lnn" secondAttribute="trailing" constant="16" id="dvk-zy-IWL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RF7-vT-Yd0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Refer Friends" id="o9w-e0-ABZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="2gC-Dy-Wgv"/>
@@ -121,4 +273,7 @@
             <point key="canvasLocation" x="1156.5" y="-1864.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_facebook_white" width="20" height="20"/>
+    </resources>
 </document>
