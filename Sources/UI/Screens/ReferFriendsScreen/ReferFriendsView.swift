@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ReferFriendsView: BaseView {
+final class ReferFriendsView: BaseView {
 
 }

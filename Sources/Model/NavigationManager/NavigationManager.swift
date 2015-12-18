@@ -308,6 +308,11 @@ extension NavigationManager {
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
+    func pushReferFriendsScreenAnimated(animated: Bool) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(ReferFriendsScreen.className()) as! ReferFriendsScreen
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
     func showInfoDialogWithTitle(title: String, message: String) {
         let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
