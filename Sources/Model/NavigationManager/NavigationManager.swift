@@ -19,13 +19,9 @@ final class NavigationManager: NSObject {
         }
     }
     
-    private var screensStoryboard: UIStoryboard {
+    private var storyboard: UIStoryboard {
         return window.rootViewController!.storyboard!
     }
-    
-    private lazy var dialogsStoryboard: UIStoryboard = {
-        return UIStoryboard(name: "Dialogs", bundle: NSBundle.mainBundle())
-    }()
     
     private var rootNavigationController: UINavigationController {
         return navigationControllersStack.first!
@@ -159,14 +155,14 @@ extension NavigationManager {
 extension NavigationManager {
     
     func instantiateWorkoutDetailsScreenWithWorkout(workout: Workout) -> WorkoutDetailsScreen {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         
         return screen
     }
     
     func instantiateWelcomePageContentControllerWithItem(item: WelcomePageItem) -> WelcomePageContentController {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WelcomePageContentController.className())
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WelcomePageContentController.className())
             as! WelcomePageContentController
         screen.item = item
         
@@ -177,40 +173,40 @@ extension NavigationManager {
 extension NavigationManager {
     
     func setWelcomeScreenAsRootAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WelcomeScreen.className()) as! WelcomeScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WelcomeScreen.className()) as! WelcomeScreen
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)
     }
     
     func pushAuthenticationScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
         pushScreen(screen, inNavigationController: rootNavigationController, animated: animated)
     }
     
     func setMainScreenAsRootAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(MainScreen.className()) as! MainScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(MainScreen.className()) as! MainScreen
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)
     }
     
     func pushWorkoutsScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushWorkoutsScreenFromMainScreenWithSearchActive(searchActive: Bool, animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
         screen.needsActivateSearch = searchActive
         let screens = [rootScreen, screen]
         setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
     }
     
     func pushWorkoutDetailsScreenWithWorkout(workout: Workout, animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout: Workout, animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutDetailsScreen.className()) as! WorkoutDetailsScreen
         screen.workout = workout
         let screens = [rootScreen, screen]
         setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
@@ -221,7 +217,7 @@ extension NavigationManager {
         templateDidSelectAction: ((workout: Workout) -> Void)?,
         templateDidCancelAction: (() -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
             screen.searchRequest = searchRequest
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
@@ -232,7 +228,7 @@ extension NavigationManager {
         animated: Bool,
         workoutDidEditAction: ((workout: Workout) -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
             screen.workout = workout
             screen.workoutDidEditAction = workoutDidEditAction
             pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
@@ -243,7 +239,7 @@ extension NavigationManager {
         workoutDidEditAction: ((workout: Workout) -> Void)?,
         workoutDidCancelAction: (() -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
             screen.workout = workout
             screen.workoutDidEditAction = workoutDidEditAction
             screen.workoutDidCancelAction = workoutDidCancelAction
@@ -255,7 +251,7 @@ extension NavigationManager {
         templateDidSelectAction: ((step: Step) -> Void)?,
         templateDidCancelAction: (() -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
             screen.searchRequest = searchRequest
             screen.templateDidSelectAction = templateDidSelectAction
             screen.templateDidCancelAction = templateDidCancelAction
@@ -266,7 +262,7 @@ extension NavigationManager {
         animated: Bool,
         stepDidEditAction: ((step: Step) -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step
             screen.stepDidEditAction = stepDidEditAction
             pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
@@ -277,7 +273,7 @@ extension NavigationManager {
         stepDidEditAction: ((step: Step) -> Void)?,
         stepDidCancelAction: (() -> Void)?) {
             
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(StepEditScreen.className()) as! StepEditScreen
             screen.step = step
             screen.stepDidEditAction = stepDidEditAction
             screen.stepDidCancelAction = stepDidCancelAction
@@ -285,35 +281,35 @@ extension NavigationManager {
     }
     
     func presentSettingsScreenAnimated(animated: Bool, didCancelAction: (() -> Void)?) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(SettingsScreen.className()) as! SettingsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(SettingsScreen.className()) as! SettingsScreen
         screen.didCancelAction = didCancelAction
         presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
     func pushWorkoutPlayerScreenWithWorkout(workout: Workout,
         animated: Bool) {
-            let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
+            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
             screen.workout = workout
             pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushWorkoutGameScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(WorkoutGameScreen.className()) as! WorkoutGameScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutGameScreen.className()) as! WorkoutGameScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushStatisticsScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(StatisticsScreen.className()) as! StatisticsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(StatisticsScreen.className()) as! StatisticsScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushAchievementsScreenAnimated(animated: Bool) {
-        let screen = screensStoryboard.instantiateViewControllerWithIdentifier(AchievementsScreen.className()) as! AchievementsScreen
+        let screen = storyboard.instantiateViewControllerWithIdentifier(AchievementsScreen.className()) as! AchievementsScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func showInfoDialogWithTitle(title: String, message: String) {
-        let dialog = dialogsStoryboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Info
@@ -321,7 +317,7 @@ extension NavigationManager {
     }
     
     func showErrorDialogWithTitle(title: String, message: String) {
-        let dialog = dialogsStoryboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
+        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
         dialog.primaryText = title
         dialog.secondaryText = message
         dialog.style = .Error
