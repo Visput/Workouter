@@ -134,6 +134,9 @@
                                                 <exclude reference="pra-D6-cbs"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="facebookButtonDidPress:" destination="06m-qB-QbZ" eventType="touchUpInside" id="Ew1-2u-4dB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-oi-eFo" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="343" height="40"/>
@@ -157,6 +160,9 @@
                                                 <exclude reference="lyM-0K-rXs"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="twitterButtonDidPress:" destination="06m-qB-QbZ" eventType="touchUpInside" id="n8a-IP-n6f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-qt-wu3" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="343" height="40"/>
@@ -180,6 +186,9 @@
                                                 <exclude reference="qpf-Uf-yyB"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="instagramButtonDidPress:" destination="06m-qB-QbZ" eventType="touchUpInside" id="AiJ-wW-sco"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQZ-ub-hNV" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="168" width="343" height="40"/>
@@ -203,6 +212,9 @@
                                                 <exclude reference="w8r-jz-H7q"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="emailButtonDidPress:" destination="06m-qB-QbZ" eventType="touchUpInside" id="y52-QW-Pf8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-Fb-wAN" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="224" width="343" height="40"/>
@@ -226,6 +238,9 @@
                                                 <exclude reference="xBS-3g-nHL"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="messageButtonDidPress:" destination="06m-qB-QbZ" eventType="touchUpInside" id="Ce2-Dd-50f"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

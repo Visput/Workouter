@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class TintButton: UIButton {
+class TintButton: UIButton {
 
     @IBInspectable dynamic var primaryColor: UIColor = UIColor.blackColor() {
         didSet {
