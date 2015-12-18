@@ -153,8 +153,8 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="lyM-0K-rXs"/>
                                                 <exclude reference="kPD-1A-Aak"/>
+                                                <exclude reference="lyM-0K-rXs"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -176,8 +176,8 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="qpf-Uf-yyB"/>
                                                 <exclude reference="NXj-1d-1w5"/>
+                                                <exclude reference="qpf-Uf-yyB"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -199,8 +199,8 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="w8r-jz-H7q"/>
                                                 <exclude reference="3EJ-Ix-wgB"/>
+                                                <exclude reference="w8r-jz-H7q"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -237,7 +237,7 @@
                                 <string key="text">Help spread the word about Workouter.
 Invite your friends to join Workouter today.</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">

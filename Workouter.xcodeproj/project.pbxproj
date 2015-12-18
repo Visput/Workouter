@@ -1329,7 +1329,7 @@
 		};
 		9F98D8A51BF7D8DF0023F8CD /* Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1343,7 +1343,7 @@
 		};
 		9F98D8A61BF7D8FA0023F8CD /* Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
