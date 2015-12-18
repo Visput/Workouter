@@ -569,6 +569,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		9F7CA3DB1C23D6C5003E9BFD /* ReferFriendScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ReferFriendScreen;
+			sourceTree = "<group>";
+		};
 		9F8782091BFD965800D431C2 /* UIView+IBInspectable */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +935,7 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F7CA3DB1C23D6C5003E9BFD /* ReferFriendScreen */,
 				9FED642D1C1F515800F40CDF /* StatisticsScreen */,
 				9FED64261C1F50CE00F40CDF /* AchievementsScreen */,
 				9FED641F1C1F508400F40CDF /* MainScreen */,
