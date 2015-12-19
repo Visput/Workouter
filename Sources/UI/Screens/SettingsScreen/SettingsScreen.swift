@@ -73,7 +73,7 @@ extension SettingsScreen {
             }))
         
         settingsItems.append(SettingsItem(title: NSLocalizedString("Rate App", comment: ""),
-            icon: UIImage(named: "icon_info_green")!,
+            icon: UIImage(named: "icon_rate_app_green")!,
             action: { [unowned self] in
                 self.navigationManager.pushReferFriendsScreenAnimated(true)
             }))
