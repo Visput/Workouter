@@ -21,30 +21,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="32" minimumInteritemSpacing="0.0" id="QD5-t8-4AK">
-                                    <size key="itemSize" width="135" height="100"/>
+                                    <size key="itemSize" width="135" height="96"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingsCell" id="3ne-iU-rwb" customClass="SettingsCell" customModule="Workouter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80" width="135" height="100"/>
+                                        <rect key="frame" x="0.0" y="80" width="135" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="135" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2ej-aZ-Gtz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="96"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j5h-eA-ffT">
-                                                            <rect key="frame" x="35" y="0.0" width="64" height="64"/>
+                                                            <rect key="frame" x="37.5" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="j5h-eA-ffT" secondAttribute="height" multiplier="1:1" id="XK6-V7-1Qq"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BZ-bP-yta">
-                                                            <rect key="frame" x="67.5" y="80" width="0.0" height="20"/>
+                                                            <rect key="frame" x="67.5" y="76" width="0.0" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="qFQ-df-aJO"/>
                                                             </constraints>

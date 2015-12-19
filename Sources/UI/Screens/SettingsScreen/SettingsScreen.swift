@@ -67,19 +67,19 @@ extension SettingsScreen {
         settingsItems = [SettingsItem]()
         
         settingsItems.append(SettingsItem(title: NSLocalizedString("Refer Friends", comment: ""),
-            icon: UIImage(named: "icon_info_green")!,
+            icon: UIImage(named: "icon_refer_friend_green")!,
             action: { [unowned self] in
                 self.navigationManager.pushReferFriendsScreenAnimated(true)
             }))
         
-        settingsItems.append(SettingsItem(title: NSLocalizedString("Review App", comment: ""),
+        settingsItems.append(SettingsItem(title: NSLocalizedString("Rate App", comment: ""),
             icon: UIImage(named: "icon_info_green")!,
             action: { [unowned self] in
                 self.navigationManager.pushReferFriendsScreenAnimated(true)
             }))
         
         settingsItems.append(SettingsItem(title: NSLocalizedString("Contact Support", comment: ""),
-            icon: UIImage(named: "icon_info_green")!,
+            icon: UIImage(named: "icon_contact_support_green")!,
             action: { [unowned self] in
                 self.navigationManager.pushReferFriendsScreenAnimated(true)
             }))
