@@ -147,7 +147,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Twitter" image="icon_facebook_white"/>
+                                        <state key="normal" title="Twitter" image="icon_twitter_white"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -173,7 +173,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Instagram" image="icon_facebook_white"/>
+                                        <state key="normal" title="Instagram" image="icon_instagram_white"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,7 +199,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Email" image="icon_facebook_white"/>
+                                        <state key="normal" title="Email" image="icon_email_white"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -225,7 +225,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Message" image="icon_facebook_white"/>
+                                        <state key="normal" title="Message" image="icon_message_white"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,6 +289,10 @@ Invite your friends to join Workouter today.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="icon_email_white" width="20" height="20"/>
         <image name="icon_facebook_white" width="20" height="20"/>
+        <image name="icon_instagram_white" width="20" height="20"/>
+        <image name="icon_message_white" width="20" height="20"/>
+        <image name="icon_twitter_white" width="20" height="20"/>
     </resources>
 </document>
