@@ -57,7 +57,6 @@ final class AppAppearance {
         // TintButton.
         TintButton.appearance().primaryColor = UIColor.primaryColor()
         TintButton.appearance().secondaryColor = UIColor.whiteColor()
-        TintButton.appearance().disabledStateColor = UIColor.disabledStateColor()
         TintButton.appearance().invalidStateColor = UIColor.invalidStateColor()
     }
 }

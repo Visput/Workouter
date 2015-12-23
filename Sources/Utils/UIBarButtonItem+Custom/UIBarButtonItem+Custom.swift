@@ -109,12 +109,9 @@ extension UIBarButtonItem {
     private class func barButtonWithImageNamed(imageName: String,
         horizontalAlignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
-        action: Selector) -> TintButton {
+        action: Selector) -> AlphaButton {
             
-            let button = TintButton(type: .Custom)
-            button.borderVisible = false
-            button.primaryColor = UIColor.clearColor()
-            button.secondaryColor = UIColor.clearColor()
+            let button = AlphaButton(type: .Custom)
             button.setImage(UIImage(named: imageName), forState: .Normal)
             button.frame = CGRectMake(0.0, 0.0, 60.0, 44.0)
             button.contentHorizontalAlignment = horizontalAlignment

@@ -58,13 +58,6 @@ extension UIColor {
             alpha:1)
     }
 
-    class func disabledStateColor() -> UIColor {
-        return UIColor(red: 0.6941176652908325,
-            green:0.7490196228027344,
-            blue:0.7686274647712708,
-            alpha:0.6000000238418579)
-    }
-
     class func invalidStateColor() -> UIColor {
         return UIColor(red: 0.9333333373069763,
             green:0.239215686917305,

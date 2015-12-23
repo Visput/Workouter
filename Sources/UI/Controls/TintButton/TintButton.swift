@@ -28,12 +28,6 @@ class TintButton: UIButton {
         }
     }
     
-    @IBInspectable dynamic var disabledStateColor: UIColor = UIColor.lightGrayColor() {
-        didSet {
-            updateAppearance()
-        }
-    }
-    
     @IBInspectable dynamic var cornerRadius: CGFloat = 8.0 {
         didSet {
             updateAppearance()
@@ -109,6 +103,10 @@ class TintButton: UIButton {
 extension TintButton {
     
     func updateAppearance() {
+        guard enabled else {
+            fatalError("Disabled state is deprecated for better user experience.")
+        }
+        
         // Layer.
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = cornerRadius > 0
@@ -126,18 +124,13 @@ extension TintButton {
         if state == .Highlighted {
             alpha = 0.4
             
-        } else if state == .Disabled {
-            primaryColorForCurrentState = disabledStateColor
-            alpha = 1.0
-            
         } else if state == .Selected {
             alpha = 1.0
-            primaryColorForCurrentState = selectedColorForColor(primaryColorForCurrentState)
+            primaryColorForCurrentState = primaryColorForCurrentState.selectedColor()
             
         } else {
             alpha = 1.0
         }
-        
         
         // Filling animation.
         let buttonBorderColor = primaryColorForCurrentState.CGColor
@@ -176,24 +169,5 @@ extension TintButton {
     
     func applyDefaultValues() {
         adjustsImageWhenHighlighted = false
-        adjustsImageWhenDisabled = true
-    }
-    
-    private func selectedColorForColor(color: UIColor) -> UIColor {
-        var selectedColor = color
-        
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        
-        if color.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            selectedColor = UIColor(red: max(red - 0.2, 0.0),
-                green: max(green - 0.2, 0.0),
-                blue: max(blue - 0.2, 0.0),
-                alpha: alpha)
-        }
-        
-        return selectedColor
     }
 }
