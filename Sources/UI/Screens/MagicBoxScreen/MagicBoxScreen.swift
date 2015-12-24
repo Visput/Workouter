@@ -16,7 +16,7 @@ final class MagicBoxScreen: BaseScreen {
             UIImage(named: "icon_kettlebell_filled_green")!,
             UIImage(named: "icon_shoes_filled_green")!,
             UIImage(named: "icon_dumbbell_filled_green")!,
-            UIImage(named: "icon_timer_filled_green")!
+            UIImage(named: "icon_timer_green")!
         ]
     }()
     
