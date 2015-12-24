@@ -223,28 +223,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6u-ZG-fTs" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="112" y="64" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-he-CiD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="355.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6u-ZG-fTs" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="103.5" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="GkG-gH-gRX"/>
+                                            <constraint firstAttribute="height" constant="150" id="XpQ-VB-eDM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <state key="normal" title="Start Workout"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="75"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="predictedWorkoutButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="fjt-ju-tYd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="GkG-gH-gRX"/>
-                                    <constraint firstAttribute="height" constant="150" id="XpQ-VB-eDM"/>
+                                    <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerY" secondItem="lCQ-he-CiD" secondAttribute="centerY" id="JVD-xV-24q"/>
+                                    <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerX" secondItem="lCQ-he-CiD" secondAttribute="centerX" id="TU2-Up-RGr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <state key="normal" title="Start Workout"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="75"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="predictedWorkoutButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="fjt-ju-tYd"/>
-                                </connections>
-                            </button>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nr-fj-zZD">
-                                <rect key="frame" x="203.5" y="323" width="139.5" height="139.5"/>
+                                <rect key="frame" x="203.5" y="339.5" width="139.5" height="139.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Nr-fj-zZD" secondAttribute="height" multiplier="1:1" id="Zep-Jk-9jK"/>
                                 </constraints>
@@ -253,7 +263,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-Wx-Pwc">
-                                <rect key="frame" x="32" y="323" width="139.5" height="139.5"/>
+                                <rect key="frame" x="32" y="339.5" width="139.5" height="139.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="height" multiplier="1:1" id="9V1-in-k3r"/>
                                 </constraints>
@@ -262,7 +272,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI3-XS-5tF">
-                                <rect key="frame" x="32" y="494.5" width="139.5" height="140"/>
+                                <rect key="frame" x="32" y="495" width="139.5" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VI3-XS-5tF" secondAttribute="height" multiplier="139:140" id="7ni-KO-kKr"/>
                                 </constraints>
@@ -271,7 +281,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bau-hU-Yd6">
-                                <rect key="frame" x="203" y="494.5" width="139.5" height="140"/>
+                                <rect key="frame" x="203" y="495" width="139.5" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bau-hU-Yd6" secondAttribute="height" multiplier="139:140" id="hiQ-5H-gS3"/>
                                 </constraints>
@@ -284,19 +294,21 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bau-hU-Yd6" secondAttribute="trailing" constant="32" id="0VI-me-CcL"/>
                             <constraint firstItem="9Nr-fj-zZD" firstAttribute="leading" secondItem="v7c-Wx-Pwc" secondAttribute="trailing" constant="32" id="1Gh-FH-YaV"/>
-                            <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerX" secondItem="4Ak-t7-upM" secondAttribute="centerX" id="1ld-8S-lmm"/>
                             <constraint firstItem="VI3-XS-5tF" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="2bp-Tf-ky6"/>
+                            <constraint firstItem="v7c-Wx-Pwc" firstAttribute="top" secondItem="lCQ-he-CiD" secondAttribute="bottom" constant="-16" id="9vI-1k-XoV"/>
                             <constraint firstItem="9Nr-fj-zZD" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="FAt-8H-oQS"/>
-                            <constraint firstItem="VI3-XS-5tF" firstAttribute="top" secondItem="v7c-Wx-Pwc" secondAttribute="bottom" constant="32" id="JcF-Pn-trf"/>
+                            <constraint firstItem="VI3-XS-5tF" firstAttribute="top" secondItem="v7c-Wx-Pwc" secondAttribute="bottom" constant="16" id="JcF-Pn-trf"/>
                             <constraint firstItem="bau-hU-Yd6" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="KhO-tF-37X"/>
                             <constraint firstItem="bau-hU-Yd6" firstAttribute="leading" secondItem="VI3-XS-5tF" secondAttribute="trailing" constant="32" id="V4T-fW-0WX"/>
-                            <constraint firstItem="r6u-ZG-fTs" firstAttribute="top" secondItem="FrW-PK-ZFp" secondAttribute="bottom" id="WM2-tm-xRS"/>
                             <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="VI3-XS-5tF" secondAttribute="bottom" constant="32" id="WtY-qm-V1Y"/>
-                            <constraint firstItem="bau-hU-Yd6" firstAttribute="top" secondItem="9Nr-fj-zZD" secondAttribute="bottom" constant="32" id="X5q-Tg-GJn"/>
+                            <constraint firstItem="bau-hU-Yd6" firstAttribute="top" secondItem="9Nr-fj-zZD" secondAttribute="bottom" constant="16" id="X5q-Tg-GJn"/>
                             <constraint firstItem="v7c-Wx-Pwc" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="ZdU-sZ-7MP"/>
+                            <constraint firstItem="lCQ-he-CiD" firstAttribute="top" secondItem="4Ak-t7-upM" secondAttribute="top" id="cj8-6H-0f9"/>
                             <constraint firstItem="VI3-XS-5tF" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="cwE-GK-WGp"/>
                             <constraint firstAttribute="trailing" secondItem="9Nr-fj-zZD" secondAttribute="trailing" constant="32" id="neq-ue-aUm"/>
                             <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="bau-hU-Yd6" secondAttribute="bottom" constant="32" id="opw-01-Ssn"/>
+                            <constraint firstAttribute="trailing" secondItem="lCQ-he-CiD" secondAttribute="trailing" id="tay-pO-4JW"/>
+                            <constraint firstItem="lCQ-he-CiD" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" id="zyk-Ty-zop"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I4Q-fS-luL">
@@ -661,6 +673,10 @@
         <scene sceneID="YpA-5W-TJK">
             <objects>
                 <viewController id="xLY-fV-a0r" customClass="WorkoutsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dgs-Id-Rs8"/>
+                        <viewControllerLayoutGuide type="bottom" id="dfb-uN-kGG"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mvi-Au-ROp" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,16 +693,16 @@
                                         <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="b1x-Bf-hre">
-                                        <rect key="frame" x="18" y="0.0" width="103" height="103"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_refer_friend_green" translatesAutoresizingMaskIntoConstraints="NO" id="b1x-Bf-hre">
+                                        <rect key="frame" x="26" y="16" width="87" height="87"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="b1x-Bf-hre" secondAttribute="height" multiplier="1:1" id="Zsj-rE-8hE"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="b1x-Bf-hre" firstAttribute="top" secondItem="fZh-vl-g1V" secondAttribute="top" id="5GO-pP-YRH"/>
+                                    <constraint firstItem="b1x-Bf-hre" firstAttribute="top" secondItem="fZh-vl-g1V" secondAttribute="top" constant="16" id="5GO-pP-YRH"/>
                                     <constraint firstItem="HcM-qG-Iod" firstAttribute="top" secondItem="b1x-Bf-hre" secondAttribute="bottom" constant="16" id="Cji-lD-GpI"/>
                                     <constraint firstAttribute="bottom" secondItem="HcM-qG-Iod" secondAttribute="bottom" id="PSY-h0-6xZ"/>
                                     <constraint firstAttribute="trailing" secondItem="HcM-qG-Iod" secondAttribute="trailing" id="YX5-2Y-jUf"/>
@@ -698,7 +714,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fZh-vl-g1V" secondAttribute="trailing" id="L7k-tI-S9z"/>
                             <constraint firstItem="fZh-vl-g1V" firstAttribute="leading" secondItem="Mvi-Au-ROp" secondAttribute="leading" id="hfk-Lc-vaC"/>
@@ -715,6 +731,10 @@
         <scene sceneID="SNF-gx-lbh">
             <objects>
                 <viewController id="cbC-5x-3FI" customClass="StatisticsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2m-zn-udE"/>
+                        <viewControllerLayoutGuide type="bottom" id="2R2-Ur-rNv"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xVV-Sr-5qp" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -731,28 +751,28 @@
                                         <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-FY-sVq">
-                                        <rect key="frame" x="17.5" y="0.0" width="104" height="104"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_contact_support_green" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-FY-sVq">
+                                        <rect key="frame" x="25.5" y="16" width="88" height="88"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lgF-FY-sVq" secondAttribute="height" multiplier="1:1" id="lpg-cL-m5J"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="tT5-o9-QLV" firstAttribute="top" secondItem="lgF-FY-sVq" secondAttribute="bottom" constant="16" id="1uQ-v2-OHI"/>
                                     <constraint firstAttribute="bottom" secondItem="tT5-o9-QLV" secondAttribute="bottom" id="3iN-hW-IUh"/>
                                     <constraint firstAttribute="trailing" secondItem="tT5-o9-QLV" secondAttribute="trailing" id="HLz-sb-74S"/>
                                     <constraint firstItem="lgF-FY-sVq" firstAttribute="centerX" secondItem="Ax1-FR-iEo" secondAttribute="centerX" id="I3i-O4-0wi"/>
                                     <constraint firstItem="tT5-o9-QLV" firstAttribute="leading" secondItem="Ax1-FR-iEo" secondAttribute="leading" id="nuC-yj-jF9"/>
-                                    <constraint firstItem="lgF-FY-sVq" firstAttribute="top" secondItem="Ax1-FR-iEo" secondAttribute="top" id="t7K-pn-qVX"/>
+                                    <constraint firstItem="lgF-FY-sVq" firstAttribute="top" secondItem="Ax1-FR-iEo" secondAttribute="top" constant="16" id="t7K-pn-qVX"/>
                                 </constraints>
                                 <connections>
                                     <action selector="actionButtonDidPress:" destination="cbC-5x-3FI" eventType="touchUpInside" id="QAG-Pb-SDK"/>
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ax1-FR-iEo" firstAttribute="top" secondItem="xVV-Sr-5qp" secondAttribute="top" id="9gQ-R1-U3U"/>
                             <constraint firstItem="Ax1-FR-iEo" firstAttribute="leading" secondItem="xVV-Sr-5qp" secondAttribute="leading" id="IjZ-Bu-y7m"/>
@@ -769,6 +789,10 @@
         <scene sceneID="2WW-ZM-NG5">
             <objects>
                 <viewController id="ehC-Hj-cMF" customClass="AchievementsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kKv-Y8-tXU"/>
+                        <viewControllerLayoutGuide type="bottom" id="30t-4M-80y"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qM2-yh-Xhl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -785,18 +809,18 @@
                                         <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="lGV-85-9ZR">
-                                        <rect key="frame" x="17" y="0.0" width="104" height="104"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_rate_app_green" translatesAutoresizingMaskIntoConstraints="NO" id="lGV-85-9ZR">
+                                        <rect key="frame" x="25" y="16" width="88" height="88"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lGV-85-9ZR" secondAttribute="height" multiplier="1:1" id="O6Z-ai-jI8"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="3on-2i-bbj" secondAttribute="bottom" id="2mi-vJ-7ED"/>
                                     <constraint firstItem="3on-2i-bbj" firstAttribute="top" secondItem="lGV-85-9ZR" secondAttribute="bottom" constant="16" id="6Hw-q9-wZe"/>
-                                    <constraint firstItem="lGV-85-9ZR" firstAttribute="top" secondItem="07C-Ul-2V3" secondAttribute="top" id="7nv-v3-Np6"/>
+                                    <constraint firstItem="lGV-85-9ZR" firstAttribute="top" secondItem="07C-Ul-2V3" secondAttribute="top" constant="16" id="7nv-v3-Np6"/>
                                     <constraint firstAttribute="trailing" secondItem="3on-2i-bbj" secondAttribute="trailing" id="Hpz-9u-QJ3"/>
                                     <constraint firstItem="3on-2i-bbj" firstAttribute="leading" secondItem="07C-Ul-2V3" secondAttribute="leading" id="YXa-rh-Gtx"/>
                                     <constraint firstItem="lGV-85-9ZR" firstAttribute="centerX" secondItem="07C-Ul-2V3" secondAttribute="centerX" id="w0H-vb-u1O"/>
@@ -806,7 +830,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="07C-Ul-2V3" firstAttribute="leading" secondItem="qM2-yh-Xhl" secondAttribute="leading" id="Exp-NF-xnH"/>
                             <constraint firstItem="07C-Ul-2V3" firstAttribute="top" secondItem="qM2-yh-Xhl" secondAttribute="top" id="W6U-kH-b66"/>
@@ -823,6 +847,10 @@
         <scene sceneID="FWx-p9-HCd">
             <objects>
                 <viewController id="VzN-fl-MBC" customClass="MagicBoxPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XOU-fH-Ghw"/>
+                        <viewControllerLayoutGuide type="bottom" id="I8x-rq-EiJ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Na2-jq-JHt" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -840,19 +868,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="eIP-pL-mTi">
-                                        <rect key="frame" x="17" y="0.0" width="104" height="104"/>
+                                        <rect key="frame" x="25" y="16" width="88" height="88"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eIP-pL-mTi" secondAttribute="height" multiplier="1:1" id="dfH-Bv-hk9"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="eIP-pL-mTi" firstAttribute="centerX" secondItem="SMe-yG-w14" secondAttribute="centerX" id="Av7-Zc-rYj"/>
                                     <constraint firstItem="1Hg-aQ-eKn" firstAttribute="top" secondItem="eIP-pL-mTi" secondAttribute="bottom" constant="16" id="Bt9-pO-XcG"/>
                                     <constraint firstAttribute="trailing" secondItem="1Hg-aQ-eKn" secondAttribute="trailing" id="bYY-3A-oXd"/>
                                     <constraint firstItem="1Hg-aQ-eKn" firstAttribute="leading" secondItem="SMe-yG-w14" secondAttribute="leading" id="kQx-O7-x4V"/>
-                                    <constraint firstItem="eIP-pL-mTi" firstAttribute="top" secondItem="SMe-yG-w14" secondAttribute="top" id="sHB-Xd-2dD"/>
+                                    <constraint firstItem="eIP-pL-mTi" firstAttribute="top" secondItem="SMe-yG-w14" secondAttribute="top" constant="16" id="sHB-Xd-2dD"/>
                                     <constraint firstAttribute="bottom" secondItem="1Hg-aQ-eKn" secondAttribute="bottom" id="wWO-zP-4jf"/>
                                 </constraints>
                                 <connections>
@@ -860,7 +888,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="SMe-yG-w14" secondAttribute="bottom" id="0w2-Fg-yST"/>
                             <constraint firstAttribute="trailing" secondItem="SMe-yG-w14" secondAttribute="trailing" id="DMg-mB-1qw"/>
@@ -876,6 +904,9 @@
     </scenes>
     <resources>
         <image name="icon_cancel_gray" width="40" height="40"/>
+        <image name="icon_contact_support_green" width="60" height="60"/>
         <image name="icon_info_green" width="60" height="60"/>
+        <image name="icon_rate_app_green" width="60" height="60"/>
+        <image name="icon_refer_friend_green" width="60" height="60"/>
     </resources>
 </document>
