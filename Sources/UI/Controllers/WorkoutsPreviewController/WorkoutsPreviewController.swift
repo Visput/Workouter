@@ -1,5 +1,5 @@
 //
-//  AllWorkoutsPreviewController.swift
+//  WorkoutsPreviewController.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 12/23/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AllWorkoutsPreviewController: BaseViewController {
+final class WorkoutsPreviewController: BaseViewController {
 
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager

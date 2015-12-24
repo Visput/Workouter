@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="height" multiplier="1:1" id="9V1-in-k3r"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="xLY-fV-a0r" kind="embed" identifier="AllWorkouts" id="Frc-Tl-TQY"/>
+                                    <segue destination="xLY-fV-a0r" kind="embed" identifier="Workouts" id="Frc-Tl-TQY"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI3-XS-5tF">
@@ -657,10 +657,10 @@
             </objects>
             <point key="canvasLocation" x="176.5" y="1767.5"/>
         </scene>
-        <!--All Workouts Preview Controller-->
+        <!--Workouts Preview Controller-->
         <scene sceneID="YpA-5W-TJK">
             <objects>
-                <viewController id="xLY-fV-a0r" customClass="AllWorkoutsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xLY-fV-a0r" customClass="WorkoutsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mvi-Au-ROp" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -668,7 +668,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZh-vl-g1V" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcM-qG-Iod">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcM-qG-Iod">
                                         <rect key="frame" x="0.0" y="119" width="139.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7u3-Ph-ibQ"/>

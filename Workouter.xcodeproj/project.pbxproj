@@ -187,8 +187,8 @@
 		9FF8A1BC1C2B29E900A25EAA /* AlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1BA1C2B29E900A25EAA /* AlphaButton.swift */; };
 		9FF8A1BF1C2B30F300A25EAA /* UIColor+Selected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1BE1C2B30F300A25EAA /* UIColor+Selected.swift */; };
 		9FF8A1C01C2B30F500A25EAA /* UIColor+Selected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1BE1C2B30F300A25EAA /* UIColor+Selected.swift */; };
-		9FF8A1C31C2B71E800A25EAA /* AllWorkoutsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C21C2B71E800A25EAA /* AllWorkoutsPreviewController.swift */; };
-		9FF8A1C41C2B71E800A25EAA /* AllWorkoutsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C21C2B71E800A25EAA /* AllWorkoutsPreviewController.swift */; };
+		9FF8A1C31C2B71E800A25EAA /* WorkoutsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C21C2B71E800A25EAA /* WorkoutsPreviewController.swift */; };
+		9FF8A1C41C2B71E800A25EAA /* WorkoutsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C21C2B71E800A25EAA /* WorkoutsPreviewController.swift */; };
 		9FF8A1C71C2B728700A25EAA /* MagicBoxPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C61C2B728700A25EAA /* MagicBoxPreviewController.swift */; };
 		9FF8A1C81C2B728700A25EAA /* MagicBoxPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1C61C2B728700A25EAA /* MagicBoxPreviewController.swift */; };
 		9FF8A1CB1C2B72DD00A25EAA /* StatisticsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8A1CA1C2B72DD00A25EAA /* StatisticsPreviewController.swift */; };
@@ -349,7 +349,7 @@
 		9FED64311C1F51FB00F40CDF /* StatisticsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreen.swift; sourceTree = "<group>"; };
 		9FF8A1BA1C2B29E900A25EAA /* AlphaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaButton.swift; sourceTree = "<group>"; };
 		9FF8A1BE1C2B30F300A25EAA /* UIColor+Selected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Selected.swift"; sourceTree = "<group>"; };
-		9FF8A1C21C2B71E800A25EAA /* AllWorkoutsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllWorkoutsPreviewController.swift; sourceTree = "<group>"; };
+		9FF8A1C21C2B71E800A25EAA /* WorkoutsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsPreviewController.swift; sourceTree = "<group>"; };
 		9FF8A1C61C2B728700A25EAA /* MagicBoxPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBoxPreviewController.swift; sourceTree = "<group>"; };
 		9FF8A1CA1C2B72DD00A25EAA /* StatisticsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsPreviewController.swift; sourceTree = "<group>"; };
 		9FF8A1CE1C2B731400A25EAA /* AchievementsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsPreviewController.swift; sourceTree = "<group>"; };
@@ -610,7 +610,7 @@
 				9FF8A1CD1C2B72EA00A25EAA /* AchievementsPreviewController */,
 				9FF8A1C91C2B729500A25EAA /* StatisticsPreviewController */,
 				9FF8A1C51C2B725B00A25EAA /* MagicBoxPreviewController */,
-				9FF8A1C11C2B71A900A25EAA /* AllWorkoutsPreviewController */,
+				9FF8A1C11C2B71A900A25EAA /* WorkoutsPreviewController */,
 				9FD745C01C09651E00E48508 /* TextController */,
 				9FC35E591BE48A6F0068A2D2 /* SearchController */,
 				9FA2F58F1BE317F400A3844D /* DurationViewController */,
@@ -849,12 +849,12 @@
 			path = "UIColor+Selected";
 			sourceTree = "<group>";
 		};
-		9FF8A1C11C2B71A900A25EAA /* AllWorkoutsPreviewController */ = {
+		9FF8A1C11C2B71A900A25EAA /* WorkoutsPreviewController */ = {
 			isa = PBXGroup;
 			children = (
-				9FF8A1C21C2B71E800A25EAA /* AllWorkoutsPreviewController.swift */,
+				9FF8A1C21C2B71E800A25EAA /* WorkoutsPreviewController.swift */,
 			);
-			path = AllWorkoutsPreviewController;
+			path = WorkoutsPreviewController;
 			sourceTree = "<group>";
 		};
 		9FF8A1C51C2B725B00A25EAA /* MagicBoxPreviewController */ = {
@@ -1534,7 +1534,7 @@
 			files = (
 				9F5A7D171BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */,
 				9FED64241C1F50BB00F40CDF /* MainView.swift in Sources */,
-				9FF8A1C31C2B71E800A25EAA /* AllWorkoutsPreviewController.swift in Sources */,
+				9FF8A1C31C2B71E800A25EAA /* WorkoutsPreviewController.swift in Sources */,
 				9F0F073C1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
 				9FD745EC1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
@@ -1640,7 +1640,7 @@
 			files = (
 				9F5A7D181BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */,
 				9FED64251C1F50BB00F40CDF /* MainView.swift in Sources */,
-				9FF8A1C41C2B71E800A25EAA /* AllWorkoutsPreviewController.swift in Sources */,
+				9FF8A1C41C2B71E800A25EAA /* WorkoutsPreviewController.swift in Sources */,
 				9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
 				9FD745ED1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
