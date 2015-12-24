@@ -293,8 +293,8 @@ extension NavigationManager {
             pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
-    func pushWorkoutGameScreenAnimated(animated: Bool) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutGameScreen.className()) as! WorkoutGameScreen
+    func pushMagicBoxScreenAnimated(animated: Bool) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(MagicBoxScreen.className()) as! MagicBoxScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     

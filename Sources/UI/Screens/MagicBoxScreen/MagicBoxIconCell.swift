@@ -1,5 +1,5 @@
 //
-//  WorkoutGameIconCell.swift
+//  MagicBoxIconCell.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 12/13/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class WorkoutGameIconCell: UICollectionViewCell {
+final class MagicBoxIconCell: UICollectionViewCell {
     
     @IBOutlet private(set) weak var iconView: UIImageView!
 }

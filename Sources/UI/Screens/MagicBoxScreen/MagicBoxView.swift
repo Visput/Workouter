@@ -1,5 +1,5 @@
 //
-//  WorkoutGameView.swift
+//  MagicBoxView.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 12/13/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class WorkoutGameView: BaseView {
+final class MagicBoxView: BaseView {
     
     @IBOutlet private(set) weak var collectionView: UICollectionView!
     

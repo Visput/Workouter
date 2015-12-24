@@ -39,20 +39,4 @@ extension MainScreen {
         let predictedWorkout = statisticsProvider.mostFrequentlyPlayedWorkout!
         navigationManager.pushWorkoutDetailsScreenWithWorkout(predictedWorkout, animated: true)
     }
-    
-    @IBAction private func workoutsButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutsScreenAnimated(true)
-    }
-    
-    @IBAction private func statisticsButtonDidPress(sender: AnyObject) {
-        navigationManager.pushStatisticsScreenAnimated(true)
-    }
-    
-    @IBAction private func achievementsButtonDidPress(sender: AnyObject) {
-        navigationManager.pushAchievementsScreenAnimated(true)
-    }
-    
-    @IBAction private func gameButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutGameScreenAnimated(true)
-    }
 }

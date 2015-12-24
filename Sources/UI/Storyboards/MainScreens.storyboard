@@ -243,116 +243,60 @@
                                     <action selector="predictedWorkoutButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="fjt-ju-tYd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmR-3M-mIa" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="32" y="495.5" width="139.5" height="139.5"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nr-fj-zZD">
+                                <rect key="frame" x="203.5" y="323" width="139.5" height="139.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="K2a-u3-HSK"/>
-                                    <constraint firstAttribute="width" secondItem="UmR-3M-mIa" secondAttribute="height" multiplier="1:1" id="fNh-FD-XrM"/>
-                                    <constraint firstAttribute="width" constant="100" id="rtc-k1-NGN"/>
+                                    <constraint firstAttribute="width" secondItem="9Nr-fj-zZD" secondAttribute="height" multiplier="1:1" id="Zep-Jk-9jK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="-60" minY="77" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="21"/>
-                                <state key="normal" title="Achievements" image="icon_info_green">
-                                    <color key="titleColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="K2a-u3-HSK"/>
-                                        <exclude reference="rtc-k1-NGN"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <action selector="achievementsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="a8g-Ud-Vbz"/>
+                                    <segue destination="cbC-5x-3FI" kind="embed" identifier="Statistics" id="iN0-kr-DRm"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-6g-EpC" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="203.5" y="495.5" width="139.5" height="139.5"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-Wx-Pwc">
+                                <rect key="frame" x="32" y="323" width="139.5" height="139.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="POR-XI-kmq"/>
-                                    <constraint firstAttribute="width" secondItem="z4W-6g-EpC" secondAttribute="height" multiplier="1:1" id="dyK-GG-kzm"/>
-                                    <constraint firstAttribute="height" constant="75" id="ljk-Vv-mB0"/>
+                                    <constraint firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="height" multiplier="1:1" id="9V1-in-k3r"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="-60" minY="77" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="21"/>
-                                <state key="normal" title="Magic Box" image="icon_info_green">
-                                    <color key="titleColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="POR-XI-kmq"/>
-                                        <exclude reference="ljk-Vv-mB0"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <action selector="gameButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="TpF-zM-Quc"/>
+                                    <segue destination="xLY-fV-a0r" kind="embed" identifier="AllWorkouts" id="Frc-Tl-TQY"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYW-Ra-KaU" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="203.5" y="324" width="139.5" height="139.5"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI3-XS-5tF">
+                                <rect key="frame" x="32" y="494.5" width="139.5" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="4C4-3J-lHH"/>
-                                    <constraint firstAttribute="width" constant="100" id="VhG-A2-TwR"/>
-                                    <constraint firstAttribute="width" secondItem="vYW-Ra-KaU" secondAttribute="height" multiplier="1:1" id="tyv-8G-RUD"/>
+                                    <constraint firstAttribute="width" secondItem="VI3-XS-5tF" secondAttribute="height" multiplier="139:140" id="7ni-KO-kKr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="-60" minY="77" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="21"/>
-                                <state key="normal" title="Statistics" image="icon_info_green">
-                                    <color key="titleColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4C4-3J-lHH"/>
-                                        <exclude reference="VhG-A2-TwR"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <action selector="statisticsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="Zmz-W9-Unq"/>
+                                    <segue destination="ehC-Hj-cMF" kind="embed" identifier="Achievements" id="2TE-bs-7xJ"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-id-0F0" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="32" y="324" width="139.5" height="139.5"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bau-hU-Yd6">
+                                <rect key="frame" x="203" y="494.5" width="139.5" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="fkN-0a-czK"/>
-                                    <constraint firstAttribute="width" constant="100" id="vkx-He-Pbj"/>
-                                    <constraint firstAttribute="width" secondItem="9G2-id-0F0" secondAttribute="height" multiplier="1:1" id="zPV-iw-e9b"/>
+                                    <constraint firstAttribute="width" secondItem="bau-hU-Yd6" secondAttribute="height" multiplier="139:140" id="hiQ-5H-gS3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="-60" minY="77" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="21"/>
-                                <state key="normal" title="All Workouts" image="icon_info_green">
-                                    <color key="titleColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="fkN-0a-czK"/>
-                                        <exclude reference="vkx-He-Pbj"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <action selector="workoutsButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="eyT-K0-E55"/>
+                                    <segue destination="VzN-fl-MBC" kind="embed" identifier="MagicBox" id="tyr-d9-rnv"/>
                                 </connections>
-                            </button>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UmR-3M-mIa" firstAttribute="width" secondItem="9G2-id-0F0" secondAttribute="width" id="1CW-hu-QpY"/>
+                            <constraint firstAttribute="trailing" secondItem="bau-hU-Yd6" secondAttribute="trailing" constant="32" id="0VI-me-CcL"/>
+                            <constraint firstItem="9Nr-fj-zZD" firstAttribute="leading" secondItem="v7c-Wx-Pwc" secondAttribute="trailing" constant="32" id="1Gh-FH-YaV"/>
                             <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerX" secondItem="4Ak-t7-upM" secondAttribute="centerX" id="1ld-8S-lmm"/>
-                            <constraint firstItem="vYW-Ra-KaU" firstAttribute="width" secondItem="9G2-id-0F0" secondAttribute="width" id="33p-50-oe8"/>
-                            <constraint firstAttribute="trailing" secondItem="z4W-6g-EpC" secondAttribute="trailing" constant="32" id="Fp2-Up-z9b"/>
-                            <constraint firstItem="z4W-6g-EpC" firstAttribute="top" secondItem="vYW-Ra-KaU" secondAttribute="bottom" constant="32" id="G2z-Hu-WSd"/>
+                            <constraint firstItem="VI3-XS-5tF" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="2bp-Tf-ky6"/>
+                            <constraint firstItem="9Nr-fj-zZD" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="FAt-8H-oQS"/>
+                            <constraint firstItem="VI3-XS-5tF" firstAttribute="top" secondItem="v7c-Wx-Pwc" secondAttribute="bottom" constant="32" id="JcF-Pn-trf"/>
+                            <constraint firstItem="bau-hU-Yd6" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="KhO-tF-37X"/>
+                            <constraint firstItem="bau-hU-Yd6" firstAttribute="leading" secondItem="VI3-XS-5tF" secondAttribute="trailing" constant="32" id="V4T-fW-0WX"/>
                             <constraint firstItem="r6u-ZG-fTs" firstAttribute="top" secondItem="FrW-PK-ZFp" secondAttribute="bottom" id="WM2-tm-xRS"/>
-                            <constraint firstItem="UmR-3M-mIa" firstAttribute="top" secondItem="9G2-id-0F0" secondAttribute="bottom" constant="32" id="WQk-aj-tzV"/>
-                            <constraint firstAttribute="trailing" secondItem="vYW-Ra-KaU" secondAttribute="trailing" constant="32" id="XJs-Fn-sWE"/>
-                            <constraint firstItem="UmR-3M-mIa" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="efT-0d-NfS"/>
-                            <constraint firstItem="z4W-6g-EpC" firstAttribute="leading" secondItem="UmR-3M-mIa" secondAttribute="trailing" constant="32" id="goL-lv-96w"/>
-                            <constraint firstItem="9G2-id-0F0" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="hLa-5F-v1M"/>
-                            <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="z4W-6g-EpC" secondAttribute="bottom" constant="32" id="sAa-wu-nQJ"/>
-                            <constraint firstItem="z4W-6g-EpC" firstAttribute="width" secondItem="9G2-id-0F0" secondAttribute="width" id="uDL-40-Xet"/>
-                            <constraint firstItem="vYW-Ra-KaU" firstAttribute="leading" secondItem="9G2-id-0F0" secondAttribute="trailing" constant="32" id="wKP-hj-fIu"/>
-                            <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="UmR-3M-mIa" secondAttribute="bottom" constant="32" id="yLe-hh-odO"/>
+                            <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="VI3-XS-5tF" secondAttribute="bottom" constant="32" id="WtY-qm-V1Y"/>
+                            <constraint firstItem="bau-hU-Yd6" firstAttribute="top" secondItem="9Nr-fj-zZD" secondAttribute="bottom" constant="32" id="X5q-Tg-GJn"/>
+                            <constraint firstItem="v7c-Wx-Pwc" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="ZdU-sZ-7MP"/>
+                            <constraint firstItem="VI3-XS-5tF" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="cwE-GK-WGp"/>
+                            <constraint firstAttribute="trailing" secondItem="9Nr-fj-zZD" secondAttribute="trailing" constant="32" id="neq-ue-aUm"/>
+                            <constraint firstItem="Q6R-g4-tlL" firstAttribute="top" secondItem="bau-hU-Yd6" secondAttribute="bottom" constant="32" id="opw-01-Ssn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I4Q-fS-luL">
@@ -617,12 +561,12 @@
         <!--Game-->
         <scene sceneID="VC0-Wk-Pru">
             <objects>
-                <viewController storyboardIdentifier="WorkoutGameScreen" title="Game" id="Vdn-I0-uaF" customClass="WorkoutGameScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicBoxScreen" title="Game" id="Vdn-I0-uaF" customClass="MagicBoxScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IH9-t5-Gy5"/>
                         <viewControllerLayoutGuide type="bottom" id="diE-Kw-7hz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J2t-p8-diq" customClass="WorkoutGameView" customModule="Workouter" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="J2t-p8-diq" customClass="MagicBoxView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -636,7 +580,7 @@
                                     <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkoutGameIconCell" id="YCS-pL-fps" customClass="WorkoutGameIconCell" customModule="Workouter" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicBoxIconCell" id="YCS-pL-fps" customClass="MagicBoxIconCell" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="80" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -712,6 +656,222 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXi-5N-YAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="176.5" y="1767.5"/>
+        </scene>
+        <!--All Workouts Preview Controller-->
+        <scene sceneID="YpA-5W-TJK">
+            <objects>
+                <viewController id="xLY-fV-a0r" customClass="AllWorkoutsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mvi-Au-ROp" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZh-vl-g1V" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcM-qG-Iod">
+                                        <rect key="frame" x="0.0" y="119" width="139.5" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="7u3-Ph-ibQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="b1x-Bf-hre">
+                                        <rect key="frame" x="18" y="0.0" width="103" height="103"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="b1x-Bf-hre" secondAttribute="height" multiplier="1:1" id="Zsj-rE-8hE"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="b1x-Bf-hre" firstAttribute="top" secondItem="fZh-vl-g1V" secondAttribute="top" id="5GO-pP-YRH"/>
+                                    <constraint firstItem="HcM-qG-Iod" firstAttribute="top" secondItem="b1x-Bf-hre" secondAttribute="bottom" constant="16" id="Cji-lD-GpI"/>
+                                    <constraint firstAttribute="bottom" secondItem="HcM-qG-Iod" secondAttribute="bottom" id="PSY-h0-6xZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="HcM-qG-Iod" secondAttribute="trailing" id="YX5-2Y-jUf"/>
+                                    <constraint firstItem="b1x-Bf-hre" firstAttribute="centerX" secondItem="fZh-vl-g1V" secondAttribute="centerX" id="o77-aC-RS1"/>
+                                    <constraint firstItem="HcM-qG-Iod" firstAttribute="leading" secondItem="fZh-vl-g1V" secondAttribute="leading" id="wJC-Lt-I6P"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionButtonDidPress:" destination="xLY-fV-a0r" eventType="touchUpInside" id="MZp-VP-3IZ"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fZh-vl-g1V" secondAttribute="trailing" id="L7k-tI-S9z"/>
+                            <constraint firstItem="fZh-vl-g1V" firstAttribute="leading" secondItem="Mvi-Au-ROp" secondAttribute="leading" id="hfk-Lc-vaC"/>
+                            <constraint firstItem="fZh-vl-g1V" firstAttribute="top" secondItem="Mvi-Au-ROp" secondAttribute="top" id="sfp-YN-15W"/>
+                            <constraint firstAttribute="bottom" secondItem="fZh-vl-g1V" secondAttribute="bottom" id="y6P-xw-Zj1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sv4-ou-PVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1084.25" y="2351.75"/>
+        </scene>
+        <!--Statistics Preview Controller-->
+        <scene sceneID="SNF-gx-lbh">
+            <objects>
+                <viewController id="cbC-5x-3FI" customClass="StatisticsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xVV-Sr-5qp" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-FR-iEo" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="139" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tT5-o9-QLV">
+                                        <rect key="frame" x="0.0" y="120" width="139.5" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="SAm-ty-YQm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-FY-sVq">
+                                        <rect key="frame" x="17.5" y="0.0" width="104" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lgF-FY-sVq" secondAttribute="height" multiplier="1:1" id="lpg-cL-m5J"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tT5-o9-QLV" firstAttribute="top" secondItem="lgF-FY-sVq" secondAttribute="bottom" constant="16" id="1uQ-v2-OHI"/>
+                                    <constraint firstAttribute="bottom" secondItem="tT5-o9-QLV" secondAttribute="bottom" id="3iN-hW-IUh"/>
+                                    <constraint firstAttribute="trailing" secondItem="tT5-o9-QLV" secondAttribute="trailing" id="HLz-sb-74S"/>
+                                    <constraint firstItem="lgF-FY-sVq" firstAttribute="centerX" secondItem="Ax1-FR-iEo" secondAttribute="centerX" id="I3i-O4-0wi"/>
+                                    <constraint firstItem="tT5-o9-QLV" firstAttribute="leading" secondItem="Ax1-FR-iEo" secondAttribute="leading" id="nuC-yj-jF9"/>
+                                    <constraint firstItem="lgF-FY-sVq" firstAttribute="top" secondItem="Ax1-FR-iEo" secondAttribute="top" id="t7K-pn-qVX"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionButtonDidPress:" destination="cbC-5x-3FI" eventType="touchUpInside" id="QAG-Pb-SDK"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ax1-FR-iEo" firstAttribute="top" secondItem="xVV-Sr-5qp" secondAttribute="top" id="9gQ-R1-U3U"/>
+                            <constraint firstItem="Ax1-FR-iEo" firstAttribute="leading" secondItem="xVV-Sr-5qp" secondAttribute="leading" id="IjZ-Bu-y7m"/>
+                            <constraint firstAttribute="trailing" secondItem="Ax1-FR-iEo" secondAttribute="trailing" id="OmL-6G-al7"/>
+                            <constraint firstAttribute="bottom" secondItem="Ax1-FR-iEo" secondAttribute="bottom" id="iaB-ZA-RO9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdf-pz-yu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.25" y="2352.75"/>
+        </scene>
+        <!--Achievements Preview Controller-->
+        <scene sceneID="2WW-ZM-NG5">
+            <objects>
+                <viewController id="ehC-Hj-cMF" customClass="AchievementsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qM2-yh-Xhl" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07C-Ul-2V3" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="139" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3on-2i-bbj">
+                                        <rect key="frame" x="0.0" y="120" width="139.5" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ODb-wU-pvh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="lGV-85-9ZR">
+                                        <rect key="frame" x="17" y="0.0" width="104" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lGV-85-9ZR" secondAttribute="height" multiplier="1:1" id="O6Z-ai-jI8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3on-2i-bbj" secondAttribute="bottom" id="2mi-vJ-7ED"/>
+                                    <constraint firstItem="3on-2i-bbj" firstAttribute="top" secondItem="lGV-85-9ZR" secondAttribute="bottom" constant="16" id="6Hw-q9-wZe"/>
+                                    <constraint firstItem="lGV-85-9ZR" firstAttribute="top" secondItem="07C-Ul-2V3" secondAttribute="top" id="7nv-v3-Np6"/>
+                                    <constraint firstAttribute="trailing" secondItem="3on-2i-bbj" secondAttribute="trailing" id="Hpz-9u-QJ3"/>
+                                    <constraint firstItem="3on-2i-bbj" firstAttribute="leading" secondItem="07C-Ul-2V3" secondAttribute="leading" id="YXa-rh-Gtx"/>
+                                    <constraint firstItem="lGV-85-9ZR" firstAttribute="centerX" secondItem="07C-Ul-2V3" secondAttribute="centerX" id="w0H-vb-u1O"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionButtonDidPress:" destination="ehC-Hj-cMF" eventType="touchUpInside" id="fhc-qS-GQV"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="07C-Ul-2V3" firstAttribute="leading" secondItem="qM2-yh-Xhl" secondAttribute="leading" id="Exp-NF-xnH"/>
+                            <constraint firstItem="07C-Ul-2V3" firstAttribute="top" secondItem="qM2-yh-Xhl" secondAttribute="top" id="W6U-kH-b66"/>
+                            <constraint firstAttribute="bottom" secondItem="07C-Ul-2V3" secondAttribute="bottom" id="arN-7o-In6"/>
+                            <constraint firstAttribute="trailing" secondItem="07C-Ul-2V3" secondAttribute="trailing" id="xsg-CF-Uqm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRQ-gP-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-907.25" y="2353"/>
+        </scene>
+        <!--Magic Box Preview Controller-->
+        <scene sceneID="FWx-p9-HCd">
+            <objects>
+                <viewController id="VzN-fl-MBC" customClass="MagicBoxPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Na2-jq-JHt" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-yG-w14" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="139" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magic Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hg-aQ-eKn">
+                                        <rect key="frame" x="0.0" y="120" width="139.5" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="c8f-TK-bUZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="eIP-pL-mTi">
+                                        <rect key="frame" x="17" y="0.0" width="104" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eIP-pL-mTi" secondAttribute="height" multiplier="1:1" id="dfH-Bv-hk9"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eIP-pL-mTi" firstAttribute="centerX" secondItem="SMe-yG-w14" secondAttribute="centerX" id="Av7-Zc-rYj"/>
+                                    <constraint firstItem="1Hg-aQ-eKn" firstAttribute="top" secondItem="eIP-pL-mTi" secondAttribute="bottom" constant="16" id="Bt9-pO-XcG"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Hg-aQ-eKn" secondAttribute="trailing" id="bYY-3A-oXd"/>
+                                    <constraint firstItem="1Hg-aQ-eKn" firstAttribute="leading" secondItem="SMe-yG-w14" secondAttribute="leading" id="kQx-O7-x4V"/>
+                                    <constraint firstItem="eIP-pL-mTi" firstAttribute="top" secondItem="SMe-yG-w14" secondAttribute="top" id="sHB-Xd-2dD"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Hg-aQ-eKn" secondAttribute="bottom" id="wWO-zP-4jf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionButtonDidPress:" destination="VzN-fl-MBC" eventType="touchUpInside" id="mSk-Lt-bjs"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SMe-yG-w14" secondAttribute="bottom" id="0w2-Fg-yST"/>
+                            <constraint firstAttribute="trailing" secondItem="SMe-yG-w14" secondAttribute="trailing" id="DMg-mB-1qw"/>
+                            <constraint firstItem="SMe-yG-w14" firstAttribute="leading" secondItem="Na2-jq-JHt" secondAttribute="leading" id="ZZf-v9-qnk"/>
+                            <constraint firstItem="SMe-yG-w14" firstAttribute="top" secondItem="Na2-jq-JHt" secondAttribute="top" id="lLZ-Qn-cZe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-PW-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-549.25" y="2352.5"/>
         </scene>
     </scenes>
     <resources>

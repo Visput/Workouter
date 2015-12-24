@@ -84,13 +84,13 @@
             </objects>
             <point key="canvasLocation" x="-1310" y="-2404"/>
         </scene>
-        <!--WorkoutGameScreen-->
+        <!--MagicBoxScreen-->
         <scene sceneID="TJ5-y2-x2D">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WorkoutGameScreen" storyboardName="MainScreens" referencedIdentifier="WorkoutGameScreen" id="85u-Ds-12P" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MagicBoxScreen" storyboardName="MainScreens" referencedIdentifier="MagicBoxScreen" id="85u-Ds-12P" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2v-41-cKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1799" y="-2359"/>
+            <point key="canvasLocation" x="-1812.5" y="-2359"/>
         </scene>
         <!--StepEditScreen-->
         <scene sceneID="G7H-Bt-bJO">

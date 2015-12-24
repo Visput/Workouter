@@ -1,5 +1,5 @@
 //
-//  AlphaButton.swift
+//  AlphaControl.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 12/23/15.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class AlphaButton: UIButton {
-
+final class AlphaControl: UIControl {
+    
     override var enabled: Bool {
         didSet {
             updateAppearance()
@@ -43,10 +43,7 @@ final class AlphaButton: UIButton {
             fatalError("Disabled state is deprecated for better user experience.")
         }
         
-        adjustsImageWhenHighlighted = false
-        setTitleColor(titleColorForState(.Normal), forState: .Highlighted)
-        setTitleColor(titleColorForState(.Normal)?.selectedColor(), forState: .Selected)
-        
         alpha = highlighted ? 0.4 : 1.0
     }
+
 }
