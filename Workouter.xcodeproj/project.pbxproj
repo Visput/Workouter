@@ -1050,11 +1050,11 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9FED64011C1D69B900F40CDF /* MagicBoxScreen */,
 				9F7CA3DB1C23D6C5003E9BFD /* ReferFriendsScreen */,
 				9FED642D1C1F515800F40CDF /* StatisticsScreen */,
 				9FED64261C1F50CE00F40CDF /* AchievementsScreen */,
 				9FED641F1C1F508400F40CDF /* MainScreen */,
-				9FED64011C1D69B900F40CDF /* MagicBoxScreen */,
 				9FE798631C0D717E009A52C5 /* WelcomeScreen */,
 				9F0F07391C063B2D00DA0152 /* AuthenticationScreen */,
 				9F0F072D1C06283200DA0152 /* SettingsScreen */,
