@@ -224,37 +224,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-he-CiD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="276"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6u-ZG-fTs" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="95.5" width="150" height="150"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ2-ac-nFP">
+                                        <rect key="frame" x="32" y="53" width="311" height="170"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="GkG-gH-gRX"/>
-                                            <constraint firstAttribute="height" constant="150" id="XpQ-VB-eDM"/>
+                                            <constraint firstAttribute="width" secondItem="BQ2-ac-nFP" secondAttribute="height" multiplier="311:170" id="NY1-Xg-T9x"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <state key="normal" title="Start Workout"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                                <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="75"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="predictedWorkoutButtonDidPress:" destination="wWn-aT-Jr2" eventType="touchUpInside" id="fjt-ju-tYd"/>
+                                            <segue destination="PTJ-uc-1dR" kind="embed" id="Ikk-gZ-ZiL"/>
                                         </connections>
-                                    </button>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerY" secondItem="lCQ-he-CiD" secondAttribute="centerY" id="JVD-xV-24q"/>
-                                    <constraint firstItem="r6u-ZG-fTs" firstAttribute="centerX" secondItem="lCQ-he-CiD" secondAttribute="centerX" id="TU2-Up-RGr"/>
+                                    <constraint firstItem="BQ2-ac-nFP" firstAttribute="leading" secondItem="lCQ-he-CiD" secondAttribute="leading" constant="32" id="872-kd-2Z1"/>
+                                    <constraint firstAttribute="trailing" secondItem="BQ2-ac-nFP" secondAttribute="trailing" constant="32" id="HrZ-Xd-VQ4"/>
+                                    <constraint firstItem="BQ2-ac-nFP" firstAttribute="centerY" secondItem="lCQ-he-CiD" secondAttribute="centerY" id="g9V-sY-7om"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nr-fj-zZD">
-                                <rect key="frame" x="203.5" y="339.5" width="139.5" height="139.5"/>
+                                <rect key="frame" x="203" y="339" width="139.5" height="139.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Nr-fj-zZD" secondAttribute="height" multiplier="1:1" id="Zep-Jk-9jK"/>
                                 </constraints>
@@ -263,7 +253,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-Wx-Pwc">
-                                <rect key="frame" x="32" y="339.5" width="139.5" height="139.5"/>
+                                <rect key="frame" x="32" y="339" width="139.5" height="139.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="height" multiplier="1:1" id="9V1-in-k3r"/>
                                 </constraints>
@@ -295,7 +285,8 @@
                             <constraint firstAttribute="trailing" secondItem="bau-hU-Yd6" secondAttribute="trailing" constant="32" id="0VI-me-CcL"/>
                             <constraint firstItem="9Nr-fj-zZD" firstAttribute="leading" secondItem="v7c-Wx-Pwc" secondAttribute="trailing" constant="32" id="1Gh-FH-YaV"/>
                             <constraint firstItem="VI3-XS-5tF" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" constant="32" id="2bp-Tf-ky6"/>
-                            <constraint firstItem="v7c-Wx-Pwc" firstAttribute="top" secondItem="lCQ-he-CiD" secondAttribute="bottom" id="9vI-1k-XoV"/>
+                            <constraint firstItem="v7c-Wx-Pwc" firstAttribute="top" secondItem="lCQ-he-CiD" secondAttribute="bottom" constant="-1" id="9vI-1k-XoV"/>
+                            <constraint firstItem="lCQ-he-CiD" firstAttribute="top" secondItem="FrW-PK-ZFp" secondAttribute="bottom" id="DDR-rI-i7a"/>
                             <constraint firstItem="9Nr-fj-zZD" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="FAt-8H-oQS"/>
                             <constraint firstItem="VI3-XS-5tF" firstAttribute="top" secondItem="v7c-Wx-Pwc" secondAttribute="bottom" constant="16" id="JcF-Pn-trf"/>
                             <constraint firstItem="bau-hU-Yd6" firstAttribute="width" secondItem="v7c-Wx-Pwc" secondAttribute="width" id="KhO-tF-37X"/>
@@ -310,6 +301,11 @@
                             <constraint firstAttribute="trailing" secondItem="lCQ-he-CiD" secondAttribute="trailing" id="tay-pO-4JW"/>
                             <constraint firstItem="lCQ-he-CiD" firstAttribute="leading" secondItem="4Ak-t7-upM" secondAttribute="leading" id="zyk-Ty-zop"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cj8-6H-0f9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="I4Q-fS-luL">
                         <barButtonItem key="backBarButtonItem" title=" " id="mtg-AR-Vba"/>
@@ -900,6 +896,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-PW-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-549.25" y="2352.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mJ4-Dx-8ga">
+            <objects>
+                <viewController id="PTJ-uc-1dR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HcP-Yh-i0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="170"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.4431372583" green="0.89411765340000005" blue="0.75686275960000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDJ-8k-Fb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
