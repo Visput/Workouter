@@ -16,7 +16,7 @@ final class AppAppearance {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "background_white"), forBarMetrics: .Default)
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName : UIFont.systemFontOfSize(27.0, weight: UIFontWeightThin),
+            NSFontAttributeName : UIFont.systemFontOfSize(24.0, weight: UIFontWeightThin),
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
         

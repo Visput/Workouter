@@ -149,5 +149,156 @@
         "duration" : 10
       }
     ]
-  }
+  },
+ {
+ "name" : "Workout 500",
+ "description" : "Sportive schedule of fitness built by Hamilton's McMaster university in Ontario.",
+ "identifier" : "0000000000000001",
+ "steps" : [
+            {
+            "type" : 0,
+            "name" : "Jumping jacks",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Wall sit",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Push-ups",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Crunches",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Step-ups",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Squats",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Triceps dips",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Plank",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "High knees running in place",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Lunges",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Push-ups with rotation",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            },
+            {
+            "type" : 0,
+            "name" : "Side plank",
+            "description" : "",
+            "duration" : 30
+            },
+            {
+            "type" : 1,
+            "name" : "Rest",
+            "description" : "",
+            "duration" : 10
+            }
+            ]
+ }
 ]

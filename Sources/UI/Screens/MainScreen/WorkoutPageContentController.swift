@@ -10,16 +10,18 @@ import UIKit
 
 final class WorkoutPageContentController: BaseViewController {
     
-    var workout: Workout! {
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    
+    var item: WorkoutPageItem! {
         didSet {
             guard isViewLoaded() else { return }
-            fillWithWorkout(workout)
+            fillWithItem(item)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillWithWorkout(workout)
+        fillWithItem(item)
     }
 
     private var navigationManager: NavigationManager {
@@ -30,10 +32,10 @@ final class WorkoutPageContentController: BaseViewController {
 extension WorkoutPageContentController {
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+        navigationManager.pushWorkoutDetailsScreenWithWorkout(item.workout, animated: true)
     }
     
-    private func fillWithWorkout(workout: Workout) {
-        
+    private func fillWithItem(item: WorkoutPageItem) {
+        nameLabel.text = item.workout.name
     }
 }

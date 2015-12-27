@@ -41,6 +41,8 @@
 		9F18DDF71C2F7A0E00CE69EA /* WorkoutsPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F18DDF31C2F7A0E00CE69EA /* WorkoutsPreviewController.swift */; };
 		9F18DDFA1C2F7A6900CE69EA /* WorkoutPageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F18DDF91C2F7A6900CE69EA /* WorkoutPageContentController.swift */; };
 		9F18DDFB1C2F7A6900CE69EA /* WorkoutPageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F18DDF91C2F7A6900CE69EA /* WorkoutPageContentController.swift */; };
+		9F18DDFD1C2F998A00CE69EA /* WorkoutPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F18DDFC1C2F998A00CE69EA /* WorkoutPageItem.swift */; };
+		9F18DDFE1C2F998A00CE69EA /* WorkoutPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F18DDFC1C2F998A00CE69EA /* WorkoutPageItem.swift */; };
 		9F1B75D11C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
 		9F1B75D21C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
 		9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */; };
@@ -277,6 +279,7 @@
 		9F18DDF21C2F7A0E00CE69EA /* StatisticsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsPreviewController.swift; sourceTree = "<group>"; };
 		9F18DDF31C2F7A0E00CE69EA /* WorkoutsPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsPreviewController.swift; sourceTree = "<group>"; };
 		9F18DDF91C2F7A6900CE69EA /* WorkoutPageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageContentController.swift; sourceTree = "<group>"; };
+		9F18DDFC1C2F998A00CE69EA /* WorkoutPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageItem.swift; sourceTree = "<group>"; };
 		9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
 		9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageItem.swift; sourceTree = "<group>"; };
 		9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditScreen.swift; sourceTree = "<group>"; };
@@ -508,6 +511,26 @@
 				9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */,
 			);
 			path = "NSObject+Utils";
+			sourceTree = "<group>";
+		};
+		9F18DDFF1C2FA03300CE69EA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9F18DDF01C2F7A0E00CE69EA /* AchievementsPreviewController.swift */,
+				9F18DDF11C2F7A0E00CE69EA /* MagicBoxPreviewController.swift */,
+				9F18DDF21C2F7A0E00CE69EA /* StatisticsPreviewController.swift */,
+				9F18DDF31C2F7A0E00CE69EA /* WorkoutsPreviewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		9F18DE001C2FA03900CE69EA /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				9F18DDF91C2F7A6900CE69EA /* WorkoutPageContentController.swift */,
+				9F18DDFC1C2F998A00CE69EA /* WorkoutPageItem.swift */,
+			);
+			name = Workouts;
 			sourceTree = "<group>";
 		};
 		9F341AC91BDF171D00AEDEB1 /* StepEditScreen */ = {
@@ -805,11 +828,8 @@
 			children = (
 				9FED64201C1F50AF00F40CDF /* MainScreen.swift */,
 				9FED64231C1F50BB00F40CDF /* MainView.swift */,
-				9F18DDF01C2F7A0E00CE69EA /* AchievementsPreviewController.swift */,
-				9F18DDF11C2F7A0E00CE69EA /* MagicBoxPreviewController.swift */,
-				9F18DDF21C2F7A0E00CE69EA /* StatisticsPreviewController.swift */,
-				9F18DDF31C2F7A0E00CE69EA /* WorkoutsPreviewController.swift */,
-				9F18DDF91C2F7A6900CE69EA /* WorkoutPageContentController.swift */,
+				9F18DDFF1C2FA03300CE69EA /* Menu */,
+				9F18DE001C2FA03900CE69EA /* Workouts */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -1500,6 +1520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F18DDFD1C2F998A00CE69EA /* WorkoutPageItem.swift in Sources */,
 				9F5A7D171BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */,
 				9FED64241C1F50BB00F40CDF /* MainView.swift in Sources */,
 				9F0F073C1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
@@ -1628,6 +1649,7 @@
 				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
 				9FE797D71C0CB555009A52C5 /* AuthenticationView.swift in Sources */,
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
+				9F18DDFE1C2F998A00CE69EA /* WorkoutPageItem.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
 				9FED642C1C1F511400F40CDF /* AchievementsView.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,

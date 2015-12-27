@@ -72,4 +72,11 @@ extension UIColor {
             alpha:1)
     }
 
+    class func backgroundColor() -> UIColor {
+        return UIColor(red: 0.9529411792755127,
+            green:0.9607843160629272,
+            blue:0.9686274528503418,
+            alpha:1)
+    }
+
 }
