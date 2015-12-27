@@ -149,6 +149,7 @@ extension MainScreen {
         // Display first item.
         let firstController = workoutPageItems[0].instantiatePageContentController() as! UIViewController
         workoutsController.setViewControllers([firstController], direction: .Forward, animated: false, completion: { [unowned self] _ in
+            // Access page control after delay because UIPageViewController instantiates it asynchronously.
             self.executeAfterDelay(0.1, task: { _ in
                 self.workoutsController.pageControl?.hidden = self.workoutPageItems.count <= 1
             })
