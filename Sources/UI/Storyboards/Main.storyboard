@@ -172,5 +172,13 @@
             </objects>
             <point key="canvasLocation" x="-1293" y="-2359"/>
         </scene>
+        <!--NewWorkoutPageContentController-->
+        <scene sceneID="jkg-9d-wyb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NewWorkoutPageContentController" storyboardName="MainScreens" referencedIdentifier="NewWorkoutPageContentController" id="j9a-ri-SHw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwJ-In-T8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1754.5" y="-1987"/>
+        </scene>
     </scenes>
 </document>

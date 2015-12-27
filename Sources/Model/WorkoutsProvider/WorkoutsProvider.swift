@@ -27,6 +27,7 @@ final class WorkoutsProvider: NSObject {
             let pathToDefaultWorkouts = NSBundle.mainBundle().pathForResource("DefaultWorkouts", ofType: ".json")!
             let defaultWorkoutsJSON = try! NSString(contentsOfFile: pathToDefaultWorkouts, encoding: NSUTF8StringEncoding) as String
             workouts = Mapper<Workout>().mapArray(defaultWorkoutsJSON)
+            commitChanges()
         }
     }
     

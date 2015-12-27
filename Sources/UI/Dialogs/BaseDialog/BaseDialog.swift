@@ -40,7 +40,7 @@ class BaseDialog: BaseViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         guard presentingViewController != nil else { return super.preferredStatusBarStyle() }
-        if presentingViewController!.isKindOfClass(UINavigationController) {
+        if presentingViewController! is UINavigationController {
             let navigationController = presentingViewController! as! UINavigationController
             return navigationController.topViewController!.preferredStatusBarStyle()
         } else {

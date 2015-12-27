@@ -46,6 +46,7 @@ final class MainScreen: BaseScreen {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         // Due to internal logic of UIPageViewController it can be
         // updated only when its view is currently displayed.
         if needsReloadWorkouts {
@@ -66,11 +67,11 @@ extension MainScreen: UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController,
         viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             
-            let currentController = viewController as! WorkoutPageContentController
+            let currentController = viewController as! WorkoutPageContentControlling
             guard currentController.item.index > 0 else { return nil }
             
             let previousPageItem = workoutPageItems[currentController.item.index - 1]
-            let previousController = navigationManager.instantiateWorkoutPageContentControllerWithItem(previousPageItem)
+            let previousController = previousPageItem.instantiatePageContentController() as! UIViewController
             
             return previousController
     }
@@ -78,21 +79,22 @@ extension MainScreen: UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController,
         viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
             
-            let currentController = viewController as! WorkoutPageContentController
+            let currentController = viewController as! WorkoutPageContentControlling
             guard currentController.item.index < workoutPageItems.count - 1 else { return nil }
             
             let nextPageItem = workoutPageItems[currentController.item.index + 1]
-            let nextController = navigationManager.instantiateWorkoutPageContentControllerWithItem(nextPageItem)
+            let nextController = nextPageItem.instantiatePageContentController() as! UIViewController
             
             return nextController
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        // Don't show page control if only one page is presented.
         return workoutPageItems.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        let currentController = workoutsController.viewControllers!.last as! WorkoutPageContentController
+        let currentController = workoutsController.viewControllers!.last as! WorkoutPageContentControlling
         return currentController.item.index
     }
 }
@@ -124,14 +126,27 @@ extension MainScreen {
 extension MainScreen {
     
     private func reloadWorkoutsController() {
+        workoutsController.dataSource = self
         workoutPageItems.removeAll()
+        
+        // Add items for user workouts.
         for (index, workout) in workoutsProvider.workouts.enumerate() {
-            let item = WorkoutPageItem(workout: workout, index: index)
+            var item = WorkoutPageItem(workout: workout, index: index)
+            item.instantiatePageContentController = { [unowned self] in
+                return self.navigationManager.instantiateWorkoutPageContentControllerWithItem(item)
+            }
             workoutPageItems.append(item)
         }
         
-        workoutsController.dataSource = self
-        let firstController = navigationManager.instantiateWorkoutPageContentControllerWithItem(workoutPageItems[0])
+        // Add item for ability to create new workout.
+        var item = WorkoutPageItem(workout: nil, index: workoutPageItems.count)
+        item.instantiatePageContentController = { [unowned self] in
+            return self.navigationManager.instantiateNewWorkoutPageContentControllerWithItem(item)
+        }
+        workoutPageItems.append(item)
+        
+        // Display first item.
+        let firstController = workoutPageItems[0].instantiatePageContentController() as! UIViewController
         workoutsController.setViewControllers([firstController], direction: .Forward, animated: false, completion:nil)
     }
 }

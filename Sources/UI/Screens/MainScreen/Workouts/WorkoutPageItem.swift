@@ -10,10 +10,12 @@ import UIKit
 
 struct WorkoutPageItem {
     
-    let workout: Workout
+    let workout: Workout?
     let index: Int
     
-    init(workout: Workout, index: Int) {
+    var instantiatePageContentController: ((Void) -> WorkoutPageContentControlling)!
+    
+    init(workout: Workout?, index: Int) {
         self.workout = workout
         self.index = index
     }

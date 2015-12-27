@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class WorkoutPageContentController: BaseViewController {
+final class WorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
     
     @IBOutlet private(set) weak var nameLabel: UILabel!
     
@@ -32,10 +32,10 @@ final class WorkoutPageContentController: BaseViewController {
 extension WorkoutPageContentController {
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutDetailsScreenWithWorkout(item.workout, animated: true)
+        navigationManager.pushWorkoutDetailsScreenWithWorkout(item.workout!, animated: true)
     }
     
     private func fillWithItem(item: WorkoutPageItem) {
-        nameLabel.text = item.workout.name
+        nameLabel.text = item.workout!.name
     }
 }

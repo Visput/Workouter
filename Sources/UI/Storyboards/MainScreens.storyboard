@@ -326,14 +326,14 @@
                         <viewControllerLayoutGuide type="bottom" id="v6H-FS-vA1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3jC-1K-7lD" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Kz-IHj" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="32" y="0.0" width="311" height="243"/>
+                                <rect key="frame" x="32" y="0.0" width="311" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enf-MA-App">
-                                        <rect key="frame" x="16" y="16" width="279" height="211"/>
+                                        <rect key="frame" x="16" y="16" width="279" height="118"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -366,14 +366,14 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="243"/>
+                    <size key="freeformSize" width="375" height="150"/>
                     <connections>
                         <outlet property="nameLabel" destination="enf-MA-App" id="whV-fm-Sto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ne7-WD-vns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329.5" y="1821"/>
+            <point key="canvasLocation" x="-329.5" y="1792"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ZIe-LX-DSl">
@@ -961,6 +961,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-PW-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-549.25" y="2352.5"/>
+        </scene>
+        <!--New Workout Page Content Controller-->
+        <scene sceneID="dA5-BF-aeb">
+            <objects>
+                <viewController storyboardIdentifier="NewWorkoutPageContentController" id="u3G-dL-veW" customClass="NewWorkoutPageContentController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jdO-gn-yuh"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yq-8t-6Yn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5oR-n8-mYA" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-BK-YQd" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="32" y="0.0" width="311" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOw-tT-J6u">
+                                        <rect key="frame" x="155" y="55" width="1" height="40"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2tn-Dy-7Jc"/>
+                                            <constraint firstAttribute="width" constant="1" id="I9P-Zf-yWY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75c-Cv-ALo">
+                                        <rect key="frame" x="135" y="74.5" width="40" height="1"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="9di-8H-gNT"/>
+                                            <constraint firstAttribute="height" constant="1" id="XPF-Sj-v0h"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="75c-Cv-ALo" firstAttribute="centerX" secondItem="nlN-BK-YQd" secondAttribute="centerX" id="16X-T6-SqP"/>
+                                    <constraint firstItem="iOw-tT-J6u" firstAttribute="centerY" secondItem="nlN-BK-YQd" secondAttribute="centerY" id="XpL-ww-zPS"/>
+                                    <constraint firstItem="75c-Cv-ALo" firstAttribute="centerY" secondItem="nlN-BK-YQd" secondAttribute="centerY" id="obd-xZ-6yf"/>
+                                    <constraint firstItem="iOw-tT-J6u" firstAttribute="centerX" secondItem="nlN-BK-YQd" secondAttribute="centerX" id="sSq-fr-v49"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionButtonDidPress:" destination="u3G-dL-veW" eventType="touchUpInside" id="oje-G3-qeg"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Yq-8t-6Yn" firstAttribute="top" secondItem="nlN-BK-YQd" secondAttribute="bottom" id="ELB-eA-iAO"/>
+                            <constraint firstItem="nlN-BK-YQd" firstAttribute="leading" secondItem="5oR-n8-mYA" secondAttribute="leading" constant="32" id="PrE-gW-utD"/>
+                            <constraint firstItem="nlN-BK-YQd" firstAttribute="top" secondItem="jdO-gn-yuh" secondAttribute="bottom" id="kk6-Nn-t3i"/>
+                            <constraint firstAttribute="trailing" secondItem="nlN-BK-YQd" secondAttribute="trailing" constant="32" id="tAY-2n-S14"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aNK-Fo-XZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329.5" y="2026"/>
         </scene>
     </scenes>
     <resources>

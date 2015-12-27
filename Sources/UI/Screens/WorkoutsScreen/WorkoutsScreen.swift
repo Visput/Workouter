@@ -46,7 +46,6 @@ final class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
-        workoutsProvider.observers.addObserver(self)
         
         registerForPreviewing()
         configureSearchController()
@@ -54,12 +53,20 @@ final class WorkoutsScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // Handle workouts updates only when view isn't currently displayed.
+        workoutsProvider.observers.removeObserver(self)
         mode = .Standard
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         activateSearchControllerIfNeeded()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        // Handle workouts updates only when view isn't currently displayed.
+        workoutsProvider.observers.addObserver(self)
+        super.viewDidDisappear(animated)
     }
     
     deinit {

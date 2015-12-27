@@ -176,6 +176,14 @@ extension NavigationManager {
         
         return screen
     }
+    
+    func instantiateNewWorkoutPageContentControllerWithItem(item: WorkoutPageItem) -> NewWorkoutPageContentController {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(NewWorkoutPageContentController.className())
+            as! NewWorkoutPageContentController
+        screen.item = item
+        
+        return screen
+    }
 }
 
 extension NavigationManager {
