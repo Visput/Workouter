@@ -139,6 +139,8 @@
 		9FAFA6831C2FED950007463D /* WorkoutPageContentControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA6741C2FED950007463D /* WorkoutPageContentControlling.swift */; };
 		9FAFA6841C2FED950007463D /* WorkoutPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA6751C2FED950007463D /* WorkoutPageItem.swift */; };
 		9FAFA6851C2FED950007463D /* WorkoutPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA6751C2FED950007463D /* WorkoutPageItem.swift */; };
+		9FAFA6901C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */; };
+		9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */; };
 		9FBC31181BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */; };
 		9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */; };
 		9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */; };
@@ -335,6 +337,7 @@
 		9FAFA6731C2FED950007463D /* WorkoutPageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageContentController.swift; sourceTree = "<group>"; };
 		9FAFA6741C2FED950007463D /* WorkoutPageContentControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageContentControlling.swift; sourceTree = "<group>"; };
 		9FAFA6751C2FED950007463D /* WorkoutPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageItem.swift; sourceTree = "<group>"; };
+		9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+PageControl.swift"; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
 		9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsView.swift; sourceTree = "<group>"; };
@@ -761,6 +764,14 @@
 			path = Workouts;
 			sourceTree = "<group>";
 		};
+		9FAFA68E1C30028E0007463D /* UIPageViewController+PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */,
+			);
+			path = "UIPageViewController+PageControl";
+			sourceTree = "<group>";
+		};
 		9FBC31161BFA561300453C6C /* NSAttributedString+Duration */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,10 +849,10 @@
 		9FED641F1C1F508400F40CDF /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9FAFA66C1C2FED950007463D /* Menu */,
-				9FAFA6711C2FED950007463D /* Workouts */,
 				9FED64201C1F50AF00F40CDF /* MainScreen.swift */,
 				9FED64231C1F50BB00F40CDF /* MainView.swift */,
+				9FAFA66C1C2FED950007463D /* Menu */,
+				9FAFA6711C2FED950007463D /* Workouts */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -906,6 +917,7 @@
 		F09702B81ACA425C00498DEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9FAFA68E1C30028E0007463D /* UIPageViewController+PageControl */,
 				9FF8A1BD1C2B30D700A25EAA /* UIColor+Selected */,
 				9F13C46C1C1D538600894C6C /* NSObject+Utils */,
 				9F9E82E61C14122700920B66 /* UIBarButtonItem+Custom */,
@@ -1544,6 +1556,7 @@
 				9FAFA67E1C2FED950007463D /* NewWorkoutPageContentController.swift in Sources */,
 				9FED64031C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */,
+				9FAFA6901C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441E1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
@@ -1654,6 +1667,7 @@
 				9FAFA67F1C2FED950007463D /* NewWorkoutPageContentController.swift in Sources */,
 				9FED64041C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */,
+				9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441F1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D51C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
