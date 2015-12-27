@@ -153,7 +153,7 @@
  {
  "name" : "Workout 500",
  "description" : "Sportive schedule of fitness built by Hamilton's McMaster university in Ontario.",
- "identifier" : "0000000000000001",
+ "identifier" : "0000000000000002",
  "steps" : [
             {
             "type" : 0,

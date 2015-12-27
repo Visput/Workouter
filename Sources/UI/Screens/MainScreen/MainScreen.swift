@@ -12,6 +12,7 @@ final class MainScreen: BaseScreen {
     
     private var workoutPageItems = [WorkoutPageItem]()
     private var workoutsController: UIPageViewController!
+    private var needsReloadWorkouts = false
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -21,17 +22,36 @@ final class MainScreen: BaseScreen {
         return modelProvider.workoutsProvider
     }
     
+    private var mainView: MainView {
+        return view as! MainView
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "WorkoutsPages" {
             workoutsController = segue.destinationViewController as! UIPageViewController
-            configureWorkoutsController()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        workoutsProvider.observers.addObserver(self)
+        reloadWorkoutsController()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.setBackgroundImage(UIImage(),
             forBarMetrics: .Default)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // Due to internal logic of UIPageViewController it can be
+        // updated only when its view is currently displayed.
+        if needsReloadWorkouts {
+            needsReloadWorkouts = false
+            reloadWorkoutsController()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -42,6 +62,7 @@ final class MainScreen: BaseScreen {
 }
 
 extension MainScreen: UIPageViewControllerDataSource {
+    
     func pageViewController(pageViewController: UIPageViewController,
         viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
             
@@ -76,6 +97,13 @@ extension MainScreen: UIPageViewControllerDataSource {
     }
 }
 
+extension MainScreen: WorkoutsProviderObserving {
+    
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+        needsReloadWorkouts = true
+    }
+}
+
 extension MainScreen {
     
     override func configureBarButtonItems() {
@@ -95,7 +123,7 @@ extension MainScreen {
 
 extension MainScreen {
     
-    private func configureWorkoutsController() {
+    private func reloadWorkoutsController() {
         workoutPageItems.removeAll()
         for (index, workout) in workoutsProvider.workouts.enumerate() {
             let item = WorkoutPageItem(workout: workout, index: index)
@@ -104,6 +132,6 @@ extension MainScreen {
         
         workoutsController.dataSource = self
         let firstController = navigationManager.instantiateWorkoutPageContentControllerWithItem(workoutPageItems[0])
-        workoutsController.setViewControllers([firstController], direction: .Forward, animated: true, completion: nil)
+        workoutsController.setViewControllers([firstController], direction: .Forward, animated: false, completion:nil)
     }
 }
