@@ -964,32 +964,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-BK-YQd" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-BK-YQd" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="32" y="0.0" width="311" height="150"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOw-tT-J6u">
-                                        <rect key="frame" x="155" y="55" width="1" height="40"/>
-                                        <color key="backgroundColor" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="2tn-Dy-7Jc"/>
-                                            <constraint firstAttribute="width" constant="1" id="I9P-Zf-yWY"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75c-Cv-ALo">
-                                        <rect key="frame" x="135" y="74.5" width="40" height="1"/>
-                                        <color key="backgroundColor" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="9di-8H-gNT"/>
-                                            <constraint firstAttribute="height" constant="1" id="XPF-Sj-v0h"/>
-                                        </constraints>
-                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page_new_workout_green" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-rf-Ka3">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="150"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91372549533843994" green="0.98039215803146362" blue="0.96078431606292725" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="75c-Cv-ALo" firstAttribute="centerX" secondItem="nlN-BK-YQd" secondAttribute="centerX" id="16X-T6-SqP"/>
-                                    <constraint firstItem="iOw-tT-J6u" firstAttribute="centerY" secondItem="nlN-BK-YQd" secondAttribute="centerY" id="XpL-ww-zPS"/>
-                                    <constraint firstItem="75c-Cv-ALo" firstAttribute="centerY" secondItem="nlN-BK-YQd" secondAttribute="centerY" id="obd-xZ-6yf"/>
-                                    <constraint firstItem="iOw-tT-J6u" firstAttribute="centerX" secondItem="nlN-BK-YQd" secondAttribute="centerX" id="sSq-fr-v49"/>
+                                    <constraint firstAttribute="trailing" secondItem="yOa-rf-Ka3" secondAttribute="trailing" id="ENT-vq-mkT"/>
+                                    <constraint firstAttribute="bottom" secondItem="yOa-rf-Ka3" secondAttribute="bottom" id="Kbx-3v-11b"/>
+                                    <constraint firstItem="yOa-rf-Ka3" firstAttribute="leading" secondItem="nlN-BK-YQd" secondAttribute="leading" id="M45-Li-rG1"/>
+                                    <constraint firstItem="yOa-rf-Ka3" firstAttribute="top" secondItem="nlN-BK-YQd" secondAttribute="top" id="rI1-MG-Ajs"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -999,7 +986,7 @@
                                         <color key="value" red="0.12941176469999999" green="0.80784313730000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -1030,5 +1017,6 @@
         <image name="icon_magic_box_green" width="88" height="88"/>
         <image name="icon_statistics_green" width="88" height="88"/>
         <image name="icon_workouts_green" width="88" height="88"/>
+        <image name="page_new_workout_green" width="311" height="174"/>
     </resources>
 </document>
