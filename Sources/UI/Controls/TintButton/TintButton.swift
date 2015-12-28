@@ -10,30 +10,38 @@ import UIKit
 
 class TintButton: UIButton {
 
+    /// Border and Title color when button in Valid and Unfilled state.
+    /// Border and Background color when button in Valid and Filled state.
     @IBInspectable dynamic var primaryColor: UIColor = UIColor.blackColor() {
         didSet {
             updateAppearance()
         }
     }
     
+    /// Background color when button in Valid and Unfilled state.
     @IBInspectable dynamic var primaryLightColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
         }
     }
     
+    /// Title color when button in Valid and Filled state.
+    /// Title color when button in Invalid and Filled state.
     @IBInspectable dynamic var secondaryColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
         }
     }
     
+    /// Border and Title color when button in Invalid and Unfilled state.
+    /// Border and Background color when button in Invalid and Filled state.
     @IBInspectable dynamic var invalidStateColor: UIColor = UIColor.redColor() {
         didSet {
             updateAppearance()
         }
     }
     
+    /// Background color when button in Invalid and Unfilled state.
     @IBInspectable dynamic var invalidStateLightColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
