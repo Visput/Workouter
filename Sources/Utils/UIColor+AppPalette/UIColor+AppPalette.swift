@@ -16,17 +16,17 @@ extension UIColor {
             alpha:1)
     }
 
-    class func transparentPrimaryColor() -> UIColor {
-        return UIColor(red: 0.1294117718935013,
-            green:0.8078431487083435,
-            blue:0.6000000238418579,
-            alpha:0.09803921729326248)
-    }
-
     class func lightPrimaryColor() -> UIColor {
         return UIColor(red: 0.8274509906768799,
             green:0.9607843160629272,
             blue:0.9215686321258545,
+            alpha:1)
+    }
+
+    class func superLightPrimaryColor() -> UIColor {
+        return UIColor(red: 0.9137254953384399,
+            green:0.9803921580314636,
+            blue:0.9607843160629272,
             alpha:1)
     }
 
@@ -62,6 +62,13 @@ extension UIColor {
         return UIColor(red: 0.9333333373069763,
             green:0.239215686917305,
             blue:0.1490196138620377,
+            alpha:1)
+    }
+
+    class func superLightInvalidStateColor() -> UIColor {
+        return UIColor(red: 0.9921568632125854,
+            green:0.9254902005195618,
+            blue:0.9137254953384399,
             alpha:1)
     }
 

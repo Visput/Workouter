@@ -28,6 +28,12 @@ final class DescriptionButton: TintButton {
         return images
     }()
     
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        // Configure colors in `didMoveToWindow` to override UIAppearance configuration.
+        configureColors()
+    }
+    
     override func updateAppearance() {
         super.updateAppearance()
         
@@ -58,9 +64,14 @@ final class DescriptionButton: TintButton {
         animationImageView.animationDuration = 0.2
         addSubview(animationImageView)
         
+        borderVisible = false
+    }
+    
+    private func configureColors() {
         primaryColor = UIColor.clearColor()
+        primaryLightColor = UIColor.clearColor()
         secondaryColor = UIColor.clearColor()
         invalidStateColor = UIColor.clearColor()
-        borderVisible = false
+        invalidStateLightColor = UIColor.clearColor()
     }
 }

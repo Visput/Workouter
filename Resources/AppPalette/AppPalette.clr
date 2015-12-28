@@ -1,10 +1,11 @@
 #FF21CE99 primary
-#1921CE99 transparentPrimary
 #FFD3F5EB lightPrimary
+#FFE9FAF5 superLightPrimary
 #FFF42753 secondary
 #FFFDD4DD lightSecondary
 #FF1B3745 primaryText
 #FFB1BFC4 secondaryText
 #FFEE3D26 invalidState
+#FFFDECE9 superLightInvalidState
 #FFB1BFC4 border
 #FFF3F5F7 background

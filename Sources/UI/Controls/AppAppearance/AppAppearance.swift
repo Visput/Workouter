@@ -47,7 +47,7 @@ final class AppAppearance {
         
         // UITableViewCell.
         let colorView = UIView()
-        colorView.backgroundColor = UIColor.transparentPrimaryColor()
+        colorView.backgroundColor = UIColor.superLightPrimaryColor()
         UITableViewCell.appearance().selectedBackgroundView = colorView
         
         // UIPageControl.
@@ -56,7 +56,9 @@ final class AppAppearance {
         
         // TintButton.
         TintButton.appearance().primaryColor = UIColor.primaryColor()
+        TintButton.appearance().primaryLightColor = UIColor.superLightPrimaryColor()
         TintButton.appearance().secondaryColor = UIColor.whiteColor()
         TintButton.appearance().invalidStateColor = UIColor.invalidStateColor()
+        TintButton.appearance().invalidStateLightColor = UIColor.superLightInvalidStateColor()
     }
 }

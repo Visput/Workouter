@@ -556,7 +556,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-Wb-y9r" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-Wb-y9r" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="72" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0aW-Ns-1r1"/>
@@ -564,16 +564,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <state key="normal" image="icon_cancel_gray"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderVisible" value="NO"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cancelButtonDidPress:" destination="GgG-8q-uRo" eventType="touchUpInside" id="2fT-tp-nMv"/>
                                 </connections>
@@ -994,7 +984,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.91372549533843994" green="0.98039215803146362" blue="0.96078431606292725" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="75c-Cv-ALo" firstAttribute="centerX" secondItem="nlN-BK-YQd" secondAttribute="centerX" id="16X-T6-SqP"/>
                                     <constraint firstItem="iOw-tT-J6u" firstAttribute="centerY" secondItem="nlN-BK-YQd" secondAttribute="centerY" id="XpL-ww-zPS"/>

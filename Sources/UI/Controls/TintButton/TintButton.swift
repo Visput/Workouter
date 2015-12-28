@@ -16,6 +16,12 @@ class TintButton: UIButton {
         }
     }
     
+    @IBInspectable dynamic var primaryLightColor: UIColor = UIColor.whiteColor() {
+        didSet {
+            updateAppearance()
+        }
+    }
+    
     @IBInspectable dynamic var secondaryColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
@@ -23,6 +29,12 @@ class TintButton: UIButton {
     }
     
     @IBInspectable dynamic var invalidStateColor: UIColor = UIColor.redColor() {
+        didSet {
+            updateAppearance()
+        }
+    }
+    
+    @IBInspectable dynamic var invalidStateLightColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateAppearance()
         }
@@ -135,7 +147,9 @@ extension TintButton {
         // Filling animation.
         let buttonBorderColor = primaryColorForCurrentState.CGColor
         var buttonTitleColor = primaryColorForCurrentState
-        var buttonBackgroundColor = secondaryColor
+        
+        // Set light color to background if button unfilled.
+        var buttonBackgroundColor = valid ? primaryLightColor : invalidStateLightColor
         
         if filled {
             buttonTitleColor = secondaryColor
