@@ -14,6 +14,10 @@ final class AchievementsScreen: BaseScreen {
         return modelProvider.achievementsProvider
     }
     
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         achievementsProvider.loadAchievements()
@@ -37,5 +41,12 @@ extension AchievementsScreen: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        
+        let achievement = achievementsProvider.achievements[indexPath.item]
+        navigationManager.presentAchievementDetailsScreenWithAchievement(achievement,
+            animated: true,
+            didCancelAction: { [unowned self] in
+                self.navigationManager.dismissScreenAnimated(true)
+        })
     }
 }

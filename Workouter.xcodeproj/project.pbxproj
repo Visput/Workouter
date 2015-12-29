@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3B3F7084CA7E2990CC7746A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
 		4A88263246FC56EDE7835F17 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E817D60F4699BF98BB274C /* Pods.framework */; };
+		9F0588A91C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0588A81C326279006DDD81 /* AchievementDetailsScreen.swift */; };
+		9F0588AA1C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0588A81C326279006DDD81 /* AchievementDetailsScreen.swift */; };
+		9F0588AC1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0588AB1C32629C006DDD81 /* AchievementDetailsView.swift */; };
+		9F0588AD1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0588AB1C32629C006DDD81 /* AchievementDetailsView.swift */; };
 		9F0DFC3D1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC3C1BE88D97002AEACC /* WorkoutTemplatesScreen.swift */; };
 		9F0DFC3E1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC3C1BE88D97002AEACC /* WorkoutTemplatesScreen.swift */; };
 		9F0DFC401BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DFC3F1BE88DD1002AEACC /* WorkoutTemplatesView.swift */; };
@@ -275,6 +279,8 @@
 /* Begin PBXFileReference section */
 		1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		77CD856DC63505B2687FE1F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0588A81C326279006DDD81 /* AchievementDetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementDetailsScreen.swift; sourceTree = "<group>"; };
+		9F0588AB1C32629C006DDD81 /* AchievementDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementDetailsView.swift; sourceTree = "<group>"; };
 		9F0DFC3C1BE88D97002AEACC /* WorkoutTemplatesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTemplatesScreen.swift; sourceTree = "<group>"; };
 		9F0DFC3F1BE88DD1002AEACC /* WorkoutTemplatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTemplatesView.swift; sourceTree = "<group>"; };
 		9F0DFC421BE88DEF002AEACC /* StepTemplatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTemplatesView.swift; sourceTree = "<group>"; };
@@ -469,6 +475,15 @@
 				1DD8FC8809D53211984BE0B7 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F0588A71C32624F006DDD81 /* AchievementDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9F0588A81C326279006DDD81 /* AchievementDetailsScreen.swift */,
+				9F0588AB1C32629C006DDD81 /* AchievementDetailsView.swift */,
+			);
+			path = AchievementDetailsScreen;
 			sourceTree = "<group>";
 		};
 		9F0DFC3B1BE88D48002AEACC /* WorkoutTemplatesScreen */ = {
@@ -1090,6 +1105,7 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F0588A71C32624F006DDD81 /* AchievementDetailsScreen */,
 				9FED64011C1D69B900F40CDF /* MagicBoxScreen */,
 				9F7CA3DB1C23D6C5003E9BFD /* ReferFriendsScreen */,
 				9FED642D1C1F515800F40CDF /* StatisticsScreen */,
@@ -1586,6 +1602,7 @@
 				9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */,
 				9FAFA6901C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F3647691C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
+				9F0588AC1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */,
 				9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441E1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
@@ -1636,6 +1653,7 @@
 				9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6801C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
+				9F0588A91C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
 				9F697E511C02997C00BAB0EC /* BaseView.swift in Sources */,
 				9F7CA3F91C2483A8003E9BFD /* SettingsCell.swift in Sources */,
 				9F36477A1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,
@@ -1700,6 +1718,7 @@
 				9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */,
 				9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F36476A1C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
+				9F0588AD1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */,
 				9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441F1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D51C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
@@ -1750,6 +1769,7 @@
 				9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6811C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
+				9F0588AA1C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
 				9F7CA3FA1C2483A8003E9BFD /* SettingsCell.swift in Sources */,
 				9F36477B1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,

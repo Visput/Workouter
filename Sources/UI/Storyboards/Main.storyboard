@@ -180,5 +180,13 @@
             </objects>
             <point key="canvasLocation" x="-1754.5" y="-1987"/>
         </scene>
+        <!--AchievementDetailsScreen-->
+        <scene sceneID="iSZ-bf-6AK">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AchievementDetailsScreen" storyboardName="MainScreens" referencedIdentifier="AchievementDetailsScreen" id="gYU-M7-hC8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0r-wp-SUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1781.5" y="-1934"/>
+        </scene>
     </scenes>
 </document>

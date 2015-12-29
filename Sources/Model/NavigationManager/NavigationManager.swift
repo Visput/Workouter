@@ -324,6 +324,13 @@ extension NavigationManager {
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
+    func presentAchievementDetailsScreenWithAchievement(achievement: Achievement, animated: Bool, didCancelAction: (() -> Void)?) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(AchievementDetailsScreen.className()) as! AchievementDetailsScreen
+        screen.achievement = achievement
+        screen.didCancelAction = didCancelAction
+        presentScreen(screen, wrapWithNavigationController: true, animated: animated)
+    }
+    
     func pushReferFriendsScreenAnimated(animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(ReferFriendsScreen.className()) as! ReferFriendsScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
