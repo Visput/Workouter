@@ -26,6 +26,19 @@ class BaseScreen: BaseViewController {
 
 extension BaseScreen {
     
+    func setWhiteBackgroundForNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background_white"),
+            forBarMetrics: .Default)
+    }
+    
+    func setGreyBackgroundForNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background_grey"),
+            forBarMetrics: .Default)
+    }
+}
+
+extension BaseScreen {
+    
     func backButtonShown() -> Bool {
         return navigationController?.viewControllers.count > 1
     }

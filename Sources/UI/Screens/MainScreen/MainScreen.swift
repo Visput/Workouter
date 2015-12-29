@@ -40,8 +40,7 @@ final class MainScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(),
-            forBarMetrics: .Default)
+        setGreyBackgroundForNavigationBar()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -56,8 +55,7 @@ final class MainScreen: BaseScreen {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background_white"),
-            forBarMetrics: .Default)
+        setWhiteBackgroundForNavigationBar()
         super.viewWillDisappear(animated)
     }
 }

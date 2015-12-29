@@ -49,6 +49,12 @@
 		9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */; };
 		9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
 		9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */; };
+		9F3647691C31CBEF00EE0110 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3647681C31CBEF00EE0110 /* AchievementCell.swift */; };
+		9F36476A1C31CBEF00EE0110 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3647681C31CBEF00EE0110 /* AchievementCell.swift */; };
+		9F36477A1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */; };
+		9F36477B1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */; };
+		9F36477D1C31EBC500EE0110 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36477C1C31EBC500EE0110 /* Achievement.swift */; };
+		9F36477E1C31EBC500EE0110 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36477C1C31EBC500EE0110 /* Achievement.swift */; };
 		9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
@@ -291,6 +297,9 @@
 		9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		9F341AD21BDF2F7000AEDEB1 /* WorkoutEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditScreen.swift; sourceTree = "<group>"; };
 		9F341AD31BDF2F7000AEDEB1 /* WorkoutEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
+		9F3647681C31CBEF00EE0110 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsProvider.swift; sourceTree = "<group>"; };
+		9F36477C1C31EBC500EE0110 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
@@ -543,6 +552,23 @@
 				9F341AD11BDF2F7000AEDEB1 /* StepCell.swift */,
 			);
 			path = WorkoutEditScreen;
+			sourceTree = "<group>";
+		};
+		9F3647771C31EAF500EE0110 /* AchievementsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9F3647781C31EB8D00EE0110 /* DTO */,
+				9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */,
+			);
+			path = AchievementsProvider;
+			sourceTree = "<group>";
+		};
+		9F3647781C31EB8D00EE0110 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				9F36477C1C31EBC500EE0110 /* Achievement.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		9F37F5751BE057D600772BB7 /* AppShortcutsManager */ = {
@@ -862,6 +888,7 @@
 			children = (
 				9FED64271C1F510100F40CDF /* AchievementsScreen.swift */,
 				9FED642A1C1F511400F40CDF /* AchievementsView.swift */,
+				9F3647681C31CBEF00EE0110 /* AchievementCell.swift */,
 			);
 			path = AchievementsScreen;
 			sourceTree = "<group>";
@@ -1002,6 +1029,7 @@
 				F0C342521A9E4BC800B9D480 /* ModelProvider */,
 				9F0F07401C063C6A00DA0152 /* AccountManager */,
 				9F469AD51BF6918D00C29AA9 /* StatisticsProvider */,
+				9F3647771C31EAF500EE0110 /* AchievementsProvider */,
 				9F37F57D1BE0AE4300772BB7 /* NavigationManager */,
 				9F37F5751BE057D600772BB7 /* AppShortcutsManager */,
 				F0C342551A9E4BC800B9D480 /* WorkoutPlayer */,
@@ -1557,6 +1585,7 @@
 				9FED64031C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */,
 				9FAFA6901C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
+				9F3647691C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
 				9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441E1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
@@ -1609,12 +1638,14 @@
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F697E511C02997C00BAB0EC /* BaseView.swift in Sources */,
 				9F7CA3F91C2483A8003E9BFD /* SettingsCell.swift in Sources */,
+				9F36477A1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,
 				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F341AD81BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
 				9F7CA3DD1C23DDDB003E9BFD /* ReferFriendsScreen.swift in Sources */,
 				9F94441B1C0001BE003E333B /* BaseDialog.swift in Sources */,
 				9F0F072B1C06282800DA0152 /* WorkoutPlayerView.swift in Sources */,
+				9F36477D1C31EBC500EE0110 /* Achievement.swift in Sources */,
 				9FAFA6761C2FED950007463D /* AchievementsPreviewController.swift in Sources */,
 				9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */,
@@ -1668,6 +1699,7 @@
 				9FED64041C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */,
 				9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
+				9F36476A1C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
 				9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */,
 				9F94441F1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D51C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
@@ -1720,12 +1752,14 @@
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
 				9F7CA3FA1C2483A8003E9BFD /* SettingsCell.swift in Sources */,
+				9F36477B1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,
 				9F697E521C02997C00BAB0EC /* BaseView.swift in Sources */,
 				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8171BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
 				9F7CA3DE1C23DDDB003E9BFD /* ReferFriendsScreen.swift in Sources */,
 				9F341AD91BDF2F7000AEDEB1 /* WorkoutEditView.swift in Sources */,
 				9F94441C1C0001BE003E333B /* BaseDialog.swift in Sources */,
+				9F36477E1C31EBC500EE0110 /* Achievement.swift in Sources */,
 				9FAFA6771C2FED950007463D /* AchievementsPreviewController.swift in Sources */,
 				9F0F072C1C06282800DA0152 /* WorkoutPlayerView.swift in Sources */,
 				9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,

@@ -84,7 +84,7 @@ extension WorkoutDetailsScreen {
         navigationManager.presentWorkoutEditScreenWithWorkout(workout,
             animated: true,
             workoutDidEditAction: { [unowned self] workout in
-                self.workoutsProvider.replaceWorkout(self.workout, withWorkout: workout)
+                self.workoutsProvider.updateWorkout(self.workout, withWorkout: workout)
                 self.workout = workout
                 self.navigationManager.dismissScreenAnimated(true)
             }, workoutDidCancelAction: { [unowned self] in

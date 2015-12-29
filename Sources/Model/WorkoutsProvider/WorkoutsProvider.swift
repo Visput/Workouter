@@ -57,13 +57,13 @@ final class WorkoutsProvider: NSObject {
         commitChanges()
     }
     
-    func replaceWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
+    func updateWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
         workouts[index] = newWorkout
         notifyObserversDidUpdateWorkouts()
         commitChanges()
     }
     
-    func replaceWorkout(workout: Workout, withWorkout newWorkout: Workout) {
+    func updateWorkout(workout: Workout, withWorkout newWorkout: Workout) {
         for (index, aWorkout) in workouts.enumerate() {
             if aWorkout.identifier == workout.identifier {
                 workouts[index] = newWorkout

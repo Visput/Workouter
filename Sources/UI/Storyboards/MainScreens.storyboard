@@ -708,7 +708,77 @@
                     <view key="view" contentMode="scaleToFill" id="Utq-Nj-JhA" customClass="AchievementsView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-YQ-Mwg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="32" minimumInteritemSpacing="0.0" id="Soa-Nq-yLk">
+                                    <size key="itemSize" width="88" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="TlP-uv-IcI" customClass="AchievementCell" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-ls-GqF">
+                                                    <rect key="frame" x="8" y="0.0" width="72" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aWd-ls-GqF" secondAttribute="height" multiplier="1:1" id="NC0-fw-G1q"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="NC0-fw-G1q"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dot_green" translatesAutoresizingMaskIntoConstraints="NO" id="4CC-rX-Msp">
+                                                    <rect key="frame" x="8" y="72" width="72" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="QbN-nn-OXa"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4CC-rX-Msp" secondAttribute="trailing" constant="8" id="2wM-Bd-6mg"/>
+                                            <constraint firstAttribute="bottom" secondItem="4CC-rX-Msp" secondAttribute="bottom" id="K6Y-25-tFq"/>
+                                            <constraint firstItem="4CC-rX-Msp" firstAttribute="top" secondItem="aWd-ls-GqF" secondAttribute="bottom" id="RWe-d2-5Ns"/>
+                                            <constraint firstItem="aWd-ls-GqF" firstAttribute="top" secondItem="TlP-uv-IcI" secondAttribute="top" id="U3o-Zm-25M"/>
+                                            <constraint firstItem="4CC-rX-Msp" firstAttribute="leading" secondItem="TlP-uv-IcI" secondAttribute="leading" constant="8" id="rGY-ru-TuI"/>
+                                            <constraint firstItem="aWd-ls-GqF" firstAttribute="leading" secondItem="TlP-uv-IcI" secondAttribute="leading" constant="8" id="uha-p3-RGE"/>
+                                            <constraint firstAttribute="trailing" secondItem="aWd-ls-GqF" secondAttribute="trailing" constant="8" id="vc2-OS-XFm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconView" destination="aWd-ls-GqF" id="9bq-Kk-gJe"/>
+                                            <outlet property="newStatusView" destination="4CC-rX-Msp" id="MVi-r5-k17"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cZb-cv-30f" id="bgD-b2-ze7"/>
+                                    <outlet property="delegate" destination="cZb-cv-30f" id="daX-eC-UUs"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aRd-YQ-Mwg" secondAttribute="trailing" id="4wL-84-5VH"/>
+                            <constraint firstItem="aRd-YQ-Mwg" firstAttribute="top" secondItem="Utq-Nj-JhA" secondAttribute="top" id="Oj7-3f-gFb"/>
+                            <constraint firstItem="aRd-YQ-Mwg" firstAttribute="leading" secondItem="Utq-Nj-JhA" secondAttribute="leading" id="tjz-X7-kpk"/>
+                            <constraint firstItem="2zB-CD-Gka" firstAttribute="top" secondItem="aRd-YQ-Mwg" secondAttribute="bottom" id="z8i-Gg-aIU"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="collectionView" destination="aRd-YQ-Mwg" id="Ziq-RC-dcu"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Achievements" id="2HQ-NI-CkR">
                         <barButtonItem key="backBarButtonItem" title=" " id="E8r-DI-6Le"/>
@@ -718,7 +788,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXi-5N-YAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690.5" y="1767.5"/>
+            <point key="canvasLocation" x="582.5" y="1752.5"/>
         </scene>
         <!--Workouts Preview Controller-->
         <scene sceneID="YpA-5W-TJK">
@@ -1014,6 +1084,8 @@
     <resources>
         <image name="icon_achievements_green" width="88" height="88"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
+        <image name="icon_dot_green" width="6" height="6"/>
+        <image name="icon_info_green" width="60" height="60"/>
         <image name="icon_magic_box_green" width="88" height="88"/>
         <image name="icon_statistics_green" width="88" height="88"/>
         <image name="icon_workouts_green" width="88" height="88"/>

@@ -126,7 +126,7 @@ extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
                 animated: true,
                 workoutDidEditAction: { [unowned self] workout in
                     
-                    self.workoutsProvider.replaceWorkoutAtIndex(indexPath.row, withWorkout: workout)
+                    self.workoutsProvider.updateWorkoutAtIndex(indexPath.row, withWorkout: workout)
                     self.navigationManager.dismissScreenAnimated(true)
                     self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                     

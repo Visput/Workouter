@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewWorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
+final class NewWorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
 
     var item: WorkoutPageItem!
     

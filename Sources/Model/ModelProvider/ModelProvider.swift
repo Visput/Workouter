@@ -18,6 +18,7 @@ final class ModelProvider: NSObject {
     let workoutPlayer: WorkoutPlayer
     let shortcutsManager: AppShortcutsManager
     let statisticsProvider: StatisticsProvider
+    let achievementsProvider: AchievementsProvider
     
     override init() {
         accountManager = AccountManager()
@@ -25,6 +26,7 @@ final class ModelProvider: NSObject {
         workoutsProvider = WorkoutsProvider()
         workoutPlayer = WorkoutPlayer()
         statisticsProvider = StatisticsProvider(workoutsProvider: workoutsProvider)
+        achievementsProvider = AchievementsProvider()
         
         shortcutsManager = AppShortcutsManager(navigationManager: navigationManager,
             workoutsProvider: workoutsProvider,
