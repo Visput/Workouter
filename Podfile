@@ -18,4 +18,6 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 
+pod 'Charts'
+
 pod 'VPAttributedFormat'
