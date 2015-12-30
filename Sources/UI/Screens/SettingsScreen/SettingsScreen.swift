@@ -83,5 +83,11 @@ extension SettingsScreen {
             action: { [unowned self] in
                 self.navigationManager.pushReferFriendsScreenAnimated(true)
             }))
+        
+        settingsItems.append(SettingsItem(title: NSLocalizedString("Settings", comment: ""),
+            icon: UIImage(named: "icon_settings_green")!,
+            action: { [unowned self] in
+                self.navigationManager.pushReferFriendsScreenAnimated(true)
+            }))
     }
 }
