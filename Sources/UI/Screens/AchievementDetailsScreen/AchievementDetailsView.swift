@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AchievementDetailsView: BaseView {
+class AchievementDetailsView: BaseScreenView {
 
     @IBOutlet private(set) weak var iconView: UIImageView!
     @IBOutlet private(set) weak var nameLabel: UILabel!

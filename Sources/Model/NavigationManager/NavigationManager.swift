@@ -296,8 +296,13 @@ extension NavigationManager {
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
-    func presentSettingsScreenAnimated(animated: Bool, didCancelAction: (() -> Void)?) {
+    func pushSettingsScreenAnimated(animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(SettingsScreen.className()) as! SettingsScreen
+        pushScreen(screen, animated: animated)
+    }
+    
+    func presentAccountScreenAnimated(animated: Bool, didCancelAction: (() -> Void)?) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(AccountScreen.className()) as! AccountScreen
         screen.didCancelAction = didCancelAction
         presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }

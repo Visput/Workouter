@@ -1,14 +1,14 @@
 //
-//  SettingsCell.swift
+//  AccountCell.swift
 //  Workouter
 //
-//  Created by Uladzimir Papko on 12/18/15.
+//  Created by Uladzimir Papko on 12/30/15.
 //  Copyright © 2015 visput. All rights reserved.
 //
 
 import UIKit
 
-class SettingsCell: UICollectionViewCell {
+final class AccountCell: UICollectionViewCell {
     
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var iconView: UIImageView!
@@ -19,7 +19,7 @@ class SettingsCell: UICollectionViewCell {
         }
     }
     
-    func fillWithItem(item: SettingsItem) {
+    func fillWithItem(item: AccountCellItem) {
         titleLabel.text = item.title
         iconView.image = item.icon
     }

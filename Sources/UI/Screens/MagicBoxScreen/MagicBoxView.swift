@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MagicBoxView: BaseView {
+final class MagicBoxView: BaseScreenView {
     
     @IBOutlet private(set) weak var collectionView: UICollectionView!
     

@@ -1,21 +1,21 @@
 //
-//  AchievementsView.swift
+//  AccountView.swift
 //  Workouter
 //
-//  Created by Uladzimir Papko on 12/14/15.
+//  Created by Uladzimir Papko on 12/30/15.
 //  Copyright © 2015 visput. All rights reserved.
 //
 
 import UIKit
 
-final class AchievementsView: BaseScreenView {
-    
+final class AccountView: BaseScreenView {
+
     @IBOutlet private(set) weak var collectionView: UICollectionView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let cellsPerRow: CGFloat = 3
+        let cellsPerRow: CGFloat = 2
         let collectionViewLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let spacing = (collectionView.frame.size.width - cellsPerRow * collectionViewLayout.itemSize.width) / (cellsPerRow + 1)
         

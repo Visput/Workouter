@@ -1,14 +1,14 @@
 //
-//  SettingsItem.swift
+//  AccountCellItem.swift
 //  Workouter
 //
-//  Created by Uladzimir Papko on 12/18/15.
+//  Created by Uladzimir Papko on 12/30/15.
 //  Copyright © 2015 visput. All rights reserved.
 //
 
 import UIKit
 
-struct SettingsItem {
+struct AccountCellItem {
 
     let title: String
     let icon: UIImage
@@ -19,5 +19,4 @@ struct SettingsItem {
         self.icon = icon
         self.action = action
     }
-    
 }

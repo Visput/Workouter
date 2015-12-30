@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-2101.5" y="-2056.5"/>
         </scene>
-        <!--SettingsScreen-->
+        <!--AccountScreen-->
         <scene sceneID="NUW-al-dAI">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SettingsScreen" storyboardName="SettingsScreens" referencedIdentifier="SettingsScreen" id="sla-mV-If5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="AccountScreen" storyboardName="AccountScreens" referencedIdentifier="AccountScreen" id="sla-mV-If5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vf-hK-Zua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1029.5" y="-2404"/>
@@ -39,7 +39,7 @@
         <!--ReferFriendsScreen-->
         <scene sceneID="rQg-Ng-YqE">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ReferFriendsScreen" storyboardName="SettingsScreens" referencedIdentifier="ReferFriendsScreen" id="5iT-xP-mYb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="ReferFriendsScreen" storyboardName="AccountScreens" referencedIdentifier="ReferFriendsScreen" id="5iT-xP-mYb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDa-TV-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1016" y="-2359"/>
@@ -187,6 +187,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0r-wp-SUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1781.5" y="-1934"/>
+        </scene>
+        <!--SettingsScreen-->
+        <scene sceneID="Cf1-r2-yPW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SettingsScreen" storyboardName="AccountScreens" referencedIdentifier="SettingsScreen" id="zpo-k6-eqQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49U-H5-x5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029.5" y="-2314"/>
         </scene>
     </scenes>
 </document>

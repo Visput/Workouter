@@ -8,12 +8,12 @@
         <!--Account-->
         <scene sceneID="YFX-1V-LjZ">
             <objects>
-                <viewController storyboardIdentifier="SettingsScreen" id="Ptu-vC-fWv" customClass="SettingsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountScreen" id="Ptu-vC-fWv" customClass="AccountScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FKo-rF-ukR"/>
                         <viewControllerLayoutGuide type="bottom" id="JhO-eK-TUS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z3v-Ai-1le" customClass="SettingsView" customModule="Workouter" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="z3v-Ai-1le" customClass="AccountView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingsCell" id="3ne-iU-rwb" customClass="SettingsCell" customModule="Workouter" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AccountCell" id="3ne-iU-rwb" customClass="AccountCell" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="135" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -286,6 +286,29 @@ Invite your friends to join Workouter today.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qME-y3-4P3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156.5" y="-1864.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="PEc-g1-eFc">
+            <objects>
+                <viewController storyboardIdentifier="SettingsScreen" id="5Ye-mX-yQU" customClass="SettingsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a6w-Lz-Z91"/>
+                        <viewControllerLayoutGuide type="bottom" id="QZC-Ow-pv2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UNI-ct-Vwg" customClass="SettingsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="4WP-e9-wub">
+                        <barButtonItem key="backBarButtonItem" title=" " id="oli-oa-mwp"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOM-DD-9Le" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616.5" y="-1864.5"/>
         </scene>
     </scenes>
     <resources>

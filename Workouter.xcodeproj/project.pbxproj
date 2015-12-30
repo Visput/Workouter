@@ -65,6 +65,14 @@
 		9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
 		9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
 		9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
+		9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
+		9F3CA9FF1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
+		9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA001C34472B0061C21A /* AccountView.swift */; };
+		9F3CAA021C34472B0061C21A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA001C34472B0061C21A /* AccountView.swift */; };
+		9F3CAA041C3447EA0061C21A /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA031C3447EA0061C21A /* AccountCell.swift */; };
+		9F3CAA051C3447EA0061C21A /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA031C3447EA0061C21A /* AccountCell.swift */; };
+		9F3CAA071C3448370061C21A /* AccountCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA061C3448370061C21A /* AccountCellItem.swift */; };
+		9F3CAA081C3448370061C21A /* AccountCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA061C3448370061C21A /* AccountCellItem.swift */; };
 		9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
@@ -99,18 +107,14 @@
 		9F7CA3EA1C23E0E6003E9BFD /* Dialogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E61C23E0E6003E9BFD /* Dialogs.storyboard */; };
 		9F7CA3EB1C23E0E6003E9BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E71C23E0E6003E9BFD /* Main.storyboard */; };
 		9F7CA3EC1C23E0E6003E9BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E71C23E0E6003E9BFD /* Main.storyboard */; };
-		9F7CA3ED1C23E0E6003E9BFD /* SettingsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E81C23E0E6003E9BFD /* SettingsScreens.storyboard */; };
-		9F7CA3EE1C23E0E6003E9BFD /* SettingsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E81C23E0E6003E9BFD /* SettingsScreens.storyboard */; };
+		9F7CA3ED1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E81C23E0E6003E9BFD /* AccountScreens.storyboard */; };
+		9F7CA3EE1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3E81C23E0E6003E9BFD /* AccountScreens.storyboard */; };
 		9F7CA3F01C23E149003E9BFD /* MainScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3EF1C23E149003E9BFD /* MainScreens.storyboard */; };
 		9F7CA3F11C23E149003E9BFD /* MainScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3EF1C23E149003E9BFD /* MainScreens.storyboard */; };
 		9F7CA3F31C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F21C23E229003E9BFD /* OnboardingScreens.storyboard */; };
 		9F7CA3F41C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F21C23E229003E9BFD /* OnboardingScreens.storyboard */; };
 		9F7CA3F61C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */; };
 		9F7CA3F71C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */; };
-		9F7CA3F91C2483A8003E9BFD /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F81C2483A8003E9BFD /* SettingsCell.swift */; };
-		9F7CA3FA1C2483A8003E9BFD /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CA3F81C2483A8003E9BFD /* SettingsCell.swift */; };
-		9F7CA3FC1C2483C0003E9BFD /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CA3FB1C2483C0003E9BFD /* SettingsItem.swift */; };
-		9F7CA3FD1C2483C0003E9BFD /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CA3FB1C2483C0003E9BFD /* SettingsItem.swift */; };
 		9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */; };
 		9F8782181BFE941000D431C2 /* TintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8782171BFE941000D431C2 /* TintButton.swift */; };
@@ -309,6 +313,10 @@
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
+		9F3CA9FD1C3447140061C21A /* AccountScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
+		9F3CAA001C34472B0061C21A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		9F3CAA031C3447EA0061C21A /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		9F3CAA061C3448370061C21A /* AccountCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCellItem.swift; sourceTree = "<group>"; };
 		9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProvider.swift; sourceTree = "<group>"; };
 		9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
@@ -326,12 +334,10 @@
 		9F7CA3DF1C23DDEF003E9BFD /* ReferFriendsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferFriendsView.swift; sourceTree = "<group>"; };
 		9F7CA3E61C23E0E6003E9BFD /* Dialogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dialogs.storyboard; sourceTree = "<group>"; };
 		9F7CA3E71C23E0E6003E9BFD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9F7CA3E81C23E0E6003E9BFD /* SettingsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsScreens.storyboard; sourceTree = "<group>"; };
+		9F7CA3E81C23E0E6003E9BFD /* AccountScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountScreens.storyboard; sourceTree = "<group>"; };
 		9F7CA3EF1C23E149003E9BFD /* MainScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreens.storyboard; sourceTree = "<group>"; };
 		9F7CA3F21C23E229003E9BFD /* OnboardingScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingScreens.storyboard; sourceTree = "<group>"; };
 		9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuildWorkoutScreens.storyboard; sourceTree = "<group>"; };
-		9F7CA3F81C2483A8003E9BFD /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		9F7CA3FB1C2483C0003E9BFD /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
 		9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
@@ -511,8 +517,6 @@
 			children = (
 				9F0F072E1C06284E00DA0152 /* SettingsScreen.swift */,
 				9F0F07311C06286400DA0152 /* SettingsView.swift */,
-				9F7CA3F81C2483A8003E9BFD /* SettingsCell.swift */,
-				9F7CA3FB1C2483C0003E9BFD /* SettingsItem.swift */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -610,6 +614,17 @@
 			path = "UIImageView+Stretch";
 			sourceTree = "<group>";
 		};
+		9F3CA9FC1C3446FA0061C21A /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9F3CA9FD1C3447140061C21A /* AccountScreen.swift */,
+				9F3CAA001C34472B0061C21A /* AccountView.swift */,
+				9F3CAA031C3447EA0061C21A /* AccountCell.swift */,
+				9F3CAA061C3448370061C21A /* AccountCellItem.swift */,
+			);
+			path = AccountScreen;
+			sourceTree = "<group>";
+		};
 		9F3DF9721BFD5CD700BBD535 /* AppAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,7 +703,7 @@
 				9F7CA3EF1C23E149003E9BFD /* MainScreens.storyboard */,
 				9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */,
 				9F7CA3F21C23E229003E9BFD /* OnboardingScreens.storyboard */,
-				9F7CA3E81C23E0E6003E9BFD /* SettingsScreens.storyboard */,
+				9F7CA3E81C23E0E6003E9BFD /* AccountScreens.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1105,6 +1120,7 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F3CA9FC1C3446FA0061C21A /* AccountScreen */,
 				9F0588A71C32624F006DDD81 /* AchievementDetailsScreen */,
 				9FED64011C1D69B900F40CDF /* MagicBoxScreen */,
 				9F7CA3DB1C23D6C5003E9BFD /* ReferFriendsScreen */,
@@ -1305,7 +1321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F64FA861C0AF66A00B63798 /* StepsTableViewSectionHeader.xib in Resources */,
-				9F7CA3ED1C23E0E6003E9BFD /* SettingsScreens.storyboard in Resources */,
+				9F7CA3ED1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */,
 				9FD745CC1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				9F7CA3F31C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
@@ -1324,7 +1340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F64FA871C0AF66A00B63798 /* StepsTableViewSectionHeader.xib in Resources */,
-				9F7CA3EE1C23E0E6003E9BFD /* SettingsScreens.storyboard in Resources */,
+				9F7CA3EE1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */,
 				9FD745CD1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				F09702D11ACA48E700498DEE /* LaunchScreen.xib in Resources */,
 				9F7CA3F41C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
@@ -1650,12 +1666,12 @@
 				9FAFA6821C2FED950007463D /* WorkoutPageContentControlling.swift in Sources */,
 				9FD745F01C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
+				9F3CAA071C3448370061C21A /* AccountCellItem.swift in Sources */,
 				9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6801C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F0588A91C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
 				9F697E511C02997C00BAB0EC /* BaseView.swift in Sources */,
-				9F7CA3F91C2483A8003E9BFD /* SettingsCell.swift in Sources */,
 				9F36477A1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,
 				F02CAB5A1B4B871E00F28D72 /* WorkoutDetailsScreen.swift in Sources */,
 				9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */,
@@ -1671,12 +1687,15 @@
 				9FED642F1C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9F697E561C029ED500BAB0EC /* UIView+Animation.swift in Sources */,
 				9F9444181C0001A2003E333B /* BaseDialogView.swift in Sources */,
+				9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */,
 				9F99006D1C1929FB00ACC612 /* CircleProgressView.swift in Sources */,
 				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
 				9FAFA6841C2FED950007463D /* WorkoutPageItem.swift in Sources */,
 				9FD745C31C09651E00E48508 /* TextFieldController.swift in Sources */,
 				9FC35E681BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
+				9F3CAA041C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BB1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
+				9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */,
 				9FF8A1BF1C2B30F300A25EAA /* UIColor+Selected.swift in Sources */,
 				9FED64281C1F510100F40CDF /* AchievementsScreen.swift in Sources */,
 				9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
@@ -1694,7 +1713,6 @@
 				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
 				F02CAB5E1B4B871E00F28D72 /* BaseScreenView.swift in Sources */,
 				F02CAB5F1B4B871E00F28D72 /* WorkoutsView.swift in Sources */,
-				9F7CA3FC1C2483C0003E9BFD /* SettingsItem.swift in Sources */,
 				9F6BD7751BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */,
 				9F9E82E81C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */,
 			);
@@ -1766,12 +1784,12 @@
 				9FAFA6831C2FED950007463D /* WorkoutPageContentControlling.swift in Sources */,
 				9FD745F11C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
+				9F3CAA081C3448370061C21A /* AccountCellItem.swift in Sources */,
 				9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6811C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F0588AA1C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
 				F09702C71ACA48E700498DEE /* StepTemplatesScreen.swift in Sources */,
-				9F7CA3FA1C2483A8003E9BFD /* SettingsCell.swift in Sources */,
 				9F36477B1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */,
 				9F697E521C02997C00BAB0EC /* BaseView.swift in Sources */,
 				F09702C81ACA48E700498DEE /* WorkoutDetailsScreen.swift in Sources */,
@@ -1787,12 +1805,15 @@
 				9FED64301C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
 				9F697E571C029ED500BAB0EC /* UIView+Animation.swift in Sources */,
+				9F3CA9FF1C3447140061C21A /* AccountScreen.swift in Sources */,
 				9F99006E1C1929FB00ACC612 /* CircleProgressView.swift in Sources */,
 				9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */,
 				9FAFA6851C2FED950007463D /* WorkoutPageItem.swift in Sources */,
 				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,
 				9FC35E691BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
+				9F3CAA051C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BC1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
+				9F3CAA021C34472B0061C21A /* AccountView.swift in Sources */,
 				9FF8A1C01C2B30F500A25EAA /* UIColor+Selected.swift in Sources */,
 				9FED64291C1F510100F40CDF /* AchievementsScreen.swift in Sources */,
 				9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
@@ -1810,7 +1831,6 @@
 				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
 				F09702CC1ACA48E700498DEE /* BaseScreenView.swift in Sources */,
 				F09702CD1ACA48E700498DEE /* WorkoutsView.swift in Sources */,
-				9F7CA3FD1C2483C0003E9BFD /* SettingsItem.swift in Sources */,
 				9F6BD7761BEF158300F5222A /* WorkoutsSearchRequest.swift in Sources */,
 				9F9E82E91C14128E00920B66 /* UIBarButtonItem+Custom.swift in Sources */,
 			);

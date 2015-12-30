@@ -108,13 +108,13 @@ extension MainScreen {
     
     override func configureBarButtonItems() {
         super.configureBarButtonItems()
-        navigationItem.leftBarButtonItem = UIBarButtonItem.greenAccountSettingsItemWithAlignment(.Left,
+        navigationItem.leftBarButtonItem = UIBarButtonItem.greenAccountItemWithAlignment(.Left,
             target: self,
-            action: Selector("settingsButtonDidPress:"))
+            action: Selector("accountButtonDidPress:"))
     }
     
-    @objc private func settingsButtonDidPress(sender: AnyObject) {
-        navigationManager.presentSettingsScreenAnimated(true,
+    @objc private func accountButtonDidPress(sender: AnyObject) {
+        navigationManager.presentAccountScreenAnimated(true,
             didCancelAction: { [unowned self] in
                 self.navigationManager.dismissScreenAnimated(true)
             })
