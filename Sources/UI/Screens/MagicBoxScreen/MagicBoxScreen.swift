@@ -43,3 +43,17 @@ extension MagicBoxScreen: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
 }
+
+extension MagicBoxScreen {
+    
+    @objc private func settingsButtonDidPress(sender: AnyObject) {
+        
+    }
+    
+    override func configureBarButtonItems() {
+        super.configureBarButtonItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenGameSettingsItemWithAlignment(.Right,
+            target: self,
+            action: Selector("settingsButtonDidPress:"))
+    }
+}
