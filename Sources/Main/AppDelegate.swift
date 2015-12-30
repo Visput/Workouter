@@ -80,4 +80,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             let handled = modelProvider.shortcutsManager.performActionForShortcut(shortcutItem)
             completionHandler(handled)
     }
+    
+    func application(application: UIApplication,
+        supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .AllButUpsideDown
+    }
 }
