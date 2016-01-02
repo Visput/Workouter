@@ -36,10 +36,17 @@ extension AchievementDetailsScreen {
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
             action: Selector("cancelButtonDidPress:"))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenShareItemWithAlignment(.Right,
+            target: self,
+            action: Selector("shareButtonDidPress:"))
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {
         didCancelAction?()
+    }
+    
+    @objc private func shareButtonDidPress(sender: AnyObject) {
     }
 }
 

@@ -21,7 +21,8 @@ final class MagicBoxScreen: BaseScreen {
             UIImage(named: "icon_bottle_filled_green")!,
             UIImage(named: "icon_mat_green")!,
             UIImage(named: "icon_cocktail_filled_green")!,
-            UIImage(named: "icon_jumping_rope_green")!
+            UIImage(named: "icon_jumping_rope_green")!,
+            UIImage(named: "icon_goggles_green")!
         ]
     }()
     
