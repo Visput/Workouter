@@ -12,32 +12,15 @@ final class AppShortcutsManager: NSObject {
     
     let navigationManager: NavigationManager
     let workoutsProvider: WorkoutsProvider
-    let statisticsProvider: StatisticsProvider
     
     private var launchedShortcut: UIApplicationShortcutItem?
     
-    private enum ShortcutIdentifier: String {
-        case StartWorkout
-        case CreateWorkout
-        case SearchWorkout
-        
-        init?(type: String) {
-            guard let type = type.componentsSeparatedByString(".").last else { return nil }
-            self.init(rawValue: type)
-        }
-        
-        var type: String {
-            return NSBundle.mainBundle().bundleIdentifier! + ".\(self.rawValue)"
-        }
-    }
-    
-    required init(navigationManager: NavigationManager, workoutsProvider: WorkoutsProvider, statisticsProvider: StatisticsProvider) {
+    required init(navigationManager: NavigationManager, workoutsProvider: WorkoutsProvider) {
         self.navigationManager = navigationManager
         self.workoutsProvider = workoutsProvider
-        self.statisticsProvider = statisticsProvider
         super.init()
         
-        self.statisticsProvider.observers.addObserver(self)
+        self.workoutsProvider.observers.addObserver(self)
     }
     
     func handleShortcutInAppLaunchOptions(launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -54,75 +37,37 @@ final class AppShortcutsManager: NSObject {
     }
     
     func performActionForShortcut(shortcut: UIApplicationShortcutItem) -> Bool {
-        guard let shortcutId = ShortcutIdentifier(type: shortcut.type) else { return false }
+        navigationManager.dismissToRootScreenAnimated(false)
         
-        switch shortcutId {
-        case .StartWorkout:
-            navigationManager.dismissToRootScreenAnimated(false)
-            if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
-                navigationManager.pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout, animated: false)
-            } else {
-                navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(false, animated: false)
-            }
-            break
-            
-        case .CreateWorkout:
-            navigationManager.dismissToRootScreenAnimated(false)
-            navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(false, animated: false)
-            navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
-                animated: false,
-                templateDidSelectAction: { [unowned self] workout in
-                    
-                    self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
-                        animated: true,
-                        workoutDidEditAction: { workout in
-                            self.workoutsProvider.addWorkout(workout)
-                            self.navigationManager.dismissScreenAnimated(true)
-                            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    })
-                    
-                }, templateDidCancelAction: {
-                    self.navigationManager.dismissScreenAnimated(true)
-            })
-            break
-            
-        case .SearchWorkout:
-            navigationManager.dismissToRootScreenAnimated(false)
-            navigationManager.pushWorkoutsScreenFromMainScreenWithSearchActive(true, animated: false)
-            break
+        if let workout = workoutsProvider.workoutWithIdentifier(shortcut.type) {
+            navigationManager.pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout, animated: false)
+        } else {
+            navigationManager.pushWorkoutsScreenFromMainScreenWithSourceType(.User, animated: false)
         }
-        
+            
         return true
     }
     
     func updateShortcuts() {
+        let shortcutsMaxCount = 4
         var shortcuts: [UIApplicationShortcutItem] = []
         
-        // Start Workout.
-        if let workout = statisticsProvider.mostFrequentlyPlayedWorkout {
-            let playWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.StartWorkout.type,
-                localizedTitle: NSLocalizedString("Start Workout", comment: ""))
-            playWorkoutShortcut.localizedSubtitle = workout.name
-            shortcuts.append(playWorkoutShortcut)
+        for index in 0..<shortcutsMaxCount {
+            guard index < workoutsProvider.workouts.count else { break }
+            let workout = workoutsProvider.workouts[index]
+            let shortcut = UIMutableApplicationShortcutItem(type: workout.identifier,
+                localizedTitle: workout.name)
+            
+            shortcuts.append(shortcut)
         }
-        
-        // Create Workout.
-        let createWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.CreateWorkout.type,
-            localizedTitle: NSLocalizedString("Create Workout", comment: ""))
-        shortcuts.append(createWorkoutShortcut)
-        
-        // Search Workout.
-        let searchWorkoutShortcut = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.SearchWorkout.type,
-            localizedTitle: NSLocalizedString("Search Workout", comment: ""))
-        shortcuts.append(searchWorkoutShortcut)
         
         UIApplication.sharedApplication().shortcutItems = shortcuts
     }
 }
 
-extension AppShortcutsManager: StatisticsProviderObserving {
+extension AppShortcutsManager: WorkoutsProviderObserving {
     
-    func statisticsProvider(provider: StatisticsProvider, didUpdateMostFrequentlyPlayedWorkout workout: Workout?) {
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
         updateShortcuts()
     }
 }

@@ -203,14 +203,15 @@ extension NavigationManager {
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)
     }
     
-    func pushWorkoutsScreenAnimated(animated: Bool) {
+    func pushWorkoutsScreenWithSourceType(sourceType: WorkoutsSourceType, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
+        screen.workoutsSources.currentSourceType = sourceType
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
-    func pushWorkoutsScreenFromMainScreenWithSearchActive(searchActive: Bool, animated: Bool) {
+    func pushWorkoutsScreenFromMainScreenWithSourceType(sourceType: WorkoutsSourceType, animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutsScreen.className()) as! WorkoutsScreen
-        screen.needsActivateSearch = searchActive
+        screen.workoutsSources.currentSourceType = sourceType
         let screens = [rootScreen, screen]
         setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
     }

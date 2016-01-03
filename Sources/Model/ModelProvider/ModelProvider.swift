@@ -29,8 +29,7 @@ final class ModelProvider: NSObject {
         achievementsProvider = AchievementsProvider()
         
         shortcutsManager = AppShortcutsManager(navigationManager: navigationManager,
-            workoutsProvider: workoutsProvider,
-            statisticsProvider: statisticsProvider)
+            workoutsProvider: workoutsProvider)
         
         super.init()
     }

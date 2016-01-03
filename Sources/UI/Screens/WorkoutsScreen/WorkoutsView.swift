@@ -12,6 +12,8 @@ import UIKit
 final class WorkoutsView: BaseScreenView {
     
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
+    @IBOutlet private(set) weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private(set) weak var segmentedControlToolbar: UIToolbar!
     
     override func didLoad() {
         super.didLoad()

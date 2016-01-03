@@ -15,6 +15,6 @@ final class WorkoutsPreviewController: BaseViewController {
     }
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutsScreenAnimated(true)
+        navigationManager.pushWorkoutsScreenWithSourceType(.All, animated: true)
     }
 }

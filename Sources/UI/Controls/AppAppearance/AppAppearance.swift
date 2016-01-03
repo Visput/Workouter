@@ -20,6 +20,12 @@ final class AppAppearance {
             NSForegroundColorAttributeName : UIColor.primaryTextColor()
         ]
         
+        // UIToolbar.
+        UIToolbar.appearance().setShadowImage(UIImage(), forToolbarPosition: .Any)
+        UIToolbar.appearance().setBackgroundImage(UIImage(named: "background_white"),
+            forToolbarPosition: .Any,
+            barMetrics: .Default)
+        
         // UIBarButtonItem.
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
@@ -53,6 +59,9 @@ final class AppAppearance {
         // UIPageControl.
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.borderColor()
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.primaryColor()
+        
+        // UISegmentedControl.
+        UISegmentedControl.appearance().tintColor = UIColor.primaryColor()
         
         // TintButton.
         TintButton.appearance().primaryColor = UIColor.primaryColor()

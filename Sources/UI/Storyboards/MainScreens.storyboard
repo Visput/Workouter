@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9mt-W1-wGt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" id="65r-cP-KX5" customClass="WorkoutCell" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="375" height="100"/>
@@ -42,7 +42,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fo-0g-xND">
-                                                    <rect key="frame" x="16" y="58.5" width="343" height="0.0"/>
+                                                    <rect key="frame" x="16" y="58" width="343" height="0.0"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="AM1-Lf-SlU"/>
                                                     </constraints>
@@ -56,7 +56,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-6b-rcU">
-                                                    <rect key="frame" x="16" y="66.5" width="58.5" height="17"/>
+                                                    <rect key="frame" x="16" y="66" width="58.5" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="MPw-8H-1VZ"/>
                                                         <constraint firstAttribute="width" constant="57" id="Xyn-mp-R6v"/>
@@ -72,7 +72,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg2-sX-azd">
-                                                    <rect key="frame" x="79" y="66.5" width="0.0" height="17"/>
+                                                    <rect key="frame" x="79" y="66" width="0.0" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="EY3-rt-Si7"/>
                                                         <constraint firstAttribute="width" constant="57" id="Muj-Sz-gKi"/>
@@ -88,7 +88,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="751" text="Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60O-ng-xEJ">
-                                                    <rect key="frame" x="95" y="66.5" width="40.5" height="17"/>
+                                                    <rect key="frame" x="95" y="66" width="40.5" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="6JI-kn-QFm"/>
                                                         <constraint firstAttribute="height" constant="15" id="AZj-14-84d"/>
@@ -104,7 +104,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-D8-PeA">
-                                                    <rect key="frame" x="139.5" y="66.5" width="0.0" height="17"/>
+                                                    <rect key="frame" x="139" y="66" width="0.0" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="6U7-WA-fhQ"/>
                                                         <constraint firstAttribute="height" constant="15" id="BNp-Rp-GNj"/>
@@ -159,11 +159,39 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="d5n-bN-GNf"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="t9y-e9-iyz"/>
-                                </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9f-eJ-nI4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Nhh-ss-QHo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="O5R-QX-OWq">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="lJI-Pw-bbU">
+                                            <rect key="frame" x="16" y="7.5" width="343" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="nUr-MC-PvM"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="My Workouts"/>
+                                                <segment title="All Workouts"/>
+                                            </segments>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="nUr-MC-PvM"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="workoutsSegmentedControlDidChangeValue:" destination="vXZ-lx-hvc" eventType="valueChanged" id="9Er-RK-uYy"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="7eF-IB-OEy"/>
+                                </connections>
+                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pK9-6x-BYi" userLabel="Status Bar Background">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,13 +203,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pK9-6x-BYi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9dY-df-QOk"/>
+                            <constraint firstItem="q9f-eJ-nI4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="DDS-Pu-FJS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="9mt-W1-wGt" secondAttribute="bottom" id="GPs-HA-idZ"/>
                             <constraint firstAttribute="bottom" secondItem="9mt-W1-wGt" secondAttribute="bottom" id="UBl-rB-PcJ"/>
                             <constraint firstAttribute="trailing" secondItem="9mt-W1-wGt" secondAttribute="trailing" id="Vup-bb-LtM"/>
                             <constraint firstAttribute="trailing" secondItem="pK9-6x-BYi" secondAttribute="trailing" id="Wj1-Oh-Jfb"/>
+                            <constraint firstAttribute="trailing" secondItem="q9f-eJ-nI4" secondAttribute="trailing" id="YRv-2H-8b9"/>
                             <constraint firstItem="pK9-6x-BYi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="gtT-ub-be5"/>
-                            <constraint firstItem="9mt-W1-wGt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="iac-vl-Dp0"/>
+                            <constraint firstItem="9mt-W1-wGt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="44" id="iac-vl-Dp0"/>
                             <constraint firstAttribute="trailing" secondItem="9mt-W1-wGt" secondAttribute="trailing" id="kAk-Nw-5xF"/>
+                            <constraint firstItem="q9f-eJ-nI4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="llS-D8-xCe"/>
                             <constraint firstItem="9mt-W1-wGt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="mFw-5n-QGq"/>
                             <constraint firstItem="9mt-W1-wGt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vfn-pa-HKI"/>
                             <constraint firstItem="9mt-W1-wGt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="x30-JQ-tLv"/>
@@ -196,6 +227,8 @@
                         </variation>
                         <connections>
                             <outlet property="bottomSpace" destination="GPs-HA-idZ" id="e4G-yu-gxe"/>
+                            <outlet property="segmentedControl" destination="lJI-Pw-bbU" id="GNX-n4-wVn"/>
+                            <outlet property="segmentedControlToolbar" destination="q9f-eJ-nI4" id="tJP-Bl-iSR"/>
                             <outlet property="workoutsTableView" destination="9mt-W1-wGt" id="m7G-xK-0pV"/>
                         </connections>
                     </view>

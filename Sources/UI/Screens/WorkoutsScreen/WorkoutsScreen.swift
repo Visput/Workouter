@@ -10,25 +10,13 @@ import UIKit
 
 final class WorkoutsScreen: BaseScreen {
     
-    var needsActivateSearch: Bool? {
+    private(set) var workoutsSources: WorkoutsSourceFactory! {
         didSet {
             guard isViewDisplayed else { return }
-            activateSearchControllerIfNeeded()
+            fillViewWithWorkoutsSources(workoutsSources)
         }
     }
     
-    private enum ScreenMode {
-        case Standard
-        case Edit
-    }
-    
-    private var mode = ScreenMode.Standard {
-        didSet {
-            configureModeAppearance()
-        }
-    }
-    
-    private var searchResults: [Workout]?
     private var searchController: SearchController!
     
     private var workoutsProvider: WorkoutsProvider {
@@ -43,24 +31,35 @@ final class WorkoutsScreen: BaseScreen {
         return view as! WorkoutsView
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        workoutsSources = WorkoutsSourceFactory(sourceType: .User,
+            workoutsProvider: workoutsProvider,
+            navigationManager: navigationManager)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        workoutsSources = WorkoutsSourceFactory(sourceType: .User,
+            workoutsProvider: workoutsProvider,
+            navigationManager: navigationManager)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
         
         registerForPreviewing()
         configureSearchController()
+        fillViewWithWorkoutsSources(workoutsSources)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // Handle workouts updates only when view isn't currently displayed.
         workoutsProvider.observers.removeObserver(self)
-        mode = .Standard
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        activateSearchControllerIfNeeded()
+        workoutsSources.currentSource.editable = false
+        fillViewWithEditableState(workoutsSources.currentSource.editable)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -75,75 +74,10 @@ final class WorkoutsScreen: BaseScreen {
     }
 }
 
-extension WorkoutsScreen: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchController.active ? searchResults!.count : workoutsProvider.workouts.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutCell.className()) as! WorkoutCell
-        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
-        cell.fillWithWorkout(workout)
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return mode == .Edit
-    }
-    
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return mode == .Edit
-    }
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.Delete
-    }
-    
-    func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            
-            if editingStyle == .Delete {
-                workoutsProvider.removeWorkoutAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
-            }
-    }
-    
-    func tableView(tableView: UITableView,
-        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
-        toIndexPath destinationIndexPath: NSIndexPath) {
-            
-            workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
-        
-        if mode == .Edit {
-            navigationManager.presentWorkoutEditScreenWithWorkout(workout,
-                animated: true,
-                workoutDidEditAction: { [unowned self] workout in
-                    
-                    self.workoutsProvider.updateWorkoutAtIndex(indexPath.row, withWorkout: workout)
-                    self.navigationManager.dismissScreenAnimated(true)
-                    self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    
-                }, workoutDidCancelAction: { [unowned self] in
-                    self.navigationManager.dismissScreenAnimated(true)
-                })
-            
-        } else {
-            navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-        }
-    }
-}
-
 extension WorkoutsScreen: WorkoutsProviderObserving {
     
     func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
-        workoutsView.workoutsTableView.reloadData()
+        fillViewWithWorkoutsSources(workoutsSources)
     }
 }
 
@@ -151,9 +85,9 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text
-        let searchRequest = WorkoutsSearchRequest(searchText: searchText!, isTemplates: false)
-        
-        searchWorkoutsWithRequest(searchRequest)
+        workoutsSources.allWorkoutsSource.searchWorkoutsWithText(searchText!)
+        workoutsSources.userWorkokutsSource.searchWorkoutsWithText(searchText!)
+        fillViewWithWorkoutsSources(workoutsSources)
     }
     
     func didPresentSearchController(searchController: UISearchController) {
@@ -161,7 +95,9 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     }
     
     func didDismissSearchController(searchController: UISearchController) {
-        resetSearchResults()
+        workoutsSources.allWorkoutsSource.resetSearchResults()
+        workoutsSources.userWorkokutsSource.resetSearchResults()
+        fillViewWithWorkoutsSources(workoutsSources)
     }
 }
 
@@ -170,15 +106,13 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
-            guard mode == .Standard,
+            guard !workoutsSources.currentSource.editable,
                 let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
                 let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
             
             previewingContext.sourceRect = cell.frame
-            let workout = searchController.active ? searchResults![indexPath.row] : workoutsProvider.workouts[indexPath.row]
-            let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
             
-            return previewScreen
+            return workoutsSources.currentSource.previewScreenForCellAtIndexPath(indexPath)
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
@@ -194,10 +128,25 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
     }
 }
 
+extension WorkoutsScreen: UIToolbarDelegate {
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
+}
+
 extension WorkoutsScreen {
     
-    @objc private func modeButtonDidPress(sender: UIBarButtonItem) {
-        switchMode()
+    @objc private func editButtonDidPress(sender: UIBarButtonItem) {
+        // Switch mode.
+        workoutsSources.currentSource.editable = !workoutsSources.currentSource.editable
+        fillViewWithEditableState(workoutsSources.currentSource.editable)
+    }
+    
+    @IBAction private func workoutsSegmentedControlDidChangeValue(sender: UISegmentedControl) {
+        workoutsSources.currentSourceType = WorkoutsSourceType(rawValue: sender.selectedSegmentIndex)!
+        workoutsSources.currentSource.editable = false
+        fillViewWithWorkoutsSources(workoutsSources)
     }
     
     private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
@@ -230,59 +179,40 @@ extension WorkoutsScreen {
         searchController.searchBar.sizeToFit()
         definesPresentationContext = true
     }
-    
-    private func activateSearchControllerIfNeeded() {
-        guard let activate = needsActivateSearch else { return }
-        
-        if activate {
-            mode = .Standard
-            searchController.active = true
-            searchController.searchBar.becomeFirstResponder()
-        } else {
-            searchController.active = false
-        }
-        
-        // Request satisfied, reset the trigger.
-        needsActivateSearch = nil
-    }
-    
-    private func searchWorkoutsWithRequest(searchRequest: WorkoutsSearchRequest) {
-        searchResults = workoutsProvider.searchWorkoutsWithRequest(searchRequest)
-        workoutsView.workoutsTableView.reloadData()
-    }
-    
-    private func resetSearchResults() {
-        searchResults = nil
-        workoutsView.workoutsTableView.reloadData()
-    }
 }
 
 extension WorkoutsScreen {
     
-    private func switchMode() {
-        switch mode {
-        case .Standard:
-            mode = .Edit
-        case .Edit:
-            mode = .Standard
-        }
+    private func fillViewWithWorkoutsSources(workoutsSources: WorkoutsSourceFactory) {
+        workoutsView.segmentedControl.selectedSegmentIndex = workoutsSources.currentSourceType.rawValue
+        workoutsView.workoutsTableView.delegate = workoutsSources.currentSource
+        workoutsView.workoutsTableView.dataSource = workoutsSources.currentSource
+        workoutsView.workoutsTableView.reloadData()
+        fillViewWithEditableState(workoutsSources.currentSource.editable)
     }
     
-    private func configureModeAppearance() {
-        switch mode {
-        case .Edit:
-            workoutsView.workoutsTableView.setEditing(true, animated: true)
-            searchController.enabled = false
-            navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
-                target: self,
-                action: Selector("modeButtonDidPress:"))
+    private func fillViewWithEditableState(editable: Bool) {
+        switch workoutsSources.currentSourceType {
+        case .User:
+            if editable {
+                workoutsView.workoutsTableView.setEditing(true, animated: true)
+                searchController.enabled = false
+                navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
+                    target: self,
+                    action: Selector("editButtonDidPress:"))
+                
+            } else {
+                workoutsView.workoutsTableView.setEditing(false, animated: true)
+                searchController.enabled = true
+                navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
+                    target: self,
+                    action: Selector("editButtonDidPress:"))
+            }
             
-        case .Standard:
+        case .All:
             workoutsView.workoutsTableView.setEditing(false, animated: true)
             searchController.enabled = true
-            navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
-                target: self,
-                action: Selector("modeButtonDidPress:"))
+            navigationItem.rightBarButtonItem = nil
         }
     }
 }

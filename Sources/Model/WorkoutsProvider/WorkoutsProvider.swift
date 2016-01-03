@@ -13,7 +13,12 @@ import ObjectMapper
 final class WorkoutsProvider: NSObject {
     
     let observers = ObserverSet<WorkoutsProviderObserving>()
+    
+    /// User workouts.
     private(set) var workouts: [Workout]!
+    
+    /// All workouts.
+    private(set) var allWorkouts: [Workout]!
     
     private var workoutsFilePath: String = {
         let workoutsFileName = "/Workouts"
@@ -29,6 +34,7 @@ final class WorkoutsProvider: NSObject {
             workouts = Mapper<Workout>().mapArray(defaultWorkoutsJSON)
             commitChanges()
         }
+        allWorkouts = []
     }
     
     func addWorkout(workout: Workout) {
@@ -72,6 +78,18 @@ final class WorkoutsProvider: NSObject {
                 break
             }
         }
+    }
+    
+    func workoutWithIdentifier(identifier: String) -> Workout? {
+        var resultWorkout: Workout? = nil
+        for workout in workouts {
+            if workout.identifier == identifier {
+                resultWorkout = workout
+                break
+            }
+        }
+        
+        return resultWorkout
     }
     
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
