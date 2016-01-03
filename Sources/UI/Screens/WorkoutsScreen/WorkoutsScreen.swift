@@ -77,6 +77,7 @@ final class WorkoutsScreen: BaseScreen {
 extension WorkoutsScreen: WorkoutsProviderObserving {
     
     func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+        // Fill view with updated workouts.
         fillViewWithWorkoutsSources(workoutsSources)
     }
 }
@@ -147,25 +148,6 @@ extension WorkoutsScreen {
         workoutsSources.currentSourceType = WorkoutsSourceType(rawValue: sender.selectedSegmentIndex)!
         workoutsSources.currentSource.editable = false
         fillViewWithWorkoutsSources(workoutsSources)
-    }
-    
-    private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
-            animated: true,
-            templateDidSelectAction: { [unowned self] workout in
-                
-                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
-                    animated: true,
-                    workoutDidEditAction: { [unowned self] workout in
-                        
-                        self.workoutsProvider.addWorkout(workout)
-                        self.navigationManager.dismissScreenAnimated(true)
-                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    })
-                
-            }, templateDidCancelAction: { 
-                self.navigationManager.dismissScreenAnimated(true)
-        })
     }
 }
 

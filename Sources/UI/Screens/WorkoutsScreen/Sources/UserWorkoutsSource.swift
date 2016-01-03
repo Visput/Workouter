@@ -105,3 +105,25 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         }
     }
 }
+
+extension UserWorkoutsSource {
+    
+    private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
+            animated: true,
+            templateDidSelectAction: { [unowned self] workout in
+                
+                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
+                    animated: true,
+                    workoutDidEditAction: { [unowned self] workout in
+                        
+                        self.workoutsProvider.addWorkout(workout)
+                        self.navigationManager.dismissScreenAnimated(true)
+                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                    })
+                
+            }, templateDidCancelAction: {
+                self.navigationManager.dismissScreenAnimated(true)
+        })
+    }
+}
