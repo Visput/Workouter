@@ -12,8 +12,8 @@ final class StatisticsProvider: NSObject {
 
     var mostFrequentlyPlayedWorkout: Workout? {
         var workout: Workout? = nil
-        if workoutsProvider.workouts.count > 0 {
-            workout = workoutsProvider.workouts[0]
+        if workoutsProvider.userWorkouts.count > 0 {
+            workout = workoutsProvider.userWorkouts[0]
         }
         return workout
     }
@@ -32,7 +32,7 @@ final class StatisticsProvider: NSObject {
 
 extension StatisticsProvider: WorkoutsProviderObserving {
     
-    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout]) {
         notifyObserversDidUpdateMostFrequentlyPlayedWorkout(mostFrequentlyPlayedWorkout)
     }
 }

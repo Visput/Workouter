@@ -33,14 +33,14 @@ final class WorkoutsScreen: BaseScreen {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        workoutsSources = WorkoutsSourceFactory(sourceType: .User,
+        workoutsSources = WorkoutsSourceFactory(sourceType: .UserWorkouts,
             workoutsProvider: workoutsProvider,
             navigationManager: navigationManager)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        workoutsSources = WorkoutsSourceFactory(sourceType: .User,
+        workoutsSources = WorkoutsSourceFactory(sourceType: .UserWorkouts,
             workoutsProvider: workoutsProvider,
             navigationManager: navigationManager)
     }
@@ -76,7 +76,7 @@ final class WorkoutsScreen: BaseScreen {
 
 extension WorkoutsScreen: WorkoutsProviderObserving {
     
-    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout]) {
         // Fill view with updated workouts.
         fillViewWithWorkoutsSources(workoutsSources)
     }
@@ -86,7 +86,7 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text
-        workoutsSources.allWorkoutsSource.searchWorkoutsWithText(searchText!)
+        workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(searchText!)
         workoutsSources.userWorkokutsSource.searchWorkoutsWithText(searchText!)
         fillViewWithWorkoutsSources(workoutsSources)
     }
@@ -96,7 +96,7 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
     }
     
     func didDismissSearchController(searchController: UISearchController) {
-        workoutsSources.allWorkoutsSource.resetSearchResults()
+        workoutsSources.defaultWorkoutsSource.resetSearchResults()
         workoutsSources.userWorkokutsSource.resetSearchResults()
         fillViewWithWorkoutsSources(workoutsSources)
     }
@@ -175,7 +175,7 @@ extension WorkoutsScreen {
     
     private func fillViewWithEditableState(editable: Bool) {
         switch workoutsSources.currentSourceType {
-        case .User:
+        case .UserWorkouts:
             if editable {
                 workoutsView.workoutsTableView.setEditing(true, animated: true)
                 searchController.enabled = false
@@ -191,7 +191,7 @@ extension WorkoutsScreen {
                     action: Selector("editButtonDidPress:"))
             }
             
-        case .All:
+        case .DefaultWorkouts:
             workoutsView.workoutsTableView.setEditing(false, animated: true)
             searchController.enabled = true
             navigationItem.rightBarButtonItem = nil

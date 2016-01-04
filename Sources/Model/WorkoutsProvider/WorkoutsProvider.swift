@@ -10,70 +10,77 @@ import UIKit
 import Foundation
 import ObjectMapper
 
+enum WorkoutsGroup {
+    case UserWorkouts
+    case DefaultWorkouts
+    case AllWorkouts
+}
+
 final class WorkoutsProvider: NSObject {
     
     let observers = ObserverSet<WorkoutsProviderObserving>()
     
-    /// User workouts.
-    private(set) var workouts: [Workout]!
+    private(set) var userWorkouts: [Workout]!
+    private(set) var defaultWorkouts: [Workout]!
     
-    /// All workouts.
-    private(set) var allWorkouts: [Workout]!
-    
-    private var workoutsFilePath: String = {
-        let workoutsFileName = "/Workouts"
+    private var userWorkoutsFilePath: String = {
+        let userWorkoutsFileName = "/Workouts"
         let documentsDir = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        return documentsDir.stringByAppendingString(workoutsFileName)
+        return documentsDir.stringByAppendingString(userWorkoutsFileName)
     }()
     
     func loadWorkouts() {
-        workouts = NSKeyedUnarchiver.unarchiveObjectWithFile(workoutsFilePath) as? [Workout]
-        if workouts == nil {
-            let pathToDefaultWorkouts = NSBundle.mainBundle().pathForResource("DefaultWorkouts", ofType: ".json")!
-            let defaultWorkoutsJSON = try! NSString(contentsOfFile: pathToDefaultWorkouts, encoding: NSUTF8StringEncoding) as String
-            workouts = Mapper<Workout>().mapArray(defaultWorkoutsJSON)
+        userWorkouts = NSKeyedUnarchiver.unarchiveObjectWithFile(userWorkoutsFilePath) as? [Workout]
+        if userWorkouts == nil {
+            userWorkouts = []
             commitChanges()
         }
-        allWorkouts = []
+        
+        let pathToDefaultWorkouts = NSBundle.mainBundle().pathForResource("DefaultWorkouts", ofType: ".json")!
+        let defaultWorkoutsJSON = try! NSString(contentsOfFile: pathToDefaultWorkouts, encoding: NSUTF8StringEncoding) as String
+        defaultWorkouts = Mapper<Workout>().mapArray(defaultWorkoutsJSON)
     }
+}
+
+extension WorkoutsProvider {
     
     func addWorkout(workout: Workout) {
-        workouts.append(workout)
-        notifyObserversDidUpdateWorkouts()
+        userWorkouts.append(workout)
+        notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
     func removeWorkout(workout: Workout) {
-        if let index = workouts.indexOf(workout) {
+        if let index = userWorkouts.indexOf(workout) {
             removeWorkoutAtIndex(index)
         }
     }
     
     func removeWorkoutAtIndex(index: Int) {
-        workouts.removeAtIndex(index)
-        notifyObserversDidUpdateWorkouts()
+        userWorkouts.removeAtIndex(index)
+        notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
     func moveWorkoutFromIndex(fromIndex: Int, toIndex: Int) {
-        let workoutToMove = workouts[fromIndex]
-        workouts.removeAtIndex(fromIndex)
-        workouts.insert(workoutToMove, atIndex: toIndex)
-        notifyObserversDidUpdateWorkouts()
+        let workoutToMove = userWorkouts[fromIndex]
+        userWorkouts.removeAtIndex(fromIndex)
+        userWorkouts.insert(workoutToMove, atIndex: toIndex)
+        notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
     func updateWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
-        workouts[index] = newWorkout
-        notifyObserversDidUpdateWorkouts()
+        userWorkouts[index] = newWorkout
+        notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
     func updateWorkout(workout: Workout, withWorkout newWorkout: Workout) {
-        for (index, aWorkout) in workouts.enumerate() {
+        for (index, aWorkout) in userWorkouts.enumerate() {
             if aWorkout.identifier == workout.identifier {
-                workouts[index] = newWorkout
-                notifyObserversDidUpdateWorkouts()
+                userWorkouts[index] = newWorkout
+                notifyObserversDidUpdateUserWorkouts()
                 commitChanges()
                 break
             }
@@ -82,7 +89,7 @@ final class WorkoutsProvider: NSObject {
     
     func workoutWithIdentifier(identifier: String) -> Workout? {
         var resultWorkout: Workout? = nil
-        for workout in workouts {
+        for workout in userWorkouts {
             if workout.identifier == identifier {
                 resultWorkout = workout
                 break
@@ -91,10 +98,13 @@ final class WorkoutsProvider: NSObject {
         
         return resultWorkout
     }
+}
+
+extension WorkoutsProvider {
     
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
         var searchResults = [Step]()
-        for workout in workouts {
+        for workout in userWorkouts {
             for step in workout.steps {
                 guard (request.includeRestSteps || step.type == .Exercise) &&
                     (request.searchText == "" || step.name.containsString(request.searchText)) else { continue }
@@ -105,6 +115,18 @@ final class WorkoutsProvider: NSObject {
     }
     
     func searchWorkoutsWithRequest(request: WorkoutsSearchRequest) -> [Workout] {
+        var workouts = [Workout]()
+        
+        switch request.group {
+        case .UserWorkouts:
+            workouts.appendContentsOf(userWorkouts)
+        case .DefaultWorkouts:
+            workouts.appendContentsOf(defaultWorkouts)
+        case .AllWorkouts:
+            workouts.appendContentsOf(userWorkouts)
+            workouts.appendContentsOf(defaultWorkouts)
+        }
+        
         var searchResults = [Workout]()
         for workout in workouts {
             guard request.searchText == "" ||
@@ -115,15 +137,15 @@ final class WorkoutsProvider: NSObject {
     }
     
     private func commitChanges() {
-        NSKeyedArchiver.archiveRootObject(workouts, toFile: workoutsFilePath)
+        NSKeyedArchiver.archiveRootObject(userWorkouts, toFile: userWorkoutsFilePath)
     }
 }
 
 extension WorkoutsProvider {
     
-    private func notifyObserversDidUpdateWorkouts() {
+    private func notifyObserversDidUpdateUserWorkouts() {
         for observer in observers {
-            observer.workoutsProvider(self, didUpdateWorkouts: workouts)
+            observer.workoutsProvider(self, didUpdateUserWorkouts: userWorkouts)
         }
     }
 }

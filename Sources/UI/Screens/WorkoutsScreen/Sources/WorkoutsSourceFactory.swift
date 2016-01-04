@@ -9,8 +9,8 @@
 import Foundation
 
 enum WorkoutsSourceType: Int {
-    case User = 0
-    case All = 1
+    case UserWorkouts = 0
+    case DefaultWorkouts = 1
 }
 
 class WorkoutsSourceFactory {
@@ -23,24 +23,24 @@ class WorkoutsSourceFactory {
     
     private(set) var currentSource: WorkoutsSource!
     private(set) var userWorkokutsSource: WorkoutsSource!
-    private(set) var allWorkoutsSource: WorkoutsSource!
+    private(set) var defaultWorkoutsSource: WorkoutsSource!
     
     init(sourceType: WorkoutsSourceType,
         workoutsProvider: WorkoutsProvider,
         navigationManager: NavigationManager) {
             
             self.userWorkokutsSource = UserWorkoutsSource(workoutsProvider: workoutsProvider, navigationManager: navigationManager)
-            self.allWorkoutsSource = AllWorkoutsSource(workoutsProvider: workoutsProvider, navigationManager: navigationManager)
+            self.defaultWorkoutsSource = DefaultWorkoutsSource(workoutsProvider: workoutsProvider, navigationManager: navigationManager)
             self.currentSourceType = sourceType
             configureCurrentSource()
     }
     
     private func configureCurrentSource() {
         switch currentSourceType {
-        case .User:
+        case .UserWorkouts:
             currentSource = userWorkokutsSource
-        case .All:
-            currentSource = allWorkoutsSource
+        case .DefaultWorkouts:
+            currentSource = defaultWorkoutsSource
         }
     }
 }

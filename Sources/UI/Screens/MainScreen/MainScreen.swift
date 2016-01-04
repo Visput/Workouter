@@ -99,7 +99,7 @@ extension MainScreen: UIPageViewControllerDataSource, UIPageViewControllerDelega
 
 extension MainScreen: WorkoutsProviderObserving {
     
-    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout]) {
         needsReloadWorkouts = true
     }
 }
@@ -129,7 +129,7 @@ extension MainScreen {
         workoutPageItems.removeAll()
         
         // Add items for user workouts.
-        for (index, workout) in workoutsProvider.workouts.enumerate() {
+        for (index, workout) in workoutsProvider.userWorkouts.enumerate() {
             var item = WorkoutPageItem(workout: workout, index: index)
             item.instantiatePageContentController = { [unowned self] in
                 return self.navigationManager.instantiateWorkoutPageContentControllerWithItem(item)

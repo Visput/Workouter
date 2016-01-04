@@ -15,9 +15,12 @@ final class WorkoutsSearchRequest: NSObject {
     /// Set to 'true' if your intent is to search templates for new workout.
     let isTemplates: Bool
     
-    required init(searchText: String, isTemplates: Bool) {
+    let group: WorkoutsGroup
+    
+    required init(searchText: String, isTemplates: Bool, group: WorkoutsGroup) {
         self.searchText = searchText
         self.isTemplates = isTemplates
+        self.group = group
         super.init()
     }
 }
@@ -25,21 +28,14 @@ final class WorkoutsSearchRequest: NSObject {
 extension WorkoutsSearchRequest {
     
     func requestBySettingSearchText(searchText: String) -> Self {
-        return self.dynamicType.init(searchText: searchText, isTemplates: isTemplates)
+        return self.dynamicType.init(searchText: searchText, isTemplates: isTemplates, group: group)
     }
     
     func requestBySettingTemplatesCondition(isTemplates: Bool) -> Self {
-        return self.dynamicType.init(searchText: searchText, isTemplates: isTemplates)
-    }
-}
-
-extension WorkoutsSearchRequest {
-    
-    class func emptyRequest() -> Self {
-        return self.init(searchText: "", isTemplates: false)
+        return self.dynamicType.init(searchText: searchText, isTemplates: isTemplates, group: group)
     }
     
-    class func emptyTemplatesRequest() -> Self {
-        return self.init(searchText: "", isTemplates: true)
+    func requestBySettingGroup(group: WorkoutsGroup) -> Self {
+        return self.dynamicType.init(searchText: searchText, isTemplates: isTemplates, group: group)
     }
 }

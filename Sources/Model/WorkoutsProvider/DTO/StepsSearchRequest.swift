@@ -36,10 +36,3 @@ extension StepsSearchRequest {
         return self.dynamicType.init(workout: workout, searchText: searchText, includeRestSteps: includeRestSteps)
     }
 }
-
-extension StepsSearchRequest {
-    
-    class func emptyRequest() -> Self {
-        return self.init(workout: Workout.emptyWorkout(), searchText: "", includeRestSteps: false)
-    }
-}

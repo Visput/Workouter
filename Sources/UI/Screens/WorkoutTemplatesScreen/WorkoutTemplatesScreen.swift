@@ -13,7 +13,7 @@ final class WorkoutTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((workout: Workout) -> Void)?
     var templateDidCancelAction: (() -> Void)?
     
-    var searchRequest = WorkoutsSearchRequest.emptyTemplatesRequest()
+    var searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
     
     private var workouts = [Workout]()
     

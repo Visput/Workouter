@@ -42,7 +42,7 @@ final class AppShortcutsManager: NSObject {
         if let workout = workoutsProvider.workoutWithIdentifier(shortcut.type) {
             navigationManager.pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout, animated: false)
         } else {
-            navigationManager.pushWorkoutsScreenFromMainScreenWithSourceType(.User, animated: false)
+            navigationManager.pushWorkoutsScreenFromMainScreenWithSourceType(.UserWorkouts, animated: false)
         }
             
         return true
@@ -53,8 +53,8 @@ final class AppShortcutsManager: NSObject {
         var shortcuts: [UIApplicationShortcutItem] = []
         
         for index in 0..<shortcutsMaxCount {
-            guard index < workoutsProvider.workouts.count else { break }
-            let workout = workoutsProvider.workouts[index]
+            guard index < workoutsProvider.userWorkouts.count else { break }
+            let workout = workoutsProvider.userWorkouts[index]
             let shortcut = UIMutableApplicationShortcutItem(type: workout.identifier,
                 localizedTitle: workout.name)
             
@@ -67,7 +67,7 @@ final class AppShortcutsManager: NSObject {
 
 extension AppShortcutsManager: WorkoutsProviderObserving {
     
-    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout]) {
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout]) {
         updateShortcuts()
     }
 }

@@ -13,7 +13,7 @@ final class StepTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((step: Step) -> Void)?
     var templateDidCancelAction: (() -> Void)?
     
-    var searchRequest = StepsSearchRequest.emptyRequest()
+    var searchRequest = StepsSearchRequest(workout: Workout.emptyWorkout(), searchText: "", includeRestSteps: false)
     
     private var steps = [Step]()
     

@@ -17,6 +17,6 @@ final class NewWorkoutPageContentController: BaseViewController, WorkoutPageCont
     }
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutsScreenWithSourceType(.User, animated: true)
+        navigationManager.pushWorkoutsScreenWithSourceType(.UserWorkouts, animated: true)
     }
 }

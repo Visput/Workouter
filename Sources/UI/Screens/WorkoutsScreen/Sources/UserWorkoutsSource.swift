@@ -15,7 +15,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     private var searchResults: [Workout]?
     
     private var currentWorkouts: [Workout] {
-        return searchResults ?? workoutsProvider.workouts
+        return searchResults ?? workoutsProvider.userWorkouts
     }
     
     private let workoutsProvider: WorkoutsProvider!
@@ -28,7 +28,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     }
     
     func searchWorkoutsWithText(text: String) {
-        let searchRequest = WorkoutsSearchRequest(searchText: text, isTemplates: false)
+        let searchRequest = WorkoutsSearchRequest(searchText: text, isTemplates: false, group: .UserWorkouts)
         searchResults = workoutsProvider.searchWorkoutsWithRequest(searchRequest)
     }
     
@@ -109,7 +109,8 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
 extension UserWorkoutsSource {
     
     private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
-        navigationManager.presentWorkoutTemplatesScreenWithRequest(WorkoutsSearchRequest.emptyRequest(),
+        let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
             animated: true,
             templateDidSelectAction: { [unowned self] workout in
                 

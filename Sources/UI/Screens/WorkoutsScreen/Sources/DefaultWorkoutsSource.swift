@@ -1,5 +1,5 @@
 //
-//  AllWorkoutsSource.swift
+//  DefaultWorkoutsSource.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 1/1/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AllWorkoutsSource: NSObject, WorkoutsSource {
+final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
     
     /// 'All Workouts' list is immutable.
     var editable: Bool {
@@ -22,7 +22,7 @@ final class AllWorkoutsSource: NSObject, WorkoutsSource {
     private var searchResults: [Workout]?
     
     private var currentWorkouts: [Workout] {
-        return searchResults ?? workoutsProvider.allWorkouts
+        return searchResults ?? workoutsProvider.defaultWorkouts
     }
     
     private let workoutsProvider: WorkoutsProvider!
@@ -35,7 +35,7 @@ final class AllWorkoutsSource: NSObject, WorkoutsSource {
     }
     
     func searchWorkoutsWithText(text: String) {
-        let searchRequest = WorkoutsSearchRequest(searchText: text, isTemplates: false)
+        let searchRequest = WorkoutsSearchRequest(searchText: text, isTemplates: false, group: .DefaultWorkouts)
         searchResults = workoutsProvider.searchWorkoutsWithRequest(searchRequest)
     }
     

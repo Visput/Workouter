@@ -10,5 +10,5 @@ import Foundation
 
 protocol WorkoutsProviderObserving: AnyObject {
     
-    func workoutsProvider(provider: WorkoutsProvider, didUpdateWorkouts workouts: [Workout])
+    func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout])
 }
