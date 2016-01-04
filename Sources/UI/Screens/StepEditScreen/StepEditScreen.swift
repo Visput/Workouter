@@ -70,12 +70,12 @@ extension StepEditScreen {
         super.configureBarButtonItems()
         if backButtonShown() {
             // Show red back button item instead of green button.
-            navigationItem.leftBarButtonItem = UIBarButtonItem.redBackItemWithAlignment(.Left,
+            navigationItem.leftBarButtonItem = UIBarButtonItem.greenBackItemWithAlignment(.Left,
                 target: self,
                 action: Selector("backButtonDidPress:"))
             
         } else {
-            navigationItem.leftBarButtonItem = UIBarButtonItem.redCancelItemWithAlignment(.Left,
+            navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
                 target: self,
                 action: Selector("cancelButtonDidPress:"))
         }

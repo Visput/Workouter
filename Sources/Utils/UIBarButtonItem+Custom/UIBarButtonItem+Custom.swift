@@ -22,18 +22,6 @@ extension UIBarButtonItem {
             return self.init(customView: barButton)
     }
     
-    class func redBackItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
-        target: AnyObject,
-        action: Selector) -> Self {
-            
-            let barButton = barButtonWithImageNamed("icon_back_red",
-                horizontalAlignment: alignment,
-                target: target,
-                action: action)
-            
-            return self.init(customView: barButton)
-    }
-    
     class func greenDoneItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
         target: AnyObject,
         action: Selector) -> Self {
@@ -51,18 +39,6 @@ extension UIBarButtonItem {
         action: Selector) -> Self {
             
             let barButton = barButtonWithImageNamed("icon_cancel_green",
-                horizontalAlignment: alignment,
-                target: target,
-                action: action)
-            
-            return self.init(customView: barButton)
-    }
-    
-    class func redCancelItemWithAlignment(alignment: UIControlContentHorizontalAlignment,
-        target: AnyObject,
-        action: Selector) -> Self {
-            
-            let barButton = barButtonWithImageNamed("icon_cancel_red",
                 horizontalAlignment: alignment,
                 target: target,
                 action: action)
