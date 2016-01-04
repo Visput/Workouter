@@ -16,6 +16,8 @@ class StepTemplatesView: BaseScreenView {
         super.didLoad()
         templatesTableView.rowHeight = UITableViewAutomaticDimension
         templatesTableView.estimatedRowHeight = 70.0
+        // Set clear background view to prevent setting view with gray color when search bar is added.
+        templatesTableView.backgroundView = UIView()
     }
     
     override func willAppear(animated: Bool) {
