@@ -103,8 +103,12 @@ extension WorkoutsProvider {
 extension WorkoutsProvider {
     
     func searchStepsWithRequest(request: StepsSearchRequest) -> [Step] {
+        var workouts = [Workout]()
+        workouts.appendContentsOf(userWorkouts)
+        workouts.appendContentsOf(defaultWorkouts)
+        
         var searchResults = [Step]()
-        for workout in userWorkouts {
+        for workout in workouts {
             for step in workout.steps {
                 guard (request.includeRestSteps || step.type == .Exercise) &&
                     (request.searchText == "" || step.name.containsString(request.searchText)) else { continue }

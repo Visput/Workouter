@@ -149,6 +149,26 @@ extension WorkoutsScreen {
         workoutsSources.currentSource.editable = false
         fillViewWithWorkoutsSources(workoutsSources)
     }
+    
+    @objc private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+        let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
+            animated: true,
+            templateDidSelectAction: { [unowned self] workout in
+                
+                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
+                    animated: true,
+                    workoutDidEditAction: { [unowned self] workout in
+                        
+                        self.workoutsProvider.addWorkout(workout)
+                        self.navigationManager.dismissScreenAnimated(true)
+                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                    })
+                
+            }, templateDidCancelAction: {
+                self.navigationManager.dismissScreenAnimated(true)
+        })
+    }
 }
 
 extension WorkoutsScreen {
@@ -194,7 +214,9 @@ extension WorkoutsScreen {
         case .DefaultWorkouts:
             workoutsView.workoutsTableView.setEditing(false, animated: true)
             searchController.enabled = true
-            navigationItem.rightBarButtonItem = nil
+            navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
+                target: self,
+                action: Selector("newWorkoutButtonDidPress:"))
         }
     }
 }
