@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import VPAttributedFormat
 
 final class WorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
     
     @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var durationLabel: UILabel!
+    @IBOutlet private(set) weak var stepsCountLabel: UILabel!
     
     var item: WorkoutPageItem! {
         didSet {
@@ -37,5 +40,14 @@ extension WorkoutPageContentController {
     
     private func fillWithItem(item: WorkoutPageItem) {
         nameLabel.text = item.workout!.name
+        
+        withVaList([item.workout!.steps.count]) { pointer in
+            stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+        }
+        
+        durationLabel.attributedText = NSAttributedString.durationStringForWorkout(item.workout!,
+            valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
+            unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
+            color: UIColor.whiteColor())
     }
 }
