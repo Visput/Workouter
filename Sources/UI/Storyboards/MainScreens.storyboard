@@ -1070,7 +1070,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-BK-YQd" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="32" y="0.0" width="311" height="150"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page_new_workout_green" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-rf-Ka3">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page_new_workout_green" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-rf-Ka3">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="150"/>
                                     </imageView>
                                 </subviews>

@@ -27,4 +27,11 @@ final class WorkoutsView: BaseScreenView {
         super.willAppear(animated)
         workoutsTableView.deselectSelectedRowAnimated(true)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let offset: CGFloat = 16.0
+        segmentedControl.frame.origin.x = offset
+        segmentedControl.frame.size.width = segmentedControlToolbar.frame.size.width - 2 * offset
+    }
 }
