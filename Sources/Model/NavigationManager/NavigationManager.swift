@@ -193,11 +193,6 @@ extension NavigationManager {
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)
     }
     
-    func pushAuthenticationScreenAnimated(animated: Bool) {
-        let screen = storyboard.instantiateViewControllerWithIdentifier(AuthenticationScreen.className()) as! AuthenticationScreen
-        pushScreen(screen, inNavigationController: rootNavigationController, animated: animated)
-    }
-    
     func setMainScreenAsRootAnimated(animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(MainScreen.className()) as! MainScreen
         setScreens([screen], inNavigationController: rootNavigationController, animated: animated)

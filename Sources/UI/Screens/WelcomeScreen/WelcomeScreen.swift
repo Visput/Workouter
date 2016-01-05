@@ -50,6 +50,11 @@ final class WelcomeScreen: BaseScreen {
         restartAutoSwipeTimer()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        navigationManager.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         stopAutoSwipeTimer()
         super.viewDidDisappear(animated)
@@ -110,7 +115,7 @@ extension WelcomeScreen: UIPageViewControllerDelegate, UIPageViewControllerDataS
 extension WelcomeScreen {
     
     @IBAction private func startButtonDidPress(sender: AnyObject) {
-        navigationManager.pushAuthenticationScreenAnimated(true)
+        navigationManager.setMainScreenAsRootAnimated(true)
     }
 }
 
