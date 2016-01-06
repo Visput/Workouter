@@ -115,7 +115,7 @@ extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
             
             return workoutsSources.currentSource.previewScreenForCellAtIndexPath(indexPath)
     }
-    
+
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         commitViewController viewControllerToCommit: UIViewController) {
             

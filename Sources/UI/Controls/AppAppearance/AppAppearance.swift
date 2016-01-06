@@ -52,9 +52,7 @@ final class AppAppearance {
         UISearchBar.appearance().backgroundColor = UIColor.whiteColor()
         
         // UITableViewCell.
-        let colorView = UIView()
-        colorView.backgroundColor = UIColor.superLightPrimaryColor()
-        UITableViewCell.appearance().selectedBackgroundView = colorView
+        UITableViewCell.appearance().selectionStyle = .None
         
         // UIPageControl.
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.borderColor()

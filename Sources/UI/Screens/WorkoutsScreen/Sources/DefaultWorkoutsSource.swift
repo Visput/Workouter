@@ -55,7 +55,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WorkoutCell.className()) as! WorkoutCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(DefaultWorkoutCell.className()) as! DefaultWorkoutCell
         let workout = currentWorkouts[indexPath.row]
         cell.fillWithWorkout(workout)
         

@@ -8,6 +8,6 @@
 
 import UIKit
 
-final class NewStepTemplateCell: UITableViewCell {
+final class NewStepTemplateCell: BaseTableViewCell {
 
 }

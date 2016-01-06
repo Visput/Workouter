@@ -8,16 +8,10 @@
 
 import UIKit
 
-final class AchievementCell: UICollectionViewCell {
+final class AchievementCell: BaseCollectionViewCell {
     
     @IBOutlet private(set) weak var newStatusView: UIImageView!
     @IBOutlet private(set) weak var iconView: UIImageView!
-    
-    override var highlighted: Bool {
-        didSet {
-            alpha = highlighted ? 0.4 : 1.0
-        }
-    }
     
     func fillWithAchievement(achievement: Achievement) {
         if achievement.awarded {

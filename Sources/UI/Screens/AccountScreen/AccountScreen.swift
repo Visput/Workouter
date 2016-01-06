@@ -40,8 +40,6 @@ extension AccountScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        
         let item = accountItems[indexPath.item]
         item.action()
     }

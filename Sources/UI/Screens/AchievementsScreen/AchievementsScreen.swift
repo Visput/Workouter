@@ -40,8 +40,6 @@ extension AchievementsScreen: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        
         let achievement = achievementsProvider.achievements[indexPath.item]
         navigationManager.presentAchievementDetailsScreenWithAchievement(achievement,
             animated: true,

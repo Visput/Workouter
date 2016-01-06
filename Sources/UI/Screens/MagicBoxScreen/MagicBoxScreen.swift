@@ -43,6 +43,10 @@ extension MagicBoxScreen: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.iconView.image = icons[indexPath.row]
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectSelectedItemsAnimated(true)
+    }
 }
 
 extension MagicBoxScreen {

@@ -12,6 +12,11 @@ final class AccountView: BaseScreenView {
 
     @IBOutlet private(set) weak var collectionView: UICollectionView!
     
+    override func willAppear(animated: Bool) {
+        super.willAppear(animated)
+        collectionView.deselectSelectedItemsAnimated(animated)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

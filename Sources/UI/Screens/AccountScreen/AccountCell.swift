@@ -8,16 +8,10 @@
 
 import UIKit
 
-final class AccountCell: UICollectionViewCell {
+final class AccountCell: BaseCollectionViewCell {
     
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var iconView: UIImageView!
-    
-    override var highlighted: Bool {
-        didSet {
-            alpha = highlighted ? 0.4 : 1.0
-        }
-    }
     
     func fillWithItem(item: AccountCellItem) {
         titleLabel.text = item.title

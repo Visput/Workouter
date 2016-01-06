@@ -18,7 +18,7 @@ final class WorkoutsView: BaseScreenView {
     override func didLoad() {
         super.didLoad()
         workoutsTableView.rowHeight = UITableViewAutomaticDimension
-        workoutsTableView.estimatedRowHeight = 100.0
+        workoutsTableView.estimatedRowHeight = 140.0
         // Set clear background view to prevent setting view with gray color when search bar is added.
         workoutsTableView.backgroundView = UIView()
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MagicBoxIconCell: UICollectionViewCell {
+final class MagicBoxIconCell: BaseCollectionViewCell {
     
     @IBOutlet private(set) weak var iconView: UIImageView!
 }

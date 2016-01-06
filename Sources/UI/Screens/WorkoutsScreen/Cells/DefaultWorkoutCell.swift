@@ -1,5 +1,5 @@
 //
-//  WorkoutCell.swift
+//  DefaultWorkoutCell.swift
 //  Workouter
 //
 //  Created by Uladzimir Papko on 1/21/15.
@@ -8,21 +8,25 @@
 
 import UIKit
 
-final class WorkoutCell: UITableViewCell {
+final class DefaultWorkoutCell: BaseTableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var stepsCountLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
+    @IBOutlet private weak var cardView: UIView!
     
     func fillWithWorkout(workout: Workout) {
         nameLabel.text = workout.name
         descriptionLabel.text = workout.workoutDescription
-        stepsCountLabel.text = String(workout.steps.count)
+        
+        withVaList([workout.steps.count]) { pointer in
+            stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+        }
         
         durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
-            valueFont: UIFont.systemFontOfSize(14.0),
-            unitFont: UIFont.systemFontOfSize(8.0),
-            color: UIColor.secondaryTextColor())
+            valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
+            unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
+            color: UIColor.whiteColor())
     }
 }
