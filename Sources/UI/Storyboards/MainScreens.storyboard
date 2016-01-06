@@ -365,12 +365,9 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Kz-IHj" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="32" y="0.0" width="311" height="150"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_workout_green" translatesAutoresizingMaskIntoConstraints="NO" id="NUG-2V-1yc">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="150"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seven Minutes Workout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="enf-MA-App">
                                         <rect key="frame" x="16" y="16" width="279" height="90"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -487,18 +484,14 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gxn-M0-7sQ" firstAttribute="top" secondItem="enf-MA-App" secondAttribute="bottom" constant="8" id="5Nl-sG-mHm"/>
-                                    <constraint firstAttribute="bottom" secondItem="NUG-2V-1yc" secondAttribute="bottom" id="5qg-qB-70C"/>
                                     <constraint firstAttribute="bottom" secondItem="enf-MA-App" secondAttribute="bottom" constant="16" id="7dv-ze-WUh"/>
-                                    <constraint firstItem="NUG-2V-1yc" firstAttribute="leading" secondItem="Wb5-Kz-IHj" secondAttribute="leading" id="D1T-wu-4dJ"/>
                                     <constraint firstAttribute="bottom" secondItem="gxn-M0-7sQ" secondAttribute="bottom" constant="16" id="HsR-TX-NaP"/>
                                     <constraint firstItem="gxn-M0-7sQ" firstAttribute="centerX" secondItem="Wb5-Kz-IHj" secondAttribute="centerX" id="Xp1-nn-BDe"/>
                                     <constraint firstItem="enf-MA-App" firstAttribute="leading" secondItem="Wb5-Kz-IHj" secondAttribute="leading" constant="16" id="Zft-9J-1fq"/>
-                                    <constraint firstItem="NUG-2V-1yc" firstAttribute="top" secondItem="Wb5-Kz-IHj" secondAttribute="top" id="cz1-TG-sWk"/>
                                     <constraint firstItem="enf-MA-App" firstAttribute="top" secondItem="Wb5-Kz-IHj" secondAttribute="top" constant="16" id="dbg-yd-fVj"/>
-                                    <constraint firstAttribute="trailing" secondItem="NUG-2V-1yc" secondAttribute="trailing" id="iZ1-jP-0JN"/>
                                     <constraint firstAttribute="trailing" secondItem="enf-MA-App" secondAttribute="trailing" constant="16" id="njx-6g-eW6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1312,7 +1305,6 @@
     </scenes>
     <resources>
         <image name="background_tag_green" width="30" height="20"/>
-        <image name="background_workout_green" width="311" height="174"/>
         <image name="icon_achievements_green" width="88" height="88"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_dot_green" width="6" height="6"/>
