@@ -13,8 +13,13 @@ final class UserWorkoutCell: BaseTableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var stepsCountLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
+    @IBOutlet private(set) weak var cardView: UIView!
+    
+    private(set) var workout: Workout?
     
     func fillWithWorkout(workout: Workout) {
+        self.workout = workout
+        
         nameLabel.text = workout.name
         
         withVaList([workout.steps.count]) { pointer in

@@ -6,7 +6,7 @@
 //  Copyright © 2016 visput. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum WorkoutsSourceType: Int {
     case UserWorkouts = 0
@@ -26,11 +26,18 @@ class WorkoutsSourceFactory {
     private(set) var defaultWorkoutsSource: WorkoutsSource!
     
     init(sourceType: WorkoutsSourceType,
+        viewController: UIViewController,
         workoutsProvider: WorkoutsProvider,
         navigationManager: NavigationManager) {
             
-            self.userWorkokutsSource = UserWorkoutsSource(workoutsProvider: workoutsProvider, navigationManager: navigationManager)
-            self.defaultWorkoutsSource = DefaultWorkoutsSource(workoutsProvider: workoutsProvider, navigationManager: navigationManager)
+            self.userWorkokutsSource = UserWorkoutsSource(viewController: viewController,
+                workoutsProvider: workoutsProvider,
+                navigationManager: navigationManager)
+            
+            self.defaultWorkoutsSource = DefaultWorkoutsSource(viewController: viewController,
+                workoutsProvider: workoutsProvider,
+                navigationManager: navigationManager)
+            
             self.currentSourceType = sourceType
             configureCurrentSource()
     }
@@ -39,8 +46,12 @@ class WorkoutsSourceFactory {
         switch currentSourceType {
         case .UserWorkouts:
             currentSource = userWorkokutsSource
+            userWorkokutsSource.active = true
+            defaultWorkoutsSource.active = false
         case .DefaultWorkouts:
             currentSource = defaultWorkoutsSource
+            userWorkokutsSource.active = false
+            defaultWorkoutsSource.active = true
         }
     }
 }

@@ -34,6 +34,7 @@ final class WorkoutsScreen: BaseScreen {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         workoutsSources = WorkoutsSourceFactory(sourceType: .UserWorkouts,
+            viewController: self,
             workoutsProvider: workoutsProvider,
             navigationManager: navigationManager)
     }
@@ -41,6 +42,7 @@ final class WorkoutsScreen: BaseScreen {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         workoutsSources = WorkoutsSourceFactory(sourceType: .UserWorkouts,
+            viewController: self,
             workoutsProvider: workoutsProvider,
             navigationManager: navigationManager)
     }
@@ -48,8 +50,7 @@ final class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
-        
-        registerForPreviewing()
+    
         configureSearchController()
         fillViewWithWorkoutsSources(workoutsSources)
     }
@@ -99,33 +100,6 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
         workoutsSources.defaultWorkoutsSource.resetSearchResults()
         workoutsSources.userWorkokutsSource.resetSearchResults()
         fillViewWithWorkoutsSources(workoutsSources)
-    }
-}
-
-extension WorkoutsScreen: UIViewControllerPreviewingDelegate {
-    
-    func previewingContext(previewingContext: UIViewControllerPreviewing,
-        viewControllerForLocation location: CGPoint) -> UIViewController? {
-            
-            guard !workoutsSources.currentSource.editable,
-                let indexPath = workoutsView.workoutsTableView.indexPathForRowAtPoint(location),
-                let cell = workoutsView.workoutsTableView.cellForRowAtIndexPath(indexPath) else { return nil }
-            
-            previewingContext.sourceRect = cell.frame
-            
-            return workoutsSources.currentSource.previewScreenForCellAtIndexPath(indexPath)
-    }
-
-    func previewingContext(previewingContext: UIViewControllerPreviewing,
-        commitViewController viewControllerToCommit: UIViewController) {
-            
-            navigationManager.pushScreen(viewControllerToCommit, animated: true)
-    }
-    
-    private func registerForPreviewing() {
-        if traitCollection.forceTouchCapability == .Available {
-            registerForPreviewingWithDelegate(self, sourceView: workoutsView.workoutsTableView)
-        }
     }
 }
 

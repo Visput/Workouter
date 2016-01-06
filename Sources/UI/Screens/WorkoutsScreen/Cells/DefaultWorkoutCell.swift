@@ -14,9 +14,13 @@ final class DefaultWorkoutCell: BaseTableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var stepsCountLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
-    @IBOutlet private weak var cardView: UIView!
+    @IBOutlet private(set) weak var cardView: UIView!
+    
+    private(set) var workout: Workout?
     
     func fillWithWorkout(workout: Workout) {
+        self.workout = workout
+        
         nameLabel.text = workout.name
         descriptionLabel.text = workout.workoutDescription
         

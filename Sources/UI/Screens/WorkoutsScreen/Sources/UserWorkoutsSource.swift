@@ -10,6 +10,7 @@ import UIKit
 
 final class UserWorkoutsSource: NSObject, WorkoutsSource {
     
+    var active: Bool = false
     var editable: Bool = false
     
     private var searchResults: [Workout]?
@@ -18,13 +19,18 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         return searchResults ?? workoutsProvider.userWorkouts
     }
     
+    private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider!
     private let navigationManager: NavigationManager!
     
-    init(workoutsProvider: WorkoutsProvider, navigationManager: NavigationManager) {
-        self.workoutsProvider = workoutsProvider
-        self.navigationManager = navigationManager
-        super.init()
+    init(viewController: UIViewController,
+        workoutsProvider: WorkoutsProvider,
+        navigationManager: NavigationManager) {
+            
+            self.viewController = viewController
+            self.workoutsProvider = workoutsProvider
+            self.navigationManager = navigationManager
+            super.init()
     }
     
     func searchWorkoutsWithText(text: String) {
@@ -36,19 +42,23 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         searchResults = nil
     }
     
-    func previewScreenForCellAtIndexPath(indexPath: NSIndexPath) -> UIViewController? {
-            let workout = currentWorkouts[indexPath.row]
-            let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
-            
-            return previewScreen
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentWorkouts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(DefaultWorkoutCell.className()) as! DefaultWorkoutCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(UserWorkoutCell.className()) as! UserWorkoutCell
+        
+        if viewController.traitCollection.forceTouchCapability == .Available {
+            // Set tag to keep reference to workout index.
+            cell.cardView.tag = indexPath.row
+            
+            // Register cell if it's not reused yet.
+            if cell.workout == nil {
+                viewController.registerForPreviewingWithDelegate(self, sourceView: cell.cardView)
+            }
+        }
+        
         let workout = currentWorkouts[indexPath.row]
         cell.fillWithWorkout(workout)
         
@@ -103,5 +113,23 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         } else {
             navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
         }
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        viewControllerForLocation location: CGPoint) -> UIViewController? {
+            
+            guard active && !editable else { return nil }
+            
+            let workoutIndex = previewingContext.sourceView.tag
+            let workout = currentWorkouts[workoutIndex]
+            let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
+            
+            return previewScreen
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        commitViewController viewControllerToCommit: UIViewController) {
+            
+            navigationManager.pushScreen(viewControllerToCommit, animated: true)
     }
 }

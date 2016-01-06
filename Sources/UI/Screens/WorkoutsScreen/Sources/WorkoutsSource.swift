@@ -8,13 +8,12 @@
 
 import UIKit
 
-protocol WorkoutsSource: UITableViewDataSource, UITableViewDelegate {
+protocol WorkoutsSource: UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate {
     
+    var active: Bool { get set }
     var editable: Bool { get set }
     
     func searchWorkoutsWithText(text: String)
     
     func resetSearchResults()
-    
-    func previewScreenForCellAtIndexPath(indexPath: NSIndexPath) -> UIViewController?
 }
