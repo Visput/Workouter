@@ -31,6 +31,6 @@ final class DefaultWorkoutCell: BaseTableViewCell {
         durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
             valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
             unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
-            color: UIColor.whiteColor())
+            color: UIColor.secondaryTextColor())
     }
 }
