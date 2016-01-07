@@ -11,7 +11,12 @@ import UIKit
 final class UserWorkoutsSource: NSObject, WorkoutsSource {
     
     var active: Bool = false
-    var editable: Bool = false
+    
+    var editable: Bool = false {
+        didSet {
+            workoutsTableView.setEditing(editable, animated: true)
+        }
+    }
     
     private var searchResults: [Workout]?
     
@@ -19,9 +24,10 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         return searchResults ?? workoutsProvider.userWorkouts
     }
     
+    weak var workoutsTableView: UITableView!
     private weak var viewController: UIViewController!
-    private let workoutsProvider: WorkoutsProvider!
-    private let navigationManager: NavigationManager!
+    private let workoutsProvider: WorkoutsProvider
+    private let navigationManager: NavigationManager
     
     init(viewController: UIViewController,
         workoutsProvider: WorkoutsProvider,
@@ -74,7 +80,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.Delete
+        return .Delete
     }
     
     func tableView(tableView: UITableView,

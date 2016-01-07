@@ -22,8 +22,15 @@ class WorkoutsSourceFactory {
     }
     
     private(set) var currentSource: WorkoutsSource!
-    private(set) var userWorkokutsSource: WorkoutsSource!
-    private(set) var defaultWorkoutsSource: WorkoutsSource!
+    private(set) var userWorkokutsSource: UserWorkoutsSource!
+    private(set) var defaultWorkoutsSource: DefaultWorkoutsSource!
+    
+    weak var workoutsTableView: UITableView! {
+        didSet {
+            userWorkokutsSource.workoutsTableView = workoutsTableView
+            defaultWorkoutsSource.workoutsTableView = workoutsTableView
+        }
+    }
     
     init(sourceType: WorkoutsSourceType,
         viewController: UIViewController,
@@ -48,6 +55,7 @@ class WorkoutsSourceFactory {
             currentSource = userWorkokutsSource
             userWorkokutsSource.active = true
             defaultWorkoutsSource.active = false
+            
         case .DefaultWorkouts:
             currentSource = defaultWorkoutsSource
             userWorkokutsSource.active = false

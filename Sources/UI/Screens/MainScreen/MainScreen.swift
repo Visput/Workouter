@@ -111,6 +111,10 @@ extension MainScreen {
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenAccountItemWithAlignment(.Left,
             target: self,
             action: Selector("accountButtonDidPress:"))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
+            target: self,
+            action: Selector("newWorkoutButtonDidPress:"))
     }
     
     @objc private func accountButtonDidPress(sender: AnyObject) {
@@ -118,6 +122,26 @@ extension MainScreen {
             didCancelAction: { [unowned self] in
                 self.navigationManager.dismissScreenAnimated(true)
             })
+    }
+    
+    @objc private func newWorkoutButtonDidPress(sender: AnyObject) {
+        let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
+        navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
+            animated: true,
+            templateDidSelectAction: { [unowned self] workout in
+                
+                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
+                    animated: true,
+                    workoutDidEditAction: { [unowned self] workout in
+                        
+                        self.workoutsProvider.addWorkout(workout)
+                        self.navigationManager.dismissScreenAnimated(true)
+                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                    })
+                
+            }, templateDidCancelAction: {
+                self.navigationManager.dismissScreenAnimated(true)
+        })
     }
 }
 

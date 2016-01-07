@@ -21,6 +21,42 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-5" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="gam-mK-3Ot">
+                                    <rect key="frame" x="0.0" y="353" width="375" height="140"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQP-Qa-HLK" customClass="AlphaControl" customModule="Workouter" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="8" width="343" height="124"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_new_workout_white" translatesAutoresizingMaskIntoConstraints="NO" id="fss-kx-jor">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="124"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="fss-kx-jor" firstAttribute="top" secondItem="yQP-Qa-HLK" secondAttribute="top" id="3UA-yf-Omj"/>
+                                                <constraint firstAttribute="trailing" secondItem="fss-kx-jor" secondAttribute="trailing" id="eM4-2C-3NH"/>
+                                                <constraint firstAttribute="bottom" secondItem="fss-kx-jor" secondAttribute="bottom" id="hHx-wT-asm"/>
+                                                <constraint firstItem="fss-kx-jor" firstAttribute="leading" secondItem="yQP-Qa-HLK" secondAttribute="leading" id="xjY-Kf-jIt"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="newWorkoutButtonDidPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="apL-0b-MKe"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yQP-Qa-HLK" secondAttribute="bottom" constant="8" id="0HC-kL-FIC"/>
+                                        <constraint firstItem="yQP-Qa-HLK" firstAttribute="leading" secondItem="gam-mK-3Ot" secondAttribute="leading" constant="16" id="RIy-rc-ZKP"/>
+                                        <constraint firstAttribute="trailing" secondItem="yQP-Qa-HLK" secondAttribute="trailing" constant="16" id="VlH-PP-OaK"/>
+                                        <constraint firstItem="yQP-Qa-HLK" firstAttribute="top" secondItem="gam-mK-3Ot" secondAttribute="top" constant="8" id="eaU-gk-hTc"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultWorkoutCell" id="65r-cP-KX5" customClass="DefaultWorkoutCell" customModule="Workouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="375" height="144"/>
@@ -473,6 +509,7 @@
                             <outlet property="bottomSpace" destination="GPs-HA-idZ" id="e4G-yu-gxe"/>
                             <outlet property="segmentedControl" destination="lJI-Pw-bbU" id="GNX-n4-wVn"/>
                             <outlet property="segmentedControlToolbar" destination="q9f-eJ-nI4" id="tJP-Bl-iSR"/>
+                            <outlet property="tableFooterView" destination="gam-mK-3Ot" id="RDL-rh-ghx"/>
                             <outlet property="workoutsTableView" destination="9mt-W1-wGt" id="m7G-xK-0pV"/>
                         </connections>
                     </view>
@@ -1550,6 +1587,7 @@
     <resources>
         <image name="background_tag_green" width="30" height="20"/>
         <image name="background_tag_white" width="30" height="20"/>
+        <image name="cell_new_workout_white" width="311" height="174"/>
         <image name="icon_achievements_green" width="88" height="88"/>
         <image name="icon_cancel_gray" width="40" height="40"/>
         <image name="icon_dot_green" width="6" height="6"/>

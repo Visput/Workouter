@@ -75,7 +75,7 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.Delete
+        return .Delete
     }
     
     func tableView(tableView: UITableView,

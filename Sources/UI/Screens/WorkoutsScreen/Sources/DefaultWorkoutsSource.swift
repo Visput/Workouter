@@ -18,7 +18,9 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             return false
         }
         
-        set { }
+        set {
+            workoutsTableView.setEditing(false, animated: true)
+        }
     }
     
     private var searchResults: [Workout]?
@@ -27,18 +29,19 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         return searchResults ?? workoutsProvider.defaultWorkouts
     }
     
+    weak var workoutsTableView: UITableView!
     private weak var viewController: UIViewController!
-    private let workoutsProvider: WorkoutsProvider!
-    private let navigationManager: NavigationManager!
+    private let workoutsProvider: WorkoutsProvider
+    private let navigationManager: NavigationManager
     
     init(viewController: UIViewController,
         workoutsProvider: WorkoutsProvider,
         navigationManager: NavigationManager) {
             
-        self.viewController = viewController
-        self.workoutsProvider = workoutsProvider
-        self.navigationManager = navigationManager
-        super.init()
+            self.viewController = viewController
+            self.workoutsProvider = workoutsProvider
+            self.navigationManager = navigationManager
+            super.init()
     }
     
     func searchWorkoutsWithText(text: String) {

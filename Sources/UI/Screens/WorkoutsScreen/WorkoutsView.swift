@@ -12,8 +12,19 @@ import UIKit
 final class WorkoutsView: BaseScreenView {
     
     @IBOutlet private(set) weak var workoutsTableView: UITableView!
+    
+    /// Keep strong reference. There are some conditions when
+    /// this view isn't presented in view hierarchy.
+    @IBOutlet private(set) var tableFooterView: UIView!
+    
     @IBOutlet private(set) weak var segmentedControl: UISegmentedControl!
     @IBOutlet private(set) weak var segmentedControlToolbar: UIToolbar!
+    
+    var tableFooterViewHidden: Bool = false {
+        didSet {
+            workoutsTableView.tableFooterView = tableFooterViewHidden ? nil : tableFooterView
+        }
+    }
     
     override func didLoad() {
         super.didLoad()

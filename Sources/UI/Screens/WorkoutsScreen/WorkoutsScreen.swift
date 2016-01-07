@@ -38,7 +38,7 @@ final class WorkoutsScreen: BaseScreen {
             workoutsProvider: workoutsProvider,
             navigationManager: navigationManager)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         workoutsSources = WorkoutsSourceFactory(sourceType: .UserWorkouts,
@@ -52,6 +52,8 @@ final class WorkoutsScreen: BaseScreen {
         workoutsProvider.loadWorkouts()
     
         configureSearchController()
+      
+        workoutsSources.workoutsTableView = workoutsView.workoutsTableView
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
@@ -124,7 +126,7 @@ extension WorkoutsScreen {
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
-    @objc private func newWorkoutButtonDidPress(sender: UIBarButtonItem) {
+    @IBAction private func newWorkoutButtonDidPress(sender: AnyObject) {
         let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
         navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
             animated: true,
@@ -171,14 +173,14 @@ extension WorkoutsScreen {
         switch workoutsSources.currentSourceType {
         case .UserWorkouts:
             if editable {
-                workoutsView.workoutsTableView.setEditing(true, animated: true)
+                workoutsView.tableFooterViewHidden = true
                 searchController.enabled = false
                 navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
                     target: self,
                     action: Selector("editButtonDidPress:"))
                 
             } else {
-                workoutsView.workoutsTableView.setEditing(false, animated: true)
+                workoutsView.tableFooterViewHidden = false
                 searchController.enabled = true
                 navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
                     target: self,
@@ -186,11 +188,9 @@ extension WorkoutsScreen {
             }
             
         case .DefaultWorkouts:
-            workoutsView.workoutsTableView.setEditing(false, animated: true)
+            workoutsView.tableFooterViewHidden = true
             searchController.enabled = true
-            navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
-                target: self,
-                action: Selector("newWorkoutButtonDidPress:"))
+            navigationItem.rightBarButtonItem = nil
         }
     }
 }

@@ -14,6 +14,5 @@ protocol WorkoutsSource: UITableViewDataSource, UITableViewDelegate, UIViewContr
     var editable: Bool { get set }
     
     func searchWorkoutsWithText(text: String)
-    
     func resetSearchResults()
 }
