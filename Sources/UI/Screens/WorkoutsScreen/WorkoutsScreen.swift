@@ -53,7 +53,7 @@ final class WorkoutsScreen: BaseScreen {
     
         configureSearchController()
       
-        workoutsSources.workoutsTableView = workoutsView.workoutsTableView
+        workoutsSources.collectionView = workoutsView.workoutsCollectionView
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
@@ -61,8 +61,11 @@ final class WorkoutsScreen: BaseScreen {
         super.viewWillAppear(animated)
         // Handle workouts updates only when view isn't currently displayed.
         workoutsProvider.observers.removeObserver(self)
-        workoutsSources.currentSource.editable = false
-        fillViewWithEditableState(workoutsSources.currentSource.editable)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        searchController.active = false
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -98,6 +101,10 @@ extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
         searchController.searchBar.becomeFirstResponder()
     }
     
+    func willDismissSearchController(searchController: UISearchController) {
+        navigationManager.setNavigationBarHidden(false, animated: true)
+    }
+    
     func didDismissSearchController(searchController: UISearchController) {
         workoutsSources.defaultWorkoutsSource.resetSearchResults()
         workoutsSources.userWorkokutsSource.resetSearchResults()
@@ -114,19 +121,12 @@ extension WorkoutsScreen: UIToolbarDelegate {
 
 extension WorkoutsScreen {
     
-    @objc private func editButtonDidPress(sender: UIBarButtonItem) {
-        // Switch mode.
-        workoutsSources.currentSource.editable = !workoutsSources.currentSource.editable
-        fillViewWithEditableState(workoutsSources.currentSource.editable)
-    }
-    
     @IBAction private func workoutsSegmentedControlDidChangeValue(sender: UISegmentedControl) {
         workoutsSources.currentSourceType = WorkoutsSourceType(rawValue: sender.selectedSegmentIndex)!
-        workoutsSources.currentSource.editable = false
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
-    @IBAction private func newWorkoutButtonDidPress(sender: AnyObject) {
+    @objc private func newWorkoutButtonDidPress(sender: AnyObject) {
         let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
         navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
             animated: true,
@@ -145,6 +145,13 @@ extension WorkoutsScreen {
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }
+    
+    @objc private func searchWorkoutsButtonDidPress(sender: AnyObject) {
+        navigationManager.setNavigationBarHidden(true, animated: true)
+        executeAfterDelay(0.2) { () -> () in
+            self.searchController.active = true
+        }
+    }
 }
 
 extension WorkoutsScreen {
@@ -153,9 +160,9 @@ extension WorkoutsScreen {
         searchController = SearchController(searchResultsController: nil)
         searchController.delegate = self
         searchController.searchResultsUpdater = self
-        workoutsView.workoutsTableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.sizeToFit()
-        definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        workoutsView.searchBar = searchController.searchBar
     }
 }
 
@@ -163,34 +170,20 @@ extension WorkoutsScreen {
     
     private func fillViewWithWorkoutsSources(workoutsSources: WorkoutsSourceFactory) {
         workoutsView.segmentedControl.selectedSegmentIndex = workoutsSources.currentSourceType.rawValue
-        workoutsView.workoutsTableView.delegate = workoutsSources.currentSource
-        workoutsView.workoutsTableView.dataSource = workoutsSources.currentSource
-        workoutsView.workoutsTableView.reloadData()
-        fillViewWithEditableState(workoutsSources.currentSource.editable)
-    }
-    
-    private func fillViewWithEditableState(editable: Bool) {
+        workoutsView.workoutsCollectionView.delegate = workoutsSources.currentSource
+        workoutsView.workoutsCollectionView.dataSource = workoutsSources.currentSource
+        workoutsView.workoutsCollectionView.reloadData()
+        
         switch workoutsSources.currentSourceType {
         case .UserWorkouts:
-            if editable {
-                workoutsView.tableFooterViewHidden = true
-                searchController.enabled = false
-                navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
-                    target: self,
-                    action: Selector("editButtonDidPress:"))
-                
-            } else {
-                workoutsView.tableFooterViewHidden = false
-                searchController.enabled = true
-                navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
-                    target: self,
-                    action: Selector("editButtonDidPress:"))
-            }
+            navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
+                target: self,
+                action: Selector("newWorkoutButtonDidPress:"))
             
         case .DefaultWorkouts:
-            workoutsView.tableFooterViewHidden = true
-            searchController.enabled = true
-            navigationItem.rightBarButtonItem = nil
+            navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
+                target: self,
+                action: Selector("searchWorkoutsButtonDidPress:"))
         }
     }
 }

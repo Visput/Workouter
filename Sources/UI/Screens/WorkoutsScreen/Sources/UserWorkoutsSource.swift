@@ -12,19 +12,13 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     
     var active: Bool = false
     
-    var editable: Bool = false {
-        didSet {
-            workoutsTableView.setEditing(editable, animated: true)
-        }
-    }
-    
     private var searchResults: [Workout]?
     
     private var currentWorkouts: [Workout] {
         return searchResults ?? workoutsProvider.userWorkouts
     }
     
-    weak var workoutsTableView: UITableView!
+    weak var collectionView: UICollectionView!
     private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
@@ -48,12 +42,13 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         searchResults = nil
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentWorkouts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(UserWorkoutCell.className()) as! UserWorkoutCell
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(UserWorkoutCell.className(),
+            forIndexPath: indexPath) as! UserWorkoutCell
         
         if viewController.traitCollection.forceTouchCapability == .Available {
             // Set tag to keep reference to workout index.
@@ -71,16 +66,9 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return editable
-    }
-    
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return editable
-    }
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .Delete
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let workout = currentWorkouts[indexPath.row]
+        navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
     }
     
     func tableView(tableView: UITableView,
@@ -100,31 +88,12 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let workout = currentWorkouts[indexPath.row]
-        
-        if editable {
-            navigationManager.presentWorkoutEditScreenWithWorkout(workout,
-                animated: true,
-                workoutDidEditAction: { [unowned self] workout in
-                    
-                    self.workoutsProvider.updateWorkoutAtIndex(indexPath.row, withWorkout: workout)
-                    self.navigationManager.dismissScreenAnimated(true)
-                    self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    
-                }, workoutDidCancelAction: { [unowned self] in
-                    self.navigationManager.dismissScreenAnimated(true)
-                })
-            
-        } else {
-            navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-        }
-    }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
-            guard active && !editable else { return nil }
+            // Check if cell is 'editable' state.
+            guard active else { return nil }
             
             let workoutIndex = previewingContext.sourceView.tag
             let workout = currentWorkouts[workoutIndex]

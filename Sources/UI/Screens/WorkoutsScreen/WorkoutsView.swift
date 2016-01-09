@@ -11,39 +11,50 @@ import UIKit
 
 final class WorkoutsView: BaseScreenView {
     
-    @IBOutlet private(set) weak var workoutsTableView: UITableView!
-    
-    /// Keep strong reference. There are some conditions when
-    /// this view isn't presented in view hierarchy.
-    @IBOutlet private(set) var tableFooterView: UIView!
-    
+    @IBOutlet private(set) weak var workoutsCollectionView: UICollectionView!
     @IBOutlet private(set) weak var segmentedControl: UISegmentedControl!
     @IBOutlet private(set) weak var segmentedControlToolbar: UIToolbar!
+    @IBOutlet private(set) weak var searchBarContainerView: UIView!
     
-    var tableFooterViewHidden: Bool = false {
+    weak var searchBar: UISearchBar? {
+        willSet {
+            searchBar?.removeFromSuperview()
+        }
+        
         didSet {
-            workoutsTableView.tableFooterView = tableFooterViewHidden ? nil : tableFooterView
+            guard searchBar != nil else { return }
+            searchBarContainerView.addSubview(searchBar!)
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
     override func didLoad() {
         super.didLoad()
-        workoutsTableView.rowHeight = UITableViewAutomaticDimension
-        workoutsTableView.estimatedRowHeight = 140.0
-        workoutsTableView.contentInset.bottom = 8.0
         // Set clear background view to prevent setting view with gray color when search bar is added.
-        workoutsTableView.backgroundView = UIView()
+        workoutsCollectionView.backgroundView = UIView()
     }
     
     override func willAppear(animated: Bool) {
         super.willAppear(animated)
-        workoutsTableView.deselectSelectedRowAnimated(true)
+        workoutsCollectionView.deselectSelectedItemsAnimated(true)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let offset: CGFloat = 16.0
-        segmentedControl.frame.origin.x = offset
-        segmentedControl.frame.size.width = segmentedControlToolbar.frame.size.width - 2 * offset
+        
+        // Segmented control.
+        let segmentedControlOffset: CGFloat = 16.0
+        segmentedControl.frame.origin.x = segmentedControlOffset
+        segmentedControl.frame.size.width = segmentedControlToolbar.frame.size.width - 2 * segmentedControlOffset
+        
+        // Collection view.
+        let flowLayout = workoutsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
+        
+        // Search bar.
+        let searchBarOffset: CGFloat = 4.0
+        searchBar?.frame.origin.x = searchBarOffset
+        searchBar?.frame.size.width = frame.size.width - 4 * searchBarOffset
     }
 }

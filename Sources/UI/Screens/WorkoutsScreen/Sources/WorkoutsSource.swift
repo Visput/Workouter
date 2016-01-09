@@ -8,10 +8,9 @@
 
 import UIKit
 
-protocol WorkoutsSource: UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate {
+protocol WorkoutsSource: UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate {
     
     var active: Bool { get set }
-    var editable: Bool { get set }
     
     func searchWorkoutsWithText(text: String)
     func resetSearchResults()

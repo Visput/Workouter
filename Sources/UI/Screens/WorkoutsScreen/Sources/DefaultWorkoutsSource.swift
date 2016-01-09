@@ -12,24 +12,13 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
     
     var active: Bool = false
     
-    /// 'All Workouts' list is immutable.
-    var editable: Bool {
-        get {
-            return false
-        }
-        
-        set {
-            workoutsTableView.setEditing(false, animated: true)
-        }
-    }
-    
     private var searchResults: [Workout]?
     
     private var currentWorkouts: [Workout] {
         return searchResults ?? workoutsProvider.defaultWorkouts
     }
     
-    weak var workoutsTableView: UITableView!
+    weak var collectionView: UICollectionView!
     private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
@@ -53,12 +42,13 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         searchResults = nil
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentWorkouts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(DefaultWorkoutCell.className()) as! DefaultWorkoutCell
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DefaultWorkoutCell.className(),
+            forIndexPath: indexPath) as! DefaultWorkoutCell
         
         if viewController.traitCollection.forceTouchCapability == .Available {
             // Set tag to keep reference to workout index.
@@ -76,7 +66,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let workout = currentWorkouts[indexPath.row]
         navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
     }
