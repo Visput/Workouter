@@ -18,8 +18,7 @@ final class WorkoutsView: BaseScreenView {
     
     override func didLoad() {
         super.didLoad()
-        // Set clear background view to prevent setting view with gray color when search bar is added.
-        workoutsCollectionView.backgroundView = UIView()
+        workoutsCollectionView.collectionViewLayout = CollectionSpringFlowLayout()
     }
     
     override func willAppear(animated: Bool) {
@@ -38,5 +37,9 @@ final class WorkoutsView: BaseScreenView {
         // Collection view.
         let flowLayout = workoutsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
+        // Top inset: status bar (20) + navigation bar (44) + toolbar (44) + inset (16) = 124
+        flowLayout.sectionInset.top = 124.0
+        flowLayout.sectionInset.bottom = 16.0
+        flowLayout.minimumLineSpacing = 16.0
     }
 }

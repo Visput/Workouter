@@ -35,6 +35,8 @@
 		9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073A1C063B2D00DA0152 /* AuthenticationScreen.swift */; };
 		9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
+		9F119B4D1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
+		9F119B4E1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
 		9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
@@ -314,6 +316,7 @@
 		9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		9F0F07411C063C8600DA0152 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		9F0F41C21BFF07F900989101 /* AppPalette.clr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppPalette.clr; path = AppPalette/AppPalette.clr; sourceTree = "<group>"; };
+		9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpringFlowLayout.swift; sourceTree = "<group>"; };
 		9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionButton.swift; sourceTree = "<group>"; };
 		9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
 		9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
@@ -560,6 +563,14 @@
 				9F0F07411C063C8600DA0152 /* AccountManager.swift */,
 			);
 			path = AccountManager;
+			sourceTree = "<group>";
+		};
+		9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */,
+			);
+			path = CollectionSpringFlowLayout;
 			sourceTree = "<group>";
 		};
 		9F13C4681C1C028F00894C6C /* DescriptionButton */ = {
@@ -840,6 +851,7 @@
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */,
 				9F49AFD01C3CDCB300B1763C /* BaseCell */,
 				9FF8A1B91C2B297400A25EAA /* AlphaButton */,
 				9F13C4681C1C028F00894C6C /* DescriptionButton */,
@@ -1772,6 +1784,7 @@
 				9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
 				9FA2F59C1BE337E300A3844D /* DurationComponent.swift in Sources */,
 				9F7CA3E01C23DDEF003E9BFD /* ReferFriendsView.swift in Sources */,
+				9F119B4D1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */,
 				F02CAB5C1B4B871E00F28D72 /* WorkoutsProvider.swift in Sources */,
 				9F99006F1C1929FB00ACC612 /* ProgressViewItem.swift in Sources */,
 				9FED64321C1F51FB00F40CDF /* StatisticsScreen.swift in Sources */,
@@ -1898,6 +1911,7 @@
 				9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
 				9FA2F59D1BE337E300A3844D /* DurationComponent.swift in Sources */,
 				9F7CA3E11C23DDEF003E9BFD /* ReferFriendsView.swift in Sources */,
+				9F119B4E1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */,
 				F09702CA1ACA48E700498DEE /* WorkoutsProvider.swift in Sources */,
 				9F9900701C1929FB00ACC612 /* ProgressViewItem.swift in Sources */,
 				9FED64331C1F51FB00F40CDF /* StatisticsScreen.swift in Sources */,
