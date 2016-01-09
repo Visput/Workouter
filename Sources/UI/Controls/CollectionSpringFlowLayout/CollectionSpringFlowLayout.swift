@@ -22,39 +22,35 @@ final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
         let minDamping: CGFloat = 0.2
         let maxDamping: CGFloat = 1.0
         
-        for item in items {
-            var isNewItem = true
-            for behavior in animator.behaviors as! [UIAttachmentBehavior] {
-                let itemWithBehavior = behavior.items[0] as! UICollectionViewLayoutAttributes
-                if item.indexPath.row == itemWithBehavior.indexPath.row {
-                    isNewItem = false
-                }
-            }
-            
-            // Go next iteration if item already contains behavior
-            if !isNewItem {
-                continue
-            }
-            
-            let behavior = UIAttachmentBehavior(item: item, attachedToAnchor: item.center)
-            
-            behavior.action = {
-                let itemPoint = behavior.items[0].center
-                let anchorPoint = behavior.anchorPoint
-                let distance = abs(itemPoint.y - anchorPoint.y)
+        if items.count > animator.behaviors.count {
+            for (index, item) in items.enumerate() where index >= animator.behaviors.count {
                 
-                if distance < 1.0 {
-                    behavior.damping = maxDamping
-                } else {
-                    behavior.damping = minDamping + (maxDamping - minDamping) / pow(distance, 1 / 2.0)
+                let behavior = UIAttachmentBehavior(item: item, attachedToAnchor: item.center)
+                
+                behavior.action = {
+                    let itemPoint = behavior.items[0].center
+                    let anchorPoint = behavior.anchorPoint
+                    let distance = abs(itemPoint.y - anchorPoint.y)
+                    
+                    if distance < 1.0 {
+                        behavior.damping = maxDamping
+                    } else {
+                        behavior.damping = minDamping + (maxDamping - minDamping) / pow(distance, 1 / 2.0)
+                    }
                 }
+                
+                behavior.length = 2.0
+                behavior.damping = minDamping
+                behavior.frequency = 1.0
+                
+                animator.addBehavior(behavior)
             }
             
-            behavior.length = 2.0
-            behavior.damping = minDamping
-            behavior.frequency = 1.0
-            
-            animator.addBehavior(behavior)
+        } else if items.count < animator.behaviors.count {
+            let behaviorsToRemove = animator.behaviors[items.count ..< animator.behaviors.count]
+            for behavior in behaviorsToRemove {
+                animator.removeBehavior(behavior)
+            }
         }
         
         return animator.itemsInRect(rect) as? [UICollectionViewLayoutAttributes]
