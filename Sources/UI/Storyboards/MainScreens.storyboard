@@ -231,7 +231,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="WG9-2O-GM9" firstAttribute="leading" secondItem="eqF-lp-5MU" secondAttribute="leading" constant="16" id="91z-wm-IFs"/>
                                                 <constraint firstAttribute="bottom" secondItem="WG9-2O-GM9" secondAttribute="bottom" constant="8" id="J1d-k6-0zC"/>
@@ -239,7 +239,7 @@
                                                 <constraint firstItem="WG9-2O-GM9" firstAttribute="top" secondItem="eqF-lp-5MU" secondAttribute="top" constant="8" id="pmM-sn-8IW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="cardView" destination="WG9-2O-GM9" id="5IN-k2-tvu"/>
                                             <outlet property="descriptionLabel" destination="8fo-0g-xND" id="mYU-ej-1bW"/>
@@ -421,7 +421,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="R6f-We-mQe" firstAttribute="leading" secondItem="auO-xX-oZK" secondAttribute="leading" constant="16" id="9ki-Ju-Hkn"/>
                                                 <constraint firstItem="R6f-We-mQe" firstAttribute="top" secondItem="auO-xX-oZK" secondAttribute="top" constant="8" id="QQv-rU-qpH"/>
@@ -429,7 +429,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="R6f-We-mQe" secondAttribute="bottom" constant="8" id="z2j-93-B0h"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="cardView" destination="R6f-We-mQe" id="Kar-HG-mXR"/>
                                             <outlet property="descriptionLabel" destination="P6E-uD-1SW" id="Hcv-rd-5JR"/>
@@ -480,7 +480,7 @@
                                 </connections>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.9529411793" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93333333730697632" green="0.94117647409439087" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pK9-6x-BYi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9dY-df-QOk"/>
                             <constraint firstItem="q9f-eJ-nI4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="DDS-Pu-FJS"/>
@@ -523,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1000.5" y="777.5"/>
+            <point key="canvasLocation" x="-817.5" y="974.5"/>
         </scene>
         <!--My Workouts-->
         <scene sceneID="wiU-ou-YDU">
