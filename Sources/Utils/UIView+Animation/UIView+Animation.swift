@@ -18,7 +18,15 @@ extension UIView {
         UIView.animateWithDuration(defaultAnimationDuration, animations: animations)
     }
     
-    class func animateWithDefaultDuration(animations: () -> Void, completion: (Bool) -> Void) {
+    class func animateWithDefaultDuration(animations: () -> Void, completion: ((Bool) -> Void)?) {
         UIView.animateWithDuration(defaultAnimationDuration, animations: animations, completion: completion)
+    }
+    
+    class func animateWithDefaultDuration(options: UIViewAnimationOptions, animations: () -> Void, completion: ((Bool) -> Void)?) {
+        UIView.animateWithDuration(defaultAnimationDuration,
+            delay: 0.0,
+            options: options,
+            animations: animations,
+            completion: completion)
     }
 }
