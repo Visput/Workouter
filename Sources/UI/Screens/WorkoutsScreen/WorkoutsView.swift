@@ -14,20 +14,7 @@ final class WorkoutsView: BaseScreenView {
     @IBOutlet private(set) weak var workoutsCollectionView: UICollectionView!
     @IBOutlet private(set) weak var segmentedControl: UISegmentedControl!
     @IBOutlet private(set) weak var segmentedControlToolbar: UIToolbar!
-    @IBOutlet private(set) weak var searchBarContainerView: UIView!
-    
-    weak var searchBar: UISearchBar? {
-        willSet {
-            searchBar?.removeFromSuperview()
-        }
-        
-        didSet {
-            guard searchBar != nil else { return }
-            searchBarContainerView.addSubview(searchBar!)
-            setNeedsLayout()
-            layoutIfNeeded()
-        }
-    }
+    @IBOutlet private(set) weak var searchBar: UISearchBar!
     
     override func didLoad() {
         super.didLoad()
@@ -51,10 +38,5 @@ final class WorkoutsView: BaseScreenView {
         // Collection view.
         let flowLayout = workoutsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
-        
-        // Search bar.
-        let searchBarOffset: CGFloat = 4.0
-        searchBar?.frame.origin.x = searchBarOffset
-        searchBar?.frame.size.width = frame.size.width - 4 * searchBarOffset
     }
 }

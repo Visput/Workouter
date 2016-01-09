@@ -53,7 +53,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportive schedule of fitness built by Hamilton's McMaster university in Ontario." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-ZT-e7i">
-                                                            <rect key="frame" x="16" y="50.5" width="311" height="33.5"/>
+                                                            <rect key="frame" x="16" y="50" width="311" height="33.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="oV1-2g-HlP"/>
                                                             </constraints>
@@ -242,7 +242,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportive schedule of fitness built by Hamilton's McMaster university in Ontario." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MP-zM-ZzH">
-                                                            <rect key="frame" x="16" y="50.5" width="311" height="33.5"/>
+                                                            <rect key="frame" x="16" y="50" width="311" height="33.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="JRb-BX-Irw"/>
                                                             </constraints>
@@ -417,9 +417,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-Uf-jne">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doM-CU-Mfx">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="F7s-5j-528"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="doM-CU-Mfx" firstAttribute="leading" secondItem="Doc-Uf-jne" secondAttribute="leading" constant="8" id="PNJ-7Q-o1z"/>
+                                    <constraint firstAttribute="trailing" secondItem="doM-CU-Mfx" secondAttribute="trailing" constant="8" id="Trq-wV-iCF"/>
+                                    <constraint firstAttribute="bottom" secondItem="doM-CU-Mfx" secondAttribute="bottom" id="ZXv-Da-wBU"/>
                                     <constraint firstAttribute="height" constant="44" id="fK8-Ub-aQS"/>
+                                    <constraint firstItem="doM-CU-Mfx" firstAttribute="top" secondItem="Doc-Uf-jne" secondAttribute="top" id="igg-OE-E88"/>
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9f-eJ-nI4">
@@ -473,7 +486,7 @@
                         </constraints>
                         <connections>
                             <outlet property="bottomSpace" destination="Qa1-28-soe" id="fx2-I8-7Qi"/>
-                            <outlet property="searchBarContainerView" destination="Doc-Uf-jne" id="W4z-66-rxE"/>
+                            <outlet property="searchBar" destination="doM-CU-Mfx" id="JMk-Rk-xOb"/>
                             <outlet property="segmentedControl" destination="lJI-Pw-bbU" id="GNX-n4-wVn"/>
                             <outlet property="segmentedControlToolbar" destination="q9f-eJ-nI4" id="tJP-Bl-iSR"/>
                             <outlet property="workoutsCollectionView" destination="pvp-9k-i2J" id="reO-50-V71"/>

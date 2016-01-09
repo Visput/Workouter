@@ -17,8 +17,6 @@ final class WorkoutsScreen: BaseScreen {
         }
     }
     
-    private var searchController: SearchController!
-    
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
     }
@@ -50,8 +48,6 @@ final class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
-    
-        configureSearchController()
       
         workoutsSources.collectionView = workoutsView.workoutsCollectionView
         fillViewWithWorkoutsSources(workoutsSources)
@@ -64,7 +60,7 @@ final class WorkoutsScreen: BaseScreen {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        searchController.active = false
+        setSearchActive(false)
         super.viewWillDisappear(animated)
     }
     
@@ -72,11 +68,6 @@ final class WorkoutsScreen: BaseScreen {
         // Handle workouts updates only when view isn't currently displayed.
         workoutsProvider.observers.addObserver(self)
         super.viewDidDisappear(animated)
-    }
-    
-    deinit {
-        // iOS 9 bug requires to manually remove search controller view from it's superview.
-        searchController?.view.removeFromSuperview()
     }
 }
 
@@ -88,27 +79,16 @@ extension WorkoutsScreen: WorkoutsProviderObserving {
     }
 }
 
-extension WorkoutsScreen: UISearchResultsUpdating, UISearchControllerDelegate {
+extension WorkoutsScreen: UISearchBarDelegate {
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchText = searchController.searchBar.text
-        workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(searchText!)
-        workoutsSources.userWorkokutsSource.searchWorkoutsWithText(searchText!)
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(searchText)
+        workoutsSources.userWorkokutsSource.searchWorkoutsWithText(searchText)
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
-    func didPresentSearchController(searchController: UISearchController) {
-        searchController.searchBar.becomeFirstResponder()
-    }
-    
-    func willDismissSearchController(searchController: UISearchController) {
-        navigationManager.setNavigationBarHidden(false, animated: true)
-    }
-    
-    func didDismissSearchController(searchController: UISearchController) {
-        workoutsSources.defaultWorkoutsSource.resetSearchResults()
-        workoutsSources.userWorkokutsSource.resetSearchResults()
-        fillViewWithWorkoutsSources(workoutsSources)
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        setSearchActive(false)
     }
 }
 
@@ -147,26 +127,23 @@ extension WorkoutsScreen {
     }
     
     @objc private func searchWorkoutsButtonDidPress(sender: AnyObject) {
-        navigationManager.setNavigationBarHidden(true, animated: true)
-        executeAfterDelay(0.2) { () -> () in
-            self.searchController.active = true
-        }
+        setSearchActive(true)
     }
 }
 
 extension WorkoutsScreen {
     
-    private func configureSearchController() {
-        searchController = SearchController(searchResultsController: nil)
-        searchController.delegate = self
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = false
-        
-        workoutsView.searchBar = searchController.searchBar
+    private func setSearchActive(active: Bool) {
+        navigationManager.setNavigationBarHidden(active, animated: true)
+        if active {
+            workoutsView.searchBar.becomeFirstResponder()
+        } else {
+            workoutsView.searchBar.resignFirstResponder()
+            workoutsSources.defaultWorkoutsSource.resetSearchResults()
+            workoutsSources.userWorkokutsSource.resetSearchResults()
+            fillViewWithWorkoutsSources(workoutsSources)
+        }
     }
-}
-
-extension WorkoutsScreen {
     
     private func fillViewWithWorkoutsSources(workoutsSources: WorkoutsSourceFactory) {
         workoutsView.segmentedControl.selectedSegmentIndex = workoutsSources.currentSourceType.rawValue
