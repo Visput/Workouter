@@ -74,7 +74,11 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             
             guard active else { return nil }
             
+            // Check if cell is 'editable' state.
             let workoutIndex = previewingContext.sourceView.tag
+            let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: workoutIndex, inSection: 0)) as! DefaultWorkoutCell
+            guard !cell.actionsVisible else { return nil }
+            
             let workout = currentWorkouts[workoutIndex]
             let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
             

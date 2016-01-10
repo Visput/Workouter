@@ -13,8 +13,10 @@ class ActionableCollectionView: UICollectionView {
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         for cell in visibleCells() as! [ActionableCollectionViewCell] {
             if cell.actionsVisible {
-                cell.actionsVisible = false
-                return nil
+                // Hide action items if touch point is outside of actions content view.
+                if !CGRectContainsPoint(convertRect(cell.actionsContentView.frame, fromView: cell.actionsContentView.superview), point) {
+                    cell.actionsVisible = false
+                }
             }
         }
         
