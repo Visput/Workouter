@@ -11,7 +11,7 @@ import UIKit
 
 final class WorkoutsView: BaseScreenView {
     
-    @IBOutlet private(set) weak var workoutsCollectionView: UICollectionView!
+    @IBOutlet private(set) weak var workoutsCollectionView: ActionableCollectionView!
     @IBOutlet private(set) weak var segmentedControl: UISegmentedControl!
     @IBOutlet private(set) weak var segmentedControlToolbar: UIToolbar!
     @IBOutlet private(set) weak var searchBar: UISearchBar!

@@ -14,5 +14,4 @@ protocol WorkoutsSource: UICollectionViewDataSource, UICollectionViewDelegate, U
     
     func searchWorkoutsWithText(text: String)
     func resetSearchResults()
-    func hideCellsActions()
 }

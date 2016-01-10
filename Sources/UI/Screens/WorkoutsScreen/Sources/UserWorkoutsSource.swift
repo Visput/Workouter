@@ -42,13 +42,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         searchResults = nil
     }
     
-    func hideCellsActions() {
-        let visibleCells = collectionView.visibleCells() as! [UserWorkoutCell]
-        for cell in visibleCells {
-            cell.actionsVisible = false
-        }
-    }
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentWorkouts.count
     }

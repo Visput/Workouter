@@ -37,8 +37,10 @@
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F119B4D1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
 		9F119B4E1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
-		9F11E0821C420920007F343F /* ActionableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0811C420920007F343F /* ActionableCollectionViewCell.swift */; };
-		9F11E0831C420920007F343F /* ActionableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0811C420920007F343F /* ActionableCollectionViewCell.swift */; };
+		9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */; };
+		9F11E0871C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */; };
+		9F11E0891C423A7E007F343F /* ActionableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */; };
+		9F11E08A1C423A7E007F343F /* ActionableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */; };
 		9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
@@ -319,7 +321,8 @@
 		9F0F07411C063C8600DA0152 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		9F0F41C21BFF07F900989101 /* AppPalette.clr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppPalette.clr; path = AppPalette/AppPalette.clr; sourceTree = "<group>"; };
 		9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpringFlowLayout.swift; sourceTree = "<group>"; };
-		9F11E0811C420920007F343F /* ActionableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionView.swift; sourceTree = "<group>"; };
 		9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionButton.swift; sourceTree = "<group>"; };
 		9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
 		9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
@@ -576,12 +579,13 @@
 			path = CollectionSpringFlowLayout;
 			sourceTree = "<group>";
 		};
-		9F11E0801C41F7A0007F343F /* ActionableCell */ = {
+		9F11E0841C423A47007F343F /* ActionableView */ = {
 			isa = PBXGroup;
 			children = (
-				9F11E0811C420920007F343F /* ActionableCollectionViewCell.swift */,
+				9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */,
+				9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */,
 			);
-			path = ActionableCell;
+			path = ActionableView;
 			sourceTree = "<group>";
 		};
 		9F13C4681C1C028F00894C6C /* DescriptionButton */ = {
@@ -862,7 +866,7 @@
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				9F11E0801C41F7A0007F343F /* ActionableCell */,
+				9F11E0841C423A47007F343F /* ActionableView */,
 				9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */,
 				9F49AFD01C3CDCB300B1763C /* BaseCell */,
 				9FF8A1B91C2B297400A25EAA /* AlphaButton */,
@@ -1700,7 +1704,7 @@
 				9FD745EC1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
 				9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */,
 				F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */,
-				9F11E0821C420920007F343F /* ActionableCollectionViewCell.swift in Sources */,
+				9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD41BDF2F7000AEDEB1 /* StepCell.swift in Sources */,
 				9FED64211C1F50AF00F40CDF /* MainScreen.swift in Sources */,
 				9F79EA871C39167A00FC8227 /* DefaultWorkoutCell.swift in Sources */,
@@ -1792,6 +1796,7 @@
 				9F3CAA041C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BB1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
 				9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */,
+				9F11E0891C423A7E007F343F /* ActionableCollectionView.swift in Sources */,
 				9FF8A1BF1C2B30F300A25EAA /* UIColor+Selected.swift in Sources */,
 				9FED64281C1F510100F40CDF /* AchievementsScreen.swift in Sources */,
 				9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,
@@ -1828,7 +1833,7 @@
 				9FD745ED1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
 				9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */,
 				F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */,
-				9F11E0831C420920007F343F /* ActionableCollectionViewCell.swift in Sources */,
+				9F11E0871C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD51BDF2F7000AEDEB1 /* StepCell.swift in Sources */,
 				9FED64221C1F50AF00F40CDF /* MainScreen.swift in Sources */,
 				9F79EA881C39167A00FC8227 /* DefaultWorkoutCell.swift in Sources */,
@@ -1920,6 +1925,7 @@
 				9F3CAA051C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BC1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
 				9F3CAA021C34472B0061C21A /* AccountView.swift in Sources */,
+				9F11E08A1C423A7E007F343F /* ActionableCollectionView.swift in Sources */,
 				9FF8A1C01C2B30F500A25EAA /* UIColor+Selected.swift in Sources */,
 				9FED64291C1F510100F40CDF /* AchievementsScreen.swift in Sources */,
 				9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */,

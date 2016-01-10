@@ -60,7 +60,7 @@ final class WorkoutsScreen: BaseScreen {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        workoutsSources.currentSource.hideCellsActions()
+        workoutsView.workoutsCollectionView.hideCellsActions()
         setSearchActive(false)
         super.viewWillDisappear(animated)
     }
@@ -103,13 +103,13 @@ extension WorkoutsScreen: UIToolbarDelegate {
 extension WorkoutsScreen {
     
     @IBAction private func workoutsSegmentedControlDidChangeValue(sender: UISegmentedControl) {
-        workoutsSources.currentSource.hideCellsActions()
+        workoutsView.workoutsCollectionView.hideCellsActions()
         workoutsSources.currentSourceType = WorkoutsSourceType(rawValue: sender.selectedSegmentIndex)!
         fillViewWithWorkoutsSources(workoutsSources)
     }
     
     @objc private func newWorkoutButtonDidPress(sender: AnyObject) {
-        workoutsSources.currentSource.hideCellsActions()
+        workoutsView.workoutsCollectionView.hideCellsActions()
         
         let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
         navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
@@ -131,7 +131,7 @@ extension WorkoutsScreen {
     }
     
     @objc private func searchWorkoutsButtonDidPress(sender: AnyObject) {
-        workoutsSources.currentSource.hideCellsActions()
+        workoutsView.workoutsCollectionView.hideCellsActions()
         setSearchActive(true)
     }
 }
