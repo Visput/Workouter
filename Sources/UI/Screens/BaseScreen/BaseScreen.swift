@@ -31,8 +31,8 @@ extension BaseScreen {
             forBarMetrics: .Default)
     }
     
-    func setGreyBackgroundForNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background_grey"),
+    func setTransparentBackgroundForNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(),
             forBarMetrics: .Default)
     }
 }
