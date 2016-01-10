@@ -39,13 +39,27 @@ final class UserWorkoutCell: BaseCollectionViewCell {
 extension UserWorkoutCell: UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+    
         // Allow scrolling only in left direction.
         if scrollView.contentOffset.x > 0 {
             scrollView.contentOffset.y = 0
         } else {
+            let needsShiftFrame = scrollView.contentOffset.x < 0
+            
             scrollView.contentOffset.x = 0
             scrollView.contentOffset.y = 0
+            
+            if needsShiftFrame {
+                // Shift scroll view frame to collapse action buttons.
+                UIView.animateWithDuration(0.8,
+                    delay: 0.0,
+                    usingSpringWithDamping: 1.0,
+                    initialSpringVelocity: 1.0,
+                    options: [.CurveEaseIn],
+                    animations: {
+                        scrollView.frame.origin.x = 0.0
+                    }, completion: nil)
+            }
         }
         
         // Shift scroll view frame to leave action buttons expanded.

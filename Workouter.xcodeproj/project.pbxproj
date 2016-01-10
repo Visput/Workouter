@@ -573,6 +573,13 @@
 			path = CollectionSpringFlowLayout;
 			sourceTree = "<group>";
 		};
+		9F11E0801C41F7A0007F343F /* ActionCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ActionCell;
+			sourceTree = "<group>";
+		};
 		9F13C4681C1C028F00894C6C /* DescriptionButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +858,7 @@
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9F11E0801C41F7A0007F343F /* ActionCell */,
 				9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */,
 				9F49AFD01C3CDCB300B1763C /* BaseCell */,
 				9FF8A1B91C2B297400A25EAA /* AlphaButton */,
