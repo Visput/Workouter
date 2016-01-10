@@ -24,6 +24,15 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     
     var contentOffsetToMakeActionsVisible: CGFloat = 70.0
     
+    var actionsEnabled: Bool = true {
+        didSet {
+            if actionsVisible {
+                actionsVisible = false
+            }
+            scrollView.scrollEnabled = actionsEnabled
+        }
+    }
+    
     var actionsVisible: Bool = false {
         didSet {
             if actionsVisible {

@@ -91,6 +91,12 @@ extension WorkoutsScreen: UISearchBarDelegate {
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         setSearchActive(false)
     }
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        // Allow search to be active only if view currently presented.
+        // This fixes UI issues that happen when using 3D Touch with search results.
+        return workoutsView.appearanceState == .DidAppear
+    }
 }
 
 extension WorkoutsScreen: UIToolbarDelegate {
@@ -144,6 +150,7 @@ extension WorkoutsScreen {
             workoutsView.searchBar.becomeFirstResponder()
         } else {
             workoutsView.searchBar.resignFirstResponder()
+            workoutsView.searchBar.text = ""
             workoutsSources.defaultWorkoutsSource.resetSearchResults()
             workoutsSources.userWorkokutsSource.resetSearchResults()
             fillViewWithWorkoutsSources(workoutsSources)

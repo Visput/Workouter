@@ -59,7 +59,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <state key="normal" title="Clone"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOB-7d-ccz" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOB-7d-ccz" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
                                                                     <rect key="frame" x="140" y="0.0" width="70" height="128"/>
                                                                     <color key="backgroundColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
@@ -567,6 +567,7 @@
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9f-eJ-nI4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Nhh-ss-QHo"/>
                                 </constraints>
@@ -1697,7 +1698,7 @@
         <image name="background_tag_green" width="30" height="20"/>
         <image name="background_tag_white" width="30" height="20"/>
         <image name="icon_achievements_green" width="88" height="88"/>
-        <image name="icon_burger_white" width="30" height="20"/>
+        <image name="icon_burger_white" width="20" height="10"/>
         <image name="icon_cancel_gray" width="32" height="32"/>
         <image name="icon_dot_green" width="6" height="6"/>
         <image name="icon_info_green" width="60" height="60"/>

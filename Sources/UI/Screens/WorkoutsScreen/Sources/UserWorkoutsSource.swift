@@ -66,6 +66,9 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
         }
         
+        // Actions are not enabled while search is active.
+        cell.actionsEnabled = searchResults == nil
+        
         return cell
     }
     
