@@ -62,13 +62,11 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         
         let workout = currentWorkouts[indexPath.row]
         cell.fillWithWorkout(workout)
+        cell.didSelectAction = { [unowned self] in
+            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
+        }
         
         return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let workout = currentWorkouts[indexPath.row]
-        navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
     }
     
     func tableView(tableView: UITableView,
@@ -92,7 +90,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
-            // Check if cell is 'editable' state.
             guard active else { return nil }
             
             let workoutIndex = previewingContext.sourceView.tag

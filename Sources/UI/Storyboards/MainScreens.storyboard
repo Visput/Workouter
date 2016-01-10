@@ -282,6 +282,7 @@
                                             <constraint firstAttribute="bottom" secondItem="0ky-8n-ZSf" secondAttribute="bottom" id="iE8-La-mmc"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="actionsContentView" destination="2w9-5d-WxY" id="9FU-Iq-Uqf"/>
                                             <outlet property="cardView" destination="0ky-8n-ZSf" id="MsM-JJ-QrR"/>
                                             <outlet property="descriptionLabel" destination="Bmp-Wn-DCP" id="LPK-F6-UoU"/>
                                             <outlet property="durationLabel" destination="7OA-3B-odE" id="2j8-KK-J7Y"/>
