@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DefaultWorkoutCell: BaseCollectionViewCell {
+final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!

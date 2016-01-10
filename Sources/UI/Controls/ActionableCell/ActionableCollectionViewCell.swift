@@ -83,11 +83,6 @@ extension ActionableCollectionViewCell: UIScrollViewDelegate {
             scrollView.contentOffset.x = 0
             scrollView.contentOffset.y = 0
         }
-        
-        // Shift scroll view frame to leave action items expanded.
-        if scrollView.contentOffset.x >= actionsContentView.frame.size.width {
-            scrollView.frame.origin.x = -actionsContentView.frame.size.width
-        }
     }
     
     func scrollViewWillEndDragging(scrollView: UIScrollView,

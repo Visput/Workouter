@@ -42,6 +42,13 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         searchResults = nil
     }
     
+    func hideCellsActions() {
+        let visibleCells = collectionView.visibleCells() as! [DefaultWorkoutCell]
+        for cell in visibleCells {
+            cell.actionsVisible = false
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentWorkouts.count
     }
@@ -62,13 +69,11 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         
         let workout = currentWorkouts[indexPath.row]
         cell.fillWithWorkout(workout)
+        cell.didSelectAction = { [unowned self] in
+            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
+        }
         
         return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let workout = currentWorkouts[indexPath.row]
-        navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
