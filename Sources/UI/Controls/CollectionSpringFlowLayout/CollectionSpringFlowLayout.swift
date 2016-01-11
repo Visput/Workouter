@@ -47,10 +47,9 @@ final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
             }
             
         } else if items.count < animator.behaviors.count {
-            let behaviorsToRemove = animator.behaviors[items.count ..< animator.behaviors.count]
-            for behavior in behaviorsToRemove {
-                animator.removeBehavior(behavior)
-            }
+            // Remove all behaviors to prevent enormous bouncing animation.
+            animator.removeAllBehaviors()
+            return items
         }
         
         return animator.itemsInRect(rect) as? [UICollectionViewLayoutAttributes]
