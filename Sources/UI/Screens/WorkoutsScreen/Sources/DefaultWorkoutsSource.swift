@@ -65,6 +65,8 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         cell.didSelectAction = { [unowned self] in
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
         }
+        cell.favoriteButton.tag = indexPath.row
+        cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
         
         return cell
     }
@@ -89,5 +91,14 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         commitViewController viewControllerToCommit: UIViewController) {
             
             navigationManager.pushScreen(viewControllerToCommit, animated: true)
+    }
+}
+
+extension DefaultWorkoutsSource {
+    
+    @objc private func favoriteButtonDidPress(sender: UIButton) {
+        let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! DefaultWorkoutCell
+        cell.actionsVisible = false
+        sender.selected = !sender.selected
     }
 }

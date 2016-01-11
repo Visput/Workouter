@@ -16,6 +16,8 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var cardView: UIView!
     
+    @IBOutlet private(set) weak var favoriteButton: UIButton!
+    
     private(set) var workout: Workout?
     
     func fillWithWorkout(workout: Workout) {

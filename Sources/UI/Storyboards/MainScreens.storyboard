@@ -304,14 +304,16 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-fY-Mxa" userLabel="Actions Stack View">
                                                             <rect key="frame" x="273" y="0.0" width="70" height="128"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-Tk-y5f" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-Tk-y5f">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="128"/>
-                                                                    <color key="backgroundColor" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.91372549533843994" green="0.98039215803146362" blue="0.96078431606292725" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="6DU-fF-HHX"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                                    <state key="normal" title="Save"/>
+                                                                    <state key="normal" image="icon_star_green"/>
+                                                                    <state key="selected" image="icon_star_filled_green"/>
+                                                                    <state key="highlighted" image="icon_star_filled_green"/>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -531,6 +533,7 @@
                                             <outlet property="cardView" destination="4xT-km-ajt" id="I9F-Rr-JE0"/>
                                             <outlet property="descriptionLabel" destination="dMd-TA-KTQ" id="VVS-1S-w2T"/>
                                             <outlet property="durationLabel" destination="e0q-aD-6yd" id="NFJ-M2-0Th"/>
+                                            <outlet property="favoriteButton" destination="fwA-Tk-y5f" id="5Nx-8T-1IN"/>
                                             <outlet property="nameLabel" destination="i7X-bg-cid" id="dng-MK-XOK"/>
                                             <outlet property="scrollView" destination="7Yc-Kq-qMT" id="mGe-p0-KMO"/>
                                             <outlet property="stepsCountLabel" destination="xPl-Eu-XOF" id="T5V-tE-2On"/>
@@ -1703,6 +1706,8 @@
         <image name="icon_dot_green" width="6" height="6"/>
         <image name="icon_info_green" width="60" height="60"/>
         <image name="icon_magic_box_green" width="88" height="88"/>
+        <image name="icon_star_filled_green" width="32" height="32"/>
+        <image name="icon_star_green" width="32" height="32"/>
         <image name="icon_statistics_green" width="88" height="88"/>
         <image name="icon_workouts_green" width="88" height="88"/>
         <image name="page_new_workout_green" width="311" height="174"/>
