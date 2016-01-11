@@ -14,7 +14,7 @@ class BaseView: UIView {
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     var bottomSpaceDefaultValue: CGFloat = 0.0
     
-    /// If true then 'endEditing:' is called when user touches view.
+    /// If true then `endEditing:` is called when user touches view.
     /// Used for hiding keyboard.
     var endEditingOnTouch = true
     
@@ -70,7 +70,7 @@ extension BaseView {
             animations: { 
                 self.bottomSpace.constant = keyboardHeight
                 
-                // Call 'layoutIfNeeded' only if view already appeared.
+                // Call `layoutIfNeeded` only if view already appeared.
                 // It will prevent from unnecessary animations when keyboard and view appear at the same moment.
                 if self.appearanceState != .Undefined &&
                     self.appearanceState != .DidLoad &&

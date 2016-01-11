@@ -55,15 +55,17 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             cell.cardView.tag = indexPath.row
             
             // Register cell if it's not reused yet.
-            if cell.workout == nil {
+            if cell.item == nil {
                 viewController.registerForPreviewingWithDelegate(self, sourceView: cell.cardView)
             }
         }
         
         let workout = currentWorkouts[indexPath.row]
-        cell.fillWithWorkout(workout)
+        let clonedWorkout = workoutsProvider.workoutWithOriginalIdentifier(workout.identifier)
+        let item = DefaultWorkoutCellItem(workout: workout, clonedWorkout: clonedWorkout)
+        cell.fillWithItem(item)
         cell.didSelectAction = { [unowned self] in
-            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
+            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.item!.workout, animated: true)
         }
         cell.favoriteButton.tag = indexPath.row
         cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
@@ -76,7 +78,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             
             guard active else { return nil }
             
-            // Check if cell is 'editable' state.
+            // Check if cell is `editable` state.
             let workoutIndex = previewingContext.sourceView.tag
             let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: workoutIndex, inSection: 0)) as! DefaultWorkoutCell
             guard !cell.actionsVisible else { return nil }
@@ -97,8 +99,25 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
 extension DefaultWorkoutsSource {
     
     @objc private func favoriteButtonDidPress(sender: UIButton) {
+        sender.selected = !sender.selected
+        
         let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! DefaultWorkoutCell
         cell.actionsVisible = false
-        sender.selected = !sender.selected
+        
+        let item = cell.item!
+        var clonedWorkout: Workout? = nil
+        
+        if sender.selected {
+            // Add workout to `My Workouts`.
+            clonedWorkout = item.workout.clone()
+            workoutsProvider.addWorkout(clonedWorkout!)
+        } else {
+            // Remove workout from `My Workouts`.
+            workoutsProvider.removeWorkout(item.clonedWorkout!)
+            clonedWorkout = nil
+        }
+        
+        let updatedItem = DefaultWorkoutCellItem(workout: item.workout, clonedWorkout: clonedWorkout)
+        cell.fillWithItem(updatedItem)
     }
 }

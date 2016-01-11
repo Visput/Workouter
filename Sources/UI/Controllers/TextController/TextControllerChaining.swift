@@ -11,12 +11,12 @@ import Foundation
 protocol TextControllerChaining {
     
     /// Use this property if you need to activate another text controller
-    /// when user clicks 'return' key.
+    /// when user clicks `return` key.
     /// If this property is nil then current text controller will be
-    /// deactivated when user clicks 'return' key.
+    /// deactivated when user clicks `return` key.
     var nextTextController: TextControllerChaining? { get set }
     
     /// Use this property to activate next text controller in chain
-    /// when user clicks 'return' key.
+    /// when user clicks `return` key.
     var active: Bool { get set }
 }

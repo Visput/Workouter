@@ -466,17 +466,46 @@
                                                                                         </mask>
                                                                                     </variation>
                                                                                 </label>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_filled_small_green" translatesAutoresizingMaskIntoConstraints="NO" id="B9O-5B-EPC">
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9An-3b-gBJ">
                                                                                     <rect key="frame" x="291" y="0.0" width="20" height="20"/>
+                                                                                    <subviews>
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_filled_small_green" translatesAutoresizingMaskIntoConstraints="NO" id="B9O-5B-EPC">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="height" constant="20" id="7ZJ-v2-BXT"/>
+                                                                                                <constraint firstAttribute="height" priority="999" constant="20" id="bWF-9C-xvk"/>
+                                                                                                <constraint firstAttribute="width" constant="20" id="x9N-BQ-FIt"/>
+                                                                                            </constraints>
+                                                                                            <variation key="default">
+                                                                                                <mask key="constraints">
+                                                                                                    <exclude reference="7ZJ-v2-BXT"/>
+                                                                                                    <exclude reference="bWF-9C-xvk"/>
+                                                                                                    <exclude reference="x9N-BQ-FIt"/>
+                                                                                                </mask>
+                                                                                            </variation>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="height" constant="20" id="7ZJ-v2-BXT"/>
-                                                                                        <constraint firstAttribute="width" constant="20" id="x9N-BQ-FIt"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="B9O-5B-EPC" secondAttribute="bottom" id="2N2-JY-Nb7"/>
+                                                                                        <constraint firstItem="B9O-5B-EPC" firstAttribute="leading" secondItem="9An-3b-gBJ" secondAttribute="leading" id="Gul-QD-Z3W"/>
+                                                                                        <constraint firstAttribute="width" constant="20" id="Vcf-Gy-BVP"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="B9O-5B-EPC" secondAttribute="trailing" id="sR9-5H-enD"/>
+                                                                                        <constraint firstItem="B9O-5B-EPC" firstAttribute="top" secondItem="9An-3b-gBJ" secondAttribute="top" id="yRW-4C-pf8"/>
                                                                                     </constraints>
-                                                                                </imageView>
+                                                                                </view>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstItem="B9O-5B-EPC" firstAttribute="top" secondItem="qTa-QW-sot" secondAttribute="top" id="uIu-Ll-EeP"/>
+                                                                                <constraint firstItem="i7X-bg-cid" firstAttribute="top" secondItem="qTa-QW-sot" secondAttribute="top" id="5jJ-eN-rVF"/>
+                                                                                <constraint firstAttribute="height" constant="20" id="Dgt-ZK-gLG"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="i7X-bg-cid" secondAttribute="bottom" id="F4B-WT-CoQ"/>
                                                                             </constraints>
+                                                                            <variation key="default">
+                                                                                <mask key="constraints">
+                                                                                    <exclude reference="5jJ-eN-rVF"/>
+                                                                                    <exclude reference="F4B-WT-CoQ"/>
+                                                                                </mask>
+                                                                            </variation>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -145,8 +145,8 @@ extension ExpandableTableView {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Call 'reloadData' before setting 'tableFooterView' because
-        // 'tableFooterView' initialization results in calling 'reloadData' for 'UITableView' object.
+        // Call `reloadData` before setting `tableFooterView` because
+        // `tableFooterView` initialization results in calling `reloadData` for `UITableView` object.
         reloadData()
     }
     

@@ -70,12 +70,6 @@ extension WorkoutsProvider {
         commitChanges()
     }
     
-    func updateWorkoutAtIndex(index: Int, withWorkout newWorkout: Workout) {
-        userWorkouts[index] = newWorkout
-        notifyObserversDidUpdateUserWorkouts()
-        commitChanges()
-    }
-    
     func updateWorkout(workout: Workout, withWorkout newWorkout: Workout) {
         for (index, aWorkout) in userWorkouts.enumerate() {
             if aWorkout.identifier == workout.identifier {
@@ -91,6 +85,18 @@ extension WorkoutsProvider {
         var resultWorkout: Workout? = nil
         for workout in userWorkouts {
             if workout.identifier == identifier {
+                resultWorkout = workout
+                break
+            }
+        }
+        
+        return resultWorkout
+    }
+    
+    func workoutWithOriginalIdentifier(originalIdentifier: String) -> Workout? {
+        var resultWorkout: Workout? = nil
+        for workout in userWorkouts {
+            if workout.originalIdentifier == originalIdentifier {
                 resultWorkout = workout
                 break
             }

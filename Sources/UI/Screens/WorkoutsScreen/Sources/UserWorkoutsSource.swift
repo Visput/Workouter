@@ -95,7 +95,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             
             guard active else { return nil }
             
-            // Check if cell is 'editable' state.
+            // Check if cell is `editable` state.
             let workoutIndex = previewingContext.sourceView.tag
             let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: workoutIndex, inSection: 0)) as! UserWorkoutCell
             guard !cell.actionsVisible else { return nil }

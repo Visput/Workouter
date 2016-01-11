@@ -35,7 +35,7 @@ final class WorkoutTemplatesScreen: BaseScreen {
     }
     
     deinit {
-        // iOS 9 bug requires to manually remove search controller view from it's superview.
+        // iOS 9 bug requires to manually remove search controller view from its superview.
         searchController?.view.removeFromSuperview()
     }
 }

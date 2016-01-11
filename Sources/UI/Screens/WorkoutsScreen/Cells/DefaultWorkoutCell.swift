@@ -19,21 +19,24 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     @IBOutlet private(set) weak var favoriteButton: UIButton!
     
-    private(set) var workout: Workout?
+    private(set) var item: DefaultWorkoutCellItem?
     
-    func fillWithWorkout(workout: Workout) {
-        self.workout = workout
+    func fillWithItem(item: DefaultWorkoutCellItem) {
+        self.item = item
         
-        nameLabel.text = workout.name
-        descriptionLabel.text = workout.workoutDescription
+        nameLabel.text = item.workout.name
+        descriptionLabel.text = item.workout.workoutDescription
         
-        withVaList([workout.steps.count]) { pointer in
+        withVaList([item.workout.steps.count]) { pointer in
             stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
         }
         
-        durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
+        durationLabel.attributedText = NSAttributedString.durationStringForWorkout(item.workout,
             valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
             unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
             color: UIColor.secondaryTextColor())
+        
+        favoriteIcon.hidden = item.clonedWorkout == nil
+        favoriteButton.selected = item.clonedWorkout != nil
     }
 }

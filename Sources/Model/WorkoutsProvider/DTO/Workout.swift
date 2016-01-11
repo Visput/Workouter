@@ -19,7 +19,10 @@ final class Workout: NSObject, NSCoding, Mappable {
     private(set) var steps: [Step] = []
     private(set) var identifier: String = ""
     
-    required init(name: String, description: String, steps: [Step]) {
+    /// Identifier of original workout which was cloned to create this workout.
+    private(set) var originalIdentifier: String?
+    
+    init(name: String, description: String, steps: [Step]) {
         self.name = name
         self.workoutDescription = description
         self.steps = steps
@@ -27,11 +30,20 @@ final class Workout: NSObject, NSCoding, Mappable {
         super.init()
     }
     
-    required init(name: String, description: String, steps: [Step], identifier: String) {
+    private init(name: String, description: String, steps: [Step], identifier: String) {
         self.name = name
         self.workoutDescription = description
         self.steps = steps
         self.identifier = identifier
+        super.init()
+    }
+    
+    private init(name: String, description: String, steps: [Step], originalIdentifier: String?) {
+        self.name = name
+        self.workoutDescription = description
+        self.steps = steps
+        self.originalIdentifier = originalIdentifier
+        self.identifier = NSUUID().UUIDString
         super.init()
     }
     
@@ -40,6 +52,7 @@ final class Workout: NSObject, NSCoding, Mappable {
         workoutDescription = aDecoder.decodeObjectForKey("workoutDescription") as! String
         steps = aDecoder.decodeObjectForKey("steps") as! [Step]
         identifier = aDecoder.decodeObjectForKey("identifier") as! String
+        originalIdentifier = aDecoder.decodeObjectForKey("originalIdentifier") as? String
         super.init()
     }
     
@@ -48,6 +61,7 @@ final class Workout: NSObject, NSCoding, Mappable {
         aCoder.encodeObject(workoutDescription, forKey: "workoutDescription")
         aCoder.encodeObject(steps, forKey: "steps")
         aCoder.encodeObject(identifier, forKey: "identifier")
+        aCoder.encodeObject(originalIdentifier, forKey: "originalIdentifier")
     }
     
     init?(_ map: Map) {}
@@ -57,16 +71,18 @@ final class Workout: NSObject, NSCoding, Mappable {
         workoutDescription <- map["description"]
         steps <- map["steps"]
         identifier <- map["identifier"]
+        originalIdentifier <- map["originalIdentifier"]
     }
     
     /**
      Creates new Workout instance with identical fields values,
      but with new identifier.
+     Workout `identifier` is set as `originalIdentifier` for cloned workout.
      
      - returns: New instance of Workout.
      */
     func clone() -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps)
+        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, originalIdentifier: identifier)
     }
 }
 

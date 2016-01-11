@@ -12,7 +12,7 @@ final class WorkoutsSearchRequest: NSObject {
     
     let searchText: String
     
-    /// Set to 'true' if your intent is to search templates for new workout.
+    /// Set to `true` if your intent is to search templates for new workout.
     let isTemplates: Bool
     
     let group: WorkoutsGroup

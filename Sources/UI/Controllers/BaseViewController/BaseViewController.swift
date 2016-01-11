@@ -59,7 +59,7 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     
     func keyboardWillShow(notification: NSNotification) {
-        // Set true in 'willShow' method instead of 'didShow' method
+        // Set true in `willShow` method instead of `didShow` method
         // for ability to use this flag during keyboard appearance.
         keyboardPresented = true
     }
@@ -69,7 +69,7 @@ extension BaseViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        // Set false in 'willHide' method instead of 'didHide' method
+        // Set false in `willHide` method instead of `didHide` method
         // for ability to use this flag during keyboard disappearance.
         keyboardPresented = false
     }
