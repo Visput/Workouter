@@ -18,6 +18,7 @@ final class WorkoutsView: BaseScreenView {
     
     override func didLoad() {
         super.didLoad()
+        endEditingOnTouch = false
         workoutsCollectionView.collectionViewLayout = CollectionSpringFlowLayout()
     }
     
