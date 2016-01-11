@@ -323,22 +323,8 @@
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHK-e5-DIG" userLabel="Content View">
                                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="7 Minutes Workout" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-bg-cid">
-                                                                            <rect key="frame" x="16" y="16" width="311" height="26.5"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="44" id="EK6-ol-ppM"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                                            <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                            <variation key="default">
-                                                                                <mask key="constraints">
-                                                                                    <exclude reference="EK6-ol-ppM"/>
-                                                                                </mask>
-                                                                            </variation>
-                                                                        </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportive schedule of fitness built by Hamilton's McMaster university in Ontario." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-TA-KTQ">
-                                                                            <rect key="frame" x="16" y="50" width="311" height="33.5"/>
+                                                                            <rect key="frame" x="16" y="44" width="311" height="39.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="44" id="MEI-UH-vZN"/>
                                                                             </constraints>
@@ -463,18 +449,47 @@
                                                                                 <constraint firstAttribute="height" constant="20" id="AIa-BR-QGm"/>
                                                                             </constraints>
                                                                         </stackView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qTa-QW-sot">
+                                                                            <rect key="frame" x="16" y="16" width="311" height="20"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="7 Minutes Workout" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-bg-cid">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="283" height="20"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="44" id="EK6-ol-ppM"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                                                    <color key="textColor" red="0.10588235410000001" green="0.2156862766" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                    <variation key="default">
+                                                                                        <mask key="constraints">
+                                                                                            <exclude reference="EK6-ol-ppM"/>
+                                                                                        </mask>
+                                                                                    </variation>
+                                                                                </label>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_filled_small_green" translatesAutoresizingMaskIntoConstraints="NO" id="B9O-5B-EPC">
+                                                                                    <rect key="frame" x="291" y="0.0" width="20" height="20"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="20" id="7ZJ-v2-BXT"/>
+                                                                                        <constraint firstAttribute="width" constant="20" id="x9N-BQ-FIt"/>
+                                                                                    </constraints>
+                                                                                </imageView>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="B9O-5B-EPC" firstAttribute="top" secondItem="qTa-QW-sot" secondAttribute="top" id="uIu-Ll-EeP"/>
+                                                                            </constraints>
+                                                                        </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="i7X-bg-cid" firstAttribute="leading" secondItem="IHK-e5-DIG" secondAttribute="leading" constant="16" id="2Ct-nb-7j2"/>
+                                                                        <constraint firstItem="qTa-QW-sot" firstAttribute="leading" secondItem="IHK-e5-DIG" secondAttribute="leading" constant="16" id="6Yi-OQ-EqN"/>
                                                                         <constraint firstItem="dMd-TA-KTQ" firstAttribute="leading" secondItem="IHK-e5-DIG" secondAttribute="leading" constant="16" id="7g9-75-5va"/>
+                                                                        <constraint firstItem="dMd-TA-KTQ" firstAttribute="top" secondItem="qTa-QW-sot" secondAttribute="bottom" constant="8" id="8BM-48-qwe"/>
+                                                                        <constraint firstItem="qTa-QW-sot" firstAttribute="top" secondItem="IHK-e5-DIG" secondAttribute="top" constant="16" id="Men-uN-hoI"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="qTa-QW-sot" secondAttribute="trailing" constant="16" id="NZM-JR-EwH"/>
                                                                         <constraint firstAttribute="trailing" secondItem="dMd-TA-KTQ" secondAttribute="trailing" constant="16" id="T1i-9u-A5N"/>
                                                                         <constraint firstItem="5E4-pO-0Zg" firstAttribute="leading" secondItem="IHK-e5-DIG" secondAttribute="leading" constant="16" id="aME-jx-Wyq"/>
                                                                         <constraint firstAttribute="bottom" secondItem="5E4-pO-0Zg" secondAttribute="bottom" constant="16" id="hQa-iO-BvL"/>
                                                                         <constraint firstItem="5E4-pO-0Zg" firstAttribute="top" secondItem="dMd-TA-KTQ" secondAttribute="bottom" constant="8" id="k8A-xa-iFd"/>
-                                                                        <constraint firstItem="i7X-bg-cid" firstAttribute="top" secondItem="IHK-e5-DIG" secondAttribute="top" constant="16" id="pBC-Mc-yR2"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="i7X-bg-cid" secondAttribute="trailing" constant="16" id="wDC-RI-hvf"/>
-                                                                        <constraint firstItem="dMd-TA-KTQ" firstAttribute="top" secondItem="i7X-bg-cid" secondAttribute="bottom" constant="8" id="wDr-Ak-LSV"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -534,6 +549,7 @@
                                             <outlet property="descriptionLabel" destination="dMd-TA-KTQ" id="VVS-1S-w2T"/>
                                             <outlet property="durationLabel" destination="e0q-aD-6yd" id="NFJ-M2-0Th"/>
                                             <outlet property="favoriteButton" destination="fwA-Tk-y5f" id="5Nx-8T-1IN"/>
+                                            <outlet property="favoriteIcon" destination="B9O-5B-EPC" id="5IV-74-tQV"/>
                                             <outlet property="nameLabel" destination="i7X-bg-cid" id="dng-MK-XOK"/>
                                             <outlet property="scrollView" destination="7Yc-Kq-qMT" id="mGe-p0-KMO"/>
                                             <outlet property="stepsCountLabel" destination="xPl-Eu-XOF" id="T5V-tE-2On"/>
@@ -1707,6 +1723,7 @@
         <image name="icon_info_green" width="60" height="60"/>
         <image name="icon_magic_box_green" width="88" height="88"/>
         <image name="icon_star_filled_green" width="32" height="32"/>
+        <image name="icon_star_filled_small_green" width="20" height="20"/>
         <image name="icon_star_green" width="32" height="32"/>
         <image name="icon_statistics_green" width="88" height="88"/>
         <image name="icon_workouts_green" width="88" height="88"/>

@@ -15,6 +15,7 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     @IBOutlet private weak var stepsCountLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var cardView: UIView!
+    @IBOutlet private(set) weak var favoriteIcon: UIImageView!
     
     @IBOutlet private(set) weak var favoriteButton: UIButton!
     
