@@ -66,6 +66,15 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
         }
         
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: Selector("deleteButtonDidPress:"), forControlEvents: .TouchUpInside)
+        
+        cell.cloneButton.tag = indexPath.row
+        cell.cloneButton.addTarget(self, action: Selector("cloneButtonDidPress:"), forControlEvents: .TouchUpInside)
+        
+        cell.reorderButton.tag = indexPath.row
+        cell.reorderButton.addTarget(self, action: Selector("reorderButtonDidPress:"), forControlEvents: .TouchUpInside)
+        
         // Actions are not enabled while search is active.
         cell.actionsEnabled = searchResults == nil
         
@@ -110,5 +119,52 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         commitViewController viewControllerToCommit: UIViewController) {
             
             navigationManager.pushScreen(viewControllerToCommit, animated: true)
+    }
+}
+
+extension UserWorkoutsSource {
+    
+    @objc private func deleteButtonDidPress(sender: UIButton) {
+        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! UserWorkoutCell
+        cell.actionsVisible = false
+        
+        collectionView.performBatchUpdates({
+            self.workoutsProvider.removeWorkoutAtIndex(indexPath.row)
+            self.collectionView.deleteItemsAtIndexPaths([indexPath])
+            
+            }, completion: { _ in
+                // Reload data after animation completed to update actions buttons tags.
+                self.collectionView.reloadData()
+        })
+    }
+    
+    @objc private func cloneButtonDidPress(sender: UIButton) {
+        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! UserWorkoutCell
+        cell.actionsVisible = false
+        
+        let newIndexPath = NSIndexPath(forItem: indexPath.row + 1, inSection: indexPath.section)
+        let workoutNameSufix = NSLocalizedString(" Copy", comment: "")
+        let workout = cell.workout!
+        let clonedWorkout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
+        
+        collectionView.performBatchUpdates({
+            self.workoutsProvider.insertWorkout(clonedWorkout, atIndex: newIndexPath.row)
+            self.collectionView.insertItemsAtIndexPaths([newIndexPath])
+            
+            }, completion: { _ in
+                self.collectionView.scrollToItemAtIndexPath(newIndexPath,
+                    atScrollPosition: .Bottom,
+                    animated: true)
+                // Reload data after scrolling completed to update actions buttons tags.
+                self.executeAfterDelay(1.0, task: { () -> () in
+                    self.collectionView.reloadData()
+                })
+        })
+    }
+    
+    @objc private func reorderButtonDidPress(sender: UIButton) {
+        
     }
 }

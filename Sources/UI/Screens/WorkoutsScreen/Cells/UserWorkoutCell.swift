@@ -16,6 +16,10 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var cardView: UIView!
     
+    @IBOutlet private(set) weak var deleteButton: UIButton!
+    @IBOutlet private(set) weak var cloneButton: UIButton!
+    @IBOutlet private(set) weak var reorderButton: UIButton!
+    
     private(set) var workout: Workout?
     
     func fillWithWorkout(workout: Workout) {

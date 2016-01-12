@@ -81,6 +81,12 @@ extension WorkoutsProvider {
         }
     }
     
+    func insertWorkout(workout: Workout, atIndex index: Int) {
+        userWorkouts.insert(workout, atIndex: index)
+        notifyObserversDidUpdateUserWorkouts()
+        commitChanges()
+    }
+    
     func workoutWithIdentifier(identifier: String) -> Workout? {
         var resultWorkout: Workout? = nil
         for workout in userWorkouts {

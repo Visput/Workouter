@@ -48,7 +48,7 @@ extension BaseDialogView {
         UIView.animateWithDuration(animationDuration,
             delay: 0.0,
             options: .CurveEaseOut,
-            animations: { () -> Void in
+            animations: {
                 self.backgroundView.alpha = 0.0
                 self.contentViewBottomSpace.constant = -self.contentView.bounds.size.height
                 self.layoutIfNeeded()
