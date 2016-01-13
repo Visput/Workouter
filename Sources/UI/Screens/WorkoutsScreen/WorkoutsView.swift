@@ -38,8 +38,7 @@ final class WorkoutsView: BaseScreenView {
         // Collection view.
         let flowLayout = workoutsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
-        // Top inset: status bar (20) + navigation bar (44) + toolbar (44) + inset (16) = 124
-        flowLayout.sectionInset.top = 124.0
+        flowLayout.sectionInset.top = 16.0
         flowLayout.sectionInset.bottom = 16.0
         flowLayout.minimumLineSpacing = 16.0
     }
