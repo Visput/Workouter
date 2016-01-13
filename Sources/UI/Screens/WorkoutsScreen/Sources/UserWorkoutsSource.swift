@@ -166,7 +166,6 @@ extension UserWorkoutsSource {
             
         case .Began:
             cell.applyAppearanceForReorderingInProgress(true)
-            
             let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
             collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
             
@@ -175,10 +174,12 @@ extension UserWorkoutsSource {
             targetLocation.x = collectionView.bounds.size.width / 2.0
             collectionView.updateInteractiveMovementTargetPosition(targetLocation)
             updateVisibleCellsButtonsTags()
+            
         case .Ended:
             collectionView.endInteractiveMovement()
             updateVisibleCellsButtonsTags()
             cell.applyAppearanceForReorderingInProgress(false)
+            
         default:
             collectionView.cancelInteractiveMovement()
             updateVisibleCellsButtonsTags()
