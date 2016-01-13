@@ -32,7 +32,24 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
         }
     }
     
+    override var actionsVisible: Bool {
+        didSet {
+            if !actionsVisible {
+                cardView.layer.borderWidth = 0.0
+                cardView.layer.borderColor = UIColor.clearColor().CGColor
+            }
+        }
+    }
+    
     private(set) var workout: Workout?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        deleteButton.exclusiveTouch = true
+        cloneButton.exclusiveTouch = true
+        reorderButton.exclusiveTouch = true
+        scrollView.exclusiveTouch = true
+    }
     
     func fillWithWorkout(workout: Workout) {
         self.workout = workout
@@ -50,15 +67,9 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
             color: UIColor.secondaryTextColor())
     }
     
-    func applyAppearanceForReorderingInProgress(reorderingInProgress: Bool) {
-        if reorderingInProgress {
-            cardView.layer.borderWidth = 1.0
-            cardView.layer.borderColor = reorderButton.backgroundColor!.CGColor
-            setActionsOverlayOffset(reorderButton.bounds.size.width)
-        } else {
-            cardView.layer.borderWidth = 0.0
-            cardView.layer.borderColor = UIColor.clearColor().CGColor
-            actionsVisible = false
-        }
+    func applyReorderingInProgressAppearance() {
+        cardView.layer.borderWidth = 1.0
+        cardView.layer.borderColor = reorderButton.backgroundColor!.CGColor
+        setActionsOverlayOffset(reorderButton.bounds.size.width)
     }
 }

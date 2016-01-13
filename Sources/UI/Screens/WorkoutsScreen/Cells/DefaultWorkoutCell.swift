@@ -21,6 +21,12 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     private(set) var item: DefaultWorkoutCellItem?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        favoriteButton.exclusiveTouch = true
+        scrollView.exclusiveTouch = true
+    }
+    
     func fillWithItem(item: DefaultWorkoutCellItem) {
         self.item = item
         

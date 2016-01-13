@@ -161,29 +161,30 @@ extension UserWorkoutsSource {
     @objc private func reorderButtonDidPress(gesture: UILongPressGestureRecognizer) {
         let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
         guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? UserWorkoutCell else { return }
+        var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
+        targetLocation.x = collectionView.bounds.size.width / 2.0
         
         switch(gesture.state) {
             
         case .Began:
-            cell.applyAppearanceForReorderingInProgress(true)
             let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
             collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
+            collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+            cell.applyReorderingInProgressAppearance()
             
         case .Changed:
-            var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
-            targetLocation.x = collectionView.bounds.size.width / 2.0
             collectionView.updateInteractiveMovementTargetPosition(targetLocation)
             updateVisibleCellsButtonsTags()
             
         case .Ended:
             collectionView.endInteractiveMovement()
             updateVisibleCellsButtonsTags()
-            cell.applyAppearanceForReorderingInProgress(false)
+            collectionView.hideCellsActions()
             
         default:
             collectionView.cancelInteractiveMovement()
             updateVisibleCellsButtonsTags()
-            cell.applyAppearanceForReorderingInProgress(false)
+            collectionView.hideCellsActions()
         }
     }
     
