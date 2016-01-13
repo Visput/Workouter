@@ -20,6 +20,18 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
     @IBOutlet private(set) weak var cloneButton: UIButton!
     @IBOutlet private(set) weak var reorderButton: UIButton!
     
+    var reorderGestureRecognizer: UILongPressGestureRecognizer? {
+        willSet {
+            guard reorderGestureRecognizer != nil else { return }
+            reorderButton.removeGestureRecognizer(reorderGestureRecognizer!)
+        }
+        
+        didSet {
+            guard reorderGestureRecognizer != nil else { return }
+            reorderButton.addGestureRecognizer(reorderGestureRecognizer!)
+        }
+    }
+    
     private(set) var workout: Workout?
     
     func fillWithWorkout(workout: Workout) {
@@ -36,5 +48,17 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
             valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
             unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
             color: UIColor.secondaryTextColor())
+    }
+    
+    func applyAppearanceForReorderingInProgress(reorderingInProgress: Bool) {
+        if reorderingInProgress {
+            cardView.layer.borderWidth = 1.0
+            cardView.layer.borderColor = reorderButton.backgroundColor!.CGColor
+            setActionsOverlayOffset(reorderButton.bounds.size.width)
+        } else {
+            cardView.layer.borderWidth = 0.0
+            cardView.layer.borderColor = UIColor.clearColor().CGColor
+            actionsVisible = false
+        }
     }
 }

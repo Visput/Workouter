@@ -61,13 +61,13 @@ final class WorkoutsScreen: BaseScreen {
     
     override func viewWillDisappear(animated: Bool) {
         workoutsView.workoutsCollectionView.hideCellsActions()
-        setSearchActive(false)
         super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
         // Handle workouts updates only when view isn't currently displayed.
         workoutsProvider.observers.addObserver(self)
+        setSearchActive(false)
         super.viewDidDisappear(animated)
     }
 }

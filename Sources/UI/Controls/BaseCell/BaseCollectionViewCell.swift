@@ -26,9 +26,10 @@ class BaseCollectionViewCell: UICollectionViewCell {
         let alpha: CGFloat = semiTransparent ? 0.4 : 1.0
         
         if animated {
-            UIView.animateWithDefaultDuration {
+            let animationDuration = semiTransparent ? 0.1 : 0.3
+            UIView.animateWithDuration(animationDuration, animations: {
                 self.alpha = alpha
-            }
+            })
         } else {
             self.alpha = alpha
         }

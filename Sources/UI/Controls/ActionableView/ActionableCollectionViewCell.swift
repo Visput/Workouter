@@ -15,7 +15,8 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet private(set) weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("scrollViewDidPress:"))
+            
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("scrollViewDidTap:"))
             scrollView.addGestureRecognizer(tapRecognizer)
         }
     }
@@ -62,15 +63,6 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    @objc private func scrollViewDidPress(sender: AnyObject) {
-        selected = true
-        didSelectAction?()
-    }
-    
-    @objc private func scrollViewDidPan(sender: AnyObject) {
-        highlighted = true
-    }
-    
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         if actionsVisible && CGRectContainsPoint(scrollView.frame, point) {
             actionsVisible = false
@@ -78,6 +70,22 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         } else {
             return super.hitTest(point, withEvent: event)
         }
+    }
+    
+    func setActionsOverlayOffset(offset: CGFloat) {
+        UIView.animateWithDuration(0.8,
+            delay: 0.0,
+            usingSpringWithDamping: 1.0,
+            initialSpringVelocity: 1.0,
+            options: [.CurveEaseIn],
+            animations: {
+                self.scrollView.frame.origin.x = -offset
+            }, completion: nil)
+    }
+    
+    @objc private func scrollViewDidTap(gesture: UITapGestureRecognizer) {
+        selected = true
+        didSelectAction?()
     }
 }
 

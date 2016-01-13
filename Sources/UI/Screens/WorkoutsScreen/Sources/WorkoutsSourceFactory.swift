@@ -25,7 +25,7 @@ class WorkoutsSourceFactory {
     private(set) var userWorkokutsSource: UserWorkoutsSource!
     private(set) var defaultWorkoutsSource: DefaultWorkoutsSource!
     
-    weak var collectionView: UICollectionView! {
+    weak var collectionView: ActionableCollectionView! {
         didSet {
             userWorkokutsSource.collectionView = collectionView
             defaultWorkoutsSource.collectionView = collectionView

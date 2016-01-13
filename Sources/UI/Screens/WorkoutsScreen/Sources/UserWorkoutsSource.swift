@@ -18,7 +18,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         return searchResults ?? workoutsProvider.userWorkouts
     }
     
-    weak var collectionView: UICollectionView!
+    weak var collectionView: ActionableCollectionView!
     private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
@@ -66,38 +66,35 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
         }
         
-        cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: Selector("deleteButtonDidPress:"), forControlEvents: .TouchUpInside)
-        
-        cell.cloneButton.tag = indexPath.row
         cell.cloneButton.addTarget(self, action: Selector("cloneButtonDidPress:"), forControlEvents: .TouchUpInside)
-        
-        cell.reorderButton.tag = indexPath.row
-        cell.reorderButton.addTarget(self, action: Selector("reorderButtonDidPress:"), forControlEvents: .TouchUpInside)
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderButtonDidPress:")
+        gestureRecognizer.minimumPressDuration = 0.1
+        cell.reorderGestureRecognizer = gestureRecognizer
+        updateButtonsTagsForCell(cell, index: indexPath.row)
         
         // Actions are not enabled while search is active.
-        cell.actionsEnabled = searchResults == nil
+        let actionsEnabled = searchResults == nil
+        if cell.actionsEnabled != actionsEnabled {
+            // Update property only if value changed to prevent side efects 
+            // in animations when it's called multiple times in a row.
+            cell.actionsEnabled = actionsEnabled
+        }
         
         return cell
     }
     
-    func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            
-            if editingStyle == .Delete {
-                workoutsProvider.removeWorkoutAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
-            }
-    }
-    
-    func tableView(tableView: UITableView,
-        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+    func collectionView(collectionView: UICollectionView,
+        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
         toIndexPath destinationIndexPath: NSIndexPath) {
-            
+
             workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+            updateVisibleCellsButtonsTags()
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectSelectedItemsAnimated(true)
+    }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -134,7 +131,7 @@ extension UserWorkoutsSource {
             self.collectionView.deleteItemsAtIndexPaths([indexPath])
             
             }, completion: { _ in
-                // Reload data after animation completed to update actions buttons tags.
+                // Reload data instead of updating buttons tags to prevent strange crashes (UICollectionView issue).
                 self.collectionView.reloadData()
         })
     }
@@ -154,17 +151,61 @@ extension UserWorkoutsSource {
             self.collectionView.insertItemsAtIndexPaths([newIndexPath])
             
             }, completion: { _ in
-                self.collectionView.scrollToItemAtIndexPath(newIndexPath,
-                    atScrollPosition: .Bottom,
-                    animated: true)
-                // Reload data after scrolling completed to update actions buttons tags.
-                self.executeAfterDelay(1.0, task: { () -> () in
-                    self.collectionView.reloadData()
-                })
+                // Scroll to show cell with cloned workout.
+                guard let newCell = self.collectionView.cellForItemAtIndexPath(newIndexPath) else {
+                    self.updateVisibleCellsButtonsTags()
+                    return
+                }
+                
+                let newCellFrame = self.collectionView.convertRect(newCell.frame, toView: self.collectionView.superview)
+
+                if !CGRectContainsRect(self.collectionView.frame, newCellFrame) {
+                    self.collectionView.scrollToItemAtIndexPath(newIndexPath,
+                        atScrollPosition: .Bottom,
+                        animated: true)
+                }
+                self.updateVisibleCellsButtonsTags()
         })
     }
     
-    @objc private func reorderButtonDidPress(sender: UIButton) {
+    @objc private func reorderButtonDidPress(gesture: UILongPressGestureRecognizer) {
+        let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
+        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? UserWorkoutCell else { return }
         
+        switch(gesture.state) {
+            
+        case .Began:
+            cell.applyAppearanceForReorderingInProgress(true)
+            
+            let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
+            collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
+            
+        case .Changed:
+            var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
+            targetLocation.x = collectionView.bounds.size.width / 2.0
+            collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+            updateVisibleCellsButtonsTags()
+        case .Ended:
+            collectionView.endInteractiveMovement()
+            updateVisibleCellsButtonsTags()
+            cell.applyAppearanceForReorderingInProgress(false)
+        default:
+            collectionView.cancelInteractiveMovement()
+            updateVisibleCellsButtonsTags()
+            cell.applyAppearanceForReorderingInProgress(false)
+        }
+    }
+    
+    private func updateVisibleCellsButtonsTags() {
+        for cell in collectionView.visibleCells() as! [UserWorkoutCell] {
+            let index = collectionView.indexPathForCell(cell)!.row
+            updateButtonsTagsForCell(cell, index: index)
+        }
+    }
+    
+    private func updateButtonsTagsForCell(cell: UserWorkoutCell, index: Int) {
+        cell.deleteButton.tag = index
+        cell.cloneButton.tag = index
+        cell.reorderButton.tag = index
     }
 }

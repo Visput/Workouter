@@ -18,7 +18,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         return searchResults ?? workoutsProvider.defaultWorkouts
     }
     
-    weak var collectionView: UICollectionView!
+    weak var collectionView: ActionableCollectionView!
     private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
@@ -71,6 +71,10 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectSelectedItemsAnimated(true)
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
