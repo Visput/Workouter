@@ -149,17 +149,21 @@ extension UserWorkoutsSource {
             
             }, completion: { _ in
                 // Scroll to show cell with cloned workout.
-                guard let newCell = self.collectionView.cellForItemAtIndexPath(newIndexPath) else {
-                    self.updateVisibleCellsButtonsTags()
-                    return
+                var newCellFrame: CGRect! = nil
+                
+                if let newCell = self.collectionView.cellForItemAtIndexPath(newIndexPath) {
+                    newCellFrame = self.collectionView.convertRect(newCell.frame, fromView: newCell.superview)
+                    
+                } else {
+                    // New cell is nil when it's not visible after inserted to collection view (UICollectionView bug).
+                    // Manually calculate its frame.
+                    let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+                    newCellFrame = self.collectionView.convertRect(cell.frame, fromView: cell.superview)
+                    newCellFrame.origin.y += newCellFrame.size.height + flowLayout.minimumLineSpacing
                 }
                 
-                let newCellFrame = self.collectionView.convertRect(newCell.frame, toView: self.collectionView.superview)
-
-                if !CGRectContainsRect(self.collectionView.frame, newCellFrame) {
-                    self.collectionView.scrollToItemAtIndexPath(newIndexPath,
-                        atScrollPosition: .Bottom,
-                        animated: true)
+                if !CGRectContainsRect(self.collectionView.bounds, newCellFrame) {
+                    self.collectionView.scrollRectToVisible(newCellFrame, animated: true)
                 }
                 self.updateVisibleCellsButtonsTags()
         })
