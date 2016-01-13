@@ -23,7 +23,7 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     
     var didSelectAction: (() -> Void)?
     
-    var contentOffsetToMakeActionsVisible: CGFloat = 70.0
+    var contentOffsetToMakeActionsVisible: CGFloat = 50.0
     
     var actionsEnabled: Bool = true {
         didSet {
