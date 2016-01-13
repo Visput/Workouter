@@ -148,6 +148,12 @@ extension WorkoutsScreen {
         navigationManager.setNavigationBarHidden(active, animated: true)
         if active {
             workoutsView.searchBar.becomeFirstResponder()
+            if workoutsView.searchBar.text == nil {
+                workoutsView.searchBar.text = ""
+            }
+            workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(workoutsView.searchBar.text!)
+            workoutsSources.userWorkokutsSource.searchWorkoutsWithText(workoutsView.searchBar.text!)
+            fillViewWithWorkoutsSources(workoutsSources)
         } else {
             workoutsView.searchBar.resignFirstResponder()
             workoutsView.searchBar.text = ""

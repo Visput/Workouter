@@ -73,10 +73,6 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectSelectedItemsAnimated(true)
-    }
-    
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             

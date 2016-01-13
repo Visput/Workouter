@@ -20,6 +20,9 @@ final class WorkoutsView: BaseScreenView {
         super.didLoad()
         endEditingOnTouch = false
         workoutsCollectionView.collectionViewLayout = CollectionSpringFlowLayout()
+        
+        // Disable selection because custom selection mechanism is used.
+        workoutsCollectionView.allowsSelection = false
     }
     
     override func willAppear(animated: Bool) {

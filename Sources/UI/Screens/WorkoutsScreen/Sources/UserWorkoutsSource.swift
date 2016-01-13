@@ -73,13 +73,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         cell.reorderGestureRecognizer = gestureRecognizer
         updateButtonsTagsForCell(cell, index: indexPath.row)
         
-        // Actions are not enabled while search is active.
-        let actionsEnabled = searchResults == nil
-        if cell.actionsEnabled != actionsEnabled {
-            // Update property only if value changed to prevent side efects 
-            // in animations when it's called multiple times in a row.
-            cell.actionsEnabled = actionsEnabled
-        }
+        cell.actionsEnabled = searchResults == nil
         
         return cell
     }
@@ -90,10 +84,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
 
             workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
             updateVisibleCellsButtonsTags()
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectSelectedItemsAnimated(true)
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
