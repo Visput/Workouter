@@ -66,6 +66,10 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         cell.fillWithItem(item)
         cell.didSelectAction = { [unowned self] in
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.item!.workout, animated: true)
+            // Prevent multiple cells selection.
+            for cell in collectionView.visibleCells() as! [DefaultWorkoutCell] {
+                cell.didSelectAction = nil
+            }
         }
         cell.favoriteButton.tag = indexPath.row
         cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)

@@ -45,6 +45,7 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Prevent multiple cells interaction.
         deleteButton.exclusiveTouch = true
         cloneButton.exclusiveTouch = true
         reorderButton.exclusiveTouch = true

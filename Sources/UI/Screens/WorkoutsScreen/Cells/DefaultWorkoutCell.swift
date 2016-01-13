@@ -23,6 +23,7 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Prevent multiple cells interaction.
         favoriteButton.exclusiveTouch = true
         scrollView.exclusiveTouch = true
     }

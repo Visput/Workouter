@@ -23,6 +23,9 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
     
+    // Prevent multiple cells reordering.
+    private var reorderingCellIndex: Int?
+    
     init(viewController: UIViewController,
         workoutsProvider: WorkoutsProvider,
         navigationManager: NavigationManager) {
@@ -64,6 +67,10 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         cell.fillWithWorkout(workout)
         cell.didSelectAction = { [unowned self] in
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
+            // Prevent multiple cells selection.
+            for cell in collectionView.visibleCells() as! [UserWorkoutCell] {
+                cell.didSelectAction = nil
+            }
         }
         
         cell.deleteButton.addTarget(self, action: Selector("deleteButtonDidPress:"), forControlEvents: .TouchUpInside)
@@ -161,30 +168,39 @@ extension UserWorkoutsSource {
     @objc private func reorderButtonDidPress(gesture: UILongPressGestureRecognizer) {
         let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
         guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? UserWorkoutCell else { return }
-        var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
-        targetLocation.x = collectionView.bounds.size.width / 2.0
         
-        switch(gesture.state) {
+        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.row {
+            var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
+            targetLocation.x = collectionView.bounds.size.width / 2.0
             
-        case .Began:
-            let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
-            collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
-            collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-            cell.applyReorderingInProgressAppearance()
-            
-        case .Changed:
-            collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-            updateVisibleCellsButtonsTags()
-            
-        case .Ended:
-            collectionView.endInteractiveMovement()
-            updateVisibleCellsButtonsTags()
-            collectionView.hideCellsActions()
-            
-        default:
-            collectionView.cancelInteractiveMovement()
-            updateVisibleCellsButtonsTags()
-            collectionView.hideCellsActions()
+            switch(gesture.state) {
+                
+            case .Began:
+                reorderingCellIndex = indexPath.row
+                collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
+                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+                cell.applyReorderingInProgressAppearance()
+                
+            case .Changed:
+                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+                updateVisibleCellsButtonsTags()
+                // Update cell index after movement.
+                reorderingCellIndex = gesture.view!.tag
+                
+            case .Ended:
+                collectionView.endInteractiveMovement()
+                updateVisibleCellsButtonsTags()
+                cell.actionsVisible = false
+                reorderingCellIndex = nil
+                
+            default:
+                collectionView.cancelInteractiveMovement()
+                updateVisibleCellsButtonsTags()
+                cell.actionsVisible = false
+                reorderingCellIndex = nil
+            }
+        } else {
+            cell.actionsVisible = false
         }
     }
     
