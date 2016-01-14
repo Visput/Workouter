@@ -73,6 +73,7 @@
 		9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
 		9F3AD6B71C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
 		9F3AD6B81C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
+		9F3C4B601C47938C0073C021 /* cup.dae in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C4B5F1C47938C0073C021 /* cup.dae */; };
 		9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
 		9F3CA9FF1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
 		9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA001C34472B0061C21A /* AccountView.swift */; };
@@ -341,6 +342,7 @@
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
 		9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWorkoutCellItem.swift; sourceTree = "<group>"; };
+		9F3C4B5F1C47938C0073C021 /* cup.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = cup.dae; sourceTree = "<group>"; };
 		9F3CA9FD1C3447140061C21A /* AccountScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		9F3CAA001C34472B0061C21A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9F3CAA031C3447EA0061C21A /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
@@ -1117,6 +1119,7 @@
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F3C4B5F1C47938C0073C021 /* cup.dae */,
 				9FD745CA1C09832000E48508 /* iTunesArtwork.png */,
 				9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */,
 				9F0F41C21BFF07F900989101 /* AppPalette.clr */,
@@ -1421,6 +1424,7 @@
 				9FD745CC1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				9F7CA3F31C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
+				9F3C4B601C47938C0073C021 /* cup.dae in Resources */,
 				9F7CA3F01C23E149003E9BFD /* MainScreens.storyboard in Resources */,
 				9F7CA3EB1C23E0E6003E9BFD /* Main.storyboard in Resources */,
 				9F7CA3E91C23E0E6003E9BFD /* Dialogs.storyboard in Resources */,

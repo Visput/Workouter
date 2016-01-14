@@ -1154,13 +1154,6 @@
                                     <action selector="cancelButtonDidPress:" destination="GgG-8q-uRo" eventType="touchUpInside" id="2fT-tp-nMv"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-ZN-l2c">
-                                <rect key="frame" x="0.0" y="296" width="375" height="371"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="GgG-8q-uRo" id="Vrw-B5-srT"/>
-                                    <outlet property="delegate" destination="GgG-8q-uRo" id="xKi-zd-aG6"/>
-                                </connections>
-                            </pickerView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFd-Xw-bhA" customClass="CircleProgressView" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="87" y="64" width="200" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1168,21 +1161,24 @@
                                     <constraint firstAttribute="width" secondItem="UFd-Xw-bhA" secondAttribute="height" multiplier="1:1" id="sYT-Z5-Z7m"/>
                                 </constraints>
                             </view>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="cup.dae" allowsCameraControl="YES" autoenablesDefaultLighting="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-pB-Meg">
+                                <rect key="frame" x="16" y="296" width="343" height="355"/>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="1Ts-dJ-AUV" firstAttribute="top" secondItem="mlw-ZN-l2c" secondAttribute="bottom" id="34U-K9-kM7"/>
-                            <constraint firstAttribute="trailing" secondItem="mlw-ZN-l2c" secondAttribute="trailing" id="BCg-KF-11n"/>
-                            <constraint firstItem="mlw-ZN-l2c" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" id="R6o-AQ-7oY"/>
+                            <constraint firstItem="1eh-pB-Meg" firstAttribute="top" secondItem="UFd-Xw-bhA" secondAttribute="bottom" constant="32" id="1Zn-5j-alc"/>
+                            <constraint firstItem="1Ts-dJ-AUV" firstAttribute="top" secondItem="1eh-pB-Meg" secondAttribute="bottom" constant="16" id="MXI-hG-p4H"/>
+                            <constraint firstItem="1eh-pB-Meg" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" constant="16" id="MoD-Jx-87f"/>
                             <constraint firstItem="7lY-Wb-y9r" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" id="RXJ-Ms-TDe"/>
+                            <constraint firstAttribute="trailing" secondItem="1eh-pB-Meg" secondAttribute="trailing" constant="16" id="UOI-BI-vVg"/>
                             <constraint firstAttribute="trailing" secondItem="UFd-Xw-bhA" secondAttribute="trailing" constant="88" id="aGS-XZ-kq8"/>
                             <constraint firstItem="7lY-Wb-y9r" firstAttribute="top" secondItem="hbB-gH-uqJ" secondAttribute="bottom" id="kQK-w2-Fba">
                                 <variation key="heightClass=compact" constant="12"/>
                             </constraint>
                             <constraint firstItem="UFd-Xw-bhA" firstAttribute="centerX" secondItem="6tM-NO-FyW" secondAttribute="centerX" id="me2-ac-p9K"/>
                             <constraint firstItem="UFd-Xw-bhA" firstAttribute="leading" secondItem="6tM-NO-FyW" secondAttribute="leading" constant="87" id="sqY-Pf-CAN"/>
-                            <constraint firstItem="mlw-ZN-l2c" firstAttribute="top" secondItem="UFd-Xw-bhA" secondAttribute="bottom" constant="32" id="tXd-t4-oZN"/>
                             <constraint firstItem="UFd-Xw-bhA" firstAttribute="top" secondItem="hbB-gH-uqJ" secondAttribute="bottom" constant="44" id="xLP-jv-RHy"/>
                         </constraints>
                         <variation key="default">
@@ -1191,8 +1187,8 @@
                             </mask>
                         </variation>
                         <connections>
+                            <outlet property="exerciseSceneView" destination="1eh-pB-Meg" id="XbK-0o-phP"/>
                             <outlet property="progressView" destination="UFd-Xw-bhA" id="Y7g-qg-lnp"/>
-                            <outlet property="stepsPickerView" destination="mlw-ZN-l2c" id="Ojz-8R-M2w"/>
                             <outletCollection property="gestureRecognizers" destination="gUk-O4-9lp" appends="YES" id="LZf-pI-TFw"/>
                         </connections>
                     </view>

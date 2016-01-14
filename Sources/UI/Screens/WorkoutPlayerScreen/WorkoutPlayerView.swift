@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SceneKit
 
 final class WorkoutPlayerView: BaseScreenView {
     
-    @IBOutlet private(set) weak var stepsPickerView: UIPickerView!
     @IBOutlet private(set) weak var progressView: CircleProgressView!
+    @IBOutlet private(set) weak var exerciseSceneView: SCNView!
     
 }

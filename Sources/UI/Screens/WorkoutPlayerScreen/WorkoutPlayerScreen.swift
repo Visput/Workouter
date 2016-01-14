@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SceneKit
 
 final class WorkoutPlayerScreen: BaseScreen {
     
@@ -47,25 +48,6 @@ final class WorkoutPlayerScreen: BaseScreen {
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.AllButUpsideDown
-    }
-}
-
-extension WorkoutPlayerScreen: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return workout.steps.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 100.0
     }
 }
 
