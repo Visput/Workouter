@@ -26,6 +26,10 @@ final class MagicBoxScreen: BaseScreen {
         ]
     }()
     
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
+    }
+    
     private var magicBoxView: MagicBoxView {
         return view as! MagicBoxView
     }
@@ -52,7 +56,9 @@ extension MagicBoxScreen: UICollectionViewDelegate, UICollectionViewDataSource {
 extension MagicBoxScreen {
     
     @objc private func settingsButtonDidPress(sender: AnyObject) {
-        
+        navigationManager.presentMagicBoxSettingsScreenAnimated(true, didCancelAction: { [unowned self] in
+            self.navigationManager.dismissScreenAnimated(true)
+        })
     }
     
     override func configureBarButtonItems() {

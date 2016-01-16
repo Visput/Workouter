@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Achievements-->
+        <scene sceneID="WJp-3K-5NF">
+            <objects>
+                <viewController storyboardIdentifier="AchievementsScreen" id="cZb-cv-30f" customClass="AchievementsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HSu-JL-O2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="2zB-CD-Gka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Utq-Nj-JhA" customClass="AchievementsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-YQ-Mwg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="32" minimumInteritemSpacing="0.0" id="Soa-Nq-yLk">
+                                    <size key="itemSize" width="88" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="TlP-uv-IcI" customClass="AchievementCell" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_green" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-ls-GqF">
+                                                    <rect key="frame" x="8" y="0.0" width="72" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aWd-ls-GqF" secondAttribute="height" multiplier="1:1" id="NC0-fw-G1q"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="NC0-fw-G1q"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dot_green" translatesAutoresizingMaskIntoConstraints="NO" id="4CC-rX-Msp">
+                                                    <rect key="frame" x="8" y="72" width="72" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="QbN-nn-OXa"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4CC-rX-Msp" secondAttribute="trailing" constant="8" id="2wM-Bd-6mg"/>
+                                            <constraint firstAttribute="bottom" secondItem="4CC-rX-Msp" secondAttribute="bottom" id="K6Y-25-tFq"/>
+                                            <constraint firstItem="4CC-rX-Msp" firstAttribute="top" secondItem="aWd-ls-GqF" secondAttribute="bottom" id="RWe-d2-5Ns"/>
+                                            <constraint firstItem="aWd-ls-GqF" firstAttribute="top" secondItem="TlP-uv-IcI" secondAttribute="top" id="U3o-Zm-25M"/>
+                                            <constraint firstItem="4CC-rX-Msp" firstAttribute="leading" secondItem="TlP-uv-IcI" secondAttribute="leading" constant="8" id="rGY-ru-TuI"/>
+                                            <constraint firstItem="aWd-ls-GqF" firstAttribute="leading" secondItem="TlP-uv-IcI" secondAttribute="leading" constant="8" id="uha-p3-RGE"/>
+                                            <constraint firstAttribute="trailing" secondItem="aWd-ls-GqF" secondAttribute="trailing" constant="8" id="vc2-OS-XFm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconView" destination="aWd-ls-GqF" id="9bq-Kk-gJe"/>
+                                            <outlet property="newStatusView" destination="4CC-rX-Msp" id="MVi-r5-k17"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cZb-cv-30f" id="bgD-b2-ze7"/>
+                                    <outlet property="delegate" destination="cZb-cv-30f" id="daX-eC-UUs"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aRd-YQ-Mwg" secondAttribute="trailing" id="4wL-84-5VH"/>
+                            <constraint firstItem="aRd-YQ-Mwg" firstAttribute="top" secondItem="Utq-Nj-JhA" secondAttribute="top" id="Oj7-3f-gFb"/>
+                            <constraint firstItem="aRd-YQ-Mwg" firstAttribute="leading" secondItem="Utq-Nj-JhA" secondAttribute="leading" id="tjz-X7-kpk"/>
+                            <constraint firstItem="2zB-CD-Gka" firstAttribute="top" secondItem="aRd-YQ-Mwg" secondAttribute="bottom" id="z8i-Gg-aIU"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="collectionView" destination="aRd-YQ-Mwg" id="Ziq-RC-dcu"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Achievements" id="2HQ-NI-CkR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="E8r-DI-6Le"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXi-5N-YAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690.5" y="1767.5"/>
+        </scene>
+        <!--Achievement Details Screen-->
+        <scene sceneID="fP1-5R-U2h">
+            <objects>
+                <viewController storyboardIdentifier="AchievementDetailsScreen" id="v13-yI-C40" customClass="AchievementDetailsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a60-Ai-2ZA"/>
+                        <viewControllerLayoutGuide type="bottom" id="JR8-ht-Gcf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="11B-PL-eW0" customClass="AchievementDetailsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="UiN-aO-77x">
+                                <rect key="frame" x="32" y="96" width="311" height="539"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Created Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-f4-BpB">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <color key="textColor" red="0.10588235408067703" green="0.21568627655506134" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-eV-OBe">
+                                        <rect key="frame" x="0.0" y="108" width="311" height="311"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BmH-eV-OBe" secondAttribute="height" multiplier="1:1" id="eT5-TG-JIl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn this award for your first created workout" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc1-eo-U2B">
+                                        <rect key="frame" x="0.0" y="498" width="311" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BmH-eV-OBe" firstAttribute="top" secondItem="d9b-f4-BpB" secondAttribute="bottom" constant="79" id="FHc-Sh-Zx4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FHc-Sh-Zx4"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JR8-ht-Gcf" firstAttribute="top" secondItem="UiN-aO-77x" secondAttribute="bottom" constant="32" id="KUN-Mf-uwp"/>
+                            <constraint firstItem="UiN-aO-77x" firstAttribute="top" secondItem="a60-Ai-2ZA" secondAttribute="bottom" constant="32" id="KV3-Il-xqD"/>
+                            <constraint firstItem="UiN-aO-77x" firstAttribute="trailing" secondItem="11B-PL-eW0" secondAttribute="trailing" constant="-32" id="f1O-Ez-59q"/>
+                            <constraint firstItem="UiN-aO-77x" firstAttribute="leading" secondItem="11B-PL-eW0" secondAttribute="leading" constant="32" id="x29-Pk-K8Q"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="descriptionLabel" destination="Sc1-eo-U2B" id="PUe-Nj-YLf"/>
+                            <outlet property="iconView" destination="BmH-eV-OBe" id="y1j-J8-Xqa"/>
+                            <outlet property="nameLabel" destination="d9b-f4-BpB" id="ddb-yV-mR8"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="v8I-gU-7Pp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QCd-ww-06h"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iC-cY-1UF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178.5" y="1767.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_dot_green" width="6" height="6"/>
+        <image name="icon_info_green" width="60" height="60"/>
+    </resources>
+</document>

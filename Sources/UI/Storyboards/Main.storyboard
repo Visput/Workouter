@@ -26,7 +26,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="AccountScreen" storyboardName="AccountScreens" referencedIdentifier="AccountScreen" id="sla-mV-If5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vf-hK-Zua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1029.5" y="-2404"/>
+            <point key="canvasLocation" x="-977.5" y="-2404"/>
         </scene>
         <!--TextDialog-->
         <scene sceneID="94o-cm-MMx">
@@ -34,7 +34,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="TextDialog" storyboardName="Dialogs" referencedIdentifier="TextDialog" id="gQ4-u4-AY0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X84-8V-3gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-819.5" y="-2404"/>
+            <point key="canvasLocation" x="-767.5" y="-2404"/>
         </scene>
         <!--ReferFriendsScreen-->
         <scene sceneID="rQg-Ng-YqE">
@@ -42,7 +42,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="ReferFriendsScreen" storyboardName="AccountScreens" referencedIdentifier="ReferFriendsScreen" id="5iT-xP-mYb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDa-TV-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1016" y="-2359"/>
+            <point key="canvasLocation" x="-964" y="-2359"/>
         </scene>
         <!--WorkoutEditScreen-->
         <scene sceneID="eax-jt-BFn">
@@ -50,7 +50,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="WorkoutEditScreen" storyboardName="BuildWorkoutScreens" referencedIdentifier="WorkoutEditScreen" id="YRA-uY-lBq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WA0-Wp-Ofq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1552.5" y="-2404"/>
+            <point key="canvasLocation" x="-1500.5" y="-2404"/>
         </scene>
         <!--TextViewController-->
         <scene sceneID="1NR-3D-d3h">
@@ -58,7 +58,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="TextViewController" storyboardName="BuildWorkoutScreens" referencedIdentifier="TextViewController" id="N6t-q3-Wod" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMv-lM-K2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1553" y="-2201"/>
+            <point key="canvasLocation" x="-1501" y="-2201"/>
         </scene>
         <!--WorkoutTemplatesScreen-->
         <scene sceneID="w9I-N1-wmf">
@@ -66,15 +66,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="WorkoutTemplatesScreen" storyboardName="BuildWorkoutScreens" referencedIdentifier="WorkoutTemplatesScreen" id="75T-r3-P2E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1L8-Go-j7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1533" y="-2308"/>
+            <point key="canvasLocation" x="-1481" y="-2308"/>
         </scene>
         <!--StatisticsScreen-->
         <scene sceneID="DVL-g4-OYf">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StatisticsScreen" storyboardName="MainScreens" referencedIdentifier="StatisticsScreen" id="W1R-eO-Wn4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="StatisticsScreen" storyboardName="StatisticsScreens" referencedIdentifier="StatisticsScreen" id="W1R-eO-Wn4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5O-BS-Onw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="-2146"/>
+            <point key="canvasLocation" x="-1257" y="-2040"/>
         </scene>
         <!--WelcomeScreen-->
         <scene sceneID="eyU-Dc-2qs">
@@ -82,15 +82,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="WelcomeScreen" storyboardName="OnboardingScreens" referencedIdentifier="WelcomeScreen" id="lCl-K4-uHR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDJ-Ph-tqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1310" y="-2404"/>
+            <point key="canvasLocation" x="-1258" y="-2404"/>
         </scene>
         <!--MagicBoxScreen-->
         <scene sceneID="TJ5-y2-x2D">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MagicBoxScreen" storyboardName="MainScreens" referencedIdentifier="MagicBoxScreen" id="85u-Ds-12P" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MagicBoxScreen" storyboardName="MagicBoxScreens" referencedIdentifier="MagicBoxScreen" id="85u-Ds-12P" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2v-41-cKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1812.5" y="-2359"/>
+            <point key="canvasLocation" x="-973.5" y="-2040"/>
         </scene>
         <!--StepEditScreen-->
         <scene sceneID="G7H-Bt-bJO">
@@ -98,15 +98,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="StepEditScreen" storyboardName="BuildWorkoutScreens" referencedIdentifier="StepEditScreen" id="4CU-an-Qai" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0v-Vj-VLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1564" y="-2359"/>
+            <point key="canvasLocation" x="-1512" y="-2359"/>
         </scene>
         <!--WorkoutDetailsScreen-->
         <scene sceneID="ruI-6A-b1B">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WorkoutDetailsScreen" storyboardName="MainScreens" referencedIdentifier="WorkoutDetailsScreen" id="bJn-IM-Typ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="WorkoutDetailsScreen" storyboardName="WorkoutsScreens" referencedIdentifier="WorkoutDetailsScreen" id="bJn-IM-Typ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9YS-ol-Pj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1795" y="-2253"/>
+            <point key="canvasLocation" x="-1491" y="-1981"/>
         </scene>
         <!--MainScreen-->
         <scene sceneID="EW4-ki-Nkv">
@@ -119,18 +119,18 @@
         <!--WorkoutPlayerScreen-->
         <scene sceneID="NpR-jD-R7v">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WorkoutPlayerScreen" storyboardName="MainScreens" referencedIdentifier="WorkoutPlayerScreen" id="isu-z8-hce" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="WorkoutPlayerScreen" storyboardName="WorkoutsScreens" referencedIdentifier="WorkoutPlayerScreen" id="isu-z8-hce" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sic-Ox-RqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1797.5" y="-2201"/>
+            <point key="canvasLocation" x="-1493.5" y="-1921"/>
         </scene>
         <!--AchievementsScreen-->
         <scene sceneID="DhO-Do-9aw">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AchievementsScreen" storyboardName="MainScreens" referencedIdentifier="AchievementsScreen" id="Ok7-J4-XJL" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="AchievementsScreen" storyboardName="AchievementsScreens" referencedIdentifier="AchievementsScreen" id="Ok7-J4-XJL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4Z-OD-tPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1799" y="-2091"/>
+            <point key="canvasLocation" x="-1799" y="-1981"/>
         </scene>
         <!--WorkoutPageContentController-->
         <scene sceneID="nsU-aT-t6I">
@@ -138,7 +138,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="WorkoutPageContentController" storyboardName="MainScreens" referencedIdentifier="WorkoutPageContentController" id="2YG-pa-ZfH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kA4-PK-y7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1767.5" y="-2040"/>
+            <point key="canvasLocation" x="-1767.5" y="-2359"/>
         </scene>
         <!--WelcomePageContentController-->
         <scene sceneID="g3b-Ba-eev">
@@ -146,15 +146,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="WelcomePageContentController" storyboardName="OnboardingScreens" referencedIdentifier="WelcomePageContentController" id="Kqy-Om-hGo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8Z-3w-I9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1261.5" y="-2314"/>
+            <point key="canvasLocation" x="-1209.5" y="-2314"/>
         </scene>
         <!--WorkoutsScreen-->
         <scene sceneID="nkM-6M-YII">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WorkoutsScreen" storyboardName="MainScreens" referencedIdentifier="WorkoutsScreen" id="WMJ-BW-RGZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="WorkoutsScreen" storyboardName="WorkoutsScreens" referencedIdentifier="WorkoutsScreen" id="WMJ-BW-RGZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkB-50-xR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="-2308"/>
+            <point key="canvasLocation" x="-1509" y="-2040"/>
         </scene>
         <!--StepTemplatesScreen-->
         <scene sceneID="IWu-Eg-aBb">
@@ -162,7 +162,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="StepTemplatesScreen" storyboardName="BuildWorkoutScreens" referencedIdentifier="StepTemplatesScreen" id="b7d-mq-kDA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbg-Yo-EK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1545" y="-2253"/>
+            <point key="canvasLocation" x="-1493" y="-2253"/>
         </scene>
         <!--AuthenticationScreen-->
         <scene sceneID="a8D-cp-FiV">
@@ -170,7 +170,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="AuthenticationScreen" storyboardName="OnboardingScreens" referencedIdentifier="AuthenticationScreen" id="LaO-Wa-xKI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h7-3K-tfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1293" y="-2359"/>
+            <point key="canvasLocation" x="-1241" y="-2359"/>
         </scene>
         <!--NewWorkoutPageContentController-->
         <scene sceneID="jkg-9d-wyb">
@@ -178,15 +178,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="NewWorkoutPageContentController" storyboardName="MainScreens" referencedIdentifier="NewWorkoutPageContentController" id="j9a-ri-SHw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwJ-In-T8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1754.5" y="-1987"/>
+            <point key="canvasLocation" x="-1754.5" y="-2308"/>
         </scene>
         <!--AchievementDetailsScreen-->
         <scene sceneID="iSZ-bf-6AK">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AchievementDetailsScreen" storyboardName="MainScreens" referencedIdentifier="AchievementDetailsScreen" id="gYU-M7-hC8" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="AchievementDetailsScreen" storyboardName="AchievementsScreens" referencedIdentifier="AchievementDetailsScreen" id="gYU-M7-hC8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0r-wp-SUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1781.5" y="-1934"/>
+            <point key="canvasLocation" x="-1781.5" y="-2040"/>
         </scene>
         <!--SettingsScreen-->
         <scene sceneID="Cf1-r2-yPW">
@@ -194,7 +194,23 @@
                 <viewControllerPlaceholder storyboardIdentifier="SettingsScreen" storyboardName="AccountScreens" referencedIdentifier="SettingsScreen" id="zpo-k6-eqQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49U-H5-x5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1029.5" y="-2314"/>
+            <point key="canvasLocation" x="-977.5" y="-2314"/>
+        </scene>
+        <!--MagicBoxSettingsScreen-->
+        <scene sceneID="oSB-i6-2B3">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MagicBoxSettingsScreen" storyboardName="MagicBoxScreens" referencedIdentifier="MagicBoxSettingsScreen" id="v83-WX-GCZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YO2-dF-8gV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-948" y="-1981"/>
+        </scene>
+        <!--WorkoutCompletionScreen-->
+        <scene sceneID="tw5-i2-mvG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="WorkoutCompletionScreen" storyboardName="WorkoutsScreens" referencedIdentifier="WorkoutCompletionScreen" id="lbp-d4-DfM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2I7-d6-PBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1477.5" y="-1865"/>
         </scene>
     </scenes>
 </document>

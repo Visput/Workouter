@@ -303,16 +303,28 @@ extension NavigationManager {
         presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
-    func pushWorkoutPlayerScreenWithWorkout(workout: Workout,
-        animated: Bool) {
-            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
-            screen.workout = workout
-            pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    func pushWorkoutPlayerScreenWithWorkout(workout: Workout, animated: Bool) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutPlayerScreen.className()) as! WorkoutPlayerScreen
+        screen.workout = workout
+        pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func pushWorkoutCompletionScreenFromMainScreenWithWorkout(workout: Workout, animated: Bool) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutCompletionScreen.className()) as! WorkoutCompletionScreen
+        screen.workout = workout
+        let screens = [rootScreen, screen]
+        setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
     }
     
     func pushMagicBoxScreenAnimated(animated: Bool) {
         let screen = storyboard.instantiateViewControllerWithIdentifier(MagicBoxScreen.className()) as! MagicBoxScreen
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
+    }
+    
+    func presentMagicBoxSettingsScreenAnimated(animated: Bool, didCancelAction: (() -> Void)?) {
+        let screen = storyboard.instantiateViewControllerWithIdentifier(MagicBoxSettingsScreen.className()) as! MagicBoxSettingsScreen
+        screen.didCancelAction = didCancelAction
+        presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
     func pushStatisticsScreenAnimated(animated: Bool) {

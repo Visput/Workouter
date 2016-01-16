@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Game-->
+        <scene sceneID="VC0-Wk-Pru">
+            <objects>
+                <viewController storyboardIdentifier="MagicBoxScreen" title="Game" id="Vdn-I0-uaF" customClass="MagicBoxScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IH9-t5-Gy5"/>
+                        <viewControllerLayoutGuide type="bottom" id="diE-Kw-7hz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J2t-p8-diq" customClass="MagicBoxView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-5v-1Kn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Pda-Lx-4Uo">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicBoxIconCell" id="YCS-pL-fps" customClass="MagicBoxIconCell" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="80" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ope-Wr-VWX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Ope-Wr-VWX" firstAttribute="top" secondItem="YCS-pL-fps" secondAttribute="top" id="1Ll-CI-jhU"/>
+                                            <constraint firstItem="Ope-Wr-VWX" firstAttribute="leading" secondItem="YCS-pL-fps" secondAttribute="leading" id="7Z5-vq-cM3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ope-Wr-VWX" secondAttribute="trailing" id="njA-Tk-yDH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ope-Wr-VWX" secondAttribute="bottom" id="pYL-MB-NxN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconView" destination="Ope-Wr-VWX" id="Z0u-pn-nAT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vdn-I0-uaF" id="EbF-xE-rbs"/>
+                                    <outlet property="delegate" destination="Vdn-I0-uaF" id="GcR-eE-9LP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="diE-Kw-7hz" firstAttribute="top" secondItem="Fph-5v-1Kn" secondAttribute="bottom" id="Bcu-fL-D6Z"/>
+                            <constraint firstAttribute="trailing" secondItem="Fph-5v-1Kn" secondAttribute="trailing" id="JuP-Su-K2E"/>
+                            <constraint firstItem="Fph-5v-1Kn" firstAttribute="top" secondItem="IH9-t5-Gy5" secondAttribute="bottom" constant="-64" id="dmC-yw-IzH"/>
+                            <constraint firstItem="Fph-5v-1Kn" firstAttribute="top" secondItem="J2t-p8-diq" secondAttribute="top" id="qP2-gB-Gjx"/>
+                            <constraint firstItem="Fph-5v-1Kn" firstAttribute="leading" secondItem="J2t-p8-diq" secondAttribute="leading" id="wOh-Lk-i73"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dmC-yw-IzH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Magic Box" id="Ye3-rF-MPe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eqa-lP-N05"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0f-Ew-QC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690.5" y="974.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="2dr-be-N0d">
+            <objects>
+                <viewController storyboardIdentifier="MagicBoxSettingsScreen" id="yKI-ql-u5z" customClass="MagicBoxSettingsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kbe-Dt-jWH"/>
+                        <viewControllerLayoutGuide type="bottom" id="1yz-BQ-CwW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NGf-sW-yv9" customClass="MagicBoxSettingsView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="SUL-fD-cTX"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TlH-WI-eoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138.5" y="974.5"/>
+        </scene>
+    </scenes>
+</document>

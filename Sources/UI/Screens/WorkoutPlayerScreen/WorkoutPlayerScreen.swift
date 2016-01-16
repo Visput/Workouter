@@ -61,6 +61,10 @@ extension WorkoutPlayerScreen {
     @IBAction private func pauseButtonDidPress(sender: AnyObject) {
         workoutPlayerView.progressView.setProgress(200.0, animated: true)
     }
+    
+    @IBAction private func completeButtonDidPress(sender: AnyObject) {
+        navigationManager.pushWorkoutCompletionScreenFromMainScreenWithWorkout(workout, animated: true)
+    }
 }
 
 extension WorkoutPlayerScreen {

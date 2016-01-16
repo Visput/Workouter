@@ -84,6 +84,22 @@
 		9F3CAA081C3448370061C21A /* AccountCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA061C3448370061C21A /* AccountCellItem.swift */; };
 		9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
+		9F4356CA1C49DEC000D841FE /* AchievementsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */; };
+		9F4356CB1C49DEC000D841FE /* AchievementsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */; };
+		9F4356CD1C49E20E00D841FE /* WorkoutsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356CC1C49E20E00D841FE /* WorkoutsScreens.storyboard */; };
+		9F4356CE1C49E20E00D841FE /* WorkoutsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356CC1C49E20E00D841FE /* WorkoutsScreens.storyboard */; };
+		9F4356D01C49E25000D841FE /* StatisticsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356CF1C49E25000D841FE /* StatisticsScreens.storyboard */; };
+		9F4356D11C49E25000D841FE /* StatisticsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356CF1C49E25000D841FE /* StatisticsScreens.storyboard */; };
+		9F4356D31C49E27100D841FE /* MagicBoxScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356D21C49E27100D841FE /* MagicBoxScreens.storyboard */; };
+		9F4356D41C49E27100D841FE /* MagicBoxScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356D21C49E27100D841FE /* MagicBoxScreens.storyboard */; };
+		9F4356D71C49E37400D841FE /* MagicBoxSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356D61C49E37400D841FE /* MagicBoxSettingsScreen.swift */; };
+		9F4356D81C49E37400D841FE /* MagicBoxSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356D61C49E37400D841FE /* MagicBoxSettingsScreen.swift */; };
+		9F4356DA1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356D91C49E38F00D841FE /* MagicBoxSettingsView.swift */; };
+		9F4356DB1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356D91C49E38F00D841FE /* MagicBoxSettingsView.swift */; };
+		9F4356DE1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356DD1C49E3DA00D841FE /* WorkoutCompletionScreen.swift */; };
+		9F4356DF1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356DD1C49E3DA00D841FE /* WorkoutCompletionScreen.swift */; };
+		9F4356E11C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356E01C49E3EF00D841FE /* WorkoutCompletionView.swift */; };
+		9F4356E21C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4356E01C49E3EF00D841FE /* WorkoutCompletionView.swift */; };
 		9F469AD71BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
 		9F469AD81BF691BD00C29AA9 /* StatisticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */; };
 		9F469AE51BF6D08300C29AA9 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */; };
@@ -348,6 +364,14 @@
 		9F3CAA031C3447EA0061C21A /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		9F3CAA061C3448370061C21A /* AccountCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCellItem.swift; sourceTree = "<group>"; };
 		9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AchievementsScreens.storyboard; sourceTree = "<group>"; };
+		9F4356CC1C49E20E00D841FE /* WorkoutsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WorkoutsScreens.storyboard; sourceTree = "<group>"; };
+		9F4356CF1C49E25000D841FE /* StatisticsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatisticsScreens.storyboard; sourceTree = "<group>"; };
+		9F4356D21C49E27100D841FE /* MagicBoxScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MagicBoxScreens.storyboard; sourceTree = "<group>"; };
+		9F4356D61C49E37400D841FE /* MagicBoxSettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBoxSettingsScreen.swift; sourceTree = "<group>"; };
+		9F4356D91C49E38F00D841FE /* MagicBoxSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBoxSettingsView.swift; sourceTree = "<group>"; };
+		9F4356DD1C49E3DA00D841FE /* WorkoutCompletionScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCompletionScreen.swift; sourceTree = "<group>"; };
+		9F4356E01C49E3EF00D841FE /* WorkoutCompletionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCompletionView.swift; sourceTree = "<group>"; };
 		9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProvider.swift; sourceTree = "<group>"; };
 		9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
 		9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsProviderObserving.swift; sourceTree = "<group>"; };
@@ -688,6 +712,24 @@
 			path = AppAppearance;
 			sourceTree = "<group>";
 		};
+		9F4356D51C49E35400D841FE /* MagicBoxSettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9F4356D61C49E37400D841FE /* MagicBoxSettingsScreen.swift */,
+				9F4356D91C49E38F00D841FE /* MagicBoxSettingsView.swift */,
+			);
+			path = MagicBoxSettingsScreen;
+			sourceTree = "<group>";
+		};
+		9F4356DC1C49E3B700D841FE /* WorkoutCompletionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9F4356DD1C49E3DA00D841FE /* WorkoutCompletionScreen.swift */,
+				9F4356E01C49E3EF00D841FE /* WorkoutCompletionView.swift */,
+			);
+			path = WorkoutCompletionScreen;
+			sourceTree = "<group>";
+		};
 		9F469AD51BF6918D00C29AA9 /* StatisticsProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +836,10 @@
 				9F7CA3E71C23E0E6003E9BFD /* Main.storyboard */,
 				9F7CA3E61C23E0E6003E9BFD /* Dialogs.storyboard */,
 				9F7CA3EF1C23E149003E9BFD /* MainScreens.storyboard */,
+				9F4356D21C49E27100D841FE /* MagicBoxScreens.storyboard */,
+				9F4356CF1C49E25000D841FE /* StatisticsScreens.storyboard */,
+				9F4356CC1C49E20E00D841FE /* WorkoutsScreens.storyboard */,
+				9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */,
 				9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */,
 				9F7CA3F21C23E229003E9BFD /* OnboardingScreens.storyboard */,
 				9F7CA3E81C23E0E6003E9BFD /* AccountScreens.storyboard */,
@@ -1218,6 +1264,8 @@
 		F0C3425E1A9E4BC800B9D480 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F4356DC1C49E3B700D841FE /* WorkoutCompletionScreen */,
+				9F4356D51C49E35400D841FE /* MagicBoxSettingsScreen */,
 				9F3CA9FC1C3446FA0061C21A /* AccountScreen */,
 				9F0588A71C32624F006DDD81 /* AchievementDetailsScreen */,
 				9FED64011C1D69B900F40CDF /* MagicBoxScreen */,
@@ -1420,13 +1468,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F64FA861C0AF66A00B63798 /* StepsTableViewSectionHeader.xib in Resources */,
+				9F4356D01C49E25000D841FE /* StatisticsScreens.storyboard in Resources */,
 				9F7CA3ED1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */,
 				9FD745CC1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				9F7CA3F31C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
+				9F4356CD1C49E20E00D841FE /* WorkoutsScreens.storyboard in Resources */,
 				9F3C4B601C47938C0073C021 /* cup.dae in Resources */,
+				9F4356D31C49E27100D841FE /* MagicBoxScreens.storyboard in Resources */,
 				9F7CA3F01C23E149003E9BFD /* MainScreens.storyboard in Resources */,
 				9F7CA3EB1C23E0E6003E9BFD /* Main.storyboard in Resources */,
+				9F4356CA1C49DEC000D841FE /* AchievementsScreens.storyboard in Resources */,
 				9F7CA3E91C23E0E6003E9BFD /* Dialogs.storyboard in Resources */,
 				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
@@ -1443,13 +1495,17 @@
 				9F7CA3EE1C23E0E6003E9BFD /* AccountScreens.storyboard in Resources */,
 				9FD745CD1C09832000E48508 /* iTunesArtwork.png in Resources */,
 				F09702D11ACA48E700498DEE /* LaunchScreen.xib in Resources */,
+				9F4356D11C49E25000D841FE /* StatisticsScreens.storyboard in Resources */,
+				9F4356CE1C49E20E00D841FE /* WorkoutsScreens.storyboard in Resources */,
 				9F7CA3F41C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
 				9F7CA3F11C23E149003E9BFD /* MainScreens.storyboard in Resources */,
 				9F7CA3EC1C23E0E6003E9BFD /* Main.storyboard in Resources */,
+				9F4356CB1C49DEC000D841FE /* AchievementsScreens.storyboard in Resources */,
 				9F7CA3EA1C23E0E6003E9BFD /* Dialogs.storyboard in Resources */,
 				9FD745CF1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				F09702D21ACA48E700498DEE /* Images.xcassets in Resources */,
 				F09702D41ACA48E700498DEE /* DefaultWorkouts.json in Resources */,
+				9F4356D41C49E27100D841FE /* MagicBoxScreens.storyboard in Resources */,
 				9F7CA3F71C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1714,6 +1770,7 @@
 				F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */,
 				9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD41BDF2F7000AEDEB1 /* StepCell.swift in Sources */,
+				9F4356E11C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */,
 				9FED64211C1F50AF00F40CDF /* MainScreen.swift in Sources */,
 				9F79EA871C39167A00FC8227 /* DefaultWorkoutCell.swift in Sources */,
 				9FAFA67E1C2FED950007463D /* NewWorkoutPageContentController.swift in Sources */,
@@ -1754,6 +1811,7 @@
 				9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
 				9FD745C61C09653900E48508 /* TextControllerChaining.swift in Sources */,
 				9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */,
+				9F4356D71C49E37400D841FE /* MagicBoxSettingsScreen.swift in Sources */,
 				9F3AD6B71C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */,
 				9FF8A1D21C2B774700A25EAA /* AlphaControl.swift in Sources */,
 				9F0DFC461BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
@@ -1792,6 +1850,7 @@
 				9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */,
 				9FBC31181BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
+				9F4356DE1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */,
 				9FED642F1C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9F697E561C029ED500BAB0EC /* UIView+Animation.swift in Sources */,
 				9F9444181C0001A2003E333B /* BaseDialogView.swift in Sources */,
@@ -1821,6 +1880,7 @@
 				9FD745EE1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
 				9FE798651C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F0DFC401BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
+				9F4356DA1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */,
 				9F79EA891C39167A00FC8227 /* DefaultWorkoutsSource.swift in Sources */,
 				F02CAB5D1B4B871E00F28D72 /* Workout.swift in Sources */,
 				F02CAB5E1B4B871E00F28D72 /* BaseScreenView.swift in Sources */,
@@ -1844,6 +1904,7 @@
 				F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */,
 				9F11E0871C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD51BDF2F7000AEDEB1 /* StepCell.swift in Sources */,
+				9F4356E21C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */,
 				9FED64221C1F50AF00F40CDF /* MainScreen.swift in Sources */,
 				9F79EA881C39167A00FC8227 /* DefaultWorkoutCell.swift in Sources */,
 				9FAFA67F1C2FED950007463D /* NewWorkoutPageContentController.swift in Sources */,
@@ -1884,6 +1945,7 @@
 				9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */,
 				9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */,
 				9F13C46F1C1D538600894C6C /* NSObject+Utils.swift in Sources */,
+				9F4356D81C49E37400D841FE /* MagicBoxSettingsScreen.swift in Sources */,
 				9F3AD6B81C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */,
 				9FF8A1D31C2B774700A25EAA /* AlphaControl.swift in Sources */,
 				9F0DFC471BE88F32002AEACC /* WorkoutTemplateCell.swift in Sources */,
@@ -1922,6 +1984,7 @@
 				9F0F072C1C06282800DA0152 /* WorkoutPlayerView.swift in Sources */,
 				9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */,
+				9F4356DF1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */,
 				9FED64301C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
 				9F697E571C029ED500BAB0EC /* UIView+Animation.swift in Sources */,
@@ -1951,6 +2014,7 @@
 				9FD745EF1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
 				9FE798661C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F0DFC411BE88DD1002AEACC /* WorkoutTemplatesView.swift in Sources */,
+				9F4356DB1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */,
 				9F79EA8A1C39167A00FC8227 /* DefaultWorkoutsSource.swift in Sources */,
 				F09702CB1ACA48E700498DEE /* Workout.swift in Sources */,
 				F09702CC1ACA48E700498DEE /* BaseScreenView.swift in Sources */,
