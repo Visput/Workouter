@@ -15,7 +15,21 @@
                     <view key="view" contentMode="scaleToFill" id="Z61-U4-Y8o" customClass="StatisticsView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-h4-eca">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="Scv-Av-bCZ" kind="embed" identifier="Placeholder" id="nLN-h6-1vF"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jqi-h4-eca" firstAttribute="top" secondItem="Z61-U4-Y8o" secondAttribute="top" id="EgO-NQ-dp3"/>
+                            <constraint firstAttribute="trailing" secondItem="jqi-h4-eca" secondAttribute="trailing" id="e4w-so-d50"/>
+                            <constraint firstItem="DYx-hE-6GN" firstAttribute="top" secondItem="jqi-h4-eca" secondAttribute="bottom" id="oDc-M4-tfQ"/>
+                            <constraint firstItem="jqi-h4-eca" firstAttribute="leading" secondItem="Z61-U4-Y8o" secondAttribute="leading" id="ve8-lf-OWv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Statistics" id="IjV-9U-1sB">
                         <barButtonItem key="backBarButtonItem" title=" " id="5Ab-rj-gnp"/>
@@ -25,7 +39,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yX-KJ-in2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.5" y="1767.5"/>
+            <point key="canvasLocation" x="-467.5" y="1177.5"/>
+        </scene>
+        <!--Statistics Placeholder Controller-->
+        <scene sceneID="etl-cA-haS">
+            <objects>
+                <viewController id="Scv-Av-bCZ" customClass="StatisticsPlaceholderController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8at-y9-Aah" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-yZ-VfJ" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="611" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="NOS-ZW-fKR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bhI-fy-bXf"/>
+                                    <constraint firstAttribute="width" constant="180" id="dzw-7f-xdN"/>
+                                    <constraint firstAttribute="height" constant="40" id="okQ-6z-rTT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Go to Workouts"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NOS-ZW-fKR"/>
+                                        <exclude reference="bhI-fy-bXf"/>
+                                        <exclude reference="dzw-7f-xdN"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="workoutsButtonDidPress:" destination="Scv-Av-bCZ" eventType="touchUpInside" id="aOo-dJ-hgF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your statistics will be shown here when you complete at least one workout." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-EI-4d0">
+                                <rect key="frame" x="32" y="419" width="311" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="nT9-ZK-ZKZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I8u-EI-4d0" firstAttribute="leading" secondItem="8at-y9-Aah" secondAttribute="leading" constant="32" id="5Tt-hC-3Xt"/>
+                            <constraint firstAttribute="trailing" secondItem="KOR-yZ-VfJ" secondAttribute="trailing" constant="16" id="VLC-70-jZD"/>
+                            <constraint firstAttribute="bottom" secondItem="KOR-yZ-VfJ" secondAttribute="bottom" constant="16" id="XSK-yI-SSS"/>
+                            <constraint firstItem="KOR-yZ-VfJ" firstAttribute="leading" secondItem="8at-y9-Aah" secondAttribute="leading" constant="16" id="dOY-94-zOl"/>
+                            <constraint firstItem="KOR-yZ-VfJ" firstAttribute="top" secondItem="I8u-EI-4d0" secondAttribute="bottom" constant="32" id="vIq-wi-Rys"/>
+                            <constraint firstAttribute="trailing" secondItem="I8u-EI-4d0" secondAttribute="trailing" constant="32" id="vgT-hN-sq0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8va-NV-dyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97.5" y="1177.5"/>
         </scene>
     </scenes>
 </document>

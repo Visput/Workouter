@@ -875,8 +875,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="kUC-ah-XdG"/>
                                         <exclude reference="RVH-7K-sbn"/>
+                                        <exclude reference="kUC-ah-XdG"/>
                                         <exclude reference="vy7-gb-uQN"/>
                                     </mask>
                                 </variation>
@@ -960,8 +960,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="hWY-Y8-K2s"/>
                                         <exclude reference="ZwH-N3-Sq1"/>
+                                        <exclude reference="hWY-Y8-K2s"/>
                                         <exclude reference="s0P-Au-PuL"/>
                                     </mask>
                                 </variation>

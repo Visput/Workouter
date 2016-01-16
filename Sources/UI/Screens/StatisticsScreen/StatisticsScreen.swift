@@ -11,4 +11,11 @@ import Charts
 
 final class StatisticsScreen: BaseScreen {
     
+    private var placeholderController: PlaceholderController!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier! == "Placeholder" {
+            placeholderController = segue.destinationViewController as! PlaceholderController
+        }
+    }
 }
