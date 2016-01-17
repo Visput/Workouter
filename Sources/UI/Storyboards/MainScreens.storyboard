@@ -360,7 +360,6 @@
         <!--Statistics Preview Controller-->
         <scene sceneID="SNF-gx-lbh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdf-pz-yu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cbC-5x-3FI" customClass="StatisticsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2m-zn-udE"/>
@@ -412,13 +411,13 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdf-pz-yu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-727.25" y="2352.75"/>
         </scene>
         <!--Achievements Preview Controller-->
         <scene sceneID="2WW-ZM-NG5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fRQ-gP-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ehC-Hj-cMF" customClass="AchievementsPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kKv-Y8-tXU"/>
@@ -470,13 +469,13 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRQ-gP-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-907.25" y="2353"/>
         </scene>
         <!--Magic Box Preview Controller-->
         <scene sceneID="FWx-p9-HCd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-PW-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="VzN-fl-MBC" customClass="MagicBoxPreviewController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XOU-fH-Ghw"/>
@@ -528,6 +527,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-PW-HfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-549.25" y="2352.5"/>
         </scene>

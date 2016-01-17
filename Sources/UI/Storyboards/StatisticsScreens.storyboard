@@ -45,10 +45,46 @@
         <scene sceneID="etl-cA-haS">
             <objects>
                 <viewController id="Scv-Av-bCZ" customClass="StatisticsPlaceholderController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WG4-Mb-FXi"/>
+                        <viewControllerLayoutGuide type="bottom" id="O5i-Fa-MCv"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8at-y9-Aah" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="60p-E6-yTC">
+                                <rect key="frame" x="32" y="216" width="311" height="235"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_statistics_green" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-53-BEd">
+                                        <rect key="frame" x="85.5" y="0.0" width="140" height="117"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="2HX-Mg-VuY"/>
+                                            <constraint firstAttribute="width" constant="140" id="IeJ-oh-DjA"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2HX-Mg-VuY"/>
+                                                <exclude reference="IeJ-oh-DjA"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your stats will be shown here when you complete at least one workout." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-EI-4d0">
+                                        <rect key="frame" x="9" y="149" width="293" height="86"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="nT9-ZK-ZKZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nT9-ZK-ZKZ"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-yZ-VfJ" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="611" width="343" height="40"/>
                                 <constraints>
@@ -76,25 +112,22 @@
                                     <action selector="workoutsButtonDidPress:" destination="Scv-Av-bCZ" eventType="touchUpInside" id="aOo-dJ-hgF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your statistics will be shown here when you complete at least one workout." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-EI-4d0">
-                                <rect key="frame" x="32" y="419" width="311" height="160"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="nT9-ZK-ZKZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
-                                <color key="textColor" red="0.69411766529083252" green="0.74901962280273438" blue="0.76862746477127075" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I8u-EI-4d0" firstAttribute="leading" secondItem="8at-y9-Aah" secondAttribute="leading" constant="32" id="5Tt-hC-3Xt"/>
+                            <constraint firstAttribute="trailing" secondItem="60p-E6-yTC" secondAttribute="trailing" constant="32" id="AYS-Op-eog"/>
+                            <constraint firstItem="60p-E6-yTC" firstAttribute="centerY" secondItem="8at-y9-Aah" secondAttribute="centerY" id="G1u-ht-CFu"/>
                             <constraint firstAttribute="trailing" secondItem="KOR-yZ-VfJ" secondAttribute="trailing" constant="16" id="VLC-70-jZD"/>
                             <constraint firstAttribute="bottom" secondItem="KOR-yZ-VfJ" secondAttribute="bottom" constant="16" id="XSK-yI-SSS"/>
+                            <constraint firstItem="60p-E6-yTC" firstAttribute="centerX" secondItem="8at-y9-Aah" secondAttribute="centerX" id="YiB-Dj-CxQ"/>
                             <constraint firstItem="KOR-yZ-VfJ" firstAttribute="leading" secondItem="8at-y9-Aah" secondAttribute="leading" constant="16" id="dOY-94-zOl"/>
-                            <constraint firstItem="KOR-yZ-VfJ" firstAttribute="top" secondItem="I8u-EI-4d0" secondAttribute="bottom" constant="32" id="vIq-wi-Rys"/>
-                            <constraint firstAttribute="trailing" secondItem="I8u-EI-4d0" secondAttribute="trailing" constant="32" id="vgT-hN-sq0"/>
+                            <constraint firstItem="60p-E6-yTC" firstAttribute="leading" secondItem="8at-y9-Aah" secondAttribute="leading" constant="32" id="giN-Hr-yoy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YiB-Dj-CxQ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8va-NV-dyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,4 +135,7 @@
             <point key="canvasLocation" x="97.5" y="1177.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder_statistics_green" width="140" height="117"/>
+    </resources>
 </document>
