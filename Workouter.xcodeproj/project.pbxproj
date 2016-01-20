@@ -107,6 +107,7 @@
 		9F469AE61BF6D08300C29AA9 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */; };
 		9F469AE81BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */; };
 		9F469AE91BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */; };
+		9F4875B71C4F5E3000D9ED9F /* Male.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4875B61C4F5E3000D9ED9F /* Male.scnassets */; };
 		9F49AFCE1C3CCB3100B1763C /* UserWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49AFCD1C3CCB3100B1763C /* UserWorkoutCell.swift */; };
 		9F49AFCF1C3CCB3100B1763C /* UserWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49AFCD1C3CCB3100B1763C /* UserWorkoutCell.swift */; };
 		9F49AFD21C3CDCD200B1763C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49AFD11C3CDCD200B1763C /* BaseCollectionViewCell.swift */; };
@@ -378,6 +379,7 @@
 		9F469AD61BF691BD00C29AA9 /* StatisticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProvider.swift; sourceTree = "<group>"; };
 		9F469AE41BF6D08300C29AA9 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
 		9F469AE71BF6D21C00C29AA9 /* WorkoutsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsProviderObserving.swift; sourceTree = "<group>"; };
+		9F4875B61C4F5E3000D9ED9F /* Male.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Male.scnassets; sourceTree = "<group>"; };
 		9F49AFCD1C3CCB3100B1763C /* UserWorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkoutCell.swift; sourceTree = "<group>"; };
 		9F49AFD11C3CDCD200B1763C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F49AFD41C3CDCE500B1763C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -1179,6 +1181,7 @@
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F4875B61C4F5E3000D9ED9F /* Male.scnassets */,
 				9FD745CA1C09832000E48508 /* iTunesArtwork.png */,
 				9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */,
 				9F0F41C21BFF07F900989101 /* AppPalette.clr */,
@@ -1495,6 +1498,7 @@
 				F02CAB7B1B4B871E00F28D72 /* LaunchScreen.xib in Resources */,
 				F02CAB7C1B4B871E00F28D72 /* Images.xcassets in Resources */,
 				F02CAB7E1B4B871E00F28D72 /* DefaultWorkouts.json in Resources */,
+				9F4875B71C4F5E3000D9ED9F /* Male.scnassets in Resources */,
 				9F7CA3F61C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

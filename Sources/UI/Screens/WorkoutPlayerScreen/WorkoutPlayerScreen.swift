@@ -70,6 +70,8 @@ extension WorkoutPlayerScreen {
 extension WorkoutPlayerScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
+        let animationScene = SCNScene(named: "Male.scnassets/PRG_7EN_01_001_001_Jumping_Jacks_SL_1_Select_1.dae")
+        workoutPlayerView.exerciseSceneView.scene!.rootNode.addChildNode(animationScene!.rootNode)
         workoutPlayerView.progressView.progressItems = progressItemsFromSteps(workout.steps)
     }
     
