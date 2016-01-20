@@ -133,10 +133,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-M0-7sQ">
-                                        <rect key="frame" x="81" y="114" width="149" height="20"/>
+                                        <rect key="frame" x="81.5" y="114" width="148.5" height="20"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-EC-kAD">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_tag_white" translatesAutoresizingMaskIntoConstraints="NO" id="Fwu-pX-p00">
                                                         <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
@@ -181,7 +181,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-HE-pox">
-                                                <rect key="frame" x="73" y="0.0" width="76" height="20"/>
+                                                <rect key="frame" x="72.5" y="0.0" width="76" height="20"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_tag_white" translatesAutoresizingMaskIntoConstraints="NO" id="VB2-EP-RP3">
                                                         <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>

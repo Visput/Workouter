@@ -854,7 +854,7 @@
                                     <constraint firstAttribute="width" secondItem="UFd-Xw-bhA" secondAttribute="height" multiplier="1:1" id="sYT-Z5-Z7m"/>
                                 </constraints>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="cup.dae" allowsCameraControl="YES" autoenablesDefaultLighting="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-pB-Meg">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="Male.scnassets/model.dae" allowsCameraControl="YES" autoenablesDefaultLighting="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-pB-Meg">
                                 <rect key="frame" x="16" y="296" width="343" height="283"/>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlH-d1-Yt6" customClass="TintButton" customModule="Workouter" customModuleProvider="target">

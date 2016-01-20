@@ -45,8 +45,6 @@
 		9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */; };
 		9F13C46E1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
 		9F13C46F1C1D538600894C6C /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */; };
-		9F1B75D11C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
-		9F1B75D21C11156C00854F49 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */; };
 		9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */; };
 		9F1B75D51C1121DE00854F49 /* WelcomePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */; };
 		9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */; };
@@ -73,7 +71,6 @@
 		9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
 		9F3AD6B71C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
 		9F3AD6B81C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
-		9F3C4B601C47938C0073C021 /* cup.dae in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C4B5F1C47938C0073C021 /* cup.dae */; };
 		9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
 		9F3CA9FF1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
 		9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CAA001C34472B0061C21A /* AccountView.swift */; };
@@ -204,6 +201,10 @@
 		9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */; };
 		9FBC31181BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */; };
 		9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */; };
+		9FBE71541C4F2CAF000E90E1 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE71531C4F2CAF000E90E1 /* UIScreen+Size.swift */; };
+		9FBE71551C4F2CAF000E90E1 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE71531C4F2CAF000E90E1 /* UIScreen+Size.swift */; };
+		9FBE71571C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE71561C4F2D5B000E90E1 /* WelcomePageContentController.swift */; };
+		9FBE71581C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE71561C4F2D5B000E90E1 /* WelcomePageContentController.swift */; };
 		9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */; };
 		9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */; };
 		9FC35E681BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */; };
@@ -236,8 +237,6 @@
 		9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
 		9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */; };
 		9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */; };
-		9FE797D41C0CB483009A52C5 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
-		9FE797D51C0CB483009A52C5 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */; };
 		9FE797D61C0CB554009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		9FE797D71C0CB555009A52C5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */; };
 		9FE798651C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */; };
@@ -348,7 +347,6 @@
 		9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionView.swift; sourceTree = "<group>"; };
 		9F13C4691C1C02BD00894C6C /* DescriptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionButton.swift; sourceTree = "<group>"; };
 		9F13C46D1C1D538600894C6C /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
-		9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
 		9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageItem.swift; sourceTree = "<group>"; };
 		9F341ACA1BDF171D00AEDEB1 /* StepEditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditScreen.swift; sourceTree = "<group>"; };
 		9F341ACB1BDF171D00AEDEB1 /* StepEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditView.swift; sourceTree = "<group>"; };
@@ -362,7 +360,6 @@
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
 		9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWorkoutCellItem.swift; sourceTree = "<group>"; };
-		9F3C4B5F1C47938C0073C021 /* cup.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = cup.dae; sourceTree = "<group>"; };
 		9F3CA9FD1C3447140061C21A /* AccountScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		9F3CAA001C34472B0061C21A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9F3CAA031C3447EA0061C21A /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
@@ -409,7 +406,6 @@
 		9F7CA3F51C23E5AE003E9BFD /* BuildWorkoutScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuildWorkoutScreens.storyboard; sourceTree = "<group>"; };
 		9F87820A1BFD968400D431C2 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		9F8782171BFE941000D431C2 /* TintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintButton.swift; sourceTree = "<group>"; };
-		9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
 		9F9444171C0001A2003E333B /* BaseDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialogView.swift; sourceTree = "<group>"; };
 		9F94441A1C0001BE003E333B /* BaseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDialog.swift; sourceTree = "<group>"; };
 		9F94441D1C000330003E333B /* TextDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialog.swift; sourceTree = "<group>"; };
@@ -429,6 +425,8 @@
 		9FAFA6751C2FED950007463D /* WorkoutPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPageItem.swift; sourceTree = "<group>"; };
 		9FAFA68F1C30028E0007463D /* UIPageViewController+PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+PageControl.swift"; sourceTree = "<group>"; };
 		9FBC31171BFA56B800453C6C /* NSAttributedString+Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Duration.swift"; sourceTree = "<group>"; };
+		9FBE71531C4F2CAF000E90E1 /* UIScreen+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
+		9FBE71561C4F2D5B000E90E1 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
 		9FC35E5A1BE48AA50068A2D2 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsView.swift; sourceTree = "<group>"; };
 		9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppPalette.swift"; sourceTree = "<group>"; };
@@ -881,7 +879,7 @@
 		9F88A3F91C08580300C1FDD9 /* UIScreen+Size */ = {
 			isa = PBXGroup;
 			children = (
-				9F88A3FA1C08580300C1FDD9 /* UIScreen+Size.swift */,
+				9FBE71531C4F2CAF000E90E1 /* UIScreen+Size.swift */,
 			);
 			path = "UIScreen+Size";
 			sourceTree = "<group>";
@@ -1041,9 +1039,9 @@
 		9FE798631C0D717E009A52C5 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE71561C4F2D5B000E90E1 /* WelcomePageContentController.swift */,
 				9FE798641C0D71AA009A52C5 /* WelcomeScreen.swift */,
 				9FE798671C0D71C6009A52C5 /* WelcomeView.swift */,
-				9F1B75D01C11156C00854F49 /* WelcomePageContentController.swift */,
 				9F1B75D31C1121DE00854F49 /* WelcomePageItem.swift */,
 			);
 			path = WelcomeScreen;
@@ -1181,7 +1179,6 @@
 		F0C342491A9E4BC800B9D480 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F3C4B5F1C47938C0073C021 /* cup.dae */,
 				9FD745CA1C09832000E48508 /* iTunesArtwork.png */,
 				9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */,
 				9F0F41C21BFF07F900989101 /* AppPalette.clr */,
@@ -1490,7 +1487,6 @@
 				9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */,
 				9F7CA3F31C23E229003E9BFD /* OnboardingScreens.storyboard in Resources */,
 				9F4356CD1C49E20E00D841FE /* WorkoutsScreens.storyboard in Resources */,
-				9F3C4B601C47938C0073C021 /* cup.dae in Resources */,
 				9F4356D31C49E27100D841FE /* MagicBoxScreens.storyboard in Resources */,
 				9F7CA3F01C23E149003E9BFD /* MainScreens.storyboard in Resources */,
 				9F7CA3EB1C23E0E6003E9BFD /* Main.storyboard in Resources */,
@@ -1793,6 +1789,7 @@
 				9F49AFD21C3CDCD200B1763C /* BaseCollectionViewCell.swift in Sources */,
 				9FED64031C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5B1BE48AA50068A2D2 /* SearchController.swift in Sources */,
+				9FBE71541C4F2CAF000E90E1 /* UIScreen+Size.swift in Sources */,
 				9FAFA6901C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F3647691C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
 				9F0588AC1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */,
@@ -1800,7 +1797,6 @@
 				9F94441E1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D41C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
 				9F64FA831C0AE88500B63798 /* StepsTableViewSectionHeader.swift in Sources */,
-				9F1B75D11C11156C00854F49 /* WelcomePageContentController.swift in Sources */,
 				9F0DFC3D1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F02CAB521B4B871E00F28D72 /* Step.swift in Sources */,
 				F02CAB531B4B871E00F28D72 /* WorkoutsScreen.swift in Sources */,
@@ -1836,7 +1832,6 @@
 				9F0F07321C06286400DA0152 /* SettingsView.swift in Sources */,
 				9FAFA6781C2FED950007463D /* MagicBoxPreviewController.swift in Sources */,
 				9F0F072F1C06284E00DA0152 /* SettingsScreen.swift in Sources */,
-				9FE797D41C0CB483009A52C5 /* UIScreen+Size.swift in Sources */,
 				9F0DFC431BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D141BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */,
@@ -1873,6 +1868,7 @@
 				9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */,
 				9F79EA8B1C39167A00FC8227 /* UserWorkoutsSource.swift in Sources */,
 				9F99006D1C1929FB00ACC612 /* CircleProgressView.swift in Sources */,
+				9FBE71571C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */,
 				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
 				9FAFA6841C2FED950007463D /* WorkoutPageItem.swift in Sources */,
 				9FD745C31C09651E00E48508 /* TextFieldController.swift in Sources */,
@@ -1929,6 +1925,7 @@
 				9F49AFD31C3CDCD200B1763C /* BaseCollectionViewCell.swift in Sources */,
 				9FED64041C1D69DA00F40CDF /* MagicBoxScreen.swift in Sources */,
 				9FC35E5C1BE48AA50068A2D2 /* SearchController.swift in Sources */,
+				9FBE71551C4F2CAF000E90E1 /* UIScreen+Size.swift in Sources */,
 				9FAFA6911C30028E0007463D /* UIPageViewController+PageControl.swift in Sources */,
 				9F36476A1C31CBEF00EE0110 /* AchievementCell.swift in Sources */,
 				9F0588AD1C32629C006DDD81 /* AchievementDetailsView.swift in Sources */,
@@ -1936,7 +1933,6 @@
 				9F94441F1C000330003E333B /* TextDialog.swift in Sources */,
 				9F1B75D51C1121DE00854F49 /* WelcomePageItem.swift in Sources */,
 				9F64FA841C0AE88500B63798 /* StepsTableViewSectionHeader.swift in Sources */,
-				9F1B75D21C11156C00854F49 /* WelcomePageContentController.swift in Sources */,
 				9F0DFC3E1BE88D97002AEACC /* WorkoutTemplatesScreen.swift in Sources */,
 				F09702C01ACA48E700498DEE /* Step.swift in Sources */,
 				F09702C11ACA48E700498DEE /* WorkoutsScreen.swift in Sources */,
@@ -1972,7 +1968,6 @@
 				9F0F07331C06286400DA0152 /* SettingsView.swift in Sources */,
 				9FAFA6791C2FED950007463D /* MagicBoxPreviewController.swift in Sources */,
 				9F0F07301C06284E00DA0152 /* SettingsScreen.swift in Sources */,
-				9FE797D51C0CB483009A52C5 /* UIScreen+Size.swift in Sources */,
 				9F0DFC441BE88DEF002AEACC /* StepTemplatesView.swift in Sources */,
 				9F5A7D151BFAA48E00B3E966 /* NewWorkoutTemplateCell.swift in Sources */,
 				9FD745C91C09675000E48508 /* TextFieldController.swift in Sources */,
@@ -2009,6 +2004,7 @@
 				9F3CA9FF1C3447140061C21A /* AccountScreen.swift in Sources */,
 				9F79EA8C1C39167A00FC8227 /* UserWorkoutsSource.swift in Sources */,
 				9F99006E1C1929FB00ACC612 /* CircleProgressView.swift in Sources */,
+				9FBE71581C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */,
 				9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */,
 				9FAFA6851C2FED950007463D /* WorkoutPageItem.swift in Sources */,
 				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,
