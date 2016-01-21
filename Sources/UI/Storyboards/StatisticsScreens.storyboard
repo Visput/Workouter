@@ -56,7 +56,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="60p-E6-yTC">
                                 <rect key="frame" x="32" y="216" width="311" height="235"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_statistics_green" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-53-BEd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_statistics" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-53-BEd">
                                         <rect key="frame" x="85.5" y="0.0" width="140" height="117"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="2HX-Mg-VuY"/>
@@ -136,6 +136,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder_statistics_green" width="140" height="117"/>
+        <image name="placeholder_statistics" width="140" height="117"/>
     </resources>
 </document>
