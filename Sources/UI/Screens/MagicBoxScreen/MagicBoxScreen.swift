@@ -10,25 +10,23 @@ import UIKit
 
 final class MagicBoxScreen: BaseScreen {
     
-    private lazy var icons = {
-        return [
-            UIImage(named: "icon_bike_green")!,
-            UIImage(named: "icon_kettlebell_filled_green")!,
-            UIImage(named: "icon_shoes_filled_green")!,
-            UIImage(named: "icon_dumbbell_filled_green")!,
-            UIImage(named: "icon_timer_green")!,
-            UIImage(named: "icon_fitball_green")!,
-            UIImage(named: "icon_bottle_filled_green")!,
-            UIImage(named: "icon_mat_green")!,
-            UIImage(named: "icon_cocktail_filled_green")!,
-            UIImage(named: "icon_jumping_rope_green")!,
-            UIImage(named: "icon_goggles_green")!,
-            UIImage(named: "icon_roller_filled_green")!,
-            UIImage(named: "icon_handgrips_filled_green")!,
-            UIImage(named: "icon_bar_filled_green")!,
-            UIImage(named: "icon_horizontal_bar_filled_green")!
-        ]
-    }()
+    private lazy var icons = [
+        UIImage(named: "icon_bike_green")!,
+        UIImage(named: "icon_kettlebell_filled_green")!,
+        UIImage(named: "icon_shoes_filled_green")!,
+        UIImage(named: "icon_dumbbell_filled_green")!,
+        UIImage(named: "icon_timer_green")!,
+        UIImage(named: "icon_fitball_green")!,
+        UIImage(named: "icon_bottle_filled_green")!,
+        UIImage(named: "icon_mat_green")!,
+        UIImage(named: "icon_cocktail_filled_green")!,
+        UIImage(named: "icon_jumping_rope_green")!,
+        UIImage(named: "icon_goggles_green")!,
+        UIImage(named: "icon_roller_filled_green")!,
+        UIImage(named: "icon_handgrips_filled_green")!,
+        UIImage(named: "icon_bar_filled_green")!,
+        UIImage(named: "icon_horizontal_bar_filled_green")!
+    ]
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager

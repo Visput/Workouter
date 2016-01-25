@@ -10,9 +10,7 @@ import UIKit
 
 final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
 
-    private lazy var animator: UIDynamicAnimator = {
-        return UIDynamicAnimator(collectionViewLayout: self)
-    }()
+    private lazy var animator: UIDynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let contentSize = collectionViewContentSize()
