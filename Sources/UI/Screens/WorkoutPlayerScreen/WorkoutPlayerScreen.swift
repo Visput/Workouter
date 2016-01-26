@@ -38,12 +38,7 @@ final class WorkoutPlayerScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationManager.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        navigationManager.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+        navigationController!.setNavigationBarHidden(true, animated: animated)
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

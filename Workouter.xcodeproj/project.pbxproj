@@ -63,8 +63,10 @@
 		9F36477B1C31EBA600EE0110 /* AchievementsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */; };
 		9F36477D1C31EBC500EE0110 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36477C1C31EBC500EE0110 /* Achievement.swift */; };
 		9F36477E1C31EBC500EE0110 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36477C1C31EBC500EE0110 /* Achievement.swift */; };
-		9F36997C1C519FF900C35D62 /* WorkoutsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36997B1C519FF900C35D62 /* WorkoutsPlaceholderController.swift */; };
-		9F36997D1C519FF900C35D62 /* WorkoutsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36997B1C519FF900C35D62 /* WorkoutsPlaceholderController.swift */; };
+		9F3699921C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3699901C572B2600C35D62 /* WorkoutsPlaceholderController.swift */; };
+		9F3699931C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3699901C572B2600C35D62 /* WorkoutsPlaceholderController.swift */; };
+		9F3699941C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3699911C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift */; };
+		9F3699951C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3699911C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift */; };
 		9F37F5771BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F5781BE0581800772BB7 /* AppShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */; };
 		9F37F57F1BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
@@ -359,7 +361,8 @@
 		9F3647681C31CBEF00EE0110 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		9F3647791C31EBA600EE0110 /* AchievementsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsProvider.swift; sourceTree = "<group>"; };
 		9F36477C1C31EBC500EE0110 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
-		9F36997B1C519FF900C35D62 /* WorkoutsPlaceholderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsPlaceholderController.swift; sourceTree = "<group>"; };
+		9F3699901C572B2600C35D62 /* WorkoutsPlaceholderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsPlaceholderController.swift; sourceTree = "<group>"; };
+		9F3699911C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsSearchPlaceholderController.swift; sourceTree = "<group>"; };
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
@@ -676,6 +679,15 @@
 				9F36477C1C31EBC500EE0110 /* Achievement.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		9F36998F1C572B2600C35D62 /* Placeholders */ = {
+			isa = PBXGroup;
+			children = (
+				9F3699901C572B2600C35D62 /* WorkoutsPlaceholderController.swift */,
+				9F3699911C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift */,
+			);
+			path = Placeholders;
 			sourceTree = "<group>";
 		};
 		9F37F5751BE057D600772BB7 /* AppShortcutsManager */ = {
@@ -1344,7 +1356,7 @@
 			children = (
 				F0C3426B1A9E4BC800B9D480 /* WorkoutsScreen.swift */,
 				F08ED6041ABE83B3005BEBB3 /* WorkoutsView.swift */,
-				9F36997B1C519FF900C35D62 /* WorkoutsPlaceholderController.swift */,
+				9F36998F1C572B2600C35D62 /* Placeholders */,
 				9F79EA821C39167A00FC8227 /* Sources */,
 				9F79EA801C39167A00FC8227 /* Cells */,
 			);
@@ -1851,7 +1863,7 @@
 				9FD745F01C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
 				9F3CAA071C3448370061C21A /* AccountCellItem.swift in Sources */,
-				9F36997C1C519FF900C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
+				9F3699921C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
 				9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6801C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
@@ -1870,6 +1882,7 @@
 				9F87820B1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5911BE317F400A3844D /* DurationViewController.swift in Sources */,
 				9FBC31181BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,
+				9F3699941C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift in Sources */,
 				9F4356DE1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */,
 				9FED642F1C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9F697E561C029ED500BAB0EC /* UIView+Animation.swift in Sources */,
@@ -1988,7 +2001,7 @@
 				9FD745F11C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				9F3CAA081C3448370061C21A /* AccountCellItem.swift in Sources */,
-				9F36997D1C519FF900C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
+				9F3699931C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
 				9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
 				9FAFA6811C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
@@ -2007,6 +2020,7 @@
 				9F0F072C1C06282800DA0152 /* WorkoutPlayerView.swift in Sources */,
 				9F87820C1BFD968400D431C2 /* UIView+IBInspectable.swift in Sources */,
 				9FA2F5921BE317F400A3844D /* DurationViewController.swift in Sources */,
+				9F3699951C572B2600C35D62 /* WorkoutsSearchPlaceholderController.swift in Sources */,
 				9F4356DF1C49E3DA00D841FE /* WorkoutCompletionScreen.swift in Sources */,
 				9FED64301C1F51E700F40CDF /* StatisticsView.swift in Sources */,
 				9FBC31191BFA56B800453C6C /* NSAttributedString+Duration.swift in Sources */,

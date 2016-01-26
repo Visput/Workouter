@@ -28,7 +28,7 @@ final class WorkoutCompletionScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationManager.setNavigationBarHidden(false, animated: animated)
+        navigationController!.setNavigationBarHidden(false, animated: animated)
     }
 }
 

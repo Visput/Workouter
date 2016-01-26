@@ -11,6 +11,7 @@ import UIKit
 protocol WorkoutsSource: UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate {
     
     var active: Bool { get set }
+    var currentWorkouts: [Workout] { get }
     
     func searchWorkoutsWithText(text: String)
     func resetSearchResults()

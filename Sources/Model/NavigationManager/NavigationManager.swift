@@ -139,17 +139,6 @@ extension NavigationManager {
         }
         presentingViewController.dismissViewControllerAnimated(false, completion: nil)
     }
-    
-    // Show / Hide navigation bar.
-    func setNavigationBarHidden(hidden: Bool, animated: Bool) {
-        setNavigationBarHidden(hidden, forNavigationController: topNavigationController, animated: animated)
-    }
-    
-    private func setNavigationBarHidden(hidden: Bool,
-        forNavigationController navigationController: UINavigationController,
-        animated: Bool) {
-            navigationController.setNavigationBarHidden(hidden, animated: animated)
-    }
 }
 
 extension NavigationManager {

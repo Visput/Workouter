@@ -1,17 +1,15 @@
 //
-//  NewWorkoutPageContentController.swift
+//  WorkoutsPlaceholderController.swift
 //  Workouter
 //
-//  Created by Uladzimir Papko on 12/27/15.
-//  Copyright © 2015 visput. All rights reserved.
+//  Created by Uladzimir Papko on 1/21/16.
+//  Copyright © 2016 visput. All rights reserved.
 //
 
 import UIKit
 
-final class NewWorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
+final class WorkoutsPlaceholderController: PlaceholderController {
 
-    var item: WorkoutPageItem!
-    
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
@@ -20,7 +18,7 @@ final class NewWorkoutPageContentController: BaseViewController, WorkoutPageCont
         return modelProvider.workoutsProvider
     }
     
-    @IBAction private func actionButtonDidPress(sender: AnyObject) {
+    @IBAction private func createWorkoutButtonDidPress(sender: AnyObject) {
         let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
         navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
             animated: true,

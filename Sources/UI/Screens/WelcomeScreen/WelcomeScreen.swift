@@ -42,17 +42,12 @@ final class WelcomeScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationManager.setNavigationBarHidden(true, animated: animated)
+        navigationController!.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         restartAutoSwipeTimer()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        navigationManager.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {

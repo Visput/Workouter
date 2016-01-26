@@ -11,24 +11,20 @@ import UIKit
 class PlaceholderController: BaseViewController {
 
     var visible: Bool {
+        // PlaceholderController is embedded controller.
+        // Use superview (container view) to manipulate visibility.
         get {
-            return !view.hidden
+            return view.superview!.alpha == 1.0
         }
         set {
-            view.hidden = !visible
+            view.superview!.alpha = newValue ? 1.0 : 0.0
         }
     }
     
     func setVisible(visible: Bool, animated: Bool) {
         if animated {
-            if visible && !self.visible {
-                self.visible = visible
-                view.alpha = 0.0
-            }
             UIView.animateWithDefaultDuration({ _ in
-                self.view.alpha = visible ? 1.0 : 0.0
-                }, completion: { _ in
-                    self.visible = visible
+                self.visible = visible
             })
         } else {
             self.visible = visible

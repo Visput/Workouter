@@ -40,6 +40,7 @@ final class MainScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController!.setNavigationBarHidden(false, animated: animated)
         setTransparentBackgroundForNavigationBar()
     }
     

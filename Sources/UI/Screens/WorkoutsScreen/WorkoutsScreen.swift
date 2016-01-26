@@ -14,6 +14,7 @@ final class WorkoutsScreen: BaseScreen {
         didSet {
             guard isViewDisplayed else { return }
             fillViewWithWorkoutsSources(workoutsSources)
+            configurePlaceholdersAnimated(true)
         }
     }
     
@@ -28,6 +29,9 @@ final class WorkoutsScreen: BaseScreen {
     private var workoutsView: WorkoutsView {
         return view as! WorkoutsView
     }
+    
+    private var workoutsPlaceholderController: PlaceholderController!
+    private var workoutsSearchPlaceholderController: WorkoutsSearchPlaceholderController!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,15 +52,11 @@ final class WorkoutsScreen: BaseScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutsProvider.loadWorkouts()
-      
+        workoutsProvider.observers.addObserver(self)
+        
         workoutsSources.collectionView = workoutsView.workoutsCollectionView
         fillViewWithWorkoutsSources(workoutsSources)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        // Handle workouts updates only when view isn't currently displayed.
-        workoutsProvider.observers.removeObserver(self)
+        configurePlaceholdersAnimated(false)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -65,18 +65,27 @@ final class WorkoutsScreen: BaseScreen {
     }
     
     override func viewDidDisappear(animated: Bool) {
-        // Handle workouts updates only when view isn't currently displayed.
-        workoutsProvider.observers.addObserver(self)
         setSearchActive(false)
         super.viewDidDisappear(animated)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier! == "WorkoutsPlaceholder" {
+            workoutsPlaceholderController = segue.destinationViewController as! PlaceholderController
+        } else if segue.identifier! == "WorkoutsSearchPlaceholder" {
+            workoutsSearchPlaceholderController = segue.destinationViewController as! WorkoutsSearchPlaceholderController
+        }
     }
 }
 
 extension WorkoutsScreen: WorkoutsProviderObserving {
     
     func workoutsProvider(provider: WorkoutsProvider, didUpdateUserWorkouts userWorkouts: [Workout]) {
-        // Fill view with updated workouts.
-        fillViewWithWorkoutsSources(workoutsSources)
+        // Handle workouts updates only when view isn't currently displayed.
+        if !isViewDisplayed {
+            fillViewWithWorkoutsSources(workoutsSources)
+        }
+        configurePlaceholdersAnimated(true)
     }
 }
 
@@ -86,6 +95,7 @@ extension WorkoutsScreen: UISearchBarDelegate {
         workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(searchText)
         workoutsSources.userWorkokutsSource.searchWorkoutsWithText(searchText)
         fillViewWithWorkoutsSources(workoutsSources)
+        configurePlaceholdersAnimated(true)
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -112,6 +122,7 @@ extension WorkoutsScreen {
         workoutsView.workoutsCollectionView.hideCellsActions()
         workoutsSources.currentSourceType = WorkoutsSourceType(rawValue: sender.selectedSegmentIndex)!
         fillViewWithWorkoutsSources(workoutsSources)
+        configurePlaceholdersAnimated(false)
     }
     
     @objc private func newWorkoutButtonDidPress(sender: AnyObject) {
@@ -145,7 +156,7 @@ extension WorkoutsScreen {
 extension WorkoutsScreen {
     
     private func setSearchActive(active: Bool) {
-        navigationManager.setNavigationBarHidden(active, animated: true)
+        navigationController?.setNavigationBarHidden(active, animated: true)
         if active {
             workoutsView.searchBar.becomeFirstResponder()
             if workoutsView.searchBar.text == nil {
@@ -153,14 +164,15 @@ extension WorkoutsScreen {
             }
             workoutsSources.defaultWorkoutsSource.searchWorkoutsWithText(workoutsView.searchBar.text!)
             workoutsSources.userWorkokutsSource.searchWorkoutsWithText(workoutsView.searchBar.text!)
-            fillViewWithWorkoutsSources(workoutsSources)
         } else {
             workoutsView.searchBar.resignFirstResponder()
             workoutsView.searchBar.text = ""
             workoutsSources.defaultWorkoutsSource.resetSearchResults()
             workoutsSources.userWorkokutsSource.resetSearchResults()
-            fillViewWithWorkoutsSources(workoutsSources)
         }
+        
+        fillViewWithWorkoutsSources(workoutsSources)
+        configurePlaceholdersAnimated(true)
     }
     
     private func fillViewWithWorkoutsSources(workoutsSources: WorkoutsSourceFactory) {
@@ -179,6 +191,21 @@ extension WorkoutsScreen {
             navigationItem.rightBarButtonItem = UIBarButtonItem.greenSearchItemWithAlignment(.Right,
                 target: self,
                 action: Selector("searchWorkoutsButtonDidPress:"))
+        }
+    }
+    
+    private func configurePlaceholdersAnimated(animated: Bool) {
+        if workoutsView.searchBar.text?.characters.count != 0 {
+            // Search results are presented.
+            workoutsPlaceholderController.setVisible(false, animated: animated)
+            withVaList([self.workoutsView.searchBar.text!]) { pointer in
+                self.workoutsSearchPlaceholderController.placeholderLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+            }
+            workoutsSearchPlaceholderController.setVisible(workoutsSources.currentSource.currentWorkouts.count == 0, animated: animated)
+        } else {
+            // Full list of workouts is presented.
+            workoutsSearchPlaceholderController.setVisible(false, animated: animated)
+            workoutsPlaceholderController.setVisible(workoutsSources.currentSource.currentWorkouts.count == 0, animated: animated)
         }
     }
 }

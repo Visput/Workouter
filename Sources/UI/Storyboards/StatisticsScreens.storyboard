@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="60p-E6-yTC">
-                                <rect key="frame" x="32" y="216" width="311" height="235"/>
+                                <rect key="frame" x="32" y="188" width="311" height="235"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_statistics" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-53-BEd">
                                         <rect key="frame" x="85.5" y="0.0" width="140" height="117"/>
@@ -116,7 +116,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="60p-E6-yTC" secondAttribute="trailing" constant="32" id="AYS-Op-eog"/>
-                            <constraint firstItem="60p-E6-yTC" firstAttribute="centerY" secondItem="8at-y9-Aah" secondAttribute="centerY" id="G1u-ht-CFu"/>
+                            <constraint firstItem="60p-E6-yTC" firstAttribute="centerY" secondItem="8at-y9-Aah" secondAttribute="centerY" constant="-28" id="G1u-ht-CFu"/>
                             <constraint firstAttribute="trailing" secondItem="KOR-yZ-VfJ" secondAttribute="trailing" constant="16" id="VLC-70-jZD"/>
                             <constraint firstAttribute="bottom" secondItem="KOR-yZ-VfJ" secondAttribute="bottom" constant="16" id="XSK-yI-SSS"/>
                             <constraint firstItem="60p-E6-yTC" firstAttribute="centerX" secondItem="8at-y9-Aah" secondAttribute="centerX" id="YiB-Dj-CxQ"/>

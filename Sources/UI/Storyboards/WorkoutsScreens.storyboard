@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -595,6 +595,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs9-sK-Ida">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <connections>
+                                    <segue destination="LEo-9u-Swu" kind="embed" identifier="WorkoutsSearchPlaceholder" id="abJ-Cc-eJs"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDp-Ev-VuB">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <connections>
+                                    <segue destination="vfE-AR-bL2" kind="embed" identifier="WorkoutsPlaceholder" id="wtT-2i-NVf"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-Uf-jne">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
@@ -651,17 +663,25 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333730697632" green="0.94117647409439087" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vs9-sK-Ida" firstAttribute="bottom" secondItem="pvp-9k-i2J" secondAttribute="bottom" id="2XX-k3-g1g"/>
                             <constraint firstItem="9NH-zc-R7n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9bv-ll-zRb"/>
+                            <constraint firstItem="vDp-Ev-VuB" firstAttribute="trailing" secondItem="pvp-9k-i2J" secondAttribute="trailing" id="9gQ-Mp-k3B"/>
                             <constraint firstItem="q9f-eJ-nI4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="DDS-Pu-FJS"/>
+                            <constraint firstItem="vDp-Ev-VuB" firstAttribute="leading" secondItem="pvp-9k-i2J" secondAttribute="leading" id="Esc-36-Y1H"/>
+                            <constraint firstItem="vDp-Ev-VuB" firstAttribute="bottom" secondItem="pvp-9k-i2J" secondAttribute="bottom" id="Gay-ud-3mx"/>
                             <constraint firstItem="pvp-9k-i2J" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KIv-Kh-xbI"/>
                             <constraint firstItem="Doc-Uf-jne" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LBv-aZ-E1O"/>
                             <constraint firstItem="Doc-Uf-jne" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="64" id="OGp-3v-xCq"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pvp-9k-i2J" secondAttribute="bottom" id="Qa1-28-soe"/>
                             <constraint firstItem="9NH-zc-R7n" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="VKh-qn-IhK"/>
                             <constraint firstAttribute="trailing" secondItem="q9f-eJ-nI4" secondAttribute="trailing" id="YRv-2H-8b9"/>
+                            <constraint firstItem="vDp-Ev-VuB" firstAttribute="top" secondItem="pvp-9k-i2J" secondAttribute="top" id="Zkk-rs-M0H"/>
                             <constraint firstItem="pvp-9k-i2J" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="108" id="aJV-aT-k4e"/>
                             <constraint firstAttribute="trailing" secondItem="pvp-9k-i2J" secondAttribute="trailing" id="bOp-ut-QI5"/>
                             <constraint firstAttribute="trailing" secondItem="Doc-Uf-jne" secondAttribute="trailing" id="bpW-W3-7JE"/>
+                            <constraint firstItem="vs9-sK-Ida" firstAttribute="trailing" secondItem="pvp-9k-i2J" secondAttribute="trailing" id="hI4-xV-qFj"/>
+                            <constraint firstItem="vs9-sK-Ida" firstAttribute="top" secondItem="pvp-9k-i2J" secondAttribute="top" id="hPa-4Z-TKM"/>
+                            <constraint firstItem="vs9-sK-Ida" firstAttribute="leading" secondItem="pvp-9k-i2J" secondAttribute="leading" id="iiL-1O-Vxc"/>
                             <constraint firstItem="q9f-eJ-nI4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="llS-D8-xCe"/>
                             <constraint firstAttribute="trailing" secondItem="9NH-zc-R7n" secondAttribute="trailing" id="xXR-yf-NJc"/>
                         </constraints>
@@ -986,6 +1006,195 @@
             </objects>
             <point key="canvasLocation" x="614.5" y="974.5"/>
         </scene>
+        <!--Workouts Placeholder Controller-->
+        <scene sceneID="nc8-fY-GAj">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutsPlaceholderController" id="vfE-AR-bL2" customClass="WorkoutsPlaceholderController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4Y-6e-eCi"/>
+                        <viewControllerLayoutGuide type="bottom" id="4yo-QP-GBz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pBf-Jc-9Na" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-S3-9Ak">
+                                <rect key="frame" x="32" y="137.5" width="311" height="228.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_step" translatesAutoresizingMaskIntoConstraints="NO" id="dum-wK-mov">
+                                        <rect key="frame" x="85.5" y="0.0" width="140" height="139"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="KRF-9K-Tfi"/>
+                                            <constraint firstAttribute="height" constant="140" id="ZgW-50-UZE"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="KRF-9K-Tfi"/>
+                                                <exclude reference="ZgW-50-UZE"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your workouts will be shown here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YK-A9-Z2b">
+                                        <rect key="frame" x="12" y="171" width="287.5" height="57.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="W2y-4y-GyT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <color key="textColor" red="0.69411766529999996" green="0.74901962280000001" blue="0.76862746479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="W2y-4y-GyT"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DY-kJ-U6w" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="503" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1RS-Pz-fkQ"/>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="P7Z-vP-EzD"/>
+                                    <constraint firstAttribute="width" constant="180" id="Rc4-A1-hrJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="WnW-YZ-CPd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Create new workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P7Z-vP-EzD"/>
+                                        <exclude reference="Rc4-A1-hrJ"/>
+                                        <exclude reference="WnW-YZ-CPd"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createWorkoutButtonDidPress:" destination="vfE-AR-bL2" eventType="touchUpInside" id="cnC-78-IDJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3WC-S3-9Ak" firstAttribute="centerY" secondItem="pBf-Jc-9Na" secondAttribute="centerY" constant="-28" id="CPn-XC-wHS"/>
+                            <constraint firstItem="3WC-S3-9Ak" firstAttribute="leading" secondItem="pBf-Jc-9Na" secondAttribute="leading" constant="32" id="FgI-57-TEl"/>
+                            <constraint firstItem="3WC-S3-9Ak" firstAttribute="centerX" secondItem="pBf-Jc-9Na" secondAttribute="centerX" id="M9g-7L-x8N"/>
+                            <constraint firstAttribute="trailing" secondItem="3WC-S3-9Ak" secondAttribute="trailing" constant="32" id="akU-xe-Sxm"/>
+                            <constraint firstAttribute="bottom" secondItem="1DY-kJ-U6w" secondAttribute="bottom" constant="16" id="jWJ-ww-Unv"/>
+                            <constraint firstItem="1DY-kJ-U6w" firstAttribute="leading" secondItem="pBf-Jc-9Na" secondAttribute="leading" constant="16" id="odq-u9-Qg3"/>
+                            <constraint firstAttribute="trailing" secondItem="1DY-kJ-U6w" secondAttribute="trailing" constant="16" id="xN6-Ea-vbx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="M9g-7L-x8N"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ju8-D8-eTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1093.5" y="1774.5"/>
+        </scene>
+        <!--Workouts Search Placeholder Controller-->
+        <scene sceneID="i6U-fl-AZV">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutsSearchPlaceholderController" id="LEo-9u-Swu" customClass="WorkoutsSearchPlaceholderController" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ph6-g7-A23"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1w-mK-09c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="okx-hB-guW" customClass="BaseView" customModule="Workouter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="08Z-M5-fUJ">
+                                <rect key="frame" x="32" y="152" width="311" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_step" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-eK-p65">
+                                        <rect key="frame" x="85" y="0.0" width="140" height="139"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="lNm-pM-y9d"/>
+                                            <constraint firstAttribute="height" constant="140" id="mhy-eJ-Dn0"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lNm-pM-y9d"/>
+                                                <exclude reference="mhy-eJ-Dn0"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found for &quot;%@&quot;." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-Ce-M9v">
+                                        <rect key="frame" x="27.5" y="171" width="256.5" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="WU7-uj-eya"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <color key="textColor" red="0.69411766529999996" green="0.74901962280000001" blue="0.76862746479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="WU7-uj-eya"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrW-7S-TNu" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="503" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="OSA-5T-71Z"/>
+                                    <constraint firstAttribute="height" constant="40" id="SZb-bb-oC2"/>
+                                    <constraint firstAttribute="height" priority="998" constant="40" id="WoR-OR-tor"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bGg-SW-fnS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Create new workout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OSA-5T-71Z"/>
+                                        <exclude reference="WoR-OR-tor"/>
+                                        <exclude reference="bGg-SW-fnS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createWorkoutButtonDidPress:" destination="LEo-9u-Swu" eventType="touchUpInside" id="ztR-T1-K9V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="08Z-M5-fUJ" firstAttribute="leading" secondItem="okx-hB-guW" secondAttribute="leading" constant="32" id="4Xt-LG-eAU"/>
+                            <constraint firstItem="MrW-7S-TNu" firstAttribute="leading" secondItem="okx-hB-guW" secondAttribute="leading" constant="16" id="PET-fR-2xQ"/>
+                            <constraint firstAttribute="trailing" secondItem="08Z-M5-fUJ" secondAttribute="trailing" constant="32" id="Y9N-vc-GrZ"/>
+                            <constraint firstAttribute="bottom" secondItem="MrW-7S-TNu" secondAttribute="bottom" constant="16" id="ecN-vZ-XKy"/>
+                            <constraint firstItem="08Z-M5-fUJ" firstAttribute="centerY" secondItem="okx-hB-guW" secondAttribute="centerY" constant="-28" id="hrk-bV-BIi"/>
+                            <constraint firstAttribute="trailing" secondItem="MrW-7S-TNu" secondAttribute="trailing" constant="16" id="iCB-8a-i7q"/>
+                            <constraint firstItem="08Z-M5-fUJ" firstAttribute="centerX" secondItem="okx-hB-guW" secondAttribute="centerX" id="qH1-wF-bye"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qH1-wF-bye"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="placeholderLabel" destination="g2F-Ce-M9v" id="dr4-m6-Pmr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKY-GF-A7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540.5" y="1774.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background_tag_green" width="30" height="20"/>
@@ -994,5 +1203,6 @@
         <image name="icon_star_filled_green" width="32" height="32"/>
         <image name="icon_star_filled_small_green" width="20" height="20"/>
         <image name="icon_star_green" width="32" height="32"/>
+        <image name="placeholder_new_step" width="140" height="139"/>
     </resources>
 </document>

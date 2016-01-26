@@ -12,11 +12,11 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     
     var active: Bool = false
     
-    private var searchResults: [Workout]?
-    
-    private var currentWorkouts: [Workout] {
+    var currentWorkouts: [Workout] {
         return searchResults ?? workoutsProvider.userWorkouts
     }
+    
+    private var searchResults: [Workout]?
     
     weak var collectionView: ActionableCollectionView!
     private weak var viewController: UIViewController!
