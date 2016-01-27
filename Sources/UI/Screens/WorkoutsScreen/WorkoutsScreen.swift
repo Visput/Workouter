@@ -128,23 +128,16 @@ extension WorkoutsScreen {
     @objc private func newWorkoutButtonDidPress(sender: AnyObject) {
         workoutsView.workoutsCollectionView.hideCellsActions()
         
-        let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
-        navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
+        navigationManager.presentWorkoutEditScreenWithWorkout(Workout.emptyWorkout(),
             animated: true,
-            templateDidSelectAction: { [unowned self] workout in
-                
-                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
-                    animated: true,
-                    workoutDidEditAction: { [unowned self] workout in
-                        
-                        self.workoutsProvider.addWorkout(workout)
-                        self.navigationManager.dismissScreenAnimated(true)
-                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    })
-                
-            }, templateDidCancelAction: {
+            workoutDidEditAction: { [unowned self] workout in
+                self.workoutsProvider.addWorkout(workout)
                 self.navigationManager.dismissScreenAnimated(true)
-        })
+                self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+                
+            }, workoutDidCancelAction: { [unowned self] in
+                self.navigationManager.dismissScreenAnimated(true)
+            })
     }
     
     @objc private func searchWorkoutsButtonDidPress(sender: AnyObject) {

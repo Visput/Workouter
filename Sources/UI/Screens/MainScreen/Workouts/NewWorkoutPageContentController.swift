@@ -21,21 +21,14 @@ final class NewWorkoutPageContentController: BaseViewController, WorkoutPageCont
     }
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        let searchRequest = WorkoutsSearchRequest(searchText: "", isTemplates: true, group: .AllWorkouts)
-        navigationManager.presentWorkoutTemplatesScreenWithRequest(searchRequest,
+        navigationManager.presentWorkoutEditScreenWithWorkout(Workout.emptyWorkout(),
             animated: true,
-            templateDidSelectAction: { [unowned self] workout in
+            workoutDidEditAction: { [unowned self] workout in
+                self.workoutsProvider.addWorkout(workout)
+                self.navigationManager.dismissScreenAnimated(true)
+                self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                 
-                self.navigationManager.pushWorkoutEditScreenWithWorkout(workout,
-                    animated: true,
-                    workoutDidEditAction: { [unowned self] workout in
-                        
-                        self.workoutsProvider.addWorkout(workout)
-                        self.navigationManager.dismissScreenAnimated(true)
-                        self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
-                    })
-                
-            }, templateDidCancelAction: {
+            }, workoutDidCancelAction: { [unowned self] in
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }

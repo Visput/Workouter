@@ -213,28 +213,6 @@ extension NavigationManager {
         setScreens(screens, inNavigationController: rootNavigationController, animated: animated)
     }
     
-    func presentWorkoutTemplatesScreenWithRequest(searchRequest: WorkoutsSearchRequest,
-        animated: Bool,
-        templateDidSelectAction: ((workout: Workout) -> Void)?,
-        templateDidCancelAction: (() -> Void)?) {
-            
-            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutTemplatesScreen.className()) as! WorkoutTemplatesScreen
-            screen.searchRequest = searchRequest
-            screen.templateDidSelectAction = templateDidSelectAction
-            screen.templateDidCancelAction = templateDidCancelAction
-            presentScreen(screen, wrapWithNavigationController: true, animated: animated)
-    }
-    
-    func pushWorkoutEditScreenWithWorkout(workout: Workout,
-        animated: Bool,
-        workoutDidEditAction: ((workout: Workout) -> Void)?) {
-            
-            let screen = storyboard.instantiateViewControllerWithIdentifier(WorkoutEditScreen.className()) as! WorkoutEditScreen
-            screen.workout = workout
-            screen.workoutDidEditAction = workoutDidEditAction
-            pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
-    }
-    
     func presentWorkoutEditScreenWithWorkout(workout: Workout,
         animated: Bool,
         workoutDidEditAction: ((workout: Workout) -> Void)?,

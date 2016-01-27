@@ -185,6 +185,12 @@ extension WorkoutEditScreen {
     }
     
     private func fillViewWithWorkout(workout: Workout) {
+        if workout.isEmpty() {
+            title = NSLocalizedString("New Workout", comment: "")
+        } else {
+            title = NSLocalizedString("Edit Workout", comment: "")
+        }
+        
         nameController.text = workout.name
         nameController.textMaxLength = workout.nameMaxLength
         descriptionController.text = workout.workoutDescription

@@ -142,4 +142,10 @@ extension Workout {
     class func emptyWorkout() -> Self {
         return self.init(name: "", description: "", steps: [])
     }
+    
+    func isEmpty() -> Bool {
+        return name == "" &&
+            workoutDescription == "" &&
+            steps.count == 0
+    }
 }

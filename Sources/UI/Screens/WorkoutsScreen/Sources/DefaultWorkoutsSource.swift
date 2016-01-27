@@ -34,7 +34,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
     }
     
     func searchWorkoutsWithText(text: String) {
-        let searchRequest = WorkoutsSearchRequest(searchText: text, isTemplates: false, group: .DefaultWorkouts)
+        let searchRequest = WorkoutsSearchRequest(searchText: text, group: .DefaultWorkouts)
         searchResults = workoutsProvider.searchWorkoutsWithRequest(searchRequest)
     }
     

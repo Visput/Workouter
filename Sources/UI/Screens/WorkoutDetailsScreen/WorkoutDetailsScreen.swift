@@ -36,6 +36,11 @@ final class WorkoutDetailsScreen: BaseScreen {
         
         fillViewWithWorkout(workout)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController!.setNavigationBarHidden(false, animated: animated)
+    }
 }
 
 extension WorkoutDetailsScreen: ExpandableTableViewDelegate, ExpandableTableViewDataSource {
