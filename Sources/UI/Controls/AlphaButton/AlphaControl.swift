@@ -39,9 +39,7 @@ final class AlphaControl: UIControl {
     }
     
     func updateAppearance() {
-        guard enabled else {
-            fatalError("Disabled state is deprecated for better user experience.")
-        }
+        precondition(enabled, "Disabled state is deprecated for better user experience.")
         
         alpha = highlighted ? 0.4 : 1.0
     }

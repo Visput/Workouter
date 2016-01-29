@@ -39,9 +39,7 @@ final class AlphaButton: UIButton {
     }
     
     func updateAppearance() {
-        guard enabled else {
-            fatalError("Disabled state is deprecated for better user experience.")
-        }
+        precondition(enabled, "Disabled state is deprecated for better user experience.")
         
         adjustsImageWhenHighlighted = false
         setTitleColor(titleColorForState(.Normal), forState: .Highlighted)

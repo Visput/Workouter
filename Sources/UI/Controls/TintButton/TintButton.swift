@@ -123,9 +123,7 @@ class TintButton: UIButton {
 extension TintButton {
     
     func updateAppearance() {
-        guard enabled else {
-            fatalError("Disabled state is deprecated for better user experience.")
-        }
+        precondition(enabled, "Disabled state is deprecated for better user experience.")
         
         // Layer.
         layer.cornerRadius = cornerRadius

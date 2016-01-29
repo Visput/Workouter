@@ -13,9 +13,7 @@ final class WorkoutPlayerScreen: BaseScreen {
     
     var workout: Workout! {
         willSet (newWorkout) {
-            guard workout == nil || workout == newWorkout else {
-                fatalError("Workout can be set only once per screen lifecycle.")
-            }
+            precondition(workout == nil || workout == newWorkout, "Workout can be set only once per screen lifecycle.")
         }
         didSet {
             guard isViewLoaded() else { return }

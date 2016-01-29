@@ -17,12 +17,12 @@ final class ObserverSet<ObserverType>: SequenceType {
     private let weakStorage = NSHashTable.weakObjectsHashTable()
     
     func addObserver(observer: ObserverType) {
-        guard observer is AnyObject else { fatalError("Observer (\(observer)) should be subclass of AnyObject") }
+        precondition(observer is AnyObject, "Observer (\(observer)) should be subclass of AnyObject")
         weakStorage.addObject(observer as? AnyObject)
     }
     
     func removeObserver(observer: ObserverType) {
-        guard observer is AnyObject else { fatalError("Observer (\(observer)) should be subclass of AnyObject") }
+        precondition(observer is AnyObject, "Observer (\(observer)) should be subclass of AnyObject")
         weakStorage.removeObject(observer as? AnyObject)
     }
     
@@ -31,7 +31,7 @@ final class ObserverSet<ObserverType>: SequenceType {
     }
     
     func containsObserver(observer: ObserverType) -> Bool {
-        guard observer is AnyObject else { fatalError("Observer (\(observer)) should be subclass of AnyObject") }
+        precondition(observer is AnyObject, "Observer (\(observer)) should be subclass of AnyObject")
         return weakStorage.containsObject(observer as? AnyObject)
     }
     
