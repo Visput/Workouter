@@ -12,7 +12,7 @@ import UIKit
 class BaseView: UIView {
     
     @IBOutlet weak var bottomSpace: NSLayoutConstraint!
-    var bottomSpaceDefaultValue: CGFloat = 0.0
+    private var bottomSpaceDefaultValue: CGFloat = 0.0
     
     /// If true then `endEditing:` is called when user touches view.
     /// Used for hiding keyboard.
@@ -65,6 +65,7 @@ extension BaseView {
     
     func keyboardWillShow(notification: NSNotification, keyboardHeight: CGFloat) {
         guard bottomSpace != nil else { return }
+        bottomSpaceDefaultValue = bottomSpace!.constant
         
         animateWithKeyboardNotification(notification,
             animations: { 
