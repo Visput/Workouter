@@ -12,35 +12,49 @@ import ObjectMapper
 final class Workout: NSObject, NSCoding, Mappable {
     
     let nameMaxLength = 70
-    let descriptionMaxLength = 140
     
     private(set) var name: String = ""
-    private(set) var workoutDescription: String = ""
     private(set) var steps: [Step] = []
     private(set) var identifier: String = ""
     
     /// Identifier of original workout which was cloned to create this workout.
     private(set) var originalIdentifier: String?
     
-    init(name: String, description: String, steps: [Step]) {
+    var muscleGroupsDescription: String {
+        var muscleGroups = [MuscleGroup]()
+        for step in steps {
+            for muscleGroup in step.muscleGroups {
+                if !muscleGroups.contains(muscleGroup) {
+                    muscleGroups.append(muscleGroup)
+                }
+            }
+        }
+        var description = ""
+        for muscleGroup in muscleGroups {
+            if description.characters.count != 0 {
+                description.appendContentsOf(", ")
+            }
+            description.appendContentsOf(muscleGroup.localizedName())
+        }
+        return description
+    }
+    
+    init(name: String, steps: [Step]) {
         self.name = name
-        self.workoutDescription = description
         self.steps = steps
         self.identifier = NSUUID().UUIDString
         super.init()
     }
     
-    private init(name: String, description: String, steps: [Step], identifier: String) {
+    private init(name: String, steps: [Step], identifier: String) {
         self.name = name
-        self.workoutDescription = description
         self.steps = steps
         self.identifier = identifier
         super.init()
     }
     
-    private init(name: String, description: String, steps: [Step], originalIdentifier: String?) {
+    private init(name: String, steps: [Step], originalIdentifier: String?) {
         self.name = name
-        self.workoutDescription = description
         self.steps = steps
         self.originalIdentifier = originalIdentifier
         self.identifier = NSUUID().UUIDString
@@ -49,7 +63,6 @@ final class Workout: NSObject, NSCoding, Mappable {
     
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
-        workoutDescription = aDecoder.decodeObjectForKey("workoutDescription") as! String
         steps = aDecoder.decodeObjectForKey("steps") as! [Step]
         identifier = aDecoder.decodeObjectForKey("identifier") as! String
         originalIdentifier = aDecoder.decodeObjectForKey("originalIdentifier") as? String
@@ -58,7 +71,6 @@ final class Workout: NSObject, NSCoding, Mappable {
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeObject(workoutDescription, forKey: "workoutDescription")
         aCoder.encodeObject(steps, forKey: "steps")
         aCoder.encodeObject(identifier, forKey: "identifier")
         aCoder.encodeObject(originalIdentifier, forKey: "originalIdentifier")
@@ -68,7 +80,6 @@ final class Workout: NSObject, NSCoding, Mappable {
     
     func mapping(map: Map) {
         name <- map["name"]
-        workoutDescription <- map["description"]
         steps <- map["steps"]
         identifier <- map["identifier"]
         originalIdentifier <- map["originalIdentifier"]
@@ -82,25 +93,21 @@ final class Workout: NSObject, NSCoding, Mappable {
      - returns: New instance of Workout.
      */
     func clone() -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, originalIdentifier: identifier)
+        return self.dynamicType.init(name: name, steps: steps, originalIdentifier: identifier)
     }
 }
 
 extension Workout {
     
     func workoutBySettingName(name: String) -> Self {
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: steps, identifier: identifier)
-    }
-    
-    func workoutBySettingDescription(description: String) -> Self {
-        return self.dynamicType.init(name: name, description: description, steps: steps, identifier: identifier)
+        return self.dynamicType.init(name: name, steps: steps, identifier: identifier)
     }
     
     func workoutByAddingStep(step: Step) -> Self {
         var newSteps = steps
         newSteps.append(step)
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
+        return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
     }
     
     func workoutByRemovingStep(step: Step) -> Self {
@@ -117,14 +124,14 @@ extension Workout {
         var newSteps = steps
         newSteps.removeAtIndex(index)
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
+        return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
     }
     
     func workoutByReplacingStepAtIndex(index: Int, withStep newStep: Step) -> Self {
         var newSteps = steps
         newSteps[index] = newStep
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
+        return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
     }
     
     func workoutByMovingStepFromIndex(fromIndex: Int, toIndex: Int) -> Self {
@@ -133,19 +140,17 @@ extension Workout {
         newSteps.removeAtIndex(fromIndex)
         newSteps.insert(stepToMove, atIndex: toIndex)
         
-        return self.dynamicType.init(name: name, description: workoutDescription, steps: newSteps, identifier: identifier)
+        return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
     }
 }
 
 extension Workout {
     
     class func emptyWorkout() -> Self {
-        return self.init(name: "", description: "", steps: [])
+        return self.init(name: "", steps: [])
     }
     
     func isEmpty() -> Bool {
-        return name == "" &&
-            workoutDescription == "" &&
-            steps.count == 0
+        return name == "" && steps.count == 0
     }
 }

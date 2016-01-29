@@ -122,8 +122,7 @@ extension WorkoutsProvider {
         var searchResults = [Step]()
         for workout in workouts {
             for step in workout.steps {
-                guard (request.includeRestSteps || step.type == .Exercise) &&
-                    (request.searchText == "" || step.name.containsString(request.searchText)) else { continue }
+                guard request.searchText == "" || step.name.containsString(request.searchText) else { continue }
                 searchResults.append(step)
             }
         }

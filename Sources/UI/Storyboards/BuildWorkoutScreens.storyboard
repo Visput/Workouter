@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Step-->
@@ -28,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-QY-HET">
-                                <rect key="frame" x="16" y="80" width="343" height="408"/>
+                                <rect key="frame" x="16" y="80" width="343" height="292"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-B6-40e">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
@@ -39,17 +40,8 @@
                                             <segue destination="HpB-m2-ign" kind="embed" identifier="StepName" id="EvO-Os-6LK"/>
                                         </connections>
                                     </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-mG-71o">
-                                        <rect key="frame" x="0.0" y="76" width="343" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="iMy-52-OgE"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="HpB-m2-ign" kind="embed" identifier="StepDescription" id="aFV-Nt-De2"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29b-Uj-haV">
-                                        <rect key="frame" x="0.0" y="192" width="343" height="216"/>
+                                        <rect key="frame" x="0.0" y="76" width="343" height="216"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="WK1-lt-mKa"/>
                                         </constraints>
@@ -236,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r78-js-uPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690.5" y="-301.5"/>
+            <point key="canvasLocation" x="182.5" y="-301.5"/>
         </scene>
         <!--Workout-->
         <scene sceneID="XLc-jd-tcq">
@@ -250,86 +242,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ue1-yu-6gH">
-                                <rect key="frame" x="16" y="80" width="343" height="232"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96P-wQ-twa">
-                                        <rect key="frame" x="0.0" y="76" width="343" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="999" constant="100" id="l8i-0t-CY9"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutDescription" id="0Wi-8y-Tdl"/>
-                                        </connections>
-                                    </containerView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QuB-pj-8Uc">
-                                        <rect key="frame" x="0.0" y="192" width="343" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
-                                                    <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
-                                                    <constraint firstAttribute="height" constant="40" id="U7T-SL-jgg"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                <state key="normal" title="Add Rest"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="Q1C-01-3Lq"/>
-                                                        <exclude reference="TNP-9V-yIK"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="newRestStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="tds-cf-QfJ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="0.0" width="164" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="INO-vJ-yt8"/>
-                                                    <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
-                                                    <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                <state key="normal" title="Add Step"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                                        <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="VM3-KI-ZQa"/>
-                                                        <exclude reference="lCA-9r-L2J"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="newExersizeStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="10t-a5-bWx"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SS-bXz">
+                                <rect key="frame" x="16" y="80" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jVR-Mz-TnI"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="HpB-m2-ign" kind="embed" identifier="WorkoutName" id="dQt-nY-fnQ"/>
+                                </connections>
+                            </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-x6-9TF">
-                                <rect key="frame" x="4" y="320" width="367" height="347"/>
+                                <rect key="frame" x="4" y="156" width="367" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="JBl-8K-CgM" customClass="StepCell" customModule="Workouter" customModuleProvider="target">
@@ -399,21 +322,82 @@
                                     <outlet property="delegate" destination="5cI-Xv-1fW" id="YEs-BV-hTb"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QuB-pj-8Uc">
+                                <rect key="frame" x="16" y="611" width="343" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-C2-eLq" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="Q1C-01-3Lq"/>
+                                            <constraint firstAttribute="width" constant="180" id="TNP-9V-yIK"/>
+                                            <constraint firstAttribute="height" constant="40" id="U7T-SL-jgg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <state key="normal" title="Done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Q1C-01-3Lq"/>
+                                                <exclude reference="TNP-9V-yIK"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="doneButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="4HP-UJ-yCm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-Ig-FKe" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="0.0" width="164" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="INO-vJ-yt8"/>
+                                            <constraint firstAttribute="height" priority="998" constant="40" id="VM3-KI-ZQa"/>
+                                            <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <state key="normal" title="Add Step"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="VM3-KI-ZQa"/>
+                                                <exclude reference="lCA-9r-L2J"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="newStepButtonDidPress:" destination="5cI-Xv-1fW" eventType="touchUpInside" id="PhW-9r-Hv5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="49B-rR-gdO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="trailing" secondItem="2Ub-Qo-fSW" secondAttribute="trailing" constant="-4" id="9TD-9g-fLW"/>
-                            <constraint firstItem="f2g-Ez-33A" firstAttribute="top" secondItem="v9P-x6-9TF" secondAttribute="bottom" id="BqS-Wa-EZC"/>
+                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="cpu-SS-bXz" secondAttribute="bottom" constant="16" id="CfR-nB-J0z"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="v9P-x6-9TF" secondAttribute="bottom" constant="72" id="Ezp-lS-moT"/>
+                            <constraint firstItem="f2g-Ez-33A" firstAttribute="top" secondItem="QuB-pj-8Uc" secondAttribute="bottom" constant="16" id="IEx-tc-3n6"/>
+                            <constraint firstItem="QuB-pj-8Uc" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="Ijf-Rl-gTb"/>
+                            <constraint firstAttribute="trailing" secondItem="QuB-pj-8Uc" secondAttribute="trailing" constant="16" id="KWp-4Z-v4F"/>
                             <constraint firstItem="v9P-x6-9TF" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="4" id="QKB-nr-D0f"/>
-                            <constraint firstItem="v9P-x6-9TF" firstAttribute="top" secondItem="Ue1-yu-6gH" secondAttribute="bottom" constant="8" id="kky-J3-NB8"/>
-                            <constraint firstItem="Ue1-yu-6gH" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="16" id="qOb-LI-F4f"/>
-                            <constraint firstItem="Ue1-yu-6gH" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="udK-oA-E2m"/>
-                            <constraint firstAttribute="trailing" secondItem="Ue1-yu-6gH" secondAttribute="trailing" constant="16" id="xSQ-Ah-cfx"/>
+                            <constraint firstItem="cpu-SS-bXz" firstAttribute="leading" secondItem="2Ub-Qo-fSW" secondAttribute="leading" constant="16" id="alQ-ji-eSc"/>
+                            <constraint firstItem="cpu-SS-bXz" firstAttribute="top" secondItem="5L6-bs-NfR" secondAttribute="bottom" constant="16" id="lDQ-eK-hQr"/>
+                            <constraint firstAttribute="trailing" secondItem="cpu-SS-bXz" secondAttribute="trailing" constant="16" id="lO4-fc-xwP"/>
                         </constraints>
                         <connections>
-                            <outlet property="bottomSpace" destination="BqS-Wa-EZC" id="N6o-Mz-3VL"/>
-                            <outlet property="newExersizeStepButton" destination="0MX-Ig-FKe" id="f9t-eR-L4x"/>
-                            <outlet property="newRestStepButton" destination="xGX-C2-eLq" id="tUq-7a-W1U"/>
+                            <outlet property="bottomSpace" destination="Ezp-lS-moT" id="w9r-Dc-GZC"/>
+                            <outlet property="doneButton" destination="xGX-C2-eLq" id="wNh-3q-bwn"/>
+                            <outlet property="newStepButton" destination="0MX-Ig-FKe" id="XCR-42-UE4"/>
                             <outlet property="stepsTableView" destination="v9P-x6-9TF" id="pOU-m6-ORc"/>
                         </connections>
                     </view>

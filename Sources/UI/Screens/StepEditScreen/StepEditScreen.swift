@@ -15,7 +15,6 @@ final class StepEditScreen: BaseScreen {
     
     var step: Step!
     
-    private var descriptionController: TextViewController!
     private var nameController: TextViewController!
     private var durationController: DurationViewController!
     
@@ -29,7 +28,6 @@ final class StepEditScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextControllers()
         fillViewWithStep(step)
     }
     
@@ -37,11 +35,7 @@ final class StepEditScreen: BaseScreen {
         if segue.identifier! == "StepName" {
             nameController = segue.destinationViewController as! TextViewController
             configureNameController()
-            
-        } else if segue.identifier! == "StepDescription" {
-            descriptionController = segue.destinationViewController as! TextViewController
-            configureDescriptionController()
-            
+    
         } else if segue.identifier! == "StepDuration" {
             durationController = segue.destinationViewController as! DurationViewController
             configureDurationController()
@@ -86,30 +80,21 @@ extension StepEditScreen {
     }
     
     private func fillViewWithStep(step: Step) {
-        switch step.type {
-        case .Exercise:
-            stepEditView.nameContainerView.hidden = false
-            nameController.text = step.name
-            nameController.textMaxLength = step.nameMaxLength
-            if step.name.isEmpty {
-                nameController.active = true
-            }
-            title = NSLocalizedString("Step", comment: "")
-            
-        case .Rest:
-            stepEditView.nameContainerView.hidden = true
-            title = step.name
+        if step.isEmpty() {
+            title = NSLocalizedString("New Step", comment: "")
+        } else {
+            title = NSLocalizedString("Edit Step", comment: "")
         }
         
-        descriptionController.text = step.stepDescription
-        descriptionController.textMaxLength = step.descriptionMaxLength
+        nameController.text = step.name
+        nameController.textMaxLength = step.nameMaxLength
         
-        let duration = step.duration == 0 ? durationController.defaultDuration : step.duration
+        if step.name.isEmpty {
+            nameController.active = true
+        }
+        
+        let duration = step.durationGoal ?? durationController.defaultDuration
         durationController.setDuration(duration, animated: false)
-    }
-    
-    private func configureTextControllers() {
-        nameController.nextTextController = descriptionController
     }
     
     private func configureNameController() {
@@ -122,36 +107,16 @@ extension StepEditScreen {
         }
     }
     
-    private func configureDescriptionController() {
-        switch step.type {
-        case .Exercise:
-            descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
-            descriptionController.descriptionTitle = NSLocalizedString("Step Description", comment: "")
-            descriptionController.descriptionMessage = NSLocalizedString("Step description is detailed information about your step.",
-                comment: "")
-            
-        case .Rest:
-            descriptionController.placeholder = NSLocalizedString("Rest description (Optional)", comment: "")
-            descriptionController.descriptionTitle = NSLocalizedString("Rest Description", comment: "")
-            descriptionController.descriptionMessage = NSLocalizedString("Rest description is detailed information about your rest.",
-                comment: "")
-            
-        }
-        
-        descriptionController.didChangeTextAction = { [unowned self] text in
-            self.step = self.step.stepBySettingDescription(text)
-        }
-    }
-    
     private func configureDurationController() {
         durationController.didSelectDurationAction = { [unowned self] duration in
-            self.step = self.step.stepBySettingDuration(duration)
+            self.step = self.step.stepBySettingDurationGoal(duration)
         }
     }
     
     private func validateStep() -> Bool {
         if step.name.isEmpty {
-            nameController.setInvalidWithErrorTitle("Error", errorMessage: "Step name is required field.")
+            nameController.setInvalidWithErrorTitle(NSLocalizedString("Error", comment: ""),
+                errorMessage: NSLocalizedString("Step name is required field.", comment: ""))
         } else {
             nameController.setValid()
         }

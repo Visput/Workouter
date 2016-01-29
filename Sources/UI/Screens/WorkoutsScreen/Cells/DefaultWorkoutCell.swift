@@ -32,7 +32,7 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
         self.item = item
         
         nameLabel.text = item.workout.name
-        descriptionLabel.text = item.workout.workoutDescription
+        descriptionLabel.text = item.workout.muscleGroupsDescription
         
         withVaList([item.workout.steps.count]) { pointer in
             stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)

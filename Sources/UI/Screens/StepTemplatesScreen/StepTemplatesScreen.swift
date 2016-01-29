@@ -13,7 +13,7 @@ final class StepTemplatesScreen: BaseScreen {
     var templateDidSelectAction: ((step: Step) -> Void)?
     var templateDidCancelAction: (() -> Void)?
     
-    var searchRequest = StepsSearchRequest(workout: Workout.emptyWorkout(), searchText: "", includeRestSteps: false)
+    var searchRequest = StepsSearchRequest(workout: Workout.emptyWorkout(), searchText: "")
     
     private var steps = [Step]()
     
@@ -105,7 +105,7 @@ extension StepTemplatesScreen {
     
     private func searchStepsWithRequest(searchRequest: StepsSearchRequest) {
         steps = [Step]()
-        steps.append(Step.emptyExersizeStep())
+        steps.append(Step.emptyStep())
         
         let searchResults = workoutsProvider.searchStepsWithRequest(searchRequest)
         steps.appendContentsOf(searchResults)

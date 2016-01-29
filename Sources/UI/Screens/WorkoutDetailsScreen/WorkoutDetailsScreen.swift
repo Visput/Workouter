@@ -39,7 +39,7 @@ final class WorkoutDetailsScreen: BaseScreen {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController!.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 
@@ -52,7 +52,7 @@ extension WorkoutDetailsScreen: ExpandableTableViewDelegate, ExpandableTableView
     func expandableTableView(tableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
         let step = workout.steps[section]
         
-        return step.stepDescription.isEmpty ? 0 : 1
+        return step.muscleGroupsDescription.isEmpty ? 0 : 1
     }
     
     func expandableTableView(tableView: ExpandableTableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -109,7 +109,7 @@ extension WorkoutDetailsScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
         workoutDetailsView.nameLabel.text = workout.name
-        workoutDetailsView.descriptionLabel.text = workout.workoutDescription
+        workoutDetailsView.descriptionLabel.text = workout.muscleGroupsDescription
         workoutDetailsView.stepsTableView.reloadData()
     }
 }

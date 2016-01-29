@@ -22,7 +22,6 @@ final class WorkoutEditScreen: BaseScreen {
     
     var showWorkoutDetailsOnCompletion: Bool = false
     
-    private var descriptionController: TextViewController!
     private var nameController: TextViewController!
     private var needsReloadStepsTableView = true
     
@@ -36,7 +35,6 @@ final class WorkoutEditScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextControllers()
         fillViewWithWorkout(workout)
     }
     
@@ -44,10 +42,6 @@ final class WorkoutEditScreen: BaseScreen {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
             configureNameController()
-            
-        } else if segue.identifier! == "WorkoutDescription" {
-            descriptionController = segue.destinationViewController as! TextViewController
-            configureDescriptionController()
         }
     }
 }
@@ -115,8 +109,8 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
 
 extension WorkoutEditScreen {
     
-    @IBAction private func newExersizeStepButtonDidPress(sender: AnyObject) {
-        let searchRequest = StepsSearchRequest(workout: workout, searchText: "", includeRestSteps: false)
+    @IBAction private func newStepButtonDidPress(sender: AnyObject) {
+        let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
         
         navigationManager.presentStepTemplatesScreenWithRequest(searchRequest,
             animated: true,
@@ -127,7 +121,7 @@ extension WorkoutEditScreen {
                     stepDidEditAction: { step in
                         
                         self.workout = self.workout.workoutByAddingStep(step)
-                        self.workoutEditView.newExersizeStepButton.valid = true
+                        self.workoutEditView.doneButton.hidden = false
                         self.navigationManager.dismissScreenAnimated(true)
                 })
                 
@@ -136,30 +130,16 @@ extension WorkoutEditScreen {
         })
     }
     
-    @IBAction private func newRestStepButtonDidPress(sender: AnyObject) {
-        let step = Step.emptyRestStep().stepBySettingName(NSLocalizedString("Rest", comment: ""))
-        navigationManager.presentStepEditScreenWithStep(step,
-            animated: true,
-            stepDidEditAction: { [unowned self] step in
-                
-                self.workout = self.workout.workoutByAddingStep(step)
-                self.workoutEditView.newExersizeStepButton.valid = true
-                self.navigationManager.dismissScreenAnimated(true)
-            }, stepDidCancelAction: { [unowned self] in
-                self.navigationManager.dismissScreenAnimated(true)
-            })
+    @IBAction private func doneButtonDidPress(sender: AnyObject) {
+        workoutEditView.endEditing(true)
+        if validateWorkout() {
+            workoutDidEditAction?(workout: workout)
+        }
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {
         workoutEditView.endEditing(true)
         workoutDidCancelAction?()
-    }
-    
-    @objc private func doneButtonDidPress(sender: AnyObject) {
-        workoutEditView.endEditing(true)
-        if validateWorkout() {
-            workoutDidEditAction?(workout: workout)
-        }
     }
 }
 
@@ -167,21 +147,9 @@ extension WorkoutEditScreen {
     
     override func configureBarButtonItems() {
         super.configureBarButtonItems()
-        if backButtonShown() {
-            // Show red back button item instead of green button.
-            navigationItem.leftBarButtonItem = UIBarButtonItem.greenBackItemWithAlignment(.Left,
-                target: self,
-                action: Selector("backButtonDidPress:"))
-            
-        } else {
-            navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
-                target: self,
-                action: Selector("cancelButtonDidPress:"))
-        }
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
+        navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("doneButtonDidPress:"))
+            action: Selector("cancelButtonDidPress:"))
     }
     
     private func fillViewWithWorkout(workout: Workout) {
@@ -193,21 +161,13 @@ extension WorkoutEditScreen {
         
         nameController.text = workout.name
         nameController.textMaxLength = workout.nameMaxLength
-        descriptionController.text = workout.workoutDescription
-        descriptionController.textMaxLength = workout.descriptionMaxLength
         
         if needsReloadStepsTableView {
             workoutEditView.stepsTableView.reloadData()
         }
         needsReloadStepsTableView = true
         
-        let isLastStepExersize = workout.steps.last != nil && workout.steps.last!.type == .Exercise
-        workoutEditView.newExersizeStepButton.filled = !isLastStepExersize
-        workoutEditView.newRestStepButton.filled = isLastStepExersize
-    }
-    
-    private func configureTextControllers() {
-        nameController.nextTextController = descriptionController
+        workoutEditView.doneButton.hidden = workout.steps.count == 0
     }
     
     private func configureNameController() {
@@ -220,25 +180,14 @@ extension WorkoutEditScreen {
         }
     }
     
-    private func configureDescriptionController() {
-        descriptionController.placeholder = NSLocalizedString("Description (Optional)", comment: "")
-        descriptionController.descriptionTitle = NSLocalizedString("Workout Description", comment: "")
-        descriptionController.descriptionMessage = NSLocalizedString("Workout description is detailed information about your workout.",
-            comment: "")
-        descriptionController.didChangeTextAction = { [unowned self] text in
-            self.workout = self.workout.workoutBySettingDescription(text)
-        }
-    }
-    
     private func validateWorkout() -> Bool {
-        workoutEditView.newExersizeStepButton.valid = workout.steps.count > 0
-        
         if workout.name.isEmpty {
-            nameController.setInvalidWithErrorTitle("Error", errorMessage: "Workout name is required field.")
+            nameController.setInvalidWithErrorTitle(NSLocalizedString("Error", comment: ""),
+                errorMessage: NSLocalizedString("Workout name is required field.", comment: ""))
         } else {
             nameController.setValid()
         }
     
-        return workoutEditView.newExersizeStepButton.valid && nameController.valid
+        return nameController.valid
     }
 }

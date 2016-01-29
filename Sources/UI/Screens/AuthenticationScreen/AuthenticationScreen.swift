@@ -76,7 +76,8 @@ extension AuthenticationScreen {
     
     private func validateNickname() -> Bool {
         if nicknameController.text.isEmpty {
-            nicknameController.setInvalidWithErrorTitle("Error", errorMessage: "Nickname is required field.")
+            nicknameController.setInvalidWithErrorTitle(NSLocalizedString("Error", comment: ""),
+                errorMessage: NSLocalizedString("Nickname is required field.", comment: ""))
         } else {
             nicknameController.setValid()
         }

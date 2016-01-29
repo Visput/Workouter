@@ -13,6 +13,6 @@ class StepDetailsCell: BaseTableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     
     func fillWithStep(step: Step) {
-        descriptionLabel.text = step.stepDescription
+        descriptionLabel.text = step.muscleGroupsDescription
     }
 }

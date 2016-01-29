@@ -73,19 +73,13 @@ extension WorkoutPlayerScreen {
     private func progressItemsFromSteps(steps: [Step]) -> [ProgressViewItem] {
         var progressItems = [ProgressViewItem]()
         for step in steps {
-            var progressItem: ProgressViewItem! = nil
-            switch step.type {
-            case .Exercise:
-                progressItem = ProgressViewItem(trackTintColor: UIColor.lightSecondaryColor(),
-                    progressTintColor: UIColor.secondaryColor(),
-                    progress: CGFloat(step.duration))
-            case .Rest:
-                progressItem = ProgressViewItem(trackTintColor: UIColor.lightPrimaryColor(),
-                    progressTintColor: UIColor.primaryColor(),
-                    progress: CGFloat(step.duration))
-            }
+            progressItems.append(ProgressViewItem(trackTintColor: UIColor.lightPrimaryColor(),
+                progressTintColor: UIColor.primaryColor(),
+                progress: CGFloat(step.durationGoal!)))
             
-            progressItems.append(progressItem)
+            progressItems.append(ProgressViewItem(trackTintColor: UIColor.lightSecondaryColor(),
+                progressTintColor: UIColor.secondaryColor(),
+                progress: CGFloat(step.rest)))
         }
         
         return progressItems

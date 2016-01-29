@@ -11,78 +11,183 @@ import ObjectMapper
 
 final class Step: NSObject, NSCoding, Mappable {
     
-    enum Type: Int {
-        case Exercise = 0
-        case Rest
+    let nameMaxLength = 70
+    
+    private(set) var name: String = ""
+    private(set) var muscleGroups: [MuscleGroup] = []
+    private(set) var rest: Int = 0 // Seconds.
+    private(set) var durationGoal: Int? // Seconds.
+    private(set) var distanceGoal: Int? // Meters.
+    private(set) var weightGoal: Int? // Grams.
+    private(set) var repsGoal: Int? // Number of reps.
+    
+    var muscleGroupsDescription: String {
+        var description = ""
+        for muscleGroup in muscleGroups {
+            if description.characters.count != 0 {
+                description.appendContentsOf(", ")
+            }
+            description.appendContentsOf(muscleGroup.localizedName())
+        }
+        return description
     }
     
-    let nameMaxLength = 70
-    let descriptionMaxLength = 140
-    
-    private(set) var type: Type = .Exercise
-    private(set) var name: String = ""
-    private(set) var stepDescription: String = ""
-    private(set) var duration: Int = 0 // Seconds.
-    
-    required init(type: Type, name: String, description: String, duration: Int) {
-        self.type = type
+    required init(name: String,
+        muscleGroups: [MuscleGroup],
+        rest: Int,
+        durationGoal: Int?,
+        distanceGoal: Int?,
+        weightGoal: Int?,
+        repsGoal: Int?) {
+            
         self.name = name
-        self.stepDescription = description
-        self.duration = duration
+        self.muscleGroups = muscleGroups
+        self.rest = rest
+        self.durationGoal = durationGoal
+        self.distanceGoal = distanceGoal
+        self.weightGoal = weightGoal
+        self.repsGoal = repsGoal
         super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        type = Type(rawValue: aDecoder.decodeIntegerForKey("type"))!
         name = aDecoder.decodeObjectForKey("name") as! String
-        stepDescription = aDecoder.decodeObjectForKey("stepDescription") as! String
-        duration = aDecoder.decodeIntegerForKey("duration")
+        rest = aDecoder.decodeObjectForKey("rest") as! Int
+        durationGoal = aDecoder.decodeObjectForKey("durationGoal") as! Int?
+        distanceGoal = aDecoder.decodeObjectForKey("distanceGoal") as! Int?
+        weightGoal = aDecoder.decodeObjectForKey("weightGoal") as! Int?
+        repsGoal = aDecoder.decodeObjectForKey("repsGoal") as! Int?
+        
+        let rawValues = aDecoder.decodeObjectForKey("muscleGroups") as! [String]
+        var values = [MuscleGroup]()
+        for rawValue in rawValues {
+            values.append(MuscleGroup(rawValue: rawValue)!)
+        }
+        muscleGroups = values
+        
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(type.rawValue, forKey: "type")
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeObject(stepDescription, forKey: "stepDescription")
-        aCoder.encodeInteger(duration, forKey: "duration")
+        aCoder.encodeObject(rest, forKey: "rest")
+        aCoder.encodeObject(durationGoal, forKey: "durationGoal")
+        aCoder.encodeObject(distanceGoal, forKey: "distanceGoal")
+        aCoder.encodeObject(weightGoal, forKey: "weightGoal")
+        aCoder.encodeObject(repsGoal, forKey: "repsGoal")
+        
+        var rawValues = [String]()
+        for muscleGroup in muscleGroups {
+            rawValues.append(muscleGroup.rawValue)
+        }
+        aCoder.encodeObject(rawValues, forKey: "muscleGroups")
     }
     
     init?(_ map: Map) {}
     
     func mapping(map: Map) {
-        type <- map["type"]
         name <- map["name"]
-        stepDescription <- map["description"]
-        duration <- map["duration"]
+        muscleGroups <- map["muscle_groups"]
+        rest <- map["rest"]
+        durationGoal <- map["duration_goal"]
+        distanceGoal <- map["distance_goal"]
+        weightGoal <- map["weight_goal"]
+        repsGoal <- map["reps_goal"]
     }
 }
 
 extension Step {
-    
-    func stepBySettingType(type: Type) -> Self {
-        return self.dynamicType.init(type: type, name: name, description: stepDescription, duration: duration)
-    }
     
     func stepBySettingName(name: String) -> Self {
-        return self.dynamicType.init(type: type, name: name, description: stepDescription, duration: duration)
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
     }
     
-    func stepBySettingDescription(description: String) -> Self {
-        return self.dynamicType.init(type: type, name: name, description: description, duration: duration)
+    func stepBySettingMuscleGroups(muscleGroups: [MuscleGroup]) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
     }
     
-    func stepBySettingDuration(duration: Int) -> Self {
-        return self.dynamicType.init(type: type, name: name, description: stepDescription, duration: duration)
+    func stepBySettingRest(rest: Int) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
+    }
+    
+    func stepBySettingDurationGoal(durationGoal: Int?) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
+    }
+    
+    func stepBySettingDistanceGoal(distanceGoal: Int?) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
+    }
+    
+    func stepBySettingWeightGoal(weightGoal: Int?) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
+    }
+    
+    func stepBySettingRepsGoal(repsGoal: Int?) -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
     }
 }
 
 extension Step {
     
-    class func emptyExersizeStep() -> Self {
-        return self.init(type: .Exercise, name: "", description: "", duration: 0)
+    class func emptyStep() -> Self {
+        return self.init(name: "",
+            muscleGroups: [],
+            rest: 0,
+            durationGoal: nil,
+            distanceGoal: nil,
+            weightGoal: nil,
+            repsGoal: nil)
     }
     
-    class func emptyRestStep() -> Self {
-        return self.init(type: .Rest, name: "", description: "", duration: 0)
+    func isEmpty() -> Bool {
+        return name == "" &&
+        muscleGroups == [] &&
+        rest == 0 &&
+        durationGoal == nil &&
+        distanceGoal == nil &&
+        weightGoal == nil &&
+        repsGoal == nil
     }
 }

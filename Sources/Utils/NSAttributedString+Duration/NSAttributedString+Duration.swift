@@ -16,7 +16,7 @@ extension NSAttributedString {
         unitFont: UIFont,
         color: UIColor) -> Self {
             
-        return durationStringForDuration(step.duration,
+        return durationStringForDuration(step.durationGoal! + step.rest,
             showSeconds: true,
             valueFont: valueFont,
             unitFont: unitFont,
@@ -29,7 +29,7 @@ extension NSAttributedString {
         color: UIColor) -> Self {
             
         let totalDuration = workout.steps.reduce(0) { (sum: Int, step: Step) in
-            sum + step.duration
+            sum + step.durationGoal! + step.rest
         }
         
         return durationStringForDuration(totalDuration,

@@ -56,7 +56,7 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
         self.workout = workout
         
         nameLabel.text = workout.name
-        descriptionLabel.text = workout.workoutDescription
+        descriptionLabel.text = workout.muscleGroupsDescription
         
         withVaList([workout.steps.count]) { pointer in
             stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)

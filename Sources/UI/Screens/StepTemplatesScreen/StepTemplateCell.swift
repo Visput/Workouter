@@ -16,7 +16,7 @@ final class StepTemplateCell: BaseTableViewCell {
     
     func fillWithStep(step: Step) {
         nameLabel.text = step.name
-        descriptionLabel.text = step.stepDescription
+        descriptionLabel.text = step.muscleGroupsDescription
         durationLabel.attributedText = NSAttributedString.durationStringForStep(step,
             valueFont: UIFont.systemFontOfSize(22.0, weight: UIFontWeightLight),
             unitFont: UIFont.systemFontOfSize(10.0, weight: UIFontWeightLight),

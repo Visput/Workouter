@@ -67,6 +67,8 @@
 		9F37F5801BE0AE4300772BB7 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */; };
 		9F38C3451C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
 		9F38C3461C011D74007AAC68 /* UIImageView+Stretch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */; };
+		9F39402E1C5AB898004B9B9A /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39402D1C5AB898004B9B9A /* MuscleGroup.swift */; };
+		9F39402F1C5AB898004B9B9A /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39402D1C5AB898004B9B9A /* MuscleGroup.swift */; };
 		9F3AD6B71C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
 		9F3AD6B81C43650A00FD87AB /* DefaultWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */; };
 		9F3CA9FE1C3447140061C21A /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CA9FD1C3447140061C21A /* AccountScreen.swift */; };
@@ -355,6 +357,7 @@
 		9F37F5761BE0581800772BB7 /* AppShortcutsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShortcutsManager.swift; sourceTree = "<group>"; };
 		9F37F57E1BE0AE4300772BB7 /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9F38C3441C011D74007AAC68 /* UIImageView+Stretch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stretch.swift"; sourceTree = "<group>"; };
+		9F39402D1C5AB898004B9B9A /* MuscleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
 		9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWorkoutCellItem.swift; sourceTree = "<group>"; };
 		9F3CA9FD1C3447140061C21A /* AccountScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		9F3CAA001C34472B0061C21A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -1253,6 +1256,7 @@
 				F0C3425A1A9E4BC800B9D480 /* Step.swift */,
 				9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */,
 				9F6BD7741BEF158300F5222A /* WorkoutsSearchRequest.swift */,
+				9F39402D1C5AB898004B9B9A /* MuscleGroup.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1866,6 +1870,7 @@
 				9FBE71571C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */,
 				F02CAB5B1B4B871E00F28D72 /* AppDelegate.swift in Sources */,
 				9FAFA6841C2FED950007463D /* WorkoutPageItem.swift in Sources */,
+				9F39402E1C5AB898004B9B9A /* MuscleGroup.swift in Sources */,
 				9FD745C31C09651E00E48508 /* TextFieldController.swift in Sources */,
 				9FC35E681BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
 				9F3CAA041C3447EA0061C21A /* AccountCell.swift in Sources */,
@@ -2000,6 +2005,7 @@
 				9FBE71581C4F2D5B000E90E1 /* WelcomePageContentController.swift in Sources */,
 				9F9444191C0001A2003E333B /* BaseDialogView.swift in Sources */,
 				9FAFA6851C2FED950007463D /* WorkoutPageItem.swift in Sources */,
+				9F39402F1C5AB898004B9B9A /* MuscleGroup.swift in Sources */,
 				F09702C91ACA48E700498DEE /* AppDelegate.swift in Sources */,
 				9FC35E691BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */,
 				9F3CAA051C3447EA0061C21A /* AccountCell.swift in Sources */,
