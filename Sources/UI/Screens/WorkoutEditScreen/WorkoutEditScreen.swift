@@ -23,6 +23,7 @@ final class WorkoutEditScreen: BaseScreen {
     var showWorkoutDetailsOnCompletion: Bool = false
     
     private var nameController: TextViewController!
+    private var stepsPlaceholderController: PlaceholderController!
     private var needsReloadStepsTableView = true
     
     private var navigationManager: NavigationManager {
@@ -42,6 +43,8 @@ final class WorkoutEditScreen: BaseScreen {
         if segue.identifier! == "WorkoutName" {
             nameController = segue.destinationViewController as! TextViewController
             configureNameController()
+        } else if segue.identifier! == "StepsPlaceholder" {
+            stepsPlaceholderController = segue.destinationViewController as! PlaceholderController
         }
     }
 }
@@ -168,6 +171,8 @@ extension WorkoutEditScreen {
         needsReloadStepsTableView = true
         
         workoutEditView.doneButton.hidden = workout.steps.count == 0
+        
+        stepsPlaceholderController.setVisible(workout.steps.count == 0, animated: true)
     }
     
     private func configureNameController() {
