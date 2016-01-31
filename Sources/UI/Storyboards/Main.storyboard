@@ -60,6 +60,14 @@
             </objects>
             <point key="canvasLocation" x="-1501" y="-2256"/>
         </scene>
+        <!--MuscleGroupsScreen-->
+        <scene sceneID="j7L-eQ-MDJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MuscleGroupsScreen" storyboardName="BuildWorkoutScreens" referencedIdentifier="MuscleGroupsScreen" id="NjZ-ho-a9U" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f20-79-NPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1492.5" y="-2210"/>
+        </scene>
         <!--StatisticsScreen-->
         <scene sceneID="DVL-g4-OYf">
             <objects>

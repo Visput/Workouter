@@ -11,9 +11,8 @@ import UIKit
 final class StepTemplatesScreen: BaseScreen {
 
     var templateDidSelectAction: ((step: Step) -> Void)?
-    var templateDidCancelAction: (() -> Void)?
     
-    var searchRequest = StepsSearchRequest(workout: Workout.emptyWorkout(), searchText: "")
+    var searchRequest = StepsSearchRequest(workout: Workout.emptyWorkout(), muscleGroup: nil, searchText: "")
     
     private var steps = [Step]()
     
@@ -83,17 +82,6 @@ extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelega
 
 extension StepTemplatesScreen {
     
-    override func configureBarButtonItems() {
-        super.configureBarButtonItems()
-        navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
-            target: self,
-            action: Selector("cancelButtonDidPress:"))
-    }
-    
-    @objc private func cancelButtonDidPress(sender: AnyObject) {
-        templateDidCancelAction?()
-    }
-    
     private func configureSearchController() {
         searchController = SearchController(searchResultsController: nil)
         searchController.delegate = self
@@ -114,6 +102,11 @@ extension StepTemplatesScreen {
     }
     
     private func fillViewWithSearchRequest(searchRequest: StepsSearchRequest) {
+        if let muscleGroup = searchRequest.muscleGroup {
+            title = muscleGroup.localizedName()
+        } else {
+            title = NSLocalizedString("All Exercises", comment: "")
+        }
         searchController.searchBar.text = searchRequest.searchText
     }
 }

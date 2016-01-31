@@ -113,22 +113,25 @@ extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
 extension WorkoutEditScreen {
     
     @IBAction private func newStepButtonDidPress(sender: AnyObject) {
-        let searchRequest = StepsSearchRequest(workout: workout, searchText: "")
-        
-        navigationManager.presentStepTemplatesScreenWithRequest(searchRequest,
-            animated: true,
-            templateDidSelectAction: { [unowned self] step in
+        navigationManager.presentMuscleGroupsScreenAnimated(true,
+            muscleGroupsDidSelectAction: { [unowned self] muscleGroup in
                 
-                self.navigationManager.pushStepEditScreenWithStep(step,
+                let searchRequest = StepsSearchRequest(workout: self.workout, muscleGroup: muscleGroup, searchText: "")
+                self.navigationManager.pushStepTemplatesScreenWithRequest(searchRequest,
                     animated: true,
-                    stepDidEditAction: { step in
+                    templateDidSelectAction: { [unowned self] step in
                         
-                        self.workout = self.workout.workoutByAddingStep(step)
-                        self.workoutEditView.doneButton.hidden = false
-                        self.navigationManager.dismissScreenAnimated(true)
-                })
+                        self.navigationManager.pushStepEditScreenWithStep(step,
+                            animated: true,
+                            stepDidEditAction: { [unowned self] step in
+                                
+                                self.workout = self.workout.workoutByAddingStep(step)
+                                self.workoutEditView.doneButton.hidden = false
+                                self.navigationManager.dismissScreenAnimated(true)
+                        })
+                    })
                 
-            }, templateDidCancelAction: {
+            }, muscleGroupsDidCancelAction: { [unowned self] in
                 self.navigationManager.dismissScreenAnimated(true)
         })
     }

@@ -225,16 +225,24 @@ extension NavigationManager {
             presentScreen(screen, wrapWithNavigationController: true, animated: animated)
     }
     
-    func presentStepTemplatesScreenWithRequest(searchRequest: StepsSearchRequest,
+    func presentMuscleGroupsScreenAnimated(animated: Bool,
+        muscleGroupsDidSelectAction: ((muscleGroup: MuscleGroup?) -> Void)?,
+        muscleGroupsDidCancelAction: (() -> Void)?) {
+            
+            let screen = storyboard.instantiateViewControllerWithIdentifier(MuscleGroupsScreen.className()) as! MuscleGroupsScreen
+            screen.muscleGroupDidSelectAction = muscleGroupsDidSelectAction
+            screen.muscleGroupDidCancelAction = muscleGroupsDidCancelAction
+            presentScreen(screen, wrapWithNavigationController: true, animated: animated)
+    }
+    
+    func pushStepTemplatesScreenWithRequest(searchRequest: StepsSearchRequest,
         animated: Bool,
-        templateDidSelectAction: ((step: Step) -> Void)?,
-        templateDidCancelAction: (() -> Void)?) {
+        templateDidSelectAction: ((step: Step) -> Void)) {
             
             let screen = storyboard.instantiateViewControllerWithIdentifier(StepTemplatesScreen.className()) as! StepTemplatesScreen
             screen.searchRequest = searchRequest
             screen.templateDidSelectAction = templateDidSelectAction
-            screen.templateDidCancelAction = templateDidCancelAction
-            presentScreen(screen, wrapWithNavigationController: true, animated: animated)
+            pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
     func pushStepEditScreenWithStep(step: Step,

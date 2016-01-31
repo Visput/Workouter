@@ -24,7 +24,7 @@ enum MuscleGroup: String {
     case Traps = "Traps"
     case Lats = "Lats"
     case Triceps = "Triceps"
-    case LowerBack = "Lower back"
+    case LowerBack = "Lower Back"
     case Glutes = "Glutes"
     case Hamstrings = "Hamstrings"
     case Calves = "Calves"
