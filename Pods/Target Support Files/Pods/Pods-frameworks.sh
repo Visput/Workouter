@@ -91,7 +91,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Flurry_iOS_SDK.framework"
   install_framework "Pods/ObjectMapper.framework"
-  install_framework "Pods/Parse.framework"
   install_framework "Pods/VPAttributedFormat.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -102,6 +101,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Flurry_iOS_SDK.framework"
   install_framework "Pods/ObjectMapper.framework"
-  install_framework "Pods/Parse.framework"
   install_framework "Pods/VPAttributedFormat.framework"
 fi

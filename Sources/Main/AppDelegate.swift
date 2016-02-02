@@ -10,7 +10,6 @@ import UIKit
 import Fabric
 import Crashlytics
 import TwitterKit
-import Parse
 import FBSDKCoreKit
 
 @UIApplicationMain
@@ -27,9 +26,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             AnalyticsTracker.startSession()
             Fabric.with([Crashlytics(), Twitter()])
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-            Parse.enableLocalDatastore()
-            Parse.setApplicationId(NSBundle.mainBundle().objectForInfoDictionaryKey("ParseAppID") as! String,
-                clientKey:NSBundle.mainBundle().objectForInfoDictionaryKey("ParseClientID") as! String)
             
             // Initiate model.
             modelProvider = ModelProvider.provider
