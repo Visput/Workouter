@@ -85,6 +85,13 @@ extension WorkoutDetailsScreen {
         navigationManager.pushWorkoutPlayerScreenWithWorkout(workout, animated: true)
     }
     
+    @IBAction private func favoriteButtonDidPress(sender: AnyObject) {
+        workoutsProvider.addWorkout(workout.clone())
+        UIView.animateWithDefaultDuration {
+            self.workoutDetailsView.favoriteButton.hidden = true
+        }
+    }
+    
     @objc private func editWorkoutButtonDidPress(sender: AnyObject) {
         navigationManager.presentWorkoutEditScreenWithWorkout(workout,
             animated: true,
@@ -108,8 +115,8 @@ extension WorkoutDetailsScreen {
     }
     
     private func fillViewWithWorkout(workout: Workout) {
-        workoutDetailsView.nameLabel.text = workout.name
-        workoutDetailsView.descriptionLabel.text = workout.muscleGroupsDescription
+        workoutDetailsView.headerView.fillWithWorkout(workout)
         workoutDetailsView.stepsTableView.reloadData()
+        workoutDetailsView.favoriteButton.hidden = workoutsProvider.containsWorkout(workout)
     }
 }

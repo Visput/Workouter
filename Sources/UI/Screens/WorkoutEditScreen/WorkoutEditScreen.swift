@@ -173,7 +173,9 @@ extension WorkoutEditScreen {
         }
         needsReloadStepsTableView = true
         
-        workoutEditView.doneButton.hidden = workout.steps.count == 0
+        UIView.animateWithDefaultDuration {
+            self.workoutEditView.doneButton.hidden = workout.steps.count == 0
+        }
         
         stepsPlaceholderController.setVisible(workout.steps.count == 0, animated: true)
     }

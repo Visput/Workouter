@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="182.5" y="-301.5"/>
         </scene>
-        <!--Choose Muscle Group-->
+        <!--Muscle Groups-->
         <scene sceneID="GyN-aJ-XQd">
             <objects>
                 <viewController storyboardIdentifier="MuscleGroupsScreen" id="fuH-TT-msz" customClass="MuscleGroupsScreen" customModule="Workouter" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose Muscle Group" id="cEe-C9-Rer"/>
+                    <navigationItem key="navigationItem" title="Muscle Groups" id="cEe-C9-Rer"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -382,7 +382,7 @@
                                             <constraint firstAttribute="width" constant="180" id="lCA-9r-L2J"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <state key="normal" title="Add Step"/>
+                                        <state key="normal" title="Add step"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
                                                 <color key="value" red="0.12941177189350128" green="0.80784314870834351" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
@@ -683,10 +683,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="bJF-Us-dW7">
-                                <rect key="frame" x="32" y="105.5" width="311" height="228.5"/>
+                                <rect key="frame" x="32" y="104.5" width="311" height="230.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_step" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-zb-1Dg">
-                                        <rect key="frame" x="85.5" y="0.0" width="140" height="139"/>
+                                        <rect key="frame" x="85.5" y="0.0" width="140" height="141"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="HY1-RE-ig9"/>
                                             <constraint firstAttribute="height" constant="140" id="IUC-BN-1U3"/>
@@ -699,7 +699,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add couple steps to build your workout." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-aS-GOU">
-                                        <rect key="frame" x="1" y="171" width="309" height="57.5"/>
+                                        <rect key="frame" x="1" y="173" width="309" height="57.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="TGJ-bh-dq6"/>
                                         </constraints>
@@ -736,7 +736,7 @@
     </scenes>
     <resources>
         <image name="icon_info_small_green" width="22" height="22"/>
-        <image name="placeholder_new_step" width="140" height="139"/>
+        <image name="placeholder_new_step" width="140" height="141"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dQt-nY-fnQ"/>

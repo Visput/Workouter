@@ -110,6 +110,10 @@ extension WorkoutsProvider {
         
         return resultWorkout
     }
+    
+    func containsWorkout(workout: Workout) -> Bool {
+        return workoutWithIdentifier(workout.identifier) != nil || workoutWithOriginalIdentifier(workout.identifier) != nil
+    }
 }
 
 extension WorkoutsProvider {
