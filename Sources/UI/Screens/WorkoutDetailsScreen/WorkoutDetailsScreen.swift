@@ -17,6 +17,8 @@ final class WorkoutDetailsScreen: BaseScreen {
         }
     }
     
+    private var expandedStepIndex: Int?
+    
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
@@ -31,9 +33,6 @@ final class WorkoutDetailsScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        workoutDetailsView.stepsTableView.delegate = self
-        workoutDetailsView.stepsTableView.dataSource = self
-        
         fillViewWithWorkout(workout)
     }
     
@@ -43,39 +42,50 @@ final class WorkoutDetailsScreen: BaseScreen {
     }
 }
 
-extension WorkoutDetailsScreen: ExpandableTableViewDelegate, ExpandableTableViewDataSource {
+extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    func numberOfSectionsInExpandableTableView(tableView: ExpandableTableView) -> Int {
-        return workout.steps.count
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+            
+            return workout.steps.count
     }
     
-    func expandableTableView(tableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        let step = workout.steps[section]
-        
-        return step.muscleGroupsDescription.isEmpty ? 0 : 1
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepDetailsCell.className(),
+                forIndexPath: indexPath) as! StepDetailsCell
+            
+            let step = workout.steps[indexPath.item]
+            cell.fillWithStep(step)
+            
+            cell.didSelectAction = { [unowned self] in
+                //self.workoutDetailsView.switchExpandingStateForStepCellAtIndexPath(indexPath)
+                
+                if self.expandedStepIndex == indexPath.item {
+                    self.expandedStepIndex = nil
+                } else {
+                    self.expandedStepIndex = indexPath.item
+                }
+
+                // Expand / Collapse cell.
+                collectionView.performBatchUpdates(nil, completion: nil)
+                if self.expandedStepIndex != nil {
+                    collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                }
+            }
+            
+            return cell
     }
     
-    func expandableTableView(tableView: ExpandableTableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let step = workout.steps[indexPath.section]
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(StepDetailsCell.className()) as! StepDetailsCell
-        cell.fillWithStep(step)
-        
-        return cell
-    }
-    
-    func expandableTableView(tableView: ExpandableTableView, sectionHeaderAtIndex section: Int) -> ExpandableTableViewSectionHeader {
-        let step = workout.steps[section]
-        
-        let header = NSBundle.mainBundle().loadNibNamed(StepsTableViewSectionHeader.className(),
-            owner: nil,
-            options: nil).last as! StepsTableViewSectionHeader
-        header.frame.size.width = tableView.frame.size.width
-        
-        header.fillWithStep(step)
-        header.sizeToFit()
-        
-        return header
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            var cellHeight: CGFloat = 80.0
+            if expandedStepIndex == indexPath.item {
+                cellHeight = collectionView.bounds.size.height
+            }
+            return CGSizeMake(collectionView.frame.size.width, cellHeight)
     }
 }
 
@@ -116,7 +126,7 @@ extension WorkoutDetailsScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
         workoutDetailsView.headerView.fillWithWorkout(workout)
-        workoutDetailsView.stepsTableView.reloadData()
+        workoutDetailsView.stepsCollectionView.reloadData()
         workoutDetailsView.favoriteButton.hidden = workoutsProvider.containsWorkout(workout)
     }
 }

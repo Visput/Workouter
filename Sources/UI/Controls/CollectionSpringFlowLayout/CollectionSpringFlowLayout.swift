@@ -54,7 +54,7 @@ final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return animator.layoutAttributesForCellAtIndexPath(indexPath)
+        return animator.layoutAttributesForCellAtIndexPath(indexPath) ?? super.layoutAttributesForItemAtIndexPath(indexPath)
     }
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {

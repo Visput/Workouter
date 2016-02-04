@@ -55,7 +55,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         
         if viewController.traitCollection.forceTouchCapability == .Available {
             // Set tag to keep reference to workout index.
-            cell.cardView.tag = indexPath.row
+            cell.cardView.tag = indexPath.item
             
             // Register cell if it's not reused yet.
             if cell.workout == nil {
@@ -63,7 +63,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
             }
         }
         
-        let workout = currentWorkouts[indexPath.row]
+        let workout = currentWorkouts[indexPath.item]
         cell.fillWithWorkout(workout)
         cell.didSelectAction = { [unowned self] in
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
@@ -78,7 +78,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderButtonDidPress:")
         gestureRecognizer.minimumPressDuration = 0.1
         cell.reorderGestureRecognizer = gestureRecognizer
-        updateButtonsTagsForCell(cell, index: indexPath.row)
+        updateButtonsTagsForCell(cell, index: indexPath.item)
         
         cell.actionsEnabled = searchResults == nil
         
@@ -89,7 +89,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         moveItemAtIndexPath sourceIndexPath: NSIndexPath,
         toIndexPath destinationIndexPath: NSIndexPath) {
 
-            workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+            workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
             updateVisibleCellsButtonsTags()
     }
     
@@ -124,7 +124,7 @@ extension UserWorkoutsSource {
         cell.actionsVisible = false
         
         collectionView.performBatchUpdates({
-            self.workoutsProvider.removeWorkoutAtIndex(indexPath.row)
+            self.workoutsProvider.removeWorkoutAtIndex(indexPath.item)
             self.collectionView.deleteItemsAtIndexPaths([indexPath])
             
             }, completion: { _ in
@@ -138,13 +138,13 @@ extension UserWorkoutsSource {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! UserWorkoutCell
         cell.actionsVisible = false
         
-        let newIndexPath = NSIndexPath(forItem: indexPath.row + 1, inSection: indexPath.section)
+        let newIndexPath = NSIndexPath(forItem: indexPath.item + 1, inSection: indexPath.section)
         let workoutNameSufix = NSLocalizedString(" Copy", comment: "")
         let workout = cell.workout!
         let clonedWorkout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
         
         collectionView.performBatchUpdates({
-            self.workoutsProvider.insertWorkout(clonedWorkout, atIndex: newIndexPath.row)
+            self.workoutsProvider.insertWorkout(clonedWorkout, atIndex: newIndexPath.item)
             self.collectionView.insertItemsAtIndexPaths([newIndexPath])
             
             }, completion: { _ in
@@ -173,14 +173,14 @@ extension UserWorkoutsSource {
         let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
         guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? UserWorkoutCell else { return }
         
-        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.row {
+        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.item {
             var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
             targetLocation.x = collectionView.bounds.size.width / 2.0
             
             switch(gesture.state) {
                 
             case .Began:
-                reorderingCellIndex = indexPath.row
+                reorderingCellIndex = indexPath.item
                 collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
                 cell.applyReorderingInProgressAppearance()

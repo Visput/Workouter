@@ -11,10 +11,10 @@ import Foundation
 struct DefaultWorkoutCellItem {
     
     /// Original workout.
-    var workout: Workout
+    let workout: Workout
     
     /// User workout which was created by cloning default `workout`.
-    var clonedWorkout: Workout?
+    let clonedWorkout: Workout?
     
     init(workout: Workout, clonedWorkout: Workout?) {
         self.workout = workout

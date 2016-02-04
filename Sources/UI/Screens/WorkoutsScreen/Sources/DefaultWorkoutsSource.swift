@@ -52,7 +52,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         
         if viewController.traitCollection.forceTouchCapability == .Available {
             // Set tag to keep reference to workout index.
-            cell.cardView.tag = indexPath.row
+            cell.cardView.tag = indexPath.item
             
             // Register cell if it's not reused yet.
             if cell.item == nil {
@@ -60,7 +60,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             }
         }
         
-        let workout = currentWorkouts[indexPath.row]
+        let workout = currentWorkouts[indexPath.item]
         let clonedWorkout = workoutsProvider.workoutWithOriginalIdentifier(workout.identifier)
         let item = DefaultWorkoutCellItem(workout: workout, clonedWorkout: clonedWorkout)
         cell.fillWithItem(item)
@@ -71,7 +71,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
                 cell.didSelectAction = nil
             }
         }
-        cell.favoriteButton.tag = indexPath.row
+        cell.favoriteButton.tag = indexPath.item
         cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
         
         return cell

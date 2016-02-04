@@ -46,7 +46,7 @@ extension MagicBoxScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MagicBoxIconCell.className(),
             forIndexPath: indexPath) as! MagicBoxIconCell
-        cell.iconView.image = icons[indexPath.row]
+        cell.iconView.image = icons[indexPath.item]
         return cell
     }
     
