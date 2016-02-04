@@ -59,22 +59,6 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
             let step = workout.steps[indexPath.item]
             cell.fillWithStep(step)
             
-            cell.didSelectAction = { [unowned self] in
-                //self.workoutDetailsView.switchExpandingStateForStepCellAtIndexPath(indexPath)
-                
-                if self.expandedStepIndex == indexPath.item {
-                    self.expandedStepIndex = nil
-                } else {
-                    self.expandedStepIndex = indexPath.item
-                }
-
-                // Expand / Collapse cell.
-                collectionView.performBatchUpdates(nil, completion: nil)
-                if self.expandedStepIndex != nil {
-                    collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-                }
-            }
-            
             return cell
     }
     
@@ -85,7 +69,18 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
             if expandedStepIndex == indexPath.item {
                 cellHeight = collectionView.bounds.size.height
             }
-            return CGSizeMake(collectionView.frame.size.width, cellHeight)
+            return CGSizeMake(workoutDetailsView.stepCellWidth, cellHeight)
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        didSelectItemAtIndexPath indexPath: NSIndexPath) {
+            
+            if self.expandedStepIndex == indexPath.item {
+                self.expandedStepIndex = nil
+            } else {
+                self.expandedStepIndex = indexPath.item
+            }
+            workoutDetailsView.switchExpandingStateForStepCellAtIndexPath(indexPath)
     }
 }
 

@@ -10,9 +10,19 @@ import UIKit
 
 final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
 
+    var springBehaviorEnabled = true {
+        didSet {
+            if !springBehaviorEnabled {
+                animator.removeAllBehaviors()
+            }
+        }
+    }
+    
     private lazy var animator: UIDynamicAnimator = UIDynamicAnimator(collectionViewLayout: self)
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        guard springBehaviorEnabled else { return super.layoutAttributesForElementsInRect(rect) }
+        
         let contentSize = collectionViewContentSize()
         let contentRect = CGRectMake(0.0, 0.0, contentSize.width, contentSize.height)
         let items = super.layoutAttributesForElementsInRect(contentRect)!
@@ -58,6 +68,8 @@ final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+        guard springBehaviorEnabled else { return super.shouldInvalidateLayoutForBoundsChange(newBounds) }
+        
         let resistanceWeight: CGFloat = 1500.0
         let distance = newBounds.origin.y - collectionView!.bounds.origin.y
         let touchLocation = collectionView!.panGestureRecognizer.locationInView(collectionView)
