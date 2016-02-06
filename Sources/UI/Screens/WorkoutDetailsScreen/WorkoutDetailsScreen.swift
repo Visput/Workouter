@@ -17,8 +17,6 @@ final class WorkoutDetailsScreen: BaseScreen {
         }
     }
     
-    private var expandedStepIndex: Int?
-    
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
@@ -65,22 +63,14 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            var cellHeight: CGFloat = 80.0
-            if expandedStepIndex == indexPath.item {
-                cellHeight = collectionView.bounds.size.height
-            }
-            return CGSizeMake(workoutDetailsView.stepCellWidth, cellHeight)
+            
+            return workoutDetailsView.templateCellSizeAtIndexPath(indexPath)
     }
     
     func collectionView(collectionView: UICollectionView,
         didSelectItemAtIndexPath indexPath: NSIndexPath) {
             
-            if self.expandedStepIndex == indexPath.item {
-                self.expandedStepIndex = nil
-            } else {
-                self.expandedStepIndex = indexPath.item
-            }
-            workoutDetailsView.switchExpandingStateForStepCellAtIndexPath(indexPath)
+            workoutDetailsView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
     }
 }
 

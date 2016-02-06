@@ -8,18 +8,18 @@
 
 import UIKit
 
-final class StepTemplateCell: BaseTableViewCell {
+final class StepTemplateCell: BaseCollectionViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var durationLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionVisualizationEnabled = false
+    }
     
     func fillWithStep(step: Step) {
         nameLabel.text = step.name
         descriptionLabel.text = step.muscleGroupsDescription
-        durationLabel.attributedText = NSAttributedString.durationStringForStep(step,
-            valueFont: UIFont.systemFontOfSize(22.0, weight: UIFontWeightLight),
-            unitFont: UIFont.systemFontOfSize(10.0, weight: UIFontWeightLight),
-            color: UIColor.primaryTextColor())
     }
 }

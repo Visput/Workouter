@@ -12,36 +12,33 @@ final class WorkoutDetailsView: BaseScreenView {
 
     @IBOutlet private(set) weak var headerView: UserWorkoutCell!
     @IBOutlet private(set) weak var favoriteButton: TintButton!
-    @IBOutlet private(set) weak var stepsCollectionView: UICollectionView!
-    
-    var stepCellWidth: CGFloat {
-        return stepsCollectionView.frame.size.width -
-            stepsCollectionViewLayout.sectionInset.left -
-            stepsCollectionViewLayout.sectionInset.right
-    }
-    
-    var stepsCollectionViewLayout: CollectionSpringFlowLayout {
-        return stepsCollectionView.collectionViewLayout as! CollectionSpringFlowLayout
-    }
+    @IBOutlet private(set) weak var stepsCollectionView: ExpandableCollectionView!
     
     override func didLoad() {
         super.didLoad()
         headerView.actionsEnabled = false
         
-        let layout = CollectionSpringFlowLayout()
-        layout.sectionInset.top = 16.0
-        layout.sectionInset.bottom = 16.0
-        layout.sectionInset.left = 16.0
-        layout.sectionInset.right = 16.0
-        layout.minimumLineSpacing = 16.0
-        stepsCollectionView.collectionViewLayout = layout
+        stepsCollectionView.springFlowLayout.sectionInset.top = 16.0
+        stepsCollectionView.springFlowLayout.sectionInset.bottom = 16.0
+        stepsCollectionView.springFlowLayout.sectionInset.left = 16.0
+        stepsCollectionView.springFlowLayout.sectionInset.right = 16.0
+        stepsCollectionView.springFlowLayout.minimumLineSpacing = 16.0
     }
     
-    func switchExpandingStateForStepCellAtIndexPath(indexPath: NSIndexPath) {
-        stepsCollectionViewLayout.springBehaviorEnabled = false
-        stepsCollectionView.performBatchUpdates(nil, completion: { _ in
-            self.stepsCollectionViewLayout.springBehaviorEnabled = true
-        })
-        stepsCollectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    func templateCellSizeAtIndexPath(indexPath: NSIndexPath) -> CGSize {
+        var cellSize = CGSizeZero
+        cellSize.width = stepsCollectionView.frame.size.width -
+            stepsCollectionView.springFlowLayout.sectionInset.left -
+            stepsCollectionView.springFlowLayout.sectionInset.right
+        
+        if stepsCollectionView.expandedCellIndexPath == indexPath {
+            cellSize.height = stepsCollectionView.bounds.size.height -
+                stepsCollectionView.springFlowLayout.sectionInset.top -
+                stepsCollectionView.springFlowLayout.sectionInset.bottom
+        } else {
+            cellSize.height = 80
+        }
+        
+        return cellSize
     }
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
-final class NewStepTemplateCell: BaseTableViewCell {
+final class NewStepTemplateCell: BaseCollectionViewCell {
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionVisualizationEnabled = false
+    }
 }

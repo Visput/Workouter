@@ -19,8 +19,7 @@ final class WorkoutsView: BaseScreenView {
     override func didLoad() {
         super.didLoad()
         endEditingOnTouch = false
-        workoutsCollectionView.collectionViewLayout = CollectionSpringFlowLayout()
-        
+    
         // Disable selection because custom selection mechanism is used.
         workoutsCollectionView.allowsSelection = false
     }
@@ -39,10 +38,9 @@ final class WorkoutsView: BaseScreenView {
         segmentedControl.frame.size.width = segmentedControlToolbar.frame.size.width - 2 * segmentedControlOffset
         
         // Collection view.
-        let flowLayout = workoutsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
-        flowLayout.sectionInset.top = 16.0
-        flowLayout.sectionInset.bottom = 16.0
-        flowLayout.minimumLineSpacing = 16.0
+        workoutsCollectionView.springFlowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
+        workoutsCollectionView.springFlowLayout.sectionInset.top = 16.0
+        workoutsCollectionView.springFlowLayout.sectionInset.bottom = 16.0
+        workoutsCollectionView.springFlowLayout.minimumLineSpacing = 16.0
     }
 }

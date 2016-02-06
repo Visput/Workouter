@@ -986,7 +986,7 @@
                                     <outlet property="stepsCountLabel" destination="uAS-qp-RbM" id="TPa-1j-b2N"/>
                                 </connections>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-Gt-ExJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-Gt-ExJ" customClass="ExpandableCollectionView" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="218" width="375" height="377"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="mda-SR-viW">
@@ -1327,7 +1327,9 @@
                             <constraint firstAttribute="trailing" secondItem="RsW-1N-g1v" secondAttribute="trailing" constant="16" id="wbg-Yu-4XF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout Completed" id="Ct5-Lu-BYM"/>
+                    <navigationItem key="navigationItem" title="Workout Completed" id="Ct5-Lu-BYM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="PDz-kk-dJc"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>

@@ -16,8 +16,6 @@ final class StepTemplatesScreen: BaseScreen {
     
     private var steps = [Step]()
     
-    private var searchController: SearchController!
-    
     private var workoutsProvider: WorkoutsProvider {
         return modelProvider.workoutsProvider
     }
@@ -27,69 +25,78 @@ final class StepTemplatesScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSearchController()
         fillViewWithSearchRequest(searchRequest)
         searchStepsWithRequest(searchRequest)
     }
-    
-    deinit {
-        // iOS 9 bug requires to manually remove search controller view from its superview.
-        searchController?.view.removeFromSuperview()
-    }
 }
-
-extension StepTemplatesScreen: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return steps.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var resultCell: UITableViewCell! = nil
+extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
         
-        let step = steps[indexPath.row]
-        if step.name.isEmpty {
-            resultCell = tableView.dequeueReusableCellWithIdentifier(NewStepTemplateCell.className())
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
             
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(StepTemplateCell.className()) as! StepTemplateCell
-            cell.fillWithStep(step)
-            resultCell = cell
-        }
-        
-        return resultCell
+            return steps.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let step = steps[indexPath.row]
-        templateDidSelectAction?(step: step)
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            var resultCell: UICollectionViewCell! = nil
+            
+            let step = steps[indexPath.item]
+            if step.isEmpty() {
+                resultCell = collectionView.dequeueReusableCellWithReuseIdentifier(NewStepTemplateCell.className(),
+                    forIndexPath: indexPath)
+            } else {
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepTemplateCell.className(),
+                    forIndexPath: indexPath) as! StepTemplateCell
+                cell.fillWithStep(step)
+                resultCell = cell
+            }
+            
+            return resultCell
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            return templatesView.templateCellSizeAtIndexPath(indexPath)
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        didSelectItemAtIndexPath indexPath: NSIndexPath) {
+            templatesView.searchBar.resignFirstResponder()
+            templatesView.templatesCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
     }
 }
 
-extension StepTemplatesScreen: UISearchResultsUpdating, UISearchControllerDelegate {
+extension StepTemplatesScreen: UISearchBarDelegate {
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchText = searchController.searchBar.text
-        searchRequest = searchRequest.requestBySettingSearchText(searchText!)
-        
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchRequest = searchRequest.requestBySettingSearchText(searchText)
         searchStepsWithRequest(searchRequest)
     }
     
-    func didPresentSearchController(searchController: UISearchController) {
-        searchController.searchBar.becomeFirstResponder()
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        searchRequest = searchRequest.requestBySettingSearchText("")
+        searchStepsWithRequest(searchRequest)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
     }
 }
 
 extension StepTemplatesScreen {
-    
-    private func configureSearchController() {
-        searchController = SearchController(searchResultsController: nil)
-        searchController.delegate = self
-        searchController.searchResultsUpdater = self
-        templatesView.templatesTableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.sizeToFit()
-        definesPresentationContext = true
-    }
     
     private func searchStepsWithRequest(searchRequest: StepsSearchRequest) {
         steps = [Step]()
@@ -98,7 +105,7 @@ extension StepTemplatesScreen {
         let searchResults = workoutsProvider.searchStepsWithRequest(searchRequest)
         steps.appendContentsOf(searchResults)
         
-        templatesView.templatesTableView.reloadData()
+        templatesView.templatesCollectionView.reloadData()
     }
     
     private func fillViewWithSearchRequest(searchRequest: StepsSearchRequest) {
@@ -107,6 +114,6 @@ extension StepTemplatesScreen {
         } else {
             title = NSLocalizedString("All Exercises", comment: "")
         }
-        searchController.searchBar.text = searchRequest.searchText
+        templatesView.searchBar.text = searchRequest.searchText
     }
 }

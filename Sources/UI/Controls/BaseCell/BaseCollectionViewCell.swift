@@ -10,14 +10,18 @@ import UIKit
 
 class BaseCollectionViewCell: UICollectionViewCell {
     
+    var selectionVisualizationEnabled = true
+    
     override var selected: Bool {
         didSet {
+            guard selectionVisualizationEnabled else { return }
             setSemiTransparent(selected, animated: true)
         }
     }
     
     override var highlighted: Bool {
         didSet {
+            guard selectionVisualizationEnabled else { return }
             setSemiTransparent(highlighted, animated: true)
         }
     }
