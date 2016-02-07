@@ -719,14 +719,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsk-EO-M4q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="brI-EU-7fh"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-7F-fan" customClass="UserWorkoutCell" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="80" width="343" height="122"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="122"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYM-mE-vYr">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zf4-dN-2wS" userLabel="Actions Stack View">
-                                                <rect key="frame" x="133" y="0.0" width="210" height="122"/>
+                                                <rect key="frame" x="165" y="0.0" width="210" height="122"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sz1-To-Hg0" customClass="AlphaButton" customModule="Workouter" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="122"/>
@@ -758,13 +765,13 @@
                                                 </subviews>
                                             </stackView>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAY-x1-0vr">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="122"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRl-7D-hAG" userLabel="Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="122"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="7 Minutes Workout" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKI-Af-t7Z">
-                                                                <rect key="frame" x="16" y="16" width="311" height="20"/>
+                                                                <rect key="frame" x="16" y="16" width="343" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="NEq-46-hBP"/>
                                                                     <constraint firstAttribute="height" constant="44" id="THa-JS-cLg"/>
@@ -891,7 +898,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulders, Chest, Biceps" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-dV-DZs">
-                                                                <rect key="frame" x="16" y="44" width="311" height="34"/>
+                                                                <rect key="frame" x="16" y="44" width="343" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="8uZ-Sa-TKk"/>
                                                                 </constraints>
@@ -968,7 +975,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                        <real key="value" value="8"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
@@ -987,7 +994,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-Gt-ExJ" customClass="ExpandableCollectionView" customModule="Workouter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="218" width="375" height="377"/>
+                                <rect key="frame" x="0.0" y="186" width="375" height="409"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="mda-SR-viW">
                                     <size key="itemSize" width="343" height="80"/>
@@ -1089,7 +1096,7 @@
                                 <rect key="frame" x="16" y="611" width="343" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noU-6c-fin" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="998" constant="40" id="2jl-jS-6Nr"/>
                                             <constraint firstAttribute="height" constant="40" id="Gjk-55-aGS"/>
@@ -1116,7 +1123,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-yW-stR" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163.5" height="40"/>
+                                        <rect key="frame" x="180" y="0.0" width="164" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="Fhw-Ae-lxC"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="NlG-HT-jHU"/>
@@ -1145,18 +1152,21 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93333333730697632" green="0.94117647409439087" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93333333730000001" green="0.94117647410000005" blue="0.94901961089999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vOw-7F-fan" firstAttribute="leading" secondItem="KbN-b8-1B1" secondAttribute="leading" constant="16" id="3RS-BD-D9j"/>
+                            <constraint firstItem="nsk-EO-M4q" firstAttribute="top" secondItem="UKh-0V-fju" secondAttribute="bottom" constant="-64" id="13i-I7-CTc"/>
+                            <constraint firstItem="vOw-7F-fan" firstAttribute="leading" secondItem="KbN-b8-1B1" secondAttribute="leading" id="3RS-BD-D9j"/>
+                            <constraint firstItem="nsk-EO-M4q" firstAttribute="leading" secondItem="KbN-b8-1B1" secondAttribute="leading" id="7TH-Fr-3lW"/>
                             <constraint firstAttribute="trailing" secondItem="Oqj-Gt-ExJ" secondAttribute="trailing" id="DaX-xt-i45"/>
+                            <constraint firstAttribute="trailing" secondItem="nsk-EO-M4q" secondAttribute="trailing" id="FvJ-T7-cly"/>
                             <constraint firstItem="svT-7Z-ti9" firstAttribute="top" secondItem="Oqj-Gt-ExJ" secondAttribute="bottom" constant="16" id="Jjo-La-ypS"/>
                             <constraint firstItem="svT-7Z-ti9" firstAttribute="leading" secondItem="KbN-b8-1B1" secondAttribute="leading" constant="16" id="Qfq-Lm-Dgv"/>
-                            <constraint firstItem="vOw-7F-fan" firstAttribute="top" secondItem="UKh-0V-fju" secondAttribute="bottom" constant="16" id="QvN-bY-FqK"/>
+                            <constraint firstItem="vOw-7F-fan" firstAttribute="top" secondItem="UKh-0V-fju" secondAttribute="bottom" id="QvN-bY-FqK"/>
                             <constraint firstItem="Oqj-Gt-ExJ" firstAttribute="leading" secondItem="KbN-b8-1B1" secondAttribute="leading" id="WjF-CP-FyE"/>
                             <constraint firstItem="JeJ-dL-jxV" firstAttribute="top" secondItem="svT-7Z-ti9" secondAttribute="bottom" constant="16" id="ifa-Fy-GGi"/>
                             <constraint firstAttribute="trailing" secondItem="svT-7Z-ti9" secondAttribute="trailing" constant="16" id="qtr-f3-KlZ"/>
-                            <constraint firstAttribute="trailing" secondItem="vOw-7F-fan" secondAttribute="trailing" constant="16" id="r1F-N5-2lI"/>
-                            <constraint firstItem="Oqj-Gt-ExJ" firstAttribute="top" secondItem="vOw-7F-fan" secondAttribute="bottom" constant="16" id="ta5-gv-NiG"/>
+                            <constraint firstAttribute="trailing" secondItem="vOw-7F-fan" secondAttribute="trailing" id="r1F-N5-2lI"/>
+                            <constraint firstItem="Oqj-Gt-ExJ" firstAttribute="top" secondItem="vOw-7F-fan" secondAttribute="bottom" id="ta5-gv-NiG"/>
                         </constraints>
                         <connections>
                             <outlet property="favoriteButton" destination="noU-6c-fin" id="Zn3-Id-xcg"/>
