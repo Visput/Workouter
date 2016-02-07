@@ -212,6 +212,8 @@
 		9FC35E691BE4BF590068A2D2 /* WorkoutDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */; };
 		9FCB7B8E1BFF9FEC00D74467 /* UIColor+AppPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */; };
 		9FCB7B8F1BFFA02A00D74467 /* UIColor+AppPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */; };
+		9FD330831C66E44D004BA8A5 /* StepDetailsCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD330821C66E44D004BA8A5 /* StepDetailsCellItem.swift */; };
+		9FD330841C66E44D004BA8A5 /* StepDetailsCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD330821C66E44D004BA8A5 /* StepDetailsCellItem.swift */; };
 		9FD4A8161BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */; };
 		9FD4A8171BEC66DB00B370EE /* StepsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */; };
 		9FD745C31C09651E00E48508 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745C11C09651E00E48508 /* TextFieldController.swift */; };
@@ -432,6 +434,7 @@
 		9FBE71561C4F2D5B000E90E1 /* WelcomePageContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageContentController.swift; sourceTree = "<group>"; };
 		9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsView.swift; sourceTree = "<group>"; };
 		9FCB7B8D1BFF9FEC00D74467 /* UIColor+AppPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppPalette.swift"; sourceTree = "<group>"; };
+		9FD330821C66E44D004BA8A5 /* StepDetailsCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailsCellItem.swift; sourceTree = "<group>"; };
 		9FD4A8151BEC66DB00B370EE /* StepsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsSearchRequest.swift; sourceTree = "<group>"; };
 		9FD745C11C09651E00E48508 /* TextFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		9FD745C21C09651E00E48508 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -1339,6 +1342,7 @@
 				F0C342681A9E4BC800B9D480 /* WorkoutDetailsScreen.swift */,
 				9FC35E671BE4BF590068A2D2 /* WorkoutDetailsView.swift */,
 				9FD745F21C0AC5DF00E48508 /* StepDetailsCell.swift */,
+				9FD330821C66E44D004BA8A5 /* StepDetailsCellItem.swift */,
 			);
 			path = WorkoutDetailsScreen;
 			sourceTree = "<group>";
@@ -1816,6 +1820,7 @@
 				9FED642B1C1F511400F40CDF /* AchievementsView.swift in Sources */,
 				9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
 				9FE798681C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
+				9FD330831C66E44D004BA8A5 /* StepDetailsCellItem.swift in Sources */,
 				9F8782181BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB81BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9F697E4E1C02995B00BAB0EC /* BaseViewController.swift in Sources */,
@@ -1953,6 +1958,7 @@
 				9FED642C1C1F511400F40CDF /* AchievementsView.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
 				9FE798691C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
+				9FD330841C66E44D004BA8A5 /* StepDetailsCellItem.swift in Sources */,
 				9F8782191BFE941000D431C2 /* TintButton.swift in Sources */,
 				9FE40FB91BF714EC00D80E28 /* StatisticsProviderObserving.swift in Sources */,
 				9FD745C71C09653900E48508 /* TextControllerChaining.swift in Sources */,

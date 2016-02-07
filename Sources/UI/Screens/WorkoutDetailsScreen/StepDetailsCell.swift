@@ -12,14 +12,16 @@ class StepDetailsCell: BaseCollectionViewCell {
 
     @IBOutlet private(set) weak var nameLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var indexLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionVisualizationEnabled = false
     }
     
-    func fillWithStep(step: Step) {
-        nameLabel.text = step.name
-        descriptionLabel.text = step.muscleGroupsDescription
+    func fillWithItem(item: StepDetailsCellItem) {
+        nameLabel.text = item.step.name
+        descriptionLabel.text = item.step.muscleGroupsDescription
+        indexLabel.text = String(item.index)
     }
 }

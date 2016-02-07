@@ -17,9 +17,9 @@ extension UIColor {
     }
 
     class func lightPrimaryColor() -> UIColor {
-        return UIColor(red: 0.8274509906768799,
-            green:0.9607843160629272,
-            blue:0.9215686321258545,
+        return UIColor(red: 0.5647059082984924,
+            green:0.9019607901573181,
+            blue:0.800000011920929,
             alpha:1)
     }
 

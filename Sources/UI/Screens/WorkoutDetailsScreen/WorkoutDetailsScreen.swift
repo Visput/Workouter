@@ -54,8 +54,8 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepDetailsCell.className(),
                 forIndexPath: indexPath) as! StepDetailsCell
             
-            let step = workout.steps[indexPath.item]
-            cell.fillWithStep(step)
+            let item = StepDetailsCellItem(step: workout.steps[indexPath.item], index: indexPath.item + 1)
+            cell.fillWithItem(item)
             
             return cell
     }
