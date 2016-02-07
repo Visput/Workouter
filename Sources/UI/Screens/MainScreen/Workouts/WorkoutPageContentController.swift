@@ -12,6 +12,7 @@ import VPAttributedFormat
 final class WorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
     
     @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
     @IBOutlet private(set) weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var stepsCountLabel: UILabel!
     
@@ -40,6 +41,7 @@ extension WorkoutPageContentController {
     
     private func fillWithItem(item: WorkoutPageItem) {
         nameLabel.text = item.workout!.name
+        descriptionLabel.text = item.workout!.muscleGroupsDescription
         
         withVaList([item.workout!.steps.count]) { pointer in
             stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)

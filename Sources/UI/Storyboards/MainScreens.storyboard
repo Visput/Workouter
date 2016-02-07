@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -127,16 +127,16 @@
                                 <rect key="frame" x="32" y="0.0" width="311" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seven Minutes Workout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="enf-MA-App">
-                                        <rect key="frame" x="16" y="16" width="279" height="90"/>
+                                        <rect key="frame" x="16" y="16" width="279" height="62"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-M0-7sQ">
-                                        <rect key="frame" x="81.5" y="114" width="148.5" height="20"/>
+                                        <rect key="frame" x="81" y="114" width="149" height="20"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-EC-kAD">
-                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="20"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_tag_white" translatesAutoresizingMaskIntoConstraints="NO" id="Fwu-pX-p00">
                                                         <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
@@ -181,7 +181,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-HE-pox">
-                                                <rect key="frame" x="72.5" y="0.0" width="76" height="20"/>
+                                                <rect key="frame" x="73" y="0.0" width="76" height="20"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_tag_white" translatesAutoresizingMaskIntoConstraints="NO" id="VB2-EP-RP3">
                                                         <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>
@@ -244,13 +244,32 @@
                                             <constraint firstAttribute="height" constant="20" id="SKy-m8-Z1h"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biceps, Shoulders, Triceps" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOe-Fg-ZkA">
+                                        <rect key="frame" x="16" y="86" width="279" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="1v5-xt-5DG"/>
+                                            <constraint firstAttribute="height" constant="44" id="6bu-p4-1l3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="6bu-p4-1l3"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.086274509799999996" green="0.83137254900000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gxn-M0-7sQ" firstAttribute="top" secondItem="enf-MA-App" secondAttribute="bottom" constant="8" id="5Nl-sG-mHm"/>
                                     <constraint firstAttribute="bottom" secondItem="enf-MA-App" secondAttribute="bottom" constant="16" id="7dv-ze-WUh"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOe-Fg-ZkA" secondAttribute="trailing" constant="16" id="85t-7k-NzY"/>
+                                    <constraint firstItem="BOe-Fg-ZkA" firstAttribute="top" secondItem="enf-MA-App" secondAttribute="bottom" constant="8" id="HeV-lW-GZq"/>
                                     <constraint firstAttribute="bottom" secondItem="gxn-M0-7sQ" secondAttribute="bottom" constant="16" id="HsR-TX-NaP"/>
+                                    <constraint firstItem="BOe-Fg-ZkA" firstAttribute="leading" secondItem="Wb5-Kz-IHj" secondAttribute="leading" constant="16" id="ISH-46-a65"/>
                                     <constraint firstItem="gxn-M0-7sQ" firstAttribute="centerX" secondItem="Wb5-Kz-IHj" secondAttribute="centerX" id="Xp1-nn-BDe"/>
+                                    <constraint firstItem="gxn-M0-7sQ" firstAttribute="top" secondItem="BOe-Fg-ZkA" secondAttribute="bottom" constant="8" id="Xu6-te-AUd"/>
                                     <constraint firstItem="enf-MA-App" firstAttribute="leading" secondItem="Wb5-Kz-IHj" secondAttribute="leading" constant="16" id="Zft-9J-1fq"/>
                                     <constraint firstItem="enf-MA-App" firstAttribute="top" secondItem="Wb5-Kz-IHj" secondAttribute="top" constant="16" id="dbg-yd-fVj"/>
                                     <constraint firstAttribute="trailing" secondItem="enf-MA-App" secondAttribute="trailing" constant="16" id="njx-6g-eW6"/>
@@ -263,6 +282,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7dv-ze-WUh"/>
+                                        <exclude reference="5Nl-sG-mHm"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -282,6 +302,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="150"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="BOe-Fg-ZkA" id="hpR-yd-IAR"/>
                         <outlet property="durationLabel" destination="7RN-oJ-m5D" id="bSd-0J-ppF"/>
                         <outlet property="nameLabel" destination="enf-MA-App" id="whV-fm-Sto"/>
                         <outlet property="stepsCountLabel" destination="Hyh-tq-Foq" id="jcw-Sk-Xqf"/>
