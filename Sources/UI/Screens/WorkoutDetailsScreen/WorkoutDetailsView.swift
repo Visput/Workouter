@@ -12,7 +12,7 @@ final class WorkoutDetailsView: BaseScreenView {
 
     @IBOutlet private(set) weak var headerView: UserWorkoutCell!
     @IBOutlet private(set) weak var favoriteButton: TintButton!
-    @IBOutlet private(set) weak var stepsCollectionView: ExpandableCollectionView!
+    @IBOutlet private(set) weak var stepsCollectionView: ActionableCollectionView!
     
     override func didLoad() {
         super.didLoad()

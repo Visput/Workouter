@@ -19,9 +19,6 @@ final class WorkoutsView: BaseScreenView {
     override func didLoad() {
         super.didLoad()
         endEditingOnTouch = false
-    
-        // Disable selection because custom selection mechanism is used.
-        workoutsCollectionView.allowsSelection = false
     }
     
     override func willAppear(animated: Bool) {

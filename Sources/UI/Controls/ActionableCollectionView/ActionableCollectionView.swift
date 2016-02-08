@@ -11,30 +11,27 @@ import UIKit
 final class ActionableCollectionView: UICollectionView {
     
     private(set) var springFlowLayout: CollectionSpringFlowLayout
+    private(set) var expandedCellIndexPath: NSIndexPath?
     
     required init?(coder aDecoder: NSCoder) {
         springFlowLayout = CollectionSpringFlowLayout()
         super.init(coder: aDecoder)
         collectionViewLayout = springFlowLayout
+        
+        // Disable selection because custom selection mechanism is used.
+        allowsSelection = false
     }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         springFlowLayout = CollectionSpringFlowLayout()
         super.init(frame: frame, collectionViewLayout: springFlowLayout)
-    }
-    
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        for cell in visibleCells() as! [ActionableCollectionViewCell] {
-            if cell.actionsVisible {
-                // Hide action items if touch point is outside of actions content view.
-                if !CGRectContainsPoint(convertRect(cell.actionsContentView.frame, fromView: cell.actionsContentView.superview), point) {
-                    cell.actionsVisible = false
-                }
-            }
-        }
         
-        return super.hitTest(point, withEvent: event)
+        // Disable selection because custom selection mechanism is used.
+        allowsSelection = false
     }
+}
+
+extension ActionableCollectionView {
     
     override func reloadData() {
         let isSpringBehaviorEnabled = springFlowLayout.springBehaviorEnabled
@@ -45,9 +42,9 @@ final class ActionableCollectionView: UICollectionView {
         super.reloadData()
         
         if isSpringBehaviorEnabled {
-            // Enable spring behavior after delay because  reloading data is async process 
+            // Enable spring behavior after delay because  reloading data is async process
             // that take some time to perform all changes.
-            executeAfterDelay(0.5, task: {
+            executeAfterDelay(1.0, task: {
                 self.springFlowLayout.springBehaviorEnabled = true
             })
         }
@@ -66,12 +63,42 @@ final class ActionableCollectionView: UICollectionView {
             completion?(completed)
         })
     }
+}
+
+extension ActionableCollectionView {
+    
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        for cell in visibleCells() as! [ActionableCollectionViewCell] {
+            if cell.actionsVisible {
+                // Hide action items if touch point is outside of actions content view.
+                if !CGRectContainsPoint(convertRect(cell.actionsContentView.frame, fromView: cell.actionsContentView.superview), point) {
+                    cell.actionsVisible = false
+                }
+            }
+        }
+        
+        return super.hitTest(point, withEvent: event)
+    }
     
     func hideCellsActions() {
         for cell in visibleCells() as! [ActionableCollectionViewCell] {
             if cell.actionsVisible {
                 cell.actionsVisible = false
             }
+        }
+    }
+    
+    func switchExpandingStateForCellAtIndexPath(indexPath: NSIndexPath) {
+        if expandedCellIndexPath == indexPath {
+            expandedCellIndexPath = nil
+        } else {
+            expandedCellIndexPath = indexPath
+        }
+        
+        performBatchUpdates(nil, completion: nil)
+        
+        if expandedCellIndexPath != nil {
+            scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredVertically, animated: true)
         }
     }
 }

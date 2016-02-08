@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepDetailsCell: BaseCollectionViewCell {
+class StepDetailsCell: ActionableCollectionViewCell {
 
     @IBOutlet private(set) weak var nameLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
@@ -17,6 +17,7 @@ class StepDetailsCell: BaseCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionVisualizationEnabled = false
+        actionsEnabled = false
     }
     
     func fillWithItem(item: StepDetailsCellItem) {

@@ -29,8 +29,6 @@
 		9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F073A1C063B2D00DA0152 /* AuthenticationScreen.swift */; };
 		9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
 		9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F07411C063C8600DA0152 /* AccountManager.swift */; };
-		9F10B3351C63B63A00E0757C /* ExpandableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F10B3341C63B63A00E0757C /* ExpandableCollectionView.swift */; };
-		9F10B3361C63B63A00E0757C /* ExpandableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F10B3341C63B63A00E0757C /* ExpandableCollectionView.swift */; };
 		9F119B4D1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
 		9F119B4E1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */; };
 		9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */; };
@@ -226,14 +224,6 @@
 		9FD745CD1C09832000E48508 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CA1C09832000E48508 /* iTunesArtwork.png */; };
 		9FD745CE1C09832000E48508 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */; };
 		9FD745CF1C09832000E48508 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */; };
-		9FD745EA1C0A92A800E48508 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E61C0A92A800E48508 /* ExpandableTableView.swift */; };
-		9FD745EB1C0A92A800E48508 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E61C0A92A800E48508 /* ExpandableTableView.swift */; };
-		9FD745EC1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E71C0A92A800E48508 /* ExpandableTableViewDataSource.swift */; };
-		9FD745ED1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E71C0A92A800E48508 /* ExpandableTableViewDataSource.swift */; };
-		9FD745EE1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E81C0A92A800E48508 /* ExpandableTableViewDelegate.swift */; };
-		9FD745EF1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E81C0A92A800E48508 /* ExpandableTableViewDelegate.swift */; };
-		9FD745F01C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E91C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift */; };
-		9FD745F11C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745E91C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift */; };
 		9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745F21C0AC5DF00E48508 /* StepDetailsCell.swift */; };
 		9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD745F21C0AC5DF00E48508 /* StepDetailsCell.swift */; };
 		9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */; };
@@ -342,7 +332,6 @@
 		9F0F073B1C063B2D00DA0152 /* AuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		9F0F07411C063C8600DA0152 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		9F0F41C21BFF07F900989101 /* AppPalette.clr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppPalette.clr; path = AppPalette/AppPalette.clr; sourceTree = "<group>"; };
-		9F10B3341C63B63A00E0757C /* ExpandableCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCollectionView.swift; sourceTree = "<group>"; };
 		9F119B4C1C40DCAC0070A62C /* CollectionSpringFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSpringFlowLayout.swift; sourceTree = "<group>"; };
 		9F11E0851C423A47007F343F /* ActionableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F11E0881C423A7E007F343F /* ActionableCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionableCollectionView.swift; sourceTree = "<group>"; };
@@ -441,10 +430,6 @@
 		9FD745C51C09653900E48508 /* TextControllerChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextControllerChaining.swift; sourceTree = "<group>"; };
 		9FD745CA1C09832000E48508 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		9FD745CB1C09832000E48508 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		9FD745E61C0A92A800E48508 /* ExpandableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
-		9FD745E71C0A92A800E48508 /* ExpandableTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewDataSource.swift; sourceTree = "<group>"; };
-		9FD745E81C0A92A800E48508 /* ExpandableTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewDelegate.swift; sourceTree = "<group>"; };
-		9FD745E91C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		9FD745F21C0AC5DF00E48508 /* StepDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailsCell.swift; sourceTree = "<group>"; };
 		9FDA599F1BEF2A6200D350C5 /* UIView+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponder.swift"; sourceTree = "<group>"; };
 		9FE40FB71BF714EC00D80E28 /* StatisticsProviderObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsProviderObserving.swift; sourceTree = "<group>"; };
@@ -596,14 +581,6 @@
 				9F0F07411C063C8600DA0152 /* AccountManager.swift */,
 			);
 			path = AccountManager;
-			sourceTree = "<group>";
-		};
-		9F10B3331C63B61100E0757C /* ExpandableCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				9F10B3341C63B63A00E0757C /* ExpandableCollectionView.swift */,
-			);
-			path = ExpandableCollectionView;
 			sourceTree = "<group>";
 		};
 		9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */ = {
@@ -951,14 +928,12 @@
 		9FA2F5831BE314B700A3844D /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				9F10B3331C63B61100E0757C /* ExpandableCollectionView */,
 				9F11E0841C423A47007F343F /* ActionableCollectionView */,
 				9F119B4B1C40DC820070A62C /* CollectionSpringFlowLayout */,
 				9F49AFD01C3CDCB300B1763C /* BaseCell */,
 				9FF8A1B91C2B297400A25EAA /* AlphaButton */,
 				9F13C4681C1C028F00894C6C /* DescriptionButton */,
 				9F99006A1C1929FB00ACC612 /* ProgressView */,
-				9FD745E51C0A92A800E48508 /* ExpandableTableView */,
 				9F8782161BFE941000D431C2 /* TintButton */,
 				9F3DF9721BFD5CD700BBD535 /* AppAppearance */,
 			);
@@ -1028,17 +1003,6 @@
 				9FD745C51C09653900E48508 /* TextControllerChaining.swift */,
 			);
 			path = TextController;
-			sourceTree = "<group>";
-		};
-		9FD745E51C0A92A800E48508 /* ExpandableTableView */ = {
-			isa = PBXGroup;
-			children = (
-				9FD745E61C0A92A800E48508 /* ExpandableTableView.swift */,
-				9FD745E71C0A92A800E48508 /* ExpandableTableViewDataSource.swift */,
-				9FD745E81C0A92A800E48508 /* ExpandableTableViewDelegate.swift */,
-				9FD745E91C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift */,
-			);
-			path = ExpandableTableView;
 			sourceTree = "<group>";
 		};
 		9FDA599E1BEF2A2D00D350C5 /* UIView+FirstResponder */ = {
@@ -1791,7 +1755,6 @@
 				9FED64241C1F50BB00F40CDF /* MainView.swift in Sources */,
 				9F0F073C1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
-				9FD745EC1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
 				9F0F07421C063C8600DA0152 /* AccountManager.swift in Sources */,
 				F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */,
 				9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
@@ -1851,12 +1814,10 @@
 				9FED64091C1D6B4D00F40CDF /* MagicBoxIconCell.swift in Sources */,
 				9F341AD61BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				9FAFA6821C2FED950007463D /* WorkoutPageContentControlling.swift in Sources */,
-				9FD745F01C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				F02CAB591B4B871E00F28D72 /* StepTemplatesScreen.swift in Sources */,
 				9F3CAA071C3448370061C21A /* AccountCellItem.swift in Sources */,
 				9F3699921C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
 				9F13C46A1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
-				9F10B3351C63B63A00E0757C /* ExpandableCollectionView.swift in Sources */,
 				9FAFA6801C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F31C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F0588A91C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
@@ -1905,9 +1866,7 @@
 				9F99006F1C1929FB00ACC612 /* ProgressViewItem.swift in Sources */,
 				9FED64321C1F51FB00F40CDF /* StatisticsScreen.swift in Sources */,
 				9F9444211C0003F1003E333B /* TextDialogView.swift in Sources */,
-				9FD745EA1C0A92A800E48508 /* ExpandableTableView.swift in Sources */,
 				9F0F07281C06280900DA0152 /* WorkoutPlayerScreen.swift in Sources */,
-				9FD745EE1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
 				9FE798651C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F4356DA1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */,
 				9F79EA891C39167A00FC8227 /* DefaultWorkoutsSource.swift in Sources */,
@@ -1929,7 +1888,6 @@
 				9FED64251C1F50BB00F40CDF /* MainView.swift in Sources */,
 				9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
-				9FD745ED1C0A92A800E48508 /* ExpandableTableViewDataSource.swift in Sources */,
 				9F0F07431C063C8600DA0152 /* AccountManager.swift in Sources */,
 				F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */,
 				9F11E0871C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
@@ -1989,12 +1947,10 @@
 				9FED640A1C1D6B4D00F40CDF /* MagicBoxIconCell.swift in Sources */,
 				F09702C51ACA48E700498DEE /* WorkoutPlayer.swift in Sources */,
 				9FAFA6831C2FED950007463D /* WorkoutPageContentControlling.swift in Sources */,
-				9FD745F11C0A92A800E48508 /* ExpandableTableViewSectionHeader.swift in Sources */,
 				9F341AD71BDF2F7000AEDEB1 /* WorkoutEditScreen.swift in Sources */,
 				9F3CAA081C3448370061C21A /* AccountCellItem.swift in Sources */,
 				9F3699931C572B2600C35D62 /* WorkoutsPlaceholderController.swift in Sources */,
 				9F13C46B1C1C02BD00894C6C /* DescriptionButton.swift in Sources */,
-				9F10B3361C63B63A00E0757C /* ExpandableCollectionView.swift in Sources */,
 				9FAFA6811C2FED950007463D /* WorkoutPageContentController.swift in Sources */,
 				9FD745F41C0AC5DF00E48508 /* StepDetailsCell.swift in Sources */,
 				9F0588AA1C326279006DDD81 /* AchievementDetailsScreen.swift in Sources */,
@@ -2043,9 +1999,7 @@
 				9F9900701C1929FB00ACC612 /* ProgressViewItem.swift in Sources */,
 				9FED64331C1F51FB00F40CDF /* StatisticsScreen.swift in Sources */,
 				9F9444221C0003F1003E333B /* TextDialogView.swift in Sources */,
-				9FD745EB1C0A92A800E48508 /* ExpandableTableView.swift in Sources */,
 				9F0F07291C06280900DA0152 /* WorkoutPlayerScreen.swift in Sources */,
-				9FD745EF1C0A92A800E48508 /* ExpandableTableViewDelegate.swift in Sources */,
 				9FE798661C0D71AA009A52C5 /* WelcomeScreen.swift in Sources */,
 				9F4356DB1C49E38F00D841FE /* MagicBoxSettingsView.swift in Sources */,
 				9F79EA8A1C39167A00FC8227 /* DefaultWorkoutsSource.swift in Sources */,

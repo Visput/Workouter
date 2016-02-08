@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -111,7 +111,7 @@
                                     <constraint firstAttribute="height" constant="44" id="sNk-9A-5nh"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wpQ-IK-uXx" customClass="ExpandableCollectionView" customModule="Workouter" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wpQ-IK-uXx" customClass="ActionableCollectionView" customModule="Workouter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="61K-vZ-wAP">
@@ -160,9 +160,9 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="3pZ-iZ-38H"/>
                                                             <exclude reference="6E7-Di-dms"/>
                                                             <exclude reference="hs8-fw-aqh"/>
-                                                            <exclude reference="3pZ-iZ-38H"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -191,9 +191,9 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="bti-kk-ZQg"/>
-                                                <exclude reference="Jm8-Bm-Ko0"/>
                                                 <exclude reference="9EY-sB-Qow"/>
+                                                <exclude reference="Jm8-Bm-Ko0"/>
+                                                <exclude reference="bti-kk-ZQg"/>
                                                 <exclude reference="85j-7d-ohY"/>
                                                 <exclude reference="dGc-6n-9hp"/>
                                                 <exclude reference="f7b-Qj-bEt"/>
@@ -225,8 +225,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="CcZ-LQ-CB8"/>
-                                                            <exclude reference="hMz-UD-M5A"/>
                                                             <exclude reference="baO-fv-qGT"/>
+                                                            <exclude reference="hMz-UD-M5A"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -249,9 +249,9 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="e1E-p9-xBV"/>
-                                                <exclude reference="Qbb-YC-Chh"/>
                                                 <exclude reference="Hai-TX-39U"/>
+                                                <exclude reference="Qbb-YC-Chh"/>
+                                                <exclude reference="e1E-p9-xBV"/>
                                             </mask>
                                         </variation>
                                     </collectionViewCell>

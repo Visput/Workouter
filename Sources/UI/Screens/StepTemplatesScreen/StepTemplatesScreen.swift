@@ -40,17 +40,22 @@ extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionV
     
     func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-            var resultCell: UICollectionViewCell! = nil
+            var resultCell: ActionableCollectionViewCell! = nil
             
             let step = steps[indexPath.item]
             if step.isEmpty() {
                 resultCell = collectionView.dequeueReusableCellWithReuseIdentifier(NewStepTemplateCell.className(),
-                    forIndexPath: indexPath)
+                    forIndexPath: indexPath) as! NewStepTemplateCell
             } else {
                 let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepTemplateCell.className(),
                     forIndexPath: indexPath) as! StepTemplateCell
                 cell.fillWithStep(step)
                 resultCell = cell
+            }
+            
+            resultCell.didSelectAction = { [unowned self] in
+                self.templatesView.searchBar.resignFirstResponder()
+                self.templatesView.templatesCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
             }
             
             return resultCell
@@ -61,12 +66,6 @@ extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionV
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             return templatesView.templateCellSizeAtIndexPath(indexPath)
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            templatesView.searchBar.resignFirstResponder()
-            templatesView.templatesCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
     }
 }
 

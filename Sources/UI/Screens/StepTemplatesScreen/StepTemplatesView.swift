@@ -10,7 +10,7 @@ import UIKit
 
 class StepTemplatesView: BaseScreenView {
     
-    @IBOutlet private(set) weak var templatesCollectionView: ExpandableCollectionView!
+    @IBOutlet private(set) weak var templatesCollectionView: ActionableCollectionView!
     @IBOutlet private(set) weak var searchBar: UISearchBar!
     
     override func didLoad() {

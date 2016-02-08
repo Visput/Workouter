@@ -15,9 +15,6 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet private(set) weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            
-            let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("scrollViewDidTap:"))
-            scrollView.addGestureRecognizer(tapRecognizer)
         }
     }
     
@@ -63,6 +60,12 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("cellDidTap:"))
+        addGestureRecognizer(tapRecognizer)
+    }
+    
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         if actionsVisible && CGRectContainsPoint(scrollView.frame, point) {
             actionsVisible = false
@@ -83,7 +86,7 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
             }, completion: nil)
     }
     
-    @objc private func scrollViewDidTap(gesture: UITapGestureRecognizer) {
+    @objc private func cellDidTap(gesture: UITapGestureRecognizer) {
         selected = true
         didSelectAction?()
     }

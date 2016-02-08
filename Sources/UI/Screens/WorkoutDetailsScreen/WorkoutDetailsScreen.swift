@@ -56,6 +56,9 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
             
             let item = StepDetailsCellItem(step: workout.steps[indexPath.item], index: indexPath.item + 1)
             cell.fillWithItem(item)
+            cell.didSelectAction = { [unowned self] in
+                self.workoutDetailsView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
+            }
             
             return cell
     }
@@ -65,12 +68,6 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             return workoutDetailsView.templateCellSizeAtIndexPath(indexPath)
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            
-            workoutDetailsView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
     }
 }
 
