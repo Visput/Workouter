@@ -35,7 +35,7 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.9529411792755127" green="0.96078431606292725" blue="0.9686274528503418" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="BQ2-ac-nFP" firstAttribute="top" secondItem="DNg-Rx-xdQ" secondAttribute="top" constant="96" id="ICg-Hd-fKe"/>
                                     <constraint firstItem="BQ2-ac-nFP" firstAttribute="leading" secondItem="DNg-Rx-xdQ" secondAttribute="leading" id="erP-qi-l6z"/>

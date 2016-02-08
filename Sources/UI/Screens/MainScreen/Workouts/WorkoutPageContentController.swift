@@ -36,7 +36,7 @@ final class WorkoutPageContentController: BaseViewController, WorkoutPageContent
 extension WorkoutPageContentController {
     
     @IBAction private func actionButtonDidPress(sender: AnyObject) {
-        navigationManager.pushWorkoutPlayerScreenWithWorkout(item.workout!, animated: true)
+        navigationManager.pushWorkoutDetailsScreenWithWorkout(item.workout!, animated: true)
     }
     
     private func fillWithItem(item: WorkoutPageItem) {
