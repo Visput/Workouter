@@ -9,7 +9,7 @@
 import UIKit
 import VPAttributedFormat
 
-final class WorkoutPageContentController: BaseViewController, WorkoutPageContentControlling {
+final class WorkoutPageContentController: BaseViewController, WorkoutPageContentControlling, UIViewControllerPreviewingDelegate {
     
     @IBOutlet private(set) weak var nameLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
@@ -25,11 +25,34 @@ final class WorkoutPageContentController: BaseViewController, WorkoutPageContent
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerForPreviewing()
         fillWithItem(item)
     }
 
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
+    }
+}
+
+extension WorkoutPageContentController {
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        viewControllerForLocation location: CGPoint) -> UIViewController? {
+            
+            let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(item.workout!)
+            return previewScreen
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing,
+        commitViewController viewControllerToCommit: UIViewController) {
+            
+            navigationManager.pushScreen(viewControllerToCommit, animated: true)
+    }
+    
+    private func registerForPreviewing() {
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
     }
 }
 
