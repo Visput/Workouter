@@ -19,7 +19,7 @@ final class WorkoutDetailsView: BaseScreenView {
         headerView.actionsEnabled = false
         
         stepsCollectionView.springFlowLayout.sectionInset.top = 16.0
-        stepsCollectionView.springFlowLayout.sectionInset.bottom = 0.0
+        stepsCollectionView.springFlowLayout.sectionInset.bottom = 2.0
         stepsCollectionView.springFlowLayout.sectionInset.left = 16.0
         stepsCollectionView.springFlowLayout.sectionInset.right = 16.0
         stepsCollectionView.springFlowLayout.minimumLineSpacing = 16.0

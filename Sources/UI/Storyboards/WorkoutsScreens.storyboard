@@ -1158,14 +1158,14 @@
                                                         <constraint firstAttribute="width" id="U6G-p6-SQr"/>
                                                     </constraints>
                                                 </stackView>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnX-bD-aiC">
-                                                    <rect key="frame" x="32" y="0.0" width="311" height="80"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnX-bD-aiC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Led-mI-bT8" userLabel="Content View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Push-ups" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQJ-m8-gyB">
-                                                                    <rect key="frame" x="32" y="16" width="263" height="20"/>
+                                                                    <rect key="frame" x="64" y="16" width="263" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="44" id="64i-qO-LbB"/>
                                                                         <constraint firstAttribute="height" constant="20" id="8hD-V0-33V"/>
@@ -1184,7 +1184,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulders, Chest" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uho-Zr-HNE">
-                                                                    <rect key="frame" x="32" y="44" width="263" height="20"/>
+                                                                    <rect key="frame" x="64" y="44" width="263" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="66x-Xt-CrJ"/>
                                                                         <constraint firstAttribute="height" constant="20" id="MCL-hr-hen"/>
@@ -1207,9 +1207,9 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Uho-Zr-HNE" secondAttribute="trailing" constant="16" id="2kQ-uU-4bD"/>
                                                                 <constraint firstAttribute="trailing" secondItem="eQJ-m8-gyB" secondAttribute="trailing" constant="16" id="Ag9-Wp-G6h"/>
-                                                                <constraint firstItem="Uho-Zr-HNE" firstAttribute="leading" secondItem="Led-mI-bT8" secondAttribute="leading" constant="32" id="R3B-nP-cBK"/>
+                                                                <constraint firstItem="Uho-Zr-HNE" firstAttribute="leading" secondItem="Led-mI-bT8" secondAttribute="leading" constant="64" id="R3B-nP-cBK"/>
                                                                 <constraint firstItem="Uho-Zr-HNE" firstAttribute="top" secondItem="eQJ-m8-gyB" secondAttribute="bottom" constant="8" id="gIM-e9-7gq"/>
-                                                                <constraint firstItem="eQJ-m8-gyB" firstAttribute="leading" secondItem="Led-mI-bT8" secondAttribute="leading" constant="32" id="i8S-1x-6PF"/>
+                                                                <constraint firstItem="eQJ-m8-gyB" firstAttribute="leading" secondItem="Led-mI-bT8" secondAttribute="leading" constant="64" id="i8S-1x-6PF"/>
                                                                 <constraint firstItem="eQJ-m8-gyB" firstAttribute="top" secondItem="Led-mI-bT8" secondAttribute="top" constant="16" id="uVl-t6-mrc"/>
                                                             </constraints>
                                                         </view>
@@ -1269,6 +1269,7 @@
                                         <constraints>
                                             <constraint firstItem="ZKO-64-MwY" firstAttribute="leading" secondItem="c5d-VH-qgZ" secondAttribute="leading" constant="16" id="4CX-Ze-gLu"/>
                                             <constraint firstItem="LfM-qc-o4B" firstAttribute="leading" secondItem="c5d-VH-qgZ" secondAttribute="leading" id="5lh-04-Qu6"/>
+                                            <constraint firstItem="GnX-bD-aiC" firstAttribute="leading" secondItem="c5d-VH-qgZ" secondAttribute="leading" id="A7N-BD-Y9P"/>
                                             <constraint firstItem="ZKO-64-MwY" firstAttribute="top" secondItem="c5d-VH-qgZ" secondAttribute="top" constant="24" id="KIC-ta-lPx"/>
                                             <constraint firstItem="b3h-VA-e68" firstAttribute="top" secondItem="c5d-VH-qgZ" secondAttribute="top" id="U6L-in-Bzq"/>
                                             <constraint firstAttribute="trailing" secondItem="b3h-VA-e68" secondAttribute="trailing" id="apR-lm-XS8"/>
@@ -1282,6 +1283,11 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kfd-AI-Ue2"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="actionsContentView" destination="b3h-VA-e68" id="rbT-f9-1Z8"/>
                                             <outlet property="descriptionLabel" destination="Uho-Zr-HNE" id="3n9-MJ-hyT"/>

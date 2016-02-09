@@ -68,6 +68,12 @@ final class UserWorkoutCell: ActionableCollectionViewCell {
             color: UIColor.secondaryTextColor())
     }
     
+    func setActionButtonsTag(tag: Int) {
+        deleteButton.tag = tag
+        cloneButton.tag = tag
+        reorderButton.tag = tag
+    }
+    
     func applyReorderingInProgressAppearance() {
         cardView.layer.borderWidth = 1.0
         cardView.layer.borderColor = reorderButton.backgroundColor!.CGColor

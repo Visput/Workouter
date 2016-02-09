@@ -10,19 +10,34 @@ import UIKit
 
 final class WorkoutEditView: BaseScreenView {
     
-    @IBOutlet private(set) weak var stepsTableView: UITableView!
     @IBOutlet private(set) weak var doneButton: TintButton!
     @IBOutlet private(set) weak var newStepButton: TintButton!
+    @IBOutlet private(set) weak var stepsCollectionView: ActionableCollectionView!
     
     override func didLoad() {
         super.didLoad()
-        stepsTableView.setEditing(true, animated: false)
-        stepsTableView.rowHeight = UITableViewAutomaticDimension
-        stepsTableView.estimatedRowHeight = 70.0
+    
+        stepsCollectionView.springFlowLayout.sectionInset.top = 16.0
+        stepsCollectionView.springFlowLayout.sectionInset.bottom = 2.0
+        stepsCollectionView.springFlowLayout.sectionInset.left = 16.0
+        stepsCollectionView.springFlowLayout.sectionInset.right = 16.0
+        stepsCollectionView.springFlowLayout.minimumLineSpacing = 16.0
     }
     
-    override func willAppear(animated: Bool) {
-        super.willAppear(animated)
-        stepsTableView.deselectSelectedRowAnimated(true)
+    func stepCellSizeAtIndexPath(indexPath: NSIndexPath) -> CGSize {
+        var cellSize = CGSizeZero
+        cellSize.width = stepsCollectionView.frame.size.width -
+            stepsCollectionView.springFlowLayout.sectionInset.left -
+            stepsCollectionView.springFlowLayout.sectionInset.right
+        
+        if stepsCollectionView.expandedCellIndexPath == indexPath {
+            cellSize.height = stepsCollectionView.bounds.size.height -
+                stepsCollectionView.springFlowLayout.sectionInset.top -
+                stepsCollectionView.springFlowLayout.sectionInset.bottom
+        } else {
+            cellSize.height = 80
+        }
+        
+        return cellSize
     }
 }

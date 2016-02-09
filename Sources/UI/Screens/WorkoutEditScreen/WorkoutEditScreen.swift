@@ -24,7 +24,10 @@ final class WorkoutEditScreen: BaseScreen {
     
     private var nameController: TextViewController!
     private var stepsPlaceholderController: PlaceholderController!
-    private var needsReloadStepsTableView = true
+    
+    /// Used for preventing multiple cells reordering.
+    private var reorderingCellIndex: Int?
+    private var needsReloadStepsCollectionView = true
     
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
@@ -36,6 +39,13 @@ final class WorkoutEditScreen: BaseScreen {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if workout.isEmpty() {
+            title = NSLocalizedString("New Workout", comment: "")
+        } else {
+            title = NSLocalizedString("Edit Workout", comment: "")
+        }
+        
         fillViewWithWorkout(workout)
     }
     
@@ -49,64 +59,52 @@ final class WorkoutEditScreen: BaseScreen {
     }
 }
 
-extension WorkoutEditScreen: UITableViewDelegate, UITableViewDataSource {
+extension WorkoutEditScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workout.steps.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(StepCell.className()) as! StepCell
-        let step = workout.steps[indexPath.row]
-        cell.fillWithStep(step)
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .Delete
-    }
-    
-    func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
             
-            if editingStyle == .Delete {
-                needsReloadStepsTableView = false
-                workout = workout.workoutByRemovingStepAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
-            }
+            return workout.steps.count
     }
     
-    func tableView(tableView: UITableView,
-        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepEditCell.className(),
+                forIndexPath: indexPath) as! StepEditCell
+            
+            let item = StepEditCellItem(step: workout.steps[indexPath.item],
+                index: indexPath.item + 1,
+                actionButtonsTag: indexPath.item
+            )
+            cell.fillWithItem(item)
+            cell.didSelectAction = { [unowned self] in
+                self.workoutEditView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
+            }
+            
+            cell.deleteButton.addTarget(self, action: Selector("deleteStepButtonDidPress:"), forControlEvents: .TouchUpInside)
+            cell.cloneButton.addTarget(self, action: Selector("cloneStepButtonDidPress:"), forControlEvents: .TouchUpInside)
+            let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderStepButtonDidPress:")
+            gestureRecognizer.minimumPressDuration = 0.1
+            cell.reorderGestureRecognizer = gestureRecognizer
+            
+            return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
         toIndexPath destinationIndexPath: NSIndexPath) {
             
-            needsReloadStepsTableView = false
+            needsReloadStepsCollectionView = false
             workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+            updateVisibleCells()
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let stepIndex = indexPath.row
-        let step = workout.steps[stepIndex]
-        navigationManager.presentStepEditScreenWithStep(step,
-            animated: true,
-            stepDidEditAction: { [unowned self] step in
-                
-                self.workout = self.workout.workoutByReplacingStepAtIndex(stepIndex, withStep: step)
-                self.navigationManager.dismissScreenAnimated(true)
-                
-            }, stepDidCancelAction: { [unowned self] in
-                self.navigationManager.dismissScreenAnimated(true)
-            })
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            return workoutEditView.stepCellSizeAtIndexPath(indexPath)
     }
 }
 
@@ -147,6 +145,88 @@ extension WorkoutEditScreen {
         workoutEditView.endEditing(true)
         workoutDidCancelAction?()
     }
+    
+    @objc private func deleteStepButtonDidPress(sender: UIButton) {
+        let collectionView = workoutEditView.stepsCollectionView
+        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! StepEditCell
+        cell.actionsVisible = false
+        
+        collectionView.performBatchUpdates({
+            self.needsReloadStepsCollectionView = false
+            self.workout = self.workout.workoutByRemovingStepAtIndex(indexPath.row)
+            collectionView.deleteItemsAtIndexPaths([indexPath])
+            
+            }, completion: { _ in
+                // Reload data instead of updating buttons tags to prevent strange crashes (UICollectionView issue).
+                collectionView.reloadData()
+        })
+    }
+    
+    @objc private func cloneStepButtonDidPress(sender: UIButton) {
+        let collectionView = workoutEditView.stepsCollectionView
+        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! StepEditCell
+        cell.actionsVisible = false
+        
+        let newIndexPath = NSIndexPath(forItem: indexPath.item + 1, inSection: indexPath.section)
+        let step = cell.item!.step
+        let clonedStep = step.clone()
+        
+        collectionView.performBatchUpdates({
+            self.needsReloadStepsCollectionView = false
+            self.workout = self.workout.workoutByAddingStep(clonedStep, atIndex: newIndexPath.item)
+            collectionView.insertItemsAtIndexPaths([newIndexPath])
+            
+            }, completion: { _ in
+                // Scroll to show cell with cloned workout.
+                collectionView.scrollToCellAtIndexPath(newIndexPath, animated: true)
+                self.updateVisibleCells()
+        })
+    }
+    
+    @objc private func reorderStepButtonDidPress(gesture: UILongPressGestureRecognizer) {
+        let collectionView = workoutEditView.stepsCollectionView
+        let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
+        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? StepEditCell else { return }
+        
+        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.item {
+            var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
+            targetLocation.x = collectionView.bounds.size.width / 2.0
+            
+            switch(gesture.state) {
+                
+            case .Began:
+                collectionView.springFlowLayout.springBehaviorEnabled = false
+                reorderingCellIndex = indexPath.item
+                collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
+                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+                cell.applyReorderingInProgressAppearance()
+                
+            case .Changed:
+                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
+                updateVisibleCellsButtonsTags()
+                // Update cell index after movement.
+                reorderingCellIndex = gesture.view!.tag
+                
+            case .Ended:
+                collectionView.endInteractiveMovement()
+                updateVisibleCells()
+                cell.actionsVisible = false
+                reorderingCellIndex = nil
+                collectionView.springFlowLayout.springBehaviorEnabled = true
+                
+            default:
+                collectionView.cancelInteractiveMovement()
+                updateVisibleCells()
+                cell.actionsVisible = false
+                reorderingCellIndex = nil
+                collectionView.springFlowLayout.springBehaviorEnabled = true
+            }
+        } else {
+            cell.actionsVisible = false
+        }
+    }
 }
 
 extension WorkoutEditScreen {
@@ -159,19 +239,13 @@ extension WorkoutEditScreen {
     }
     
     private func fillViewWithWorkout(workout: Workout) {
-        if workout.isEmpty() {
-            title = NSLocalizedString("New Workout", comment: "")
-        } else {
-            title = NSLocalizedString("Edit Workout", comment: "")
-        }
-        
         nameController.text = workout.name
         nameController.textMaxLength = workout.nameMaxLength
         
-        if needsReloadStepsTableView {
-            workoutEditView.stepsTableView.reloadData()
+        if needsReloadStepsCollectionView {
+            workoutEditView.stepsCollectionView.reloadData()
         }
-        needsReloadStepsTableView = true
+        needsReloadStepsCollectionView = true
         
         UIView.animateWithDefaultDuration {
             self.workoutEditView.doneButton.hidden = workout.steps.count == 0
@@ -199,5 +273,23 @@ extension WorkoutEditScreen {
         }
     
         return nameController.valid
+    }
+    
+    private func updateVisibleCells() {
+        for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
+            let indexPath = workoutEditView.stepsCollectionView.indexPathForCell(cell)!
+            let item = StepEditCellItem(step: workout.steps[indexPath.item],
+                index: indexPath.item + 1,
+                actionButtonsTag: indexPath.item
+            )
+            cell.fillWithItem(item)
+        }
+    }
+    
+    private func updateVisibleCellsButtonsTags() {
+        for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
+            let index = workoutEditView.stepsCollectionView.indexPathForCell(cell)!.row
+            cell.setActionButtonsTag(index)
+        }
     }
 }

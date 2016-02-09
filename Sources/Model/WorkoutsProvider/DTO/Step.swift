@@ -94,6 +94,21 @@ final class Step: NSObject, NSCoding, Mappable {
         weightGoal <- map["weight_goal"]
         repsGoal <- map["reps_goal"]
     }
+    
+    /**
+     Creates new Step instance with identical fields values.
+     
+     - returns: New instance of Step.
+     */
+    func clone() -> Self {
+        return self.dynamicType.init(name: name,
+            muscleGroups: muscleGroups,
+            rest: rest,
+            durationGoal: durationGoal,
+            distanceGoal: distanceGoal,
+            weightGoal: weightGoal,
+            repsGoal: repsGoal)
+    }
 }
 
 extension Step {

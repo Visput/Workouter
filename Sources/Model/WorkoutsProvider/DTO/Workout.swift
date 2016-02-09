@@ -110,6 +110,13 @@ extension Workout {
         return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
     }
     
+    func workoutByAddingStep(step: Step, atIndex index: Int) -> Self {
+        var newSteps = steps
+        newSteps.insert(step, atIndex: index)
+        
+        return self.dynamicType.init(name: name, steps: newSteps, identifier: identifier)
+    }
+    
     func workoutByRemovingStep(step: Step) -> Self {
         var workout = self
         

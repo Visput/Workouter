@@ -23,7 +23,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
     
-    // Prevent multiple cells reordering.
+    // Used for preventing multiple cells reordering.
     private var reorderingCellIndex: Int?
     
     init(viewController: UIViewController,
@@ -64,7 +64,9 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         }
         
         let workout = currentWorkouts[indexPath.item]
+        
         cell.fillWithWorkout(workout)
+        cell.setActionButtonsTag(indexPath.item)
         cell.didSelectAction = { [unowned self] in
             self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.workout!, animated: true)
             // Prevent multiple cells selection.
@@ -78,7 +80,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderButtonDidPress:")
         gestureRecognizer.minimumPressDuration = 0.1
         cell.reorderGestureRecognizer = gestureRecognizer
-        updateButtonsTagsForCell(cell, index: indexPath.item)
         
         cell.actionsEnabled = searchResults == nil
         
@@ -149,22 +150,7 @@ extension UserWorkoutsSource {
             
             }, completion: { _ in
                 // Scroll to show cell with cloned workout.
-                var newCellFrame: CGRect! = nil
-                
-                if let newCell = self.collectionView.cellForItemAtIndexPath(newIndexPath) {
-                    newCellFrame = self.collectionView.convertRect(newCell.frame, fromView: newCell.superview)
-                    
-                } else {
-                    // New cell is nil when it's not visible after inserted to collection view (UICollectionView bug).
-                    // Manually calculate its frame.
-                    let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-                    newCellFrame = self.collectionView.convertRect(cell.frame, fromView: cell.superview)
-                    newCellFrame.origin.y += newCellFrame.size.height + flowLayout.minimumLineSpacing
-                }
-                
-                if !CGRectContainsRect(self.collectionView.bounds, newCellFrame) {
-                    self.collectionView.scrollRectToVisible(newCellFrame, animated: true)
-                }
+                self.collectionView.scrollToCellAtIndexPath(newIndexPath, animated: true)
                 self.updateVisibleCellsButtonsTags()
         })
     }
@@ -181,6 +167,7 @@ extension UserWorkoutsSource {
                 
             case .Began:
                 reorderingCellIndex = indexPath.item
+                collectionView.springFlowLayout.springBehaviorEnabled = false
                 collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
                 cell.applyReorderingInProgressAppearance()
@@ -196,12 +183,14 @@ extension UserWorkoutsSource {
                 updateVisibleCellsButtonsTags()
                 cell.actionsVisible = false
                 reorderingCellIndex = nil
+                collectionView.springFlowLayout.springBehaviorEnabled = true
                 
             default:
                 collectionView.cancelInteractiveMovement()
                 updateVisibleCellsButtonsTags()
                 cell.actionsVisible = false
                 reorderingCellIndex = nil
+                collectionView.springFlowLayout.springBehaviorEnabled = true
             }
         } else {
             cell.actionsVisible = false
@@ -211,13 +200,7 @@ extension UserWorkoutsSource {
     private func updateVisibleCellsButtonsTags() {
         for cell in collectionView.visibleCells() as! [UserWorkoutCell] {
             let index = collectionView.indexPathForCell(cell)!.row
-            updateButtonsTagsForCell(cell, index: index)
+            cell.setActionButtonsTag(index)
         }
-    }
-    
-    private func updateButtonsTagsForCell(cell: UserWorkoutCell, index: Int) {
-        cell.deleteButton.tag = index
-        cell.cloneButton.tag = index
-        cell.reorderButton.tag = index
     }
 }
