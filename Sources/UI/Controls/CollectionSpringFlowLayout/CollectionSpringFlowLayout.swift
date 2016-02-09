@@ -24,7 +24,7 @@ final class CollectionSpringFlowLayout: UICollectionViewFlowLayout {
         guard springBehaviorEnabled else { return super.layoutAttributesForElementsInRect(rect) }
         
         let contentSize = collectionViewContentSize()
-        let contentRect = CGRectMake(0.0, 0.0, contentSize.width, contentSize.height)
+        let contentRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: contentSize)
         let items = super.layoutAttributesForElementsInRect(contentRect)!
         
         let minDamping: CGFloat = 0.2

@@ -30,6 +30,9 @@ extension UIImageView {
     
     private func capInsetsToStretchForImage(image: UIImage) -> UIEdgeInsets {
         let imageSize = image.size
-        return UIEdgeInsetsMake(imageSize.height / 2, imageSize.width / 2, imageSize.height / 2 + 1, imageSize.width / 2 + 1)
+        return UIEdgeInsets(top: imageSize.height / 2,
+            left: imageSize.width / 2,
+            bottom: imageSize.height / 2 + 1,
+            right: imageSize.width / 2 + 1)
     }
 }

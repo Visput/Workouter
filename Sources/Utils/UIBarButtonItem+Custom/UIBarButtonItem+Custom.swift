@@ -125,10 +125,10 @@ extension UIBarButtonItem {
             
             let button = AlphaButton(type: .Custom)
             button.setImage(UIImage(named: imageName), forState: .Normal)
-            button.frame = CGRectMake(0.0, 0.0, 60.0, 44.0)
+            button.frame = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 44.0)
             button.contentHorizontalAlignment = horizontalAlignment
             // Set bottom inset for correct allignment between bar button and bar title.
-            button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 4.0, 0.0)
+            button.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 4.0, right: 0.0)
             button.addTarget(target, action: action, forControlEvents: .TouchUpInside)
             
             return button

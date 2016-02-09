@@ -16,6 +16,8 @@ final class NavigationManager: NSObject {
             navigationController.delegate = self
             navigationControllersStack.removeAll()
             navigationControllersStack.append(navigationController)
+            
+            textDialogFactory = TextDialogFactory(storyboard: storyboard)
         }
     }
     
@@ -38,6 +40,8 @@ final class NavigationManager: NSObject {
     }
     
     private var navigationControllersStack = [UINavigationController]()
+    
+    private var textDialogFactory: TextDialogFactory!
     
     private var rootScreen: UIViewController {
         return rootNavigationController.viewControllers[0]
@@ -324,20 +328,19 @@ extension NavigationManager {
         pushScreen(screen, inNavigationController: topNavigationController, animated: animated)
     }
     
-    func showInfoDialogWithTitle(title: String, message: String) {
-        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
-        dialog.primaryText = title
-        dialog.secondaryText = message
-        dialog.style = .Info
-        showDialog(dialog)
-    }
-    
-    func showErrorDialogWithTitle(title: String, message: String) {
-        let dialog = storyboard.instantiateViewControllerWithIdentifier(TextDialog.className()) as! TextDialog
-        dialog.primaryText = title
-        dialog.secondaryText = message
-        dialog.style = .Error
-        showDialog(dialog)
+    func showTextDialogWithStyle(style: TextDialogFactory.Style,
+        title: String,
+        message: String,
+        confirmAction: (() -> Void)? = nil,
+        cancelAction: (() -> Void)? = nil) {
+            
+            let dialog = textDialogFactory.dialogWithStyle(style,
+                primaryText: title,
+                secondaryText: message,
+                confirmAction: confirmAction,
+                cancelAction: cancelAction)
+            
+            showDialog(dialog)
     }
 }
 

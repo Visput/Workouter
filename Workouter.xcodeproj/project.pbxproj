@@ -87,6 +87,8 @@
 		9F3DF7F91C695038008B07B9 /* StepEditCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF7F71C695038008B07B9 /* StepEditCellItem.swift */; };
 		9F3DF9741BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
 		9F3DF9751BFD5D0C00BBD535 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */; };
+		9F41A1FD1C6A7986005E3EA3 /* TextDialogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F41A1FC1C6A7986005E3EA3 /* TextDialogFactory.swift */; };
+		9F41A1FE1C6A7986005E3EA3 /* TextDialogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F41A1FC1C6A7986005E3EA3 /* TextDialogFactory.swift */; };
 		9F41EA5C1C5C2006005C292E /* StepsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F41EA5B1C5C2006005C292E /* StepsPlaceholderController.swift */; };
 		9F41EA5D1C5C2009005C292E /* StepsPlaceholderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F41EA5B1C5C2006005C292E /* StepsPlaceholderController.swift */; };
 		9F4356CA1C49DEC000D841FE /* AchievementsScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */; };
@@ -361,6 +363,7 @@
 		9F3CAA061C3448370061C21A /* AccountCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCellItem.swift; sourceTree = "<group>"; };
 		9F3DF7F71C695038008B07B9 /* StepEditCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditCellItem.swift; sourceTree = "<group>"; };
 		9F3DF9731BFD5D0C00BBD535 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		9F41A1FC1C6A7986005E3EA3 /* TextDialogFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDialogFactory.swift; sourceTree = "<group>"; };
 		9F41EA5B1C5C2006005C292E /* StepsPlaceholderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsPlaceholderController.swift; sourceTree = "<group>"; };
 		9F4356C91C49DEC000D841FE /* AchievementsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AchievementsScreens.storyboard; sourceTree = "<group>"; };
 		9F4356CC1C49E20E00D841FE /* WorkoutsScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WorkoutsScreens.storyboard; sourceTree = "<group>"; };
@@ -904,6 +907,7 @@
 			children = (
 				9F94441D1C000330003E333B /* TextDialog.swift */,
 				9F9444201C0003F1003E333B /* TextDialogView.swift */,
+				9F41A1FC1C6A7986005E3EA3 /* TextDialogFactory.swift */,
 			);
 			path = TextDialog;
 			sourceTree = "<group>";
@@ -1854,6 +1858,7 @@
 				9F3CAA041C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BB1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
 				9F3CAA011C34472B0061C21A /* AccountView.swift in Sources */,
+				9F41A1FD1C6A7986005E3EA3 /* TextDialogFactory.swift in Sources */,
 				9F4356F21C4A0D7E00D841FE /* StatisticsPlaceholderController.swift in Sources */,
 				9F11E0891C423A7E007F343F /* ActionableCollectionView.swift in Sources */,
 				9FF8A1BF1C2B30F300A25EAA /* UIColor+Selected.swift in Sources */,
@@ -1987,6 +1992,7 @@
 				9F3CAA051C3447EA0061C21A /* AccountCell.swift in Sources */,
 				9FF8A1BC1C2B29E900A25EAA /* AlphaButton.swift in Sources */,
 				9F3CAA021C34472B0061C21A /* AccountView.swift in Sources */,
+				9F41A1FE1C6A7986005E3EA3 /* TextDialogFactory.swift in Sources */,
 				9F4356F31C4A0D7E00D841FE /* StatisticsPlaceholderController.swift in Sources */,
 				9F11E08A1C423A7E007F343F /* ActionableCollectionView.swift in Sources */,
 				9FF8A1C01C2B30F500A25EAA /* UIColor+Selected.swift in Sources */,

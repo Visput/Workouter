@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepTemplatesView: BaseScreenView {
+final class StepTemplatesView: BaseScreenView {
     
     @IBOutlet private(set) weak var templatesCollectionView: ActionableCollectionView!
     @IBOutlet private(set) weak var searchBar: UISearchBar!
@@ -23,7 +23,7 @@ class StepTemplatesView: BaseScreenView {
     }
     
     func templateCellSizeAtIndexPath(indexPath: NSIndexPath) -> CGSize {
-        var cellSize = CGSizeZero
+        var cellSize = CGSize(width: 0.0, height: 0.0)
         cellSize.width = templatesCollectionView.frame.size.width -
             templatesCollectionView.springFlowLayout.sectionInset.left -
             templatesCollectionView.springFlowLayout.sectionInset.right
@@ -33,7 +33,7 @@ class StepTemplatesView: BaseScreenView {
                 templatesCollectionView.springFlowLayout.sectionInset.top -
                 templatesCollectionView.springFlowLayout.sectionInset.bottom
         } else {
-            cellSize.height = 80
+            cellSize.height = 80.0
         }
         
         return cellSize

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepDetailsCell: ActionableCollectionViewCell {
+final class StepDetailsCell: ActionableCollectionViewCell {
 
     @IBOutlet private(set) weak var nameLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!

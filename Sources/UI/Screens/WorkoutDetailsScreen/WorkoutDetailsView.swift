@@ -26,7 +26,7 @@ final class WorkoutDetailsView: BaseScreenView {
     }
     
     func templateCellSizeAtIndexPath(indexPath: NSIndexPath) -> CGSize {
-        var cellSize = CGSizeZero
+        var cellSize = CGSize(width: 0.0, height: 0.0)
         cellSize.width = stepsCollectionView.frame.size.width -
             stepsCollectionView.springFlowLayout.sectionInset.left -
             stepsCollectionView.springFlowLayout.sectionInset.right
@@ -36,7 +36,7 @@ final class WorkoutDetailsView: BaseScreenView {
                 stepsCollectionView.springFlowLayout.sectionInset.top -
                 stepsCollectionView.springFlowLayout.sectionInset.bottom
         } else {
-            cellSize.height = 80
+            cellSize.height = 80.0
         }
         
         return cellSize

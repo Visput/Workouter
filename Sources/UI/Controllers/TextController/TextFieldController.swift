@@ -158,9 +158,9 @@ extension TextFieldController {
     
     @IBAction private func descriptionButtonDidPress(sender: AnyObject) {
         if valid {
-            navigationManager.showInfoDialogWithTitle(descriptionTitle, message: descriptionMessage)
+            navigationManager.showTextDialogWithStyle(TextDialogFactory.Info, title: descriptionTitle, message: descriptionMessage)
         } else {
-            navigationManager.showErrorDialogWithTitle(errorTitle, message: errorMessage)
+            navigationManager.showTextDialogWithStyle(TextDialogFactory.Error, title: errorTitle, message: errorMessage)
         }
     }
 }

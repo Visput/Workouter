@@ -85,15 +85,30 @@ extension WorkoutDetailsScreen {
     }
     
     @objc private func editWorkoutButtonDidPress(sender: AnyObject) {
-        navigationManager.presentWorkoutEditScreenWithWorkout(workout,
-            animated: true,
-            workoutDidEditAction: { [unowned self] workout in
-                self.workoutsProvider.updateWorkout(self.workout, withWorkout: workout)
-                self.workout = workout
-                self.navigationManager.dismissScreenAnimated(true)
-            }, workoutDidCancelAction: { [unowned self] in
-                self.navigationManager.dismissScreenAnimated(true)
+        let editAction = { [unowned self] in
+            self.navigationManager.presentWorkoutEditScreenWithWorkout(self.workout,
+                animated: true,
+                workoutDidEditAction: { workout in
+                    self.workoutsProvider.updateWorkout(self.workout, withWorkout: workout)
+                    self.workout = workout
+                    self.navigationManager.dismissScreenAnimated(true)
+                }, workoutDidCancelAction: {
+                    self.navigationManager.dismissScreenAnimated(true)
+                })
+        }
+        
+        if workoutsProvider.containsWorkout(workout) {
+           editAction()
+            
+        } else {
+            navigationManager.showTextDialogWithStyle(TextDialogFactory.Save,
+                title: NSLocalizedString("Edit Workout", comment: ""),
+                message: NSLocalizedString("Built in workouts are not editable.\n" +
+                    "Please save it to My Workouts to be able to edit this workout.", comment: ""),
+                confirmAction: {
+                    editAction()
             })
+        }
     }
 }
 

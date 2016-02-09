@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Text Dialog-->
@@ -60,41 +60,70 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="743-HJ-n7N" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iID-9w-jjW">
                                         <rect key="frame" x="32" y="177" width="311" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="5RP-c3-4eE"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aBb-Gz-o61"/>
-                                            <constraint firstAttribute="height" priority="998" constant="40" id="xb4-MN-lxm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <state key="normal" title="Got it"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                                <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="5RP-c3-4eE"/>
-                                                <exclude reference="aBb-Gz-o61"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="cancelButtonDidPress:" destination="vMQ-ku-lyk" eventType="touchUpInside" id="uOw-c3-0CV"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="743-HJ-n7N" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="5RP-c3-4eE"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aBb-Gz-o61"/>
+                                                    <constraint firstAttribute="height" priority="998" constant="40" id="xb4-MN-lxm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5RP-c3-4eE"/>
+                                                        <exclude reference="aBb-Gz-o61"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="cancelButtonDidPress:" destination="vMQ-ku-lyk" eventType="touchUpInside" id="uOw-c3-0CV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dU-zs-hXh" customClass="TintButton" customModule="Workouter" customModuleProvider="target">
+                                                <rect key="frame" x="164" y="0.0" width="148" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="0Jk-YW-CXz"/>
+                                                    <constraint firstAttribute="height" priority="998" constant="40" id="8Tm-qz-u8P"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Mha-BQ-WRx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <state key="normal" title="Ok"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                        <color key="value" red="0.1294117719" green="0.80784314869999996" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0Jk-YW-CXz"/>
+                                                        <exclude reference="Mha-BQ-WRx"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="confirmButtonDidPress:" destination="vMQ-ku-lyk" eventType="touchUpInside" id="C2Q-4Q-MUJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="743-HJ-n7N" firstAttribute="top" secondItem="7P4-sT-LKf" secondAttribute="bottom" constant="18" id="2iu-cL-FOd"/>
                                     <constraint firstItem="0xI-OT-lws" firstAttribute="leading" secondItem="rD8-9p-3F9" secondAttribute="leading" id="3Kf-wB-vcd"/>
+                                    <constraint firstAttribute="bottom" secondItem="iID-9w-jjW" secondAttribute="bottom" constant="32" id="Dfa-Qm-anB"/>
+                                    <constraint firstAttribute="trailing" secondItem="iID-9w-jjW" secondAttribute="trailing" constant="32" id="FGV-sh-to4"/>
                                     <constraint firstAttribute="trailing" secondItem="0xI-OT-lws" secondAttribute="trailing" id="Ggw-BY-JVA"/>
                                     <constraint firstItem="0xI-OT-lws" firstAttribute="top" secondItem="rD8-9p-3F9" secondAttribute="top" id="Gmh-oP-4Pu"/>
-                                    <constraint firstAttribute="trailing" secondItem="743-HJ-n7N" secondAttribute="trailing" constant="32" id="Gtt-lR-Nu3"/>
                                     <constraint firstItem="6oO-4s-36p" firstAttribute="leading" secondItem="rD8-9p-3F9" secondAttribute="leading" constant="32" id="Ncw-uy-pTy"/>
-                                    <constraint firstAttribute="bottom" secondItem="743-HJ-n7N" secondAttribute="bottom" constant="32" id="POH-xZ-rrv"/>
                                     <constraint firstAttribute="bottom" secondItem="0xI-OT-lws" secondAttribute="bottom" id="Qq8-n0-0lK"/>
                                     <constraint firstItem="BEl-nH-boN" firstAttribute="centerX" secondItem="rD8-9p-3F9" secondAttribute="centerX" id="RlY-De-1wa"/>
                                     <constraint firstAttribute="trailing" secondItem="7P4-sT-LKf" secondAttribute="trailing" constant="32" id="S58-69-O9y"/>
@@ -102,8 +131,9 @@
                                     <constraint firstAttribute="trailing" secondItem="6oO-4s-36p" secondAttribute="trailing" constant="32" id="aQ5-3S-2Vs"/>
                                     <constraint firstItem="7P4-sT-LKf" firstAttribute="top" secondItem="6oO-4s-36p" secondAttribute="bottom" constant="10" id="ant-Ad-Ct7"/>
                                     <constraint firstItem="7P4-sT-LKf" firstAttribute="leading" secondItem="rD8-9p-3F9" secondAttribute="leading" constant="32" id="ayX-9o-w0J"/>
+                                    <constraint firstItem="iID-9w-jjW" firstAttribute="leading" secondItem="rD8-9p-3F9" secondAttribute="leading" constant="32" id="grW-C0-kKA"/>
+                                    <constraint firstItem="iID-9w-jjW" firstAttribute="top" secondItem="7P4-sT-LKf" secondAttribute="bottom" constant="18" id="jHM-mE-szT"/>
                                     <constraint firstItem="0xI-OT-lws" firstAttribute="top" secondItem="BEl-nH-boN" secondAttribute="bottom" constant="-92" id="lGv-Wv-TQo"/>
-                                    <constraint firstItem="743-HJ-n7N" firstAttribute="leading" secondItem="rD8-9p-3F9" secondAttribute="leading" constant="32" id="naj-8f-SpL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -114,6 +144,8 @@
                             <constraint firstAttribute="bottom" secondItem="rD8-9p-3F9" secondAttribute="bottom" id="hZr-hK-8Lg"/>
                         </constraints>
                         <connections>
+                            <outlet property="cancelButton" destination="743-HJ-n7N" id="cou-Lm-x0n"/>
+                            <outlet property="confirmButton" destination="0dU-zs-hXh" id="t09-tz-BPG"/>
                             <outlet property="contentView" destination="rD8-9p-3F9" id="CVk-49-kus"/>
                             <outlet property="contentViewBottomSpace" destination="hZr-hK-8Lg" id="GYj-T8-kLZ"/>
                             <outlet property="iconView" destination="BEl-nH-boN" id="5ir-H8-FPT"/>

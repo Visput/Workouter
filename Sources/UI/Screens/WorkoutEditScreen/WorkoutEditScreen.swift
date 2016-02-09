@@ -194,7 +194,7 @@ extension WorkoutEditScreen {
             var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
             targetLocation.x = collectionView.bounds.size.width / 2.0
             
-            switch(gesture.state) {
+            switch gesture.state {
                 
             case .Began:
                 collectionView.springFlowLayout.springBehaviorEnabled = false

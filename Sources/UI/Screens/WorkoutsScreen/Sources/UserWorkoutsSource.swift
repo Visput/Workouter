@@ -163,7 +163,7 @@ extension UserWorkoutsSource {
             var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
             targetLocation.x = collectionView.bounds.size.width / 2.0
             
-            switch(gesture.state) {
+            switch gesture.state {
                 
             case .Began:
                 reorderingCellIndex = indexPath.item

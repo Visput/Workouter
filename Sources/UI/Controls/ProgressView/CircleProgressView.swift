@@ -121,8 +121,12 @@ extension CircleProgressView {
     private func circleDimensionsForRect(rect: CGRect) -> (rect: CGRect, center: CGPoint, radius: CGFloat) {
         let minDimension = min(bounds.size.width, bounds.size.height)
         let circleRadius = (minDimension - max(trackWidth, progressWidth)) / 2.0
-        let circleCenter = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
-        let circleRect = CGRectMake(circleCenter.x - circleRadius, circleCenter.y - circleRadius, 2.0 * circleRadius, 2.0 * circleRadius)
+        let circleCenter = CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMidY(rect))
+        
+        let circleRect = CGRect(x: circleCenter.x - circleRadius,
+            y: circleCenter.y - circleRadius,
+            width: 2.0 * circleRadius,
+            height: 2.0 * circleRadius)
         
         return (circleRect, circleCenter, circleRadius)
     }

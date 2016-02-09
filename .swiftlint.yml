@@ -1,13 +1,11 @@
 line_length: 150
 function_body_length: 70
+function_parameter_count: 11
 
 disabled_rules:
 - trailing_whitespace
 - force_cast
-
-# Disabled rules because of bugs.
-- nesting
-- control_statement
+- force_try
 
 excluded:
 - Pods

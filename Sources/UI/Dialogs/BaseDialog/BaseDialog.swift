@@ -10,6 +10,8 @@ import UIKit
 
 class BaseDialog: BaseViewController {
 
+    var dismissAction: (() -> Void)?
+    
     private var baseView: BaseDialogView {
         return view as! BaseDialogView
     }
@@ -48,20 +50,21 @@ class BaseDialog: BaseViewController {
         }
     }
     
-    @IBAction func cancelButtonDidPress(sender: AnyObject) {
+    @IBAction func dismissButtonDidPress(sender: AnyObject) {
         baseView.animateHidingWithCompletion {_ in
             self.navigationManager.dismissDialog()
         }
+        dismissAction?()
     }
 }
 
 extension BaseDialog: UIGestureRecognizerDelegate {
     
     func configureGestureRecognizers() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("cancelButtonDidPress:"))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissButtonDidPress:"))
         tapRecognizer.delegate = self
         
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("cancelButtonDidPress:"))
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("dismissButtonDidPress:"))
         swipeRecognizer.direction = .Down
         
         baseView.backgroundView.addGestureRecognizer(tapRecognizer)

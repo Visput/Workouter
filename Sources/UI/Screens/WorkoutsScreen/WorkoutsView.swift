@@ -35,7 +35,7 @@ final class WorkoutsView: BaseScreenView {
         segmentedControl.frame.size.width = segmentedControlToolbar.frame.size.width - 2 * segmentedControlOffset
         
         // Collection view.
-        workoutsCollectionView.springFlowLayout.itemSize = CGSizeMake(frame.size.width, 128.0)
+        workoutsCollectionView.springFlowLayout.itemSize = CGSize(width: frame.size.width, height: 128.0)
         workoutsCollectionView.springFlowLayout.sectionInset.top = 16.0
         workoutsCollectionView.springFlowLayout.sectionInset.bottom = 16.0
         workoutsCollectionView.springFlowLayout.minimumLineSpacing = 16.0
