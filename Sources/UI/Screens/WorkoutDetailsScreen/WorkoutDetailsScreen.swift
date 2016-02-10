@@ -78,10 +78,7 @@ extension WorkoutDetailsScreen {
     }
     
     @IBAction private func favoriteButtonDidPress(sender: AnyObject) {
-        workoutsProvider.addWorkout(workout.clone())
-        UIView.animateWithDefaultDuration {
-            self.workoutDetailsView.favoriteButton.hidden = true
-        }
+        saveWorkout()
     }
     
     @objc private func editWorkoutButtonDidPress(sender: AnyObject) {
@@ -89,7 +86,7 @@ extension WorkoutDetailsScreen {
             self.navigationManager.presentWorkoutEditScreenWithWorkout(self.workout,
                 animated: true,
                 workoutDidEditAction: { workout in
-                    self.workoutsProvider.updateWorkout(self.workout, withWorkout: workout)
+                    self.workoutsProvider.updateUserWorkout(self.workout, withWorkout: workout)
                     self.workout = workout
                     self.navigationManager.dismissScreenAnimated(true)
                 }, workoutDidCancelAction: {
@@ -97,15 +94,18 @@ extension WorkoutDetailsScreen {
                 })
         }
         
-        if workoutsProvider.containsWorkout(workout) {
-           editAction()
+        if let userWorkout = workoutsProvider.userWorkoutForWorkout(workout) {
+            // Edit user workout instead of default workout.
+            self.workout = userWorkout
+            editAction()
             
         } else {
             navigationManager.showTextDialogWithStyle(TextDialogFactory.Save,
-                title: NSLocalizedString("Edit Workout", comment: ""),
+                title: NSLocalizedString("Save Workout", comment: ""),
                 message: NSLocalizedString("Built in workouts are not editable.\n" +
                     "Please save it to My Workouts to be able to edit this workout.", comment: ""),
-                confirmAction: {
+                confirmAction: { [unowned self] in
+                    self.saveWorkout()
                     editAction()
             })
         }
@@ -124,6 +124,16 @@ extension WorkoutDetailsScreen {
     private func fillViewWithWorkout(workout: Workout) {
         workoutDetailsView.headerView.fillWithWorkout(workout)
         workoutDetailsView.stepsCollectionView.reloadData()
-        workoutDetailsView.favoriteButton.hidden = workoutsProvider.containsWorkout(workout)
+        
+        UIView.animateWithDefaultDuration {
+            self.workoutDetailsView.favoriteButton.hidden = self.workoutsProvider.userWorkoutForWorkout(workout) != nil
+        }
+    }
+    
+    private func saveWorkout() {
+        // Create user workout by cloning default workout.
+        let userWorkout = self.workout.clone()
+        self.workoutsProvider.addUserWorkout(userWorkout)
+        self.workout = userWorkout
     }
 }

@@ -61,7 +61,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         }
         
         let workout = currentWorkouts[indexPath.item]
-        let clonedWorkout = workoutsProvider.workoutWithOriginalIdentifier(workout.identifier)
+        let clonedWorkout = workoutsProvider.userWorkoutWithOriginalIdentifier(workout.identifier)
         let item = DefaultWorkoutCellItem(workout: workout, clonedWorkout: clonedWorkout)
         cell.fillWithItem(item)
         cell.didSelectAction = { [unowned self] in
@@ -114,10 +114,10 @@ extension DefaultWorkoutsSource {
         if sender.selected {
             // Add workout to `My Workouts`.
             clonedWorkout = item.workout.clone()
-            workoutsProvider.addWorkout(clonedWorkout!)
+            workoutsProvider.addUserWorkout(clonedWorkout!)
         } else {
             // Remove workout from `My Workouts`.
-            workoutsProvider.removeWorkout(item.clonedWorkout!)
+            workoutsProvider.removeUserWorkout(item.clonedWorkout!)
             clonedWorkout = nil
         }
         

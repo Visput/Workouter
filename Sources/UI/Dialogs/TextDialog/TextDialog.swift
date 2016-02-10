@@ -57,6 +57,10 @@ final class TextDialog: BaseDialog {
     
     private var lastFirstResponder: UIResponder?
     
+    private var navigationManager: NavigationManager {
+        return modelProvider.navigationManager
+    }
+    
     private var textView: TextDialogView {
         return view as! TextDialogView
     }
@@ -79,24 +83,27 @@ final class TextDialog: BaseDialog {
     }
     
     @IBAction private func confirmButtonDidPress(sender: AnyObject) {
-        super.dismissButtonDidPress(sender)
+        textView.animateHidingWithCompletion { _ in
+            self.navigationManager.dismissDialog()
+            self.dismissAction?()
+            self.confirmAction?()
+        }
         lastFirstResponder?.becomeFirstResponder()
         lastFirstResponder = nil
-        confirmAction?()
     }
     
     @IBAction private func cancelButtonDidPress(sender: AnyObject) {
-        super.dismissButtonDidPress(sender)
+        textView.animateHidingWithCompletion { _ in
+            self.navigationManager.dismissDialog()
+            self.dismissAction?()
+            self.cancelAction?()
+        }
         lastFirstResponder?.becomeFirstResponder()
         lastFirstResponder = nil
-        cancelAction?()
     }
     
     @IBAction override func dismissButtonDidPress(sender: AnyObject) {
-        super.dismissButtonDidPress(sender)
-        lastFirstResponder?.becomeFirstResponder()
-        lastFirstResponder = nil
-        cancelAction?()
+        cancelButtonDidPress(sender)
     }
 }
 

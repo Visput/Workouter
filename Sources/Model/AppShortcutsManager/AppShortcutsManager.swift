@@ -39,7 +39,7 @@ final class AppShortcutsManager: NSObject {
     func performActionForShortcut(shortcut: UIApplicationShortcutItem) -> Bool {
         navigationManager.dismissToRootScreenAnimated(false)
         
-        if let workout = workoutsProvider.workoutWithIdentifier(shortcut.type) {
+        if let workout = workoutsProvider.userWorkoutWithIdentifier(shortcut.type) {
             navigationManager.pushWorkoutDetailsScreenFromMainScreenWithWorkout(workout, animated: false)
         } else {
             navigationManager.pushWorkoutsScreenFromMainScreenWithSourceType(.UserWorkouts, animated: false)

@@ -44,25 +44,25 @@ final class WorkoutsProvider: NSObject {
 
 extension WorkoutsProvider {
     
-    func addWorkout(workout: Workout) {
+    func addUserWorkout(workout: Workout) {
         userWorkouts.append(workout)
         notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
-    func removeWorkout(workout: Workout) {
+    func removeUserWorkout(workout: Workout) {
         if let index = userWorkouts.indexOf(workout) {
-            removeWorkoutAtIndex(index)
+            removeUserWorkoutAtIndex(index)
         }
     }
     
-    func removeWorkoutAtIndex(index: Int) {
+    func removeUserWorkoutAtIndex(index: Int) {
         userWorkouts.removeAtIndex(index)
         notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
-    func moveWorkoutFromIndex(fromIndex: Int, toIndex: Int) {
+    func moveUserWorkoutFromIndex(fromIndex: Int, toIndex: Int) {
         let workoutToMove = userWorkouts[fromIndex]
         userWorkouts.removeAtIndex(fromIndex)
         userWorkouts.insert(workoutToMove, atIndex: toIndex)
@@ -70,7 +70,7 @@ extension WorkoutsProvider {
         commitChanges()
     }
     
-    func updateWorkout(workout: Workout, withWorkout newWorkout: Workout) {
+    func updateUserWorkout(workout: Workout, withWorkout newWorkout: Workout) {
         for (index, aWorkout) in userWorkouts.enumerate() {
             if aWorkout.identifier == workout.identifier {
                 userWorkouts[index] = newWorkout
@@ -81,13 +81,13 @@ extension WorkoutsProvider {
         }
     }
     
-    func insertWorkout(workout: Workout, atIndex index: Int) {
+    func insertUserWorkout(workout: Workout, atIndex index: Int) {
         userWorkouts.insert(workout, atIndex: index)
         notifyObserversDidUpdateUserWorkouts()
         commitChanges()
     }
     
-    func workoutWithIdentifier(identifier: String) -> Workout? {
+    func userWorkoutWithIdentifier(identifier: String) -> Workout? {
         var resultWorkout: Workout? = nil
         for workout in userWorkouts {
             if workout.identifier == identifier {
@@ -99,7 +99,7 @@ extension WorkoutsProvider {
         return resultWorkout
     }
     
-    func workoutWithOriginalIdentifier(originalIdentifier: String) -> Workout? {
+    func userWorkoutWithOriginalIdentifier(originalIdentifier: String) -> Workout? {
         var resultWorkout: Workout? = nil
         for workout in userWorkouts {
             if workout.originalIdentifier == originalIdentifier {
@@ -111,8 +111,16 @@ extension WorkoutsProvider {
         return resultWorkout
     }
     
-    func containsWorkout(workout: Workout) -> Bool {
-        return workoutWithIdentifier(workout.identifier) != nil || workoutWithOriginalIdentifier(workout.identifier) != nil
+    func userWorkoutForWorkout(workout: Workout) -> Workout? {
+        if let userWorkout = userWorkoutWithIdentifier(workout.identifier) {
+            return userWorkout
+        }
+        
+        if let userWorkout = userWorkoutWithOriginalIdentifier(workout.identifier) {
+            return userWorkout
+        }
+        
+        return nil
     }
 }
 

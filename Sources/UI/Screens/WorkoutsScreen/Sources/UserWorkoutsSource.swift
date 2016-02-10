@@ -90,7 +90,7 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource {
         moveItemAtIndexPath sourceIndexPath: NSIndexPath,
         toIndexPath destinationIndexPath: NSIndexPath) {
 
-            workoutsProvider.moveWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
+            workoutsProvider.moveUserWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
             updateVisibleCellsButtonsTags()
     }
     
@@ -125,7 +125,7 @@ extension UserWorkoutsSource {
         cell.actionsVisible = false
         
         collectionView.performBatchUpdates({
-            self.workoutsProvider.removeWorkoutAtIndex(indexPath.item)
+            self.workoutsProvider.removeUserWorkoutAtIndex(indexPath.item)
             self.collectionView.deleteItemsAtIndexPaths([indexPath])
             
             }, completion: { _ in
@@ -145,7 +145,7 @@ extension UserWorkoutsSource {
         let clonedWorkout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
         
         collectionView.performBatchUpdates({
-            self.workoutsProvider.insertWorkout(clonedWorkout, atIndex: newIndexPath.item)
+            self.workoutsProvider.insertUserWorkout(clonedWorkout, atIndex: newIndexPath.item)
             self.collectionView.insertItemsAtIndexPaths([newIndexPath])
             
             }, completion: { _ in

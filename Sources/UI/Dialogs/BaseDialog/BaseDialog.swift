@@ -37,7 +37,7 @@ class BaseDialog: BaseViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        baseView.animateShowingWithCompletion {_ in }
+        baseView.animateShowingWithCompletion { _ in }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -53,8 +53,8 @@ class BaseDialog: BaseViewController {
     @IBAction func dismissButtonDidPress(sender: AnyObject) {
         baseView.animateHidingWithCompletion {_ in
             self.navigationManager.dismissDialog()
+            self.dismissAction?()
         }
-        dismissAction?()
     }
 }
 

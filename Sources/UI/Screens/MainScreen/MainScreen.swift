@@ -129,7 +129,7 @@ extension MainScreen {
         navigationManager.presentWorkoutEditScreenWithWorkout(Workout.emptyWorkout(),
             animated: true,
             workoutDidEditAction: { [unowned self] workout in
-                self.workoutsProvider.addWorkout(workout)
+                self.workoutsProvider.addUserWorkout(workout)
                 self.navigationManager.dismissScreenAnimated(true)
                 self.navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
                 
