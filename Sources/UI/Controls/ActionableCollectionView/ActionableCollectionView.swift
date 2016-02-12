@@ -97,6 +97,30 @@ extension ActionableCollectionView {
             
             return cell
     }
+    
+    override func beginInteractiveMovementForItemAtIndexPath(indexPath: NSIndexPath) -> Bool {
+        springFlowLayout.springBehaviorEnabled = false
+        return super.beginInteractiveMovementForItemAtIndexPath(indexPath)
+    }
+    
+    override func updateInteractiveMovementTargetPosition(targetPosition: CGPoint) {
+        springFlowLayout.springBehaviorEnabled = false
+        super.updateInteractiveMovementTargetPosition(targetPosition)
+    }
+    
+    override func endInteractiveMovement() {
+        super.endInteractiveMovement()
+        updateIndexPathsForVisibleCells()
+        hideCellsActions()
+        springFlowLayout.springBehaviorEnabled = true
+    }
+    
+    override func cancelInteractiveMovement() {
+        super.cancelInteractiveMovement()
+        updateIndexPathsForVisibleCells()
+        hideCellsActions()
+        springFlowLayout.springBehaviorEnabled = true
+    }
 }
 
 extension ActionableCollectionView {
@@ -126,6 +150,8 @@ extension ActionableCollectionView {
         }
         
         performBatchUpdates(nil, completion: { _ in
+            self.updateIndexPathsForVisibleCells()
+            
             if oldExpandedCellIndexPath == indexPath {
                 self.actionableDelegate?.collectionView?(self, didCollapseCellAtIndexPath: indexPath)
                 

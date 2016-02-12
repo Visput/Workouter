@@ -93,7 +93,6 @@ extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewD
             
             needsReloadStepsCollectionView = false
             workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
-            updateVisibleCells()
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -193,33 +192,27 @@ extension WorkoutEditScreen {
             switch gesture.state {
                 
             case .Began:
-                workoutEditView.stepsCollectionView.collapseExpandedCell({
-                    collectionView.springFlowLayout.springBehaviorEnabled = false
-                })
-                reorderingCellIndex = indexPath.item
+                workoutEditView.stepsCollectionView.collapseExpandedCell()
                 collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
                 cell.applyReorderingInProgressAppearance()
+                reorderingCellIndex = indexPath.item
                 
             case .Changed:
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                workoutEditView.stepsCollectionView.updateIndexPathsForVisibleCells()
+                collectionView.updateIndexPathsForVisibleCells()
                 // Update cell index after movement.
                 reorderingCellIndex = gesture.view!.tag
                 
             case .Ended:
                 collectionView.endInteractiveMovement()
                 updateVisibleCells()
-                cell.actionsVisible = false
                 reorderingCellIndex = nil
-                collectionView.springFlowLayout.springBehaviorEnabled = true
                 
             default:
                 collectionView.cancelInteractiveMovement()
                 updateVisibleCells()
-                cell.actionsVisible = false
                 reorderingCellIndex = nil
-                collectionView.springFlowLayout.springBehaviorEnabled = true
             }
         } else {
             cell.actionsVisible = false
@@ -280,7 +273,6 @@ extension WorkoutEditScreen {
                 index: indexPath.item + 1
             )
             cell.fillWithItem(item)
-            cell.indexPath = indexPath
         }
     }
 }

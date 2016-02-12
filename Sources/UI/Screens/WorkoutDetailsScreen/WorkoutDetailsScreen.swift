@@ -146,6 +146,7 @@ extension WorkoutDetailsScreen {
         // Create user workout by cloning default workout.
         let userWorkout = workout.clone()
         workoutsProvider.addUserWorkout(userWorkout)
+        // Prevent reloading of steps collection view to avoid cells blinking.
         needsReloadSteps = false
         workout = userWorkout
     }

@@ -77,7 +77,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
         toIndexPath destinationIndexPath: NSIndexPath) {
 
             workoutsProvider.moveUserWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
-            workoutsCollectionView.updateIndexPathsForVisibleCells()
     }
     
     func collectionView(collectionView: ActionableCollectionView,
@@ -127,7 +126,7 @@ extension UserWorkoutsSource {
             self.workoutsCollectionView.deleteItemsAtIndexPaths([indexPath])
             
             }, completion: { _ in
-                // Reload data instead of updating buttons tags to prevent strange crashes (UICollectionView issue).
+                // Reload data to prevent strange crashes (UICollectionView issue).
                 self.workoutsCollectionView.reloadData()
         })
     }
@@ -149,7 +148,6 @@ extension UserWorkoutsSource {
             }, completion: { _ in
                 // Scroll to show cell with cloned workout.
                 self.workoutsCollectionView.scrollToCellAtIndexPath(newIndexPath, animated: true)
-                self.workoutsCollectionView.updateIndexPathsForVisibleCells()
         })
     }
     
@@ -164,11 +162,10 @@ extension UserWorkoutsSource {
             switch gesture.state {
                 
             case .Began:
-                reorderingCellIndex = indexPath.item
-                workoutsCollectionView.springFlowLayout.springBehaviorEnabled = false
                 workoutsCollectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
                 workoutsCollectionView.updateInteractiveMovementTargetPosition(targetLocation)
                 cell.applyReorderingInProgressAppearance()
+                reorderingCellIndex = indexPath.item
                 
             case .Changed:
                 workoutsCollectionView.updateInteractiveMovementTargetPosition(targetLocation)
@@ -178,17 +175,11 @@ extension UserWorkoutsSource {
                 
             case .Ended:
                 workoutsCollectionView.endInteractiveMovement()
-                workoutsCollectionView.updateIndexPathsForVisibleCells()
-                cell.actionsVisible = false
                 reorderingCellIndex = nil
-                workoutsCollectionView.springFlowLayout.springBehaviorEnabled = true
                 
             default:
                 workoutsCollectionView.cancelInteractiveMovement()
-                workoutsCollectionView.updateIndexPathsForVisibleCells()
-                cell.actionsVisible = false
                 reorderingCellIndex = nil
-                workoutsCollectionView.springFlowLayout.springBehaviorEnabled = true
             }
         } else {
             cell.actionsVisible = false
