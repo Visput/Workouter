@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WorkoutsSource: UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate {
+protocol WorkoutsSource: UICollectionViewDataSource, ActionableCollectionViewDelegate, UIViewControllerPreviewingDelegate {
     
     var active: Bool { get set }
     var currentWorkouts: [Workout] { get }

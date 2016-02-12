@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
+final class DefaultWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionViewDelegate {
     
     var active: Bool = false
     
@@ -18,7 +18,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
     
     private var searchResults: [Workout]?
     
-    weak var collectionView: ActionableCollectionView!
+    weak var workoutsCollectionView: ActionableCollectionView!
     private weak var viewController: UIViewController!
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
@@ -51,12 +51,9 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             forIndexPath: indexPath) as! DefaultWorkoutCell
         
         if viewController.traitCollection.forceTouchCapability == .Available {
-            // Set tag to keep reference to workout index.
-            cell.cardView.tag = indexPath.item
-            
             // Register cell if it's not reused yet.
             if cell.item == nil {
-                viewController.registerForPreviewingWithDelegate(self, sourceView: cell.cardView)
+                viewController.registerForPreviewingWithDelegate(self, sourceView: cell)
             }
         }
         
@@ -64,17 +61,21 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
         let clonedWorkout = workoutsProvider.userWorkoutWithOriginalIdentifier(workout.identifier)
         let item = DefaultWorkoutCellItem(workout: workout, clonedWorkout: clonedWorkout)
         cell.fillWithItem(item)
-        cell.didSelectAction = { [unowned self] in
-            self.navigationManager.pushWorkoutDetailsScreenWithWorkout(cell.item!.workout, animated: true)
-            // Prevent multiple cells selection.
-            for cell in collectionView.visibleCells() as! [DefaultWorkoutCell] {
-                cell.didSelectAction = nil
-            }
-        }
-        cell.favoriteButton.tag = indexPath.item
+        
         cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
         
         return cell
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectCellAtIndexPath indexPath: NSIndexPath) {
+            
+            // Prevent multiple cells selection.
+            if active {
+                let workout = currentWorkouts[indexPath.item]
+                navigationManager.pushWorkoutDetailsScreenWithWorkout(workout, animated: true)
+            }
+            active = false
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
@@ -82,11 +83,11 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource {
             
             guard active else { return nil }
             
-            // Check if cell is `editable` state.
-            let workoutIndex = previewingContext.sourceView.tag
-            let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: workoutIndex, inSection: 0)) as! DefaultWorkoutCell
+            // Check if cell in `editable` state.
+            let cell = previewingContext.sourceView as! DefaultWorkoutCell
             guard !cell.actionsVisible else { return nil }
             
+            let workoutIndex = workoutsCollectionView.indexPathForCell(cell)!.item
             let workout = currentWorkouts[workoutIndex]
             let previewScreen = navigationManager.instantiateWorkoutDetailsScreenWithWorkout(workout)
             
@@ -105,7 +106,7 @@ extension DefaultWorkoutsSource {
     @objc private func favoriteButtonDidPress(sender: UIButton) {
         sender.selected = !sender.selected
         
-        let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! DefaultWorkoutCell
+        let cell = workoutsCollectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! DefaultWorkoutCell
         cell.actionsVisible = false
         
         let item = cell.item!

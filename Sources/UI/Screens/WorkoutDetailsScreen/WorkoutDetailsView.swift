@@ -10,14 +10,15 @@ import UIKit
 
 final class WorkoutDetailsView: BaseScreenView {
 
-    @IBOutlet private(set) weak var headerView: UserWorkoutCell!
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var stepsCountLabel: UILabel!
+    @IBOutlet private(set) weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var favoriteButton: TintButton!
     @IBOutlet private(set) weak var stepsCollectionView: ActionableCollectionView!
     
     override func didLoad() {
         super.didLoad()
-        headerView.actionsEnabled = false
-        
         stepsCollectionView.springFlowLayout.sectionInset.top = 16.0
         stepsCollectionView.springFlowLayout.sectionInset.bottom = 2.0
         stepsCollectionView.springFlowLayout.sectionInset.left = 16.0

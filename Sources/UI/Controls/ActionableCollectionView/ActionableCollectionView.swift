@@ -13,6 +13,12 @@ final class ActionableCollectionView: UICollectionView {
     private(set) var springFlowLayout: CollectionSpringFlowLayout
     private(set) var expandedCellIndexPath: NSIndexPath?
     
+    private var actionableDelegate: ActionableCollectionViewDelegate? {
+        get {
+            return delegate as? ActionableCollectionViewDelegate
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         springFlowLayout = CollectionSpringFlowLayout()
         super.init(coder: aDecoder)
@@ -56,7 +62,7 @@ extension ActionableCollectionView {
         
         if isSpringBehaviorEnabled {
             // Enable spring behavior after delay because  reloading data is async process
-            // that take some time to perform all changes.
+            // that takes some time to perform all changes.
             executeAfterDelay(1.0, task: {
                 self.springFlowLayout.springBehaviorEnabled = true
             })
@@ -81,6 +87,16 @@ extension ActionableCollectionView {
             completion?(completed)
         })
     }
+    
+    override func dequeueReusableCellWithReuseIdentifier(identifier: String,
+        forIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+            let cell = super.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ActionableCollectionViewCell
+            cell.actionableCollectionView = self
+            cell.indexPath = indexPath
+            
+            return cell
+    }
 }
 
 extension ActionableCollectionView {
@@ -93,24 +109,62 @@ extension ActionableCollectionView {
         }
     }
     
-    func switchExpandingStateForCellAtIndexPath(indexPath: NSIndexPath) {
+    func switchExpandingStateForCellAtIndexPath(indexPath: NSIndexPath, completion: (() -> Void)? = nil) {
+        let oldExpandedCellIndexPath = expandedCellIndexPath
+        
         if expandedCellIndexPath == indexPath {
+            actionableDelegate?.collectionView?(self, willCollapseCellAtIndexPath: indexPath)
             expandedCellIndexPath = nil
+            
         } else {
+            if expandedCellIndexPath != nil {
+                actionableDelegate?.collectionView?(self, willCollapseCellAtIndexPath: expandedCellIndexPath!)
+            }
+            actionableDelegate?.collectionView?(self, willExpandCellAtIndexPath: indexPath)
             expandedCellIndexPath = indexPath
+            
         }
         
-        performBatchUpdates(nil, completion: nil)
+        performBatchUpdates(nil, completion: { _ in
+            if oldExpandedCellIndexPath == indexPath {
+                self.actionableDelegate?.collectionView?(self, didCollapseCellAtIndexPath: indexPath)
+                
+            } else {
+                if oldExpandedCellIndexPath != nil {
+                    self.actionableDelegate?.collectionView?(self, didCollapseCellAtIndexPath: oldExpandedCellIndexPath!)
+                }
+                self.actionableDelegate?.collectionView?(self, didExpandCellAtIndexPath: indexPath)
+            }
+            completion?()
+        })
         
         if expandedCellIndexPath != nil {
             scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredVertically, animated: true)
         }
     }
     
-    func collapseExpandedCell() {
-        if expandedCellIndexPath != nil {
-            switchExpandingStateForCellAtIndexPath(expandedCellIndexPath!)
+    func expandCellAtIndexPath(indexPath: NSIndexPath, completion: (() -> Void)? = nil) {
+        guard expandedCellIndexPath == nil || (expandedCellIndexPath != nil && expandedCellIndexPath! != indexPath) else {
+            completion?()
+            return
         }
+        switchExpandingStateForCellAtIndexPath(indexPath, completion: completion)
+    }
+    
+    func collapseCellAtIndexPath(indexPath: NSIndexPath, completion: (() -> Void)? = nil) {
+        guard expandedCellIndexPath != nil && expandedCellIndexPath! == indexPath else {
+            completion?()
+            return
+        }
+        switchExpandingStateForCellAtIndexPath(expandedCellIndexPath!, completion: completion)
+    }
+    
+    func collapseExpandedCell(completion: (() -> Void)? = nil) {
+        guard expandedCellIndexPath != nil else {
+            completion?()
+            return
+        }
+        switchExpandingStateForCellAtIndexPath(expandedCellIndexPath!, completion: completion)
     }
     
     func scrollToCellAtIndexPath(indexPath: NSIndexPath, animated: Bool) {
@@ -132,6 +186,35 @@ extension ActionableCollectionView {
             scrollRectToVisible(targetCellFrame, animated: animated)
         }
     }
+    
+    func updateIndexPathsForVisibleCells() {
+        for cell in visibleCells() as! [ActionableCollectionViewCell] {
+            cell.indexPath = indexPathForCell(cell)!
+        }
+    }
+}
+
+extension ActionableCollectionView {
+    
+    func didSelectCellAtIndexPath(indexPath: NSIndexPath) {
+        actionableDelegate?.collectionView?(self, didSelectCellAtIndexPath: indexPath)
+    }
+    
+    func willShowActionsForCellAtIndexPath(indexPath: NSIndexPath) {
+        actionableDelegate?.collectionView?(self, willShowActionsForCellAtIndexPath: indexPath)
+    }
+    
+    func didShowActionsForCellAtIndexPath(indexPath: NSIndexPath) {
+        actionableDelegate?.collectionView?(self, didShowActionsForCellAtIndexPath: indexPath)
+    }
+    
+    func willHideActionsForCellAtIndexPath(indexPath: NSIndexPath) {
+        actionableDelegate?.collectionView?(self, willHideActionsForCellAtIndexPath: indexPath)
+    }
+    
+    func didHideActionsForCellAtIndexPath(indexPath: NSIndexPath) {
+        actionableDelegate?.collectionView?(self, didHideActionsForCellAtIndexPath: indexPath)
+    }
 }
 
 extension ActionableCollectionView {
@@ -143,4 +226,17 @@ extension ActionableCollectionView {
             expandedCellIndexPath = nil
         }
     }
+}
+
+@objc protocol ActionableCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
+    
+    optional func collectionView(collectionView: ActionableCollectionView, didSelectCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, willExpandCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, didExpandCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, willCollapseCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, didCollapseCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, willShowActionsForCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, didShowActionsForCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, willHideActionsForCellAtIndexPath indexPath: NSIndexPath)
+    optional func collectionView(collectionView: ActionableCollectionView, didHideActionsForCellAtIndexPath indexPath: NSIndexPath)
 }

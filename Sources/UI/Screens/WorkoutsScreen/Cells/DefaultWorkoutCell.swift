@@ -10,14 +10,19 @@ import UIKit
 
 final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var stepsCountLabel: UILabel!
-    @IBOutlet private weak var durationLabel: UILabel!
-    @IBOutlet private(set) weak var cardView: UIView!
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var stepsCountLabel: UILabel!
+    @IBOutlet private(set) weak var durationLabel: UILabel!
     @IBOutlet private(set) weak var favoriteIcon: UIImageView!
     
     @IBOutlet private(set) weak var favoriteButton: UIButton!
+    
+    override var indexPath: NSIndexPath! {
+        didSet {
+            favoriteButton.tag = indexPath.item
+        }
+    }
     
     private(set) var item: DefaultWorkoutCellItem?
     
@@ -30,6 +35,9 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     func fillWithItem(item: DefaultWorkoutCellItem) {
         self.item = item
+        
+        expandingEnabled = false
+        actionsEnabled = true
         
         nameLabel.text = item.workout.name
         descriptionLabel.text = item.workout.muscleGroupsDescription

@@ -59,7 +59,7 @@ final class WorkoutEditScreen: BaseScreen {
     }
 }
 
-extension WorkoutEditScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -74,13 +74,9 @@ extension WorkoutEditScreen: UICollectionViewDelegateFlowLayout, UICollectionVie
                 forIndexPath: indexPath) as! StepEditCell
             
             let item = StepEditCellItem(step: workout.steps[indexPath.item],
-                index: indexPath.item + 1,
-                actionButtonsTag: indexPath.item
+                index: indexPath.item + 1
             )
             cell.fillWithItem(item)
-            cell.didSelectAction = { [unowned self] in
-                self.workoutEditView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
-            }
             
             cell.deleteButton.addTarget(self, action: Selector("deleteStepButtonDidPress:"), forControlEvents: .TouchUpInside)
             cell.cloneButton.addTarget(self, action: Selector("cloneStepButtonDidPress:"), forControlEvents: .TouchUpInside)
@@ -189,7 +185,7 @@ extension WorkoutEditScreen {
         let collectionView = workoutEditView.stepsCollectionView
         let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
         guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? StepEditCell else { return }
-        
+    
         if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.item {
             var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
             targetLocation.x = collectionView.bounds.size.width / 2.0
@@ -197,7 +193,9 @@ extension WorkoutEditScreen {
             switch gesture.state {
                 
             case .Began:
-                collectionView.springFlowLayout.springBehaviorEnabled = false
+                workoutEditView.stepsCollectionView.collapseExpandedCell({
+                    collectionView.springFlowLayout.springBehaviorEnabled = false
+                })
                 reorderingCellIndex = indexPath.item
                 collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
@@ -205,7 +203,7 @@ extension WorkoutEditScreen {
                 
             case .Changed:
                 collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                updateVisibleCellsButtonsTags()
+                workoutEditView.stepsCollectionView.updateIndexPathsForVisibleCells()
                 // Update cell index after movement.
                 reorderingCellIndex = gesture.view!.tag
                 
@@ -279,17 +277,10 @@ extension WorkoutEditScreen {
         for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
             let indexPath = workoutEditView.stepsCollectionView.indexPathForCell(cell)!
             let item = StepEditCellItem(step: workout.steps[indexPath.item],
-                index: indexPath.item + 1,
-                actionButtonsTag: indexPath.item
+                index: indexPath.item + 1
             )
             cell.fillWithItem(item)
-        }
-    }
-    
-    private func updateVisibleCellsButtonsTags() {
-        for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
-            let index = workoutEditView.stepsCollectionView.indexPathForCell(cell)!.row
-            cell.setActionButtonsTag(index)
+            cell.indexPath = indexPath
         }
     }
 }

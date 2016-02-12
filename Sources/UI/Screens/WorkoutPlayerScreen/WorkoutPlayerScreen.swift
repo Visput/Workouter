@@ -63,8 +63,13 @@ extension WorkoutPlayerScreen {
 extension WorkoutPlayerScreen {
     
     private func fillViewWithWorkout(workout: Workout) {
-        let animationScene = SCNScene(named: "Male.scnassets/PRG_7EN_01_001_001_Jumping_Jacks_SL_1_Select_1.dae")
-        workoutPlayerView.exerciseSceneView.scene!.rootNode.addChildNode(animationScene!.rootNode)
+        let url = NSBundle.mainBundle().URLForResource("Male.scnassets/PRG_7EN_01_001_001_Jumping_Jacks_SL_1_Select_1", withExtension: "dae")
+        let sceneSource = SCNSceneSource(URL: url!, options: nil)
+        let animation = sceneSource!.entryWithIdentifier("LeftHandPinky3.translate_LeftHandPinky3", withClass: CAAnimation.self)
+        
+        workoutPlayerView.exerciseSceneView.scene!.rootNode.addAnimation(animation!, forKey: nil)
+            
+            
         workoutPlayerView.progressView.progressItems = progressItemsFromSteps(workout.steps)
     }
     

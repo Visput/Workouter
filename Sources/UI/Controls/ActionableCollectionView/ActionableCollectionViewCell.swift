@@ -10,17 +10,27 @@ import UIKit
 
 class ActionableCollectionViewCell: BaseCollectionViewCell {
     
-    @IBOutlet private(set) weak var actionsContentView: UIView!
+    weak var actionableCollectionView: ActionableCollectionView!
+    var indexPath: NSIndexPath!
     
-    @IBOutlet private(set) weak var scrollView: UIScrollView! {
+    @IBOutlet weak var actionsContentView: UIView!
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
         }
     }
     
-    var didSelectAction: (() -> Void)?
-    
     var contentOffsetToMakeActionsVisible: CGFloat = 50.0
+    
+    var expandingEnabled: Bool = true {
+        didSet {
+            if !expandingEnabled {
+                selected = false
+                actionableCollectionView.collapseCellAtIndexPath(indexPath)
+            }
+        }
+    }
     
     var actionsEnabled: Bool = true {
         didSet {
@@ -34,6 +44,7 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     var actionsVisible: Bool = false {
         didSet {
             if actionsVisible {
+                actionableCollectionView.willShowActionsForCellAtIndexPath(indexPath)
                 
                 // Shift scroll view frame to expand action items.
                 UIView.animateWithDuration(1.0,
@@ -43,9 +54,12 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
                     options: [.CurveEaseIn],
                     animations: {
                         self.scrollView.frame.origin.x = -self.actionsContentView.frame.size.width
-                    }, completion: nil)
+                    }, completion: { _ in
+                        self.actionableCollectionView.didShowActionsForCellAtIndexPath(self.indexPath)
+                })
                 
             } else {
+                actionableCollectionView.willHideActionsForCellAtIndexPath(indexPath)
                 
                 // Shift scroll view frame to collapse action items.
                 UIView.animateWithDuration(0.8,
@@ -55,7 +69,9 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
                     options: [.CurveEaseIn],
                     animations: {
                         self.scrollView.frame.origin.x = 0.0
-                    }, completion: nil)
+                    }, completion: { _ in
+                        self.actionableCollectionView.didHideActionsForCellAtIndexPath(self.indexPath)
+                })
             }
         }
     }
@@ -87,8 +103,14 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     }
     
     @objc private func cellDidTap(gesture: UITapGestureRecognizer) {
-        selected = true
-        didSelectAction?()
+        if expandingEnabled {
+            selected = false
+            actionableCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
+            
+        } else {
+            selected = true
+            actionableCollectionView.didSelectCellAtIndexPath(indexPath)
+        }
     }
 }
 

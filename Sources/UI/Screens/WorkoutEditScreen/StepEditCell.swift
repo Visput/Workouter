@@ -39,12 +39,18 @@ final class StepEditCell: ActionableCollectionViewCell {
         }
     }
     
+    override var indexPath: NSIndexPath! {
+        didSet {
+            deleteButton.tag = indexPath.item
+            cloneButton.tag = indexPath.item
+            reorderButton.tag = indexPath.item
+        }
+    }
+    
     private(set) var item: StepEditCellItem?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionVisualizationEnabled = false
-        
         // Prevent multiple cells interaction.
         deleteButton.exclusiveTouch = true
         cloneButton.exclusiveTouch = true
@@ -55,17 +61,12 @@ final class StepEditCell: ActionableCollectionViewCell {
     func fillWithItem(item: StepEditCellItem) {
         self.item = item
         
+        expandingEnabled = true
+        actionsEnabled = true
+        
         nameLabel.text = item.step.name
         descriptionLabel.text = item.step.muscleGroupsDescription
         indexLabel.text = String(item.index)
-        
-        setActionButtonsTag(item.actionButtonsTag)
-    }
-    
-    func setActionButtonsTag(tag: Int) {
-        deleteButton.tag = tag
-        cloneButton.tag = tag
-        reorderButton.tag = tag
     }
     
     func applyReorderingInProgressAppearance() {

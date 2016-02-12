@@ -30,7 +30,7 @@ final class StepTemplatesScreen: BaseScreen {
     }
 }
     
-extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension StepTemplatesScreen: ActionableCollectionViewDelegate, UICollectionViewDataSource {
         
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -43,19 +43,20 @@ extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionV
             var resultCell: ActionableCollectionViewCell! = nil
             
             let step = steps[indexPath.item]
+            
             if step.isEmpty() {
-                resultCell = collectionView.dequeueReusableCellWithReuseIdentifier(NewStepTemplateCell.className(),
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(NewStepTemplateCell.className(),
                     forIndexPath: indexPath) as! NewStepTemplateCell
+                let item = NewStepTemplateCellItem()
+                cell.fillWithItem(item)
+                resultCell = cell
+                
             } else {
                 let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StepTemplateCell.className(),
                     forIndexPath: indexPath) as! StepTemplateCell
-                cell.fillWithStep(step)
+                let item = StepTemplateCellItem(step: step)
+                cell.fillWithItem(item)
                 resultCell = cell
-            }
-            
-            resultCell.didSelectAction = { [unowned self] in
-                self.templatesView.searchBar.resignFirstResponder()
-                self.templatesView.templatesCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
             }
             
             return resultCell
@@ -66,6 +67,13 @@ extension StepTemplatesScreen: UICollectionViewDelegateFlowLayout, UICollectionV
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             return templatesView.templateCellSizeAtIndexPath(indexPath)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        willExpandCellAtIndexPath indexPath: NSIndexPath) {
+            
+            templatesView.searchBar.setShowsCancelButton(false, animated: true)
+            templatesView.searchBar.resignFirstResponder()
     }
 }
 
@@ -105,6 +113,7 @@ extension StepTemplatesScreen {
         steps.appendContentsOf(searchResults)
         
         templatesView.templatesCollectionView.reloadData()
+        templatesView.templatesCollectionView.collapseExpandedCell()
     }
     
     private func fillViewWithSearchRequest(searchRequest: StepsSearchRequest) {

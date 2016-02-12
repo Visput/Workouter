@@ -10,17 +10,14 @@ import UIKit
 
 final class StepTemplateCell: ActionableCollectionViewCell {
 
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionVisualizationEnabled = false
+    func fillWithItem(item: StepTemplateCellItem) {
+        expandingEnabled = true
         actionsEnabled = false
-    }
-    
-    func fillWithStep(step: Step) {
-        nameLabel.text = step.name
-        descriptionLabel.text = step.muscleGroupsDescription
+        
+        nameLabel.text = item.step.name
+        descriptionLabel.text = item.step.muscleGroupsDescription
     }
 }

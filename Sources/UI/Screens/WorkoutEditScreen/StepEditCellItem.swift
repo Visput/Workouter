@@ -12,11 +12,9 @@ struct StepEditCellItem {
     
     let step: Step
     let index: Int
-    let actionButtonsTag: Int
     
-    init(step: Step, index: Int, actionButtonsTag: Int) {
+    init(step: Step, index: Int) {
         self.step = step
         self.index = index
-        self.actionButtonsTag = actionButtonsTag
     }
 }

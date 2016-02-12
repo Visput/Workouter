@@ -9,10 +9,9 @@
 import UIKit
 
 final class NewStepTemplateCell: ActionableCollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionVisualizationEnabled = false
+    
+    func fillWithItem(item: NewStepTemplateCellItem) {
+        expandingEnabled = true
         actionsEnabled = false
     }
 }

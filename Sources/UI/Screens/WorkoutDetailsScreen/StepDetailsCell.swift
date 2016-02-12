@@ -14,13 +14,10 @@ final class StepDetailsCell: ActionableCollectionViewCell {
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
     @IBOutlet private(set) weak var indexLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionVisualizationEnabled = false
-        actionsEnabled = false
-    }
-    
     func fillWithItem(item: StepDetailsCellItem) {
+        expandingEnabled = true
+        actionsEnabled = false
+        
         nameLabel.text = item.step.name
         descriptionLabel.text = item.step.muscleGroupsDescription
         indexLabel.text = String(item.index)

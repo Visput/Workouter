@@ -17,6 +17,8 @@ final class WorkoutDetailsScreen: BaseScreen {
         }
     }
     
+    private var needsReloadSteps = true
+    
     private var navigationManager: NavigationManager {
         return modelProvider.navigationManager
     }
@@ -40,7 +42,7 @@ final class WorkoutDetailsScreen: BaseScreen {
     }
 }
 
-extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension WorkoutDetailsScreen: ActionableCollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -56,9 +58,6 @@ extension WorkoutDetailsScreen: UICollectionViewDelegateFlowLayout, UICollection
             
             let item = StepDetailsCellItem(step: workout.steps[indexPath.item], index: indexPath.item + 1)
             cell.fillWithItem(item)
-            cell.didSelectAction = { [unowned self] in
-                self.workoutDetailsView.stepsCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
-            }
             
             return cell
     }
@@ -102,8 +101,7 @@ extension WorkoutDetailsScreen {
         } else {
             navigationManager.showTextDialogWithStyle(TextDialogFactory.Save,
                 title: NSLocalizedString("Save Workout", comment: ""),
-                message: NSLocalizedString("Built in workouts are not editable.\n" +
-                    "Please save it to My Workouts to be able to edit this workout.", comment: ""),
+                message: NSLocalizedString("Built in workout has to be saved to My Workouts before edit.", comment: ""),
                 confirmAction: { [unowned self] in
                     self.saveWorkout()
                     editAction()
@@ -122,8 +120,22 @@ extension WorkoutDetailsScreen {
     }
     
     private func fillViewWithWorkout(workout: Workout) {
-        workoutDetailsView.headerView.fillWithWorkout(workout)
-        workoutDetailsView.stepsCollectionView.reloadData()
+        workoutDetailsView.nameLabel.text = workout.name
+        workoutDetailsView.descriptionLabel.text = workout.muscleGroupsDescription
+        
+        withVaList([workout.steps.count]) { pointer in
+            workoutDetailsView.stepsCountLabel.vp_setAttributedTextFormatArguments(pointer, keepFormat: true)
+        }
+        
+        workoutDetailsView.durationLabel.attributedText = NSAttributedString.durationStringForWorkout(workout,
+            valueFont: UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular),
+            unitFont: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular),
+            color: UIColor.secondaryTextColor())
+        
+        if needsReloadSteps {
+            workoutDetailsView.stepsCollectionView.reloadData()
+        }
+        needsReloadSteps = true
         
         UIView.animateWithDefaultDuration {
             self.workoutDetailsView.favoriteButton.hidden = self.workoutsProvider.userWorkoutForWorkout(workout) != nil
@@ -132,8 +144,9 @@ extension WorkoutDetailsScreen {
     
     private func saveWorkout() {
         // Create user workout by cloning default workout.
-        let userWorkout = self.workout.clone()
-        self.workoutsProvider.addUserWorkout(userWorkout)
-        self.workout = userWorkout
+        let userWorkout = workout.clone()
+        workoutsProvider.addUserWorkout(userWorkout)
+        needsReloadSteps = false
+        workout = userWorkout
     }
 }

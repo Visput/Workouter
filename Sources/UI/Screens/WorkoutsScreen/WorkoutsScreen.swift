@@ -54,9 +54,14 @@ final class WorkoutsScreen: BaseScreen {
         workoutsProvider.loadWorkouts()
         workoutsProvider.observers.addObserver(self)
         
-        workoutsSources.collectionView = workoutsView.workoutsCollectionView
+        workoutsSources.workoutsCollectionView = workoutsView.workoutsCollectionView
         fillViewWithWorkoutsSources(workoutsSources)
         configurePlaceholdersAnimated(false)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        workoutsSources.currentSource.active = true
     }
     
     override func viewWillDisappear(animated: Bool) {

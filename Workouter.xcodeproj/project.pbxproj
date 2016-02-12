@@ -126,6 +126,12 @@
 		9F49AFDA1C3CDFC500B1763C /* UICollectionView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49AFD81C3CDFC500B1763C /* UICollectionView+Deselect.swift */; };
 		9F5A7D171BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */; };
 		9F5A7D181BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */; };
+		9F6296EA1C6D509300CEF451 /* UserWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296E91C6D509300CEF451 /* UserWorkoutCellItem.swift */; };
+		9F6296EB1C6D509300CEF451 /* UserWorkoutCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296E91C6D509300CEF451 /* UserWorkoutCellItem.swift */; };
+		9F6296ED1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296EC1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift */; };
+		9F6296EE1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296EC1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift */; };
+		9F6296F01C6D53B700CEF451 /* StepTemplateCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296EF1C6D53B700CEF451 /* StepTemplateCellItem.swift */; };
+		9F6296F11C6D53B700CEF451 /* StepTemplateCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6296EF1C6D53B700CEF451 /* StepTemplateCellItem.swift */; };
 		9F697E4E1C02995B00BAB0EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F697E4D1C02995B00BAB0EC /* BaseViewController.swift */; };
 		9F697E4F1C02995B00BAB0EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F697E4D1C02995B00BAB0EC /* BaseViewController.swift */; };
 		9F697E511C02997C00BAB0EC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F697E501C02997C00BAB0EC /* BaseView.swift */; };
@@ -383,6 +389,9 @@
 		9F49AFD11C3CDCD200B1763C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F49AFD81C3CDFC500B1763C /* UICollectionView+Deselect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Deselect.swift"; sourceTree = "<group>"; };
 		9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStepTemplateCell.swift; sourceTree = "<group>"; };
+		9F6296E91C6D509300CEF451 /* UserWorkoutCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkoutCellItem.swift; sourceTree = "<group>"; };
+		9F6296EC1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStepTemplateCellItem.swift; sourceTree = "<group>"; };
+		9F6296EF1C6D53B700CEF451 /* StepTemplateCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTemplateCellItem.swift; sourceTree = "<group>"; };
 		9F697E4D1C02995B00BAB0EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F697E501C02997C00BAB0EC /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9F697E551C029ED500BAB0EC /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
@@ -816,9 +825,10 @@
 		9F79EA801C39167A00FC8227 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */,
 				9F79EA811C39167A00FC8227 /* DefaultWorkoutCell.swift */,
+				9F3AD6B61C43650A00FD87AB /* DefaultWorkoutCellItem.swift */,
 				9F49AFCD1C3CCB3100B1763C /* UserWorkoutCell.swift */,
+				9F6296E91C6D509300CEF451 /* UserWorkoutCellItem.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1299,7 +1309,9 @@
 				F0C342661A9E4BC800B9D480 /* StepTemplatesScreen.swift */,
 				9F0DFC421BE88DEF002AEACC /* StepTemplatesView.swift */,
 				9F0DFC481BE88F45002AEACC /* StepTemplateCell.swift */,
+				9F6296EF1C6D53B700CEF451 /* StepTemplateCellItem.swift */,
 				9F5A7D161BFAA51C00B3E966 /* NewStepTemplateCell.swift */,
+				9F6296EC1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift */,
 			);
 			path = StepTemplatesScreen;
 			sourceTree = "<group>";
@@ -1756,6 +1768,7 @@
 			files = (
 				9F49AFD91C3CDFC500B1763C /* UICollectionView+Deselect.swift in Sources */,
 				9F5A7D171BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */,
+				9F6296F01C6D53B700CEF451 /* StepTemplateCellItem.swift in Sources */,
 				9FED64241C1F50BB00F40CDF /* MainView.swift in Sources */,
 				9F0F073C1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACC1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
@@ -1763,6 +1776,7 @@
 				F02CAB511B4B871E00F28D72 /* ModelProvider.swift in Sources */,
 				9F11E0861C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD41BDF2F7000AEDEB1 /* StepEditCell.swift in Sources */,
+				9F6296ED1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift in Sources */,
 				9F4356E11C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */,
 				9F41EA5C1C5C2006005C292E /* StepsPlaceholderController.swift in Sources */,
 				9FED64211C1F50AF00F40CDF /* MainScreen.swift in Sources */,
@@ -1783,6 +1797,7 @@
 				9FDA59A01BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				9F49AFCE1C3CCB3100B1763C /* UserWorkoutCell.swift in Sources */,
 				F02CAB541B4B871E00F28D72 /* BaseScreen.swift in Sources */,
+				9F6296EA1C6D509300CEF451 /* UserWorkoutCellItem.swift in Sources */,
 				9FED642B1C1F511400F40CDF /* AchievementsView.swift in Sources */,
 				9F0DFC491BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
 				9FE798681C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
@@ -1890,6 +1905,7 @@
 			files = (
 				9F49AFDA1C3CDFC500B1763C /* UICollectionView+Deselect.swift in Sources */,
 				9F5A7D181BFAA51C00B3E966 /* NewStepTemplateCell.swift in Sources */,
+				9F6296F11C6D53B700CEF451 /* StepTemplateCellItem.swift in Sources */,
 				9FED64251C1F50BB00F40CDF /* MainView.swift in Sources */,
 				9F0F073D1C063B2D00DA0152 /* AuthenticationScreen.swift in Sources */,
 				9F341ACD1BDF171D00AEDEB1 /* StepEditScreen.swift in Sources */,
@@ -1897,6 +1913,7 @@
 				F09702BF1ACA48E700498DEE /* ModelProvider.swift in Sources */,
 				9F11E0871C423A47007F343F /* ActionableCollectionViewCell.swift in Sources */,
 				9F341AD51BDF2F7000AEDEB1 /* StepEditCell.swift in Sources */,
+				9F6296EE1C6D53AC00CEF451 /* NewStepTemplateCellItem.swift in Sources */,
 				9F4356E21C49E3EF00D841FE /* WorkoutCompletionView.swift in Sources */,
 				9F41EA5D1C5C2009005C292E /* StepsPlaceholderController.swift in Sources */,
 				9FED64221C1F50AF00F40CDF /* MainScreen.swift in Sources */,
@@ -1917,6 +1934,7 @@
 				9FDA59A11BEF2A6200D350C5 /* UIView+FirstResponder.swift in Sources */,
 				9F49AFCF1C3CCB3100B1763C /* UserWorkoutCell.swift in Sources */,
 				F09702C21ACA48E700498DEE /* BaseScreen.swift in Sources */,
+				9F6296EB1C6D509300CEF451 /* UserWorkoutCellItem.swift in Sources */,
 				9FED642C1C1F511400F40CDF /* AchievementsView.swift in Sources */,
 				9F0DFC4A1BE88F45002AEACC /* StepTemplateCell.swift in Sources */,
 				9FE798691C0D71C6009A52C5 /* WelcomeView.swift in Sources */,
