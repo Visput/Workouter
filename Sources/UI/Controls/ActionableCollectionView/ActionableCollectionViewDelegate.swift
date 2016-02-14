@@ -51,11 +51,6 @@ import UIKit
         cloneIndexPath: NSIndexPath)
     
     optional func collectionView(collectionView: ActionableCollectionView,
-        didSelectMoveAction moveAction: CollectionViewCellAction,
-        forCellAtIndexPath sourceIndexPath: NSIndexPath,
-        destinationIndexPath: NSIndexPath)
-    
-    optional func collectionView(collectionView: ActionableCollectionView,
         didSelectCustomAction customAction: CollectionViewCellAction,
         forCellAtIndexPath indexPath: NSIndexPath)
     

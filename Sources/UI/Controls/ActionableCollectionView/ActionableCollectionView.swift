@@ -359,12 +359,11 @@ extension ActionableCollectionView {
             switch longPressRecognizer.state {
                 
             case .Began:
-                collapseExpandedCell({
-                    cell.updateMovingInProgressAppearance(true, movingActionControl: cellAction.control)
-                })
+                collapseExpandedCell()
                 movingCellOriginalIndexPath = cell.indexPath
                 beginInteractiveMovementForItemAtIndexPath(cell.indexPath)
                 updateInteractiveMovementTargetPosition(targetLocation)
+                cell.updateMovingInProgressAppearance(true, movingActionControl: cellAction.control)
                 movingCellCurrentIndexPath = cell.indexPath
                 
             case .Changed:
@@ -375,9 +374,6 @@ extension ActionableCollectionView {
                 
             case .Ended:
                 endInteractiveMovement()
-                actionableDelegate!.collectionView!(self, didSelectMoveAction: cellAction,
-                    forCellAtIndexPath: movingCellOriginalIndexPath!,
-                    destinationIndexPath: movingCellCurrentIndexPath!)
                 movingCellOriginalIndexPath = nil
                 movingCellCurrentIndexPath = nil
                 

@@ -112,10 +112,9 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
             workoutsProvider.insertUserWorkout(clonedWorkout, atIndex: cloneIndexPath.item)
     }
     
-    func collectionView(collectionView: ActionableCollectionView,
-        didSelectMoveAction moveAction: CollectionViewCellAction,
-        forCellAtIndexPath sourceIndexPath: NSIndexPath,
-        destinationIndexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView,
+        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
+        toIndexPath destinationIndexPath: NSIndexPath) {
             
             workoutsProvider.moveUserWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
     }
