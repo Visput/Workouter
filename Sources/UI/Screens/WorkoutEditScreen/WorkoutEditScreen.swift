@@ -143,6 +143,8 @@ extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewD
 extension WorkoutEditScreen {
     
     @IBAction private func newStepButtonDidPress(sender: AnyObject) {
+        workoutEditView.stepsCollectionView.hideCellsActionsAnimated(true)
+        
         navigationManager.presentMuscleGroupsScreenAnimated(true,
             muscleGroupsDidSelectAction: { [unowned self] muscleGroup in
                 
@@ -167,6 +169,8 @@ extension WorkoutEditScreen {
     }
     
     @IBAction private func doneButtonDidPress(sender: AnyObject) {
+        workoutEditView.stepsCollectionView.hideCellsActionsAnimated(true)
+            
         workoutEditView.endEditing(true)
         if validateWorkout() {
             workoutDidEditAction?(workout: workout)
@@ -174,6 +178,7 @@ extension WorkoutEditScreen {
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {
+        workoutEditView.stepsCollectionView.hideCellsActionsAnimated(true)
         workoutEditView.endEditing(true)
         workoutDidCancelAction?()
     }
@@ -209,6 +214,7 @@ extension WorkoutEditScreen {
         nameController.descriptionTitle = NSLocalizedString("Workout Name", comment: "")
         nameController.descriptionMessage = NSLocalizedString("Workout name is short description of your workout.", comment: "")
         nameController.didChangeTextAction = { [unowned self] text in
+            self.needsReloadStepsCollectionView = false
             self.workout = self.workout.workoutBySettingName(text)
             self.nameController.setValid()
         }

@@ -11,43 +11,33 @@ import UIKit
 class ActionableCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var actionsContentView: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.exclusiveTouch = true
+        }
+    }
 
     dynamic var movingInProgressBorderColor: UIColor = UIColor.lightGrayColor()
     
-    // Protected properties (Used by ActionableCollectionView).
-    weak var actionableCollectionView: ActionableCollectionView!
+    // All below methods and properties are protected (Used by ActionableCollectionView).
     var indexPath: NSIndexPath!
-    var actions: [CollectionViewCellAction]?
+    var expandingEnabled: Bool = false
     
-    var expandingEnabled: Bool = false {
+    var actions: [CollectionViewCellAction]? {
         didSet {
-            if !expandingEnabled {
-                selected = false
-                actionableCollectionView.collapseCellAtIndexPath(indexPath)
-            }
+            scrollView.scrollEnabled = actions != nil
         }
     }
     
-    var actionsEnabled: Bool = false {
-        didSet {
-            if actionsVisible {
-                actionsVisible = false
-            }
-            scrollView.scrollEnabled = actionsEnabled
-            
-            if !actionsEnabled {
-                actions = nil
-            }
-        }
-    }
+    private(set) var actionsVisible: Bool = false
     
-    var actionsVisible: Bool = false {
-        didSet {
-            if actionsVisible {
-                actionableCollectionView.willShowActionsForCellAtIndexPath(indexPath)
-                
-                // Shift scroll view frame to expand action items.
+    func setActionsVisible(visible: Bool, animated: Bool, completion: () -> Void) {
+        actionsVisible = visible
+        
+        if actionsVisible {
+            // Shift scroll view frame to expand action items.
+            if animated {
                 UIView.animateWithDuration(1.0,
                     delay: 0.0,
                     usingSpringWithDamping: 0.7,
@@ -56,15 +46,18 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
                     animations: {
                         self.scrollView.frame.origin.x = -self.actionsContentView.frame.size.width
                     }, completion: { _ in
-                        self.actionableCollectionView.didShowActionsForCellAtIndexPath(self.indexPath)
+                        completion()
                 })
-                
             } else {
-                actionableCollectionView.willHideActionsForCellAtIndexPath(indexPath)
-                
-                updateMovingInProgressAppearance(false, movingActionControl: nil)
-                
-                // Shift scroll view frame to collapse action items.
+                scrollView.frame.origin.x = -actionsContentView.frame.size.width
+                completion()
+            }
+            
+        } else {
+            updateMovingInProgressAppearance(false, movingActionControl: nil, animated: animated)
+            
+            // Shift scroll view frame to collapse action items.
+            if animated {
                 UIView.animateWithDuration(0.8,
                     delay: 0.0,
                     usingSpringWithDamping: 1.0,
@@ -73,42 +66,40 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
                     animations: {
                         self.scrollView.frame.origin.x = 0.0
                     }, completion: { _ in
-                        self.actionableCollectionView.didHideActionsForCellAtIndexPath(self.indexPath)
+                        completion()
                 })
+            } else {
+                scrollView.frame.origin.x = 0.0
+                completion()
             }
         }
     }
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        if actionsVisible && CGRectContainsPoint(scrollView.frame, point) {
-            actionsVisible = false
-            return nil
-        } else {
-            return super.hitTest(point, withEvent: event)
-        }
-    }
-    
-    func updateMovingInProgressAppearance(movingInProgress: Bool, movingActionControl: UIControl?) {
+    func updateMovingInProgressAppearance(movingInProgress: Bool, movingActionControl: UIControl?, animated: Bool) {
         if movingInProgress {
             layer.borderWidth = 1.0
             layer.borderColor = movingInProgressBorderColor.CGColor
             let controlFrame = movingActionControl!.convertRect(movingActionControl!.bounds, toView: self)
-            setActionsOverlayOffset(bounds.size.width - controlFrame.origin.x)
+            setActionsOverlayOffset(bounds.size.width - controlFrame.origin.x, animated: animated)
         } else {
             layer.borderWidth = 0.0
             layer.borderColor = UIColor.clearColor().CGColor
-            setActionsOverlayOffset(0.0)
+            setActionsOverlayOffset(0.0, animated: animated)
         }
     }
     
-    private func setActionsOverlayOffset(offset: CGFloat) {
-        UIView.animateWithDuration(0.8,
-            delay: 0.0,
-            usingSpringWithDamping: 1.0,
-            initialSpringVelocity: 1.0,
-            options: [.CurveEaseIn],
-            animations: {
-                self.scrollView.frame.origin.x = -offset
-            }, completion: nil)
+    private func setActionsOverlayOffset(offset: CGFloat, animated: Bool) {
+        if animated {
+            UIView.animateWithDuration(0.8,
+                delay: 0.0,
+                usingSpringWithDamping: 1.0,
+                initialSpringVelocity: 1.0,
+                options: [.CurveEaseIn],
+                animations: {
+                    self.scrollView.frame.origin.x = -offset
+                }, completion: nil)
+        } else {
+            self.scrollView.frame.origin.x = -offset
+        }
     }
 }

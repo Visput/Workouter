@@ -40,4 +40,9 @@ final class WorkoutEditView: BaseScreenView {
         
         return cellSize
     }
+    
+    override func keyboardWillShow(notification: NSNotification, keyboardHeight: CGFloat) {
+        super.keyboardWillShow(notification, keyboardHeight: keyboardHeight)
+        stepsCollectionView.hideCellsActionsAnimated(true)
+    }
 }
