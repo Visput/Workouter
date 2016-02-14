@@ -123,11 +123,11 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
             guard active else { return nil }
-            guard workoutsCollectionView.movingCellCurrentIndexPath == nil else { return nil }
+            guard workoutsCollectionView.movingCellIndexPath == nil else { return nil }
             
             // Check if cell in `editable` state.
             let cell = previewingContext.sourceView as! UserWorkoutCell
-            guard !cell.actionsVisible else { return nil }
+            guard !workoutsCollectionView.actionsVisibleForCell(cell) else { return nil }
             
             let workoutIndex = workoutsCollectionView.indexPathForCell(cell)!.item
             let workout = currentWorkouts[workoutIndex]

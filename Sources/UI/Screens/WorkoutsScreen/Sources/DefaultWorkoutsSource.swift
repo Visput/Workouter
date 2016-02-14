@@ -125,7 +125,7 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectio
             
             // Check if cell in `editable` state.
             let cell = previewingContext.sourceView as! DefaultWorkoutCell
-            guard !cell.actionsVisible else { return nil }
+            guard !workoutsCollectionView.actionsVisibleForCell(cell) else { return nil }
             
             let workoutIndex = workoutsCollectionView.indexPathForCell(cell)!.item
             let workout = currentWorkouts[workoutIndex]

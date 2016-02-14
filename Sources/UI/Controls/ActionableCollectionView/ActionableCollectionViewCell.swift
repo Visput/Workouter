@@ -21,7 +21,6 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
     dynamic var movingInProgressBorderColor: UIColor = UIColor.lightGrayColor()
     
     // All below methods and properties are protected (Used by ActionableCollectionView).
-    var indexPath: NSIndexPath!
     var expandingEnabled: Bool = false
     
     var actions: [CollectionViewCellAction]? {
@@ -30,12 +29,8 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    private(set) var actionsVisible: Bool = false
-    
     func setActionsVisible(visible: Bool, animated: Bool, completion: () -> Void) {
-        actionsVisible = visible
-        
-        if actionsVisible {
+        if visible {
             // Shift scroll view frame to expand action items.
             if animated {
                 UIView.animateWithDuration(1.0,
@@ -54,8 +49,6 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
             }
             
         } else {
-            updateMovingInProgressAppearance(false, movingActionControl: nil, animated: animated)
-            
             // Shift scroll view frame to collapse action items.
             if animated {
                 UIView.animateWithDuration(0.8,
