@@ -23,9 +23,6 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
     private let workoutsProvider: WorkoutsProvider
     private let navigationManager: NavigationManager
     
-    // Used for preventing multiple cells reordering.
-    private var reorderingCellIndex: Int?
-    
     init(viewController: UIViewController,
         workoutsProvider: WorkoutsProvider,
         navigationManager: NavigationManager) {
@@ -60,23 +57,10 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
             }
         }
         
-        let item = UserWorkoutCellItem(workout: currentWorkouts[indexPath.item], actionsEnabled: searchResults == nil)
+        let item = UserWorkoutCellItem(workout: currentWorkouts[indexPath.item])
         cell.fillWithItem(item)
         
-        cell.deleteButton.addTarget(self, action: Selector("deleteButtonDidPress:"), forControlEvents: .TouchUpInside)
-        cell.cloneButton.addTarget(self, action: Selector("cloneButtonDidPress:"), forControlEvents: .TouchUpInside)
-        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderButtonDidPress:")
-        gestureRecognizer.minimumPressDuration = 0.1
-        cell.reorderGestureRecognizer = gestureRecognizer
-        
         return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
-        toIndexPath destinationIndexPath: NSIndexPath) {
-
-            workoutsProvider.moveUserWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
     }
     
     func collectionView(collectionView: ActionableCollectionView,
@@ -90,11 +74,57 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
             active = false
     }
     
+    func collectionView(collectionView: ActionableCollectionView,
+        canShowActionsForCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return searchResults == nil
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        actionsForCell cell: ActionableCollectionViewCell,
+        atIndexPath indexPath: NSIndexPath) -> [CollectionViewCellAction] {
+            
+            let currentCell = cell as! UserWorkoutCell
+            var actions = [CollectionViewCellAction]()
+            actions.append(CollectionViewCellAction(type: .Delete, control: currentCell.deleteButton))
+            actions.append(CollectionViewCellAction(type: .Clone, control: currentCell.cloneButton))
+            actions.append(CollectionViewCellAction(type: .Move, control: currentCell.moveButton))
+            
+            return actions
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectDeleteAction deleteAction: CollectionViewCellAction,
+        forCellAtIndexPath deletedIndexPath: NSIndexPath) {
+            
+            workoutsProvider.removeUserWorkoutAtIndex(deletedIndexPath.item)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectCloneAction cloneAction: CollectionViewCellAction,
+        forCellAtIndexPath sourceIndexPath: NSIndexPath,
+        cloneIndexPath: NSIndexPath) {
+            
+            let cell = collectionView.cellForItemAtIndexPath(sourceIndexPath) as! UserWorkoutCell
+            let workoutNameSufix = NSLocalizedString(" Copy", comment: "")
+            let workout = cell.item!.workout
+            let clonedWorkout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
+            workoutsProvider.insertUserWorkout(clonedWorkout, atIndex: cloneIndexPath.item)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectMoveAction moveAction: CollectionViewCellAction,
+        forCellAtIndexPath sourceIndexPath: NSIndexPath,
+        destinationIndexPath: NSIndexPath) {
+            
+            workoutsProvider.moveUserWorkoutFromIndex(sourceIndexPath.item, toIndex: destinationIndexPath.item)
+    }
+    
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
             
             guard active else { return nil }
-            guard reorderingCellIndex == nil else { return nil }
+            guard workoutsCollectionView.movingCellCurrentIndexPath == nil else { return nil }
             
             // Check if cell in `editable` state.
             let cell = previewingContext.sourceView as! UserWorkoutCell
@@ -111,78 +141,5 @@ final class UserWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectionVi
         commitViewController viewControllerToCommit: UIViewController) {
             
             navigationManager.pushScreen(viewControllerToCommit, animated: true)
-    }
-}
-
-extension UserWorkoutsSource {
-    
-    @objc private func deleteButtonDidPress(sender: UIButton) {
-        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
-        let cell = workoutsCollectionView.cellForItemAtIndexPath(indexPath) as! UserWorkoutCell
-        cell.actionsVisible = false
-        
-        workoutsCollectionView.performBatchUpdates({
-            self.workoutsProvider.removeUserWorkoutAtIndex(indexPath.item)
-            self.workoutsCollectionView.deleteItemsAtIndexPaths([indexPath])
-            
-            }, completion: { _ in
-                // Reload data to prevent strange crashes (UICollectionView issue).
-                self.workoutsCollectionView.reloadData()
-        })
-    }
-    
-    @objc private func cloneButtonDidPress(sender: UIButton) {
-        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
-        let cell = workoutsCollectionView.cellForItemAtIndexPath(indexPath) as! UserWorkoutCell
-        cell.actionsVisible = false
-        
-        let newIndexPath = NSIndexPath(forItem: indexPath.item + 1, inSection: indexPath.section)
-        let workoutNameSufix = NSLocalizedString(" Copy", comment: "")
-        let workout = cell.item!.workout
-        let clonedWorkout = workout.workoutBySettingName(workout.name + workoutNameSufix).clone()
-        
-        workoutsCollectionView.performBatchUpdates({
-            self.workoutsProvider.insertUserWorkout(clonedWorkout, atIndex: newIndexPath.item)
-            self.workoutsCollectionView.insertItemsAtIndexPaths([newIndexPath])
-            
-            }, completion: { _ in
-                // Scroll to show cell with cloned workout.
-                self.workoutsCollectionView.scrollToCellAtIndexPath(newIndexPath, animated: true)
-        })
-    }
-    
-    @objc private func reorderButtonDidPress(gesture: UILongPressGestureRecognizer) {
-        let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
-        guard let cell = workoutsCollectionView.cellForItemAtIndexPath(indexPath) as? UserWorkoutCell else { return }
-        
-        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.item {
-            var targetLocation = workoutsCollectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
-            targetLocation.x = workoutsCollectionView.bounds.size.width / 2.0
-            
-            switch gesture.state {
-                
-            case .Began:
-                workoutsCollectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
-                workoutsCollectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                cell.applyReorderingInProgressAppearance()
-                reorderingCellIndex = indexPath.item
-                
-            case .Changed:
-                workoutsCollectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                workoutsCollectionView.updateIndexPathsForVisibleCells()
-                // Update cell index after movement.
-                reorderingCellIndex = gesture.view!.tag
-                
-            case .Ended:
-                workoutsCollectionView.endInteractiveMovement()
-                reorderingCellIndex = nil
-                
-            default:
-                workoutsCollectionView.cancelInteractiveMovement()
-                reorderingCellIndex = nil
-            }
-        } else {
-            cell.actionsVisible = false
-        }
     }
 }

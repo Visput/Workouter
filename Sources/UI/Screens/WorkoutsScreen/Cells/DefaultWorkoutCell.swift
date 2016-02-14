@@ -18,26 +18,10 @@ final class DefaultWorkoutCell: ActionableCollectionViewCell {
     
     @IBOutlet private(set) weak var favoriteButton: UIButton!
     
-    override var indexPath: NSIndexPath! {
-        didSet {
-            favoriteButton.tag = indexPath.item
-        }
-    }
-    
     private(set) var item: DefaultWorkoutCellItem?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Prevent multiple cells interaction.
-        favoriteButton.exclusiveTouch = true
-        scrollView.exclusiveTouch = true
-    }
     
     func fillWithItem(item: DefaultWorkoutCellItem) {
         self.item = item
-        
-        expandingEnabled = false
-        actionsEnabled = true
         
         nameLabel.text = item.workout.name
         descriptionLabel.text = item.workout.muscleGroupsDescription

@@ -1,6 +1,7 @@
 line_length: 150
 function_body_length: 70
 function_parameter_count: 11
+file_length: 600
 
 disabled_rules:
 - trailing_whitespace

@@ -664,8 +664,8 @@
                                             <outlet property="deleteButton" destination="ZqD-J9-Q8Z" id="gDE-2K-svK"/>
                                             <outlet property="descriptionLabel" destination="vkC-cQ-nkF" id="9h4-eV-7BY"/>
                                             <outlet property="indexLabel" destination="eWM-Dw-xt5" id="Pzv-YH-3Tq"/>
+                                            <outlet property="moveButton" destination="NGO-SO-87x" id="IT0-sK-gvN"/>
                                             <outlet property="nameLabel" destination="ddt-Fg-cDr" id="Tvo-LF-asy"/>
-                                            <outlet property="reorderButton" destination="NGO-SO-87x" id="IT0-sK-gvN"/>
                                             <outlet property="scrollView" destination="zrY-m0-QbI" id="txO-dl-mMn"/>
                                         </connections>
                                     </collectionViewCell>

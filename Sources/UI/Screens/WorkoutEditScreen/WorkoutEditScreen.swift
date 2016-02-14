@@ -24,9 +24,7 @@ final class WorkoutEditScreen: BaseScreen {
     
     private var nameController: TextViewController!
     private var stepsPlaceholderController: PlaceholderController!
-    
-    /// Used for preventing multiple cells reordering.
-    private var reorderingCellIndex: Int?
+
     private var needsReloadStepsCollectionView = true
     
     private var navigationManager: NavigationManager {
@@ -78,21 +76,7 @@ extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewD
             )
             cell.fillWithItem(item)
             
-            cell.deleteButton.addTarget(self, action: Selector("deleteStepButtonDidPress:"), forControlEvents: .TouchUpInside)
-            cell.cloneButton.addTarget(self, action: Selector("cloneStepButtonDidPress:"), forControlEvents: .TouchUpInside)
-            let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "reorderStepButtonDidPress:")
-            gestureRecognizer.minimumPressDuration = 0.1
-            cell.reorderGestureRecognizer = gestureRecognizer
-            
             return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
-        toIndexPath destinationIndexPath: NSIndexPath) {
-            
-            needsReloadStepsCollectionView = false
-            workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -100,6 +84,60 @@ extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewD
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
             return workoutEditView.stepCellSizeAtIndexPath(indexPath)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        canExpandCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return true
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        canShowActionsForCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return true
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        actionsForCell cell: ActionableCollectionViewCell,
+        atIndexPath indexPath: NSIndexPath) -> [CollectionViewCellAction] {
+            
+            let currentCell = cell as! StepEditCell
+            var actions = [CollectionViewCellAction]()
+            actions.append(CollectionViewCellAction(type: .Delete, control: currentCell.deleteButton))
+            actions.append(CollectionViewCellAction(type: .Clone, control: currentCell.cloneButton))
+            actions.append(CollectionViewCellAction(type: .Move, control: currentCell.moveButton))
+            
+            return actions
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectDeleteAction deleteAction: CollectionViewCellAction,
+        forCellAtIndexPath deletedIndexPath: NSIndexPath) {
+            
+            needsReloadStepsCollectionView = false
+            workout = workout.workoutByRemovingStepAtIndex(deletedIndexPath.row)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectCloneAction cloneAction: CollectionViewCellAction,
+        forCellAtIndexPath sourceIndexPath: NSIndexPath,
+        cloneIndexPath: NSIndexPath) {
+    
+            let cell = collectionView.cellForItemAtIndexPath(sourceIndexPath) as! StepEditCell
+            let step = cell.item!.step
+            let clonedStep = step.clone()
+            needsReloadStepsCollectionView = false
+            workout = workout.workoutByAddingStep(clonedStep, atIndex: cloneIndexPath.item)
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectMoveAction moveAction: CollectionViewCellAction,
+        forCellAtIndexPath sourceIndexPath: NSIndexPath,
+        destinationIndexPath: NSIndexPath) {
+     
+            needsReloadStepsCollectionView = false
+            workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
 }
 
@@ -139,84 +177,6 @@ extension WorkoutEditScreen {
     @objc private func cancelButtonDidPress(sender: AnyObject) {
         workoutEditView.endEditing(true)
         workoutDidCancelAction?()
-    }
-    
-    @objc private func deleteStepButtonDidPress(sender: UIButton) {
-        let collectionView = workoutEditView.stepsCollectionView
-        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! StepEditCell
-        cell.actionsVisible = false
-        
-        collectionView.performBatchUpdates({
-            self.needsReloadStepsCollectionView = false
-            self.workout = self.workout.workoutByRemovingStepAtIndex(indexPath.row)
-            collectionView.deleteItemsAtIndexPaths([indexPath])
-            
-            }, completion: { _ in
-                // Reload data instead of updating buttons tags to prevent strange crashes (UICollectionView issue).
-                collectionView.reloadData()
-        })
-    }
-    
-    @objc private func cloneStepButtonDidPress(sender: UIButton) {
-        let collectionView = workoutEditView.stepsCollectionView
-        let indexPath = NSIndexPath(forItem: sender.tag, inSection: 0)
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! StepEditCell
-        cell.actionsVisible = false
-        
-        let newIndexPath = NSIndexPath(forItem: indexPath.item + 1, inSection: indexPath.section)
-        let step = cell.item!.step
-        let clonedStep = step.clone()
-        
-        collectionView.performBatchUpdates({
-            self.needsReloadStepsCollectionView = false
-            self.workout = self.workout.workoutByAddingStep(clonedStep, atIndex: newIndexPath.item)
-            collectionView.insertItemsAtIndexPaths([newIndexPath])
-            
-            }, completion: { _ in
-                // Scroll to show cell with cloned workout.
-                collectionView.scrollToCellAtIndexPath(newIndexPath, animated: true)
-                self.updateVisibleCells()
-        })
-    }
-    
-    @objc private func reorderStepButtonDidPress(gesture: UILongPressGestureRecognizer) {
-        let collectionView = workoutEditView.stepsCollectionView
-        let indexPath = NSIndexPath(forItem: gesture.view!.tag, inSection: 0)
-        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? StepEditCell else { return }
-    
-        if reorderingCellIndex == nil || reorderingCellIndex! == indexPath.item {
-            var targetLocation = collectionView.convertPoint(gesture.locationInView(cell.reorderButton), fromView: cell.reorderButton)
-            targetLocation.x = collectionView.bounds.size.width / 2.0
-            
-            switch gesture.state {
-                
-            case .Began:
-                workoutEditView.stepsCollectionView.collapseExpandedCell()
-                collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
-                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                cell.applyReorderingInProgressAppearance()
-                reorderingCellIndex = indexPath.item
-                
-            case .Changed:
-                collectionView.updateInteractiveMovementTargetPosition(targetLocation)
-                collectionView.updateIndexPathsForVisibleCells()
-                // Update cell index after movement.
-                reorderingCellIndex = gesture.view!.tag
-                
-            case .Ended:
-                collectionView.endInteractiveMovement()
-                updateVisibleCells()
-                reorderingCellIndex = nil
-                
-            default:
-                collectionView.cancelInteractiveMovement()
-                updateVisibleCells()
-                reorderingCellIndex = nil
-            }
-        } else {
-            cell.actionsVisible = false
-        }
     }
 }
 

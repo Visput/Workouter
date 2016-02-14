@@ -62,6 +62,12 @@ extension WorkoutDetailsScreen: ActionableCollectionViewDelegate, UICollectionVi
             return cell
     }
     
+    func collectionView(collectionView: ActionableCollectionView,
+        canExpandCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return true
+    }
+    
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

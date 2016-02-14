@@ -62,8 +62,6 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectio
         let item = DefaultWorkoutCellItem(workout: workout, clonedWorkout: clonedWorkout)
         cell.fillWithItem(item)
         
-        cell.favoriteButton.addTarget(self, action: Selector("favoriteButtonDidPress:"), forControlEvents: .TouchUpInside)
-        
         return cell
     }
     
@@ -77,6 +75,48 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectio
             }
             active = false
     }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        canShowActionsForCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return true
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        actionsForCell cell: ActionableCollectionViewCell,
+        atIndexPath indexPath: NSIndexPath) -> [CollectionViewCellAction] {
+            
+            let currentCell = cell as! DefaultWorkoutCell
+            var actions = [CollectionViewCellAction]()
+            actions.append(CollectionViewCellAction(type: .Custom, control: currentCell.favoriteButton))
+            
+            return actions
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didSelectCustomAction customAction: CollectionViewCellAction,
+        forCellAtIndexPath indexPath: NSIndexPath) {
+            
+            customAction.control.selected = !customAction.control.selected
+            
+            let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DefaultWorkoutCell
+            
+            var clonedWorkout: Workout? = nil
+            
+            if customAction.control.selected {
+                // Add workout to `My Workouts`.
+                clonedWorkout = cell.item!.workout.clone()
+                workoutsProvider.addUserWorkout(clonedWorkout!)
+            } else {
+                // Remove workout from `My Workouts`.
+                workoutsProvider.removeUserWorkout(cell.item!.clonedWorkout!)
+                clonedWorkout = nil
+            }
+            
+            let updatedItem = DefaultWorkoutCellItem(workout: cell.item!.workout, clonedWorkout: clonedWorkout)
+            cell.fillWithItem(updatedItem)
+    }
+
     
     func previewingContext(previewingContext: UIViewControllerPreviewing,
         viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -98,31 +138,5 @@ final class DefaultWorkoutsSource: NSObject, WorkoutsSource, ActionableCollectio
         commitViewController viewControllerToCommit: UIViewController) {
             
             navigationManager.pushScreen(viewControllerToCommit, animated: true)
-    }
-}
-
-extension DefaultWorkoutsSource {
-    
-    @objc private func favoriteButtonDidPress(sender: UIButton) {
-        sender.selected = !sender.selected
-        
-        let cell = workoutsCollectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! DefaultWorkoutCell
-        cell.actionsVisible = false
-        
-        let item = cell.item!
-        var clonedWorkout: Workout? = nil
-        
-        if sender.selected {
-            // Add workout to `My Workouts`.
-            clonedWorkout = item.workout.clone()
-            workoutsProvider.addUserWorkout(clonedWorkout!)
-        } else {
-            // Remove workout from `My Workouts`.
-            workoutsProvider.removeUserWorkout(item.clonedWorkout!)
-            clonedWorkout = nil
-        }
-        
-        let updatedItem = DefaultWorkoutCellItem(workout: item.workout, clonedWorkout: clonedWorkout)
-        cell.fillWithItem(updatedItem)
     }
 }

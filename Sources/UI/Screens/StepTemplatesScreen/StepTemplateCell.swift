@@ -14,9 +14,6 @@ final class StepTemplateCell: ActionableCollectionViewCell {
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
     
     func fillWithItem(item: StepTemplateCellItem) {
-        expandingEnabled = true
-        actionsEnabled = false
-        
         nameLabel.text = item.step.name
         descriptionLabel.text = item.step.muscleGroupsDescription
     }

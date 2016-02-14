@@ -67,5 +67,7 @@ final class AppAppearance {
         TintButton.appearance().secondaryColor = UIColor.whiteColor()
         TintButton.appearance().invalidStateColor = UIColor.invalidStateColor()
         TintButton.appearance().invalidStateLightColor = UIColor.superLightInvalidStateColor()
+        
+        ActionableCollectionViewCell.appearance().movingInProgressBorderColor = UIColor.secondaryTextColor()
     }
 }

@@ -10,8 +10,5 @@ import UIKit
 
 final class NewStepTemplateCell: ActionableCollectionViewCell {
     
-    func fillWithItem(item: NewStepTemplateCellItem) {
-        expandingEnabled = true
-        actionsEnabled = false
-    }
+    func fillWithItem(item: NewStepTemplateCellItem) {}
 }

@@ -70,6 +70,12 @@ extension StepTemplatesScreen: ActionableCollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(collectionView: ActionableCollectionView,
+        canExpandCellAtIndexPath indexPath: NSIndexPath) -> Bool {
+            
+            return true
+    }
+    
+    func collectionView(collectionView: ActionableCollectionView,
         willExpandCellAtIndexPath indexPath: NSIndexPath) {
             
             templatesView.searchBar.setShowsCancelButton(false, animated: true)

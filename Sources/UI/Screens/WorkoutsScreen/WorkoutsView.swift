@@ -24,6 +24,10 @@ final class WorkoutsView: BaseScreenView {
     override func willAppear(animated: Bool) {
         super.willAppear(animated)
         workoutsCollectionView.deselectSelectedItemsAnimated(true)
+        
+        // Reset bottom space. Required for specific case:
+        // Activate search -> 3D touch on workout cell -> navigate to workout details screen -> navigate to back.
+        bottomSpace!.constant = 0.0
     }
     
     override func layoutSubviews() {

@@ -11,10 +11,8 @@ import Foundation
 struct UserWorkoutCellItem {
     
     let workout: Workout
-    let actionsEnabled: Bool
     
-    init(workout: Workout, actionsEnabled: Bool) {
+    init(workout: Workout) {
         self.workout = workout
-        self.actionsEnabled = actionsEnabled
     }
 }

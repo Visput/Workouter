@@ -307,8 +307,8 @@
                                             <outlet property="deleteButton" destination="W5G-lI-NrV" id="nk2-GN-2OZ"/>
                                             <outlet property="descriptionLabel" destination="Bmp-Wn-DCP" id="LPK-F6-UoU"/>
                                             <outlet property="durationLabel" destination="7OA-3B-odE" id="2j8-KK-J7Y"/>
+                                            <outlet property="moveButton" destination="aOB-7d-ccz" id="Ug2-Wr-YsH"/>
                                             <outlet property="nameLabel" destination="8GA-Gd-aY4" id="fHk-0Y-mQw"/>
-                                            <outlet property="reorderButton" destination="aOB-7d-ccz" id="Ug2-Wr-YsH"/>
                                             <outlet property="scrollView" destination="7Yv-29-1q6" id="nUT-FJ-Gpt"/>
                                             <outlet property="stepsCountLabel" destination="opF-jN-sMs" id="6Dw-kq-P0c"/>
                                         </connections>

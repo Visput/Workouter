@@ -10,20 +10,17 @@ import UIKit
 
 class ActionableCollectionViewCell: BaseCollectionViewCell {
     
+    @IBOutlet weak var actionsContentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    dynamic var movingInProgressBorderColor: UIColor = UIColor.lightGrayColor()
+    
+    // Protected properties (Used by ActionableCollectionView).
     weak var actionableCollectionView: ActionableCollectionView!
     var indexPath: NSIndexPath!
+    var actions: [CollectionViewCellAction]?
     
-    @IBOutlet weak var actionsContentView: UIView!
-    
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet {
-            scrollView.delegate = self
-        }
-    }
-    
-    var contentOffsetToMakeActionsVisible: CGFloat = 50.0
-    
-    var expandingEnabled: Bool = true {
+    var expandingEnabled: Bool = false {
         didSet {
             if !expandingEnabled {
                 selected = false
@@ -32,12 +29,16 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    var actionsEnabled: Bool = true {
+    var actionsEnabled: Bool = false {
         didSet {
             if actionsVisible {
                 actionsVisible = false
             }
             scrollView.scrollEnabled = actionsEnabled
+            
+            if !actionsEnabled {
+                actions = nil
+            }
         }
     }
     
@@ -61,6 +62,8 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
             } else {
                 actionableCollectionView.willHideActionsForCellAtIndexPath(indexPath)
                 
+                updateMovingInProgressAppearance(false, movingActionControl: nil)
+                
                 // Shift scroll view frame to collapse action items.
                 UIView.animateWithDuration(0.8,
                     delay: 0.0,
@@ -76,12 +79,6 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("cellDidTap:"))
-        addGestureRecognizer(tapRecognizer)
-    }
-    
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         if actionsVisible && CGRectContainsPoint(scrollView.frame, point) {
             actionsVisible = false
@@ -91,7 +88,20 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    func setActionsOverlayOffset(offset: CGFloat) {
+    func updateMovingInProgressAppearance(movingInProgress: Bool, movingActionControl: UIControl?) {
+        if movingInProgress {
+            layer.borderWidth = 1.0
+            layer.borderColor = movingInProgressBorderColor.CGColor
+            let controlFrame = movingActionControl!.convertRect(movingActionControl!.bounds, toView: self)
+            setActionsOverlayOffset(bounds.size.width - controlFrame.origin.x)
+        } else {
+            layer.borderWidth = 0.0
+            layer.borderColor = UIColor.clearColor().CGColor
+            setActionsOverlayOffset(0.0)
+        }
+    }
+    
+    private func setActionsOverlayOffset(offset: CGFloat) {
         UIView.animateWithDuration(0.8,
             delay: 0.0,
             usingSpringWithDamping: 1.0,
@@ -100,39 +110,5 @@ class ActionableCollectionViewCell: BaseCollectionViewCell {
             animations: {
                 self.scrollView.frame.origin.x = -offset
             }, completion: nil)
-    }
-    
-    @objc private func cellDidTap(gesture: UITapGestureRecognizer) {
-        if expandingEnabled {
-            selected = false
-            actionableCollectionView.switchExpandingStateForCellAtIndexPath(indexPath)
-            
-        } else {
-            selected = true
-            actionableCollectionView.didSelectCellAtIndexPath(indexPath)
-        }
-    }
-}
-
-extension ActionableCollectionViewCell: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        // Allow scrolling only in left direction.
-        if scrollView.contentOffset.x > 0 {
-            scrollView.contentOffset.y = 0
-        } else {
-            scrollView.contentOffset.x = 0
-            scrollView.contentOffset.y = 0
-        }
-    }
-    
-    func scrollViewWillEndDragging(scrollView: UIScrollView,
-        withVelocity velocity: CGPoint,
-        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-            
-            if scrollView.contentOffset.x >= contentOffsetToMakeActionsVisible {
-                actionsVisible = true
-            }
     }
 }
