@@ -55,6 +55,10 @@ import UIKit
         forCellAtIndexPath indexPath: NSIndexPath)
     
     optional func collectionView(collectionView: ActionableCollectionView,
+        didCompleteAction action: CollectionViewCellAction,
+        forCellAtIndexPath indexPath: NSIndexPath)
+    
+    optional func collectionView(collectionView: ActionableCollectionView,
         willShowActionsForCellAtIndexPath indexPath: NSIndexPath)
     
     optional func collectionView(collectionView: ActionableCollectionView,

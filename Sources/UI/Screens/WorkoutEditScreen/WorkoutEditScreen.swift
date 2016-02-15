@@ -138,6 +138,20 @@ extension WorkoutEditScreen: ActionableCollectionViewDelegate, UICollectionViewD
             needsReloadStepsCollectionView = false
             workout = workout.workoutByMovingStepFromIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
+    
+    func collectionView(collectionView: ActionableCollectionView,
+        didCompleteAction action: CollectionViewCellAction,
+        forCellAtIndexPath indexPath: NSIndexPath) {
+            
+            // Update visible cells.
+            for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
+                let indexPath = workoutEditView.stepsCollectionView.indexPathForCell(cell)!
+                let item = StepEditCellItem(step: workout.steps[indexPath.item],
+                    index: indexPath.item + 1
+                )
+                cell.fillWithItem(item)
+            }
+    }
 }
 
 extension WorkoutEditScreen {
@@ -229,15 +243,5 @@ extension WorkoutEditScreen {
         }
     
         return nameController.valid
-    }
-    
-    private func updateVisibleCells() {
-        for cell in workoutEditView.stepsCollectionView.visibleCells() as! [StepEditCell] {
-            let indexPath = workoutEditView.stepsCollectionView.indexPathForCell(cell)!
-            let item = StepEditCellItem(step: workout.steps[indexPath.item],
-                index: indexPath.item + 1
-            )
-            cell.fillWithItem(item)
-        }
     }
 }
