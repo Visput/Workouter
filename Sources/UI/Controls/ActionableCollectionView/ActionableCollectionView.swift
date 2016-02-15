@@ -16,6 +16,9 @@ final class ActionableCollectionView: UICollectionView {
     private(set) var movingCellDestinationIndexPath: NSIndexPath?
     private(set) var movingCellSourceIndexPath: NSIndexPath?
     
+    /// Vertical swipe recognizer. Used for collapsing expanded cell.
+    private var swipeRecognizer: UISwipeGestureRecognizer!
+    
     /// Cell with currently shown actions.
     private var didShowActionsCell: ActionableCollectionViewCell?
     
@@ -32,15 +35,20 @@ final class ActionableCollectionView: UICollectionView {
         springFlowLayout = CollectionSpringFlowLayout()
         super.init(coder: aDecoder)
         collectionViewLayout = springFlowLayout
-        
-        // Disable selection because custom selection mechanism is used.
-        allowsSelection = false
+        initialize()
     }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         springFlowLayout = CollectionSpringFlowLayout()
         super.init(frame: frame, collectionViewLayout: springFlowLayout)
-        
+        initialize()
+    }
+    
+    private func initialize() {
+        swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("collectionViewDidSwipe:"))
+        swipeRecognizer.direction = [.Up, .Down]
+        swipeRecognizer.enabled = false
+        addGestureRecognizer(swipeRecognizer)
         // Disable selection because custom selection mechanism is used.
         allowsSelection = false
     }
@@ -153,6 +161,9 @@ extension ActionableCollectionView {
             actionableDelegate?.collectionView?(self, willCollapseCellAtIndexPath: indexPath)
             expandedCellIndexPath = nil
             
+            scrollEnabled = true
+            swipeRecognizer.enabled = false
+            
         } else {
             if expandedCellIndexPath != nil {
                 actionableDelegate?.collectionView?(self, willCollapseCellAtIndexPath: expandedCellIndexPath!)
@@ -160,6 +171,8 @@ extension ActionableCollectionView {
             actionableDelegate?.collectionView?(self, willExpandCellAtIndexPath: indexPath)
             expandedCellIndexPath = indexPath
             
+            scrollEnabled = false
+            swipeRecognizer.enabled = true
         }
         
         performBatchUpdates(nil, completion: { _ in
@@ -396,6 +409,10 @@ extension ActionableCollectionView {
             cell.selected = true
             actionableDelegate?.collectionView?(self, didSelectCellAtIndexPath: indexPath)
         }
+    }
+    
+    @objc private func collectionViewDidSwipe(swipeRecognizer: UISwipeGestureRecognizer) {
+        collapseExpandedCell()
     }
 }
 
