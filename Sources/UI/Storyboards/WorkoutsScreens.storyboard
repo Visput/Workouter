@@ -1374,10 +1374,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-S3-9Ak">
-                                <rect key="frame" x="32" y="161" width="311" height="181.5"/>
+                                <rect key="frame" x="32" y="139" width="311" height="225.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_step" translatesAutoresizingMaskIntoConstraints="NO" id="dum-wK-mov">
-                                        <rect key="frame" x="85.5" y="0.0" width="140" height="92"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_workout" translatesAutoresizingMaskIntoConstraints="NO" id="dum-wK-mov">
+                                        <rect key="frame" x="107" y="0.0" width="97" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="KRF-9K-Tfi"/>
                                             <constraint firstAttribute="height" constant="140" id="ZgW-50-UZE"/>
@@ -1390,7 +1390,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your workouts will be shown here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YK-A9-Z2b">
-                                        <rect key="frame" x="12" y="124" width="287.5" height="57.5"/>
+                                        <rect key="frame" x="12" y="168" width="287.5" height="57.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="W2y-4y-GyT"/>
                                         </constraints>
@@ -1467,10 +1467,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="08Z-M5-fUJ">
-                                <rect key="frame" x="32" y="175" width="311" height="153"/>
+                                <rect key="frame" x="32" y="139" width="311" height="225.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_new_step" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-eK-p65">
-                                        <rect key="frame" x="85.5" y="0.0" width="140" height="92"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_search_workout" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-eK-p65">
+                                        <rect key="frame" x="100.5" y="0.0" width="110" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="lNm-pM-y9d"/>
                                             <constraint firstAttribute="height" constant="140" id="mhy-eJ-Dn0"/>
@@ -1482,11 +1482,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found for &quot;%@&quot;." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-Ce-M9v">
-                                        <rect key="frame" x="27.5" y="124" width="256.5" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-Ce-M9v">
+                                        <rect key="frame" x="57" y="168" width="196" height="57.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="WU7-uj-eya"/>
                                         </constraints>
+                                        <string key="text">No results found for
+"%@".</string>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                         <color key="textColor" red="0.69411766529999996" green="0.74901962280000001" blue="0.76862746479999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1559,6 +1561,7 @@
         <image name="icon_star_filled_green" width="32" height="32"/>
         <image name="icon_star_filled_small_green" width="20" height="20"/>
         <image name="icon_star_green" width="32" height="32"/>
-        <image name="placeholder_new_step" width="140" height="92"/>
+        <image name="placeholder_new_workout" width="97" height="136"/>
+        <image name="placeholder_search_workout" width="110" height="136"/>
     </resources>
 </document>
