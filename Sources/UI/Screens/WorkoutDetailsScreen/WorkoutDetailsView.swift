@@ -37,7 +37,7 @@ final class WorkoutDetailsView: BaseScreenView {
                 stepsCollectionView.springFlowLayout.sectionInset.top -
                 stepsCollectionView.springFlowLayout.sectionInset.bottom
         } else {
-            cellSize.height = 80.0
+            cellSize.height = 115.0
         }
         
         return cellSize
