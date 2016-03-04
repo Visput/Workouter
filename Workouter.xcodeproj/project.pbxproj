@@ -1441,10 +1441,10 @@
 						TestTargetID = F01375AC1A4CA18E00C683A8;
 					};
 					F02CAB4F1B4B871E00F28D72 = {
-						DevelopmentTeam = YVSH49GYZ4;
+						DevelopmentTeam = WP3CPF8Q52;
 					};
 					F09702BD1ACA48E700498DEE = {
-						DevelopmentTeam = YVSH49GYZ4;
+						DevelopmentTeam = WP3CPF8Q52;
 					};
 				};
 			};
@@ -2186,7 +2186,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.prod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2208,7 +2208,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.prod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2230,7 +2230,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.test;
 				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2252,7 +2252,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visput.workouter.test;
 				PRODUCT_NAME = WorkouterQA;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
