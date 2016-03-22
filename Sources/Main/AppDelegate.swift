@@ -24,7 +24,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Initiate third-party frameworks.
             AnalyticsTracker.startSession()
-            Fabric.with([Crashlytics(), Twitter()])
+            Fabric.with([Crashlytics(), Twitter(), Answers()])
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
             
             // Initiate model.
