@@ -183,12 +183,12 @@ extension WorkoutsScreen {
         case .UserWorkouts:
             navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
                 target: self,
-                action: Selector("newWorkoutButtonDidPress:"))
+                action: #selector(WorkoutsScreen.newWorkoutButtonDidPress(_:)))
             
         case .DefaultWorkouts:
             navigationItem.rightBarButtonItem = UIBarButtonItem.greenSearchItemWithAlignment(.Right,
                 target: self,
-                action: Selector("searchWorkoutsButtonDidPress:"))
+                action: #selector(WorkoutsScreen.searchWorkoutsButtonDidPress(_:)))
         }
     }
     

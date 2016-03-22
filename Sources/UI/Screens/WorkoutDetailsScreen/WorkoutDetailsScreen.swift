@@ -122,7 +122,7 @@ extension WorkoutDetailsScreen {
         super.configureBarButtonItems()
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenEditItemWithAlignment(.Right,
             target: self,
-            action: Selector("editWorkoutButtonDidPress:"))
+            action: #selector(WorkoutDetailsScreen.editWorkoutButtonDidPress(_:)))
     }
     
     private func fillViewWithWorkout(workout: Workout) {

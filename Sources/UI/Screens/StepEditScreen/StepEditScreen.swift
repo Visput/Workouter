@@ -66,17 +66,17 @@ extension StepEditScreen {
             // Show red back button item instead of green button.
             navigationItem.leftBarButtonItem = UIBarButtonItem.greenBackItemWithAlignment(.Left,
                 target: self,
-                action: Selector("backButtonDidPress:"))
+                action: #selector(StepEditScreen.backButtonDidPress(_:)))
             
         } else {
             navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
                 target: self,
-                action: Selector("cancelButtonDidPress:"))
+                action: #selector(StepEditScreen.cancelButtonDidPress(_:)))
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenDoneItemWithAlignment(.Right,
             target: self,
-            action: Selector("doneButtonDidPress:"))
+            action: #selector(StepEditScreen.doneButtonDidPress(_:)))
     }
     
     private func fillViewWithStep(step: Step) {

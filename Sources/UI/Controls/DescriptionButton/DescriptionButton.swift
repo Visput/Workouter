@@ -22,7 +22,7 @@ final class DescriptionButton: TintButton {
     private lazy var defaultAnimationImages: [UIImage] = {
         let numberOfPieces = 9
         var images = [UIImage]()
-        for var i = 1; i <= numberOfPieces; i++ {
+        for i in 1 ... numberOfPieces {
             images.append(UIImage(named: "icon_info_to_attention_small\(i)")!)
         }
         return images

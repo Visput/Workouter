@@ -54,7 +54,7 @@ extension BaseScreen {
         if backButtonShown() {
             navigationItem.leftBarButtonItem = UIBarButtonItem.greenBackItemWithAlignment(.Left,
                 target: self,
-                action: Selector("backButtonDidPress:"))
+                action: #selector(BaseScreen.backButtonDidPress(_:)))
         }
     }
 }

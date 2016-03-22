@@ -19,7 +19,7 @@ extension MagicBoxSettingsScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("cancelButtonDidPress:"))
+            action: #selector(MagicBoxSettingsScreen.cancelButtonDidPress(_:)))
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {

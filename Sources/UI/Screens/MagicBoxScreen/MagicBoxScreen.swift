@@ -67,6 +67,6 @@ extension MagicBoxScreen {
         super.configureBarButtonItems()
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenGameSettingsItemWithAlignment(.Right,
             target: self,
-            action: Selector("settingsButtonDidPress:"))
+            action: #selector(MagicBoxScreen.settingsButtonDidPress(_:)))
     }
 }

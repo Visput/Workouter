@@ -104,10 +104,22 @@ extension BaseViewController {
     
     private func registerForKeyboardNotifications() {
         let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardNotificationDidReceive:", name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardNotificationDidReceive:", name: UIKeyboardDidShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardNotificationDidReceive:", name: UIKeyboardWillHideNotification, object: nil)
-        center.addObserver(self, selector: "keyboardNotificationDidReceive:", name: UIKeyboardDidHideNotification, object: nil)
+        center.addObserver(self,
+                           selector: #selector(BaseViewController.keyboardNotificationDidReceive(_:)),
+                           name: UIKeyboardWillShowNotification,
+                           object: nil)
+        center.addObserver(self,
+                           selector: #selector(BaseViewController.keyboardNotificationDidReceive(_:)),
+                           name: UIKeyboardDidShowNotification,
+                           object: nil)
+        center.addObserver(self,
+                           selector: #selector(BaseViewController.keyboardNotificationDidReceive(_:)),
+                           name: UIKeyboardWillHideNotification,
+                           object: nil)
+        center.addObserver(self,
+                           selector: #selector(BaseViewController.keyboardNotificationDidReceive(_:)),
+                           name: UIKeyboardDidHideNotification,
+                           object: nil)
     }
     
     private func unregisterFromKeyboardNotifications() {

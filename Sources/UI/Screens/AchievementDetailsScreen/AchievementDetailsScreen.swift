@@ -35,11 +35,11 @@ extension AchievementDetailsScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("cancelButtonDidPress:"))
+            action: #selector(AchievementDetailsScreen.cancelButtonDidPress(_:)))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenShareItemWithAlignment(.Right,
             target: self,
-            action: Selector("shareButtonDidPress:"))
+            action: #selector(AchievementDetailsScreen.shareButtonDidPress(_:)))
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {

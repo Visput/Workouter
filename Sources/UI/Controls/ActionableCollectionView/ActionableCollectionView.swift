@@ -45,7 +45,7 @@ final class ActionableCollectionView: UICollectionView {
     }
     
     private func initialize() {
-        swipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("collectionViewDidSwipe:"))
+        swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ActionableCollectionView.collectionViewDidSwipe(_:)))
         swipeRecognizer.direction = [.Up, .Down]
         swipeRecognizer.enabled = false
         addGestureRecognizer(swipeRecognizer)
@@ -438,7 +438,7 @@ extension ActionableCollectionView {
                 }
             }
         }
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("cellDidTap:"))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ActionableCollectionView.cellDidTap(_:)))
         cell.addGestureRecognizer(tapRecognizer)
     }
     
@@ -454,13 +454,19 @@ extension ActionableCollectionView {
                     
                     switch action.type {
                     case .Custom:
-                        action.control.addTarget(self, action: Selector("customActionDidSelect:"), forControlEvents: .TouchUpInside)
+                        action.control.addTarget(self,
+                                                 action: #selector(ActionableCollectionView.customActionDidSelect(_:)),
+                                                 forControlEvents: .TouchUpInside)
                         
                     case .Delete:
-                        action.control.addTarget(self, action: Selector("deleteActionDidSelect:"), forControlEvents: .TouchUpInside)
+                        action.control.addTarget(self,
+                                                 action: #selector(ActionableCollectionView.deleteActionDidSelect(_:)),
+                                                 forControlEvents: .TouchUpInside)
                         
                     case .Clone:
-                        action.control.addTarget(self, action: Selector("cloneActionDidSelect:"), forControlEvents: .TouchUpInside)
+                        action.control.addTarget(self,
+                                                 action: #selector(ActionableCollectionView.cloneActionDidSelect(_:)),
+                                                 forControlEvents: .TouchUpInside)
                         
                     case .Move:
                         if let gestureRecognizers = action.control.gestureRecognizers {
@@ -470,7 +476,8 @@ extension ActionableCollectionView {
                                 }
                             }
                         }
-                        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("moveActionDidSelect:"))
+                        let gestureRecognizer = UILongPressGestureRecognizer(target: self,
+                                                                             action: #selector(ActionableCollectionView.moveActionDidSelect(_:)))
                         gestureRecognizer.minimumPressDuration = 0.1
                         action.control.addGestureRecognizer(gestureRecognizer)
                     }
@@ -501,7 +508,7 @@ extension ActionableCollectionView {
     
     private func setActionsVisible(visible: Bool,
         forCell cell: ActionableCollectionViewCell,
-        var atIndexPath indexPath: NSIndexPath? = nil,
+        atIndexPath indexPath: NSIndexPath? = nil,
         animated: Bool = true,
         completion: (() -> Void)? = nil) {
             
@@ -514,22 +521,20 @@ extension ActionableCollectionView {
                 guard actionsVisibleForCell(cell) else { return }
                 didShowActionsCell = nil
             }
-            
-            if indexPath == nil {
-                indexPath = indexPathForCell(cell)!
-            }
+        
+            let resultIndexPath = indexPath ?? indexPathForCell(cell)!
             
             if visible {
-                actionableDelegate?.collectionView?(self, willShowActionsForCellAtIndexPath: indexPath!)
+                actionableDelegate?.collectionView?(self, willShowActionsForCellAtIndexPath: resultIndexPath)
             } else {
-                actionableDelegate?.collectionView?(self, willHideActionsForCellAtIndexPath: indexPath!)
+                actionableDelegate?.collectionView?(self, willHideActionsForCellAtIndexPath: resultIndexPath)
             }
             
             cell.setActionsVisible(visible, animated: animated, completion: {
                 if visible {
-                    self.actionableDelegate?.collectionView?(self, didShowActionsForCellAtIndexPath: indexPath!)
+                    self.actionableDelegate?.collectionView?(self, didShowActionsForCellAtIndexPath: resultIndexPath)
                 } else {
-                    self.actionableDelegate?.collectionView?(self, didHideActionsForCellAtIndexPath: indexPath!)
+                    self.actionableDelegate?.collectionView?(self, didHideActionsForCellAtIndexPath: resultIndexPath)
                 }
                 completion?()
             })

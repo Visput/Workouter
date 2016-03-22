@@ -37,11 +37,11 @@ extension MuscleGroupsScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("cancelButtonDidPress:"))
+            action: #selector(MuscleGroupsScreen.cancelButtonDidPress(_:)))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenSearchItemWithAlignment(.Right,
             target: self,
-            action: Selector("searchStepsButtonDidPress:"))
+            action: #selector(MuscleGroupsScreen.searchStepsButtonDidPress(_:)))
     }
     
 }

@@ -120,7 +120,7 @@ extension WelcomeScreen {
         stopAutoSwipeTimer()
         autoSwipeTimer = NSTimer.scheduledTimerWithTimeInterval(5.0,
             target: self,
-            selector: "swipeToNextPage",
+            selector: #selector(WelcomeScreen.swipeToNextPage),
             userInfo: nil,
             repeats: false)
     }

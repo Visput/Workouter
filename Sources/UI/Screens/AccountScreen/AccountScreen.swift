@@ -51,7 +51,7 @@ extension AccountScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("cancelButtonDidPress:"))
+            action: #selector(AccountScreen.cancelButtonDidPress(_:)))
     }
     
     @objc private func cancelButtonDidPress(sender: AnyObject) {

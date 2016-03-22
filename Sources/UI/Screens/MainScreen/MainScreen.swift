@@ -111,11 +111,11 @@ extension MainScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenAccountItemWithAlignment(.Left,
             target: self,
-            action: Selector("accountButtonDidPress:"))
+            action: #selector(MainScreen.accountButtonDidPress(_:)))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.greenPlusItemWithAlignment(.Right,
             target: self,
-            action: Selector("newWorkoutButtonDidPress:"))
+            action: #selector(MainScreen.newWorkoutButtonDidPress(_:)))
     }
     
     @objc private func accountButtonDidPress(sender: AnyObject) {

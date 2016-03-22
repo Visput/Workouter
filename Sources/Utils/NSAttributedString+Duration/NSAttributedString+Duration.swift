@@ -91,7 +91,8 @@ extension NSAttributedString {
         return self.init(attributedString: durationString)
     }
     
-    private class func componentsFromDuration(var duration: Int, roundSeconds: Bool) -> (hours: Int, minutes: Int, seconds: Int) {
+    private class func componentsFromDuration(duration: Int, roundSeconds: Bool) -> (hours: Int, minutes: Int, seconds: Int) {
+        var resultDuration = duration
         let secondsInMinute = 60
         let secondsInHour = 3600
         let minutesInHour = 60
@@ -99,11 +100,11 @@ extension NSAttributedString {
         var seconds = duration % secondsInMinute
         if roundSeconds && seconds > 0 {
             seconds = 0
-            duration += secondsInMinute
+            resultDuration += secondsInMinute
         }
         
-        let minutes = (duration / secondsInMinute) % minutesInHour
-        let hours = duration / secondsInHour
+        let minutes = (resultDuration / secondsInMinute) % minutesInHour
+        let hours = resultDuration / secondsInHour
         
         return (hours, minutes, seconds)
     }

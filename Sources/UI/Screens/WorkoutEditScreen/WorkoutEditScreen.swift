@@ -204,7 +204,7 @@ extension WorkoutEditScreen {
         super.configureBarButtonItems()
         navigationItem.leftBarButtonItem = UIBarButtonItem.greenCancelItemWithAlignment(.Left,
             target: self,
-            action: Selector("cancelButtonDidPress:"))
+            action: #selector(WorkoutEditScreen.cancelButtonDidPress(_:)))
     }
     
     private func fillViewWithWorkout(workout: Workout) {
